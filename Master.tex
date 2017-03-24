@@ -1,0 +1,132 @@
+\documentclass[german,english,twoside,headsepline,titlepage=true,BCOR=10mm]{scrartcl} %final
+\input{header_std}
+\input{header_math}
+\input{header_artcl}
+
+
+\usepackage{chemformula}
+\usepackage[exponent-product = \cdot]{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\graphicspath{ {images/} }
+
+
+\newfontfamily\nfrac[Fractions=On]{Linux Libertine O}
+
+\usepackage{ccicons}
+
+% needed as language in bibliography is mixed (and set to english)
+\hyphenation{Mess-in-stru-ments} 
+
+\addfontfeature{Fractions=On}
+
+% Schmutztitel
+\KOMAoption{twoside}{false}
+\extratitle{
+  ~
+  \begin{center}
+    \huge \textbf{Department of Mathematics \& Computer Science}
+  \end{center}
+  ~
+  \begin{center}
+    \Large \textbf{Heidelberg University}
+  \end{center}
+  \vfill
+  \begin{center}
+    \Large \textbf{Master Thesis}\\[1ex]
+    in the degree program Mathematics (M.\,Sc.)\\
+    submitted by\\[1ex]
+    \Large \textbf{Tim Adler}\\[1ex]
+    born in Sinsheim (Germany)
+  \end{center}
+  ~
+  \begin{center}
+    \huge \textbf{2017}
+  \end{center}
+}
+
+\KOMAoption{twoside}{true}
+
+\titlehead{Heidelberg University \\
+  Department of Mathematics \& Computer Science\\
+  Im Neuenheimer Feld 205\\
+  69120 Heidelberg\\
+  Germany}
+\subject{Master Thesis}
+\title{TITLE}
+\author{Tim Adler}
+\date{DATE}
+\publishers{Advised by\\Prof.\ Dr.\ Anna Wienhard}
+\uppertitleback{Tim Adler\\Eberlinweg 6\\69121
+  Heidelberg\\Germany\\tim \{at\} emrys-merlin.de}
+\lowertitleback{
+\textbf{TITLE}\\
+Master Thesis in the degree program Mathematics (M.\,Sc.)\\[\baselineskip]
+Heidelberg University\\
+Department of Mathematics \& Computer Science\\
+Mathematical Institute\\[\baselineskip]
+\begin{tabular}[htbp]{l l}
+Advised by & Prof.\ Dr.\ Anna Wienhard\\
+Starting date & DATE \\
+Closing date & DATE\\
+\end{tabular}
+\\[\baselineskip]
+% \ccbysa\vspace{0.2cm}\\
+% This thesis is licensed under a
+% Creative Commons Attribution-ShareAlike 3.0 Unported License. See
+% \url{http://creativecommons.org/licenses/by-sa/3.0/} for more information.\\[\baselineskip]
+This work has been set using {\LaTeX} and {\KOMAScript}.\\[\baselineskip]
+\begin{tabular}[htbp]{r l}
+  Main Font: & Linux Libertine O\\
+  Sans Font: & Linux Biolinum O
+\end{tabular}}
+
+\makeatletter
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfdate={\@date}
+}
+\makeatother
+
+\begin{document}
+
+\pagenumbering{roman}
+\selectlanguage{german}
+\maketitle
+\selectlanguage{english}
+
+\listoftodos{}
+\todo{ToDo-Liste entfernen.}
+\todo{alle labels raus.}
+\todo{check indention after formulas.}
+\newpage
+
+\input{content/abstract}
+\newpage
+
+% Nur bis section, nicht bis subsection
+\setcounter{tocdepth}{2}
+\tableofcontents
+\cleardoubleoddstandardpage{}
+\pagenumbering{arabic}
+\input{content/intro}
+\cleardoubleoddstandardpage{}
+
+\input{content/complex}
+\cleardoubleoddstandardpage{}
+
+\input{content/acknowledgement.tex}
+\cleardoubleoddstandardpage{}
+\input{appendix}
+\cleardoubleoddstandardpage{}
+
+\input{content/declaration}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

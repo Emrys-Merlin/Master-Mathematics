@@ -1,0 +1,30 @@
+% Header, für sowas wie Bachelor- oder Master-Arbeiten.
+% Folgende Parameter sind für documentclass vielleicht hilfreich:
+% twoside: zweiseitiger Satz
+% headsepline: Kopfzeile wird durch langen Strich getrennt
+% titlepage = true: Es gibt eine Titel Seite und nicht nur ein Überschrift
+% BCOR = 10mm: Binderandkorrektur einstellen
+
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+% \ofoot{\pagemark}
+% \lehead{Ich stehe in header\_artcl unter lehead}
+% \rohead{\headmark}
+\automark[subsection]{section}
+%\automark*[subsection]{}
+
+\usepackage[style=alphabetic,backend=biber]{biblatex}
+\addbibresource{biblio.bib}
+\apptocmd{\UrlBreaks}{\do\f\do\m}{}{}
+\setcounter{biburllcpenalty}{9000}% Kleinbuchstaben
+\setcounter{biburlucpenalty}{9000}% Großbuchstaben
+% \usepackage{makeidx}
+
+% \NewDocumentCommand\init{m}{\emph{#1}\index{#1}}
+
+% \makeindex
+
+%%% Local Variables:
+%%% mode: plain-tex
+%%% TeX-master: "Bachelor"
+%%% End:
