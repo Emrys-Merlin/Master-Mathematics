@@ -1,0 +1,14 @@
+/_region_.tex
+auto/
+*.tex~
+*~
+*.aux
+*.log
+*.bbl
+*.bcf
+*.blg
+*.out
+*.pdf
+*.xml
+*.tdo
+*.toc
