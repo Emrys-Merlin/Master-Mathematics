@@ -1,0 +1,48 @@
+
+\section{CAT(0) cube complexes}
+\label{sec:complexes}
+
+\todo{Write definition of cube complex and the like}
+
+\begin{defin}[Cube complex]
+  Let \(C^k \coloneqq {[0,1]}^k\) denote the \emph{standard cube} in \(\R^n\) together with the induced metric. A \emph{facet} of a standard cube \(C^k\) is a subset \(F\), where
+  \begin{align*}
+    F = \{(x_1, \dots, x_k) \in C^k \mid x_{i_1} = \delta_1, \dots, x_{i_j}  = \delta_j\}
+  \end{align*}
+  and \(\delta_i \in \{0, 1\}\), \(j \in \{0, \dots, k\}\) and \(i_m \neq i_l\), if \(m \neq l\). \(F\) is called a \emph{proper facet}, if \(F \neq C^k\). Clearly, facets are isometric to standard cubes (possiblyof lower dimension). I will use \(F \leq C^k\) to denote facets and \(F < C^k\) to denote proper facets.
+  
+  A topological space \(X = \quot{\mathcal{C}}{\mathcal{F}}\) is called a \emph{cube complex}, if \(\mathcal{C} = {(C_i)}_{i \in I}\) is a disjoint union of standad cubes and \(\mathcal{F} = {(f_j)}_{j \in J}\), where
+  \begin{align*}
+    f_j\colon F \leq C_i \to G \leq C_{\tilde i}
+  \end{align*}
+  is an isometry and \(i\) and \(\tilde i\) depend on \(j\). \(x\) and \(y\) in \(\mathcal{C}\) are equivalent, if there is an \(f_j\), such that \(f_j(x) = y\) or \(f_j(y) = x\).
+\end{defin}
+
+\begin{bsp}
+  \todo{Examples of cube complexes}
+\end{bsp}
+
+\begin{defin}[Link]
+  
+\end{defin}
+
+\begin{defin}[Flag complex]
+  
+\end{defin}
+
+\begin{defin}[CAT(0) cube complex]
+  
+\end{defin}
+
+\begin{rem}
+  This is not the standard definition of CAT(0) for arbitrary geodesic spaces. However, one can show that in the case of cube complexes these two definitions are equivalent:
+\end{rem}
+
+\begin{thm}[Link condition,~\cite{MR919829}]
+  
+\end{thm}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:
