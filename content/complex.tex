@@ -69,7 +69,7 @@
 
   The \emph{\(m\)-skeleton} \(X^m \coloneqq \quot{\amalg\,\mathcal{C}^m}{\mathcal{F}}\) of \(X\) is given by
   \begin{align*}
-    \mathcal{C}^m \coloneqq \left\{C^k \in \mathcal{C} \mid \dim C^k \leq m\right\}.
+    \mathcal{C}^m \coloneqq \left\{F \leq C_i \in \mathcal{C} \relmid \dim F \leq m\right\}.
   \end{align*}
   \(X\) is of \emph{finite dimension} \(m\), if \(X^m \neq \varnothing\), but \(X^{m+1} = \varnothing\).
 
@@ -83,7 +83,10 @@
   \todo{Examples of cube complexes}
 \end{bsp}
 
-\begin{defin}[Metric of a cube complex, \cite{MR1170372}]
+\subsection{The metric}
+\label{sec:metric}
+
+\begin{defin}[Metric of a cube complexp, \cite{MR1170372}]
   Let \(X\) be a finite dimensional, connected cube complex. A \emph{line segment} is the image under the natural projection of a straight line (i.\,e.\ a geodesic segment) in one of the cubes of \(\mathcal{C}\). A \emph{PL path} is a concatenation of finitely many line segments. Each cube in \(\mathcal{C}\) gives rise to metric \(d_C\) on a cube \(C\) in \(X\) and since the cubes are glued by isometries, the metrics coincide on identified faces, thus leading to a well-defined length for PL paths.
 
   Let \(x,y \in X\). A \emph{\(m\)-chain} from \(x\) to \(y\) is a tuple \(c = (x_0, \dots, x_m)\), such that \(x_0 = x\), \(x_m = y\) and for each \(i\) there exist a cube \(C(i) \subset X\), such that \(x_{i-1}, x_{i} \in C(i)\). \(m\) is called the \emph{size} of \(c\) and
