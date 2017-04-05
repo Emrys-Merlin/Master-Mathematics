@@ -1,46 +1,212 @@
-
 \section{CAT(0) cube complexes}
 \label{sec:complexes}
 
-\todo{Write definition of cube complex and the like}
+\subsection{The complex}
+\label{sec:complex}
 
-\begin{defin}[Cube complex]
-  Let \(C^k \coloneqq {[0,1]}^k\) denote the \emph{standard cube} in \(\R^n\) together with the induced metric. A \emph{facet} of a standard cube \(C^k\) is a subset \(F\), where
+\todo{Write definition of cube complex and the like}
+\todo{border of cubes}
+
+\begin{defin}[Cubes, Faces \& Stars]
+  Let \(C^k \coloneqq {[0,1]}^k\) denote the \emph{standard cube} in \(\R^k\) together with the induced metric. A \emph{face} of a standard cube \(C^k\) is a subset \(F\), where
   \begin{align*}
-    F = \{(x_1, \dots, x_k) \in C^k \mid x_{i_1} = \delta_1, \dots, x_{i_j}  = \delta_j\}
+    F \coloneqq \left\{(x_1, \dots, x_k) \in C^k \,\middle |\, x_{i_1} = \delta_1, \dots, x_{i_j}  = \delta_j\right\},
   \end{align*}
-  and \(\delta_i \in \{0, 1\}\), \(j \in \{0, \dots, k\}\) and \(i_m \neq i_l\), if \(m \neq l\). \(F\) is called a \emph{proper facet}, if \(F \neq C^k\). Clearly, facets are isometric to standard cubes (possiblyof lower dimension). I will use \(F \leq C^k\) to denote facets and \(F < C^k\) to denote proper facets.
+  \(\delta_i \in \{0, 1\}\), \(j \in \{0, \dots, k\}\) and \(i_m \neq i_l\), if \(m \neq l\). \(F\) is called a \emph{proper face}, if \(F \neq C^k\). Clearly, faces are isometric to standard cubes (possibly of lower dimension). I will use \(F \leq C^k\) to denote faces and \(F < C^k\) to denote proper faces.
+
+  Any standard cube \(C^l\), \(l < k\), can be embedded as a face into \(C^k\). We will conveniently confuse \(C^l\) with its image. Furthermore, for any face \(F \leq C^k\), we will denote by \(\mathring{F}\) its \emph{interior} when identified with the standard cube \(C^l \subset \R^l\) (i.\,e.\ \emph{not} its interior as a subset of \(\R^k\), which would be empty for all \(l < k\)). If \(l = 0\), then \(\mathring{F} = F\).
+
+  For any \(x \in C^k\), we define the \emph{(open) star} of \(x\) by
+  \begin{align*}
+    \st(x) & \coloneqq \bigcup\,\left\{\mathring{F} \relmid x \in F \leq C^k\right\}.
+  \end{align*}
+\end{defin}
+
+\begin{lemma}
+  \label{lemma:cube-dist}
+  Let \(x \in \mathring{F} \subseteq F \leq C^k, k > 0,\) with \(\dim F \eqqcolon l\). Then
+  \begin{align*}
+    d(x, C^k - \st(x)) =
+    \begin{cases}
+      1 & \text{if } l = 0\\
+      d(x, \partial F) & \text{else}
+    \end{cases}
+                         .
+  \end{align*}
+\end{lemma}
+
+\begin{proof}
+  If \(l = 0\) then \(x\) is a vertex of \(C^k\) and any other vertex (which exist, as \(k > 0\)) has distance at least \(1\) and is by definition not contained in the star of \(x\). Hence, \(d(x, C^k - \st(x)) \leq 1\).
   
-  A topological space \(X = \quot{\mathcal{C}}{\mathcal{F}}\) is called a \emph{cube complex}, if \(\mathcal{C} = {(C_i)}_{i \in I}\) is a disjoint union of standad cubes and \(\mathcal{F} = {(f_j)}_{j \in J}\), where
+  After a rotation of the cube, we may assume that \(x\) is the origin and hence any face \(F\) of \(C^k\), not containing \(x\) must have at least one \(\delta_i = 1\). Let \(n_F\) denote the sum of all \(\delta_i\) defining \(F\). Then for all \(y \in F\), we have
+  \begin{align*}
+    d(x,y) = |y| \geq n_F \geq 1
+  \end{align*}
+  if \(x\) is not contained in \(F\). \(C^k - \st(x)\) is compact, therefore there there exists a \(y \in C^k - \st(x)\), such that
+  \begin{align*}
+    d(x, C^k - \st(x)) = d(x, y) 
+  \end{align*}
+  holds. Furthermore, there must exist a face \(F\) containing \(y\) in its interior. By definition of \(y\), \(F\) cannot contain \(x\). Together with the above argument we yield \(d(x, C^k - \st(x)) \geq 1\), which proves the first assertion.
+
+  Now, let \(l\) be different from \(0\). After a rotation, we can identify \(F\) with \(C^l\). \(\partial C^l \subset C^k - \st(x)\) holds and thus we have
+  \begin{align}
+    \label{eq:dist-border}
+    d(p, C^k - \st(x) \leq d(x, \partial C^k) < 1 .
+  \end{align}
+  As above, we find a \(y \in C^k - \st(x)\), realizing the distance. \(y\) lies in the interior of some face \(G\) and, by definition, \(G\) does not have \(C^l\) as a face. First, let us assume that \(G \cup \partial C^l \neq \varnothing\). In that case there is a unique projection \(\hat y \in G \cup \partial C^l\) of \(y\) and an element \(y_\perp\) orthogonal to \(C^l\), such that \(y = \hat y + y_\perp\). Then we have
+  \begin{align*}
+    d^2(x, y) = |x - \hat y|^2 + |y_\perp|^2 \leq d(x, \hat y).
+  \end{align*}
+  Hence \(y_\perp = 0\), which leads to \(y = \hat y \in \partial C^l\). If \(G \cup \partial C^l = \varnothing\), then at least one of the components \(l+1, \dots, k\) have to be fixed to \(1\), leading to \(d(x, C^k - \st(x)) = d(x,y) \geq 1\), which is a contradiction to Equation~\ref{eq:dist-border}, which proves the other inequality.
+\end{proof}
+
+\begin{defin}[Cube complexes]
+  A topological space \(X = \quot{\amalg\,\mathcal{C}}{\mathcal{F}}\) is called a \emph{cube complex}, if \(\mathcal{C} = {(C_i)}_{i \in I}\) is a family of standad cubes and \(\mathcal{F} = {(f_j)}_{j \in J}\), where
   \begin{align*}
     f_j\colon F \leq C_i \to G \leq C_{\tilde i}
   \end{align*}
-  is an isometry and \(i\) and \(\tilde i\) depend on \(j\). \(x\) and \(y\) in \(\mathcal{C}\) are equivalent, if there is an \(f_j\), such that \(f_j(x) = y\) or \(f_j(y) = x\).
+  is an isometry and \(i\) and \(\tilde i\) depend on \(j\). \(x\) and \(y\) in \(\amalg\,\mathcal{C}\) are equivalent, if there is an \(f_j\), such that \(f_j(x) = y\) or \(f_j(y) = x\). \(C \subset X\) is called a \emph{cube} of \(X\), if it is the image of some face of a cube \(C_i\) under the natural projection \(\pi \colon \amalg \mathcal{C} \to X\). For each such cube \(\mathring {C}\) and \(\partial C\) is a well-defined notion, since isometries of Euclidean cubes respect their interior and boundary respectively.
+
+  The \emph{\(m\)-skeleton} \(X^m \coloneqq \quot{\amalg\,\mathcal{C}^m}{\mathcal{F}}\) of \(X\) is given by
+  \begin{align*}
+    \mathcal{C}^m \coloneqq \left\{C^k \in \mathcal{C} \mid \dim C^k \leq m\right\}.
+  \end{align*}
+  \(X\) is of \emph{finite dimension} \(m\), if \(X^m \neq \varnothing\), but \(X^{m+1} = \varnothing\).
+
+  For any point \(v \in X\), we define the \emph{open star} of \(v\) via
+  \begin{align*}
+    \st(v) \coloneqq \bigcup \left\{\mathring{C} \subset C \subset X \relmid v \in C \text{ and } C \text{ a cube} \right\}.
+  \end{align*}
 \end{defin}
 
 \begin{bsp}
   \todo{Examples of cube complexes}
 \end{bsp}
 
+\begin{defin}[Metric of a cube complex, \cite{MR1170372}]
+  Let \(X\) be a finite dimensional, connected cube complex. A \emph{line segment} is the image under the natural projection of a straight line (i.\,e.\ a geodesic segment) in one of the cubes of \(\mathcal{C}\). A \emph{PL path} is a concatenation of finitely many line segments. Each cube in \(\mathcal{C}\) gives rise to metric \(d_C\) on a cube \(C\) in \(X\) and since the cubes are glued by isometries, the metrics coincide on identified faces, thus leading to a well-defined length for PL paths.
+
+  Let \(x,y \in X\). A \emph{\(m\)-chain} from \(x\) to \(y\) is a tuple \(c = (x_0, \dots, x_m)\), such that \(x_0 = x\), \(x_m = y\) and for each \(i\) there exist a cube \(C(i) \subset X\), such that \(x_{i-1}, x_{i} \in C(i)\). \(m\) is called the \emph{size} of \(c\) and
+  \begin{align*}
+    l(c) = \sum_{i=1}^m d_{C(i)}(x_{i-1}, x_i)
+  \end{align*}
+  is called the \emph{length} of \(c\). There is a one to one correspondence between PL paths and chains. The PL path corresponding to \(c\) is denoted by \(p(c)\).
+
+  For \(x,y \in X\) a distance function can be defined by
+  \begin{align*}
+    d(x,y) \coloneqq \inf \{l(c) \mid c \text{ is a chain from } x \text{ to } y\}.
+  \end{align*}
+  In order to see that \(d\) defines a metric on \(X\), we make use of
+  \begin{align*}
+    \epsilon(x) \coloneqq \inf\left\{ d_C(x, C - \st(x)) \relmid C \text{ a cube in } X \text{ containing } x\right\}
+  \end{align*}
+  for each \(x \in X\).
+\end{defin}
+
+\begin{lemma}
+  \(\epsilon(x) > 0\) for all \(x \in X\).
+\end{lemma}
+
+\begin{proof}
+  Consider two preimages \(x_1, x_2 \in \pi^{-1}(x)\) and two faces of cubes \(C_1, C_2 \in \mathcal{C}\) of arbitrary (and maybe differing) dimensions, such that \(x_i \in C_i\). Then we can find faces \(F_i, G_i\) leading to the following sequence:
+  \begin{align*}
+    x_i \in \mathring{F_i} \subset F_i \leq G_i \leq C_i,
+  \end{align*}
+  where \(C_i \in \mathcal{C}\) is a cube (which need not have the same dimension) and there exists a \(\phi \in \mathcal{F}\) with \(phi \colon G_1 \to G_2\). Since isometries of cubes respect faces, we also have
+  \begin{align*}
+    \phi|_{F_1} \colon F_1 \to F_2.
+  \end{align*}
+  By Lemma~\ref{lemma:cube-dist}, we yield
+  \begin{align*}
+    d(x_1, C_1 - \st(x_1))
+    & = d(x_1, \partial F_1)\\
+    & = d(\phi(x_1), \phi(\partial F_1))\\
+    & = d(x_2, \partial F_2)\\
+    & = d(x_2, C_2 - \st(x_2)) \eqqcolon K = \text{const.} > 0,
+  \end{align*}
+  if \(\dim F_1 = \dim F_2 > 0\). The case for dimension 0 follows similarly. Hence, we see that the distance is independent of the cube containing the preimage and we can use any preiamge \(tilde x \in \pi^{-1}(x)\) to compute the distance. Thus, for any cube \(C \subset X\), we can find a cube \(\tilde C \in \mathcal{C}\) and a face \(F \leq \tilde C\) such that \(\pi(F) = C\).
+  \begin{align*}
+    d_C(x, C - \st(x)) = d(\tilde x, F - \st(\tilde x)) = K > 0.
+  \end{align*}
+  Since \(K\) is constant, forming the infimum still yields
+  \begin{align*}
+    \epsilon(x) = \inf\,d_C(x, C - \st(x)) = K > 0.
+  \end{align*}
+\end{proof}
+
+\begin{lemma}
+  If \(d(x,y) < \epsilon(x)\) there exists a cube \(C \in X\), such that \(x,y \in C\) and \(d(x,y) = d_C(x,y)\).
+\end{lemma}
+
+\begin{proof}
+  It suffices to show that \(d_C(x,y) \leq d(x,y)\). In order to do that we will prove the following claim:
+  Let \(c = (x_0, \dots, x_m)\) be an \(m\)-chain in \(x\) with \(l(c) < \epsilon(x_0)\). Then \(x_i \in \st(x_0)\) for all \(i = 0, \dots, m\) and there exists a cube \(C \subset X\) containing \(x_0\) and \(x_m\) and \(d_C(x_0, x_m) \leq l(c)\). We will prove this by induction on \(m\)
+
+  \begin{description}
+  \item[\(m=1\):] Since \(c = (x_0, x_1)\) is a chain, by definition there must exist a cube \(C\) containing \(x_0\) and \(x_1\). Furthermore,
+    \begin{align*}
+      d(x_0, x_1) < \epsilon(x_0) \leq d(x_0, C - \st(x_0)),
+    \end{align*}
+    implying \(x_1 \in \st(x_0)\). Lastly, we have \(d_C(x_0,x_1) = l(c)\) by definition.
+  \item[\(m-1 \to m\):] By definition of a chain, there exists a cube \(C(m)\) containig \(x_{m-1}\) and \(x_m\). Setting \(c' = (x_0, \dots, x_{m-1})\), we see \(l(c') \leq l(c) < \epsilon(x_0)\). Applying the inductive hypothesis to \(c'\), we yield \(x_{m-1} \in \st(x_0)\) and hence, \(x_0 \in C(m)\). This leads to
+    \begin{align*}
+      d_{C(m)}(x_0, x_m)
+      & \leq d_{C(m)}(x_0, x_{m-1}) + d_{C(m)}(x_{m-1}, x_m)\\
+      & \leq l(c') + d_{C(m)}(x_{m-1}, x_m) \quad \text{by inductive hypothesis}\\
+      & \leq l(c),
+    \end{align*}
+    proving the claim.
+  \end{description}
+\end{proof}
+
+\begin{cor}
+  The above defined distance \(d\) is a metric on \(X\).
+\end{cor}
+
+\begin{proof}
+  The symmetry and triangle inequality are clear from the definition. Now, assume there are \(x,y\in X\) with \(d(x,y) = 0\). The, by the previous lemma, we find a cube \(C \subset X\) containing both \(x\) and \(y\), such that
+  \begin{align*}
+    0 = d(x,y) = d_C(x,y).
+  \end{align*}
+  Since \(d_C\) defines a metric on \(C\), we have \(x = y\).
+\end{proof}
+
 \begin{defin}[Link]
   
 \end{defin}
 
 \begin{defin}[Flag complex]
-  
+  A \emph{flag complex} \(X\) is a simplicial complex, such that for each complete subgraph of its 1-skeleton, there is a simplex in \(X\), such that the subgraph is its 1-skeleton.
 \end{defin}
 
 \begin{defin}[CAT(0) cube complex]
-  
+  A cube complex \(X\) is called a \emph{CAT(0) cube complex}, if \(X\) is simply connected and if \(\lk(v)\) is a flag complex for each vertex \(v \in X^0\). 
 \end{defin}
+\todo{talk about metric}
 
 \begin{rem}
   This is not the standard definition of CAT(0) for arbitrary geodesic spaces. However, one can show that in the case of cube complexes these two definitions are equivalent:
 \end{rem}
 
-\begin{thm}[Link condition,~\cite{MR919829}]
+\begin{thm}[Gromov's link condition,~\cite{MR919829}]
   
 \end{thm}
+
+\begin{defin}[Isomorphisms of CAT(0) cube complexes]
+  Let \(X,Y\) be CAT(0) cube complexes. \(f\colon X \to Y\) is called an \emph{isomorphism of CAT(0) cube complexes} (or short: an isomorphism), if \(f\) is an isometry and if \(f(C) \subset Y\) is a cube, whenever \(C \subset X\) is a cube.
+
+  \(\Aut(X)\) will denote the automorphism group of a CAT(0) cube complex \(X\).
+\end{defin}
+
+\todo{enter all standard assumption and notations here}
+\begin{rem}
+  From now on we will assume that all our complexes are connected and finite dimensional.
+\end{rem}
+
+\subsection{Halfspaces}
+\label{sec:halfspaces}
+
+
 
 %%% Local Variables:
 %%% mode: latex
