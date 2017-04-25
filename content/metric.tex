@@ -19,7 +19,7 @@ This section is concerned with basic metric properties of spaces and their conne
       d(c(t), c(t')) = \lambda \cdot |t - t'| 
     \end{align*}
     for all \(t,t' \in [a,b]\).
-  \item \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that ther is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
+  \item \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
   \item The \emph{length} of a curve \(c\colon [a,b] \to X\) is defined as
     \begin{align*}
       l(c) \coloneqq \left\{\sum_{i=1}^n d(c(t_i), c(t_{i-1})) \relmid a = t_0 \leq t_0 \leq \dots \leq t_n = b \text{ a subdivision} \right\}.
@@ -76,10 +76,97 @@ This section is concerned with basic metric properties of spaces and their conne
 \begin{defin}\
   \begin{itemize}
   \item Let \((X,d)\) be a metric space. A \emph{geodesic triangle} \(\Delta \subset X\) consists of three points \(p,q,r \in X\), its \emph{vertices}, together with a choice of three geodesic segments \([p,q], [q,r], [r, p]\) joining them, its \emph{edges} (The choice of geodesics might not be unique). If necessary, the notation \(\Delta = \Delta(p,q,r)\) or \(\Delta = \Delta([p,q], [q,r], [r,p])\) will be used. The first case is a slight abuse of notation, as the three vertices might not determine the triangle.
-  \item A \emph{comparison triangel} in \(M_\kappa^2\) for \(\Delta = \Delta(p,q,r)\) is a choice of three points \(\bar p, \bar q, \bar r \in M_\kappa^2\) such that \(d_\kappa(\bar p, \bar q) = d(p, q)\), \(d_\kappa(\bar q, \bar r), = d(q, r)\) and \(d_\kappa(\bar r, \bar p) = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). It exists wehnever the perimeter \(p(\Delta) \coloneqq d(p,q) + d(q,r) + d(r,p) < 2D_\kappa\) \cite[cf.][Sec.\ I.2]{MR1744486}.
+  \item A \emph{comparison triangle} in \(M_\kappa^2\) for \(\Delta = \Delta(p,q,r)\) is a choice of three points \(\bar p, \bar q, \bar r \in M_\kappa^2\) such that \(d_\kappa(\bar p, \bar q) = d(p, q)\), \(d_\kappa(\bar q, \bar r), = d(q, r)\) and \(d_\kappa(\bar r, \bar p) = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). It exists whenever the perimeter \(p(\Delta) \coloneqq d(p,q) + d(q,r) + d(r,p) < 2D_\kappa\) \cite[cf.][Sec.\ I.2]{MR1744486}.
   \item \(\Delta\) satisfies the \emph{CAT(\(\kappa\)) inequality}, if \(d(x,y) \leq d_\kappa(\bar x, \bar y)\) for any \(x, y \in \Delta\) and where \(\bar x \in \bar \Delta \subset M_\kappa^2\) is the unique point having the same distance to the two endpoints of the geodesic segment it lies on as \(x\) on its geodesic.
   \item \(X\) is called a \emph{CAT(\(\kappa\)) space}, if \(X\) is \(D_\kappa\)-geodesic and if each geodesic triangle \(\Delta\) with \(p(\Delta) < 2 D_\kappa\) satisfies the CAT(\(\kappa\)) inequality.
   \item \(X\) is called \emph{of curvature \(\leq \kappa\)}, if it is locally a CAT(\(\kappa\)) space, i.\,e.\ for each \(x \in X\) there exists an \(r > 0\), such that B(x,r) together with the induced metric is a CAT(\(\kappa\)) space.
+  \end{itemize}
+\end{defin}
+
+\begin{bsp}
+  \todo{Elaborate CAT examples}
+  \begin{enumerate}
+  \item CAT(\(\kappa\)) contained etc
+  \item \(\E^n\) without a diamond. Still locally CAT(0), but not globally
+  \item \(\bigvee_{n \in \N} (\sphere_n, x_n)\), where \(\sphere_n = \frac{1}{\sqrt{n}} \sphere^1 \cong M_n^1\) and \(x_n \in \sphere_n\). Not CAT(\(\kappa\)) for any \(\kappa\), not even locally.
+  \end{enumerate}
+\end{bsp}
+
+\begin{defin}
+  \todo{Write down properties of \(M_\kappa^n\). Especially \(m\)-planes and the like.}
+  Let \(\kappa \in \R\). A \emph{convex \(M_\kappa\)-polyhedral cell} \(C \subset M_\kappa^n\) is the convex hull of finitely many points \(P \subset M_\kappa^n\), which are contained in an open ball of radius \(\frac{D_\kappa}{2}\). Let \(H \subset M_\kappa^n\)  be a hyperplane, containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \leq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(M_\kappa^m\)-structure. The \emph{\(m\)-skeleton of \(C\)} is defined by
+  \begin{align*}
+    C^{(m)} \coloneqq \bigcup \{F \mid F \leq C \text{ and } \dim F \leq m\}.
+  \end{align*}
+
+  Let \(x \in C\), then the \emph{support of \(x\)}, \(\supp(x)\), is the unique face of \(C\) containing \(x\) in its interior or alternatively the unique face with minimal dimension containing \(x\).
+
+  The \emph{link of \(x\) in \(C\)} is given by
+  \begin{align*}
+    \lk(x,C) \coloneqq \{u \in U_xM_\kappa^n \mid \exists t > 0 \colon \exp_x(tu) \in C\} \subset U_xM_\kappa^n \cong \sphere^{n-1},
+  \end{align*}
+  where \(U_xM_\kappa^n\) is the unit tangent space at \(x\) in \(M_\kappa^n\) considered as a Riemannian manifold. Because of this Riemannian metric the unit tangent space can be isometrically identified with \(\sphere^{n-1}\).
+\end{defin}
+
+\begin{bsp}
+  \todo{Add visualization for links, stars and the like}
+\end{bsp}
+
+\begin{rem}
+  If \(C = [0,1]^n \subset \E^n = M_0^n\), then \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). Furthermore, all its edges have length \(\frac{\pi}{2}\).
+\end{rem}
+
+\begin{defin}\ 
+  \begin{itemize}
+  \item Let \((C_\lambda)_{\lambda \in \Lambda}\) be a family of convex \(M_\kappa\)-polyhedral cells and \(X \coloneqq \bigcup_{\lambda \in \Lambda} C_\lambda \times \{\lambda\}\) its disjoint union. Furthermore, let \(\sim\) denote an equivalence relation on \(X\) and by \(K\) the space of equivalence classes with natural projection \(p \colon X \to K\). Lastly, let \(p_\lambda \colon C_\lambda \to K,\ p_\lambda(x) \coloneqq p(x, \lambda)\).
+
+    \(K\) is called an \emph{\(M_\kappa\)-polyhedral complex}, if
+    \begin{enumerate}
+    \item \(p_\lambda |_{\mathring F}\) is injective for each face \(F \leq C_\lambda\) and
+    \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\), such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
+    \end{enumerate}
+  \item \(C \subset K\) is called an \emph{\(n\)-dimensional cell}, if it is the image of an \(n\)-dimensional face \(F \leq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\).
+  \item The \emph{m-skeleton} of \(K\) is given by
+    \begin{align*}
+      K^{(m)} \coloneqq \quot{\bigcup_{\lambda \in \Lambda} C_\lambda^{(m)} \times \{\lambda\}}{\sim},
+    \end{align*}
+    where \(\sim\) is given by the restriction of the equivalence relation on \(X\) to the disjoint union of the \(m\)-skeleta of the cells.
+
+  \item Fix \(x \in K\). Then the \emph{star of \(x\)} is defined by
+    \begin{align*}
+      \st(x) \coloneqq \bigcup \left\{\mathring C \relmid C \subset K \text{ a cell and } x \in C\right\}.
+    \end{align*}
+  \item Let \((x_i)_{i \in I}\) be a family of all the points with \(x_i \in C_{\lambda(i)}\), such that \(p_{\lambda(i)}(x_i) = x\). Consider the disjoint union \(\bigcup_{i \in I} \lk(x_i, C_{\lambda(i)} \times {i})\) together with the equivalence relation \((u_i, i) \sim (u_j, j)\) if there exist \(t_i, t_j > 0\) such that \(\exp_{x_i}(t_i u_i) \in C_{\lambda(i)}\), \(\exp_{x_j}(t_j u_j) \in C_{\lambda(j)}\) and \(p_{\lambda(i)}(\exp_{x_i}(t_i u_i)) = p_{\lambda(j)}(\exp_{x_j}(t_j u_j))\). Then the \emph{link of \(x\) in \(K\)} is given by
+    \begin{align*}
+      \lk(x, K) \coloneqq \quot{\bigcup_{i \in I} \lk(x_{\lambda(i)}, C_{\lambda(i)})}{\sim}.
+    \end{align*}
+  \end{itemize}
+\end{defin}
+
+\begin{rem}
+  \(\lk(x, K)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(K\).
+\end{rem}
+
+\begin{bsp}
+  \todo{Enter examples of polyhedral complexes and links.}
+\end{bsp}
+
+\begin{defin}
+  \begin{itemize}
+  \item \(c\colon [a, b] \to K\) is called \emph{piecewise geodesic}, if there exists a subdivision \(a = t_0 \leq \dots \leq t_k = b\) and geodesics \(c_i\colon [t_{i-1}, t_i] \to C_{\lambda(i)}\), such that \(c|_{[t_{i-1}, t_i]} = p_{\lambda(i)} \circ c_i\). The \emph{length} of a piecewise geodesic path is given by
+    \begin{align*}
+      l(c) \coloneqq \sum_{i=1}^n l(c_i).
+    \end{align*}
+  \item Let
+    \begin{align*}
+      &d\colon K \times K \to \R_{\geq 0} \cup \{\infty\},\\
+      &d(x,y) \coloneqq \inf\{l(c) \mid c(a) = x,\ c(b) = y \text{ and } c \text{ piecewiese geodesic}\}
+    \end{align*}
+    and
+    \begin{align}
+      \epsilon(x) \coloneqq \{d(x, C \setminus \st(x)) \mid C \subset K \text{ a cell and } x \in C\}. \label{eq:epsilon}
+    \end{align}
+
   \end{itemize}
 \end{defin}
 
@@ -87,3 +174,5 @@ This section is concerned with basic metric properties of spaces and their conne
 %%% mode: latex
 %%% TeX-master: "../Master"
 %%% End:
+
+%  LocalWords:  xM
