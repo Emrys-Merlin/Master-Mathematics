@@ -49,155 +49,45 @@ From now on, if not otherwise specified, all cells \(C\) will be taken to be cub
   Hence \(y_\perp = 0\), which leads to \(y = \hat y \in \partial C^l\). If \(G \cup \partial C^l = \varnothing\), then at least one of the components \(l+1, \dots, k\) have to be fixed to \(1\), leading to \(d(x, C^k - \st(x)) = d(x,y) \geq 1\), which is a contradiction to Equation~\ref{eq:dist-border}, which proves the other inequality.
 \end{proof}
 
-\begin{defin}[Cube complexes]
-  A topological space \(X = \quot{\amalg\,\mathcal{C}}{\mathcal{F}}\) is called a \emph{cube complex}, if \(\mathcal{C} = {(C_i)}_{i \in I}\) is a family of standad cubes and \(\mathcal{F} = {(f_j)}_{j \in J}\), where
-  \begin{align*}
-    f_j\colon F \leq C_i \to G \leq C_{\tilde i}
-  \end{align*}
-  is an isometry and \(i\) and \(\tilde i\) depend on \(j\). \(x\) and \(y\) in \(\amalg\,\mathcal{C}\) are equivalent, if there is an \(f_j\), such that \(f_j(x) = y\) or \(f_j(y) = x\). \(C \subset X\) is called a \emph{cube} of \(X\), if it is the image of some face of a cube \(C_i\) under the natural projection \(\pi \colon \amalg \mathcal{C} \to X\). For each such cube \(\mathring {C}\) and \(\partial C\) is a well-defined notion, since isometries of Euclidean cubes respect their interior and boundary respectively.
-
-  The \emph{\(m\)-skeleton} \(X^m \coloneqq \quot{\amalg\,\mathcal{C}^m}{\mathcal{F}}\) of \(X\) is given by
-  \begin{align*}
-    \mathcal{C}^m \coloneqq \left\{F \leq C_i \in \mathcal{C} \relmid \dim F \leq m\right\}.
-  \end{align*}
-  \(X\) is of \emph{finite dimension} \(m\), if \(X^m \neq \varnothing\), but \(X^{m+1} = \varnothing\).
-
-  For any point \(v \in X\), we define the \emph{open star} of \(v\) via
-  \begin{align*}
-    \st(v) \coloneqq \bigcup \left\{\mathring{C} \subset C \subset X \relmid v \in C \text{ and } C \text{ a cube} \right\}.
-  \end{align*}
-\end{defin}
-
-\begin{bsp}
-  \todo{Examples of cube complexes}
-\end{bsp}
-
-\subsection{The metric}
-\label{sec:metric}
-
-\begin{defin}[Metric of a cube complexp, \cite{MR1170372}]
-  Let \(X\) be a finite dimensional, connected cube complex. A \emph{line segment} is the image under the natural projection of a straight line (i.\,e.\ a geodesic segment) in one of the cubes of \(\mathcal{C}\). A \emph{PL path} is a concatenation of finitely many line segments. Each cube in \(\mathcal{C}\) gives rise to metric \(d_C\) on a cube \(C\) in \(X\) and since the cubes are glued by isometries, the metrics coincide on identified faces, thus leading to a well-defined length for PL paths.
-
-  Let \(x,y \in X\). A \emph{\(m\)-chain} from \(x\) to \(y\) is a tuple \(c = (x_0, \dots, x_m)\), such that \(x_0 = x\), \(x_m = y\) and for each \(i\) there exist a cube \(C(i) \subset X\), such that \(x_{i-1}, x_{i} \in C(i)\). \(m\) is called the \emph{size} of \(c\) and
-  \begin{align*}
-    l(c) = \sum_{i=1}^m d_{C(i)}(x_{i-1}, x_i)
-  \end{align*}
-  is called the \emph{length} of \(c\). There is a one to one correspondence between PL paths and chains. The PL path corresponding to \(c\) is denoted by \(p(c)\).
-
-  For \(x,y \in X\) a distance function can be defined by
-  \begin{align*}
-    d(x,y) \coloneqq \inf \{l(c) \mid c \text{ is a chain from } x \text{ to } y\}.
-  \end{align*}
-  In order to see that \(d\) defines a metric on \(X\), we make use of
-  \begin{align*}
-    \epsilon(x) \coloneqq \inf\left\{ d_C(x, C - \st(x)) \relmid C \text{ a cube in } X \text{ containing } x\right\}
-  \end{align*}
-  for each \(x \in X\).
-\end{defin}
-
 \begin{lemma}
-  \(\epsilon(x) > 0\) for all \(x \in X\).
+  If \(K\) is a cube complex, then \(\epsilon(x) > 0\) (c.\,f.~\eqref{eq:epsilon}) for arbitrary \(x \in K\).
 \end{lemma}
 
 \begin{proof}
-  Consider two preimages \(x_1, x_2 \in \pi^{-1}(x)\) and two faces of cubes \(C_1, C_2 \in \mathcal{C}\) of arbitrary (and maybe differing) dimensions, such that \(x_i \in C_i\). Then we can find faces \(F_i, G_i\) leading to the following sequence:
-  \begin{align*}
-    x_i \in \mathring{F_i} \subset F_i \leq G_i \leq C_i,
-  \end{align*}
-  where \(C_i \in \mathcal{C}\) is a cube (which need not have the same dimension) and there exists a \(\phi \in \mathcal{F}\) with \(phi \colon G_1 \to G_2\). Since isometries of cubes respect faces, we also have
-  \begin{align*}
-    \phi|_{F_1} \colon F_1 \to F_2.
-  \end{align*}
-  By Lemma~\ref{lemma:cube-dist}, we yield
-  \begin{align*}
-    d(x_1, C_1 - \st(x_1))
-    & = d(x_1, \partial F_1)\\
-    & = d(\phi(x_1), \phi(\partial F_1))\\
-    & = d(x_2, \partial F_2)\\
-    & = d(x_2, C_2 - \st(x_2)) \eqqcolon K = \text{const.} > 0,
-  \end{align*}
-  if \(\dim F_1 = \dim F_2 > 0\). The case for dimension 0 follows similarly. Hence, we see that the distance is independent of the cube containing the preimage and we can use any preiamge \(tilde x \in \pi^{-1}(x)\) to compute the distance. Thus, for any cube \(C \subset X\), we can find a cube \(\tilde C \in \mathcal{C}\) and a face \(F \leq \tilde C\) such that \(\pi(F) = C\).
-  \begin{align*}
-    d_C(x, C - \st(x)) = d(\tilde x, F - \st(\tilde x)) = K > 0.
-  \end{align*}
-  Since \(K\) is constant, forming the infimum still yields
-  \begin{align*}
-    \epsilon(x) = \inf\,d_C(x, C - \st(x)) = K > 0.
-  \end{align*}
+  By definition of a cube complex, for any point \(x\) and two preimages \(x_i \in C_{\lambda_i}\), we have an isometry \(h \colon \supp(x_1) \to \supp(x_2)\). Hence, for any \(F_i \leq C_{\lambda_i}\), we have that \(d(x_1, F_1 \setminus \st(x_1)) = d(x_2, F_2 \setminus \st(x_2))\) by Lemma~\ref{lemma:cube-dist}. This shows that \(d(x, C \setminus \st(x))\) can be computed in any preimage of the cell \(C\) and furthermore, that the value is independent of \(C\). Hence, \(\epsilon(x) > 0 \).
 \end{proof}
 
-\begin{lemma}
-  If \(d(x,y) < \epsilon(x)\) there exists a cube \(C \in X\), such that \(x,y \in C\) and \(d(x,y) = d_C(x,y)\).
-\end{lemma}
+\begin{thm}
+  If \(K\) is a cube complex, then \(d\) is a metric.
+\end{thm}
 
 \begin{proof}
-  It suffices to show that \(d_C(x,y) \leq d(x,y)\). In order to do that we will prove the following claim:
-  Let \(c = (x_0, \dots, x_m)\) be an \(m\)-chain in \(x\) with \(l(c) < \epsilon(x_0)\). Then \(x_i \in \st(x_0)\) for all \(i = 0, \dots, m\) and there exists a cube \(C \subset X\) containing \(x_0\) and \(x_m\) and \(d_C(x_0, x_m) \leq l(c)\). We will prove this by induction on \(m\)
+  The symmetry in triangle enequality follow directly from the definition. It remains to prove that \(d(x,y) = 0\) implies \(x = y\). In order to do that, we claim that if \(d(x,y) < \epsilon(x)\), then there exists a cube \(C \subset K\), such that \(x, y \in C\) with preimages \(\bar x, \bar y \in C_\lambda\) such that \(d(x,y) = d_{C_\lambda}(\bar x,\bar y)\). The claim then follows directly. However, we will not show this claim directly but further reduce the assertion. We consider \(m\)-strings \(s \coloneqq (x_0, \dots, x_m) \in K^{m+1}\), with the property that each sucessive pair of points \(x_{i-1}, x_i\) are contained in a common cube \(C_i\). With this we define the length of a string as \(l(s) = \sum_{i=1}^n d_{C_i}(x_{i-1}, x_i)\), where \(d_{C_i}\) is the metric on \(C_i\) induced by any of its preimages under the natural projection.
 
-  \begin{description}
-  \item[\(m=1\):] Since \(c = (x_0, x_1)\) is a chain, by definition there must exist a cube \(C\) containing \(x_0\) and \(x_1\). Furthermore,
-    \begin{align*}
-      d(x_0, x_1) < \epsilon(x_0) \leq d(x_0, C - \st(x_0)),
-    \end{align*}
-    implying \(x_1 \in \st(x_0)\). Lastly, we have \(d_C(x_0,x_1) = l(c)\) by definition.
-  \item[\(m-1 \to m\):] By definition of a chain, there exists a cube \(C(m)\) containig \(x_{m-1}\) and \(x_m\). Setting \(c' = (x_0, \dots, x_{m-1})\), we see \(l(c') \leq l(c) < \epsilon(x_0)\). Applying the inductive hypothesis to \(c'\), we yield \(x_{m-1} \in \st(x_0)\) and hence, \(x_0 \in C(m)\). This leads to
-    \begin{align*}
-      d_{C(m)}(x_0, x_m)
-      & \leq d_{C(m)}(x_0, x_{m-1}) + d_{C(m)}(x_{m-1}, x_m)\\
-      & \leq l(c') + d_{C(m)}(x_{m-1}, x_m) \quad \text{by inductive hypothesis}\\
-      & \leq l(c),
-    \end{align*}
-    proving the claim.
-  \end{description}
+  These \(m\)-strings are in \(1:1\)-correspondence with piecwiese geodesic segments in \(K\) and thus we can use the two notions interchangeable. We will prove the claim: If \(l(s) < \epsilon(x_0)\), then there exists a cube \(C \subset K\) with \(x_0, x_m \in C\) and such that \(d_C(x_0, x_m) \leq l(s)\). We proceed by induction. For \(m=1\) the claim is true by definition. Assume that the claim is true for some \(m \in \N\) and let \(s = (x_0, \dots, x_{m+1})\) be an \((m+1)\)-string and \(s'\) the \(m\)-string consisting of the first \(m+1\) entries. By definition there exists a cube \(C\) such that \(x_m, x_{m+1} \in C\). Furthermore, \(d(x_0, x_m) \leq l(s') \leq l(s) < \epsilon(x_0)\). Hence, \(x_m \in \st(x_0)\). So there exists a second cube \(\tilde C\) that contains \(x_m\) in its interior. Also \(\tilde C \cap C\) is not empty and hence also a cube. Since \(x_m\) is in the interior of \(\tilde C\) we have \(\tilde C \subset C\) and hence \(x_0 \in C\). We have
+  \begin{align*}
+    d_C(x_0, x_{m+1}) \leq d_C(x_0, x_m) + d_C(x_m x_{m+1}) \stackrel{\ast}{\leq} l(s') + d_C(x_m + x_{m+1}) = l(s),
+  \end{align*}
+  which is what we wanted to show. For the inequality \(\ast\), we use the induction hypothesis together with the observation that if the inequality is true for any cube containing \(x_0\) and \(x_m\), then it is true for all cubes containing both points.
+
+  So we see that for all pairs \(x,y \in K\) with \(d(x,y) < \epsilon(x)\), we find a cube \(C\) containing both and \(d_C(x,y) \leq d(x,y)\). However, by construction of \(d\) this already implies equality. For \(d_C\) we already know that it is a metric on its cube. So \(d(x,y) = 0\) implies \(x = y\).
 \end{proof}
 
-\begin{cor}
-  The above defined distance \(d\) is a metric on \(X\).
-\end{cor}
+In the following is a short list of deeper results about cube complexes, which we will need in the following, but which we will not be able to prove. The interested reader may find the results in~\cite[Appendices A, B]{MR3029427}. For the finite dimensional case we refer to~\cite[Sec. I.7, II.5]{MR1744486}.
 
-\begin{proof}
-  The symmetry and triangle inequality are clear from the definition. Now, assume there are \(x,y\in X\) with \(d(x,y) = 0\). The, by the previous lemma, we find a cube \(C \subset X\) containing both \(x\) and \(y\), such that
-  \begin{align*}
-    0 = d(x,y) = d_C(x,y).
-  \end{align*}
-  Since \(d_C\) defines a metric on \(C\), we have \(x = y\).
-\end{proof}
+\begin{thm}[{\cite[Thm A.6]{MR3029427}}, {\cite[Thm I.7.50]{MR1744486}}]
+  A cube complex is complete if and only if every chain of ascending cubes is finite.
+\end{thm}
 
-\begin{defin}[Link]
-  \(v \in X\) is called a \emph{vertex}, if any (and hence every) preiamge is the vertex of a cube. For each such vertex \(v\) and a preimage \(\tilde v \in \tilde C\), we define
-  \begin{align*}
-    S(\tilde v) \coloneqq \tilde C \cap S(\tilde v, \text{\nfrac 1/3}),
-  \end{align*}
-  where \(S(\tilde v, \text{\nfrac 1/3})\) denotes the Euclidean sphere around \(\tilde v\) with radius {\nfrac 1/3}. If \(\dim C = n\), then \(S(\tilde v)\) has the structure of a \((n-1)\)-dimensional simplex, where the vertices are given by the intersection points of the edges of \(\tilde C\) containing \(\tilde v\).
-
-  The \emph{link} of \(v\) is defined by
-  \begin{align*}
-    \lk(v) \coloneqq \quot{\amalg \left\{S(\tilde v) \relmid \tilde v \in \pi^{-1}(v)\right\}}{\mathcal{F}}.
-  \end{align*}
-\end{defin}
-
-\begin{rem}
-  \(\lk(v)\) has always the structure of a CW complex. However, as can be seen from the following examples, it has \emph{not} always the structure of a simplicial complex.
-\end{rem}
-
-\begin{bsp}
-\todo{link examples with diagrams}  
-\end{bsp}
 
 \begin{defin}[Flag complex]
-  A \emph{flag complex} \(X\) is a simplicial complex, such that for each complete subgraph of its 1-skeleton, there is a simplex in \(X\), such that the subgraph is its 1-skeleton.
+  A \emph{flag complex} \(K\) is a simplicial complex, such that each complete subgraph of its 1-skeleton of \(n\) vertices, spans a \(n-1\) simplex in \(K\).
 \end{defin}
 
-\begin{defin}[CAT(0) cube complex]
-  A cube complex \(X\) is called a \emph{CAT(0) cube complex}, if \(X\) is simply connected and if \(\lk(v)\) is a flag complex for each vertex \(v \in X^0\). 
-\end{defin}
+\begin{thm}[Gromov's link condition, {\cite[Thm B.8]{MR3029427}}, {\cite[Thm II.5.20]{MR1744486}}]
+  A cube complex \(K\) is non-positively curved if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex.
 
-\begin{rem}
-  This is not the standard definition of CAT(0) for arbitrary geodesic spaces. However, one can show that in the case of cube complexes these two definitions are equivalent:
-\end{rem}
-
-\begin{thm}[Gromov's link condition,~\cite{MR919829}]
-  
+  A cube complex \(K\) is CAT(0) if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex and \(K\) is simply connected.
 \end{thm}
 
 \begin{defin}[Isomorphisms of CAT(0) cube complexes]
@@ -206,13 +96,16 @@ From now on, if not otherwise specified, all cells \(C\) will be taken to be cub
   \(\Aut(X)\) will denote the automorphism group of a CAT(0) cube complex \(X\).
 \end{defin}
 
+\begin{prop}
+  \label{prop:covering}
+  Let \(p \colon \tilde X \to X\) be a covering map between topological spaces. If \(X\) is a cube complex, then \(\tilde X\) can be given a cube complex structure, such that \(p\) becomes a local isometry sending cubes to cubes.
+\end{prop}
+\todo{proof the stuff about covering spaces}
+
 \todo{enter all standard assumption and notations here}
 \begin{rem}
   From now on we will assume that all our complexes are connected and finite dimensional.
 \end{rem}
-
-\subsection{Halfspaces}
-\label{sec:halfspaces}
 
 
 
