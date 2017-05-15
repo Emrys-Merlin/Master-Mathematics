@@ -3,30 +3,22 @@
 
 \todo{Write definition of cube complex and the like}
 \todo{border of cubes}
+\todo{write something about topology}
 
-\begin{defin}[Cubes, Faces \& Stars]
-  Let \(C^k \coloneqq {[0,1]}^k\) denote the \emph{standard cube} in \(\R^k\) together with the induced metric. A \emph{face} of a standard cube \(C^k\) is a subset \(F\), where
-  \begin{align*}
-    F \coloneqq \left\{(x_1, \dots, x_k) \in C^k \,\middle |\, x_{i_1} = \delta_1, \dots, x_{i_j}  = \delta_j\right\},
-  \end{align*}
-  \(\delta_i \in \{0, 1\}\), \(j \in \{0, \dots, k\}\) and \(i_m \neq i_l\), if \(m \neq l\). \(F\) is called a \emph{proper face}, if \(F \neq C^k\). Clearly, faces are isometric to standard cubes (possibly of lower dimension). I will use \(F \leq C^k\) to denote faces and \(F < C^k\) to denote proper faces.
-
-  Any standard cube \(C^l\), \(l < k\), can be embedded as a face into \(C^k\). We will conveniently confuse \(C^l\) with its image. Furthermore, for any face \(F \leq C^k\), we will denote by \(\mathring{F}\) its \emph{interior} when identified with the standard cube \(C^l \subset \R^l\) (i.\,e.\ \emph{not} its interior as a subset of \(\R^k\), which would be empty for all \(l < k\)). If \(l = 0\), then \(\mathring{F} = F\).
-
-  For any \(x \in C^k\), we define the \emph{(open) star} of \(x\) by
-  \begin{align*}
-    \st(x) & \coloneqq \bigcup\,\left\{\mathring{F} \relmid x \in F \leq C^k\right\}.
-  \end{align*}
+\begin{defin}
+  \(K\) is called a \emph{cube complex}, if it is a \(M_0\)-polyhedral complex, where every cell \(C\) is given by a unit cube of arbitrary dimension.
 \end{defin}
+
+From now on, if not otherwise specified, all cells \(C\) will be taken to be cubes.
 
 \begin{lemma}
   \label{lemma:cube-dist}
-  Let \(x \in \mathring{F} \subseteq F \leq C^k, k > 0,\) with \(\dim F \eqqcolon l\). Then
+  Let \(x \leq C\) a cell and \(\dim C > 0\). Then
   \begin{align*}
-    d(x, C^k - \st(x)) =
+    d(x, C - \st(x)) =
     \begin{cases}
-      1 & \text{if } l = 0\\
-      d(x, \partial F) & \text{else}
+      1 & \text{if } \dim \supp(x) = 0\\
+      d(x, \partial \supp(x)) & \text{else}
     \end{cases}
                          .
   \end{align*}
