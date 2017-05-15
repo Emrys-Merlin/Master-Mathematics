@@ -1,0 +1,54 @@
+\subsection{Halfspaces}
+\label{sec:halfspaces}
+
+This section follows closely the lecture notes by \textcite{Rolli2012}.
+
+\begin{defin}
+  Let \(X\) be a cube complex
+  \begin{itemize}
+  \item 0-, 1- and 2-dimensional cubes are respectively called \emph{vertices, edges and squares}.
+  \item A \emph{square relation} on the set of edges is given by \(e \sim e'\) if and only if ther is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and such that any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). If we allow for an edge to be opposite to itself, this yields an equivalence relation of the set of all edges.
+  \item A midcube \(M \subset X\) is \emph{transversal} to a square relation class \(E = [e]_\sim\), write \(M \pitchfork E\), if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
+    \todo{define midcubes}
+  \item The \emph{halfplane} defined by \(E\) is given by
+    \begin{align*}
+      \mathfrak{\hat h}(E) \coloneqq \bigcup_{M \pitchfork E} M \subset X.
+    \end{align*}
+    If the equivalence class \(E\) is not important, we will often write \(\mathfrak{\hat h}\) instead of \(\mathfrak{\hat h}(E)\).
+  \end{itemize}
+\end{defin}
+
+\begin{prop}(Convexity of halfspaces)
+  Let \(X\) be a CAT(0) cube complex and \(\halfplane{h} \subset X\) be a halfplane. Then \(\halfplane{h}\) is closed and convex. Furthermore, if \(\halfplane{h}\) contains at least two points of the image of any geodesix \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{h}\).
+\end{prop}
+
+\begin{cor}
+  Let \(X\) be a CAT(0) cube complex. Every \(\halfspace{h} \subset X\) is itself a CAT(0) cube complex.
+\end{cor}
+
+\begin{thm}[Separation]
+  Any halfplane \(\halfplane{h}\) separates \(X\) in exactly two connected components.
+\end{thm}
+
+\begin{defin}
+  The two connected components of \(X \setminus \halfplane{h}\) are called \emph{halfspaes}. If \(\halfspace{h} \subset X \setminus \halfplane{h}\) is one of these halfspaces, then \(\halfspace{h}^c\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \dot \cup\, \halfplane{h}\, \dot \cup\, \halfspace{h}^c \).
+\end{defin}
+
+\begin{thm}[Intersection]
+  \begin{enumerate}
+  \item Let \(\halfplane{h}_1, \dots, \halfplane{h}_n\) be halfplanes with with pairwise non-trivial intersection. Then
+    \begin{align*}
+      \bigcap_{i=1}^n \halfplane{h}_i \neq \varnothing.
+    \end{align*}
+  \item Let \(\halfspace{h}_1, \dots, \halfspace{h}_n\) be halfspaces with pairwise non-trivial intersection. Then
+    \begin{align*}
+      \bigcap_{i=1}^n \halfspace{h}_i \neq \varnothing.
+    \end{align*}
+    In particular, the intersection contains a vertex of \(X\).
+  \end{enumerate}
+\end{thm}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:

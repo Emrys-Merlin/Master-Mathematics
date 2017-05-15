@@ -71,7 +71,7 @@
 %amsthm
 %\theoremstyle{plain}
 \theoremstyle{definition}
-\newtheorem{thm}{Theorem}[section]
+\newtheorem{thm}{Theorem}[subsection]
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{cor}[thm]{Corollary}
@@ -126,6 +126,9 @@
 \NewDocumentCommand\St{}{\operatorname{St}}
 
 \NewDocumentCommand\relmid{}{\,\middle|\,}
+
+\NewDocumentCommand\halfplane{m}{\mathfrak{\hat #1}}
+\NewDocumentCommand\halfspace{m}{\mathfrak{#1}}
 
 %%% Local Variables:
 %%% mode: latex
