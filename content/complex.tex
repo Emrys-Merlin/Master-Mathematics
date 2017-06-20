@@ -182,7 +182,16 @@ In the following is a short list of deeper results about cube complexes, which w
   \[
     A \coloneqq \{z \in \supp(x) \mid (p_{\lambda', f'} \circ \phi)(z) = p_{\lambda, f}(z)\}.
   \]
-  Then \(A \neq \varnothing\) as \(x\) lies in \(A\). Also, \(A\) is closed by continuity. Lastly consider any \(z \in A\). Then there exists a neighborhood \(U\) of \(p_{\lambda, f}(z)\) such that \(p|_U\) is a homeomorphism on its image. Let \(w \in V \coloneqq p_{\lambda, f}^{-1}(U)\). Then
+  Then \(A \neq \varnothing\) as \(x\) lies in \(A\). Next consider a sequence \((z_n)_{n \in \N} \subset A\) with \(\lim_{n \to \infty} z_n = z \in \supp(x)\). Then \(p_\lambda(z_n) = (p_{\lambda'} \circ \phi)(z_n)\) by construction and hence the same is true for \(z\) by continuity (in a metric space). However, then we find a open neighborhood \(U\) of \(p_{\lambda,f}(z)\) such that \(p|_U\) is a homeomorphism on its image and hence we have
+  \begin{align*}
+    p_{\lambda,f}(z)
+    & = ((p|_U)^{-1} \circ p \circ p_{\lambda,f})(z)\\
+    & = ((p|_U)^{-1} \circ p_\lambda)(z)\\
+    & = ((p|_U)^{-1} \circ p_{\lambda'} \circ \phi)(z)\\
+    & = ((p|_U)^{-1} \circ p \circ p_{\lambda',f'} \circ \phi)(z)\\
+    & = (p_{\lambda', f'} \circ)(z).
+  \end{align*}
+  This shows that \(A\) is closed. Lastly consider any \(z \in A\). Then there exists a neighborhood \(U\) of \(p_{\lambda, f}(z)\) such that \(p|_U\) is a homeomorphism on its image. Let \(w \in V \coloneqq p_{\lambda, f}^{-1}(U)\). Then
   \begin{align*}
     p_{\lambda,f}(w)
     & = ((p|_U)^{-1} \circ p \circ p_{\lambda,f})(w)\\
