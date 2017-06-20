@@ -122,7 +122,7 @@ This section is concerned with basic metric properties of spaces and their conne
 
     \(K\) is called an \emph{\(M_\kappa\)-polyhedral complex}, if
     \begin{enumerate}
-    \item \(p_\lambda |_{\mathring F}\) is injective for each face \(F \leq C_\lambda\) and
+    \item \(p_\lambda\) is injective and
     \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\), such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
     \end{enumerate}
   \item \(C \subset K\) is called an \emph{\(n\)-dimensional cell}, if it is the image of an \(n\)-dimensional face \(F \leq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\).
@@ -144,7 +144,11 @@ This section is concerned with basic metric properties of spaces and their conne
 \end{defin}
 
 \begin{rem}
-  \(\lk(x, K)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(K\).
+  \begin{itemize}
+  \item \(\lk(x, K)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(K\).
+  \item The definition of a convex polyhedral complex is not the standard one given (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). Normally, one is satisfied, if the \(p_\lambda\) are injective on the interior of each face separately. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence I will adopt it from the start. Alternatively, it is always possible to go over to the first barycentric subdivision to achieve injectivity of all \(p_\lambda\).
+  \item The above definition ascertains that two cells either interesect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes. 
+  \end{itemize}
 \end{rem}
 
 \begin{bsp}
