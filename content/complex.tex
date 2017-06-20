@@ -90,11 +90,48 @@ In the following is a short list of deeper results about cube complexes, which w
   A cube complex \(K\) is CAT(0) if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex and \(K\) is simply connected.
 \end{thm}
 
-\begin{defin}[Isomorphisms of CAT(0) cube complexes]
-  Let \(X,Y\) be CAT(0) cube complexes. \(f\colon X \to Y\) is called an \emph{isomorphism of CAT(0) cube complexes} (or short: an isomorphism), if \(f\) is an isometry and if \(f(C) \subset Y\) is a cube, whenever \(C \subset X\) is a cube.
-
-  \(\Aut(X)\) will denote the automorphism group of a CAT(0) cube complex \(X\).
+\begin{defin}[Morphisms of cube complexes]
+  Let \(X,Y\) be cube complexes. \(f\colon X \to Y\) is called an \emph{morphism of cube complexes} or a \emph{combinatorial map}, if
+  \begin{enumerate}
+  \item each vertex \(v \in X^{(0)}\) is mapped to a vertex \(f(v) \in Y^{(0)}\),
+  \item each cube \(C \subset X\) is mapped to a cube \(f(C) \subset Y\) and
+  \item the induced map given by
+    \[
+      f_{\lambda, \omega}\colon C_\lambda \xrightarrow{p_{X,\lambda}} C \xrightarrow{f} f(C) \xrightarrow{p^{-1}_{Y,\omega}} C_\omega
+    \]
+    can be represented as \(f_{\lambda,\omega}(x) = \sum_{i=1}^n a_i f(v_i)\), where \(v_1, \dots, v_n\) are the vertices of \(C_\lambda\) and \(x = \sum_{i=1}^n a_i v_i\) is an arbitrary element of \(C_\lambda\) in its convex representation.
+  \end{enumerate}
+  \(\Aut(X)\) will denote the automorphism group of a cube complex \(X\).
 \end{defin}
+
+\begin{rem}
+  The above definition of a combinatorial map is completely analogous to the one of a simplicial map (confere for example~\cite{Singer}).
+\end{rem}
+
+\begin{lemma}
+  After possibly rotating \(C_\lambda \subset \R^n\) and \(C_\omega \subset \R^m\) \(f_{\lambda, \omega}\) is induced by the restriction of the natural projection from \(\R^n\) to \(\R^m\). In particular we have \(n \geq m\).
+\end{lemma}
+
+\begin{cor}
+  \(f_C\colon C \to Y\) is distance decreasing for each cube \(C \subset X\).
+\end{cor}
+
+\begin{prop}
+  Let \(f\colon X \to Y\) be a combinatorial map. Then \(f\) is distance decreasing,i.\,e.\ \(d_Y(f(x), f(y)) \leq d_X(x,y)\) for all \(x,y \in X\). In particular a combinatorial isomorphism is an isometry.
+\end{prop}
+
+\begin{proof}
+  By the combinatorial structure of \(f\) each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). Furthermore, each segment of \(c\) lying in a cube is shortened by the previous corollary. Hence, \(l(f \circ c) \leq l(c)\) and thus
+  \begin{align*}
+    d_X(x,y)
+    & = \inf\left\{l(c) \relmid c \in \operatorname{PL}(x,y)\right\}\\
+    & \geq \inf\left\{l(f \circ c) \relmid c \in \operatorname{PL}(x,y)\right\}\\
+    & \geq \inf\left\{l(c) \relmid c \in \operatorname{PL}(f(x), f(y))\right\}\\
+    & = d_Y(x,y),
+  \end{align*}
+  which is the desired result.
+  \todo{define PL(x,y)}
+\end{proof}
 
 \begin{prop}
   \label{prop:covering}
