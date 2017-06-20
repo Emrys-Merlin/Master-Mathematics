@@ -134,7 +134,7 @@ In the following is a short list of deeper results about cube complexes, which w
 \end{proof}
 
 \begin{lemma}
-  Let \(f\colon X \to Y\) be a combinatorial map and a local homeomorphism between finite dimensional cube complexes. Then \(f|_C\colon C \to f(C)\) is an isometry for every cube \(C \subset X\).
+  Let \(f\colon X \to Y\) be a combinatorial map and a local homeomorphism between cube complexes. Then \(f|_C\colon C \to f(C)\) is an isometry for every cube \(C \subset X\) and \(f\) is a local isometry.
 \end{lemma}
 
 \begin{proof}
@@ -146,7 +146,7 @@ In the following is a short list of deeper results about cube complexes, which w
   \[
     y \coloneqq \sum_i b_i v_i \quad \text{with } b_i = \begin{cases}a_1 + \epsilon & i = 1\\a_2 - \epsilon & i = 2\\ a_i & \text{else}\end{cases}.
   \]
-  Since \(U\) is open and \(x \in \mathring{C}\), we can choose \(epsilon\) small enough such that \(y \in U \cap C\), but by construction we have \(f(y) = f(x)\), which is a contradiction to the fact that \(f|_U\) is homeomorphism. Hence the \(f(v_i)\) need to be pairwise differnt, but this is already sufficient to show that \(f|_C\) is an isometry.
+  Since \(U\) is open and \(x \in \mathring{C}\), we can choose \(\epsilon\) small enough such that \(y \in U \cap C\), but by construction we have \(f(y) = f(x)\), which is a contradiction to the fact that \(f|_U\) is homeomorphism. Hence the \(f(v_i)\) need to be pairwise differnt, but this is already sufficient to show that \(f|_C\) is an isometry.
 
   For the second claim consider \(z \in X\) and \(0 < \epsilon < \epsilon(z)\) (as defined in Definition~\ref{def:epsilon}), such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
   Assume there is no common cube containing both \(x\) and \(y\).
@@ -169,9 +169,36 @@ In the following is a short list of deeper results about cube complexes, which w
 
 \begin{prop}
   \label{prop:covering}
-  Let \(p \colon \tilde X \to X\) be a covering map between topological spaces. If \(X\) is a cube complex, then \(\tilde X\) can be given a cube complex structure, such that \(p\) becomes a combinatorial map. In particular, with this structure on \(\tilde X\), \(p\) becomes a local isometry.
+  Let \(p \colon \tilde X \to X\) be a covering map between topological spaces and let \(\tilde X\) be connected. If \(X\) is a cube complex, then \(\tilde X\) can be given a cube complex structure, such that \(p\) becomes a combinatorial map. In particular, with this structure on \(\tilde X\), \(p\) becomes a local isometry.
 \end{prop}
-\todo{proof the stuff about covering spaces}
+
+\begin{proof}
+  Consider the embeddings \(p_\lambda\colon C_\lambda \to X\), \(v_\lambda \coloneqq p_\lambda(0)\) and \(F_\lambda \coloneqq p^{-1}(\{v_\lambda\})\). Then for each \(f \in F_\lambda\) we yield a unique lift \(p_{\lambda, f}\colon C_\lambda \to \tilde X\).
+  Doing this for each \(\lambda\) we construct a map
+  \[
+    \pi \colon \bigcup_{\lambda \in \Lambda} \bigcup_{f \in F_{\lambda}} C_\lambda \times {\lambda, f} \to \tilde X.
+  \]
+  This \(\pi\) is surjective and open. Additionally, all the lifted maps \(p_{\lambda, f}\) are injective. So as a last step to show that this \(\pi\) defines a cube complex structure on \(\tilde X\) one needs to see that the gluing is realized by isometries. So take \(x \in C_\lambda\) and \(y \in C_{\lambda'}\) such that \(p_{\lambda,f}(x) = p_{\lambda', f'}(y)\). This also implies that \(p_\lambda(x) = p_{\lambda'}(y)\). Since \(X\) is a cube complex we find an isometry \(\phi\colon \supp(x) \to \supp(y)\) such that \(p_{\lambda'} \circ \phi  = p_\lambda\). Consider
+  \[
+    A \coloneqq \{z \in \supp(x) \mid (p_{\lambda', f'} \circ \phi)(z) = p_{\lambda, f}(z)\}.
+  \]
+  Then \(A \neq \varnothing\) as \(x\) lies in \(A\). Also, \(A\) is closed by continuity. Lastly consider any \(z \in A\). Then there exists a neighborhood \(U\) of \(p_{\lambda, f}(z)\) such that \(p|_U\) is a homeomorphism on its image. Let \(w \in V \coloneqq p_{\lambda, f}^{-1}(U)\). Then
+  \begin{align*}
+    p_{\lambda,f}(w)
+    & = ((p|_U)^{-1} \circ p \circ p_{\lambda,f})(w)\\
+    & = ((p|_U)^{-1} \circ p_\lambda)(w)\\
+    & = ((p|_U)^{-1} \circ p_{\lambda'} \circ \phi)(w)\\
+    & = ((p|_U)^{-1} \circ p \circ p_{\lambda', f'} \circ \phi)(w)\\
+    & = (p_{\lambda', f'} \circ \phi)(w)
+  \end{align*}
+  and \(A\) is open. \(\supp(x)\) is connected so this implies \(A = \supp(x)\) and thus the gluing is indeed realized by isometries.
+
+  With this \(\tilde X\) is a cube complex and by construction \(p\) is a combinatorial map. Together with the previous lemma this yields that \(p\) is a local isometry.
+\end{proof}
+
+\begin{cor}
+  With the notation of the previos proposition, it holds that \(\dim X = \dim \tilde X\).
+\end{cor}
 
 \todo{enter all standard assumption and notations here}
 \begin{rem}
