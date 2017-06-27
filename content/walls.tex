@@ -1,0 +1,85 @@
+
+\section{Walled spaces, Pocsets and their connection to CAT(0) cube complexes}
+\label{sec:walls}
+
+There are a few equivalent notions flying around when it comes to CAT(0) cube complexes. The two main ones I am interested for now are walled spaces and pocsets. As shall follow below, it can be shown that under mild restrictions these objects stand in a one to one correspondence (up to isomorphism) with CAT(0) cube complexes. In fact, we are talking about category equivalences between the categories of walled spaces, pocsets and CAT(0) cube complexes. The exact definition of these categories will follow suite.
+
+One interesting implication of this equivalence is, that it is rather easy to find walled spaces and a group action on it and by the construction of the above functors there will be an action of the same group on a CAT(0) cube complex. Thus this construction gives rise to quite a few example of interesting groups, which can be understood via the complexes.
+
+My exposition will loosely follow the treatise of~\textcite{Nica2004}, \textcite{MR1347406} and \textcite{Roller1999}.
+
+\subsection{The categories}
+\label{sec:cat}
+
+\begin{defin}[Pocset, {\cite{Roller1999}}]
+  \begin{enumerate}
+  \item A \emph{pocset} is a triple \((P, \subset, \ast)\) consisting of a set \(P\) a partial ordering \(\subset\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, I will often drop the triple and will only write \(A\) when talking about the pocset. \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) \(A \subset B\) implies that \(f(A) \subset f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. The pocsets together with these morphisms is what I call the category of pocsets {\textbf{Poc}}.
+  \item A pocset \(P\) is called \emph{discrete}, if for any two \(A, B \in P\) the interval
+    \[
+      [A,B] = \{C \in P \mid A \subset C \subset B\}
+    \]
+    is finite.
+  \item Two elements \(A,B\) of a pocset \(P\) are called \emph{nested}, if they satsify \(A \subset B\), \(A^\ast \subset B\), \(A \subset B^\ast\) or \(A^\ast \subset B^\ast\). Otherwise they are called \emph{transverse}.
+  \item A pocset \(P\) is called \emph{finite width}, if there exists a constant \(N \in \N\) such that the cardinality of any subset of transverse elements of \(P\) is bounded from above by \(N\).
+  \end{enumerate}
+  We will mostly be interested in the subcategory of \emph{discrete pocsets} \textbf{dPoc}.
+\end{defin}
+
+\begin{defin}[Walled space, {\cite{Nica2004}}]
+  Let \(X\) be a set.
+  \begin{enumerate}
+  \item A \emph{wall} is a partition of \(X\) in two subsets called \emph{halfspaces}. I will denote these two halfspaces by \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\) and the wall by \(\mathfrak{\hat h} \coloneqq \{\mathfrak{h}, \mathfrak{h}^\ast\}\).
+  \item The pair \(X, \mathcal{\hat H}\) is called a \emph{walled space}, if \(\mathcal{\hat H}\) is a set of walls containing the wall \(\{\varnothing, X\}\) and if any two distinct points \(x,y \in X\) are separated by a finite, non-zero number of walls, i.\,e.
+    \[
+      W(x,y) := \left\{\mathfrak{\hat h} \in \mathcal{\hat H} \relmid (x \in \mathfrak{h} \wedge y \in \mathfrak{h}^\ast) \vee (y \in \mathfrak{h} \wedge x \in \mathfrak{h}^\ast)\right\}
+    \]
+    is finite and non-empty. By \(\mathcal{H}(X)\) I will denote the set of all halfspaces of \(X\) and by \(\mathcal{\hat H}(X)\) the set of all walls of \(X\). If no confusion can arise I will often denote the set \(X\) as the walled space. Walled spaces together with these morphisms make up the category of walled spaces \textbf{WallS}.
+  \item A map \(f: X \to X'\), between two walled spaces \(X\) and \(X'\), is called a \emph{morphism of walled spaces}, if for all \(\mathfrak{h} \in \mathcal{H}(X')\) there holds \(f^{-1}(\mathfrak{h}) \in \mathcal{H}(X)\).
+  \item The map
+    \[
+      d_W\colon X \times X \to \R,\ d_W(x,y) \coloneqq \# W(x,y)
+    \]
+    is a metric on \(X\).
+  \end{enumerate}
+\end{defin}
+
+\begin{rem}
+  The above definition is non-standard in the sense that often two points are allowed to not be separated by a wall. However, we can always go over to the quotient identifying all points which are not separated leading to a walled space in the above sense. The advantage of the above definition is that we are immediately equipped with a metric on the space \(X\).
+\end{rem}
+
+\begin{prop}
+  \begin{align*}
+    \mathcal{H} \colon {\normalfont \textbf{WallS}} & \to {\normalfont \textbf{dPoc}}\\
+    X & \mapsto \mathcal{H}(X)\\
+    (f\colon X \to X') & \mapsto (f^{-1}\colon \mathcal{H}(X') \to \mathcal{H}(X))
+  \end{align*}
+  is a contravariant functor.
+\end{prop}
+\todo{check that this is actually true. Might work for contravariant but not for covariant.}
+
+\subsection{The construction}
+\label{sec:construction}
+
+In this section I want to present the construction of the functor from the category of walled spaces to the category of CAT(0) cube complexes.
+
+\begin{thm}
+  \label{thn:construction}
+  There exists a covariant functor \(\mathcal{K} \colon \cat{WallS} \to \cat{CCC}\), which is called the \emph{cubulation of \(X\)}, such that any walled space \(X\) equipped with the wall metric is isometric to the zero skeleton \(\mathcal{K}X^{(0)}\) equipped with the metric induced by the metrig graph \(\mathcal{K}X^{(1)}\). Furthermore there is a one to one correspondence between \(\mathcal{\hat H}(X)\) and \(\mathcal{\hat H}(\mathcal{K}X)\).
+\end{thm}
+
+\begin{defin}[Ultrafilter]
+  Let \((A, \subset, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). I will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\). I denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be toplogized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem\todo{cite something}) \(P(A)\) becomes a compact topological space. A basis of toplogy is given by the sets of the form
+\[
+  \mathcal{U}(a_1,\dots, a_n) \coloneqq \{\alpha \in P(A) \mid a_1, \dots, a_n \in \alpha\},
+\]
+where \(a_1,\dots, a_n \in A\) are arbitrary elements.
+\end{defin}
+
+\begin{proof}
+  
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:
