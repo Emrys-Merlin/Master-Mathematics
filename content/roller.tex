@@ -1,0 +1,41 @@
+\section{The Roller boundary}
+\label{sec:roller}
+
+\begin{prop}
+  \(\mathcal{U}(A) \subset P(A)\) is a compact space.
+\end{prop}
+
+\begin{proof}
+  Since \(P(A)\) is already compact it suffices to show, that \(\mathcal{U}(A)\) is closed in \(P(A)\). However, the complement
+  \begin{align*}
+    P(A) \setminus \mathcal{U}(A)
+    & = \{\alpha \in P(A) \mid \exists a, b \in A\colon a \in \alpha,\ b \notin \alpha,\ a \subset b\}\\
+    & = \bigcup_{a \in A} \{\alpha \in P(A) \mid a \in \alpha,\ \exists b \in A\colon a \subset b,\ b \notin \alpha\}\\
+    & = \bigcup_{a \in A} \{\alpha \in P(A) \mid a \in \alpha,\ \exists b \in A\colon a \subset b,\ b^\ast \in \alpha\}\\
+    & = \bigcup_{a \in A} \bigcup_{a \subset b}\{\alpha \in P(A) \mid a \in \alpha,\ b^\ast \in \alpha\}\\
+    & = \bigcup_{a \in A} \bigcup_{a \subset b}\mathcal{U}(a, b^\ast)
+  \end{align*}
+  is open, which proves the claim.
+\end{proof}
+
+\begin{defin}
+  A ultrafilter \(\alpha\) satisfies the \emph{descending chain condition}, if all descending chains in \(\alpha\) become stationary.
+\end{defin}
+
+\begin{thm}
+  Let \(X\) be a CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathfrak{H}, \subset, ^\ast)\).
+  \begin{enumerate}
+  \item For every vertex \(v \in V(X)\) we have that
+    \[
+      \alpha_v \coloneqq \{\mathfrak{h} \in \mathfrak{H}(X) \mid v \in \mathfrak{h}\}
+    \]
+    is an ultrafilter. Furthermore, it satisfies the descending chain condition and ultrafilter satisfying the descending chain condition arises in this way.
+  \item The map \(V(X) \to \mathcal{U}(X) \coloneqq \mathcal{U}(\mathfrak{H}),\ v \mapsto \alpha_v\) is injective, continuous and the image lies dense in \(\mathcal{U}(X)\). 
+  \item If \(X\) is locally finite, then the image of \(V(X)\) is open in \(\mathcal{U}(X)\).
+  \end{enumerate}
+\end{thm}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:
