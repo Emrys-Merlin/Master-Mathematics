@@ -68,21 +68,35 @@ In this section I want to present the construction of the functor from the categ
 \end{thm}
 
 \begin{defin}[Ultrafilter]
-  Let \((A, \subset, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). I will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\). I denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be toplogized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem\todo{cite something}) \(P(A)\) becomes a compact topological space. A basis of toplogy is given by the sets of the form
+  Let \((A, \subset, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). I will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\). I denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be topologized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem\todo{cite something}) \(P(A)\) becomes a compact topological space. A basis of toplogy is given by the sets of the form
 \[
   \mathcal{U}(a_1,\dots, a_n) \coloneqq \{\alpha \in P(A) \mid a_1, \dots, a_n \in \alpha\},
 \]
 where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{defin}
 
-For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq # \{ \matfrak{h} \in \mathcal{H}(X)\mid \mathcal{h} \in \alpha \wedge \mathcal{h}^\ast \in \beta\}\). This is not a metric in the ordinary sense on \(\mathcal{U}(X)\) because it might take infinity as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).
-
 \begin{defin}
-  For any \(x \in X\), I define \(\alpha_x \in \mathfrak{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
+  Let \(\alpha\) be an ultrafilter and \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). Then \(\alpha; \mathfrak{h}_1, \dots, \mathfrak{h}_n \in P(A)\) is defined by replacing each \(\mathfrak{h}_i\) in \(\alpha\) by \(\mathfrak{h_i}^\ast\).
 \end{defin}
 
 \begin{lemma}
-Two ultrafilters \(\alpha\) and \(\beta\) are connected in \(G\) if and only if \(d(\alpha, \beta) < \inft\). In particular, all principla ultrafilters lie in one connected component of \(G\), denoted by \(\mathcal{C}^1X\). 
+  Let \(\alpha\) be an ultrafilter and \(\mathfrak{h} \in \alpha\). Then \((\alpha;\mathfrak{h})\) is an ultrafilter if and only if \(\mathfrak{h}\) is minimal, i.\,e.\ if \(\mathfrak{h}' \in \alpha\) satisfies \(\mathfrak{h'} \subset \mathfrak{h}\) then \(\mathfrak{h'} = \mathfrak{h}\) holds.
+\end{lemma}
+
+\begin{proof}
+  First, consider the case that \(\beta \coloneqq (\alpha, \mathfrak{h})\) is an ultrafilter. Let \(\mathfrak{h}' \in \alpha\) such that \(\mathfrak{h}' \subset \mathfrak{h}\). Equivalently this means \(\mathfrak{h}^\ast \subset \mathfrak{h}'^\ast\). Since \(\beta\) is an ultrafilter, it follows that \(\mathfrak{h}'^\ast \in \beta\). However, this is only possible if \(\mathfrak{h} = \mathfrak{h}'\), since otherwise \(\beta\) would have to contain both \(\mathfrak{h}' \) and \(\mathfrak{h}'^\ast\).
+
+  Now, consider that \(\mathfrak{h} \in \alpha\) is minimal. Let \(\mathfrak{h}' \in \beta\) and \(\mathfrak{\tilde h}\) be any halfspace with \(\mathfrak{h}' \subset \mathfrak{\tilde h}\). If \(\mathfrak{h}' \neq \mathfrak{h}\) then \(\mathfrak{h}' \in \alpha \) and hence \(\mathfrak{\tilde h} \in \alpha\). Additionally, \(\mathfrak{\tilde h} \neq \mathfrak{h}\) and it follows that \(\mathfrak{\tilde h} \in \beta\). If \(\mathfrak{h}' = \mathfrak{h}\) then it follows that \(\mathfrak{\tilde h}^\ast \subset \mathfrak{h}\) and thus we have equality. Showing again that \(\mathfrak{\tilde h} = \mathfrak{h}^\ast \in \beta\).
+\end{proof}
+
+For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a metric in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).
+
+\begin{defin}
+  For any \(x \in X\), I define \(\alpha_x \in \mathcal{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
+\end{defin}
+
+\begin{lemma}
+Two ultrafilters \(\alpha\) and \(\beta\) are connected in \(G\) if and only if \(d(\alpha, \beta) < \infty\). In particular, all principla ultrafilters lie in one connected component of \(G\), denoted by \(\mathcal{C}^1X\). 
 \end{lemma}
 
 \begin{rem}
@@ -95,15 +109,27 @@ Two ultrafilters \(\alpha\) and \(\beta\) are connected in \(G\) if and only if 
 
 Naturally, this graph shall be the 1-skeleton of the to be constructed cube complex. Hence, it should be possible to embed \(X\) into it and this should also be in accordance with the path metric, we defined above.
 
-\begin{lemma}
+\begin{prop}
   \(\alpha\colon X \to \mathcal{C}^1X,\ x \mapsto \alpha_x\) is an isometric embedding.
-\end{lemma}
+\end{prop}
 
 \begin{proof}
   \(\alpha\) is a well-defined map. Next, consider \(x,y \in X\) with \(d_W(x,y) = n\). Then \(x\) and \(y\) are separated by \(n\) walls. Hence, \(\alpha_x\) and \(\alpha_y\) differ in \(n\) places, leading to \(d(\alpha_x, \alpha_y) = n\). All in all \(\alpha\) is an isometric embedding.
 \end{proof}
 
-The next problem in the construction is, whether we can glue higher dimensional cubes into the graph or not. 
+\begin{lemma}
+  Let \(\alpha,\beta \in V(C^1X)\) such that \(d(\alpha, \beta) = 1\). Then there exists a unique minimal \(\mathfrak{h} \in \alpha\) such that \(\beta = (\alpha; \mathfrak{h})\). More generally, if \(\alpha_0, \dots, \alpha_n\) is any edge path in \(C^1X\) then there exist unique halfspaces \(\mathfrak{h}_1, \dots \mathfrak{h}_n\), such that \(\alpha_k = (\alpha_0; \mathfrak{h}_1, \dots, \mathfrak{h}_k)\) for all \(k = 1, \dots, n\).
+\end{lemma}
+
+\begin{lemma}
+  Let \(\alpha \in V(C^1X)\) and \(\mathfrak{h} \in \alpha\) minimal and \(\mathfrak{h'} \in (\alpha; \mathfrak{h})\) minimal. If \(\mathfrak{h}\) and \(\mathfrak{h'}\) are transverse, then \(\mathfrak{h'}\) lies also in \(\alpha\) and is minimal therein. Furthermore, \(\mathfrak{h}\) is minimal in \((\alpha; \mathfrak{h'})\) and we have \((\alpha; \mathfrak{h}, \mathfrak{h'}) = (\alpha; \mathfrak{h'}, \mathfrak{h})\).
+\end{lemma}
+
+\begin{proof}
+  Since \(\mathfrak{h}\) and \(\mathfrak{h'}\) are transverse, we have \(\mathfrak{h} \neq \mathfrak{h'} \neq \mathfrak{h}^\ast \) leading to \(\mathfrak{h'} \in \alpha\). Let \(\mathfrak{\tilde h} \in \alpha\) such that \(\mathfrak{\tilde h} \subset \mathfrak{h'}\). If \(\mathfrak{\tilde h} \neq \mathfrak{h}\), then equality follows from the fact that \(\mathfrak{h'}\) is minimal \((\alpha; \mathfrak{h})\). In the other case we get a contradiction to the transversality. That \(\mathfrak{h}\) is minimal in \(\alpha; \mathfrak{h'}\) follows from the fact that \((\alpha; \mathfrak{h'}, \mathfrak{h}) = (\alpha; \mathfrak{h}, \mathfrak{h'})\) is an ultrafilter.
+\end{proof}
+
+The next problem in the construction is, whether we can glue higher dimensional cubes into the graph or not.
 
 %%% Local Variables:
 %%% mode: latex
