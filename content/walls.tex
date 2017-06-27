@@ -75,9 +75,35 @@ In this section I want to present the construction of the functor from the categ
 where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{defin}
 
+For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq # \{ \matfrak{h} \in \mathcal{H}(X)\mid \mathcal{h} \in \alpha \wedge \mathcal{h}^\ast \in \beta\}\). This is not a metric in the ordinary sense on \(\mathcal{U}(X)\) because it might take infinity as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).
+
+\begin{defin}
+  For any \(x \in X\), I define \(\alpha_x \in \mathfrak{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
+\end{defin}
+
+\begin{lemma}
+Two ultrafilters \(\alpha\) and \(\beta\) are connected in \(G\) if and only if \(d(\alpha, \beta) < \inft\). In particular, all principla ultrafilters lie in one connected component of \(G\), denoted by \(\mathcal{C}^1X\). 
+\end{lemma}
+
+\begin{rem}
+  On \(\mathcal{C}^1X\) \(d\) is a metric and we denote all ultrafilter therein as \emph{almost principal ultrafilters}. It can be shown that this metric corresponds to the path metric on this connected component.
+\end{rem}
+
 \begin{proof}
-  
+  The first assertion corresponds to~\cite[Lemma 4.4]{Nica2004}. For the second assertion remember that any two distinct points \(x,y \in X\) are seperated by a finite, non-zero number of walls. This implies that the ultrafilters \(\alpha_x\) and \(\alpha_y\) only differ in finitely many halfspaces. Hence, \(d(\alpha_x, \alpha_y)\) is finite.
 \end{proof}
+
+Naturally, this graph shall be the 1-skeleton of the to be constructed cube complex. Hence, it should be possible to embed \(X\) into it and this should also be in accordance with the path metric, we defined above.
+
+\begin{lemma}
+  \(\alpha\colon X \to \mathcal{C}^1X,\ x \mapsto \alpha_x\) is an isometric embedding.
+\end{lemma}
+
+\begin{proof}
+  \(\alpha\) is a well-defined map. Next, consider \(x,y \in X\) with \(d_W(x,y) = n\). Then \(x\) and \(y\) are separated by \(n\) walls. Hence, \(\alpha_x\) and \(\alpha_y\) differ in \(n\) places, leading to \(d(\alpha_x, \alpha_y) = n\). All in all \(\alpha\) is an isometric embedding.
+\end{proof}
+
+The next problem in the construction is, whether we can glue higher dimensional cubes into the graph or not. 
 
 %%% Local Variables:
 %%% mode: latex
