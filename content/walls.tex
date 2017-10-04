@@ -129,7 +129,46 @@ Naturally, this graph shall be the 1-skeleton of the to be constructed cube comp
   Since \(\mathfrak{h}\) and \(\mathfrak{h'}\) are transverse, we have \(\mathfrak{h} \neq \mathfrak{h'} \neq \mathfrak{h}^\ast \) leading to \(\mathfrak{h'} \in \alpha\). Let \(\mathfrak{\tilde h} \in \alpha\) such that \(\mathfrak{\tilde h} \subset \mathfrak{h'}\). If \(\mathfrak{\tilde h} \neq \mathfrak{h}\), then equality follows from the fact that \(\mathfrak{h'}\) is minimal \((\alpha; \mathfrak{h})\). In the other case we get a contradiction to the transversality. That \(\mathfrak{h}\) is minimal in \(\alpha; \mathfrak{h'}\) follows from the fact that \((\alpha; \mathfrak{h'}, \mathfrak{h}) = (\alpha; \mathfrak{h}, \mathfrak{h'})\) is an ultrafilter.
 \end{proof}
 
-The next problem in the construction is, whether we can glue higher dimensional cubes into the graph or not.
+With this graph as a starting point, we can use an inductive process to glue higher dimensional cubes into our complex. Denote by \(\mathcal{C}^nX\) the \(n\)-skeleton of our complex. If \(C^nX\) is already constructed, then a \((n+1)\)-cube is attached whenever its boundary occurs. As an example, whenever there is a 4-cycle in \(\mathcal{C}^1X\) a unit square will be added with the 4-cycle as its boundary. The union (or more precisely the direct limit over the directed system via inclusion) is the desired complex \(\mathcal{C}X\). Before I can prove this I need another Lemma.
+
+\todo{perhaps stuff about fundamental group should be someplace else}
+\begin{defin}
+  Let \(X\) be a cube complex. Let \(v\) be a vertex of \(X\) and consider two edge-loops \(c_1, c_2\) at \(v\). \(c_1\) and \(c_2\) are said to be \emph{square related}, if there is a square in \(X\) such that \(c_1\) is obtained from \(c_2\) by either replacing two edges successive of the square by the other two, by replacing one edge of the square the other three  (or vice versa) or by adding repectively deleting a doubly and opposedly transversed edge (This is not an equivalence relation). \(c_1\) and \(c_2\) ar said to be \emph{edge equivalent}, if there is a squence of edge-loops connecting the two via square relations (This is an equivalence relation). The set of all edge loops modulo the edge equivalence together with concatenation is called the \emph{edge group of \(X\) at \(v\)} \(E(X,v)\).
+\end{defin}
+
+\begin{lemma}
+  The map \(f: \E(X,v) \to \pi_1(X,v),\ [c] \mapsto [c]\) is a well-defined, surjective group homomorphism.
+\end{lemma}
+
+\begin{proof}
+  The map is indepnedent of th representation as the above described switching of sides gives rise to a homotopy between the two edge equivalent loops. Since both groups use the same operation as a group operation this \(f\) is readily seen to be a group homomorphism.
+
+  In order to convice oneself that \(f\) is in fact surjective, one considers any loop \(c\colon [0,1] \to X\). Since every cube complex is a CW complex, the cellular approximation theorem can be applied \todo{cite cellular approximation}. The theorem guarantees the existence of a homotopic loop \(d\), which lies comletely in the 1-skeleton \(X\) and still starts and ends at \(v\). The equivalence class of \(d\) in \(E(X,v)\) is the desired preimage.
+\end{proof}
+
+\begin{rem}
+  Completely analogously to simplicial complexes this result can even be strengthened to show that the above homomorphism is even an isomorphism. However, since I am content with the surjectivity, I will leave it at that. A proof of the isomorphism in the simplicial case has been given by \textcite[Ch.\ 4.4]{Singer}.
+\end{rem}
+
+\begin{thm}
+  \(\mathcal{C}X\) is a connected CAT(0) cube complex.
+\end{thm}
+
+\begin{proof}
+  By construction the 1-skeleton of the complex is connected, hence the same is true for the whol complex as all cubes are connected to the 1-skeleton.
+  
+  \(\mathcal{C}X\) is indeed a cube complex. Consider all the cubes that are attached during the above process. Each of these cubes is embedded. This can be proven by induction. The claim is clearly true for \(n = 1\), i.\,e.\ the edges of the graph since all of them have distinct end points. Now assume that all \(n\)-cubes are embedded and consider a \((n+1)\)-cube. By construction there can be no identification in the interior of the cube and all the boundary cubes themselves are embedded, so the only possibility left for a collapse would be if some boundary cubes were already identfied before. However, then we would not have added a cube in the first place. Additionally, the gluing is always realized by isometries because the attaching maps respect the metric. This proves the assertion.
+
+  In order to show that \(\mathcal{C}X\) is CAT(0), I apply Gromov's link condition (Theorem~\ref{thm:link}). As a first step one has to establish that \(\mathcal{C}X\) is simply connected. 
+\end{proof}
+
+\begin{cor}
+  Let \(\Sigma_i\) be two finite-ewidth pocsets and \(X_i\) the associated cube complexes. Furthermore, let \(\Sigma \coloneqq \Sigma_1 \sqcup \Sigma_2\) be the pocset defined by making all elements of \(\Sigma_1\) incomparable to all elements of \(\Sigma_2\) and \(X\) its associated cube complex. Then there is a natural isomorphism between \(X_1 \times X_2\) and \(X\).
+\end{cor}
+
+\begin{cor}
+  Let \(X\) be a CAT(0) cube complex. 
+\end{cor}
 
 %%% Local Variables:
 %%% mode: latex
