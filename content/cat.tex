@@ -52,6 +52,18 @@ This section will contain some important facts about general CAT(0) spaces. Wher
   The fix point set of any homeomorphism of a Hausdorff space to itself is closed. Furthermore, let \(\gamma\) be a geodesic joining two fix points \(x\) and \(y\). Then \(\phi \circ \gamma\) is again a geodesic joining the same two points. As \(X\) is uniquely geodesic, we yield \(\gamma = \phi \circ \gamma\) and hence the whole geodesic segment is fixed by \(\phi\), which is what we needed to show for convexity.
 \end{proof}
 
+In every CAT(0) space each geodesic can be extended indefinitely\todo{cite something}. This allows the definition of the following boundary.
+
+\begin{defin}[Visual boundary]
+  Let \(\gamma_i \colon [0, \infty) \to X\) be two geodesic rays. \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that \(d(\gamma_1(t), \gamma_2(t)) < K\) for all \(t \geq 0\). The set of equivalence classes of this relation \(\partial_\sphericalangle X\) is called the \emph{visual boundary of \(X\)}.
+
+  Clearly, each group action on \(X\) by isometries extends to an action on \(\partial_\sphericalangle X\).
+\end{defin}
+
+\begin{rem}
+  \(X \sqcup \partial_{\sphericalangle}X\) can be topologized in a way that it becomes a compact space. The topology can be chosen to coincide with the one induced by the metric on \(X\). \todo{cite something for this. Consider how important it is}
+\end{rem}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Master"
