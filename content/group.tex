@@ -1,6 +1,50 @@
 \section{Group actions on CAT(0) cube complexes and strong group boundaries}
 \label{sec:group}
 
+\subsection{Extending the group action to the Roller boundary}
+\label{sec:ga-roller}
+
+In this section I would like to remark on how one can extend a group action on a CAT(0) cube complex \(X\) to its Roller boundary \(\bar X\). For that matter, let in the following \(\Gamma\) be a discrete countable group with an action \(\Gamma \to \Aut(X)\), where \(X\) is a finite dimensional CAT(0) cube complex. \(Aut(X)\) consists of the combinatorial isomorphisms (c.\,.f.\ Def.~\ref{def:morphism-ccc}).
+
+The following proposition collects some facts about how cubical isomorphisms act on \(X\).
+
+\begin{prop}
+  Let \(g \in \Aut(X)\). Then there holds
+  \begin{enumerate}
+  \item \(\mathfrak{\hat h} \in \mathcal{\hat H}(X) \Rightarrow  g\mathfrak{\hat h} \in \mathcal{\hat H}(X)\)
+  \item \(\mathfrak{h} \in \mathcal{H}(X) \Rightarrow  g\mathfrak{h} \in \mathcal{H}(X)\)
+  \item \(\forall \mathfrak{h} \in \mathcal{H}(X)\colon g(\mathfrak{h}^\ast) = (g\mathfrak{h})^\ast\)
+  \item \(\mathfrak{h,h'} \in \mathcal{H}(X)\colon \mathfrak{h} \subset \mathfrak{h'} \Rightarrow g\mathfrak{h} \subset g\mathfrak{h'}\)
+  \item \(\alpha \in \bar X \Rightarrow g\alpha \in \bar X\)
+  \item If \(\alpha\) satisfies the descending chaing condition then so does \(g\alpha\).
+  \end{enumerate}
+\end{prop}
+
+\begin{rem}
+  Since I defined the ultrafilters on \(X\) as a special subset of a \emph{product space}, it is not immediatly clear how \(g\) operates on this space. However, what is meant is that \(g\) operates on each halfspace contained in \(\alpha\) separately and these new halfspaces determine a unique new ultrafilter which will be denoted by \(g\alpha\).
+\end{rem}
+
+\begin{proof}
+  1.\ is an immedate consequence of the fact, that \(g\) is an isometry. This leads directly to 2 and 3. For 4.\ we only need that \(g\) is a bijection and 5 and 6 are then simple applications of 4.
+\end{proof}
+
+With the above proposition in place we already see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. It would be preferable, if the image lay in the homeomorphism group of \(X\). This will be acomplished with the next lemma.
+
+\begin{lemma}
+  Let \(g \in \Aut(X)\) and \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) \subset \bar X\) a basic open set. Then we have
+  \[
+    g^{-1} \mathcal{U} = \mathcal{U}(g^{-1}\mathfrak{h}_1, \dots, g^{-1}\mathfrak{h}_n).
+  \]
+  Hence, \(g \in \operatorname{Homeo}(\bar X)\).
+\end{lemma}
+
+Together we arrive at the following result.
+
+\begin{thm}
+  \label{thm:roller-action}
+  Let \(\Gamma\) be a countable discrete group and \(\Gamma \to \Aut(X)\) a group action on a CAT(0) cube complex \(X\). Then this action extends to an action \(\Gamma \to \operatorname{Homeo}(\bar X)\) on the Roller compactification.
+\end{thm}
+
 \begin{defin}[(Non-)elementary action]
   A group action \(\Gamma \to \Aut(X)\) is called \emph{elementary}, if there exists a finite orbit of the action on \(X \sqcup \partial_{\sphericalangle}X\). Otherwise the action is called \emph{non-elementary}.
 \end{defin}
@@ -63,11 +107,12 @@
 \end{proof}
 
 \begin{cor}
+  \label{cor:p(x)}
   Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Rolle compactification. Let \(\Gamma \to \Aut(X)\) be a discrete countable group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of probability measures on \(\bar X\).
 \end{cor}
 
 \begin{proof}
-  By Corollary~\ref{cor:comp-met} it was established that \(\bar X\) is a compact metrizable space. Furthermore, the \(\Gamma\)-action on \(X\) extends to a \(\Gamma\)-action on \(\bar X\).\todo{show that the \(\Gamma\)-action extends to \(\bar X\)} Thus all conditions for the previos theorem are satisfied and we get the desired map \(\phi\colon B \to \mathcal{P}(\bar X)\).
+  By Corollary~\ref{cor:comp-met} it was established that \(\bar X\) is a compact metrizable space. Furthermore, the \(\Gamma\)-action on \(X\) extends to a \(\Gamma\)-action on \(\bar X\)(c.\,f.\ Theorem~\ref{thm:roller-action}). Thus all conditions for the previous theorem are satisfied and we get the desired map \(\phi\colon B \to \mathcal{P}(\bar X)\).
 \end{proof}
 
 %%% Local Variables:
