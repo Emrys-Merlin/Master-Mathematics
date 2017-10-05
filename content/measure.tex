@@ -64,7 +64,7 @@ I will begin by collecting some important measure theoretic and functional analy
 \begin{defin}
   Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
   \[
-    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminusK } < epsilon\}.
+    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < epsilon\}.
   \]
 \end{defin}
 
@@ -73,7 +73,7 @@ I will begin by collecting some important measure theoretic and functional analy
   \[
     \mu\left(\bigcup_{i \in \N}A_i \right) = \sum_{i \in \N} \mu(A_i)
   \]
-  for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). This is meant in the sence that the right hand side needs to converge.
+  for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). This is meant in the sense that the right hand side needs to converge.
 
   For any \(A \in \Sigma\) the \emph{total variation} \(|\mu|(A)\) is defined as
   \[
@@ -87,32 +87,38 @@ I will begin by collecting some important measure theoretic and functional analy
 \end{defin}
 \todo{perhaps define Borel measure}
 
-\begin{prop}[{\cite{Rudin}}]
+\begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
   \(|\mu|\) and \(\mu^\pm\) are measures on \(X, \Sigma\) and \(|\mu|(X) < \infty\) holds.
 \end{prop}
 
-\begin{thm}[Riesz-Markow representation, {\cite[Thm 6.19]{Rudin}}]
+\begin{thm}[Riesz-Markow representation, {\cite[Thm 6.19]{RudinFunctional}}]
   If \(X\) is a locally compact Hausdorff space, then every bounded linear functional \(\Phi\) on \(C_0(X)\) is represented by a unique regular complex Borel measure \(\mu\) in the sense that \[
     \Phi f = \int_X f \d\mu
   \]
   for every element \(f \in C_0(X)\). Moreover, there is \(\|\Phi\| = |\mu|(X)\). In other words, there exists an isometry of normed vector spaces between \(X^\ast\) the dual of \(X\) equippend with the operator norm \(\|\dot \|\) and \(M_{s}(X)\) the space of signed measures equipped with total variation \(|\mu|(X)\) as norm.
 \end{thm}
 
-\begin{thm}[Banach-Alaoglu, {\cite{Rudin2}}]
+\begin{thm}[Banach-Alaoglu, {\cite{RudinAnalysis}}]
   If \(V\) is a neighborhood of 0 in a topological vector space \(X\) and if
   \[
-    K \coloneqq \{ \Phi \in X^\ast \mid \|\Phi x\| \leq 1 \quad \forall x \in V\},
+    K \coloneqq \{ \Phi \in X^\ast \mid |\Phi x| \leq 1 \quad \forall x \in V\},
   \]
   then \(K\) is weak\(\ast\)-compact.
 \end{thm}
 
 \begin{cor}
   \label{cor:banach-alaoglu}
-  If \(X\) is a compact metric space, then \(P(X)\) the space of all regular probability measures is weak\(\ast\)-compact and contained in unit ball of all signed measures \(M_{s}(X)\).
+  If \(X\) is a compact metric space, then the space of all regular probability measures \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of all signed measures \(M_{s}(X)\).
 \end{cor}
 
 \begin{proof}
-  Considering \(C_0(X)\) together with the supremum norm is a Banach space and choosing the unit ball as \(V\), we yield that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. Since for each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\) it follows that \(P(X) \subset B\). Thus we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\) and we are done. However, \(P(X) = B \cap \{\mu \in M_r(X) \mid \int_X f \d\mu \geq 0 \quad \forall f \geq 0\} \cap \{\mu \in M_s(X) \mid \int_X \d\mu = \int_X \xi_X \d\mu = 1\}\). The second set assures that the measure is positive and the last enforces the normalization. This are all the necessary restrictions fo a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
+  Considering \(C_0(X)\) together with the supremum norm is a Banach space and choosing the unit ball as \(V\), we yield that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. Since for each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\) it follows that \(P(X) \subset B\). Thus we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\) and we are done. However,
+  \begin{align*}
+    P \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X f \d\mu \geq 0 \quad \forall f \geq 0\right\}\\
+    N \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X \d\mu = \int_X \chi_X \d\mu = 1\right\}\\
+    \mathcal{P}(X)  = & B \cap P \cap N.
+  \end{align*}
+  The second set assures that the measure is positive and the last enforces the normalization. This are all the necessary restrictions fo a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
 \end{proof}
 
 %%% Local Variables:
