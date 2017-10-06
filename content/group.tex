@@ -64,6 +64,14 @@ Together we arrive at the following result.
 \subsection{Strong \(\Gamma\)-boundaries}
 \label{sec:grp-boundary}
 
+\begin{defin}
+  A measurable space \((B, \Sigma)\) is called a \emph{standard Borel space}, if it is isomorphic (as a measurable space) to a measurable set \(E \subset X\), where \(X\) is a complete separable metric space equipped with its Borel \(\sigma\)-algebra.
+
+  A measure space \((B, \Sigma, \mu)\) is called a \emph{Lebesgue space}, if it is a standard Borel space and \(\mu\) is a regular probability measure.
+
+  Let \((B, \Sigma)\) be a measurable space. We can define an equivalence relation on all measures on \(\Sigma\) via \(\mu \sim \nu\) if and only if the null-sets of \(\mu\) and \(\nu\) coincide. An equivalence class \([\mu]\) is called a \emph{measure class}. If a group \(\Gamma\) acts measurably on \(B\), then \(\Gamma\) is said to \emph{preserve measure classes}, if for every measure \(\mu\) of \(\Sigma\) we have that \(\mu(B) = 0\) implies that \(\mu(g^{-1} B) = 0\) for every \(B \in \Sigma\) and \(g \in \Gamma\).
+\end{defin}
+
 \begin{defin}[Amenable group action]
   Let \(E\) be a separable Banach space. Then I denote by \(E^\ast_1\) the unit ball in its dual space. Let \(S\) be a standard Borel space and for each \(s \in S\) consider \(A_s \subset E^\ast_1\) a non-empty convex weak\(\ast\)-compact subspace. Then \((A_s)_{s \in S}\) will be called a \emph{Borel field of compact convex sets} if \(\{(s, \lambda) \mid \lambda \in A_s\}\) is a Borel subset of \(S \times E^\ast_1\).
 
@@ -71,14 +79,56 @@ Together we arrive at the following result.
 
   Each element \(T\) of \(\Isom(E)\) gives rise to a homeomorphism \(T^\ast\) of \(E^\ast_1\) via \((T^\ast\Phi)(x) \coloneqq \Phi(Tx)\) for every \(x \in E\). Thus every cocycle \(\alpha \colon S \times \Gamma \to \Isom(E)\) gives rise to a cocycle \(\alpha^\ast \colon S \times \Gamma \to \operatorname{Homeo}(E^\ast)\) via \(\alpha^\ast (g, s) = (\alpha(g, s)^{-1})^\ast\). A Borel field \((A_s)_{s \in S}\) is called \emph{\(\alpha\)-invariant} if \(\alpha^\ast(g, s) A_{s} = A_{gs}\) for each \(g \in \Gamma\) and almost all \(s \in S\).
   
-  Let \(\Gamma\) be a locally compact group and \(S\) a standard Borel space with measure class preserving Borelian \(\Gamma\)-action. The \(\Gamma\)-action is said to be \emph{amenable} if for every separable Banach space \(E\), every Borelian (left) cocycle \(\alpha \colon S \times G \to \Isom(E)\) and every \(\alpha\)-invariant Borel field \((A_s)_{s \in S}\), there exists a Borel map \(\phi \colon S \to E^\ast_1\) such that \(\phi(s) \in A_s\) for almost all \(s\) and for each \(g \in \Gamma\)\(\alpha^\ast(g, s) \phi(s) = \phi(gs)\) almost everywhere.
+  Let \(\Gamma\) be a locally compact group and \(S\) a standard Borel space with measure class preserving Borelian \(\Gamma\)-action. The \(\Gamma\)-action is said to be \emph{amenable} if for every separable Banach space \(E\), every Borelian (left) cocycle \(\alpha \colon S \times G \to \Isom(E)\) and every \(\alpha\)-invariant Borel field \((A_s)_{s \in S}\), there exists a Borel map \(\phi \colon S \to E^\ast_1\) such that \(\phi(s) \in A_s\) for almost all \(s\) and for each \(g \in \Gamma\) we have \(\alpha^\ast(g, s) \phi(s) = \phi(gs)\) almost everywhere.
 \end{defin}
 
-\begin{defin}[Strong \(\Gamma\)-boundary]
-  Let \(\Gamma\) be a discrete, countable group. A standard Borel space \(B\) is called a \emph{strong \(\Gamma\)-boundary}, if
+\begin{defin}[(Doubly) ergodic action]
+  Let \((B, \Sigma, \mu)\) be a probability space with a measurable group action by \(\Gamma\). Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied:
   \begin{enumerate}
-  \item there is a measurable group action of \(\Gamma\) on \(B\) and this action is amenable and
-  \item 
+  \item For every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\) or
+  \item every measurable \(\Gamma\)-equivariant map \(f\colon B \to \R\) is essentially constant.
+  \end{enumerate}
+  The action is called \emph{doubly ergodic} if the diagonal action on \(B \times B\) equipped with the product measure is ergodic.
+\end{defin}
+
+\begin{prop}
+  Every doubly ergodic action is automatically ergodic.
+\end{prop}
+
+\begin{proof}[Sketch]
+  Consider the second criterion together with the (equivariant, measurable and non-constant) projection from the product to the first factor.
+\end{proof}
+
+\begin{lemma}
+  \label{lemma:ergodicity-push-forward}
+  Let \(A\) and \(B\) be measurable spaces with a measurable group action \(\Gamma\). Furthermore, let \(f\colon A \to B\) be a measurable \(\Gamma\)-equivariant map and \(\mu\) a measure on \(A\). If \(\Gamma\) acts ergodically on \((A, \mu)\) then \(\Gamma\) acts ergodically on \((B, f_\ast \mu)\).
+\end{lemma}
+
+\begin{proof}
+  We will apply the first criterion for ergodicity. Let \(E \subset B\) be measurable such that \(g^{-1} E = E\) for every \(g \in \Gamma\). Then we have
+  \[
+    f^{-1}(E) = f^{-1}(g^{-1}E) = g^{-1}f^{-1}(E)
+  \]
+  because of the equivariance. Thus by the ergodicity on \(A\) we have \(\mu(f^{-1}(E))= 0\) or \(\mu(f^{-1}(E)) = 1\). However, \(\mu(f^{-1}(E))\) is exactly the definition of \(f_\ast\mu(E)\).
+\end{proof}
+
+\begin{defin}[Doubly ergodic action with coefficients]
+  Let \(\Gamma\) be a group and \((B, \Sigma, \vartheta)\) a Lebesgue space endowed with a measure class preserving \(\Gamma\)-action. The action of \(\Gamma\) on \(B\) is \emph{doubly ergodic with coefficients} if any weak\(\ast\)-measurable \(\Gamma\)-equivariant map \(B \times B \to E\) into the dual \(E\) of a separable Banach space on which \(\Gamma\) acts by isometries is essentially constant.
+\end{defin}
+
+\begin{prop}
+  If a group action is doubly ergodic with coefficients it is doubly ergodic in the usual sense.
+\end{prop}
+
+\begin{proof}
+  We choose \(E = \R\) and apply the second ergodicity criterion.
+\end{proof}
+
+\begin{defin}[Strong \(\Gamma\)-boundary]
+  Let \(\Gamma\) be a discrete, countable group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary}, if there is a measurable group action of \(\Gamma\) on \(B\) an this action is
+  \begin{enumerate}
+  \item amenable and
+  \item doubly ergodic with coefficients.
   \end{enumerate}
 \end{defin}
 
