@@ -44,6 +44,80 @@
   \end{enumerate}
 \end{thm}
 
+Now that we have defined the Roller boundary, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantag of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(mathcal{H}(X)\), but elements in a product space. The former form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
+
+\begin{defin}
+  Let \(A\) be a set. Let \(F_1, F_2 \subset A\) be finite. Then
+  \[
+    C(F_1, F_2) \coloneqq \{ H \subset A \mid F_1 \subset H \text{ and } F_2 \subset A \setminus H\} \subset \operatorname{Pot}(A)
+  \]
+  is called a \emph{cylinder set}
+\end{defin}
+
+\begin{prop}
+  The set of all cylinder sets can be used as basis for a topology on \(\operatorname{Pot}(A)\) for any set \(A\).
+\end{prop}
+
+\begin{proof}
+  There are two properties we have to establish
+  
+  First, we have to show that the union of all cylinder sets is all of the power set. So let \(H \subset A\). If \(H = \varnothing\), we can take \(F_1 = \varnothing\) and \(F_2 = A\). If \(H = A\) we interchange \(F_1\) and \(F_2\). In all other cases, ther must exist \(x,y \in A\) such that \(x \in H\) and \(y \in A \setminus H\) and thus \(A \in C(\{x\}, \{y\})\).
+
+  Second, we have to show that each intersection of two cylinder sets can be represented by a union of arbitrarily many cylinder sets. Thus let \(F_1, F_2, G_1, G_2 \subset A\) be finite and consider
+  \begin{align*}
+    C(F_1, F_2) \cap C(G_1, G_2)
+     = \{H \subset A \mid F_1 \cap G_1 \subset H \text{ and } F_2 \cap G_2 \subset A \setminus H\} = C(F_1 \cap G_1, F_2 \cap G_2).
+  \end{align*}]
+  Since \(F_1 \cap G_2\) and \(F_2 \cap G_2\) are still finite we are done.
+\end{proof}
+
+\begin{defin}
+  We will call \(\alpha \subset \mathcal{H}(X)\) a \emph{(set-)ultrafilter}, if
+  \begin{enumerate}
+  \item for each \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) either \(\mathfrak{h} \in \alpha\) or \(\mathfrak{h}^\ast \in \alpha\), but not both and
+  \item for each \(\mathfrak{h} \in \alpha\) and \(\mathfrak{h'} \in \mathcal{H}(X)\) such that \(\mathfrak{h} \subset \mathfrak{h'}\) implies that \(\mathfrak{h'} \in \alpha\).
+  \end{enumerate}
+  We denote by \(\mathcal{U}_s(X) \subset \operatorname{Pot}(\mathcal{H}(X))\) the set of all (set-)ultrafilters and equip it with the subspace topology inherited from the powerset.
+\end{defin}
+
+\begin{lemma}
+  \(\mathcal{U}_s(X)\) is a Hausdorff space.
+\end{lemma}
+
+\begin{proof}
+  Let \(\alpha, \beta \in \mathcal{U}_s(X)\) and \(\alpha \neq \beta\). Then there exists \(\mathfrak{h} \in \alpha\) such that \(\mathfrak{h}^\ast \in \beta\) (This follows from the first property of (set-)ultrafilters). Next, let us define
+  \begin{align*}
+    U & \coloneqq C(\{\mathfrak{h}\}, \varnothing) \cap \mathcal{U}_s(X)\quad \text{and}\\
+    V & \coloneqq C(\{\mathfrak{h}^\ast\},\varnothing) \cap \mathcal{U}_s(X).
+  \end{align*}
+  By construction both sets are open and we have \(\alpha \in U\) and \(beta \in V\). Furthermore, no (set-)ultrafilter can contain both \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\). Thus \(U \cap V = \varnothing\). 
+\end{proof}
+
+\begin{thm}
+  \(\mathcal{U}(X)\) and \(\mathcal{U}_s(X)\) are homeomorphic.
+\end{thm}
+
+\begin{proof}
+  Consider the map
+  \[
+    f\colon \mathcal{U}(X) \to \mathcal{U}_s(X),\ (\mathfrak{h}_i)_{i \in \mathcal{\hat H}(X)} \mapsto \{\mathfrak{h}_i \mid i \in \mathcal{\hat H}(X)\}.
+  \]
+  This map is well-defined and bijective. Next, let us show that it is continuous. Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n, \mathfrak{h'}_1, \dots,\mathfrak{h'}_k \in \mathcal{H}(X)\) and set
+  \[
+    U \coloneqq C(\{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}, \{\mathfrak{h'}_1, \dots, \mathfrak{h'}_k\}) \cap \mathcal{U}_s(X).
+  \]
+  Without loss of generality we can assume that \(\mathfrak{h}^\ast_i \neq \mathfrak{h'}_j\) for all possible \(i\) and \(j\). Otherwise \(U\) would be empty. Thus we have
+  \begin{align*}
+    f^{-1}(U)
+    & = \{\alpha \in \mathcal{U}(X) \mid \mathfrak{h}_i \in \alpha \text{ and } \mathfrak{h'}_j \notin \alpha\}\\
+    & = \{\alpha \in \mathcal{U}(X) \mid \mathfrak{h}_i, \mathfrak{h'}^\ast_j \in \alpha\}\\
+    & = \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n, \mathfrak{h'}^\ast_1, \dots, \mathfrak{h'}^\ast_k),
+  \end{align*}
+  which is a basic open set in \(\mathcal{U}(X)\). However, this already suffices to show that \(f\) is an homeomorphism. Indeed, every closed set \(A \subset \mathcal{U}(X)\) is compact (since \(\mathcal{U}(X)\) is) and as \(f\) is continuous \(f(A)\) is also compact. Lastly, we have established that \(\mathcal{U}_s(X)\) is Hausdorff and hence \(f(A)\) is also closed. This finishes the proof.
+\end{proof}
+
+With the above theorem in place, we can switch viewpoints whenever necessary. Actually, whenever convenient we will 'confuse' the two and stop to distinguish between ultrafilters and set-ultrafilters.
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Master"
