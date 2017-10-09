@@ -20,7 +20,8 @@
 \end{lemma}
 
 \begin{cor}[{\cite[Cor. 4.5]{MR3509968}}]
-  Let \(\operatorname{Pot}_f(\mathcal{h}(X)) \subset \operatorname{Pot}(\mathcal{h}(X))\) be the set containing only finite subsets of \(\mathcal{h}(X)\). If there exists a \(\Gamma\)-equivariant measurable map \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{h}(X))\) or \(\mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{h}(X))\), then the \(\Gamma\)-action on \(X\) is not essential.
+  \label{cor:4.5}
+  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\). If there exists a \(\Gamma\)-equivariant measurable map \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(\mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{H}(X))\), then the \(\Gamma\)-action on \(X\) is not essential.
 \end{cor}
 
 \subsection{Weighted halfspaces}
@@ -29,15 +30,16 @@
 \begin{defin}
   Let \(\mathcal{P}(\bar X)\) denote the space of probability measures on \(\bar X\). If \(\mu \in \mathcal{P}(\bar X)\) define
   \begin{align*}
-    H_\mu \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(h) = \mu(h^\ast)\},\\
-    H_\mu^+ \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(h) > \text{\nfrac{} 1/2} \},\\
-    H_\mu^- \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(h) < \text{\nfrac{} 1/2}\} \text{ and}\\
-    H_\mu^\pm \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(h) \neq \text{\nfrac{} 1/2}\}.
-  \end{align*}
+    H_\mu \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) = \mu(\mathcal{C}(h^\ast))\},\\
+    H_\mu^+ \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) > \text{\nfrac{} 1/2} \},\\
+    H_\mu^- \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) < \text{\nfrac{} 1/2}\} \text{ and}\\
+    H_\mu^\pm \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) \neq \text{\nfrac{} 1/2}\}.
+  \end{align*} 
   The above four sets are called \emph{balanced, heavy, light} and \emph{unbalanced halfspaces} respectively.
 \end{defin}
 
 \begin{lemma}
+  \label{lem:measurable-countable}
   Let \(N\) be a countable set. Then
   \[
     f\colon \operatorname{Pot}(N) \to \N \cup \{\infty\},\ A \mapsto |A|
@@ -61,7 +63,8 @@
 \end{proof}
 
 \begin{lemma}[{\cites[Lem.\ A.1]{MR3509968}}]
-  Let \(I \subset [0,1]\) be a subinterval that is either open, closed or half open. Let \(H^I_\mu \coloneqq \{h \in \mathcal{H}(X) \mid \mu(\mathcal{U}(h)) \in I\}\). Then the map
+  \label{lem:measurable-mu}
+  Let \(I \subset [0,1]\) be a subinterval that is either open, closed or half open. Let \(H^I_\mu \coloneqq \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) \in I\}\). Then the map
   \[
     \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}(X)), \mu \mapsto H^I_\mu
   \]
@@ -73,11 +76,11 @@
   \[
     K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in C(F_1, F_2)\}.
   \]
-  For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathfrak{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h}) \in I)\}\). We would like to convince us that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
+  For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h})) \in I\}\). We would like to convince ourselves that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence, \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
   \[
     T_f\colon \mathcal{P}(\bar X) \to \R,\ \mu \mapsto \int_X f \d\mu
   \]
-  is continuous (for each \(f \in C(\bar X)\)). Hence \(T \coloneqq T_{\chi_{\mathfrak{\tilde h}}}\) is continous and thus also measurable. Furthermore, we have that \(T^{-1}(I) = E_I(\mathfrak{h})\). \(I\) is measurable, so the same is true for \(E_I(\mathfrak{h})\).
+  is continuous (for each \(f \in C(\bar X)\)). Hence, \(T \coloneqq T_{\chi_{\mathfrak{\tilde h}}}\) is continous and thus also measurable. Furthermore, we have that \(T^{-1}(I) = E_I(\mathfrak{h})\). \(I\) is measurable, so the same is true for \(E_I(\mathfrak{h})\).
 
   Together with the following observation this finishes the proof:
   \[
