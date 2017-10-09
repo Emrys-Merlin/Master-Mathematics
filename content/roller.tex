@@ -52,7 +52,7 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
   \[
     C(F_1, F_2) \coloneqq \{ H \subset A \mid F_1 \subset H \text{ and } F_2 \subset A \setminus H\} \subset \operatorname{Pot}(A)
   \]
-  is called a \emph{cylinder set}
+  is called a \emph{cylinder set}. We set \(\mathcal{C}(a) \coloneqq = C(\{a\}, \varnothing)\) for arbitrary \(a \in A\).
 \end{defin}
 
 \begin{prop}
@@ -74,12 +74,13 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
 \end{proof}
 
 \begin{defin}
-  We will call \(\alpha \subset \mathcal{H}(X)\) a \emph{(set-)ultrafilter}, if
+  We say that a subset \(\alpha \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) satisfies:
   \begin{enumerate}
-  \item for each \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) either \(\mathfrak{h} \in \alpha\) or \(\mathfrak{h}^\ast \in \alpha\), but not both and
-  \item for each \(\mathfrak{h} \in \alpha\) and \(\mathfrak{h'} \in \mathcal{H}(X)\) such that \(\mathfrak{h} \subset \mathfrak{h'}\) implies that \(\mathfrak{h'} \in \alpha\).
+  \item the \emph{partial choice} condition, if \(\alpha \cap \alpha^\ast = \varnothing\),
+  \item the \emph{choice} condition, if \(\alpha \cap \alpha^\ast = \varnothing\) and \(\alpha \sqcup \alpha^\ast = \mathcal{H}\) and
+  \item the \emph{consistency} condition, if whenver \(\mathfrak{h} \in \alpha\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k}\) then \(\mathfrak{k} \in \alpha\).
   \end{enumerate}
-  We denote by \(\mathcal{U}_s(X) \subset \operatorname{Pot}(\mathcal{H}(X))\) the set of all (set-)ultrafilters and equip it with the subspace topology inherited from the powerset.
+  If \(\alpha\) satisfies the choice and the consistency condition it is called a \emph{(set-)ultrafilter}. We denote by \(\mathcal{U}_s(X) \subset \operatorname{Pot}(\mathcal{H}(X))\) the set of all (set-)ultrafilters and equip it with the subspace topology inherited from the powerset.
 \end{defin}
 
 \begin{lemma}
@@ -119,6 +120,63 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
 \end{proof}
 
 With the above theorem in place, we can switch viewpoints whenever necessary. Actually, whenever convenient we will \enquote{confuse} the two and stop to distinguish between ultrafilters and set-ultrafilters.
+
+\subsection{Embeddings of Roller boundaries}
+\label{sec:embedding-roller}
+
+In this section we are interested in the question when the CAT(0) cube complex \(X'\) associated to a involution invariant subset \(\mathcal{H}' \subset \mathcal{H}(X)\) is embeddable in \(X\). This is not always possible, however, there are sufficient conditions for \(\mathcal{H}''\) to ensure the existence of an embedding from \(\bar X'\) to \(\bar X\).
+
+\begin{defin}
+  Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. A \emph{lifting decomposition} of \(\mathcal{H}'\) is a choice of a subset \(W \subset \mathcal{H} \setminus \mathcal{H}'\) satisfying the partial choice and consistency condition and so that \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\).
+\end{defin}
+
+\begin{lemma}[{\cite[Lemma~2.6]{MR3509968}}]
+  Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halspcaes. Assume that \(\mathcal{H}'\) admits a lifting decomposition \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\). Then there is a continuous injective map
+  \[
+    i\colon \bar X' \coloneqq X(\mathcal{H}') \to \bar X,\ \alpha \mapsto \alpha \sqcup W,
+  \]
+  whose image is given by \(i(\bar X') = \cap_{h \in W} \mathfrak{C}(h)\) (c.\,f.\ Definition~\ref{def:pot-top}).
+
+  If \(\mathcal{H}' = \varnothing\), then \(i(\bar X')\) is a point.
+
+  If \(W\) contains an infinite descending chain then \(i(\bar X') \subset \partial X\).
+\end{lemma}
+
+\begin{proof}
+  As cana be seen from the formulation of the lemma, it is easier to work in with the power set definition of the Roller boundary in this setting.
+
+  Since \(\mathcal{H}'\) is involution invariant it is a pocset in its own right and therefore we can construct a unique CAT(0) cube complex \(X'\) with \(\mathfrak{H}'\) as its set of halfspaces\todo{cite the construction}. First, we need to show, that the above construction of the map is well-defined. Let \(\alpha' \in \bar X'\). We claim that \(\alpha \coloneqq \alpha' \sqcup W\) is an ultrafilter in \(\bar X\). \(\alpha\) satisfies the choice condition, because
+  \begin{align*}
+    \alpha \cap \alpha^\ast
+    & = (\alpha' \sqcup W) \cap (\alpha^\ast \sqcup W^\ast)\\
+    & = (\alpha' \cap \alpha'^\ast) \sqcup (\alpha' \cap W^\ast) \sqcup (W \cap \alpha'^\ast) \sqcup (W \cap W^\ast)\\
+    & = \varnothing
+  \end{align*}
+  and
+  \begin{align*}
+    \alpha \sqcup \alpha^\ast
+    & = (\alpha' \sqcup \alpha'^\ast) \sqcup W \sqcup W^\ast\\
+    & = \mathcal{H}' \sqcup W \sqcup W^\ast\\
+    & = \mathcal{H}.
+  \end{align*}
+  For the consistency condition, we have to check a couple of cases. Let \(\mathfrak{h} \in \alpha\) and \(\mathfrak{k} \in \mathcal{H}\), such that \(\mathfrak{h} \subset \mathfrak{k}\). If \(\mathfrak{k} \in \mathfrak{H}'\), then \(\mathfrak{k} \in \alpha' \subset \alpha\) and we are done. If \(\mathfrak{k} \in W \subset \alpha\) everything is fine, too. So the only interesting case, is to show that \(\mathfrak{k} \in W^\ast\) cannot happen. If this were the case, then we would have \(\mathfrak{k}^\ast \in W\) and \(\mathfrak{k}^\ast \subset \mathfrak{h}^\ast\). By the consistency of \(W\) we would have \(\mathfrak{h}^\ast \in W\). However, \(\mathfrak{h} \in \alpha = \alpha' \sqcup W\). This is a contradiction to the partial choice of \(W\). Hence \(\mathfrak{k} \notin W^\ast\).
+
+  If \(\alpha' \neq \beta'\) in \(\mathcal{H}'\) then also \(\alpha \neq \beta\) in \(\mathcal{H}\) and \(i\) is injective. Next, let us consider the continuity of \(i\). Consider two finite subsets \(F_1, F_2 \subset \mathcal{H}\). These can be decomposed into \(F_i = G_i \sqcup E_i\), where \(G_i \subset \mathfrak{H}'\) and \(E_i \subset W \sqcup W^\ast\). Then we have
+  \[
+    i^{-1}(C(F_1, F_2)) = C(G_1, G_2)
+  \]
+  and \(i\) is continuous.
+
+  In order to compute the image let us first show that \(i(\bar X') \subset \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\). Indeed, we have
+  \[
+    \alpha' \cap W = \bigcap_{\mathfrak{h} \in \alpha \sqcap W}\mathcal{C}(\mathfrak{h}) \subset \bigcap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h}).
+  \]
+  Conversely, if \(\alpha \in \cap_{\mathfrak{h} \in W}\mathcal{C}(\mathfrak{h})\), then \(W \subset \alpha\). Additionally, \((\alpha \setminus W) \cap W^\ast = \varnothing\) because of the choice condition. Hence \(\alpha' \coloneqq \alpha \setminus W \subset \mathcal{H}'\). We claim that \(\alpha'\) is an ultrafilter. The choice condition is satisfied, since it is satisfied by \(\alpha\). So let \(\mathfrak{h} \in \alpha'\) and \(\mathfrak{k} \in \mathcal{H}'\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Hence \(\mathfrak{k} \in \alpha\) and \(\mathfrak{k} \notin W\). Hence \(\mathfrak{k} \in \alpha'\) and \(\alpha'\) also satisfies the consistency condition.
+
+  Since we are only interested in connecte cube complexes, \(\mathcal{H}' = \varnothing\) implies that \(X'\) is only a single point. The same is true for \(\bar X'\) and its image under \(i\).
+
+  If \(W\) contains an inifite descending chain, so does \(\alpha' \sqcup W\) and thus \(\alpha' \sqcup W \in \partial W\).
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
