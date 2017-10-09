@@ -47,6 +47,7 @@
 Now that we have defined the Roller boundary, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantag of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(mathcal{H}(X)\), but elements in a product space. The former form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
 
 \begin{defin}
+  \label{def:pot-top}
   Let \(A\) be a set. Let \(F_1, F_2 \subset A\) be finite. Then
   \[
     C(F_1, F_2) \coloneqq \{ H \subset A \mid F_1 \subset H \text{ and } F_2 \subset A \setminus H\} \subset \operatorname{Pot}(A)
@@ -55,6 +56,7 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
 \end{defin}
 
 \begin{prop}
+  \label{prop:pot-top}
   The set of all cylinder sets can be used as basis for a topology on \(\operatorname{Pot}(A)\) for any set \(A\).
 \end{prop}
 
@@ -116,7 +118,7 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
   which is a basic open set in \(\mathcal{U}(X)\). However, this already suffices to show that \(f\) is an homeomorphism. Indeed, every closed set \(A \subset \mathcal{U}(X)\) is compact (since \(\mathcal{U}(X)\) is) and as \(f\) is continuous \(f(A)\) is also compact. Lastly, we have established that \(\mathcal{U}_s(X)\) is Hausdorff and hence \(f(A)\) is also closed. This finishes the proof.
 \end{proof}
 
-With the above theorem in place, we can switch viewpoints whenever necessary. Actually, whenever convenient we will 'confuse' the two and stop to distinguish between ultrafilters and set-ultrafilters.
+With the above theorem in place, we can switch viewpoints whenever necessary. Actually, whenever convenient we will \enquote{confuse} the two and stop to distinguish between ultrafilters and set-ultrafilters.
 
 %%% Local Variables:
 %%% mode: latex
