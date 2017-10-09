@@ -37,11 +37,59 @@
   The above four sets are called \emph{balanced, heavy, light} and \emph{unbalanced halfspaces} respectively.
 \end{defin}
 
-\begin{lemma}[{\cite[Lem. 4.6]{MR3509968}}]
+\begin{lemma}
+  Let \(N\) be a countable set. Then
+  \[
+    f\colon \operatorname{Pot}(N) \to \N \cup \{\infty\},\ A \mapsto |A|
+  \]
+  is measurable, where \(\N \cup \{\infty\}\) is equipped with the discrete topology.
+\end{lemma}
+\begin{proof}
+  We have to show that a basis of the topology is mapped to measurable sets via the preimage. So let us consider first \(n \in \N\). Then we have
+  \begin{align*}
+    f^{-1}(\{n\})
+    & = \{ A \subset N \mid |A| = n\}\\
+    & = \bigcup_{\substack{A \subset N\\|A| = N}} \left ( \bigcap_{\substack{F \subset N\\|F|< \infty}}C(A,F)\right),
+  \end{align*}
+  where \(C(A,F)\) is a cylinder set as defined in Defintion~\ref{def:pot-top}. Since the set of all finite subsets of \(N\) is countable, the above preimage is measurable as a countable union and intersection of measurable sets.
+
+  Lastly, we have to consider \(f^{-1}(\{\infty\})\). However, here we have
+  \[
+    f^{-1}(\{\infty\}) = N \setminus \left (\bigcup_{n=0}^\infty f^{-1}(\{n\})\right)
+  \]
+  which is measurable as the complement of a measurable set.
+\end{proof}
+
+\begin{lemma}[{\cites[Lem.\ A.1]{MR3509968}}]
+  Let \(I \subset [0,1]\) be a subinterval that is either open, closed or half open. Let \(H^I_\mu \coloneqq \{h \in \mathcal{H}(X) \mid \mu(\mathcal{U}(h)) \in I\}\). Then the map
+  \[
+    \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}(X)), \mu \mapsto H^I_\mu
+  \]
+  is measurable with respect to the weak\(\ast\)-topology on \(\mathcal{P}(X)\).
+\end{lemma}
+
+\begin{proof}
+  In Section~\ref{sec:roller} we defined a topology on the power set (c.\,f.\ Definition~\ref{def:pot-top} and Proposition~\ref{prop:pot-top}). Hence, we need to show that the preimages of the basic open sets are mapped to measurable sets in \(\mathfrak{P}(\bar X)\). So let \(F_1, F_2 \subset \mathcal{H}(X)\) be finite and consider the cylinder set \(C(F_1, F_2)\). Then the preimage is given by the set
+  \[
+    K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in C(F_1, F_2)\}.
+  \]
+  For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathfrak{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h}) \in I)\}\). We would like to convince us that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
+  \[
+    T_f\colon \mathcal{P}(\bar X) \to \R,\ \mu \mapsto \int_X f \d\mu
+  \]
+  is continuous (for each \(f \in C(\bar X)\)). Hence \(T \coloneqq T_{\chi_{\mathfrak{\tilde h}}}\) is continous and thus also measurable. Furthermore, we have that \(T^{-1}(I) = E_I(\mathfrak{h})\). \(I\) is measurable, so the same is true for \(E_I(\mathfrak{h})\).
+
+  Together with the following observation this finishes the proof:
+  \[
+    K(F_1, F_2) = \left (\bigcap_{\mathfrak{h} \in F_1} E_I(\mathfrak{h}) \right ) \cap \left ( \bigcap_{\mathfrak{h} \in F_2} E_I(\mathfrak{h})^{c}\right).
+  \]
+\end{proof}
+
+\begin{lemma}[{\cite[Lem.\ 4.6]{MR3509968}}]
   Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
   \begin{enumerate}
   \item \(H_\mu\) is closed under involution. Also, involution is a bijection between \(H_\mu^+\) and \(H_\mu^-\).
-  \item There is the following partiton \(\mathcal{H}(X) = H_\mu \sqcap H_\mu^\pm = H_\mu \sqcap H_\mu^+ \sqcap H_\mu^-\).
+  \item There is the following partiton \(\mathcal{H}(X) = H_\mu \sqcup H_\mu^\pm = H_\mu \sqcup H_\mu^+ \sqcup H_\mu^-\).
   \item If \(h, k \in H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)), then either \(h \pitchfork k\) or all halfspaces between \(h\) and \(k\) lie in \(H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)).
   \item There are no facing triples\todo{facing triples} of halfspaces in \(H_\mu\). If \(X\) is not Euclidean\todo{Euclidean}, then \(H_\mu^+ \neq \varnothing\).
   \item If \(X\) is not Euclidean, \(H_\mu\) and \(H_\nu\) is not empty and \(H_\mu \cap H_\nu = \varnothing\), then \(H_\mu \cap H_\nu^+ \neq \varnothing\) and \(H_\mu \cap H_\nu^- \neq \varnothing\).
@@ -64,7 +112,7 @@ I will begin by collecting some important measure theoretic and functional analy
 \begin{defin}
   Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
   \[
-    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < epsilon\}.
+    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < \epsilon\}.
   \]
 \end{defin}
 
