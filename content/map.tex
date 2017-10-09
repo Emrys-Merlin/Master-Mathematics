@@ -1,12 +1,64 @@
 \section{The boundary map}
 \label{sec:map}
 
+\begin{defin}
+  Let \(\mathcal{H}' \subset \mathcal{H}\). An element \(\mathfrak{h} \in \mathcal{H}'\) is called
+  \begin{itemize}
+  \item \emph{minimal in \(\mathcal{H}'\)} if for verey \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
+  \item \emph{maximal in \(\mathcal{H}'\)} if \(\mathfrak{h}^\ast\) is minimal in \(\mathcal{H}'\) or
+  \item \emph{terminal in \(\mathcal{H}'\)} if it is either minimal or maximal in \(\mathcal{H}'\).
+  \end{itemize}
+  Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) \to \operatorname{Pot}(\mathcal{H})\) be the map that assigns to each subset of \(\mathcal{H}\) its set of terminal elements.
+\end{defin}
+
+\begin{lemma}
+  \(\tau\) is measurable.
+\end{lemma}
+
+\begin{proof}
+  
+\end{proof}
+
 \begin{thm}[\cite{MR3509968}]\todo{irreducible}\todo{essential action}\todo{non-elementary action}\todo{strong \(\Gamma\)-boundary}\todo{non-terminating ultrafilters}
   Let \(\Gamma \to \Aut(Y)\) be a group action on an irreducible finite dimensional CAT(0) cube complex \(Y\). Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial Y\) taking values in the non-terminating ultrafilters in \(\partial Y\).
 \end{thm}
 
 \begin{proof}
-  By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action. 
+  By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action.
+
+  Consider th map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
+  \begin{align*}
+    |H_{g\mu}|
+    & = |\{\mathfrak{h} \in \mathcal{H} \mid (g\mu)(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
+    & = |\{\mathfrak{h} \in \mathcal{H} \mid \mu(g^{-1} \mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
+    & = |\{\mathfrak{gh} \in \mathcal{H} \mid \mu(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
+    & = |g H_\mu|
+  \end{align*}
+  and the map is \(\Gamma\)-equivariant. By the ergodicity of \(\mathcal{P}(\bar X)\)we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
+
+  Up to measure 0 the image of \(\psi\) lies in \(\mathcal{E} \coloneqq \{ \mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). This set is measurable by Lemma~\ref{lem:measurable-mu} applied to the case \(I = \{\text{\nfrac{} 1/2}\}\) and using the preimage of \(\varnothing\).
+
+  If \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter and we have a well-defined mapped
+  \[
+    \xi\colon \mathcal{E} \to \bar X,\ \mu \mapsto H_\mu^+.
+  \]
+  This map is measurable (again thanks to Lemma~\ref{lem:measurable-mu} this time applied to \(I = (\text{\nfrac{} 1/2}, 1]\)) and as above \(\Gamma\)-equivariant (up to measure 0). All in all we yield the desired map \(\phi = \xi \circ \psi\) which is both measurable and \(\Gamma\)-equivariant as a concatenation of measurable and \(\Gamma\)-equivariant functions.\todo{Show that the image lies in the non-terminating ultrafilters.}
+
+  All that is left to prove now, is that the essential value \(N\) can take only the value \(0\). For this we will consider multiple cases
+  \begin{description}
+  \item[\(0 < N < \infty\):] In this case we would have a measurable and \(\Gamma\)-equivariant map \(\mathcal{P}(\bar X) \to Pot_f(\mathcal{H})\) which by Corollary~\ref{cor:4.5} would imply that the \(Gamma\)-action on \(Y\) is not essential.
+  \item[\(N = \infty\):] This case is a bit more involved and we have to consider another measurable and \(\Gamma\)-equivariant map
+    \[
+      \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ (\mu, \nu) \mapsto |H_\mu \cap H_\nu|.
+    \]
+    Again by ergodicity on \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X)\) it is essentially constant and we have another essential value \(M \in \N \cup \{\infty\}\).
+    \begin{description}
+    \item[\(M = 0\):] 
+    \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use agian Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case.
+    \item[\(M = \infty\):] 
+    \end{description}
+  \end{description}
+
 \end{proof}
 
 \begin{cor}[\cite{MR3509968}]
