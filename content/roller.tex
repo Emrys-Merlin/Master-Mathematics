@@ -1,5 +1,53 @@
-\section{The Roller boundary}
+\section{Pocsets and the Roller boundary}
 \label{sec:roller}
+
+\subsection{Pocsets and Ultrafilters}
+\label{sec:pocset}
+
+\begin{defin}[Pocset, {\cite{Roller1999}}]
+  \begin{enumerate}
+  \item A \emph{pocset} is a triple \((P, \subset, \ast)\) consisting of a set \(P\) a partial ordering \(\subset\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, I will often drop the triple and will only write \(A\) when talking about the pocset. \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) \(A \subset B\) implies that \(f(A) \subset f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. The pocsets together with these morphisms is what I call the category of pocsets {\textbf{Poc}}.
+  \item A pocset \(P\) is called \emph{discrete}, if for any two \(A, B \in P\) the interval
+    \[
+      [A,B] = \{C \in P \mid A \subset C \subset B\}
+    \]
+    is finite.
+  \item Two elements \(A,B\) of a pocset \(P\) are called \emph{nested}, if they satsify \(A \subset B\), \(A^\ast \subset B\), \(A \subset B^\ast\) or \(A^\ast \subset B^\ast\). Otherwise they are called \emph{transverse}.
+  \item A pocset \(P\) is called \emph{finite width}, if there exists a constant \(N \in \N\) such that the cardinality of any subset of transverse elements of \(P\) is bounded from above by \(N\).
+  \end{enumerate}
+  We will mostly be interested in the subcategory of \emph{discrete pocsets} \textbf{dPoc}.
+\end{defin}
+
+\begin{defin}[Ultrafilter]
+  Let \((A, \subset, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). I will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\). I denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be topologized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem\todo{cite something}) \(P(A)\) becomes a compact topological space. A basis of toplogy is given by the sets of the form
+\[
+  \mathcal{U}(a_1,\dots, a_n) \coloneqq \{\alpha \in P(A) \mid a_1, \dots, a_n \in \alpha\},
+\]
+where \(a_1,\dots, a_n \in A\) are arbitrary elements.
+\end{defin}
+
+\begin{defin}
+  Let \(\alpha\) be an ultrafilter and \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). Then \(\alpha; \mathfrak{h}_1, \dots, \mathfrak{h}_n \in P(A)\) is defined by replacing each \(\mathfrak{h}_i\) in \(\alpha\) by \(\mathfrak{h_i}^\ast\).
+\end{defin}
+
+\begin{lemma}
+  Let \(\alpha\) be an ultrafilter and \(\mathfrak{h} \in \alpha\). Then \((\alpha;\mathfrak{h})\) is an ultrafilter if and only if \(\mathfrak{h}\) is minimal, i.\,e.\ if \(\mathfrak{h}' \in \alpha\) satisfies \(\mathfrak{h'} \subset \mathfrak{h}\) then \(\mathfrak{h'} = \mathfrak{h}\) holds.
+\end{lemma}
+
+\begin{proof}
+  First, consider the case that \(\beta \coloneqq (\alpha, \mathfrak{h})\) is an ultrafilter. Let \(\mathfrak{h}' \in \alpha\) such that \(\mathfrak{h}' \subset \mathfrak{h}\). Equivalently this means \(\mathfrak{h}^\ast \subset \mathfrak{h}'^\ast\). Since \(\beta\) is an ultrafilter, it follows that \(\mathfrak{h}'^\ast \in \beta\). However, this is only possible if \(\mathfrak{h} = \mathfrak{h}'\), since otherwise \(\beta\) would have to contain both \(\mathfrak{h}' \) and \(\mathfrak{h}'^\ast\).
+
+  Now, consider that \(\mathfrak{h} \in \alpha\) is minimal. Let \(\mathfrak{h}' \in \beta\) and \(\mathfrak{\tilde h}\) be any halfspace with \(\mathfrak{h}' \subset \mathfrak{\tilde h}\). If \(\mathfrak{h}' \neq \mathfrak{h}\) then \(\mathfrak{h}' \in \alpha \) and hence \(\mathfrak{\tilde h} \in \alpha\). Additionally, \(\mathfrak{\tilde h} \neq \mathfrak{h}\) and it follows that \(\mathfrak{\tilde h} \in \beta\). If \(\mathfrak{h}' = \mathfrak{h}\) then it follows that \(\mathfrak{\tilde h}^\ast \subset \mathfrak{h}\) and thus we have equality. Showing again that \(\mathfrak{\tilde h} = \mathfrak{h}^\ast \in \beta\).
+\end{proof}
+
+\subsection{The Roller boundary}
+\label{sec:rb}
+
+For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a metric in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).
+
+% \begin{defin}
+%   For any \(x \in X\), I define \(\alpha_x \in \mathcal{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
+% \end{defin}
 
 \begin{prop}
   \(\mathcal{U}(A) \subset P(A)\) is a compact space.
@@ -20,7 +68,7 @@
 
 \begin{cor}
   \label{cor:comp-met}
-  \(\mathcal{U}(A)\) is a compact metrizable space.
+  If \(A\) is countable \(\mathcal{U}(A)\) is a compact metrizable space.
 \end{cor}
 
 \begin{proof}

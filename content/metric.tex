@@ -7,29 +7,29 @@ This section is concerned with basic metric properties of spaces and their conne
 
 \begin{defin}~
   \begin{itemize}
-  \item Let \(X\neq \varnothing\) be a set. \(d\colon X \times X \to \R_{\geq 0} (\cup \{\infty\})\) is called a \emph{metric}, if for all \(x,y,z \in X\)
-    \begin{enumerate}
-    \item \(d(x,y) = 0\) if and only if \(x = y\),
-    \item \(d(x,y) = d(y,x)\) and
-    \item \(d(x,y) + d(y,z) \geq d(x,z)\).
-    \end{enumerate}
-    The pair \((X,d)\) is called a \emph{metric space}.
+  % \item Let \(X\neq \varnothing\) be a set. \(d\colon X \times X \to \R_{\geq 0} (\cup \{\infty\})\) is called a \emph{metric}, if for all \(x,y,z \in X\)
+  %   \begin{enumerate}
+  %   \item \(d(x,y) = 0\) if and only if \(x = y\),
+  %   \item \(d(x,y) = d(y,x)\) and
+  %   \item \(d(x,y) + d(y,z) \geq d(x,z)\).
+  %   \end{enumerate}
+  %   The pair \((X,d)\) is called a \emph{metric space}.
   \item A \emph{geodesic} from \(x\) to \(y\) (\(x,y \in X\)) is a map \(c\colon [a,b] \to X\), such that \(c(a) = x\), \(c(b) = y\) and such that there exists a constant \(\lambda > 0\) with
     \begin{align*}
       d(c(t), c(t')) = \lambda \cdot |t - t'| 
     \end{align*}
     for all \(t,t' \in [a,b]\).
   \item \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
-  \item The \emph{length} of a curve \(c\colon [a,b] \to X\) is defined as
-    \begin{align*}
-      l(c) \coloneqq \left\{\sum_{i=1}^n d(c(t_i), c(t_{i-1})) \relmid a = t_0 \leq t_0 \leq \dots \leq t_n = b \text{ a subdivision} \right\}.
-    \end{align*}
-    \(c\) is called \emph{rectifiable}, if \(l(c) < \infty\).
-  \item \(d\) is called a \emph{length metric}, if
-    \begin{align*}
-      d(x,y) = \inf \{l(c) \mid c \text{ rectifiable joining } x \text{ and } y\}
-    \end{align*}
-    for arbitrary \(x,y \in X\), where \(\inf\varnothing = \infty\). In this case \((X,d)\) is called a \emph{length space}.
+  % \item The \emph{length} of a curve \(c\colon [a,b] \to X\) is defined as
+  %   \begin{align*}
+  %     l(c) \coloneqq \left\{\sum_{i=1}^n d(c(t_i), c(t_{i-1})) \relmid a = t_0 \leq t_0 \leq \dots \leq t_n = b \text{ a subdivision} \right\}.
+  %   \end{align*}
+  %   \(c\) is called \emph{rectifiable}, if \(l(c) < \infty\).
+  % \item \(d\) is called a \emph{length metric}, if
+  %   \begin{align*}
+  %     d(x,y) = \inf \{l(c) \mid c \text{ rectifiable joining } x \text{ and } y\}
+  %   \end{align*}
+  %   for arbitrary \(x,y \in X\), where \(\inf\varnothing = \infty\). In this case \((X,d)\) is called a \emph{length space}.
   \end{itemize}
 \end{defin}
 
@@ -41,60 +41,60 @@ This section is concerned with basic metric properties of spaces and their conne
   \todo{fill in some examples}
   \begin{enumerate}
   \item \((\E^n, d_0)\), where \(\E^n = \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is a length spaces which is uniquely geodesic. However, \(\E^n \setminus {0}\) is still a length space, but no longer geodesic. If a whole cube \(C= [0,1]^n\) is removed, \(\E^n \setminus C\) is no longer a length space, with regard to the induced metric. 
-  \item \((\sphere^n, d_\kappa)\), \(\kappa > 0\), is the unit sphere in \(\E^{n+1}\) together with the metric \(d_{\kappa}(x,y) = \frac{1}{\sqrt{\kappa}} \cdot \angle (x,y)\). This space is uniquely \(\frac{\pi}{\sqrt{\kappa}}\)-geodesic.
-  \item \((\hyperbole^n, d_\kappa)\), \(\kappa < 0\), is the hyperbolic \(n\)-space
-    \begin{align*}
-      \hyperbole^n & = \left\{x = (x_0, \dots, x_n)\in \R^{n+1} \relmid \langle x, x \rangle_{1,n} = -x_0^2 + \sum_{i=1}^n x_i^2 = -1 \right\} \quad \text{with}\\
-      d_\kappa(x,y) & = \frac{1}{\sqrt{-\kappa}} \cdot \operatorname{arcosh} \langle x,y \rangle_{1,n}.
-    \end{align*}
-    This space is also a length space and uniquely geodesic.
+  % \item \((\sphere^n, d_\kappa)\), \(\kappa > 0\), is the unit sphere in \(\E^{n+1}\) together with the metric \(d_{\kappa}(x,y) = \frac{1}{\sqrt{\kappa}} \cdot \angle (x,y)\). This space is uniquely \(\frac{\pi}{\sqrt{\kappa}}\)-geodesic.
+  % \item \((\hyperbole^n, d_\kappa)\), \(\kappa < 0\), is the hyperbolic \(n\)-space
+  %   \begin{align*}
+  %     \hyperbole^n & = \left\{x = (x_0, \dots, x_n)\in \R^{n+1} \relmid \langle x, x \rangle_{1,n} = -x_0^2 + \sum_{i=1}^n x_i^2 = -1 \right\} \quad \text{with}\\
+  %     d_\kappa(x,y) & = \frac{1}{\sqrt{-\kappa}} \cdot \operatorname{arcosh} \langle x,y \rangle_{1,n}.
+  %   \end{align*}
+  %   This space is also a length space and uniquely geodesic.
   \end{enumerate}
 \end{bsp}
 
-\begin{defin}
-  Let
-  \begin{align*}
-    M_\kappa^n \coloneqq
-    \begin{cases}
-      \sphere^n & \kappa > 0\\
-      \E^n & \kappa = 0\\
-      \hyperbole^n & \kappa < 0
-    \end{cases} \text{ and }
-    D_\kappa =
-    \begin{cases}
-      \frac{\pi}{\sqrt{\kappa}} & \kappa > 0\\
-      \infty & \kappa \leq 0
-    \end{cases}.
-  \end{align*}
-  Then \((M_\kappa^n, d_\kappa)\) is called the \emph{model space of curvature \(\kappa\)}. \(D_\kappa\) denotes its \emph{diameter}.
-\end{defin}
+% \begin{defin}
+%   Let
+%   \begin{align*}
+%     M_\kappa^n \coloneqq
+%     \begin{cases}
+%       \sphere^n & \kappa > 0\\
+%       \E^n & \kappa = 0\\
+%       \hyperbole^n & \kappa < 0
+%     \end{cases} \text{ and }
+%     D_\kappa =
+%     \begin{cases}
+%       \frac{\pi}{\sqrt{\kappa}} & \kappa > 0\\
+%       \infty & \kappa \leq 0
+%     \end{cases}.
+%   \end{align*}
+%   Then \((M_\kappa^n, d_\kappa)\) is called the \emph{model space of curvature \(\kappa\)}. \(D_\kappa\) denotes its \emph{diameter}.
+% \end{defin}
 
-\begin{rem}
-  As a reference for the above implicit claims~\cite[Sec.\ I.2, I.6]{MR1744486} can be used.
-\end{rem}
+% \begin{rem}
+%   As a reference for the above implicit claims~\cite[Sec.\ I.2, I.6]{MR1744486} can be used.
+% \end{rem}
 
 \begin{defin}\label{def:cat}\
   \begin{itemize}
   \item Let \((X,d)\) be a metric space. A \emph{geodesic triangle} \(\Delta \subset X\) consists of three points \(p,q,r \in X\), its \emph{vertices}, together with a choice of three geodesic segments \([p,q], [q,r], [r, p]\) joining them, its \emph{edges} (The choice of geodesics might not be unique). If necessary, the notation \(\Delta = \Delta(p,q,r)\) or \(\Delta = \Delta([p,q], [q,r], [r,p])\) will be used. The first case is a slight abuse of notation, as the three vertices might not determine the triangle.
-  \item A \emph{comparison triangle} in \(M_\kappa^2\) for \(\Delta = \Delta(p,q,r)\) is a choice of three points \(\bar p, \bar q, \bar r \in M_\kappa^2\) such that \(d_\kappa(\bar p, \bar q) = d(p, q)\), \(d_\kappa(\bar q, \bar r), = d(q, r)\) and \(d_\kappa(\bar r, \bar p) = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). It exists whenever the perimeter \(p(\Delta) \coloneqq d(p,q) + d(q,r) + d(r,p) < 2D_\kappa\) \cite[cf.][Sec.\ I.2]{MR1744486}.
-  \item \(\Delta\) satisfies the \emph{CAT(\(\kappa\)) inequality}, if \(d(x,y) \leq d_\kappa(\bar x, \bar y)\) for any \(x, y \in \Delta\) and where \(\bar x \in \bar \Delta \subset M_\kappa^2\) is the unique point having the same distance to the two endpoints of the geodesic segment it lies on as \(x\) on its geodesic.
-  \item \(X\) is called a \emph{CAT(\(\kappa\)) space}, if \(X\) is \(D_\kappa\)-geodesic and if each geodesic triangle \(\Delta\) with \(p(\Delta) < 2 D_\kappa\) satisfies the CAT(\(\kappa\)) inequality.
-  \item \(X\) is called \emph{of curvature \(\leq \kappa\)}, if it is locally a CAT(\(\kappa\)) space, i.\,e.\ for each \(x \in X\) there exists an \(r > 0\), such that B(x,r) together with the induced metric is a CAT(\(\kappa\)) space.
+  \item A \emph{comparison triangle} in \(\E^2\) for \(\Delta = \Delta(p,q,r)\) is a choice of three points \(\bar p, \bar q, \bar r \in M_\kappa^2\) such that \(d_\kappa(\bar p, \bar q) = d(p, q)\), \(d_\kappa(\bar q, \bar r), = d(q, r)\) and \(\|\bar r- \bar p\| = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). Such a comparison triangle always exists \cite[cf.][Sec.\ I.2]{MR1744486}.
+  \item \(\Delta\) satisfies the \emph{CAT(\(0\)) inequality}, if \(d(x,y) \leq \|\bar x, \bar y\|\) for any \(x, y \in \Delta\) and where \(\bar x \in \bar \Delta \subset \E^2\) is the unique point having the same distance to the two endpoints of the geodesic segment it lies on as \(x\) on its geodesic.
+  \item \(X\) is called a \emph{CAT(\(0\)) space}, if \(X\) is geodesic and if each geodesic triangle \(\Delta\) satisfies the CAT(\(0\)) inequality.
+  \item \(X\) is called \emph{of curvature \(\leq 0\)}, if it is locally a CAT(\(0\)) space, i.\,e.\ for each \(x \in X\) there exists an \(r > 0\), such that B(x,r) together with the induced metric is a CAT(\(0\)) space.
   \end{itemize}
 \end{defin}
 
 \begin{bsp}
   \todo{Elaborate CAT examples}
   \begin{enumerate}
-  \item CAT(\(\kappa\)) contained etc
+ % \item CAT(\(\kappa\)) contained etc
   \item \(\E^n\) without a diamond. Still locally CAT(0), but not globally
-  \item \(\bigvee_{n \in \N} (\sphere_n, x_n)\), where \(\sphere_n = \frac{1}{\sqrt{n}} \sphere^1 \cong M_n^1\) and \(x_n \in \sphere_n\). Not CAT(\(\kappa\)) for any \(\kappa\), not even locally.
+  % \item \(\bigvee_{n \in \N} (\sphere_n, x_n)\), where \(\sphere_n = \frac{1}{\sqrt{n}} \sphere^1
+    % \cong M_n^1\) and \(x_n \in \sphere_n\). Not CAT(\(\kappa\)) for any \(\kappa\), not even locally.
   \end{enumerate}
 \end{bsp}
 
 \begin{defin}
-  \todo{Write down properties of \(M_\kappa^n\). Especially \(m\)-planes and the like.}
-  Let \(\kappa \in \R\). A \emph{convex \(M_\kappa\)-polyhedral cell} \(C \subset M_\kappa^n\) is the convex hull of finitely many points \(P \subset M_\kappa^n\), which are contained in an open ball of radius \(\frac{D_\kappa}{2}\). Let \(H \subset M_\kappa^n\)  be a hyperplane, containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \leq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(M_\kappa^m\)-structure. The \emph{\(m\)-skeleton of \(C\)} is defined by
+  A subset \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Let \(H \subset M_\kappa\E^n\)  be a hyperplane, containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \leq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(\E^m\)-structure. The \emph{\(m\)-skeleton of \(C\)} is defined by
   \begin{align*}
     C^{(m)} \coloneqq \bigcup \{F \mid F \leq C \text{ and } \dim F \leq m\}.
   \end{align*}
@@ -103,9 +103,9 @@ This section is concerned with basic metric properties of spaces and their conne
 
   The \emph{link of \(x\) in \(C\)} is given by
   \begin{align*}
-    \lk(x,C) \coloneqq \{u \in U_xM_\kappa^n \mid \exists t > 0 \colon \exp_x(tu) \in C\} \subset U_xM_\kappa^n \cong \sphere^{n-1},
+    \lk(x,C) \coloneqq \{u \in U_x\E^n \mid \exists t > 0 \colon \exp_x(tu) \in C\} \subset U_x\E^n \cong \sphere^{n-1},
   \end{align*}
-  where \(U_xM_\kappa^n\) is the unit tangent space at \(x\) in \(M_\kappa^n\) considered as a Riemannian manifold. Because of this Riemannian metric the unit tangent space can be isometrically identified with \(\sphere^{n-1}\).
+  where \(U_x\E^n\) is the unit tangent space at \(x\) in \(\E^n\) considered as a Riemannian manifold. Because of this Riemannian metric the unit tangent space can be isometrically identified with \(\sphere^{n-1}\).
 \end{defin}
 
 \begin{bsp}
@@ -113,41 +113,41 @@ This section is concerned with basic metric properties of spaces and their conne
 \end{bsp}
 
 \begin{rem}
-  If \(C = [0,1]^n \subset \E^n = M_0^n\), then \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). Furthermore, all its edges have length \(\frac{\pi}{2}\).
+  \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). Furthermore, in this case all its edges have length \(\frac{\pi}{2}\).
 \end{rem}
 
 \begin{defin}\ 
   \begin{itemize}
-  \item Let \((C_\lambda)_{\lambda \in \Lambda}\) be a family of convex \(M_\kappa\)-polyhedral cells and \(X \coloneqq \bigcup_{\lambda \in \Lambda} C_\lambda \times \{\lambda\}\) its disjoint union. Furthermore, let \(\sim\) denote an equivalence relation on \(X\) and by \(K\) the space of equivalence classes with natural projection \(p \colon X \to K\). Lastly, let \(p_\lambda \colon C_\lambda \to K,\ p_\lambda(x) \coloneqq p(x, \lambda)\).
+  \item Let \((C_\lambda)_{\lambda \in \Lambda}\) be a family of cubes and \(\mathcal{C} \coloneqq \bigcup_{\lambda \in \Lambda} C_\lambda \times \{\lambda\}\) its disjoint union. Furthermore, let \(\sim\) denote an equivalence relation on \(\mathcal{C}\) and by \(X\) the space of equivalence classes with natural projection \(p \colon \mathcal{C} \to X\). Lastly, let \(p_\lambda \colon C_\lambda \to X,\ p_\lambda(x) \coloneqq p(x, \lambda)\).
 
-    \(K\) is called an \emph{\(M_\kappa\)-polyhedral complex}, if
+    \(X\) is called an \emph{cube complex}, if
     \begin{enumerate}
     \item \(p_\lambda\) is injective and
     \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\), such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
     \end{enumerate}
-  \item \(C \subset K\) is called an \emph{\(n\)-dimensional cell}, if it is the image of an \(n\)-dimensional face \(F \leq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\).
-  \item The \emph{m-skeleton} of \(K\) is given by
+  \item \(C \subset X\) is called an \emph{\(n\)-dimensional cube}, if it is the image of an \(n\)-dimensional face \(F \leq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\).
+  \item The \emph{m-skeleton} of \(X\) is given by
     \begin{align*}
-      K^{(m)} \coloneqq \quot{\bigcup_{\lambda \in \Lambda} C_\lambda^{(m)} \times \{\lambda\}}{\sim},
+      X^{(m)} \coloneqq \quot{\bigcup_{\lambda \in \Lambda} C_\lambda^{(m)} \times \{\lambda\}}{\sim},
     \end{align*}
-    where \(\sim\) is given by the restriction of the equivalence relation on \(X\) to the disjoint union of the \(m\)-skeleta of the cells.
+    where \(\sim\) is given by the restriction of the equivalence relation on \(\mathcal{C}\) to the disjoint union of the \(m\)-skeleta of the cells.
 
-  \item Fix \(x \in K\). Then the \emph{star of \(x\)} is defined by
+  \item Fix \(x \in X\). Then the \emph{star of \(x\)} is defined by
     \begin{align*}
-      \st(x) \coloneqq \bigcup \left\{\mathring C \relmid C \subset K \text{ a cell and } x \in C\right\}.
+      \st(x) \coloneqq \bigcup \left\{\mathring C \relmid C \subset X \text{ a cube and } x \in C\right\}.
     \end{align*}
   \item Let \((x_i)_{i \in I}\) be a family of all the points with \(x_i \in C_{\lambda(i)}\), such that \(p_{\lambda(i)}(x_i) = x\). Consider the disjoint union \(\bigcup_{i \in I} \lk(x_i, C_{\lambda(i)} \times {i})\) together with the equivalence relation \((u_i, i) \sim (u_j, j)\) if there exist \(t_i, t_j > 0\) such that \(\exp_{x_i}(t_i u_i) \in C_{\lambda(i)}\), \(\exp_{x_j}(t_j u_j) \in C_{\lambda(j)}\) and \(p_{\lambda(i)}(\exp_{x_i}(t_i u_i)) = p_{\lambda(j)}(\exp_{x_j}(t_j u_j))\). Then the \emph{link of \(x\) in \(K\)} is given by
     \begin{align*}
-      \lk(x, K) \coloneqq \quot{\bigcup_{i \in I} \lk(x_{\lambda(i)}, C_{\lambda(i)})}{\sim}.
+      \lk(x, X) \coloneqq \quot{\bigcup_{i \in I} \lk(x_{\lambda(i)}, C_{\lambda(i)})}{\sim}.
     \end{align*}
   \end{itemize}
 \end{defin}
 
 \begin{rem}
   \begin{itemize}
-  \item \(\lk(x, K)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(K\).
-  \item The definition of a convex polyhedral complex is not the standard one given (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). Normally, one is satisfied, if the \(p_\lambda\) are injective on the interior of each face separately. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence I will adopt it from the start. Alternatively, it is always possible to go over to the first barycentric subdivision to achieve injectivity of all \(p_\lambda\).
-  \item The above definition ascertains that two cells either interesect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes. 
+  \item In the language of \(M_\kappa\)-polyhedral complexes the link \(\lk(x, X)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(X\). For more details consider \textcite[Sectoin~I.7]{MR1744486}. Additionally, I would like to point out, that although all the cells of \(\lk(x,X)\) consists of only simplices, it might happen that \(\lk(x,X)\) is not a simplicial complex. An example is given below.\todo{give specific example}
+  \item The definition of a cube complex is not the standard one given, but that of a cubical complex (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). Normally, one is satisfied, if the \(p_\lambda\) are injective on the interior of each face separately. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence I will adopt it from the start.
+  \item The above definition ascertains that two cubes either interesect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes. 
   \end{itemize}
 \end{rem}
 
@@ -155,24 +155,24 @@ This section is concerned with basic metric properties of spaces and their conne
   \todo{Enter examples of polyhedral complexes and links.}
 \end{bsp}
 
-\begin{defin}
-  \label{def:epsilon}
-  \begin{itemize}
-  \item \(c\colon [a, b] \to K\) is called \emph{piecewise geodesic}, if there exists a subdivision \(a = t_0 \leq \dots \leq t_k = b\) and geodesics \(c_i\colon [t_{i-1}, t_i] \to C_{\lambda(i)}\), such that \(c|_{[t_{i-1}, t_i]} = p_{\lambda(i)} \circ c_i\). The \emph{length} of a piecewise geodesic path is given by
-    \begin{align*}
-      l(c) \coloneqq \sum_{i=1}^n l(c_i).
-    \end{align*}
-  \item Let
-    \begin{align*}
-      &d\colon K \times K \to \R_{\geq 0} \cup \{\infty\},\\
-      &d(x,y) \coloneqq \inf\{l(c) \mid c(a) = x,\ c(b) = y \text{ and } c \text{ piecewiese geodesic}\}
-    \end{align*}
-    and
-    \begin{align}
-      \epsilon(x) \coloneqq \{d(x, C \setminus \st(x)) \mid C \subset K \text{ a cell and } x \in C\}. \label{eq:epsilon}
-    \end{align}
-  \end{itemize}
-\end{defin}
+% \begin{defin}
+%   \label{def:epsilon}
+%   \begin{itemize}
+%   \item \(c\colon [a, b] \to K\) is called \emph{piecewise geodesic}, if there exists a subdivision \(a = t_0 \leq \dots \leq t_k = b\) and geodesics \(c_i\colon [t_{i-1}, t_i] \to C_{\lambda(i)}\), such that \(c|_{[t_{i-1}, t_i]} = p_{\lambda(i)} \circ c_i\). The \emph{length} of a piecewise geodesic path is given by
+%     \begin{align*}
+%       l(c) \coloneqq \sum_{i=1}^n l(c_i).
+%     \end{align*}
+%   \item Let
+%     \begin{align*}
+%       &d\colon K \times K \to \R_{\geq 0} \cup \{\infty\},\\
+%       &d(x,y) \coloneqq \inf\{l(c) \mid c(a) = x,\ c(b) = y \text{ and } c \text{ piecewiese geodesic}\}
+%     \end{align*}
+%     and
+%     \begin{align}
+%       \epsilon(x) \coloneqq \{d(x, C \setminus \st(x)) \mid C \subset K \text{ a cell and } x \in C\}. \label{eq:epsilon}
+%     \end{align}
+%   \end{itemize}
+% \end{defin}
 
 %%% Local Variables:
 %%% mode: latex

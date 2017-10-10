@@ -18,23 +18,23 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   \end{itemize}
 \end{defin}
 
-\begin{prop}(Convexity of halfspaces)
-  Let \(X\) be a CAT(0) cube complex and \(\halfplane{h} \subset X\) be a halfplane. Then \(\halfplane{h}\) is closed and convex. Furthermore, if \(\halfplane{h}\) contains at least two points of the image of any geodesix \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{h}\).
+\begin{prop}[Convexity of halfspaces,{\cite[Propositions 18 \& 19]{Rolli2012}}]
+  Let \(X\) be a CAT(0) cube complex and \(\halfplane{h} \subset X\) be a hyperplane. Then \(\halfplane{h}\) is closed and convex. Furthermore, if \(\halfplane{h}\) contains at least two points of the image of any geodesix \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{h}\).
 \end{prop}
 
 \begin{cor}
   Let \(X\) be a CAT(0) cube complex. Every \(\halfspace{h} \subset X\) is itself a CAT(0) cube complex.
 \end{cor}
 
-\begin{thm}[Separation]
+\begin{thm}[Separation, {\cite[Proposition 21]{Rolli2012}}]
   Any halfplane \(\halfplane{h}\) separates \(X\) in exactly two connected components.
 \end{thm}
 
 \begin{defin}
-  The two connected components of \(X \setminus \halfplane{h}\) are called \emph{halfspaes}. If \(\halfspace{h} \subset X \setminus \halfplane{h}\) is one of these halfspaces, then \(\halfspace{h}^c\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \dot \cup\, \halfplane{h}\, \dot \cup\, \halfspace{h}^c \).
+  The two connected components of \(X \setminus \halfplane{h}\) are called \emph{halfspaces}. If \(\halfspace{h} \subset X \setminus \halfplane{h}\) is one of these halfspaces, then \(\halfspace{h}^\ast\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \dot \cup\, \halfplane{h}\, \dot \cup\, \halfspace{h}^\ast \).
 \end{defin}
 
-\begin{thm}[Intersection]
+\begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]
   \begin{enumerate}
   \item Let \(\halfplane{h}_1, \dots, \halfplane{h}_n\) be halfplanes with with pairwise non-trivial intersection. Then
     \begin{align*}
@@ -47,6 +47,8 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
     In particular, the intersection contains a vertex of \(X\).
   \end{enumerate}
 \end{thm}
+
+\todo{Überleitung}
 
 \begin{cor}
   If \(X\) is a locally finite CAT(0) cube complex. Then its set of hyperplanes \(\mathcal{\hat H}\) and its set of haflspaces \(\mathcal{H}\) are countable.

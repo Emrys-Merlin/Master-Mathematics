@@ -1,77 +1,75 @@
 \subsection{The complex}
 \label{sec:complex}
 
-\todo{Write definition of cube complex and the like}
-\todo{border of cubes}
 \todo{write something about topology}
 
-\begin{defin}
-  \(K\) is called a \emph{cube complex}, if it is a \(M_0\)-polyhedral complex, where every cell \(C\) is given by a unit cube of arbitrary dimension.
-\end{defin}
+% \begin{defin}
+%   \(K\) is called a \emph{cube complex}, if it is a \(M_0\)-polyhedral complex, where every cell \(C\) is given by a unit cube of arbitrary dimension.
+% \end{defin}
 
-From now on, if not otherwise specified, all cells \(C\) will be taken to be cubes.
+% From now on, if not otherwise specified, all cells \(C\) will be taken to be cubes.
 
-\begin{lemma}
-  \label{lemma:cube-dist}
-  Let \(x \leq C\) a cell and \(\dim C > 0\). Then
-  \begin{align*}
-    d(x, C - \st(x)) =
-    \begin{cases}
-      1 & \text{if } \dim \supp(x) = 0\\
-      d(x, \partial \supp(x)) & \text{else}
-    \end{cases}
-                         .
-  \end{align*}
-\end{lemma}
+% \begin{lemma}
+%   \label{lemma:cube-dist}
+%   Let \(x \leq C\) a cell and \(\dim C > 0\). Then
+%   \begin{align*}
+%     d(x, C - \st(x)) =
+%     \begin{cases}
+%       1 & \text{if } \dim \supp(x) = 0\\
+%       d(x, \partial \supp(x)) & \text{else}
+%     \end{cases}
+%                          .
+%   \end{align*}
+% \end{lemma}
 
-\begin{proof}
-  If \(l = 0\) then \(x\) is a vertex of \(C^k\) and any other vertex (which exist, as \(k > 0\)) has distance at least \(1\) and is by definition not contained in the star of \(x\). Hence, \(d(x, C^k - \st(x)) \leq 1\).
+% \begin{proof}
+%   If \(l = 0\) then \(x\) is a vertex of \(C^k\) and any other vertex (which exist, as \(k > 0\)) has distance at least \(1\) and is by definition not contained in the star of \(x\). Hence, \(d(x, C^k - \st(x)) \leq 1\).
   
-  After a rotation of the cube, we may assume that \(x\) is the origin and hence any face \(F\) of \(C^k\), not containing \(x\) must have at least one \(\delta_i = 1\). Let \(n_F\) denote the sum of all \(\delta_i\) defining \(F\). Then for all \(y \in F\), we have
-  \begin{align*}
-    d(x,y) = |y| \geq n_F \geq 1
-  \end{align*}
-  if \(x\) is not contained in \(F\). \(C^k - \st(x)\) is compact, therefore there there exists a \(y \in C^k - \st(x)\), such that
-  \begin{align*}
-    d(x, C^k - \st(x)) = d(x, y) 
-  \end{align*}
-  holds. Furthermore, there must exist a face \(F\) containing \(y\) in its interior. By definition of \(y\), \(F\) cannot contain \(x\). Together with the above argument we yield \(d(x, C^k - \st(x)) \geq 1\), which proves the first assertion.
+%   After a rotation of the cube, we may assume that \(x\) is the origin and hence any face \(F\) of \(C^k\), not containing \(x\) must have at least one \(\delta_i = 1\). Let \(n_F\) denote the sum of all \(\delta_i\) defining \(F\). Then for all \(y \in F\), we have
+%   \begin{align*}
+%     d(x,y) = |y| \geq n_F \geq 1
+%   \end{align*}
+%   if \(x\) is not contained in \(F\). \(C^k - \st(x)\) is compact, therefore there there exists a \(y \in C^k - \st(x)\), such that
+%   \begin{align*}
+%     d(x, C^k - \st(x)) = d(x, y) 
+%   \end{align*}
+%   holds. Furthermore, there must exist a face \(F\) containing \(y\) in its interior. By definition of \(y\), \(F\) cannot contain \(x\). Together with the above argument we yield \(d(x, C^k - \st(x)) \geq 1\), which proves the first assertion.
 
-  Now, let \(l\) be different from \(0\). After a rotation, we can identify \(F\) with \(C^l\). \(\partial C^l \subset C^k - \st(x)\) holds and thus we have
-  \begin{align}
-    \label{eq:dist-border}
-    d(p, C^k - \st(x) \leq d(x, \partial C^k) < 1 .
-  \end{align}
-  As above, we find a \(y \in C^k - \st(x)\), realizing the distance. \(y\) lies in the interior of some face \(G\) and, by definition, \(G\) does not have \(C^l\) as a face. First, let us assume that \(G \cup \partial C^l \neq \varnothing\). In that case there is a unique projection \(\hat y \in G \cup \partial C^l\) of \(y\) and an element \(y_\perp\) orthogonal to \(C^l\), such that \(y = \hat y + y_\perp\). Then we have
-  \begin{align*}
-    d^2(x, y) = |x - \hat y|^2 + |y_\perp|^2 \leq d(x, \hat y).
-  \end{align*}
-  Hence \(y_\perp = 0\), which leads to \(y = \hat y \in \partial C^l\). If \(G \cup \partial C^l = \varnothing\), then at least one of the components \(l+1, \dots, k\) have to be fixed to \(1\), leading to \(d(x, C^k - \st(x)) = d(x,y) \geq 1\), which is a contradiction to Equation~\ref{eq:dist-border}, which proves the other inequality.
-\end{proof}
+%   Now, let \(l\) be different from \(0\). After a rotation, we can identify \(F\) with \(C^l\). \(\partial C^l \subset C^k - \st(x)\) holds and thus we have
+%   \begin{align}
+%     \label{eq:dist-border}
+%     d(p, C^k - \st(x) \leq d(x, \partial C^k) < 1 .
+%   \end{align}
+%   As above, we find a \(y \in C^k - \st(x)\), realizing the distance. \(y\) lies in the interior of some face \(G\) and, by definition, \(G\) does not have \(C^l\) as a face. First, let us assume that \(G \cup \partial C^l \neq \varnothing\). In that case there is a unique projection \(\hat y \in G \cup \partial C^l\) of \(y\) and an element \(y_\perp\) orthogonal to \(C^l\), such that \(y = \hat y + y_\perp\). Then we have
+%   \begin{align*}
+%     d^2(x, y) = |x - \hat y|^2 + |y_\perp|^2 \leq d(x, \hat y).
+%   \end{align*}
+%   Hence \(y_\perp = 0\), which leads to \(y = \hat y \in \partial C^l\). If \(G \cup \partial C^l = \varnothing\), then at least one of the components \(l+1, \dots, k\) have to be fixed to \(1\), leading to \(d(x, C^k - \st(x)) = d(x,y) \geq 1\), which is a contradiction to Equation~\ref{eq:dist-border}, which proves the other inequality.
+% \end{proof}
 
-\begin{lemma}
-  If \(K\) is a cube complex, then \(\epsilon(x) > 0\) (c.\,f.~\eqref{eq:epsilon}) for arbitrary \(x \in K\).
-\end{lemma}
+% \begin{lemma}
+%   If \(K\) is a cube complex, then \(\epsilon(x) > 0\) (c.\,f.~\eqref{eq:epsilon}) for arbitrary \(x \in K\).
+% \end{lemma}
 
-\begin{proof}
-  By definition of a cube complex, for any point \(x\) and two preimages \(x_i \in C_{\lambda_i}\), we have an isometry \(h \colon \supp(x_1) \to \supp(x_2)\). Hence, for any \(F_i \leq C_{\lambda_i}\), we have that \(d(x_1, F_1 \setminus \st(x_1)) = d(x_2, F_2 \setminus \st(x_2))\) by Lemma~\ref{lemma:cube-dist}. This shows that \(d(x, C \setminus \st(x))\) can be computed in any preimage of the cell \(C\) and furthermore, that the value is independent of \(C\). Hence, \(\epsilon(x) > 0 \).
-\end{proof}
+% \begin{proof}
+%   By definition of a cube complex, for any point \(x\) and two preimages \(x_i \in C_{\lambda_i}\), we have an isometry \(h \colon \supp(x_1) \to \supp(x_2)\). Hence, for any \(F_i \leq C_{\lambda_i}\), we have that \(d(x_1, F_1 \setminus \st(x_1)) = d(x_2, F_2 \setminus \st(x_2))\) by Lemma~\ref{lemma:cube-dist}. This shows that \(d(x, C \setminus \st(x))\) can be computed in any preimage of the cell \(C\) and furthermore, that the value is independent of \(C\). Hence, \(\epsilon(x) > 0 \).
+% \end{proof}
 
 \begin{thm}
-  If \(K\) is a cube complex, then \(d\) is a metric.
+  If \(X\) is a cube complex, then \(d\) is a metric.\todo{cite something}
 \end{thm}
 
-\begin{proof}
-  The symmetry in triangle enequality follow directly from the definition. It remains to prove that \(d(x,y) = 0\) implies \(x = y\). In order to do that, we claim that if \(d(x,y) < \epsilon(x)\), then there exists a cube \(C \subset K\), such that \(x, y \in C\) with preimages \(\bar x, \bar y \in C_\lambda\) such that \(d(x,y) = d_{C_\lambda}(\bar x,\bar y)\). The claim then follows directly. However, we will not show this claim directly but further reduce the assertion. We consider \(m\)-strings \(s \coloneqq (x_0, \dots, x_m) \in K^{m+1}\), with the property that each sucessive pair of points \(x_{i-1}, x_i\) are contained in a common cube \(C_i\). With this we define the length of a string as \(l(s) = \sum_{i=1}^n d_{C_i}(x_{i-1}, x_i)\), where \(d_{C_i}\) is the metric on \(C_i\) induced by any of its preimages under the natural projection.
+% \begin{proof}
+%   The symmetry in triangle enequality follow directly from the definition. It remains to prove that \(d(x,y) = 0\) implies \(x = y\). In order to do that, we claim that if \(d(x,y) < \epsilon(x)\), then there exists a cube \(C \subset K\), such that \(x, y \in C\) with preimages \(\bar x, \bar y \in C_\lambda\) such that \(d(x,y) = d_{C_\lambda}(\bar x,\bar y)\). The claim then follows directly. However, we will not show this claim directly but further reduce the assertion. We consider \(m\)-strings \(s \coloneqq (x_0, \dots, x_m) \in K^{m+1}\), with the property that each sucessive pair of points \(x_{i-1}, x_i\) are contained in a common cube \(C_i\). With this we define the length of a string as \(l(s) = \sum_{i=1}^n d_{C_i}(x_{i-1}, x_i)\), where \(d_{C_i}\) is the metric on \(C_i\) induced by any of its preimages under the natural projection.
 
-  These \(m\)-strings are in \(1:1\)-correspondence with piecwiese geodesic segments in \(K\) and thus we can use the two notions interchangeable. We will prove the claim: If \(l(s) < \epsilon(x_0)\), then there exists a cube \(C \subset K\) with \(x_0, x_m \in C\) and such that \(d_C(x_0, x_m) \leq l(s)\). We proceed by induction. For \(m=1\) the claim is true by definition. Assume that the claim is true for some \(m \in \N\) and let \(s = (x_0, \dots, x_{m+1})\) be an \((m+1)\)-string and \(s'\) the \(m\)-string consisting of the first \(m+1\) entries. By definition there exists a cube \(C\) such that \(x_m, x_{m+1} \in C\). Furthermore, \(d(x_0, x_m) \leq l(s') \leq l(s) < \epsilon(x_0)\). Hence, \(x_m \in \st(x_0)\). So there exists a second cube \(\tilde C\) that contains \(x_m\) in its interior. Also \(\tilde C \cap C\) is not empty and hence also a cube. Since \(x_m\) is in the interior of \(\tilde C\) we have \(\tilde C \subset C\) and hence \(x_0 \in C\). We have
-  \begin{align*}
-    d_C(x_0, x_{m+1}) \leq d_C(x_0, x_m) + d_C(x_m x_{m+1}) \stackrel{\ast}{\leq} l(s') + d_C(x_m + x_{m+1}) = l(s),
-  \end{align*}
-  which is what we wanted to show. For the inequality \(\ast\), we use the induction hypothesis together with the observation that if the inequality is true for any cube containing \(x_0\) and \(x_m\), then it is true for all cubes containing both points.
+%   These \(m\)-strings are in \(1:1\)-correspondence with piecwiese geodesic segments in \(K\) and thus we can use the two notions interchangeable. We will prove the claim: If \(l(s) < \epsilon(x_0)\), then there exists a cube \(C \subset K\) with \(x_0, x_m \in C\) and such that \(d_C(x_0, x_m) \leq l(s)\). We proceed by induction. For \(m=1\) the claim is true by definition. Assume that the claim is true for some \(m \in \N\) and let \(s = (x_0, \dots, x_{m+1})\) be an \((m+1)\)-string and \(s'\) the \(m\)-string consisting of the first \(m+1\) entries. By definition there exists a cube \(C\) such that \(x_m, x_{m+1} \in C\). Furthermore, \(d(x_0, x_m) \leq l(s') \leq l(s) < \epsilon(x_0)\). Hence, \(x_m \in \st(x_0)\). So there exists a second cube \(\tilde C\) that contains \(x_m\) in its interior. Also \(\tilde C \cap C\) is not empty and hence also a cube. Since \(x_m\) is in the interior of \(\tilde C\) we have \(\tilde C \subset C\) and hence \(x_0 \in C\). We have
+%   \begin{align*}
+%     d_C(x_0, x_{m+1}) \leq d_C(x_0, x_m) + d_C(x_m x_{m+1}) \stackrel{\ast}{\leq} l(s') + d_C(x_m + x_{m+1}) = l(s),
+%   \end{align*}
+%   which is what we wanted to show. For the inequality \(\ast\), we use the induction hypothesis together with the observation that if the inequality is true for any cube containing \(x_0\) and \(x_m\), then it is true for all cubes containing both points.
 
-  So we see that for all pairs \(x,y \in K\) with \(d(x,y) < \epsilon(x)\), we find a cube \(C\) containing both and \(d_C(x,y) \leq d(x,y)\). However, by construction of \(d\) this already implies equality. For \(d_C\) we already know that it is a metric on its cube. So \(d(x,y) = 0\) implies \(x = y\).
-\end{proof}
+%   So we see that for all pairs \(x,y \in K\) with \(d(x,y) < \epsilon(x)\), we find a cube \(C\) containing both and \(d_C(x,y) \leq d(x,y)\). However, by construction of \(d\) this already implies equality. For \(d_C\) we already know that it is a metric on its cube. So \(d(x,y) = 0\) implies \(x = y\).
+% \end{proof}
 
 In the following is a short list of deeper results about cube complexes, which we will need in the following, but which we will not be able to prove. The interested reader may find the results in~\cite[Appendices A, B]{MR3029427}. For the finite dimensional case we refer to~\cite[Sec. I.7, II.5]{MR1744486}.
 
@@ -191,7 +189,7 @@ In the following is a short list of deeper results about cube complexes, which w
     & = ((p|_U)^{-1} \circ p_\lambda)(z)\\
     & = ((p|_U)^{-1} \circ p_{\lambda'} \circ \phi)(z)\\
     & = ((p|_U)^{-1} \circ p \circ p_{\lambda',f'} \circ \phi)(z)\\
-    & = (p_{\lambda', f'} \circ)(z).
+    & = (p_{\lambda', f'} )(z).
   \end{align*}
   This shows that \(A\) is closed. Lastly consider any \(z \in A\). Then there exists a neighborhood \(U\) of \(p_{\lambda, f}(z)\) such that \(p|_U\) is a homeomorphism on its image. Let \(w \in V \coloneqq p_{\lambda, f}^{-1}(U)\). Then
   \begin{align*}

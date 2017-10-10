@@ -21,36 +21,36 @@ This section will contain some important facts about general CAT(0) spaces. Wher
   \end{itemize}
 \end{defin}
 
-\begin{prop}
+\begin{prop}[{\cite[Propositions 1 \& 2]{Rolli12}}]
   Let \(X,Y\) be geodesic spaces and let \(Y\) be CAT(0). Then every local isometry \(\phi \colon X \to Y\) is an isometric embedding. In particular, every local geodesic is a geodesic.
 \end{prop}
 
 \todo{enter definition of convexity (do it above before convex polyhedral cells)}
 
-\begin{prop}[Projections~{\cite[Prop II.2.7]{MR1744486}}]
-  Let \(X\) be a complete CAT(0) space and \(A \subset X\) be convex and closed. Then
-  \begin{enumerate}
-  \item for any point \(x \in X\) there exists a unique point \(\pi_A(x)\) realizing the diestance from \(x\) to \(A\), i.\,e.
-    \begin{align*}
-      d(x, \pi_A(x)) = d(x, A) = \inf_{a \in A} d(x, a).
-    \end{align*}
-    In this way \(\pi_A\) defines a map \(X \to A\).
-  \item \(\pi_A\) is distance non-increasing.
-  \item if \(x' \in X\) lies on the geodesic segment \(\left[x, \pi_A(x)\right]\), we have \(\pi_A(x') = \pi_A(x)\).
-  \end{enumerate}
-\end{prop}
+% \begin{prop}[Projections~{\cite[Prop II.2.7]{MR1744486}}]
+%   Let \(X\) be a complete CAT(0) space and \(A \subset X\) be convex and closed. Then
+%   \begin{enumerate}
+%   \item for any point \(x \in X\) there exists a unique point \(\pi_A(x)\) realizing the diestance from \(x\) to \(A\), i.\,e.
+%     \begin{align*}
+%       d(x, \pi_A(x)) = d(x, A) = \inf_{a \in A} d(x, a).
+%     \end{align*}
+%     In this way \(\pi_A\) defines a map \(X \to A\).
+%   \item \(\pi_A\) is distance non-increasing.
+%   \item if \(x' \in X\) lies on the geodesic segment \(\left[x, \pi_A(x)\right]\), we have \(\pi_A(x') = \pi_A(x)\).
+%   \end{enumerate}
+% \end{prop}
 
-\begin{prop}[Fix points]
-  Let \(\phi \colon X \to X\) be an isometry and \(X\) a CAT(0) space. Then
-  \begin{align*}
-    X^\phi \coloneqq \{x \in X \mid \phi(x) = x\} \subset X
-  \end{align*}
-  is closed and convex.
-\end{prop}
+% \begin{prop}[Fix points]
+%   Let \(\phi \colon X \to X\) be an isometry and \(X\) a CAT(0) space. Then
+%   \begin{align*}
+%     X^\phi \coloneqq \{x \in X \mid \phi(x) = x\} \subset X
+%   \end{align*}
+%   is closed and convex.
+% \end{prop}
 
-\begin{proof}
-  The fix point set of any homeomorphism of a Hausdorff space to itself is closed. Furthermore, let \(\gamma\) be a geodesic joining two fix points \(x\) and \(y\). Then \(\phi \circ \gamma\) is again a geodesic joining the same two points. As \(X\) is uniquely geodesic, we yield \(\gamma = \phi \circ \gamma\) and hence the whole geodesic segment is fixed by \(\phi\), which is what we needed to show for convexity.
-\end{proof}
+% \begin{proof}
+%   The fix point set of any homeomorphism of a Hausdorff space to itself is closed. Furthermore, let \(\gamma\) be a geodesic joining two fix points \(x\) and \(y\). Then \(\phi \circ \gamma\) is again a geodesic joining the same two points. As \(X\) is uniquely geodesic, we yield \(\gamma = \phi \circ \gamma\) and hence the whole geodesic segment is fixed by \(\phi\), which is what we needed to show for convexity.
+% \end{proof}
 
 In every CAT(0) space each geodesic can be extended indefinitely\todo{cite something}. This allows the definition of the following boundary.
 
