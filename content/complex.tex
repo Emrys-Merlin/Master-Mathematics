@@ -216,6 +216,10 @@ In the following is a short list of deeper results about cube complexes, which w
   From now on we will assume that all our complexes are connected and finite dimensional.
 \end{rem}
 
+\begin{defin}
+  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\).
+\end{defin}
+
 \begin{prop}[{\cite[Prop.~14]{Rolli2012}}]
   Let \(X\) be a cube complex. Then the following are equivalent:
   \begin{enumerate}
@@ -225,6 +229,21 @@ In the following is a short list of deeper results about cube complexes, which w
   \item \(X\) is locally compact.
   \end{enumerate}
 \end{prop}
+
+From now on we will also assume that all our CAT(0) cube complexes are locally finite.\todo{important perahps put at another location.}
+
+\begin{lemma}
+  \label{lem:lf-countable}
+  If \(X\) is a locally finite CAT(0) cube complex. Let \(V(X)\) be its vertex set considered with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\)the sets \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) are finite.
+\end{lemma}
+
+\begin{proof}
+  We fix \(x_0 \in V(X)\) and proceed by induction. \(X_0 = \{x_0\}\) since \(d\) is a metric. Now, assume \(X_n\) to be finite and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local finiteness \(N(x)\) is finite. Thus
+  \[
+    X_{n+1} \subset \bigcup_{x \in X_n} N(x)
+  \]
+  is a finite set.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
