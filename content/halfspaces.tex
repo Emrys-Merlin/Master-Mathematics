@@ -48,6 +48,22 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   \end{enumerate}
 \end{thm}
 
+\begin{cor}
+  If \(X\) is a locally finite CAT(0) cube complex. Then its set of hyperplanes \(\mathcal{\hat H}\) and its set of haflspaces \(\mathcal{H}\) are countable.
+\end{cor}
+
+\begin{proof}
+  We fix a vertex \(x_0 \in V(X)\) and consider the sets
+  \[
+    Y_n \coloneqq \{(x,y) \in X_{n-1} \times X_{n} \mid y \in N(x)\} \subset X_{n-1} \times X_n \quad \forall n \in \N.
+  \]
+  By Lemma~\ref{lem:lf-countable} these are finite and we have that
+  \[
+    \mathcal{\hat H} = \bigcup_{n=1}^\infty \bigcup_{e \in Y_n} \mathfrak{\hat h}([e])
+  \]
+  is countable. Since every hyperplane has exactly two halfspaces associated to it the same is true for \(\mathcal{H}\).
+\end{proof}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Master"
