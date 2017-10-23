@@ -1,28 +1,152 @@
 \section{Measuretheoretic preliminaries}
 \label{sec:measure}
 
+\begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}}]
+  \label{thm:mackey}
+  Let \((M, \sigma, \vartheta)\) be a standard probability space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a subs-sigma-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable, \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
+\end{thm}\todo{so far only in lecture notes on poisson boundary. Find better source.}
+
 \begin{defin}
-  Let \((M, \Sigma, \theta)\) be a probability space and \(T\colon M \to M\) a measurable and measure-preserving (\(\theta(A) = \theta(T^{-1}(A)) \ \forall A \in \Sigma\)) map. \(T\) is called ergodic, if for every \(A \in \Sigma\ T^{-1}(A) = A\) implies that \(\theta(A) \in \{0, 1\}\).
+  Let \((M, \Sigma, \mu)\) be a measure space. \(B \in \Sigma\) is called \emph{atomic}, if \(\mu(B) > 0\) and for all measurable \(A \subset B\) we have \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). \(M\) is called \emph{purely atomic}, if there exists a partition of \(M\) consisting of measurable sets, such that each of these sets is atomic.
 \end{defin}
 
-\begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}}]
-  Let \(\Gamma\) be a separable locally compact group anad let \(B\) be a Boolean \(\Gamma\)-space which is standard as a \(\sigma\)-Boolean algebra. Then there exists a Borel \(\Gamma\)-space \(S\) and a finite quasi-invariant measure \(\mu\) on \(S\) such that \(B\) is equivalent to the Boolean  \(\Gamma\)-space associated with \(S\) and \(\mu\).
-\end{thm}
-\todo{look up what 'standard' means in this context}
-
-\todo{I replaced measure space by probability space. Should be enough and I am not sure if it works in the general case}
-\begin{lemma}[{\cite[Lem 4.3]{MR3509968}}]
-  Let \(\Gamma\) be a group acting on a measure space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \theta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
+\begin{lemma}
+  \label{lem:ergodic-atomic}
+  Let \((M, \Sigma, \mu)\) be a measure space and \(\Gamma\) a finite group acting ergodically on it. Then \(M\) is purely atomic.
 \end{lemma}
 
+\begin{proof}
+  We have to find the above mentioned partition and start by considering the following set:
+  \[
+    \Lambda \coloneqq \{A \in \Sigma \mid \mu(A) > 0\}.
+  \]
+  This set is clearly partially ordered under inclusion. Furthermore, obeserver that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity and since \(\Gamma\) also acts measure preserving \(\mu(A) > \text{\nfrac 1/n}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
+  \[
+    \Lambda = \{A \in \Sigma \mid \mu(A) \geq n^{-1}\}.
+  \]
+  Next consider a descending chain \(A_1 \supset A_2 \supset A_3 \supset \dots\) in \(\Lambda\). Then \(A \coloneqq \cap_i A_i\) is also measurable and since
+  \[
+    \mu\left(\bigcap_{i=1}^k A_i \right) = \mu(A_k) \geq \frac1n
+  \]
+  we have \(\mu(A) \geq n^{-1}\) and \(A\) lies in \(\Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). Observe that for each \(g \in \Gamma\), \(gA\) is also a minimal element, indeed if \(B \subset gA\), then \(g^{-1} B \subset A\), hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
+
+  Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we yield that \(\mu(A) = 1\). We claim that in this case \(M\) is already atomic. Take any \(B \in \Sigma\).
+  Then
+  \[
+    \mu(B) = \mu(B \cap A) + \mu(B \cap A^c) = \mu(B \cap A),
+  \]
+  since \(A^c\) is a null-set. We see that \(B \cap A \subset A\) and thus either \(\mu(B \cap A) = 0\) or \(B  \cap A \in \Lambda\) and hence \(B \cap A = A\) and \(\mu(B) = 1 = \mu(M)\).
+
+  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\) we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there must exist at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) were \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define
+  \begin{align*}
+    B_1 & \coloneqq A \setminus g_1A\\
+    B_i & \coloneqq B_{i-1} \setminus g_i A \quad \forall i = 2, \dots, l.
+  \end{align*}
+  We claim that \(\mu(B_i) = \mu(A) >0\) for each \(i\). Indeed, by induction we have
+  \begin{align*}
+    \mu(B_1) & = \mu(A) - \mu(A \cap g_1A) = \mu(A) \quad \text{and}\\
+    \mu(A) & \geq \mu(B_i) = \mu(B_{i-1}) - \mu(B_{i-1} \cap g_iA) \geq \mu(A) - \mu(A \cap g_i A) = \mu(A).
+  \end{align*}
+  Hence \(B_i \in \Lambda\) and \(B_i = A\) for each \(i\). However, then we have
+  \[
+    A \cap g_iA = B_i \cap g_iA = (B_{i-1} \setminus g_iA) \cap g_iA = \varnothing.
+  \]
+  All in all we have that
+  \[
+    \bigcup_{g \in \Gamma} gA = \bigsqcup_{i=0}^l g_i A,
+  \]
+  where we set \(g_0 = e\). Thus this set has full measure. If we now define
+  \begin{align*}
+    B_0 & \coloneqq M \setminus \left (\bigsqcup_{i=1}^l g_iA \right) \supset A\\
+    B_i & \coloneqq g_iA \qquad \forall i = 1, \dots, l
+  \end{align*}
+  Then \(M = \sqcup_i B_i\) and analogously to before we can show that each of these sets is atomic.
+\end{proof}
+
+\begin{lemma}[{\cite[Lem 4.3]{MR3509968}}]
+  Let \(\Gamma\) be a group acting on a measure space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \vartheta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
+\end{lemma}
+
+\begin{proof}
+  We proceed by contradiction. Assume that \(\Gamma\) acts doubly ergodic on \(M\), but that there exists a finite index subgroup \(\Gamma_0 \leq \Gamma\) which does not act ergodically on \(M\). We can find a finite index normal subgroup of \(\Gamma\) within \(\Gamma_0\), which would still act non-ergodically on \(M\). Hence without loss of generality we can assume that \(\Gamma_0\) is normal in \(\Gamma\).
+
+  We would consider the set
+  \[
+    \Lambda \coloneqq \{A \subset M \text{ measurable} \mid gA = g \quad \forall g \in \Gamma_0\}.
+  \]
+  This is a \(\sigma\)-subalgebra and since \(\Gamma_0\) is normal it inherits a \(\Gamma\)-action. Applying Mackey's point realization (Theorem~\ref{thm:mackey}), we find a standard Borel space \((M_0, \Sigma_0, \vartheta_0)\) and a measurable, \(\Gamma\)-equivariant map \(p\colon M \to M_0\), which induces a bijection on the two \(\sigma\)-algebras \(\Lambda\) and \(\Sigma_0\) and \(\vartheta_0 = p_\ast \vartheta\). Via this pushforward \(\Gamma\) would also act (doubly) ergodic(ally) on \(M_0\) and on the \(\sigma\)-algebra \(\Sigma_0\) we in fact find a well defined group action \(\bar \Gamma \coloneqq \quot{\Gamma}{\Gamma_0}\), which is still ergodic, because all elements of the algebra are \(\Gamma_0\) invariant.
+
+  However, applying Lemma~\ref{lem:ergodic-atomic} this would imply that \(M_0\) were purely atomic. If \(M_0\) were atomic itself then \(\Gamma_0\) would act ergodically on \(M\). Indeed, any \(A \in \Lambda\) would correspond  to exactly one \(A_0 \in \Sigma_0\) such that \(p^{-1}(A_0)= A\) and hence
+  \[
+    \vartheta(A) = \vartheta_0(A_0) \in \{0, 1\},
+  \]
+  if \(M_0\) were atomic. A contradiction.
+
+  Therefore, we could assume that there exists an atomic subset \(B \subset M\), such that \(0 < \vartheta_0(B) < 1\). We would consider \(A \coloneqq p^{-1}(B)\) and would have also in this case \(0 < \vartheta(A) < 1\). We claim that the set
+  \[
+    X \coloneqq \bigcup_{\bar g \in \bar \Gamma}gA \times gA \subset M \times M
+  \]
+  were neither null nor conull. However, this were a contradiction, since \(X\) is \(\Gamma\)-invariant and \(\Gamma\) is assumed to act doubly ergodic.
+
+  In order to see this, we first note that \(X\) were well-defined, as \(A\) is \(\Gamma_0\)-invariant und thus the action of \(\Gamma\) factors through \(\bar \Gamma\). Additionally, \(X\) were not null as it would contain \(A \times A\). Lastly, we claim that up to a nullset \(A \times A^c\) is contained in \(X^c\). In particular, we have
+  \[
+    (\vartheta\times\vartheta)(A \times A^c \cap X) \leq \sum_{\bar g \in \bar \Gamma} \vartheta(A \cap gA) \cdot \vartheta(A^c \cap gA).
+  \]
+  Now \(A \cap gA\) lies still in \(\Lambda\), but, on \(\Lambda\), \(A\) is atomic and hence we have \(\vartheta(A \cap gA) \in \{0, \vartheta(A)\}\). So either \(\vartheta(A \cap gA)\) or \(\vartheta(A^c \cap gA)\) were 0 and the righthandside of the above equation would vanish.
+\end{proof}
+
 \begin{lemma}[{\cite[Lem. 4.4]{MR3509968}}]
+  \label{lem:4.4}
   Let \(C\) be a countable set with a \(\Gamma\)-action and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If \(\psi \colon B \times B \to C\) or \(\psi \colon B \to C\) is a \(\Gamma\)-equivariant measurable map, then \(\psi\) is essentially constant.
+\end{lemma}
+
+\begin{proof}
+  Since \(\Gamma\) acts ergodically on \(B \times B\) the same is true for the action on \(C\) equipped with the pushforward measure \(\mu \coloneqq \psi_\ast(\beta \times \beta)\). Next, we choose representatives \((y_n)_{n \in \N}\) of the equivalence classes of \(\quot{\im \psi}{\Gamma}\). Indeed, since \(C\) is countable, we really only need countably many representatives. With this we have
+  \[
+    \im \psi = \bigsqcup_{n \in \N} \Gamma \cdot y_n
+  \]
+  and thus
+  \[
+    1 = \mu(\im \psi) = \sum_{n \in \N} \mu(\Gamma \cdot y_n).
+  \]
+  However, each \(\Gamma \cdot y_n\) is \(\Gamma\)-invariant and by ergodicity we yield \(\mu(\Gamma \cdot y_n) \in \{0,1\}\). All in all we see that there exists exactly one \(n \in \N\) such that \(\mu(\Gamma \cdot y_n) = 1\). We define \(D \coloneqq \Gamma \cdot y_n\) and observe that \(\Gamma\) acts transitively on this countable set.
+
+  First, we consider the case that \(D\) is finite. In this case we find a finite index subgroup \(\Gamma_0 \leq \Gamma\) which acts trivially on \(D\). Furthermore, by the previous lemma we know that \(\Gamma_0\) still acts ergodically on \(D\). As previously we can decompose \(D\) via
+  \[
+    1 = \mu(D) = \sum_{x \in D} \mu(\{x\}).
+  \]
+  By the trivial action each of these atomic spaces is \(\Gamma_0\)-invariant and hence for exactly one \(x \in D\) we have \(\mu(\{x\}) = 1\). Hence \(\psi\) is essentially constant with essential value \(x\).
+
+  Lastly, we need to consider the case that \(D\) is infinite. Indeed, we will show that this cannot happen. We consider the Bernoulli space \(A \coloneqq \{0,1\}^D\) together with the standard Bernoulli measure \(\lambda\) (c.\,f.~\cite[29]{Klenke}). Since \(\Gamma\) acts transitively on \(D\) we get that the action of \(\Gamma\) on \(A\) via \(g\chi_S \coloneqq \chi_{gS}\), where \(S\) is any subset of \(D\) and \(g \in \Gamma\), is ergodic (c.\,f.~\cite[Example~20.26]{Klenke}).
+  By Lemma~\ref{lem:coeff-product}, we then have that \(B \times B \times A\) is ergodic and we can consider the following map
+  \[
+    f\colon B \times B \times A \to \R,\ (x,y,\chi_s) \mapsto \chi_s(\psi(x,y)).
+  \]
+  \(f\) is \(G\)-invariant under the diagonal action and hence essentially constant. Denote this value by \(y \in \{0,1\}\). Then by Fubini's theorem we have that
+  \[
+    B \times B \to \R,\ (x,y) \mapsto \int_A f(x,y,\chi_S) \d\mu(\chi_S)
+  \]
+  exists for almost all \((x,y) \in B \times B\) and is also essentially constant with value \(y\). Fixing a value \((x_0, y_0)\) for which this is true, we see that \(\chi_S(x_0,y_0) = y\) for almost all \(\chi_S \in A\). However, by construction of the standard Bernoulli measure on \(A\) we have that
+  \[
+    \mu(\{\chi_S \in A \mid \chi_S(d) = 1 \}) = \mu(\{\chi_S \in A \mid \chi_S(d) = 0\}) = \text{\nfrac 1/2}
+  \]
+  for every \(d \in D\). This is a contradiction to the previous statement, if we consider \(d = \psi(x_0, y_0)\). Hence \(D\) cannot be infinite and we are done.
+\end{proof}
+
+\begin{lemma}[{\cite[Proposition~3.2]{Caprace2010}}]
+  \label{lem:ess-unbounded}
+  Let \(X\) be a finite dimensional CAT(0) cube complex, \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) and \(\Gamma \leq \Aut(X)\). Then \(\mathfrak{\hat h} \in \Ess(X,\Gamma)\) if and only if \(X(\Gamma \cdot \mathfrak{\hat h})\) is unbounded.
 \end{lemma}
 
 \begin{cor}[{\cite[Cor. 4.5]{MR3509968}}]
   \label{cor:4.5}
-  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\). If there exists a \(\Gamma\)-equivariant measurable map \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(\mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{H}(X))\), then the \(\Gamma\)-action on \(X\) is not essential.
+  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\). If there exists a \(\Gamma\)-equivariant measurable map \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(\mathcal{P}(\bar X) \to \operatorname{Pot}_f(\mathcal{H}(X))\), whose image is not essentially \(\varnothing\), then the \(\Gamma\)-action on \(X\) is not essential.
 \end{cor}
+\todo{replace \(\mathcal{P}(\bar X)\) by an arbitrary space \(B\)}
+
+\begin{proof}
+  By Lemma~\ref{lem:4.4}, the map is essentially constant. Hence, the image must be a \(\Gamma\)-invariant finite subset of \(\mathcal{H}(X)\). In particular, there is a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\). Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite and thus by Lemma~\ref{lem:ess-unbounded} that \(\mathfrak{\hat h}\) is not essential und thus the group operation is not, either.
+\end{proof}
 
 \subsection{Weighted halfspaces}
 \label{sec:weight}
@@ -89,6 +213,7 @@
 \end{proof}
 
 \begin{lemma}[{\cite[Lem.\ 4.6]{MR3509968}}]
+  \label{lem:4.6}
   Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
   \begin{enumerate}
   \item \(H_\mu\) is closed under involution. Also, involution is a bijection between \(H_\mu^+\) and \(H_\mu^-\).
@@ -101,9 +226,40 @@
   \end{enumerate}
 \end{lemma}
 
+\begin{defin}
+  Let \(x,y \in \bar X\). Then the \emph{interval \([x,y]\)} is defined via
+  \[
+    [x,y] \coloneqq \bigcap_{\mathfrak{h} \in x \cap y} \mathfrak{h} \subset X
+  \]
+\end{defin}
+
+
+\begin{lemma}
+  Let \(X\) be a CAT(0) cube complex and \(\alpha \in \bar X\) an ultrafilter. If \(\alpha^\ast\) is an ultrafilter then \(\bar X = [\alpha, \alpha^\ast]\).
+\end{lemma}
+
+\begin{proof}
+  Since no halfspace can be contained in both \(\alpha\) and \(\alpha^\ast\) we have an empty inter section and thus the equaltiy \(\bar X = [\alpha, \alpha^\ast]\) holds.
+\end{proof}
+
 \begin{lemma}[{\cite[Lem. 4.7]{MR3509968}}]
+  \label{lem:interval}
   The complex \(\bar X(H_\mu)\) is an interval.
 \end{lemma}
+
+\begin{proof}
+  Let
+  \[
+    p \colon \bar X \to \bar X (H_\mu), \alpha \mapsto \alpha \cap H_\mu
+  \]
+  be the projection. \(p\) is continuos and we can push forward \(\mu\) along \(p\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(6) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to the previous lemma.
+\end{proof}
+
+\begin{thm}[{\cite[Theorem 1.14]{Brodzki2009}}]
+  \label{thm:interval}
+  Let \(X\) be a finite dimensional CAT(0) cube complex and \([x,y] \subset \bar X\) an interval. Then \([x,y]\) is isometrically embeddable in \(\R^d\) considered as a CAT(0) cube complex equipped with the \(l_1\)-metric.
+\end{thm}
+
 
 \subsection{Properties of probability measures on \(\bar X\)}
 \label{sec:prob}
