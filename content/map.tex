@@ -1,6 +1,9 @@
 \section{The boundary map}
 \label{sec:map}
 
+\subsection{Terminal elements}
+\label{sec:treminal-elements}
+
 \begin{defin}
   Let \(\mathcal{H}' \subset \mathcal{H}\). An element \(\mathfrak{h} \in \mathcal{H}'\) is called
   \begin{itemize}
@@ -12,12 +15,235 @@
 \end{defin}
 
 \begin{lemma}
+  \label{lem:tau}
   \(\tau\) is measurable.
 \end{lemma}
 
 \begin{proof}
-  
+  We take an arbitrary cylinder set \(C(F_1, F_2)\) and are interested in the preimage
+  \begin{align*}
+    \tau^{-1}(C(F_1, F_2))
+    & = \{H \subset \mathcal{H} \mid F_1 \subset H \text{ are terminal elements and } \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \text{ is not terminal }\} \\
+    & = \{H \subset \mathcal{H} \mid F_1 \subset H \text{ are terminal elements}\} \cap \{H \subset \mathcal{H} \mid \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \text{ is not terminal}\}\\
+    & = T \cap N.
+  \end{align*}
+  Considering the first set \(T\) we have the following decomposition:
+  \begin{align*}
+    T
+    & = \bigcap_{\mathfrak{h} \in F_1}\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{is terminal}\}\\
+    & = \bigcap_{\mathfrak{h} \in F_1}\left (\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{is minimal}\} \cup \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{is maximal}\}\right )\\
+    & = \bigcap_{\mathfrak{h} \in F_1}\left ( \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{k} \subset \mathfrak{h}}}C(\{\mathfrak{h}\}, \{\mathfrak{k}\}) \cup \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{h} \subset\mathfrak{k}}} C(\{\mathfrak{h}\}, \{\mathfrak{k}\})\right ).
+  \end{align*}
+  This set is measurable as a countable intersection and union of measurable sets. Let us turn towards \(N\):
+  \begin{align*}
+    N
+    & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \text{ are not terminal elements and } F_2 \setminus F \cap H = \varnothing\}\\
+    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \text{ are not terminal elements}\} \cap C(\varnothing, F_2 \setminus F)\right).\\
+  \end{align*}
+  If we can show that the set, where a finite subset of elements are not allowed to be terminal is measurable, we are done. This can be achieved via an induction over \(n = |F|\). \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Let us assume the assertion were true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) were now to contain \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F = F \setminus \{\mathfrak{h}\}\), we could do the following decomposition:
+  \begin{align*}
+    \{H \subset \mathcal{H} \mid F \subset \mathcal{H} \text{ are not terminal elemenets}\}
+    & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \text{ are not terminal elements}\}\\
+    & = \{H \subset \mathcal{H} \mid \tilde{F} \text{ are not terminal elements}\} \\
+    & \ \ \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ is terminal}\}.
+  \end{align*}
+  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(C(F_1, F_2))\) is measurable.
 \end{proof}
+
+\begin{lemma}
+  \label{lem:finite-terminal}
+  For any \(H \subset H_\mu\) we have that \(|\tau(H)| < \infty\).
+\end{lemma}
+
+\begin{proof}
+  By Lemma~\ref{lem:interval} and Theorem~\ref{lem:interval}, we know that \(\bar X(H_\mu)\) is an interval and is embeddable in some \(\R^d\). In \(\R^d\) the halfspaces are along coordinate axes and for each of those we can have at most one maximal and one minimal halfspace. So all in all no matter which \(H \subset H_\mu \subset \mathcal{H}(\R^d)\) we choose, it can never contain more than \(2d\) terminal elements.
+\end{proof}
+
+\subsection{Lemmas for case \(M=0\)}
+\label{sec:M=0}
+
+\begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
+  \label{lem:4.13}
+  Up to switching \(i\) and \(j\), any pair of measures \(\mu_i\) and \(\mu_j\), satisfies the following condition:
+
+  There exists \(C(i,j) \in \N\) such that for every \(n \geq C(i,j)\) there is an \(M_n \geq C(i,j)\) such that if \(m \geq M_n\) then \(\mathfrak{\hat h}^j_m \pitchfork \mathfrak{\hat h}^i_n\). 
+\end{lemma}
+
+\begin{proof}
+  \todo{prove this and write down more exact definitions}
+\end{proof}
+
+\todo{break here, important in other step of proof}
+
+\begin{prop}[{\cite[Proposition~4.10]{MR3509968}}]
+  \label{prop:4.10}
+  If for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) we have \(|H_\mu| = |H_\nu| = \infty\), \(H_\mu \cap H_\nu = \varnothing\) and \(H_\mu \cap H_\mu^+\) has no minimal elements. Then \(X\) containscubes of arbitrarily large dimension.
+\end{prop}
+
+\begin{proof}
+  \todo{prove this}
+\end{proof}
+
+\subsection{Lemmas for \(M = \infty\)}
+\label{sec:M=infty}
+
+\begin{defin}
+  Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edgepath joining the two also lies completely in \(Y\).
+\end{defin}
+
+\begin{lemma}[{\cite[Lemma~4.16]{MR3509968}}]
+  \label{lem:4.16}
+  Let \(X\) be a CAT(0) cube complex and \(A \subset X\) consists of (not necessarily connected) cubes. If \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\), then
+  \[
+    \mathcal{\hat H}(Y) = \mathcal{\hat H}(A) \sqcup \{\mathfrak{\hat h} \in \mathcal{\hat H}(Y) \mid \mathfrak{\hat h} \text{ separates } A \text{ in at least two non-trivial subsets}\}.
+  \]
+\end{lemma}
+
+\begin{proof}
+  Let \(\mathfrak{\hat h} = (\mathfrak{h}, \mathfrak{h}^\ast) \in \mathcal{\hat H}(Y) \setminus \mathcal{\hat H}(A)\). If \(A\) were in \(\mathfrak{h}\), then any geodesic between two points of \(A\) is also contained in \(h\), otherwise the geodesic would cross \(\mathfrak{\hat h}\) twice. Hence, \(Y \subset \mathfrak{h}\), as \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\). However, this is a contradiction to the fact that \(\mathfrak{\hat h} \in \mathcal{\hat H}(Y)\).
+\end{proof}
+
+\begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
+  \label{prop:4.17}
+  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containint \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(\bar X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is the Roller compactification of some other CAT(0) cube complex.
+\end{prop}
+
+\begin{proof}
+  Let \(v \in Y\). Then either \(v \in A\), which is \(\Gamma\)-invariant or \(v\) lies on a geodesic joining two vertices of \(A\). Since this geodesic is mapped to another geodesic joining two vertices of \(A\) under \(\Gamma\), we again have that \(v\) rests in \(Y\) under the \(\Gamma\)-action. All in all \(Y\) is \(\Gamma\)-invariant. The same is true for \(X \setminus Y\). Furthermore, \(X\) is connected and we can find \(v \in Y\) and \(w \in X \setminus Y\), such that the two are connected by an edge. Let \(\mathfrak{\hat h} = \mathfrak{\hat h}(vw)\) with \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Since \(Y\) is strongly convex, we have that \(Y \subset \mathfrak{h}\). Now, for each \(g \in \Gamma\), we have \(gv \in Y\) and \(gw \in X \setminus Y\) and since \(g\) acts by combinatorial maps, the two vertices are still joined by an edge. However, this means that \(d(\Gamma w, \mathfrak{\hat h}) = 1\), which is a contradiction to the fact that \(\Gamma\) acts essential. Thus \(Y = X\).
+
+  By the previous lemma, we know that the hyperplanes of \(X\) decompose as the onces contained in \(\mathcal{\hat H'} = \mathcal{\hat H}(A)\) and the onces separating one \(X_\alpha\) from another \(X_{\alpha'}\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating two above mentioned copies. We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find two \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find two vertices \(y,y' \in X_{\alpha'}\). However, then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets and hence \(X\) splits as the required product.
+\end{proof}
+
+\begin{defin}[strongly separated halfspaces]
+  Two parallel hyperplanes are called \emph{strongly separated}, if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated}, if the same is true for their associated hyperplanes.
+\end{defin}
+
+\begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
+  \label{lem:4.18}
+  If \(|H_\mu| = \infty\)\todo{check if I need this first condition} and \(H_\mu\) contains strongly separated halfspaces, then \(H_\mu^+\) satisfies the descending chain condition.
+\end{lemma}
+
+\begin{proof}
+  Let \(\mathfrak{h, k} \in H_\mu\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated and define
+  \[
+    P(\mathfrak{h}) \coloneqq \{\mathfrak{l} \in H_\mu^+ \mid \mathfrak{h} \parallel \mathfrak{l}\}.
+  \]
+  Because of the strong separation each \(\mathfrak{l} \in \mathcal{H}\) is parallel to \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, we have
+  \[
+    H_\mu^+ = P(\mathfrak{h}) \cup P(\mathfrak{k}).
+  \]
+  Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know taht there are only finitely many halfspaces between the two.\todo{check if this is always true or if I need some restriction on \(X\)} Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
+\end{proof}
+
+\begin{lemma}[{\cite[Double Skewering Lemma]{Caprace2010}}]
+  \label{lem:cs-dsl}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(\Gamma \leq \Aut(X)\) be a group acting essentially and without fixed point at infinity. Then for any two halfspaces \(\mathfrak{k} \subset \mathfrak{h}\), there exists \(g \in \Gamma\) such that \(g \mathfrak{h} \subsetneq \mathfrak{k} \subset \mathfrak{h}\).
+\end{lemma}
+
+\begin{prop}[{\cite[Proposition~5.1]{Caprace2010}}]
+  \label{prop:cs-5.1}
+  Let \(X\) be a finite-dimensional unbounded\todo{add unbounded to conditions} CAT(0) cube complex such that \(\Aut(X)\) acts essentially and without fixed point at infinity. Then the following conditions are equivalent:
+  \begin{enumerate}
+  \item \(X\) is irreducible
+  \item There is a pair of strongyl separated hyperplanes
+  \item For each halfspace \(\mathfrak{h}\) there is a pair of strongly separated halfspaces \(\mathfrak{h_i}\) such that \(\mathfrak{h}_1 \subset \mathfrak{h} \subset \mathfrak{h}_2\).
+  \end{enumerate}
+\end{prop}
+
+\begin{lemma}[{\cite[Lemma~4.19]{MR3509968}}]
+  \label{lem:4.19}
+  Let \(X\) be a finite-dimensional, irreducbile, unbounded CAT(0) cube complex. For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\), \(\mathfrak{\hat l} \subset \mathfrak{h}^\ast \cap \mathfrak{k}\).\todo{find out what exactly they mean by this notation}
+\end{lemma}
+
+\begin{proof}
+  \todo{prove this}
+  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition~\ref{prop:cs-irred} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find a \(g \in \Gamma\) such that
+  \[
+    g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1.
+  \]
+  We claim that \(g\mathfrak{k}_2\) and \(\mathfrak{k}_2\) are strongly separated. Suppose that \(\mathfrak{h}\) is transverse to \(\mathfrak{k}_2\). If it were also transverse to \(g \mathfrak{k}_2\), we would have
+  \begin{align*}
+    \mathfrak{k}_1 \cap \mathfrak{h} &\supset g\mathfrak{k}_2 \cap \mathfrak{h} \neq \varnothing,\\
+    \mathfrak{k}_1 \cap \mathfrak{h}^\ast &\supset g\mathfrak{k}_2 \cap \mathfrak{h}^\ast \neq \varnothing,\\
+    \mathfrak{k}_1^\ast \cap \mathfrak{h} &\supset \mathfrak{k}_2^\ast \cap \mathfrak{h} \neq \varnothing \quad \text{and}\\
+    \mathfrak{k}_1^\ast \cap \mathfrak{h}^\ast &\supset \mathfrak{k}_2^\ast \cap \mathfrak{h}^\ast \neq \varnothing.
+  \end{align*}
+  Hence \(\mathfrak{h}\) would also be transverse to \(\mathfrak{k}_1\). A contradiction. Analogously, we can proceed to show that the following pairs of are strongly separated  \((\mathfrak{k}_1,g^{-1}\mathfrak{k}_1)\), \((g\mathfrak{k}_2, g^{-1}\mathfrak{k}_1)\), \(()\)
+  We would like to show that \(g\mathfrak{k}_2 \in H_\mu^-\) and \(g^{-1}\mathfrak{k}_1 \in H_\mu^+\). If neither \(\mathfrak{k}_i\) is in \(H_\mu\), we are done (since \(\mathfrak{l}\) is in \(H_\mu\)). Suppose that \(\mathfrak{k}_2\) is in \(H_\mu\), then \(g\mathfrak{k}_2\) and \(\mathfrak{k}_1\) both cannot be, as \(H_\mu\) does not contain strongly separated halfspaces. Thus \(g\mathfrak{k}_2, \mathfrak{k}_1 \in H_\mu^-\). 
+\end{proof}
+
+\begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
+  \label{lem:4.20}
+  Let \(\mu_i \in \mathcal{P}(\bar X)\) be measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_i} \cap H_{\mu_j} \neq \varnothing\) for all \(i,j\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{x} \in H_{\mu_j}\), \(\mathfrak{\hat x} \subset \mathfrak{h}^\ast \cap \mathfrak{k}\).
+\end{lemma}
+
+\begin{proof}
+  \todo{prove this}
+\end{proof}
+
+\begin{cor}[{\cite[Corollary~4.21]{MR3509968}}]
+  \label{cor:4.21}
+  Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no strongly separated pairs in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\) then the \(\Gamma\)-action is non-essential.
+\end{cor}
+
+\begin{proof}
+  \todo{prove this}
+\end{proof}
+
+\subsection{Image in non-terminal ultrafilters}
+\label{sec:nt-uf}
+
+
+\begin{defin}
+  Let \(\alpha\) and \(\beta\) be two ultrafilters. Then
+  \[
+    \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta\}
+  \]
+  is the set of separating halfspaces of \(\alpha\) and \(\beta\).
+\end{defin}
+
+\begin{rem}
+  \label{rem:interval}
+  Indeed we have that \(\mathcal{H}(x,y) = \mathcal{H}([x,y])\), i.\,e.\ the halfspaces separating \(x\) and \(y\) are exactly the halfspaces of the interval \([x,y]\). Together with the embedding into an \(\R^d\) by Theorem~\ref{thm:interval}, we yield that the number of terminal elements in \(\mathcal{H}(x,y)\) must always be finite.
+\end{rem}
+
+\begin{lemma}[{\cite[Lemma~4.12]{MR3509968}}]
+  \label{lem:4.12}
+  Let \(\alpha\) and \(\beta\) be two ultrafilters and \(\mathfrak{h} \in \tau(\alpha)\). Then \(\mathfrak{h} \notin \beta\) if and only if \(\mathfrak{h} \in \tau(\mathcal{H}(\alpha,\beta))\).
+\end{lemma}
+
+\begin{proof}
+  If \(\mathfrak{h} \in \beta\), then \(\mathfrak{h}\) does not separate \(\alpha\) and \(\beta\) hence \(\mathfrak{h} \notin \mathcal{H}(\alpha, \beta)\) and in the end also \(\mathfrak{h} \notin \tau(\mathcal{H}(\alpha, \beta))\). Conversely, assume \(\mathfrak{h} \notin \tau(\mathcal{H}(\alpha, \beta))\). If \(\mathfrak{h} \notin \mathcal{H}(\alpha, \beta)\) then \(\mathfrak{h} \in \beta\). Otherwise \(\mathfrak{h}\) were not a terminal element in \(\mathcal{H}(\alpha, \beta)\). However, this is impossible since \(\mathfrak{h}\) is terminal in \(\alpha\).
+\end{proof}
+
+\begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
+  \label{lem:4.11}
+  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminal ultrafilters of \(X\).
+\end{lemma}
+
+\begin{proof}
+  We may first assume that \(X\) is irreducible and consider the map
+  \[
+    B \to \N \cup \{\infty\},\ x \mapsto |\tau(\phi(x))|,
+  \]
+  which is measurable and \(\Gamma\)-equivariant. Hence by ergodicity it is essentially constant with essential value \(M\). If we can show, that \(M = 0\), we are done as then the image of \(\phi\) essentially contains only non-terminating ultrafilters.
+
+  For this purpose let us consider the following map
+  \[
+    B \times B \to \N \cup \{\infty\},\ (x,y) \mapsto |\tau(\mathcal{H}(\phi(x), \phi(y)))|,
+  \]
+  which is again measurable\todo{show that this map is indeed measurable} and \(\Gamma\)-equivariant and again we yield an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
+
+  Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
+
+  However, \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.\todo{Understand and prove this last sentence.}
+  
+  \todo{make reducible case nicer}
+  In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we getthat the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
+\end{proof}
+
+\subsection{Main proof}
+\label{sec:main-proof}
 
 \begin{thm}[\cite{MR3509968}]\todo{irreducible}\todo{essential action}\todo{non-elementary action}\todo{strong \(\Gamma\)-boundary}\todo{non-terminating ultrafilters}
   Let \(\Gamma \to \Aut(Y)\) be a group action on an irreducible finite dimensional CAT(0) cube complex \(Y\). Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial Y\) taking values in the non-terminating ultrafilters in \(\partial Y\).
@@ -53,8 +279,12 @@
     \]
     Again by ergodicity on \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X)\) it is essentially constant and we have another essential value \(M \in \N \cup \{\infty\}\).
     \begin{description}
-    \item[\(M = 0\):] 
-    \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use agian Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case.
+    \item[\(M = 0\):] For this case we have to consider yet another map, namely
+      \[
+        T\colon \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ T(\mu, \nu) \coloneqq |\tau((H_\mu \cap H_\nu^+) \cup (H_\nu \cap H_\mu^+)).
+      \]
+      By Lemma~\ref{lem:tau} this is a measurable map as a composition of measurable maps. Furthermore, it is \(\Gamma\)-equivariant and thus essentially constant by ergodicity. By Lemma~\ref{lem:terminal-finite}, we know that any subset of \(H_\mu\) and \(H_\nu\) contains only finitely many terminal elements. Hence the essential value must be finite. Hence \(T\) (ignoring taking the cardinality) we have an \(\Gamma\)-equivariant map to \(\operatorname{Pot}_f(\mathcal{H})\) using Corollary~\ref{cor:4.5}, we see that the essential values must be 0. In this case \(H_\mu \cap H_\nu^+\) contains no terminal elements for almost all \((\mu, \nu)\). However, Proposition~\ref{prop:4.10} shows that this is a contradiction to the finite dimensionality of \(X\).
+    \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use agian Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case. 
     \item[\(M = \infty\):] 
     \end{description}
   \end{description}
