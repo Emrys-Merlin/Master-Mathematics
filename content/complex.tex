@@ -215,7 +215,7 @@ In the following is a short list of deeper results about cube complexes, which w
 \end{rem}
 
 \begin{defin}
-  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\).
+  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\). It is called \emph{locally countable} if every \(x \in X\) is contined in at most countably many cubes.
 \end{defin}
 
 \begin{prop}[{\cite[Prop.~14]{Rolli2012}}]
@@ -228,15 +228,15 @@ In the following is a short list of deeper results about cube complexes, which w
   \end{enumerate}
 \end{prop}
 
-From now on we will also assume that all our CAT(0) cube complexes are locally finite.\todo{important perahps put at another location.}
+From now on we will also assume that all our CAT(0) cube complexes are locally countable.\todo{important perahps put at another location.}
 
 \begin{lemma}
   \label{lem:lf-countable}
-  If \(X\) is a locally finite CAT(0) cube complex. Let \(V(X)\) be its vertex set considered with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\)the sets \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) are finite.
+  If \(X\) is a locally countable CAT(0) cube complex. Let \(V(X)\) be its vertex set considered with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\)the sets \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) are countable.
 \end{lemma}
 
 \begin{proof}
-  We fix \(x_0 \in V(X)\) and proceed by induction. \(X_0 = \{x_0\}\) since \(d\) is a metric. Now, assume \(X_n\) to be finite and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local finiteness \(N(x)\) is finite. Thus
+  We fix \(x_0 \in V(X)\) and proceed by induction. \(X_0 = \{x_0\}\) since \(d\) is a metric. Now, assume \(X_n\) to be countable and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local countability \(N(x)\) is countable. Thus
   \[
     X_{n+1} \subset \bigcup_{x \in X_n} N(x)
   \]
