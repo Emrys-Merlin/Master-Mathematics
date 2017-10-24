@@ -152,7 +152,7 @@
 
 \begin{lemma}[{\cite[Lemma~4.19]{MR3509968}}]
   \label{lem:4.19}
-  Let \(X\) be a finite-dimensional, irreducbile, unbounded CAT(0) cube complex. For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\) we have  \(\mathfrak{h} \subset \mathfrak{l} \subset  \mathfrak{k}\).
+  Let \(X\) be a finite-dimensional, irreducbile, unbounded CAT(0) cube complex. For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\) we have  \(\mathfrak{h} \subset \mathfrak{l} \subset  \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\)
 \end{lemma}
 
 \begin{proof}
@@ -182,11 +182,22 @@
 
 \begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
   \label{lem:4.20}
-  Let \(\mu_i \in \mathcal{P}(\bar X)\) be measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_i} \cap H_{\mu_j} \neq \varnothing\) for all \(i,j\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{x} \in H_{\mu_j}\), \(\mathfrak{\hat x} \subset \mathfrak{h}^\ast \cap \mathfrak{k}\).
+  Let \(\mu_i \in \mathcal{P}(\bar X)\) be measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_i} \cap H_{\mu_j} \neq \varnothing\) for all \(i,j\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_{\mu_j}\), \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\).
 \end{lemma}
 
 \begin{proof}
   \todo{prove this}
+  We fix \(\mu_0\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemman~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
+  \[
+    \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5
+  \]
+  and since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, we can show that all the above halfspaces are pairwise strongly separated.\todo{add a short lemma for this}
+
+  We would like to show that \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) for each \(\mathfrak{l} \in H_{\mu_i}\) and every \(i\). This is in fact already true for every \(l \in H_{\mu_i} \cap H_{\mu_0}\) and since this intersection is not empty, we fix for each \(i\) one \(\mathfrak{l}_i\).
+
+  Now, for every \(\mathfrak{l}\) as above, we see that \(\mathfrak{l}\) can be parallel to at most one \(\mathfrak{h}_i\), since they are pairwise strongly separated. If it is transverse to any \(\mathrak{h}_i\), where \(1 \leq i \leq 4\), we are done, because in this case \(\mathfrak{l}\) is parallal to \(\mathfrak{h}_0\) and \(\mathfrak{h}_5\). Assume that \(\mathfrak{l}\) were transverse to \(\mathfrak{h}_0\). Then it would have to be parallel to \(\mathfrak{h}_1\) and we could consider the follwoing cases. We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) were either \(\mathfrak{l}\) or its complement. In either case, we would have \(\mathfrak{l}', \mathfrak{l}_i \in H_{mu_i}\) and thus thes same were also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen. The only remaining case were, where \(\mathfrak{h_0} \subset \mathfrak{h}_1 \subser \mathrak{l}'\), but then \(\mathfrak{h}_0\) could not be transverse to \(\mathfrak{l}\). Thus \(\mathfrak{l}\) can never be transverse to \(\mathfrak{h}_0\). Analogously, one can show that \(\mathfrak{l}\) is never transverse to \(\mathfrak{h}_5\).
+
+  If \(\mathfrak{l}\) is parallel to each \(\mathfrak{h}_i\), then \(\mathfrak{l}' \not\subset \mathfrak{h_0}\), since otherwise \(H_{\mu_i}\) would again contain pairs of strongly separated halfspaces. By the same argument \(\mathfrak{h}_5 \not\subset \mathfrak{l}'\), wehre \(\mathfrak{l}'\) is defined as above. As before we yield \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) or \(\mathfrak{h}_0 \subset \mathfrak{l}^\ast \subset \mathfrak{h}_5\).
 \end{proof}
 
 \begin{cor}[{\cite[Corollary~4.21]{MR3509968}}]
