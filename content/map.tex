@@ -152,14 +152,13 @@
 
 \begin{lemma}[{\cite[Lemma~4.19]{MR3509968}}]
   \label{lem:4.19}
-  Let \(X\) be a finite-dimensional, irreducbile, unbounded CAT(0) cube complex. For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\), \(\mathfrak{\hat l} \subset \mathfrak{h}^\ast \cap \mathfrak{k}\).\todo{find out what exactly they mean by this notation}
+  Let \(X\) be a finite-dimensional, irreducbile, unbounded CAT(0) cube complex. For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\) we have  \(\mathfrak{h} \subset \mathfrak{l} \subset  \mathfrak{k}\).
 \end{lemma}
 
 \begin{proof}
-  \todo{prove this}
-  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition~\ref{prop:cs-irred} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find a \(g \in \Gamma\) such that
+  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition~\ref{prop:cs-5.1} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find a \(g \in \Gamma\) such that
   \[
-    g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1.
+    g\mathfrak{k}_1 \subset g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1 \subset g^{-1} \mathfrak{k}_2.
   \]
   We claim that \(g\mathfrak{k}_2\) and \(\mathfrak{k}_2\) are strongly separated. Suppose that \(\mathfrak{h}\) is transverse to \(\mathfrak{k}_2\). If it were also transverse to \(g \mathfrak{k}_2\), we would have
   \begin{align*}
@@ -168,8 +167,17 @@
     \mathfrak{k}_1^\ast \cap \mathfrak{h} &\supset \mathfrak{k}_2^\ast \cap \mathfrak{h} \neq \varnothing \quad \text{and}\\
     \mathfrak{k}_1^\ast \cap \mathfrak{h}^\ast &\supset \mathfrak{k}_2^\ast \cap \mathfrak{h}^\ast \neq \varnothing.
   \end{align*}
-  Hence \(\mathfrak{h}\) would also be transverse to \(\mathfrak{k}_1\). A contradiction. Analogously, we can proceed to show that the following pairs of are strongly separated  \((\mathfrak{k}_1,g^{-1}\mathfrak{k}_1)\), \((g\mathfrak{k}_2, g^{-1}\mathfrak{k}_1)\), \(()\)
-  We would like to show that \(g\mathfrak{k}_2 \in H_\mu^-\) and \(g^{-1}\mathfrak{k}_1 \in H_\mu^+\). If neither \(\mathfrak{k}_i\) is in \(H_\mu\), we are done (since \(\mathfrak{l}\) is in \(H_\mu\)). Suppose that \(\mathfrak{k}_2\) is in \(H_\mu\), then \(g\mathfrak{k}_2\) and \(\mathfrak{k}_1\) both cannot be, as \(H_\mu\) does not contain strongly separated halfspaces. Thus \(g\mathfrak{k}_2, \mathfrak{k}_1 \in H_\mu^-\). 
+  Hence \(\mathfrak{h}\) would also be transverse to \(\mathfrak{k}_1\). A contradiction. Analogously, we can proceed to show that the following pairs of are strongly separated:  \((\mathfrak{k}_1,g^{-1}\mathfrak{k}_1)\), \((g\mathfrak{k}_1, g\mathfrak{k}_2)\), \((g\mathfrak{k}_1, \mathfrak{k}_1)\), \((g^{-1}\mathfrak{k}_1, g^{-1}\mathfrak{k}_2)\), \((\mathfrak{k}_2,g^{-1}\mathfrak{k}_2)\) and \((g\mathfrak{k}_1, g^{-1}\mathfrak{k}_2)\).
+
+  We would like to show that \(g\mathfrak{k}_1 \in H_\mu^-\) and \(g^{-1}\mathfrak{k}_2 \in H_\mu^+\). If neither \(\mathfrak{k}_i\) is in \(H_\mu\), we are done (since \(\mathfrak{l}\) is in \(H_\mu\)). Suppose that \(\mathfrak{k}_2\) is in \(H_\mu\), then \(\mathfrak{k}_1 \in H_\mu^-\), because \(H_\mu\) contains no strongly separated halfspaces. Thus by the additivity of the measure we also have \(g\mathfrak{k}_1 \in H_\mu^-\). Additionally, \(g^{-1}\mathfrak{k}_2 \in H_\mu^+\) again since it is strongly separated from \(\mathfrak{k}_2\). The case if \(\mathfrak{k}_1 \in H_\mu\) can be proven similarly.
+
+  There is one additional step necessary. We define \(\mathfrak{h} \coloneqq g^2\mathfrak{k}_1 \in H_\mu^-\) and \(\mathfrak{k} \coloneqq g^{-2}\mathfrak{k}_2 \in H_\mu^+\), which are strongly separated by the same argument as above. Furthermore, we set \(\mathfrak{k_0} \coloneqq g\mathfrak{k}_1 \in H_\mu^-\) and \(\mathfrak{k}_3 \coloneqq g^{-1}\mathfrak{k}_2\). Then we have the following sequence:
+  \[
+    \mathfrak{h} \subset \mathfrak{k}_0 \subset \mathfrak{k}_3 \subset \mathfrak{k},
+  \]
+  where the pairs \((\mathfrak{h}, \mathfrak{k}_0)\), \((\mathfrak{k_0}, \mathfrak{k}_3)\) and \((\mathfrak{h}, \mathfrak{k})\) are strongly separated. 
+
+  If we take any other \(\mathfrak{l}' \in H_\mu\), then \(\mathfrak{k} \not\subset \mathfrak{l}'\) and \(\mathfrak{k} \not \subset \mathfrak{l}'^\ast\), because of the measure. Additionally, \(\mathfrak{l}' \not\pitchfork \mathfrak{k}\), since then it would be parallel to \(\mathfrak{k}_3\) and as before we would have \(\mathfrak{k}_3 \not\subset \mathfrak{l}'\) and \(\mathfrak{k}_3 \not\subset \mathfrak{l}'^\ast\). Hence, \(\mathfrak{l}'\) or \(\mathfrak{l}'^\ast\) would have to contain \(\mathfrak{k}_3\) and thus \(\mathfrak{k}\). All in all this shows that either \(\mathfrak{l}'\) or \(\mathfrak{l}'^\ast\) would have to contain \(\mathfrak{k}\). After a possible renaming, we can assume that \(\mathfrak{l}' \subset \mathfrak{k}\). A similar argument applied to \(\mathfrak{h}\) and \(\mathfrak{l}'\), will then show that \(\mathfrak{h} \subset \mathfrak{l}'\) and hence \(\mathfrak{\hat l}' \in \mathfrak{h}^\ast \cap \mathfrak{k}\).
 \end{proof}
 
 \begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
