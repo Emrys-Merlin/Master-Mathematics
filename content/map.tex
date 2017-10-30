@@ -64,16 +64,136 @@
 
 \begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
   \label{lem:4.13}
-  Up to switching \(i\) and \(j\), any pair of measures \(\mu_i\) and \(\mu_j\), satisfies the following condition:
+  Let \((\mu_i)_{i \in \N_0}\) be a sequence of pairwise generic probability measures on \(\mathcal{P}(\bar X)\) (i.\,e.\ \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\)), such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then up to switching \(i\) and \(j\), any pair of measures \(\mu_i\) and \(\mu_j\), satisfies the following condition:
 
   There exists \(C(i,j) \in \N\) such that for every \(n \geq C(i,j)\) there is an \(M_n \geq C(i,j)\) such that if \(m \geq M_n\) then \(\mathfrak{\hat h}^j_m \pitchfork \mathfrak{\hat h}^i_n\). 
 \end{lemma}
 
 \begin{proof}
-  \todo{prove this and write down more exact definitions}
+  We fix two measures and call them \(\mu\) and \(\nu\). Let \(\mathfrak{h}_n \in H_{\mu_0}^+ \cap H_\mu\) and \(\mathfrak{k}_m \in H_{\mu_0}^+ \cap H_\nu\) be the corresponding infinite descending sequences.
+
+  We can then construct a partition of \(\N \times \N = N_1 \sqcup N_2 \sqcup N_3 \sqcup N_4\) via
+  \begin{align*}
+    N_1 & \coloneqq \{(n,m) \in \N^2 \mid \mathfrak{h}_n \pitchfork \mathfrak{k}_m\},\\
+    N_2 & \coloneqq \{(n,m) \in \N^2 \mid \mathfrak{h}_n^\ast \subset \mathfrak{k}_m\},\\
+    N_3 & \coloneqq \{(n,m) \in \N^2 \mid \mathfrak{h}_n \subset \mathfrak{k}_m\}\quad \text{and}\\
+    N_4 & \coloneqq \{(n,m) \in \N^2 \mid \mathfrak{h}_n \supset \mathfrak{k}_m\}.
+  \end{align*}
+  However, we would like to show that up to leaving out finitely many elements of \(\N^2\), we can find an easier decomposition, namely there exists \(C \in \N\) such that
+  \[
+    \N_C \coloneqq \N \times \N \cap ([C, \infty) \times [C, \infty)) = N_1 \sqcup N_j,
+  \]
+  where \(j \in \{2,3,4\}\). We will consider different cases, depending on which \(N_j\) are not empty. If at most one of the \(N_j\ (j = 2,3,4)\)  is not empty, we have nothing to prove. So we turn towards the cases, where at most two of the sets are non-empty.
+  \begin{description}
+  \item[\(N_2 \neq \varnothing \neq N_3\):] We can take \((n_3, m_3) \in N_3\) and \((n,m) \in N_2\) and define \(m' \coloneqq \min\{m, m_3\}\). Then we have the following two inclusions
+    \begin{align*}
+      \mathfrak{h}_{n_3} & \subset \mathfrak{k}_{m_3} \subset \mathfrak{k}_{m'} \quad \text{and}\\
+      \mathfrak{h}_{n}^\ast & \subset \mathfrak{k}_m \subset \mathfrak{k}_{m'}.
+    \end{align*}
+    If we have \(n \geq n_3\), we have \(\mathfrak{h}_n \subset \mathfrak{h}_{n_3} \subset \mathfrak{k}_{m'}\), which is impossible by the second inclusion above. Hence, fixing \(m_3\) we define
+    \[
+      A \coloneqq \min \{n_3 \in \N \mid (n_3, m_3) \in N_3\}
+    \]
+    and see that for all \(n \geq A\) and any \(m \in \N\) we have \((n,m) \notin \N_2\) or in other words we have
+    \[
+      \{(n,m) \in N_2 \mid n \geq A_3\} = \varnothing.
+    \]
+    If \(N_4\) is empty, this is already sufficient to show that \(\N_A = N_1 \sqcup N_3\). The case, when all three are not empty, will be handled below.
+  \item[\(N_3 \neq \varnothing \neq N_4\):] Again we take \((n_3, m_3) \in N_3\) and \((n,m) \in N_4\). If \(n \geq n_3\), we have
+    \[
+      \mathfrak{k}_n \subset \mathfrak{h}_n \subset \mathfrak{h}_{n_3} \subset \mathfrak{k}_{m_3}.
+    \]
+    This would imply that \(\mathfrak{h}_n \in H_\mu \cap H_\nu\), since it is enclosed in two halfspaces which lie inf \(H_\nu\), however, we have \(H_\mu \cap H_\nu = \varnothing\). Hence, we define analogously to before
+    \[
+      B \coloneqq \min \{n_3 \in \N \mid (n_3, m_3) \in N_3\}
+    \]
+    and see that if \(n \geq B\), then for any \(m \in \N\) we have \((n,m) \notin N_4\). If \(N_2\) is empty, this implies \(\N_B = N_1 \sqcup N_3\).
+  \item[\(N_2 \neq \varnothing \neq N_4\):] This case is completely analogous to the first with the sole difference being that we interchange the roles of \(n\) and \(m\). Hence we can define a constant
+    \[
+      D \coloneqq \min \{m_4 \mid (n_4, m_4) \in N_4\},
+    \]
+    where \(n_4 \in \N\) was fixed such that the above set is not empty. We yield that if \(m \geq B\) and \(n \in \N\) is arbitrary, we have \((n, m) \notin N_2\). As above, if \(N_3 \) is empty, this is sufficient to show that \(\N_D = N_1 \sqcup N_4\).
+  \item[\(N_j \neq \varnothing\ \forall j \in\{2,3,4\}\):] In this case we can use the constants defined above and set \(C \coloneqq \max \{A,B,D\}\). Then if \((n,m) \in \N_C \setminus N_1\), we have \(m \geq B\) and hence \((n,m) \notin N_2\) and \(n \geq D\) meaning \((n,m) \notin N_4\). All in all this leads to \(\N_C = N_1 \sqcup N_3\).
+  \end{description}
+  Now that we have the above decomposition, we will prove the desired claim.
+  \begin{description}
+  \item[\(\N_C = N_1 \sqcup N_3\):] If \(N_3 \neq \varnothing\), we take \((n_0, m_0) \in N_3\) and define
+    \begin{align*}
+      M = M(n_0) & \coloneqq \max \{m \in \N \mid (n_0, m) \in N_3\}\\
+                     & = \max \{m \in \N \mid \mathfrak{h}_{n_0} \subset \mathfrak{k}_m \subset \mathfrak{k}_{m_0}\}.
+    \end{align*}
+    \(M\) is well-defined since the maximum is taken over a non-empty set (by choice of \((n_0, m_0)\)) and the set is finite since two nested halfspaces contain only finitely many halfspaces in between.\todo{perhaps cite this result}
+
+    We see that if \(m > M\), we have \((n_0, m) \in N_1\), which is what we wanted.
+  \item[\(\N_C = N_1 \sqcup N_2\):] This case works completely analogous, with \(\mathfrak{h}_{n_0}\) replaced by \(\mathfrak{h}_{n_0}^\ast\).
+  \item[\(\N_C = N_1 \sqcup N_4\):] This is the only case where the switching of the indices comes into play. Indeed if we interchange the roles of \(\mathfrak{h}_n\) and \(\mathfrak{k}_m\), we find ourselves again in the above handled cases and are done.
+  \end{description}
 \end{proof}
 
-\todo{break here, important in other step of proof}
+\begin{defin}
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no multiple edges possible and we will not allow loops. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the set of \emph{outgoing edges} and by \(i(v) \subset E\) the set of \emph{incoming edges}. We will call a complete directed finite Graph \emph{upper triangular}, if there exist a numbering \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  \begin{align*}
+    o(v_j) & = D - j\quad \text{and}\\
+    i(v_j) & = j - 1.
+  \end{align*}
+\end{defin}
+
+\begin{lemma}[{\cite[Lemma~A.6]{MR3509968}}]
+  If \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) is a complete directed finite graph with \(|V| = D\). Then there exists a \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
+\end{lemma}
+
+\begin{proof}
+  Since \(\mathcal{G}\) is complete we have \(o(v) + i(v) \geq D - 1\) and summing over all vertices we yield
+  \[
+    \sum_{v \in V} o(v) + i(v) \geq D(D-1).
+  \]
+  Since all edges that start somewhere, have to end somewhere, we have
+  \[
+    \sum_{v \in V} o(v) = \sum_{v \in V} i(v),
+  \]
+  leading to
+  \[
+    \sum_{v \in V} o(v) \geq \frac{D(D-1)}{2}.
+  \]
+  If \(o(v)\) were smaller than \(\frac{D-1}{2}\) for each \(v \in V\), we would have that
+  \[
+    \sum_{v \in V} o(v) < \frac{D(D-1)}{2},
+  \]
+  which is a contradction. Hence there must exist at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\)
+\end{proof}
+
+\begin{lemma}[{\cite[Lemma~A.8]{MR3509968}}]
+  \label{lem:A.8}
+  Let \(\mathcal{G} = \mathcal{G}(V,E)\) be a (not necessarily finite) complete directed graph and \(D \in \N\). If \(|V| \geq 5^D\), there exist \(D\) vertices \(v_1, \dots, v_D\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete, directed and strictly upper triangular.
+\end{lemma}
+
+\begin{proof}
+  We will prove this by induction, but need a slightly stronger statement. We will prove:
+
+  Let \(N \in \N\) and \(|V| \geq 5^N\). Then for each \(D \leq N\) there exist \(v_1,\dots, v_D \in V\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_d\}, E_D)\) is complete directed and strictly upper triangular. Furthermore, for the set
+  \[
+    V_D \coloneqq \{v \in V \setminus \{v_1, \dots, v_d\} \mid \overline{v_iv} \in E\ \forall i =1,\dots, d\}
+  \]
+  we have \(|V_D| \geq 5^{N-D}\)
+
+  Observe, that it is sufficitent to prove this statement for finite graphs, since for inifinite graphs, we can always consider a finite subgraph with sufficiently many vertices. Thus we will proceed with the finite case.
+  \begin{description}
+  \item[\(D = 1\):] By the previous lemma we can find a \(v_1 \in V\) such that \(o(v_1) \geq \frac{|V| - 1}{2} \geq \frac{V}{5} \geq 5^{n-1}\). Then \(\mathcal{G}(\{v_1\}, \varnothing)\) is clearly complete and upper triangular. Furthermore, we have that
+    \[
+      V_1 = \{v \in V \mid \overline{v_1v} \in E\},
+    \]
+    since \(\mathcal{G}\) does not contain loops. However, then we have \(|V_1| = |o(v_1)| \geq 5^{N-1}\) as we wanted to show.
+  \item[\(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by the previous Lemma, we find a vertex \(v_{D+1} \in V_D\) such that \(o(v_{D+1}) \geq \frac{|V_D| -1}{2} \geq \frac{|V_D|}{5} \geq 5^{N - (D+1)}\). By construction this vertex is connected via an incoming edge to each of the \(v_i\). If we set
+    \[
+      E_{D+1} = E_D \cup \{\overline{v_iv_{D+1}} \mid \forall i = 1, \dots, D\},
+    \]
+    then \(\mathcal{G}(\{v_1, \dots, v_{D+1}\}, E_{D+1})\) is still complete and strictly upper triangular by construction. Additionally, we have
+    \[
+      V_{D+1} = \{v \in V_D \mid \overline{v_{D+1}v} \in E\}
+    \]
+    and thus \(|V_{D+1}| = |o(v_{D+1})| \geq 5^{N- (D+1)}\), which completes the induction.
+  \end{description}
+\end{proof}
 
 \begin{prop}[{\cite[Proposition~4.10]{MR3509968}}]
   \label{prop:4.10}
@@ -81,7 +201,14 @@
 \end{prop}
 
 \begin{proof}
-  \todo{prove this}
+  Since \(H_\mu \cap H_\nu^+\) has no minimal elements for almost all \(\mu, \nu\), we can find a sequence \((\mu_i)_{i \in I}\) such that \(H_{\mu_0}^+ \cap H_{mu_i}\) contains an infinite descending chain, which we denote by \((\mathfrak{h}^i_n)_{n \in \N}\). Thus we can apply Lemma~\ref{lem:4.13} and find \(C(i,j) \in \N\) such that for all \(n \geq C(i,j)\) there is an \(M \geq c(i,j)\) such that if \(m > M_n\) we have \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) (after possibly switching \(i\) and \(j\)).
+
+  Using this we can construct the following graph \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the abovementioned \(C(i,j)\) exists. With this \(\mathcal{G}\) becomes a directed graph and since the searched \(C(i,j)\) exists either for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E)\) becomes strictly upper triangular. In this case this implies, that for each \(1\leq i < j \leq D\) there exists an above \(C(i,j)\). We set
+  \begin{align*}
+    C &\coloneqq \max\{C(i,j) \mid 1 \leq i < j \leq D\} \quad \text{and}\\
+    M &\coloneqq \max\{M_C(i,j) \mid 1 \leq i < j \leq D\}.
+  \end{align*}
+  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\) this leads to a set of \(D\) transverse halfspaces. Since these intersect pairwise, we know\todo{cite} that the commen intersection is not empty and an element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence this cube has at least dimension \(D\). Since \(D\) was arbitrary this shows, that \(X\) contains cubes of arbitrary dimension.
 \end{proof}
 
 \subsection{Lemmas for \(M = \infty\)}
@@ -186,7 +313,6 @@
 \end{lemma}
 
 \begin{proof}
-  \todo{prove this}
   We fix \(\mu_0\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemman~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5
@@ -195,10 +321,15 @@
 
   We would like to show that \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) for each \(\mathfrak{l} \in H_{\mu_i}\) and every \(i\). This is in fact already true for every \(l \in H_{\mu_i} \cap H_{\mu_0}\) and since this intersection is not empty, we fix for each \(i\) one \(\mathfrak{l}_i\).
 
-  Now, for every \(\mathfrak{l}\) as above, we see that \(\mathfrak{l}\) can be parallel to at most one \(\mathfrak{h}_i\), since they are pairwise strongly separated. If it is transverse to any \(\mathrak{h}_i\), where \(1 \leq i \leq 4\), we are done, because in this case \(\mathfrak{l}\) is parallal to \(\mathfrak{h}_0\) and \(\mathfrak{h}_5\). Assume that \(\mathfrak{l}\) were transverse to \(\mathfrak{h}_0\). Then it would have to be parallel to \(\mathfrak{h}_1\) and we could consider the follwoing cases. We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) were either \(\mathfrak{l}\) or its complement. In either case, we would have \(\mathfrak{l}', \mathfrak{l}_i \in H_{mu_i}\) and thus thes same were also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen. The only remaining case were, where \(\mathfrak{h_0} \subset \mathfrak{h}_1 \subser \mathrak{l}'\), but then \(\mathfrak{h}_0\) could not be transverse to \(\mathfrak{l}\). Thus \(\mathfrak{l}\) can never be transverse to \(\mathfrak{h}_0\). Analogously, one can show that \(\mathfrak{l}\) is never transverse to \(\mathfrak{h}_5\).
+  Now, for every \(\mathfrak{l}\) as above, we see that \(\mathfrak{l}\) can be parallel to at most one \(\mathfrak{h}_i\), since they are pairwise strongly separated. If it is transverse to any \(\mathfrak{h}_i\), where \(1 \leq i \leq 4\), we are done, because in this case \(\mathfrak{l}\) is parallal to \(\mathfrak{h}_0\) and \(\mathfrak{h}_5\). Assume that \(\mathfrak{l}\) were transverse to \(\mathfrak{h}_0\). Then it would have to be parallel to \(\mathfrak{h}_1\) and we could consider the follwoing cases. We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) were either \(\mathfrak{l}\) or its complement. In either case, we would have \(\mathfrak{l}', \mathfrak{l}_i \in H_{mu_i}\) and thus thes same were also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen. The only remaining case were, where \(\mathfrak{h_0} \subset \mathfrak{h}_1 \subset \mathfrak{l}'\), but then \(\mathfrak{h}_0\) could not be transverse to \(\mathfrak{l}\). Thus \(\mathfrak{l}\) can never be transverse to \(\mathfrak{h}_0\). Analogously, one can show that \(\mathfrak{l}\) is never transverse to \(\mathfrak{h}_5\).
 
   If \(\mathfrak{l}\) is parallel to each \(\mathfrak{h}_i\), then \(\mathfrak{l}' \not\subset \mathfrak{h_0}\), since otherwise \(H_{\mu_i}\) would again contain pairs of strongly separated halfspaces. By the same argument \(\mathfrak{h}_5 \not\subset \mathfrak{l}'\), wehre \(\mathfrak{l}'\) is defined as above. As before we yield \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) or \(\mathfrak{h}_0 \subset \mathfrak{l}^\ast \subset \mathfrak{h}_5\).
 \end{proof}
+
+\begin{thm}[{\cite[Theorem~4.1]{Caprace2010}}]
+  \label{thm:cs-flipping}
+  Assume that \(X\) is a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) be any subgroup. Let \(\mathfrak{h} \in \mathcal{H}(X)\) such that \(g\mathfrak{h} \not\subset \mathfrak{h}\) for each \(g \in \Gamma \setminus \{e\}\). Then \(\Gamma\) has a fixed point in the visual boundary or \(\mathfrak{h}\) is not essential with regard to \(\Gamma\).
+\end{thm}
 
 \begin{cor}[{\cite[Corollary~4.21]{MR3509968}}]
   \label{cor:4.21}
@@ -207,6 +338,7 @@
 
 \begin{proof}
   \todo{prove this}
+  
 \end{proof}
 
 \subsection{Image in non-terminal ultrafilters}
@@ -235,6 +367,26 @@
   If \(\mathfrak{h} \in \beta\), then \(\mathfrak{h}\) does not separate \(\alpha\) and \(\beta\) hence \(\mathfrak{h} \notin \mathcal{H}(\alpha, \beta)\) and in the end also \(\mathfrak{h} \notin \tau(\mathcal{H}(\alpha, \beta))\). Conversely, assume \(\mathfrak{h} \notin \tau(\mathcal{H}(\alpha, \beta))\). If \(\mathfrak{h} \notin \mathcal{H}(\alpha, \beta)\) then \(\mathfrak{h} \in \beta\). Otherwise \(\mathfrak{h}\) were not a terminal element in \(\mathcal{H}(\alpha, \beta)\). However, this is impossible since \(\mathfrak{h}\) is terminal in \(\alpha\).
 \end{proof}
 
+\begin{lemma}
+  The map
+  \[
+    f\colon \bar X \times \bar X \to \operatorname{Pot}(\mathcal{H}),\ (\alpha, \beta)\mapsto \mathcal{h}(\alpha, \beta)
+  \]
+  is measurable.
+\end{lemma}
+
+\begin{proof}
+  We will indeed see that the map is even continuous. Take \(\mathfrak{h}_1,\dots \mathfrak{h}_n, \mathfrak{h}_1', \dots, \mathfrak{h}_l' \in \mathcal{H}\) and consider the following preimage
+  \begin{align*}
+    f^{-1}(\mathcal{C}(\{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}, \{\mathfrak{h}_1', \dots \mathfrak{h}_l'\}))  = & \{(\alpha, \beta) \in \bar X \times \bar X \mid \forall i \leq n\colon \mathfrak{h}_i \in \alpha \wedge \mathfrak{h}_i^\ast \in \beta\\
+    & \wedge \forall j \leq l \colon \mathfrak{h}_j'^\ast \in \alpha \vee \mathfrak{h}_j' \in \beta\}\\
+    = & (\mathcal{C}(\{\mathfrak{h}_1, \dots \mathfrak{h}_n\}, \varnothing)  \times \bar X)\\
+    & \cap (\bar X \times C(\{\mathfrak{h}_1^\ast, \dots, \mathfrak{h}_n^\ast\}))\\
+                                                                                                                  & \cap \left ( \bigcap_{j=1}^l \left[(\mathcal{C}(\{h\}_j'^\ast, \varnothing) \times \bar X) \cup (\bar X \times \mathcal{C}(\{\mathfrak{h}_j'\}, \varnothing))\right]\right).
+  \end{align*}
+  This set is open as a finite intersection of basic open sets. Hence \(f\) is continuous and measurable.
+\end{proof}
+
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
   Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminal ultrafilters of \(X\).
@@ -245,13 +397,13 @@
   \[
     B \to \N \cup \{\infty\},\ x \mapsto |\tau(\phi(x))|,
   \]
-  which is measurable and \(\Gamma\)-equivariant. Hence by ergodicity it is essentially constant with essential value \(M\). If we can show, that \(M = 0\), we are done as then the image of \(\phi\) essentially contains only non-terminating ultrafilters.
+  which is measurable and \(\Gamma\)-invariant. Hence by ergodicity it is essentially constant with essential value \(M\). If we can show, that \(M = 0\), we are done as then the image of \(\phi\) essentially contains only non-terminating ultrafilters.
 
   For this purpose let us consider the following map
   \[
     B \times B \to \N \cup \{\infty\},\ (x,y) \mapsto |\tau(\mathcal{H}(\phi(x), \phi(y)))|,
   \]
-  which is again measurable\todo{show that this map is indeed measurable} and \(\Gamma\)-equivariant and again we yield an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
+  which is again measurable as a composition of measurable maps (consider the previous lemma) and \(\Gamma\)-invariant and again we yield an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
 
   Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
@@ -264,7 +416,8 @@
 \subsection{Main proof}
 \label{sec:main-proof}
 
-\begin{thm}[\cite{MR3509968}]\todo{irreducible}\todo{essential action}\todo{non-elementary action}\todo{strong \(\Gamma\)-boundary}\todo{non-terminating ultrafilters}
+\begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]\todo{irreducible}\todo{essential action}\todo{non-elementary action}\todo{strong \(\Gamma\)-boundary}\todo{non-terminating ultrafilters}
+  \label{thm:4.1}
   Let \(\Gamma \to \Aut(Y)\) be a group action on an irreducible finite dimensional CAT(0) cube complex \(Y\). Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial Y\) taking values in the non-terminating ultrafilters in \(\partial Y\).
 \end{thm}
 
@@ -310,9 +463,76 @@
 
 \end{proof}
 
+\begin{prop}[{\cite[Proposition~2.6]{Caprace2010}}]
+  \label{prop:cs-2.6}
+  A finite-dimensional CAT(0) cube complex \(X\) admits a canonical decomposition
+  \[
+    X = X_1 \times \dots \times X_m
+  \]
+  into a product of irreducible cube complexes \(X_i\). Every automorphism of \(X\) preserves that decomposition, up to a permutation of possibly isomorphic factors. In particular, the image of the canonical embedding
+  \[
+    \Aut(X_1) \times \dots \times \Aut(X_m) \hookrightarrow \Aut(X)
+  \]
+  has finite index in \(\Aut(X)\).
+\end{prop}
+
+\begin{prop}[{\cite[Proposition~3.5]{Caprace2010}}]
+  \label{prop:cs-3.5}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\). Assume that at least one of the following two conditions is satisfied:
+  \begin{enumerate}
+  \item \(\Gamma\) has finitely many orbits of hyperplanes or
+  \item \(\Gamma\) has not fixed point at infinity.
+  \end{enumerate}
+  Then the essential core of \(X\) is unbounded if and only if \(\Gamma\) has no fixed point. In that case the essential core embeds as a \(\Gamma\)-invariant convex subcomplex \(Y\) of \(X\).
+\end{prop}
+
+\begin{lemma}[{\cite[Lemma~2.9]{MR3509968}}]
+  \label{lem:2.9}
+  Let \(X = X_1 \times \dots X_m\) be a product of CAT(0) spaces \(X_j\) and let \(G = G_1 \times \dots \times G_m\), wherer \(G \leq \Isom(X_j)\). Then any \(G_j\)-fixed point in \(\partial_\sphericalangle X_j\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
+\end{lemma}
+
+\begin{proof}
+  Let \(d_i\) respectively \(d\) be the CAT(0) metrics on \(X_i\) respectively \(X\). Up to permuting the indices we can assume that we have a \(G_1\)-fixed point in \(\partial_\sphericalangle X_1\). Let the geodesic ray \(l_1\colon [0,\infty) \to X_1\) represent this fixed point, i.\,e.\
+  \[
+    \sup_{t \geq 0} d_1(l_1(t), g_1l_1(t)) < \infty
+  \]
+  for every \(g_1 \in G_1\). For each \(i > 1\) we fix a point \(x_i \in X_i\). Then
+  \[
+    l\colon [0, \infty) \to X,\ t \mapsto (l_1(t), x_2, \dots, x_m)
+  \]
+  is a geodesic in \(X\) and for any \(g = (g_1, \dots, g_m) \in G\) we have
+  \[
+    \sup_{t \geq 0} d^2(l(t), gl(t)) = \sup_{t \geq 0} \left [ d_1^2(l_1(t), g_1l_1(t)) + \sum_{i=2}^m d_i^2(x_i, g_ix_i)\right] < \infty.
+  \]
+  Hence \(l\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
+\end{proof}
+
+\begin{lemma}[{\cite[Lemma~2.28]{MR3509968}}]
+  \label{lem:2.28}
+  Let \(X\) be a finite dimensional CAT(0) cube complex and let \(\Gamma \to \Aut(X)\) be a non-elementary action. Then the \(\Gamma_0\)-action on the irreducible factors of the essential core is also non-elementary and essential, where \(\Gamma_0\) is the finite index subgroup preserving this decomposition.
+\end{lemma}
+
+\begin{proof}
+  Let \(Y \subset X\) be the essential factor and \(Y = Y_1 \times \dots \times Y_m\) its decomposition into irreducible factors. Furthermore, let \(\Gamma_0\) be the finite index subgroup of \(\Gamma\) preserving this decomposition.
+
+  We will first show that the \(\Gamma_0\) action on each \(Y_i\) is essential. By construction \(\Gamma\) acts essentialy on \(Y\) and since \(\Gamma_0\) has finite index in \(\Gamma\) the same is true for \(\Gamma_0\). We would like to apply Lemma~\ref{lem:ess-unbounded}. For this we note that any halfspace \(\mathfrak{h}_i \in \mathcal{\hat H}(Y_i)\) defines a unique halfspace in \(Y\) via
+  \[
+    \mathfrak{h} \coloneqq Y_1 \times \dots \times Y_{i-1} \times \mathfrak{h}_i \times Y_{i+1} \times \dots \times Y_k.
+  \]
+  Using this each hyperplane \(\mathfrak{\hat h}_i = \{\mathfrak{h}_i , \mathfrak{h}_i^\ast\} \in \mathcal{\hat H}(Y_i)\) defines an associated hyperplane \(\mathfrak{\hat h} = \{\mathfrak{h}, \mathfrak{h}^\ast\}\). Since \(\Gamma_0\) acts essentially on \(Y\), Lemma~\ref{lem:ess-unbounded} assures us, that there exists \(g \in \Gamma_0\) and an \(n \in \N\) such that \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\) (after possibly switching \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\)), but then we have \(g^n \mathfrak{h}_i \subsetneq \mathfrak{h}_i\) and using the same lemma in the other direction, we yield that \(\Gamma_0\) acts essentially on each \(Y_i\).
+
+  Secondly, we would like to show that \(Y_i\) does not have a fixed point as infinity. We will achieve this by contraposition. Assume that \(\Gamma_0 \leq \Gamma\) does posses a finite orbit. Passing to a further finite index subgroup, which we will still call \(\Gamma_0\), we can assume that \(\Gamma_0\) has a fixed point at infinity. However, then we can apply Lemma~\ref{lem:2.9} and see that we have a \(\Gamma_0\)-fixed point in \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and again by the finite index \(\Gamma\) must have a finite orbit at infinity.
+\end{proof}
+
 \begin{cor}[\cite{MR3509968}]
   Let \(\Gamma \to \Aut(X)\) be a group acting on a finite dimensional CAT(0) cube complex \(X\). Assume that ther is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \partial Y \subseteq \partial X\).
 \end{cor}
+
+\begin{proof}
+  Since ther is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we also have no finite orbits of \(\Gamma\) in \(\partial_\sphericalangle Y\). We decompose \(Y\) as \(Y = Y_1 \times \dots \times Y_m\), where each \(Y_i\) is irreducible (which is possible by Proposition~\ref{prop:cs-2.6}). By Lemma~\ref{lem:2.28} we know that \(\Gamma_0 \leq \Gamma\) has still no finite orbit in \(\partial_\sphericalangle Y_i\) for each \(i\) and the action on each \(Y_i\) is essential.\todo{Problem: How can \(\Gamma\) operate on these factors?}
+
+  Assume that \(\Gamma\) acts on each \(Y_i\), then, by Theorem~\ref{thm:4.1}, we find \(\phi_i \colon B \to \partial Y_i\) which are measurable and \(\Gamma\)-equivariant. Each halfspaces in \(Y_i\) corresponds to a unique halfspace in \(Y\) and thus for family of ultrafilters \(\alpha_i \in \bar Y_i\) can be mapped to an ultrafilter \(\alpha \in \bar Y\). This can be most easily seen in the product space definition of \(\bar Y\), since then we just join the tuples of \(\alpha_i\) (after choosing an appropriate enumeration of \(\bar Y\)). The choice condition is then automatically satisfied and for the consistency condition, we only have to note that if two halfspaces come from two different \(\alpha_i\), then they must be transverse. Using basic open sets it is easy to see that this map is continuous and hence measurable. Lastly, \(\bar Y \subset \bar X\), since \(Y\) is convex subcomplex. All in all, we see that the \(\phi_i\) lead to a measurable map \(\phi\colon B \to \bar X\). Since each the image of each \(\phi_i\) lies in the non-terminating ultrafilters of \(Y_i\), we see that each ultrafilter in the image of \(\phi\) has at least one non-terminating descending chain and thus we have that indeed \(\phi\) takes values in \(\partial X\).
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
