@@ -6,25 +6,64 @@
 
 \begin{defin}[Pocset, {\cite{Roller1999}}]
   \begin{enumerate}
-  \item A \emph{pocset} is a triple \((P, \subset, \ast)\) consisting of a set \(P\) a partial ordering \(\subset\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, I will often drop the triple and will only write \(A\) when talking about the pocset. \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) \(A \subset B\) implies that \(f(A) \subset f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. The pocsets together with these morphisms is what I call the category of pocsets {\textbf{Poc}}.
-  \item A pocset \(P\) is called \emph{discrete}, if for any two \(A, B \in P\) the interval
+  \item A \emph{pocset} is a triple \((P, \prec, \ast)\) consisting of a set \(P\) a partial ordering \(\prec\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, we will often drop the triple and will only write \(P\) when talking about the pocset. \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) such that \(A \prec B\) implies that \(f(A) \prec f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. The pocsets together with these morphisms is what we call the category of pocsets {\textbf{Poc}}.
+  \item A pocset \(P\) is called \emph{discrete}, if for any two \(A, B \in P\) the \emph{interval}
     \[
-      [A,B] = \{C \in P \mid A \subset C \subset B\}
+      [A,B] = \{C \in P \mid A \prec C \prec B\}
     \]
     is finite.
-  \item Two elements \(A,B\) of a pocset \(P\) are called \emph{nested}, if they satsify \(A \subset B\), \(A^\ast \subset B\), \(A \subset B^\ast\) or \(A^\ast \subset B^\ast\). Otherwise they are called \emph{transverse}.
+  \item Two elements \(A,B\) of a pocset \(P\) are called \emph{nested}, if they satsify \(A \prec B\), \(A^\ast \prec B\), \(A \prec B^\ast\) or \(A^\ast \prec B^\ast\). Otherwise they are called \emph{transverse}.
   \item A pocset \(P\) is called \emph{finite width}, if there exists a constant \(N \in \N\) such that the cardinality of any subset of transverse elements of \(P\) is bounded from above by \(N\).
   \end{enumerate}
   We will mostly be interested in the subcategory of \emph{discrete pocsets} \textbf{dPoc}.
 \end{defin}
 
+\begin{rem}
+  \label{rem:roller}
+  In his habilitation \textcite{Roller1999} showed that there is a one to one correspondence betweeen descrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets is easy to realize, one takes the pocset of halfspaces \(\mathcal{H}(X)\) (which is discrete by Lemma~\ref{lem:finite-interval}). The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
+
+  One important observation is, that every CAT(0) cube complex is already uniquely defined by its pocset of halfspaces, which leads to the following observation.
+\end{rem}
+
+\begin{prop}
+  A CAT(0) cube complex \(X\) splits as a (proper) product if and only if  there  exists a partition \(\mathcal{H}(X) = \mathcal{H}_1 \sqcup \mathcal{H}_2\), such that each halfspace in \(\mathcal{H}_1\) is transverse to each halfspace in \(\mathcal{H}_2\).
+\end{prop}
+
+\begin{proof}[Sketch of proof]
+  The key observation is, that if we have two CAT(0) cube complexes \(X_1\) and \(X_2\) and we consider the cube complex \(X_1 \times X_2\), then the halfspaces take the form \(\mathfrak{h} \times X_2\) for any \(\mathfrak{h} \in \mathcal{H}(X_1)\) or \(X_1 \times \mathfrak{k}\) for any \(\mathfrak{k} \in \mathcal{H}(X_2)\). And two of this different types of halfspaces will always be transverse. Thus if \(X\) splits as a product, then this argument shows, that we find the desired partition. If we have the partition, then the \(\mathcal{H}_i\) are easily to be seen pocsets. Hence, up to isomorphism, we find two unique CAT(0) cube complexes corresponding to the two pocsets and their product has the same set of halfspaces as \(X\). By the aforementioned uniqueness they have to be isomorphic.
+\end{proof}
+
+The above proposition leads to the following definition:
+
+\begin{defin}
+  A CAT(0) cube complex \(X\) is called \emph{reducible}, if it can be decomposed as a (proper) product of CAT(0) cube complexes. Otherwise, it is called \emph{irreducible}.
+\end{defin}
+
+\begin{prop}[{\cite[Proposition~2.6]{Caprace2010}}]
+  \label{prop:cs-2.6}
+  A finite-dimensional CAT(0) cube complex \(X\) admits a canonical decomposition
+  \[
+    X = X_1 \times \dots \times X_m
+  \]
+  into a product of irreducible cube complexes \(X_i\). Every automorphism of \(X\) preserves that decomposition, up to a permutation of possibly isomorphic factors. In particular, the image of the canonical embedding
+  \[
+    \Aut(X_1) \times \dots \times \Aut(X_m) \hookrightarrow \Aut(X)
+  \]
+  has finite index in \(\Aut(X)\).
+\end{prop}
+
 \begin{defin}[Ultrafilter]
-  Let \((A, \subset, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). I will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\). I denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be topologized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem\todo{cite something}) \(P(A)\) becomes a compact topological space. A basis of toplogy is given by the sets of the form
+  \todo{make definition clearer}
+  Let \((A, \prec, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). We will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\). We denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be topologized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem, see e.\,g.~\cite[Chapter~10]{MR1275831}) \(P(A)\) becomes a compact topological space. A basis of toplogy is given by the sets of the form
 \[
   \mathcal{U}(a_1,\dots, a_n) \coloneqq \{\alpha \in P(A) \mid a_1, \dots, a_n \in \alpha\},
 \]
 where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{defin}
+
+\begin{bsp}
+  \todo{example for trees}
+\end{bsp}
 
 \begin{defin}
   Let \(\alpha\) be an ultrafilter and \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). Then \(\alpha; \mathfrak{h}_1, \dots, \mathfrak{h}_n \in P(A)\) is defined by replacing each \(\mathfrak{h}_i\) in \(\alpha\) by \(\mathfrak{h_i}^\ast\).
@@ -43,14 +82,14 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \subsection{The Roller boundary}
 \label{sec:rb}
 
-For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a metric in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).
+For now, we denote by \(\mathcal{U}(X)\) the set of all ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a distance in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).\todo{what do I want with this?}
 
 % \begin{defin}
-%   For any \(x \in X\), I define \(\alpha_x \in \mathcal{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
+%   For any \(x \in X\), we define \(\alpha_x \in \mathcal{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
 % \end{defin}
 
 \begin{prop}
-  \(\mathcal{U}(A) \subset P(A)\) is a compact space.
+  Let \(A\) be a pocset then the set of all ultrafilters \(\mathcal{U}(A)\) is a compact space.
 \end{prop}
 
 \begin{proof}
@@ -68,7 +107,7 @@ For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfsp
 
 \begin{cor}
   \label{cor:comp-met}
-  If \(A\) is countable \(\mathcal{U}(A)\) is a compact metrizable space.
+  If \(A\) is countable then \(\mathcal{U}(A)\) is a compact metrizable space.
 \end{cor}
 
 \begin{proof}
@@ -77,22 +116,34 @@ For now, I denote by \(\mathcal{U}(X)\) the ultrafilters of the pocset of halfsp
 
 \begin{defin}
   An ultrafilter \(\alpha\) satisfies the \emph{descending chain condition}, if all descending chains in \(\alpha\) become stationary.
+
+  An ultrafilter is called \emph{non-terminating}, if every finite descending chain can be extended.
 \end{defin}
 
 \begin{thm}
-  Let \(X\) be a CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathfrak{H}, \subset, ^\ast)\).
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathfrak{H}, \subset, ^\ast)\).
   \begin{enumerate}
   \item For every vertex \(v \in V(X)\) we have that
     \[
       \alpha_v \coloneqq \{\mathfrak{h} \in \mathfrak{H}(X) \mid v \in \mathfrak{h}\}
     \]
-    is an ultrafilter. Furthermore, it satisfies the descending chain condition and ultrafilter satisfying the descending chain condition arises in this way.
-  \item The map \(V(X) \to \mathcal{U}(X) \coloneqq \mathcal{U}(\mathfrak{H}),\ v \mapsto \alpha_v\) is injective, continuous and the image lies dense in \(\mathcal{U}(X)\). 
+    is an ultrafilter. Furthermore, it satisfies the descending chain condition and any ultrafilter satisfying the descending chain condition arises in this way.
+  \item The map \(V(X) \to \mathcal{U}(X) \coloneqq \mathcal{U}(\mathfrak{H}),\ v \mapsto \alpha_v\) is injective, continuous and the image is dense in \(\mathcal{U}(X)\). 
   \item If \(X\) is locally finite, then the image of \(V(X)\) is open in \(\mathcal{U}(X)\).
   \end{enumerate}
 \end{thm}
 
-Now that we have defined the Roller boundary, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantag of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(mathcal{H}(X)\), but elements in a product space. The former form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
+\begin{proof}
+  \begin{enumerate}
+  \item Clearly, exactly \(\mathfrak{h}\) or \(\mathfrak{h}^\ast\) must contain \(v\) such that \(\alpha_v\) satisfies the choice condition. Furthermore, if \(\mathfrak{h} \in \alpha_v\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k}\), we have \(v \in \mathfrak{h} \subset \mathfrak{k}\) and hence \(\mathfrak{k} \in \alpha_v\) showing that \(\alpha_v\) satisfies the consistency condition. All in all this shows that \(\alpha_v\) is an ultrafilter.
+
+    If \(\alpha\) satisfies the descending chain condition, then each halfspace contains a minimal halfspace of \(\alpha\). If we take the set of minimal halfspaces of \(\alpha\), then all the elements must be pairwise transverse. Furthermore, since \(X\) is finite-dimensional every set of pairwise transverse elements must be finite (indeed smaller than \(\dim X\)). By Theorem~\ref{thm:common-intersection}, we find that the intersection over all minimal elements is non-empty and contains a vertex \(v\). We claim that \(\alpha_v = \alpha\). Indeed, if \(\mathfrak{h} \in \alpha\), then there exists a minimal element \(\mathfrak{k} \in \alpha\) and \(v \in \mathfrak{k}\) hence also in \(\mathfrak{h}\) and \(\mathfrak{h} \in \alpha_v\). Conversely, if \(\mathfrak{h} \not \in \alpha\) then \(\mathfrak{h}^\ast \in \alpha\) and as before \(v \in \mathfrak{h}^\ast\) and \(\mathfrak{h} \not \in \alpha_v\).
+  \item In order to see the injectivity consider two vertices \(v \neq w\). Then there exists a halfspace \(\mathfrak{h}\) separating the two, i.\,e.\ \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Hence, \(\mathfrak{h} \in \alpha_v\) and \(\mathfrak{h}^\ast \in \alpha_w\) and \(\alpha_v \neq \alpha_w\). The continuity is clear, since we have the discrete topology on \(V(X)\). Lastly, we have to show that the image is dense. We consider a basic open set \(\mathcal{U} \coloneqq \mathcal{U}(\mathcal{h}_1, \dots, \mathcal{h}_n)\) in \(\mathcal{U}(X)\). Without loss of generality we can assume that the \(\mathcal{h}_i\) are pairwise transverse. If they were contained in each other, we could remove redundant elements and if we have a pair of halfspaces which is identified under involution, then the set were empty. However, in this case we know again by Theorem~\ref{thm:common-intersection} that \(\bigcap_{i=1}^n \mathfrak{h}_i\) contains a vertex \(v\) and hence \(\alpha_v \in \mathcal{U}\).
+  \item We will show that each \(\alpha_v\) contains an open neighborhood that is completely contained in the image of our map. Indeed, we will see that \(\{\alpha_v\}\) is open in \(\mathcal{U}(X)\). Since \(X\) is locally finite, \(v\) is contained in finitely many cubes. In particular it is contained in only finitely many edges. Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n\) bet the set of halfspaces containing \(v\) defined by those edges. We claim that \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) = \{\alpha_v\}\). Let \(\alpha \in \mathcal{U}\). Assume there exists \(\mathcal{h} \in \alpha\) such that \(v \not \in \mathcal{h}\). Take \(\tilde w \in \mathcal{h}\) and choose a shortest edge path between \(v\) and \(\tilde w\). At some point this path will have to cross \(\mathfrak{\hat h}\) and we choose \(w\) as the first vertex on the path in \(\mathcal{h}\). Then the shrunk segment between \(v\) and \(w\) is still a shortest path. Furthermore, the path must cross one of the \(\mathfrak{\hat h}_i\). After a possible relabeling, let \(\mathcal{h}_1, \dots, \mathcal{h}_k\) be the subset of halfspaces that separates \(v\) from \(w\). Then for \(k+1 \leq i \leq n\) we have \(w \in \mathfrak{h}_i \cap \mathfrak{h}\). Assume that all the \(\mathfrak{h}_i\) for \(i \leq k\) were transverse to \(\mathfrak{h}\). Then again with the help of Theorem~\ref{thm:common-intersection} we would have that \(\bigcap_{i=1}^n \mathfrak{h}_i \cap \mathfrak{h}\) is not empty. However, \(\bigcap_{i=1}^n \mathfrak{h}_i = \{v\}\). This is a contradiction to the fact that \(v \not\in \mathfrak{h}\). Hence, we must have that at least one \(\mathfrak{h}_i\) is nested with \(\mathfrak{h}\). However, the only possibility is \(\mathfrak{h}_i \subset \mathfrak{h}^\ast\). Since \(\alpha \in \mathcal{U}\), we have \(\mathfrak{h}_i \in \alpha\) and by consistence also \(\mathfrak{h}^\ast \in \alpha\), which is a contradiction. Hence, \(\alpha_v\) is the only ultrafilter in \(\mathcal{U}\).
+  \end{enumerate}
+\end{proof}
+
+Now that we have defined the Roller boundary, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. The former form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
 
 \begin{defin}
   \label{def:pot-top}
@@ -100,25 +151,25 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
   \[
     C(F_1, F_2) \coloneqq \{ H \subset A \mid F_1 \subset H \text{ and } F_2 \subset A \setminus H\} \subset \operatorname{Pot}(A)
   \]
-  is called a \emph{cylinder set}. We set \(\mathcal{C}(a) \coloneqq = C(\{a\}, \varnothing)\) for arbitrary \(a \in A\).
+  is called a \emph{cylinder set}. We set \(\mathcal{C}(a) \coloneqq C(\{a\}, \varnothing)\) for arbitrary \(a \in A\).
 \end{defin}
 
 \begin{prop}
   \label{prop:pot-top}
-  The set of all cylinder sets can be used as basis for a topology on \(\operatorname{Pot}(A)\) for any set \(A\).
+  The set of all cylinder sets is a basis for a topology on \(\operatorname{Pot}(A)\) for any set \(A\).
 \end{prop}
 
 \begin{proof}
   There are two properties we have to establish
-  
-  First, we have to show that the union of all cylinder sets is all of the power set. So let \(H \subset A\). If \(H = \varnothing\), we can take \(F_1 = \varnothing\) and \(F_2 = A\). If \(H = A\) we interchange \(F_1\) and \(F_2\). In all other cases, ther must exist \(x,y \in A\) such that \(x \in H\) and \(y \in A \setminus H\) and thus \(A \in C(\{x\}, \{y\})\).
-
-  Second, we have to show that each intersection of two cylinder sets can be represented by a union of arbitrarily many cylinder sets. Thus let \(F_1, F_2, G_1, G_2 \subset A\) be finite and consider
+  \begin{enumerate}
+  \item We have to show that the union of all cylinder sets is all of the power set. So let \(H \subset A\). If \(H = \varnothing\), we can take \(F_1 = \varnothing\) and \(F_2 = A\). If \(H = A\) we interchange \(F_1\) and \(F_2\). In all other cases, ther must exist \(x,y \in A\) such that \(x \in H\) and \(y \in A \setminus H\) and thus \(A \in C(\{x\}, \{y\})\).
+  \item We have to show that each intersection of two cylinder sets can be represented by a union of arbitrarily many cylinder sets. Thus let \(F_1, F_2, G_1, G_2 \subset A\) be finite and consider
   \begin{align*}
     C(F_1, F_2) \cap C(G_1, G_2)
      = \{H \subset A \mid F_1 \cap G_1 \subset H \text{ and } F_2 \cap G_2 \subset A \setminus H\} = C(F_1 \cap G_1, F_2 \cap G_2).
-  \end{align*}]
+  \end{align*}
   Since \(F_1 \cap G_2\) and \(F_2 \cap G_2\) are still finite we are done.
+  \end{enumerate}
 \end{proof}
 
 \begin{defin}
@@ -141,7 +192,7 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
     U & \coloneqq C(\{\mathfrak{h}\}, \varnothing) \cap \mathcal{U}_s(X)\quad \text{and}\\
     V & \coloneqq C(\{\mathfrak{h}^\ast\},\varnothing) \cap \mathcal{U}_s(X).
   \end{align*}
-  By construction both sets are open and we have \(\alpha \in U\) and \(beta \in V\). Furthermore, no (set-)ultrafilter can contain both \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\). Thus \(U \cap V = \varnothing\). 
+  By construction both sets are open and we have \(\alpha \in U\) and \(\beta \in V\). Furthermore, no (set-)ultrafilter can contain both \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\). Thus \(U \cap V = \varnothing\). 
 \end{proof}
 
 \begin{thm}
@@ -150,10 +201,13 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
 
 \begin{proof}
   Consider the map
-  \[
-    f\colon \mathcal{U}(X) \to \mathcal{U}_s(X),\ (\mathfrak{h}_i)_{i \in \mathcal{\hat H}(X)} \mapsto \{\mathfrak{h}_i \mid i \in \mathcal{\hat H}(X)\}.
-  \]
-  This map is well-defined and bijective. Next, let us show that it is continuous. Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n, \mathfrak{h'}_1, \dots,\mathfrak{h'}_k \in \mathcal{H}(X)\) and set
+  \begin{align*}
+    f\colon &\mathcal{U}(X) \to \mathcal{U}_s(X),\\
+    &(\mathfrak{h}_i)_{i \in \mathcal{\hat H}(X)} \mapsto \{\mathfrak{h}_i \mid i \in \mathcal{\hat H}(X)\}.
+  \end{align*}
+  This map is well-defined and bijective. Next, let us show that it is continuous.
+
+  Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n, \mathfrak{h'}_1, \dots,\mathfrak{h'}_k \in \mathcal{H}(X)\) and set
   \[
     U \coloneqq C(\{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}, \{\mathfrak{h'}_1, \dots, \mathfrak{h'}_k\}) \cap \mathcal{U}_s(X).
   \]
@@ -172,18 +226,19 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
 \subsection{Embeddings of Roller boundaries}
 \label{sec:embedding-roller}
 
-In this section we are interested in the question when the CAT(0) cube complex \(X'\) associated to a involution invariant subset \(\mathcal{H}' \subset \mathcal{H}(X)\) is embeddable in \(X\). This is not always possible, however, there are sufficient conditions for \(\mathcal{H}''\) to ensure the existence of an embedding from \(\bar X'\) to \(\bar X\).
+In this section we are interested in the question when the CAT(0) cube complex \(X'\) associated to a involution invariant subset \(\mathcal{H}' \subset \mathcal{H}(X)\) is embeddable in \(X\). This is not always possible, however, there are sufficient conditions for \(\mathcal{H}'\) to ensure the existence of an embedding \(\bar X' \hookrightarrow \bar X\).
 
 \begin{defin}
   Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. A \emph{lifting decomposition} of \(\mathcal{H}'\) is a choice of a subset \(W \subset \mathcal{H} \setminus \mathcal{H}'\) satisfying the partial choice and consistency condition and so that \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\).
 \end{defin}
 
 \begin{lemma}[{\cite[Lemma~2.6]{MR3509968}}]
-  Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halspcaes. Assume that \(\mathcal{H}'\) admits a lifting decomposition \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\). Then there is a continuous injective map
-  \[
-    i\colon \bar X' \coloneqq X(\mathcal{H}') \to \bar X,\ \alpha \mapsto \alpha \sqcup W,
-  \]
-  whose image is given by \(i(\bar X') = \cap_{h \in W} \mathfrak{C}(h)\) (c.\,f.\ Definition~\ref{def:pot-top}).
+  Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halspaces. Assume that \(\mathcal{H}'\) admits a lifting decomposition \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\). Then there is a continuous injective map
+  \begin{align*}
+    i\colon &\bar X' \coloneqq X(\mathcal{H}') \to \bar X,\\
+            &\alpha \mapsto \alpha \sqcup W,
+  \end{align*}
+  whose image is given by \(i(\bar X') = \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\) (c.\,f.\ Definition~\ref{def:pot-top}).
 
   If \(\mathcal{H}' = \varnothing\), then \(i(\bar X')\) is a point.
 
@@ -191,9 +246,9 @@ In this section we are interested in the question when the CAT(0) cube complex \
 \end{lemma}
 
 \begin{proof}
-  As cana be seen from the formulation of the lemma, it is easier to work in with the power set definition of the Roller boundary in this setting.
+  As can be seen from the formulation of the lemma, it is easier to work in with the power set definition of the Roller boundary in this setting.
 
-  Since \(\mathcal{H}'\) is involution invariant it is a pocset in its own right and therefore we can construct a unique CAT(0) cube complex \(X'\) with \(\mathfrak{H}'\) as its set of halfspaces\todo{cite the construction}. First, we need to show, that the above construction of the map is well-defined. Let \(\alpha' \in \bar X'\). We claim that \(\alpha \coloneqq \alpha' \sqcup W\) is an ultrafilter in \(\bar X\). \(\alpha\) satisfies the choice condition, because
+  Since \(\mathcal{H}'\) is involution invariant, it is a pocset in its own right and therefore we can construct a unique CAT(0) cube complex \(X'\) with \(\mathfrak{H}'\) as its set of halfspaces (c.\,f.\ Remark~\ref{rem:roller}). First, we need to show that the above construction of the map is well-defined. Let \(\alpha' \in \bar X'\). We claim that \(\alpha \coloneqq \alpha' \sqcup W\) is an ultrafilter in \(\bar X\). First, we see that\(\alpha\) satisfies the choice condition. Indeed,
   \begin{align*}
     \alpha \cap \alpha^\ast
     & = (\alpha' \sqcup W) \cap (\alpha^\ast \sqcup W^\ast)\\
@@ -207,7 +262,12 @@ In this section we are interested in the question when the CAT(0) cube complex \
     & = \mathcal{H}' \sqcup W \sqcup W^\ast\\
     & = \mathcal{H}.
   \end{align*}
-  For the consistency condition, we have to check a couple of cases. Let \(\mathfrak{h} \in \alpha\) and \(\mathfrak{k} \in \mathcal{H}\), such that \(\mathfrak{h} \subset \mathfrak{k}\). If \(\mathfrak{k} \in \mathfrak{H}'\), then \(\mathfrak{k} \in \alpha' \subset \alpha\) and we are done. If \(\mathfrak{k} \in W \subset \alpha\) everything is fine, too. So the only interesting case, is to show that \(\mathfrak{k} \in W^\ast\) cannot happen. If this were the case, then we would have \(\mathfrak{k}^\ast \in W\) and \(\mathfrak{k}^\ast \subset \mathfrak{h}^\ast\). By the consistency of \(W\) we would have \(\mathfrak{h}^\ast \in W\). However, \(\mathfrak{h} \in \alpha = \alpha' \sqcup W\). This is a contradiction to the partial choice of \(W\). Hence \(\mathfrak{k} \notin W^\ast\).
+  For the consistency condition, we have to check a couple of cases. Let \(\mathfrak{h} \in \alpha\) and \(\mathfrak{k} \in \mathcal{H}\), such that \(\mathfrak{h} \subset \mathfrak{k}\). 
+  \begin{enumerate}
+  \item If \(\mathfrak{k} \in \mathfrak{H}'\), then \(\mathfrak{k} \in \alpha' \subset \alpha\) and we are done.
+  \item If \(\mathfrak{k} \in W \subset \alpha\) everything is fine, too. 
+  \item So the only interesting case is to show that \(\mathfrak{k} \in W^\ast\) cannot happen. If this were the case, then we would have \(\mathfrak{k}^\ast \in W\) and \(\mathfrak{k}^\ast \subset \mathfrak{h}^\ast\). By the consistency of \(W\) we would have \(\mathfrak{h}^\ast \in W\). However, \(\mathfrak{h} \in \alpha = \alpha' \sqcup W\). This is a contradiction to the partial choice of \(W\). Hence \(\mathfrak{k} \notin W^\ast\).
+  \end{enumerate}
 
   If \(\alpha' \neq \beta'\) in \(\mathcal{H}'\) then also \(\alpha \neq \beta\) in \(\mathcal{H}\) and \(i\) is injective. Next, let us consider the continuity of \(i\). Consider two finite subsets \(F_1, F_2 \subset \mathcal{H}\). These can be decomposed into \(F_i = G_i \sqcup E_i\), where \(G_i \subset \mathfrak{H}'\) and \(E_i \subset W \sqcup W^\ast\). Then we have
   \[
@@ -223,7 +283,7 @@ In this section we are interested in the question when the CAT(0) cube complex \
 
   Since we are only interested in connecte cube complexes, \(\mathcal{H}' = \varnothing\) implies that \(X'\) is only a single point. The same is true for \(\bar X'\) and its image under \(i\).
 
-  If \(W\) contains an inifite descending chain, so does \(\alpha' \sqcup W\) and thus \(\alpha' \sqcup W \in \partial W\).
+  If \(W\) contains an infinite descending chain, so does \(\alpha' \sqcup W\) and thus \(\alpha' \sqcup W \in \partial X\).
 \end{proof}
 
 %%% Local Variables:
