@@ -1,7 +1,7 @@
 \subsection{CAT(0) spaces}
 \label{sec:cat(0)}
 
-This section will contain some important facts about general CAT(0) spaces. Where no proof is given, it can be found in \cite{MR1744486}. Recall that the general definition of a CAT(\(\kappa\)) space was given in Definition~\ref{def:cat}. \todo{decide which proofs to give}
+This section will contain some important facts about general CAT(0) spaces. Where no proof is given, it can be found in \cite{MR1744486}. Recall that the general definition of a CAT(\(\kappa\)) space was given in Definition~\ref{def:cat}. 
 
 \begin{prop}[{\cite[Prop II.1.4]{MR1744486}}]
   Let \(X\) be a CAT(0) space. Then
@@ -9,7 +9,6 @@ This section will contain some important facts about general CAT(0) spaces. Wher
   \item \(X\) is uniquely geodesic and
   \item \(X\) is contractible.
   \end{enumerate}
-  \todo{proof by picture}
 \end{prop}
 
 \begin{defin}
@@ -24,8 +23,6 @@ This section will contain some important facts about general CAT(0) spaces. Wher
 \begin{prop}[{\cite[Propositions 1 \& 2]{Rolli2012}}]
   Let \(X,Y\) be geodesic spaces and let \(Y\) be CAT(0). Then every local isometry \(\phi \colon X \to Y\) is an isometric embedding. In particular, every local geodesic is a geodesic.
 \end{prop}
-
-\todo{enter definition of convexity (do it above before convex polyhedral cells)}
 
 % \begin{prop}[Projections~{\cite[Prop II.2.7]{MR1744486}}]
 %   Let \(X\) be a complete CAT(0) space and \(A \subset X\) be convex and closed. Then
@@ -52,16 +49,16 @@ This section will contain some important facts about general CAT(0) spaces. Wher
 %   The fix point set of any homeomorphism of a Hausdorff space to itself is closed. Furthermore, let \(\gamma\) be a geodesic joining two fix points \(x\) and \(y\). Then \(\phi \circ \gamma\) is again a geodesic joining the same two points. As \(X\) is uniquely geodesic, we yield \(\gamma = \phi \circ \gamma\) and hence the whole geodesic segment is fixed by \(\phi\), which is what we needed to show for convexity.
 % \end{proof}
 
-In every CAT(0) space each geodesic can be extended indefinitely\todo{cite something}. This allows the definition of the following boundary.
+On CAT(0) spaces one regularly defines a boundary via the identifying certain geodesic rays. This so called \emph{visual boundary} will play a minor role in this thesis, but we will still need it. 
 
-\begin{defin}[Visual boundary]
+\begin{defin}[Visual boundary, {\cite[Sec.~II.8]{MR1744486}}]
   Let \(\gamma_i \colon [0, \infty) \to X\) be two geodesic rays. \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that \(d(\gamma_1(t), \gamma_2(t)) < K\) for all \(t \geq 0\). The set of equivalence classes of this relation \(\partial_\sphericalangle X\) is called the \emph{visual boundary of \(X\)}.
 
   Clearly, each group action on \(X\) by isometries extends to an action on \(\partial_\sphericalangle X\).
 \end{defin}
 
 \begin{rem}
-  \(X \sqcup \partial_{\sphericalangle}X\) can be topologized in a way that it becomes a compact space. The topology can be chosen to coincide with the one induced by the metric on \(X\). \todo{cite something for this. Consider how important it is}
+  \(X \sqcup \partial_{\sphericalangle}X\) can be topologized in a way that it agrees with the topology induced by the metric on \(X\). If \(X\) is locally compact \(X \sqcup \partial_\sphericalangle X\) becomes compact (c.\,f.~\cite[Sec.~II.8]{MR1744486}). In general this can fail.
 \end{rem}
 
 %%% Local Variables:

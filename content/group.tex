@@ -20,15 +20,11 @@ The following proposition collects some facts about how cubical isomorphisms act
   \end{enumerate}
 \end{prop}
 
-\begin{rem}
-  Since I defined the ultrafilters on \(X\) as a special subset of a \emph{product space}, it is not immediatly clear how \(g\) operates on this space. However, what is meant is that \(g\) operates on each halfspace contained in \(\alpha\) separately and these new halfspaces determine a unique new ultrafilter which will be denoted by \(g\alpha\).
-\end{rem}
-
 \begin{proof}
   1.\ is an immedate consequence of the fact, that \(g\) is an isometry. This leads directly to 2 and 3. For 4.\ we only need that \(g\) is a bijection and 5 and 6 are then simple applications of 4.
 \end{proof}
 
-With the above proposition in place we already see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. It would be preferable, if the image lay in the homeomorphism group of \(X\). This will be acomplished with the next lemma.
+With the above proposition in place we already see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. It would be preferable, if the image lay in the homeomorphisms of \(X\). This will be acomplished with the next lemma.
 
 \begin{lemma}
   Let \(g \in \Aut(X)\) and \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) \subset \bar X\) a basic open set. Then we have
@@ -42,24 +38,19 @@ Together we arrive at the following result.
 
 \begin{thm}
   \label{thm:roller-action}
-  Let \(\Gamma\) be a countable discrete group and \(\Gamma \to \Aut(X)\) a group action on a CAT(0) cube complex \(X\). Then this action extends to an action \(\Gamma \to \operatorname{Homeo}(\bar X)\) on the Roller compactification.
+  Let \(\Gamma\) be a group and \(\Gamma \to \Aut(X)\) a group action on a CAT(0) cube complex \(X\). Then this action extends to an action \(\Gamma \to \operatorname{Homeo}(\bar X)\) on the Roller compactification.
 \end{thm}
+
+\subsection{Special group actions on CAT(0) cube complexes}
+\label{sec:special}
 
 \begin{defin}[(Non-)elementary action]
   A group action \(\Gamma \to \Aut(X)\) is called \emph{elementary}, if there exists a finite orbit of the action on \(X \sqcup \partial_{\sphericalangle}X\). Otherwise the action is called \emph{non-elementary}.
 \end{defin}
-\todo{important for essential core}
 
 \begin{defin}[Essential action]
-  \todo{Depends on the essential core, reference}
-  A group action \(\Gamma \to \Aut(X)\) is called \emph{essential}, if the \(\Gamma\)-essential core is the whole space \(X\).
+  A group action \(\Gamma \to \Aut(X)\) is called \emph{essential}, if the essential core of \(\Gamma\) is the whole space \(X\).
 \end{defin}
-
-
-\begin{defin}[strong \(\Gamma\)-boundary]
-  \todo{Look up strong \(Gamma\)-boundary}
-\end{defin}
-
 
 \subsection{Strong \(\Gamma\)-boundaries}
 \label{sec:grp-boundary}
@@ -131,7 +122,7 @@ Together we arrive at the following result.
 \end{lemma}
 
 \begin{defin}[Strong \(\Gamma\)-boundary]
-  Let \(\Gamma\) be a discrete, countable group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary}, if there is a measurable group action of \(\Gamma\) on \(B\) an this action is
+  Let \(\Gamma\) be a locally compact group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary}, if there is a measurable group action of \(\Gamma\) on \(B\) and this action is
   \begin{enumerate}
   \item amenable and
   \item doubly ergodic with coefficients.
