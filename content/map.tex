@@ -119,10 +119,10 @@
   \begin{description}
   \item[\(\N_C = N_1 \sqcup N_3\):] If \(N_3 \neq \varnothing\), we take \((n_0, m_0) \in N_3\) and define
     \begin{align*}
-      M = M(n_0) & \coloneqq \max \{m \in \N \mid (n_0, m) \in N_3\}\\
-                     & = \max \{m \in \N \mid \mathfrak{h}_{n_0} \subset \mathfrak{k}_m \subset \mathfrak{k}_{m_0}\}.
+      M = M(n_0)  \coloneqq & \max \{m \in \N \mid (n_0, m) \in N_3\}\\
+                      = & \max \{m \in \N \mid \mathfrak{h}_{n_0} \subset \mathfrak{k}_m \subset \mathfrak{k}_{m_0}\}.
     \end{align*}
-    \(M\) is well-defined since the maximum is taken over a non-empty set (by choice of \((n_0, m_0)\)) and the set is finite since two nested halfspaces contain only finitely many halfspaces in between.\todo{perhaps cite this result}
+    \(M\) is well-defined since the maximum is taken over a non-empty set (by choice of \((n_0, m_0)\)) and the set is finite since two nested halfspaces contain only finitely many halfspaces in between (c.\,f.\ Lemma~\ref{lem:finite-interval}).
 
     We see that if \(m > M\), we have \((n_0, m) \in N_1\), which is what we wanted.
   \item[\(\N_C = N_1 \sqcup N_2\):] This case works completely analogous, with \(\mathfrak{h}_{n_0}\) replaced by \(\mathfrak{h}_{n_0}^\ast\).
@@ -131,7 +131,7 @@
 \end{proof}
 
 \begin{defin}
-  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no multiple edges possible and we will not allow loops. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the set of \emph{outgoing edges} and by \(i(v) \subset E\) the set of \emph{incoming edges}. We will call a complete directed finite Graph \emph{upper triangular}, if there exist a numbering \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantag of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite Graph \emph{upper triangular}, if there exist a numbering \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
   \begin{align*}
     o(v_j) & = D - j\quad \text{and}\\
     i(v_j) & = j - 1.
@@ -208,7 +208,7 @@
     C &\coloneqq \max\{C(i,j) \mid 1 \leq i < j \leq D\} \quad \text{and}\\
     M &\coloneqq \max\{M_C(i,j) \mid 1 \leq i < j \leq D\}.
   \end{align*}
-  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\) this leads to a set of \(D\) transverse halfspaces. Since these intersect pairwise, we know\todo{cite} that the commen intersection is not empty and an element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence this cube has at least dimension \(D\). Since \(D\) was arbitrary this shows, that \(X\) contains cubes of arbitrary dimension.
+  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\) this leads to a set of \(D\) transverse halfspaces. Since these intersect pairwise, we know (Theorem~\ref{thm:common-intersection}) that the commen intersection is not empty and an element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence this cube has at least dimension \(D\). Since \(D\) was arbitrary this shows, that \(X\) contains cubes of arbitrary dimension.
 \end{proof}
 
 \subsection{Lemmas for \(M = \infty\)}
@@ -259,7 +259,7 @@
   \[
     H_\mu^+ = P(\mathfrak{h}) \cup P(\mathfrak{k}).
   \]
-  Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know taht there are only finitely many halfspaces between the two.\todo{check if this is always true or if I need some restriction on \(X\)} Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
+  Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know by Lemma~\ref{lem:finite-interval} that there are only finitely many halfspaces between the two. Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
 \end{proof}
 
 \begin{lemma}[{\cite[Double Skewering Lemma]{Caprace2010}}]
@@ -307,6 +307,28 @@
   If we take any other \(\mathfrak{l}' \in H_\mu\), then \(\mathfrak{k} \not\subset \mathfrak{l}'\) and \(\mathfrak{k} \not \subset \mathfrak{l}'^\ast\), because of the measure. Additionally, \(\mathfrak{l}' \not\pitchfork \mathfrak{k}\), since then it would be parallel to \(\mathfrak{k}_3\) and as before we would have \(\mathfrak{k}_3 \not\subset \mathfrak{l}'\) and \(\mathfrak{k}_3 \not\subset \mathfrak{l}'^\ast\). Hence, \(\mathfrak{l}'\) or \(\mathfrak{l}'^\ast\) would have to contain \(\mathfrak{k}_3\) and thus \(\mathfrak{k}\). All in all this shows that either \(\mathfrak{l}'\) or \(\mathfrak{l}'^\ast\) would have to contain \(\mathfrak{k}\). After a possible renaming, we can assume that \(\mathfrak{l}' \subset \mathfrak{k}\). A similar argument applied to \(\mathfrak{h}\) and \(\mathfrak{l}'\), will then show that \(\mathfrak{h} \subset \mathfrak{l}'\) and hence \(\mathfrak{\hat l}' \in \mathfrak{h}^\ast \cap \mathfrak{k}\).
 \end{proof}
 
+\begin{lemma}
+  Let \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{l}\) be three halfspaces in \(\mathcal{H}\) and \(g \in \Gamma\). Then
+  \begin{enumerate}
+  \item if \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\) are strongly separated, then the same is true for \((\mathfrak{h}, \mathfrak{l})\) and
+  \item \((\mathfrak{h}, \mathfrak{k})\) is strongly separated if and only if the same is true for \((g\mathfrak{h}, g\mathfrak{k})\).
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Assume that \(\mathfrak{m}\) were transverse to both \(\mathfrak{h}\) and \(\mathfrak{l}\). Then we would have
+    \begin{align*}
+      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^{\phantom{\ast}} & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
+      \mathfrak{m}^\ast \cap \mathfrak{k}^{\phantom{\ast}}  & \supset \mathfrak{m}^\ast \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
+      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{l}^\ast \neq \varnothing\quad \text{and}\\
+      \mathfrak{m}^\ast \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^\ast \cap \mathfrak{l}^\ast \neq \varnothing.
+    \end{align*}
+    Hence, \(\mathfrak{m}\) were transverse to \(\mathfrak{k}\), which is a contradiction to the strong separatedness of either \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\).
+  \item If \((\mathfrak{h}, \mathfrak{k})\) are strongly separated and we have any \(\mathfrak{m} \in \mathcal{H}\). Then \(g^{-1}\mathfrak{m} \in \mathcal{H}\) and it is parallel to either \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, \(\mathfrak{m}\) is parallel to either \(g\mathfrak{h}\) or \(g\mathfrak{k}\). The opposite direction is analogous.
+  \end{enumerate}
+\end{proof}
+
 \begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
   \label{lem:4.20}
   Let \(\mu_i \in \mathcal{P}(\bar X)\) be measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_i} \cap H_{\mu_j} \neq \varnothing\) for all \(i,j\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_{\mu_j}\), \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\).
@@ -317,7 +339,7 @@
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5
   \]
-  and since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, we can show that all the above halfspaces are pairwise strongly separated.\todo{add a short lemma for this}
+  and since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, by the previous lemma we have that the above halfspaces are pairwise strongly separated.
 
   We would like to show that \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) for each \(\mathfrak{l} \in H_{\mu_i}\) and every \(i\). This is in fact already true for every \(l \in H_{\mu_i} \cap H_{\mu_0}\) and since this intersection is not empty, we fix for each \(i\) one \(\mathfrak{l}_i\).
 
@@ -341,7 +363,7 @@
   
 \end{proof}
 
-\subsection{Image in non-terminal ultrafilters}
+\subsection{The image of the boundary map}
 \label{sec:nt-uf}
 
 
@@ -389,7 +411,7 @@
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminal ultrafilters of \(X\).
+  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
@@ -416,7 +438,7 @@
 \subsection{Main proof}
 \label{sec:main-proof}
 
-\begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]\todo{irreducible}\todo{essential action}\todo{non-elementary action}\todo{strong \(\Gamma\)-boundary}\todo{non-terminating ultrafilters}
+\begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
   Let \(\Gamma \to \Aut(Y)\) be a group action on an irreducible finite dimensional CAT(0) cube complex \(Y\). Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial Y\) taking values in the non-terminating ultrafilters in \(\partial Y\).
 \end{thm}
@@ -432,7 +454,7 @@
     & = |\{\mathfrak{gh} \in \mathcal{H} \mid \mu(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
     & = |g H_\mu|
   \end{align*}
-  and the map is \(\Gamma\)-equivariant. By the ergodicity of \(\mathcal{P}(\bar X)\)we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
+  and the map is \(\Gamma\)-invariant. By the ergodicity of \(\mathcal{P}(\bar X)\)we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
 
   Up to measure 0 the image of \(\psi\) lies in \(\mathcal{E} \coloneqq \{ \mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). This set is measurable by Lemma~\ref{lem:measurable-mu} applied to the case \(I = \{\text{\nfrac{} 1/2}\}\) and using the preimage of \(\varnothing\).
 
@@ -440,7 +462,9 @@
   \[
     \xi\colon \mathcal{E} \to \bar X,\ \mu \mapsto H_\mu^+.
   \]
-  This map is measurable (again thanks to Lemma~\ref{lem:measurable-mu} this time applied to \(I = (\text{\nfrac{} 1/2}, 1]\)) and as above \(\Gamma\)-equivariant (up to measure 0). All in all we yield the desired map \(\phi = \xi \circ \psi\) which is both measurable and \(\Gamma\)-equivariant as a concatenation of measurable and \(\Gamma\)-equivariant functions.\todo{Show that the image lies in the non-terminating ultrafilters.}
+  This map is measurable (again thanks to Lemma~\ref{lem:measurable-mu} this time applied to \(I = (\text{\nfrac{} 1/2}, 1]\)) and as above \(\Gamma\)-equivariant (up to measure 0). All in all we yield the desired map \(\phi = \xi \circ \psi\) which is both measurable and \(\Gamma\)-equivariant as a concatenation of measurable and \(\Gamma\)-equivariant functions.
+
+  With the help of Lemma~\ref{lem:4.11} we see that the image of \(\phi\) will lie in the non-terminating ultrafilters of \(X\).
 
   All that is left to prove now, is that the essential value \(N\) can take only the value \(0\). For this we will consider multiple cases
   \begin{description}
@@ -455,7 +479,7 @@
       \[
         T\colon \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ T(\mu, \nu) \coloneqq |\tau((H_\mu \cap H_\nu^+) \cup (H_\nu \cap H_\mu^+)).
       \]
-      By Lemma~\ref{lem:tau} this is a measurable map as a composition of measurable maps. Furthermore, it is \(\Gamma\)-equivariant and thus essentially constant by ergodicity. By Lemma~\ref{lem:terminal-finite}, we know that any subset of \(H_\mu\) and \(H_\nu\) contains only finitely many terminal elements. Hence the essential value must be finite. Hence \(T\) (ignoring taking the cardinality) we have an \(\Gamma\)-equivariant map to \(\operatorname{Pot}_f(\mathcal{H})\) using Corollary~\ref{cor:4.5}, we see that the essential values must be 0. In this case \(H_\mu \cap H_\nu^+\) contains no terminal elements for almost all \((\mu, \nu)\). However, Proposition~\ref{prop:4.10} shows that this is a contradiction to the finite dimensionality of \(X\).
+      By Lemma~\ref{lem:tau} this is a measurable map as a composition of measurable maps. Furthermore, it is \(\Gamma\)-equivariant and thus essentially constant by ergodicity. By Lemma~\ref{lem:finite-terminal}, we know that any subset of \(H_\mu\) and \(H_\nu\) contains only finitely many terminal elements. Hence the essential value must be finite. Hence \(T\) (ignoring taking the cardinality) we have an \(\Gamma\)-equivariant map to \(\operatorname{Pot}_f(\mathcal{H})\) using Corollary~\ref{cor:4.5}, we see that the essential values must be 0. In this case \(H_\mu \cap H_\nu^+\) contains no terminal elements for almost all \((\mu, \nu)\). However, Proposition~\ref{prop:4.10} shows that this is a contradiction to the finite dimensionality of \(X\).
     \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use agian Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case. 
     \item[\(M = \infty\):] 
     \end{description}
@@ -463,28 +487,6 @@
 
 \end{proof}
 
-\begin{prop}[{\cite[Proposition~2.6]{Caprace2010}}]
-  \label{prop:cs-2.6}
-  A finite-dimensional CAT(0) cube complex \(X\) admits a canonical decomposition
-  \[
-    X = X_1 \times \dots \times X_m
-  \]
-  into a product of irreducible cube complexes \(X_i\). Every automorphism of \(X\) preserves that decomposition, up to a permutation of possibly isomorphic factors. In particular, the image of the canonical embedding
-  \[
-    \Aut(X_1) \times \dots \times \Aut(X_m) \hookrightarrow \Aut(X)
-  \]
-  has finite index in \(\Aut(X)\).
-\end{prop}
-
-\begin{prop}[{\cite[Proposition~3.5]{Caprace2010}}]
-  \label{prop:cs-3.5}
-  Let \(X\) be a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\). Assume that at least one of the following two conditions is satisfied:
-  \begin{enumerate}
-  \item \(\Gamma\) has finitely many orbits of hyperplanes or
-  \item \(\Gamma\) has not fixed point at infinity.
-  \end{enumerate}
-  Then the essential core of \(X\) is unbounded if and only if \(\Gamma\) has no fixed point. In that case the essential core embeds as a \(\Gamma\)-invariant convex subcomplex \(Y\) of \(X\).
-\end{prop}
 
 \begin{lemma}[{\cite[Lemma~2.9]{MR3509968}}]
   \label{lem:2.9}
