@@ -3,14 +3,13 @@
 
 This section follows closely the lecture notes by \textcite{Rolli2012}.
 
-\begin{defin}
+\begin{defin}[Hyperplanes]
   Let \(X\) be a cube complex
   \begin{itemize}
   \item 0-, 1- and 2-dimensional cubes are respectively called \emph{vertices, edges and squares}.
   \item A \emph{square relation} on the set of edges is given by \(e \sim e'\) if and only if there is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and such that any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). If we allow for an edge to be opposite to itself, this yields an equivalence relation of the set of all edges.
-  \item A midcube \(M \subset X\) is \emph{transversal} to a square relation class \(E = [e]_\sim\), write \(M \pitchfork E\), if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
-    \todo{define midcubes}
-  \item The \emph{halfplane} defined by \(E\) is given by
+  \item A midcube \(M \subset X\) is \emph{transverse} to a square relation class \(E = [e]_\sim\), write \(M \pitchfork E\), if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
+  \item The \emph{hyperplane} defined by \(E\) is given by
     \begin{align*}
       \mathfrak{\hat h}(E) \coloneqq \bigcup_{M \pitchfork E} M \subset X.
     \end{align*}
@@ -18,27 +17,32 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   \end{itemize}
 \end{defin}
 
+\begin{bsp}
+  \todo{picture of a hyperplane}
+\end{bsp}
+
 \begin{prop}[Convexity of halfspaces,{\cite[Propositions 18 \& 19]{Rolli2012}}]
-  Let \(X\) be a CAT(0) cube complex and \(\halfplane{h} \subset X\) be a hyperplane. Then \(\halfplane{h}\) is closed and convex. Furthermore, if \(\halfplane{h}\) contains at least two points of the image of any geodesix \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{h}\).
+  Let \(X\) be a CAT(0) cube complex and \(\mathfrak{\hat h} \subset X\) be a hyperplane. Then \(\mathfrak{\hat h}\) is closed and convex. Furthermore, if \(\mathfrak{\hat h}\) contains at least two points of the image of any geodesix \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{\hat h}\).
 \end{prop}
 
 \begin{cor}
-  Let \(X\) be a CAT(0) cube complex. Every \(\halfspace{h} \subset X\) is itself a CAT(0) cube complex.
+  Let \(X\) be a CAT(0) cube complex. Every \(\mathfrak{\hat h} \subset X\) is itself a CAT(0) cube complex.
 \end{cor}
 
 \begin{thm}[Separation, {\cite[Proposition 21]{Rolli2012}}]
-  Any halfplane \(\halfplane{h}\) separates \(X\) in exactly two connected components.
+  Any hyperplane \(\mathfrak{\hat h}\) separates \(X\) in exactly two connected components.
 \end{thm}
 
-\begin{defin}
-  The two connected components of \(X \setminus \halfplane{h}\) are called \emph{halfspaces}. If \(\halfspace{h} \subset X \setminus \halfplane{h}\) is one of these halfspaces, then \(\halfspace{h}^\ast\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \dot \cup\, \halfplane{h}\, \dot \cup\, \halfspace{h}^\ast \).
+\begin{defin}[Halfspaces]
+  The two connected components of \(X \setminus \mathfrak{h}\) are called \emph{halfspaces}. If \(\halfspace{h} \subset X \setminus \mathfrak{\hat h}\) is one of these halfspaces, then \(\halfspace{h}^\ast\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \sqcup\, \mathfrak{\hat h}\, \sqcup\, \halfspace{h}^\ast \).
 \end{defin}
 
 \begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]
+  \label{thm:common-intersection}
   \begin{enumerate}
-  \item Let \(\halfplane{h}_1, \dots, \halfplane{h}_n\) be halfplanes with with pairwise non-trivial intersection. Then
+  \item Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n\) be halfplanes with with pairwise non-trivial intersection. Then
     \begin{align*}
-      \bigcap_{i=1}^n \halfplane{h}_i \neq \varnothing.
+      \bigcap_{i=1}^n \mathfrak{h}_i \neq \varnothing.
     \end{align*}
   \item Let \(\halfspace{h}_1, \dots, \halfspace{h}_n\) be halfspaces with pairwise non-trivial intersection. Then
     \begin{align*}
@@ -51,7 +55,7 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
 \todo{Überleitung}
 
 \begin{cor}
-  If \(X\) is a locally finite CAT(0) cube complex. Then its set of hyperplanes \(\mathcal{\hat H}\) and its set of haflspaces \(\mathcal{H}\) are countable.
+  If \(X\) is a locally countable CAT(0) cube complex. Then its set of hyperplanes \(\mathcal{\hat H}\) and its set of haflspaces \(\mathcal{H}\) are countable.
 \end{cor}
 
 \begin{proof}
@@ -64,6 +68,19 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
     \mathcal{\hat H} = \bigcup_{n=1}^\infty \bigcup_{e \in Y_n} \mathfrak{\hat h}([e])
   \]
   is countable. Since every hyperplane has exactly two halfspaces associated to it the same is true for \(\mathcal{H}\).
+\end{proof}
+
+
+\begin{lemma}
+  \label{lem:finite-interval}
+  Let \(X\) be a connected CAT(0) cube complex. Then for any two \(\mathfrak{h,k} \in \mathcal{H}(X)\) such that \(\mathfrak{h} \subset \mathfrak{k}\) we have
+  \[
+    |\{\mathfrak{l} \in \mathcal{H}(X) \mid \mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\}| < \infty.
+  \]
+\end{lemma}
+
+\begin{proof}
+  We will call the set of the lemma \(M\) and the corresponding set of hyperplanes \(\hat M\). Clearly, the two sets are bijective. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to transverse \(\mathfrak{\hat l}\) meaning that \(\mathfrak{\hat l}\) is one of the hyperplanes defined by \(c\).
 \end{proof}
 
 %%% Local Variables:
