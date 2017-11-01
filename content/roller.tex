@@ -121,14 +121,15 @@ For now, we denote by \(\mathcal{U}(X)\) the set of all ultrafilters of the pocs
 \end{defin}
 
 \begin{thm}
-  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathfrak{H}, \subset, ^\ast)\).
+  \label{thm:roller-compactification}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathcal{H}, \subset, ^\ast)\).
   \begin{enumerate}
   \item For every vertex \(v \in V(X)\) we have that
     \[
-      \alpha_v \coloneqq \{\mathfrak{h} \in \mathfrak{H}(X) \mid v \in \mathfrak{h}\}
+      \alpha_v \coloneqq \{\mathfrak{h} \in \mathcal{H}(X) \mid v \in \mathfrak{h}\}
     \]
     is an ultrafilter. Furthermore, it satisfies the descending chain condition and any ultrafilter satisfying the descending chain condition arises in this way.
-  \item The map \(V(X) \to \mathcal{U}(X) \coloneqq \mathcal{U}(\mathfrak{H}),\ v \mapsto \alpha_v\) is injective, continuous and the image is dense in \(\mathcal{U}(X)\). 
+  \item The map \(V(X) \to \mathcal{U}(X) \coloneqq \mathcal{U}(\mathcal{H}),\ v \mapsto \alpha_v\) is injective, continuous and the image is dense in \(\mathcal{U}(X)\). 
   \item If \(X\) is locally finite, then the image of \(V(X)\) is open in \(\mathcal{U}(X)\).
   \end{enumerate}
 \end{thm}
@@ -221,7 +222,7 @@ Now that we have defined the Roller boundary, we have to consider a second equiv
   which is a basic open set in \(\mathcal{U}(X)\). However, this already suffices to show that \(f\) is an homeomorphism. Indeed, every closed set \(A \subset \mathcal{U}(X)\) is compact (since \(\mathcal{U}(X)\) is) and as \(f\) is continuous \(f(A)\) is also compact. Lastly, we have established that \(\mathcal{U}_s(X)\) is Hausdorff and hence \(f(A)\) is also closed. This finishes the proof.
 \end{proof}
 
-With the above theorem in place, we can switch viewpoints whenever necessary. Actually, whenever convenient we will \enquote{confuse} the two and stop to distinguish between ultrafilters and set-ultrafilters.
+With the above theorem in place, we can switch viewpoints whenever necessary. Actually, whenever convenient we will \enquote{confuse} the two and stop to distinguish between ultrafilters and set-ultrafilters. Furthermore, with Theorem~\ref{thm:roller-compactification} in place, we can think of \(\mathcal{U}(X)\) as a compactification of the vertex set of \(X\) and we will write \(\bar X \coloneqq \mathcal{U}(X)\) for the set of ultrafilters on \(X\).
 
 \subsection{Embeddings of Roller boundaries}
 \label{sec:embedding-roller}
