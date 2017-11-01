@@ -10,6 +10,8 @@
   \]
 \end{defin}
 
+The above definition leads to the following consequence:
+
 \begin{prop}
   \(\Ess(X, \Gamma)\) and \(\nEss(X, \Gamma)\) are \(\Gamma\)-invariant.
 \end{prop}
@@ -18,7 +20,15 @@
   The \emph{essential core} is the complex corresponding to the the hyperplanes \(\Ess(X, \Gamma)\). It can be isometrically embedded into \(X\).
 \end{defin}
 
-\todo{Cite CS11, Prop3.5 that the essential core is not empty if visual boundary yadda yadda}
+\begin{prop}[{\cite[Proposition~3.5]{Caprace2010}}]
+  \label{prop:cs-3.5}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\). Assume that at least one of the following two conditions is satisfied:
+  \begin{enumerate}
+  \item \(\Gamma\) has finitely many orbits of hyperplanes or
+  \item \(\Gamma\) has not fixed point at infinity.
+  \end{enumerate}
+  Then the essential core of \(X\) is unbounded if and only if \(\Gamma\) has no fixed point. In that case the essential core embeds as a \(\Gamma\)-invariant convex subcomplex \(Y\) of \(X\).
+\end{prop}
 
 \begin{rem}
   Even if \(X\) is irreducible the same might not be true for the essential core \(Y\). \todo{find counterexample for reducible essential core}
