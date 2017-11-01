@@ -3,7 +3,7 @@
 
 \subsection{Metric preliminaries}
 \label{sec:metric}
-This section is concerned with basic metric properties of spaces and their connection to CAT(\(\kappa\)) spaces. The exposition follows closely~\cite{MR1744486}.
+This section is concerned with basic metric properties of spaces and their connection to CAT(\(0\)) spaces. The exposition follows closely~\cite{MR1744486}.
 
 \begin{defin}~
   \begin{itemize}
@@ -14,7 +14,7 @@ This section is concerned with basic metric properties of spaces and their conne
   %   \item \(d(x,y) + d(y,z) \geq d(x,z)\).
   %   \end{enumerate}
   %   The pair \((X,d)\) is called a \emph{metric space}.
-  \item A \emph{geodesic} from \(x\) to \(y\) (\(x,y \in X\)) is a map \(c\colon [a,b] \to X\), such that \(c(a) = x\), \(c(b) = y\) and such that there exists a constant \(\lambda > 0\) with
+  \item Let \(X, d\) be a metric space. A \emph{geodesic} from \(x\) to \(y\) (\(x,y \in X\)) is a map \(c\colon [a,b] \to X\), such that \(c(a) = x\), \(c(b) = y\) and such that there exists a constant \(\lambda > 0\) with
     \begin{align*}
       d(c(t), c(t')) = \lambda \cdot |t - t'| 
     \end{align*}
@@ -73,13 +73,14 @@ This section is concerned with basic metric properties of spaces and their conne
 %   As a reference for the above implicit claims~\cite[Sec.\ I.2, I.6]{MR1744486} can be used.
 % \end{rem}
 
-\begin{defin}\label{def:cat}\
+\begin{defin}[CAT(0) and non-positive curvature spaces]
+  \label{def:cat}
   \begin{itemize}
   \item Let \((X,d)\) be a metric space. A \emph{geodesic triangle} \(\Delta \subset X\) consists of three points \(p,q,r \in X\), its \emph{vertices}, together with a choice of three geodesic segments \([p,q], [q,r], [r, p]\) joining them, its \emph{edges} (The choice of geodesics might not be unique). If necessary, the notation \(\Delta = \Delta(p,q,r)\) or \(\Delta = \Delta([p,q], [q,r], [r,p])\) will be used. The first case is a slight abuse of notation, as the three vertices might not determine the triangle.
-  \item A \emph{comparison triangle} in \(\E^2\) for \(\Delta = \Delta(p,q,r)\) is a choice of three points \(\bar p, \bar q, \bar r \in M_\kappa^2\) such that \(d_\kappa(\bar p, \bar q) = d(p, q)\), \(d_\kappa(\bar q, \bar r), = d(q, r)\) and \(\|\bar r- \bar p\| = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). Such a comparison triangle always exists \cite[cf.][Sec.\ I.2]{MR1744486}.
+  \item A \emph{comparison triangle} in \(\E^2\) for \(\Delta = \Delta(p,q,r)\) is a choice of three points \(\bar p, \bar q, \bar r \in \E^2\) such that \(d_\kappa(\bar p, \bar q) = d(p, q)\), \(d_\kappa(\bar q, \bar r), = d(q, r)\) and \(\|\bar r- \bar p\| = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). Such a comparison triangle always exists \cite[cf.][Sec.\ I.2]{MR1744486}.
   \item \(\Delta\) satisfies the \emph{CAT(\(0\)) inequality}, if \(d(x,y) \leq \|\bar x, \bar y\|\) for any \(x, y \in \Delta\) and where \(\bar x \in \bar \Delta \subset \E^2\) is the unique point having the same distance to the two endpoints of the geodesic segment it lies on as \(x\) on its geodesic.
   \item \(X\) is called a \emph{CAT(\(0\)) space}, if \(X\) is geodesic and if each geodesic triangle \(\Delta\) satisfies the CAT(\(0\)) inequality.
-  \item \(X\) is called \emph{of curvature \(\leq 0\)}, if it is locally a CAT(\(0\)) space, i.\,e.\ for each \(x \in X\) there exists an \(r > 0\), such that B(x,r) together with the induced metric is a CAT(\(0\)) space.
+  \item \(X\) is called \emph{of curvature \(\leq 0\)} or \emph{non-positively curved}, if it is locally a CAT(\(0\)) space, i.\,e.\ for each \(x \in X\) there exists an \(r > 0\), such that B(x,r) together with the induced metric is a CAT(\(0\)) space.
   \end{itemize}
 \end{defin}
 
@@ -93,10 +94,10 @@ This section is concerned with basic metric properties of spaces and their conne
   \end{enumerate}
 \end{bsp}
 
-\begin{defin}
-  A subset \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Let \(H \subset M_\kappa\E^n\)  be a hyperplane, containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \leq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(\E^m\)-structure. The \emph{\(m\)-skeleton of \(C\)} is defined by
+\begin{defin}[Cubes]
+  A subset \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Let \(H \subset M_\kappa\E^n\)  be a hyperplane, containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \preceq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(\E^m\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
   \begin{align*}
-    C^{(m)} \coloneqq \bigcup \{F \mid F \leq C \text{ and } \dim F \leq m\}.
+    C^{(m)} \coloneqq \bigcup \{F \mid F \preceq C \text{ and } \dim F \leq m\}.
   \end{align*}
 
   Let \(x \in C\), then the \emph{support of \(x\)}, \(\supp(x)\), is the unique face of \(C\) containing \(x\) in its interior or alternatively the unique face with minimal dimension containing \(x\).
@@ -116,16 +117,16 @@ This section is concerned with basic metric properties of spaces and their conne
   \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). Furthermore, in this case all its edges have length \(\frac{\pi}{2}\).
 \end{rem}
 
-\begin{defin}\ 
+\begin{defin}[Cube complexes]
   \begin{itemize}
   \item Let \((C_\lambda)_{\lambda \in \Lambda}\) be a family of cubes and \(\mathcal{C} \coloneqq \bigcup_{\lambda \in \Lambda} C_\lambda \times \{\lambda\}\) its disjoint union. Furthermore, let \(\sim\) denote an equivalence relation on \(\mathcal{C}\) and by \(X\) the space of equivalence classes with natural projection \(p \colon \mathcal{C} \to X\). Lastly, let \(p_\lambda \colon C_\lambda \to X,\ p_\lambda(x) \coloneqq p(x, \lambda)\).
 
-    \(X\) is called an \emph{cube complex}, if
+    \(X\) is called a \emph{cube complex}, if
     \begin{enumerate}
     \item \(p_\lambda\) is injective and
     \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\), such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
     \end{enumerate}
-  \item \(C \subset X\) is called an \emph{\(n\)-dimensional cube}, if it is the image of an \(n\)-dimensional face \(F \leq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\).
+  \item \(C \subset X\) is called an \emph{\(n\)-dimensional cube}, if it is the image of an \(n\)-dimensional face \(F \leq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\). A \emph{midcube of \(C\)} is the image under \(p_\lambda\) of a midcube of \(F\).
   \item The \emph{m-skeleton} of \(X\) is given by
     \begin{align*}
       X^{(m)} \coloneqq \quot{\bigcup_{\lambda \in \Lambda} C_\lambda^{(m)} \times \{\lambda\}}{\sim},
@@ -145,8 +146,8 @@ This section is concerned with basic metric properties of spaces and their conne
 
 \begin{rem}
   \begin{itemize}
-  \item In the language of \(M_\kappa\)-polyhedral complexes the link \(\lk(x, X)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(X\). For more details consider \textcite[Sectoin~I.7]{MR1744486}. Additionally, I would like to point out, that although all the cells of \(\lk(x,X)\) consists of only simplices, it might happen that \(\lk(x,X)\) is not a simplicial complex. An example is given below.\todo{give specific example}
-  \item The definition of a cube complex is not the standard one given, but that of a cubical complex (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). Normally, one is satisfied, if the \(p_\lambda\) are injective on the interior of each face separately. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence I will adopt it from the start.
+  \item In the language of \(M_\kappa\)-polyhedral complexes the link \(\lk(x, X)\) is a \(M_1\)-polyhedral complex, whenever \(x\) is a vertex of \(X\). For more details consider \textcite[Sectoin~I.7]{MR1744486}. Although all the cells of \(\lk(x,X)\) consist of simplices, it might happen that \(\lk(x,X)\) is not a simplicial complex. An example is given below.\todo{give specific example}
+  \item The definition of a cube complex is not the standard one given, but that of a cubical complex (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). Normally, one is satisfied, if the \(p_\lambda\) are injective on the interior of each face separately. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence we will adopt it from the start.
   \item The above definition ascertains that two cubes either interesect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes. 
   \end{itemize}
 \end{rem}
