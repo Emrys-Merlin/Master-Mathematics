@@ -55,8 +55,10 @@
 %   By definition of a cube complex, for any point \(x\) and two preimages \(x_i \in C_{\lambda_i}\), we have an isometry \(h \colon \supp(x_1) \to \supp(x_2)\). Hence, for any \(F_i \leq C_{\lambda_i}\), we have that \(d(x_1, F_1 \setminus \st(x_1)) = d(x_2, F_2 \setminus \st(x_2))\) by Lemma~\ref{lemma:cube-dist}. This shows that \(d(x, C \setminus \st(x))\) can be computed in any preimage of the cell \(C\) and furthermore, that the value is independent of \(C\). Hence, \(\epsilon(x) > 0 \).
 % \end{proof}
 
-\begin{thm}
-  If \(X\) is a cube complex, then \(d\) is a metric.\todo{cite something}
+In the following is a short list of deeper results about cube complexes, which we will need in the following, but which we will not be able to prove. The interested reader may find the results in~\cite[Appendices A, B]{MR3029427}. For the finite dimensional case we refer to~\cite[Sec. I.7, II.5]{MR1744486}.
+
+\begin{thm}[{\cite[I.7.10]{MR1744486}}]
+  If \(X\) is a cube complex, then \(d\) is a metric.
 \end{thm}
 
 % \begin{proof}
@@ -71,7 +73,6 @@
 %   So we see that for all pairs \(x,y \in K\) with \(d(x,y) < \epsilon(x)\), we find a cube \(C\) containing both and \(d_C(x,y) \leq d(x,y)\). However, by construction of \(d\) this already implies equality. For \(d_C\) we already know that it is a metric on its cube. So \(d(x,y) = 0\) implies \(x = y\).
 % \end{proof}
 
-In the following is a short list of deeper results about cube complexes, which we will need in the following, but which we will not be able to prove. The interested reader may find the results in~\cite[Appendices A, B]{MR3029427}. For the finite dimensional case we refer to~\cite[Sec. I.7, II.5]{MR1744486}.
 
 \begin{thm}[{\cite[Thm A.6]{MR3029427}}, {\cite[Thm I.7.50]{MR1744486}}]
   A cube complex is complete if and only if every chain of ascending cubes is finite.
@@ -84,14 +85,25 @@ In the following is a short list of deeper results about cube complexes, which w
 
 \begin{thm}[Gromov's link condition, {\cite[Thm B.8]{MR3029427}}, {\cite[Thm II.5.20]{MR1744486}}]
   \label{thm:link}
-  A cube complex \(K\) is non-positively curved if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex.
+  A cube complex \(K\) is \emph{non-positively curved} if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex.
 
-  A cube complex \(K\) is CAT(0) if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex and \(K\) is simply connected.
+  A cube complex \(K\) is \emph{CAT(0)} if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex and \(K\) is simply connected.
 \end{thm}
+
+\begin{bsp}
+  \todo{add examples}
+  \begin{itemize}
+  \item trees
+  \item graphs (NPC)
+  \item tori
+  \item surfaces
+  \item products of \(X \times Y\) of cube complexes \(X,Y\)
+  \end{itemize}
+\end{bsp}
 
 \begin{defin}[Morphisms of cube complexes]
   \label{def:morphism-ccc}
-  Let \(X,Y\) be cube complexes. \(f\colon X \to Y\) is called an \emph{morphism of cube complexes} or a \emph{combinatorial map}, if
+  Let \(X,Y\) be cube complexes. \(f\colon X \to Y\) is called a \emph{morphism of cube complexes} or a \emph{combinatorial map}, if
   \begin{enumerate}
   \item each vertex \(v \in X^{(0)}\) is mapped to a vertex \(f(v) \in Y^{(0)}\),
   \item each cube \(C \subset X\) is mapped to a cube \(f(C) \subset Y\) and
@@ -117,11 +129,11 @@ In the following is a short list of deeper results about cube complexes, which w
 \end{cor}
 
 \begin{prop}
-  Let \(f\colon X \to Y\) be a combinatorial map. Then \(f\) is distance non-increasing,i.\,e.\ \(d_Y(f(x), f(y)) \leq d_X(x,y)\) for all \(x,y \in X\). In particular a combinatorial isomorphism is an isometry.
+  Let \(f\colon X \to Y\) be a combinatorial map. Then \(f\) is distance non-increasing, i.\,e.\ \(d_Y(f(x), f(y)) \leq d_X(x,y)\) for all \(x,y \in X\). In particular a combinatorial isomorphism is an isometry.
 \end{prop}
 
 \begin{proof}
-  By the combinatorial structure of \(f\) each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). Furthermore, each segment of \(c\) lying in a cube is shortened by the previous corollary. Hence, \(l(f \circ c) \leq l(c)\) and thus
+  By the combinatorial structure of \(f\) each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). For each \(x,y \in X\) we denote by \(\operatorname{PL}(x,y)\) the piecewise linear paths joining \(x\) to \(y\). Furthermore, each segment of \(c\) lying in a cube is shortened by the previous corollary. Hence, \(l(f \circ c) \leq l(c)\) and thus
   \begin{align*}
     d_X(x,y)
     & = \inf\left\{l(c) \relmid c \in \operatorname{PL}(x,y)\right\}\\
@@ -130,7 +142,6 @@ In the following is a short list of deeper results about cube complexes, which w
     & = d_Y(x,y),
   \end{align*}
   which is the desired result.
-  \todo{define PL(x,y)}
 \end{proof}
 
 \begin{lemma}
@@ -142,21 +153,21 @@ In the following is a short list of deeper results about cube complexes, which w
   \[
     f(x) = \sum_i a_i f(v_i).
   \]
-  Assume that \(f(v_1), \dots, f(v_n)\) are not pairwise differnt. That means without loss of generality we have \(f(v_1) = f(v_2)\). Let \(\epsilon > 0\) and define
+  Assume that \(f(v_1), \dots, f(v_n)\) are not pairwise different. That means without loss of generality we have \(f(v_1) = f(v_2)\). Let \(\epsilon > 0\) and define
   \[
     y \coloneqq \sum_i b_i v_i \quad \text{with } b_i = \begin{cases}a_1 + \epsilon & i = 1\\a_2 - \epsilon & i = 2\\ a_i & \text{else}\end{cases}.
   \]
   Since \(U\) is open and \(x \in \mathring{C}\), we can choose \(\epsilon\) small enough such that \(y \in U \cap C\), but by construction we have \(f(y) = f(x)\), which is a contradiction to the fact that \(f|_U\) is homeomorphism. Hence the \(f(v_i)\) need to be pairwise differnt, but this is already sufficient to show that \(f|_C\) is an isometry.
 
-  For the second claim consider \(z \in X\) and \(0 < \epsilon < \epsilon(z)\) (as defined in\todo{cite BH}), such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
+  For the second claim consider \(z \in X\). Then there exists an \(\epsilon(z)\) such that each \(y \in in B(z, \epsilon(z))\) and \(z\) lie in a common cube (c.\,f.~\cite[I.7.8-9]{MR1744486}) and by \textcite[I.7.33]{MR1744486} we have that it is always positve. Let \(0 < \epsilon \leq \epsilon(z)\), such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
   Assume there is no common cube containing both \(x\) and \(y\).
-  Let us consider the case that \(\tilde x \in \supp(\tilde y) \subset \tilde C\) and consider \(C = \supp(y)\) and \(C' = \supp(x)\). Then \(f|_C\colon C \xrightarrow{\sim} \supp(\tilde y)\). Hence, there exists \(x' \in C\), such that \(f(x') = \tilde x\). Furthermore, \(x\) and \(y\) lie both in \(B\) yielding (by Theorem\todo{rewrite \(\epsilon(z)\)}) that \(z \in C \cap C'\). We consider the two straight line segments \(c\) and \(c'\) connecting \(x\) and \(x'\) to \(z\) respectively. Since \(f\) is combinatorial \(f \circ c\) and \(f \circ c'\) are also straight line segments in a common cube. Both segements have identical endpoints and therefore must coincide. However, except for the endpoint \(z\) \(c\) and \(c'\) need to be disjoint as they lie in the interior of \(C\) and \(C'\) respectively. Additionally at some point they will enter \(B\). However, this leads to a contradiction regarding the injectivity of \(f\) on \(B\).
+  Let us consider the case that \(\tilde x \in \supp(\tilde y) \subset \tilde C\) and consider \(C = \supp(y)\) and \(C' = \supp(x)\). Then \(f|_C\colon C \xrightarrow{\sim} \supp(\tilde y)\). Hence, there exists \(x' \in C\), such that \(f(x') = \tilde x\). Furthermore, \(x\) and \(y\) lie both in \(B\) yielding that \(z \in C \cap C'\). We consider the two straight line segments \(c\) and \(c'\) connecting \(x\) and \(x'\) to \(z\) respectively. Since \(f\) is combinatorial \(f \circ c\) and \(f \circ c'\) are also straight line segments in a common cube. Both segments have identical endpoints and therefore must coincide. However, except for the endpoint \(z\) the segments \(c\) and \(c'\) need to be disjoint as they lie in the interior of \(C\) and \(C'\) respectively. Additionally at some point they will enter \(B\). However, this leads to a contradiction regarding the injectivity of \(f\) on \(B\).
 
-  The case where \(y \in \supp(x)\) can be handeled analogously. So lastly, consider the case where neither \(y\) lies in \(\supp(x)\) nor \(x\) lies in \(\supp(y)\). Without loss of generality replace \(\tilde C\) by the smallest cube containing both \(\tilde x\) and \(\tilde y\) (and hence both their supports). Assume there is no cube \(C\) in \(X\) containing \(\supp(y)\) which is mapped to \(\tilde C\). Then \(f\) cannot be a local homeomorphism, because its image can never be open. Hence, the \(C\) must exist and thus also a \(x' \in C\) with \(f(x') = \tilde x\). Choosing \(C' = \supp(x)\), the same reasoning as in the first case can be applied which again leads to a contradiction.
+  The case where \(y \in \supp(x)\) can be handeld analogously. So lastly, consider the case where neither \(y\) lies in \(\supp(x)\) nor \(x\) lies in \(\supp(y)\). Without loss of generality replace \(\tilde C\) by the smallest cube containing both \(\tilde x\) and \(\tilde y\) (and hence both their supports). Assume there is no cube \(C\) in \(X\) containing \(\supp(y)\) which is mapped to \(\tilde C\). Then \(f\) cannot be a local homeomorphism, because its image can never be open. Hence, the \(C\) must exist and thus also a \(x' \in C\) with \(f(x') = \tilde x\). Choosing \(C' = \supp(x)\), the same reasoning as in the first case can be applied which again leads to a contradiction.
 
   All in all it was established that if \(\tilde x, \tilde y \in \tilde B \cap \tilde C\) then there exists a cube \(C \subset X\) such that the preimages \(x, y\) both lie in it. However, this already shows that any piecewise linear path in \(\tilde B\) is mapped to a piecewise linear path in \(B\) by \(f^{-1}\).
 
-  As a last step, choose \(\delta > 0\), \(\tilde W \coloneqq B(\tilde z, \delta) \subset B\) and \(W \coloneqq f^{-1}(\tilde W) \subset B\). Then \(\tilde W\) is convex\todo{cite source} and for any two points \(\tilde x, \tilde y \in \tilde W\) we finde a geodesic \(c\) joining the two in \(\tilde W\). By the previous assertion \(f^{-1} \circ c\) is also a piecewise linear path, which has also the same length as \(f\) is an isometry on cubes. Thus we have
+  As a last step, choose \(\epsilon(\tilde z) > \delta > 0\), \(\tilde W \coloneqq B(\tilde z, \delta) \subset B\) and \(W \coloneqq f^{-1}(\tilde W) \subset B\). Then \(\tilde W\) is convex\todo{cite source}\ and for any two points \(\tilde x, \tilde y \in \tilde W\) we find a geodesic \(c\) joining the two in \(\tilde W\). By the previous assertion \(f^{-1} \circ c\) is also a piecewise linear path, which has also the same length as \(f\) is an isometry on cubes. Thus we have
   \begin{align*}
     d_Y(f(x), f(y))
     & = d_Y(\tilde x, \tilde y)\\
@@ -164,7 +175,7 @@ In the following is a short list of deeper results about cube complexes, which w
     & = l(f^{-1} \circ c)\\
     & \geq d_X(x,y).
   \end{align*}
-  Since we already established that \(f\) is distance non-increasing this shows that \(f\) is an isometry on \(W\).
+  Since we already established that \(f\) is distance non-increasing, this shows that \(f\) is an isometry on \(W\).
 \end{proof}
 
 \begin{prop}
@@ -200,7 +211,7 @@ In the following is a short list of deeper results about cube complexes, which w
     & = ((p|_U)^{-1} \circ p \circ p_{\lambda', f'} \circ \phi)(w)\\
     & = (p_{\lambda', f'} \circ \phi)(w)
   \end{align*}
-  and \(A\) is open. \(\supp(x)\) is connected so this implies \(A = \supp(x)\) and thus the gluing is indeed realized by isometries.
+  and \(A\) is open. The space \(\supp(x)\) is connected so this implies \(A = \supp(x)\) and thus the gluing is indeed realized by isometries.
 
   With this \(\tilde X\) is a cube complex and by construction \(p\) is a combinatorial map. Together with the previous lemma this yields that \(p\) is a local isometry.
 \end{proof}
@@ -209,13 +220,9 @@ In the following is a short list of deeper results about cube complexes, which w
   With the notation of the previos proposition, it holds that \(\dim X = \dim \tilde X\).
 \end{cor}
 
-\todo{enter all standard assumption and notations here}
-\begin{rem}
-  From now on we will assume that all our complexes are connected and finite dimensional.
-\end{rem}
 
 \begin{defin}
-  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\). It is called \emph{locally countable} if every \(x \in X\) is contined in at most countably many cubes.
+  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\). It is called \emph{locally countable} if every \(x \in X\) is contained in at most countably many cubes.
 \end{defin}
 
 \begin{prop}[{\cite[Prop.~14]{Rolli2012}}]
@@ -227,8 +234,6 @@ In the following is a short list of deeper results about cube complexes, which w
   \item \(X\) is locally compact.
   \end{enumerate}
 \end{prop}
-
-From now on we will also assume that all our CAT(0) cube complexes are locally countable.\todo{important perahps put at another location.}
 
 \begin{lemma}
   \label{lem:lf-countable}
@@ -242,6 +247,14 @@ From now on we will also assume that all our CAT(0) cube complexes are locally c
   \]
   is a finite set.
 \end{proof}
+
+\begin{bsp}
+  \todo{examples for visual boundary}
+\end{bsp}
+
+\begin{rem}
+  From now on we will assume that all our complexes are connected, locally countable, finite dimensional and unbounded.
+\end{rem}
 
 %%% Local Variables:
 %%% mode: latex
