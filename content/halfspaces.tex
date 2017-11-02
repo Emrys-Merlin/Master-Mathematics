@@ -18,7 +18,25 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
 \end{defin}
 
 \begin{bsp}
-  \todo{picture of a hyperplane}
+  Figure~\ref{fig:hyperplanes} contains an example of a CAT(0) cube complex with an edge equivalence class of edges and associated hyperplane. 
+  \begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+      [scale=2]
+      \draw[blue,dashed] (0.5,0.5) -- (0.5,1.5);
+      \fill[blue!20] (0, 0.5) -- (1, 0.5) -- (1.5, 1) -- (0.5, 1) -- (0, 0.5);
+      \draw[blue!20] (1.5,1) -- (2.5,1);
+      \draw[red] (1.5, 1.5) -- (1,1) -- (0,1) -- (0.5,1.5) -- (1.5,1.5) -- (2.5,1.5)  -- (3.5,1.5);
+      \draw[green] (2.5,0.5) -- (1.5,0.5) -- (1,0) -- (0,0);
+      \draw[green,dashed] (0,0) -- (0.5,0.5) -- (1.5,0.5);
+      \draw[blue] (0,0) -- (0, 1)
+      (1,0) -- (1,1)
+      (1.5,0.5) -- (1.5,1.5)
+      (2.5,0.5) -- (2.5,1.5);
+    \end{tikzpicture}
+    \caption{Example of a CAT(0) cube complex with a hyperplane inscribed. The darek blue edges form an edge equivalence class, which defines the blue hyperplane. The red and green parts indicate the two halfspaces associated to the hyperplane.}
+    \label{fig:hyperplanes}
+  \end{figure}
 \end{bsp}
 
 \begin{prop}[Convexity of halfspaces,{\cite[Propositions 18 \& 19]{Rolli2012}}]
