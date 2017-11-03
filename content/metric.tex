@@ -19,7 +19,7 @@ This section is concerned with basic metric properties of spaces and their conne
       d(c(t), c(t')) = \lambda \cdot |t - t'| 
     \end{align*}
     for all \(t,t' \in [a,b]\).
-  \item \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
+  \item The pair \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
   % \item The \emph{length} of a curve \(c\colon [a,b] \to X\) is defined as
   %   \begin{align*}
   %     l(c) \coloneqq \left\{\sum_{i=1}^n d(c(t_i), c(t_{i-1})) \relmid a = t_0 \leq t_0 \leq \dots \leq t_n = b \text{ a subdivision} \right\}.
@@ -33,14 +33,12 @@ This section is concerned with basic metric properties of spaces and their conne
   \end{itemize}
 \end{defin}
 
-\begin{rem}
-  In this thesis the metric is allowed to take the value \(\infty\). This is a bit unusual, but convenient in the setting of length spaces, where it might be that a path does not exist.
-\end{rem}
+% \begin{rem}
+%   In this thesis the metric is allowed to take the value \(\infty\). This is a bit unusual, but convenient in the setting of length spaces, where it might be that a path does not exist.
+% \end{rem}
 
 \begin{bsp}
-  \todo{fill in some examples}
-  \begin{enumerate}
-  \item \((\E^n, d_0)\), where \(\E^n = \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is a length spaces which is uniquely geodesic. However, \(\E^n \setminus {0}\) is still a length space, but no longer geodesic. If a whole cube \(C= [0,1]^n\) is removed, \(\E^n \setminus C\) is no longer a length space, with regard to the induced metric. 
+  The pair \((\E^n, d_0)\), where \(\E^n = \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is a length space which is uniquely geodesic. The space \(\E^n \setminus {0}\) is still a length space, but no longer geodesic, since every pair of antipodal points can no longer be joined by a line segment.. If a whole cube \(C= [0,1]^n\) (or any other subset with non-empty interior) is removed, \(\E^n \setminus C\) is no longer a length space with regard to the induced metric. 
   % \item \((\sphere^n, d_\kappa)\), \(\kappa > 0\), is the unit sphere in \(\E^{n+1}\) together with the metric \(d_{\kappa}(x,y) = \frac{1}{\sqrt{\kappa}} \cdot \angle (x,y)\). This space is uniquely \(\frac{\pi}{\sqrt{\kappa}}\)-geodesic.
   % \item \((\hyperbole^n, d_\kappa)\), \(\kappa < 0\), is the hyperbolic \(n\)-space
   %   \begin{align*}
@@ -48,7 +46,6 @@ This section is concerned with basic metric properties of spaces and their conne
   %     d_\kappa(x,y) & = \frac{1}{\sqrt{-\kappa}} \cdot \operatorname{arcosh} \langle x,y \rangle_{1,n}.
   %   \end{align*}
   %   This space is also a length space and uniquely geodesic.
-  \end{enumerate}
 \end{bsp}
 
 % \begin{defin}
