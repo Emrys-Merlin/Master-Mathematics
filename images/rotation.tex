@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+    \node (C'') at ( 0, 0) {C};
+    \node (A'') at (-1,-1) {A};
+    \node (G'') at ( 1,-1) {G};
+    \node (B'') at (-1.5,-2) {B};
+    \node (F'') at (-0.5,-2) {F};
+    \node (E'') at ( 0.5,-2) {};
+    \node (D'') at ( 1.5,-2) {};
+    \draw (C'') -- (A'')
+    (C'') -- (G'')
+    (A'') -- (B'')
+    (A'') -- (F'')
+    (G'') -- (D'')
+    (G'') -- (E'');
+
+    \draw [<-] (1.5,-1) -- node {rotate left} (3.5,-1);
+  \begin{scope}[shift={(5,0)}]
+  \node (A) at ( 0, 0) {A};
+  \node (B) at (-1,-1) {B};
+  \node (C) at ( 1,-1) {C};
+  \node (D) at (-1.5,-2) {D};
+  \node (E) at (-0.5,-2) {E};
+  \node (F) at ( 0.5,-2) {F};
+  \node (G) at ( 1.5,-2) {G};
+  \draw (A) -- (B);
+  \draw (A) -- (C);
+  \draw (B) -- (D)
+  (B) -- (E)
+  (C) -- (F)
+  (C) -- (G);
+  \draw [->] (1.5,-1) -- node {rotate right} (3.5,-1);
+  \begin{scope}[shift={(5,0)}]
+    \node (B') at ( 0, 0) {B};
+    \node (D') at (-1,-1) {D};
+    \node (A') at ( 1,-1) {A};
+    \node (F') at (-1.5,-2) {};
+    \node (G') at (-0.5,-2) {};
+    \node (E') at ( 0.5,-2) {E};
+    \node (C') at ( 1.5,-2) {C};
+    \draw (B') -- (D')
+    (B') -- (A')
+    (A') -- (E')
+    (A') -- (C')
+    (D') -- (F')
+    (D') -- (G');
+  \end{scope}
+    
+  \end{scope}
+
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:
