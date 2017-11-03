@@ -7,7 +7,7 @@
 \begin{defin}
   Let \(\mathcal{H}' \subset \mathcal{H}\). An element \(\mathfrak{h} \in \mathcal{H}'\) is called
   \begin{itemize}
-  \item \emph{minimal in \(\mathcal{H}'\)} if for verey \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
+  \item \emph{minimal in \(\mathcal{H}'\)} if for very \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
   \item \emph{maximal in \(\mathcal{H}'\)} if \(\mathfrak{h}^\ast\) is minimal in \(\mathcal{H}'\) or
   \item \emph{terminal in \(\mathcal{H}'\)} if it is either minimal or maximal in \(\mathcal{H}'\).
   \end{itemize}
@@ -131,7 +131,7 @@
 \end{proof}
 
 \begin{defin}
-  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantag of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite Graph \emph{upper triangular}, if there exist a numbering \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite Graph \emph{upper triangular}, if there exist a numbering \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
   \begin{align*}
     o(v_j) & = D - j\quad \text{and}\\
     i(v_j) & = j - 1.
@@ -159,7 +159,7 @@
   \[
     \sum_{v \in V} o(v) < \frac{D(D-1)}{2},
   \]
-  which is a contradction. Hence there must exist at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\)
+  which is a contradiction. Hence there must exist at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\)
 \end{proof}
 
 \begin{lemma}[{\cite[Lemma~A.8]{MR3509968}}]
@@ -176,7 +176,7 @@
   \]
   we have \(|V_D| \geq 5^{N-D}\)
 
-  Observe, that it is sufficitent to prove this statement for finite graphs, since for inifinite graphs, we can always consider a finite subgraph with sufficiently many vertices. Thus we will proceed with the finite case.
+  Observe, that it is sufficient to prove this statement for finite graphs, since for infinite graphs, we can always consider a finite sub graph with sufficiently many vertices. Thus we will proceed with the finite case.
   \begin{description}
   \item[\(D = 1\):] By the previous lemma we can find a \(v_1 \in V\) such that \(o(v_1) \geq \frac{|V| - 1}{2} \geq \frac{V}{5} \geq 5^{n-1}\). Then \(\mathcal{G}(\{v_1\}, \varnothing)\) is clearly complete and upper triangular. Furthermore, we have that
     \[
@@ -197,25 +197,25 @@
 
 \begin{prop}[{\cite[Proposition~4.10]{MR3509968}}]
   \label{prop:4.10}
-  If for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) we have \(|H_\mu| = |H_\nu| = \infty\), \(H_\mu \cap H_\nu = \varnothing\) and \(H_\mu \cap H_\mu^+\) has no minimal elements. Then \(X\) containscubes of arbitrarily large dimension.
+  If for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) we have \(|H_\mu| = |H_\nu| = \infty\), \(H_\mu \cap H_\nu = \varnothing\) and \(H_\mu \cap H_\mu^+\) has no minimal elements. Then \(X\) contains cubes of arbitrarily large dimension.
 \end{prop}
 
 \begin{proof}
   Since \(H_\mu \cap H_\nu^+\) has no minimal elements for almost all \(\mu, \nu\), we can find a sequence \((\mu_i)_{i \in I}\) such that \(H_{\mu_0}^+ \cap H_{mu_i}\) contains an infinite descending chain, which we denote by \((\mathfrak{h}^i_n)_{n \in \N}\). Thus we can apply Lemma~\ref{lem:4.13} and find \(C(i,j) \in \N\) such that for all \(n \geq C(i,j)\) there is an \(M \geq c(i,j)\) such that if \(m > M_n\) we have \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) (after possibly switching \(i\) and \(j\)).
 
-  Using this we can construct the following graph \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the abovementioned \(C(i,j)\) exists. With this \(\mathcal{G}\) becomes a directed graph and since the searched \(C(i,j)\) exists either for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E)\) becomes strictly upper triangular. In this case this implies, that for each \(1\leq i < j \leq D\) there exists an above \(C(i,j)\). We set
+  Using this we can construct the following graph \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the above mentioned \(C(i,j)\) exists. With this \(\mathcal{G}\) becomes a directed graph and since the searched \(C(i,j)\) exists either for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E)\) becomes strictly upper triangular. In this case this implies, that for each \(1\leq i < j \leq D\) there exists an above \(C(i,j)\). We set
   \begin{align*}
     C &\coloneqq \max\{C(i,j) \mid 1 \leq i < j \leq D\} \quad \text{and}\\
     M &\coloneqq \max\{M_C(i,j) \mid 1 \leq i < j \leq D\}.
   \end{align*}
-  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\) this leads to a set of \(D\) transverse halfspaces. Since these intersect pairwise, we know (Theorem~\ref{thm:common-intersection}) that the commen intersection is not empty and an element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence this cube has at least dimension \(D\). Since \(D\) was arbitrary this shows, that \(X\) contains cubes of arbitrary dimension.
+  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\) this leads to a set of \(D\) transverse halfspaces. Since these intersect pairwise, we know (Theorem~\ref{thm:common-intersection}) that the common intersection is not empty and an element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence this cube has at least dimension \(D\). Since \(D\) was arbitrary this shows, that \(X\) contains cubes of arbitrary dimension.
 \end{proof}
 
 \subsection{Lemmas for \(M = \infty\)}
 \label{sec:M=infty}
 
 \begin{defin}
-  Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edgepath joining the two also lies completely in \(Y\).
+  Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edge path joining the two also lies completely in \(Y\).
 \end{defin}
 
 \begin{lemma}[{\cite[Lemma~4.16]{MR3509968}}]
@@ -232,13 +232,13 @@
 
 \begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
   \label{prop:4.17}
-  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containint \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(\bar X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is the Roller compactification of some other CAT(0) cube complex.
+  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(\bar X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is the Roller compactification of some other CAT(0) cube complex.
 \end{prop}
 
 \begin{proof}
   Let \(v \in Y\). Then either \(v \in A\), which is \(\Gamma\)-invariant or \(v\) lies on a geodesic joining two vertices of \(A\). Since this geodesic is mapped to another geodesic joining two vertices of \(A\) under \(\Gamma\), we again have that \(v\) rests in \(Y\) under the \(\Gamma\)-action. All in all \(Y\) is \(\Gamma\)-invariant. The same is true for \(X \setminus Y\). Furthermore, \(X\) is connected and we can find \(v \in Y\) and \(w \in X \setminus Y\), such that the two are connected by an edge. Let \(\mathfrak{\hat h} = \mathfrak{\hat h}(vw)\) with \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Since \(Y\) is strongly convex, we have that \(Y \subset \mathfrak{h}\). Now, for each \(g \in \Gamma\), we have \(gv \in Y\) and \(gw \in X \setminus Y\) and since \(g\) acts by combinatorial maps, the two vertices are still joined by an edge. However, this means that \(d(\Gamma w, \mathfrak{\hat h}) = 1\), which is a contradiction to the fact that \(\Gamma\) acts essential. Thus \(Y = X\).
 
-  By the previous lemma, we know that the hyperplanes of \(X\) decompose as the onces contained in \(\mathcal{\hat H'} = \mathcal{\hat H}(A)\) and the onces separating one \(X_\alpha\) from another \(X_{\alpha'}\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating two above mentioned copies. We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find two \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find two vertices \(y,y' \in X_{\alpha'}\). However, then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets and hence \(X\) splits as the required product.
+  By the previous lemma, we know that the hyperplanes of \(X\) decompose as the ones contained in \(\mathcal{\hat H'} = \mathcal{\hat H}(A)\) and the once separating one \(X_\alpha\) from another \(X_{\alpha'}\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating two above mentioned copies. We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find two \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find two vertices \(y,y' \in X_{\alpha'}\). However, then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets and hence \(X\) splits as the required product.
 \end{proof}
 
 \begin{defin}[strongly separated halfspaces]
@@ -272,14 +272,14 @@
   Let \(X\) be a finite-dimensional unbounded CAT(0) cube complex such that \(\Aut(X)\) acts essentially and without fixed point at infinity. Then the following conditions are equivalent:
   \begin{enumerate}
   \item \(X\) is irreducible
-  \item There is a pair of strongyl separated hyperplanes
+  \item There is a pair of strongly separated hyperplanes
   \item For each halfspace \(\mathfrak{h}\) there is a pair of strongly separated halfspaces \(\mathfrak{h_i}\) such that \(\mathfrak{h}_1 \subset \mathfrak{h} \subset \mathfrak{h}_2\).
   \end{enumerate}
 \end{prop}
 
 \begin{lemma}[{\cite[Lemma~4.19]{MR3509968}}]
   \label{lem:4.19}
-  Let \(X\) be a finite-dimensional, irreducbile, CAT(0) cube complex with an essential and non-elementary group action \(\Gamma \to \Aut(X)\). For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\) we have  \(\mathfrak{h} \subset \mathfrak{l} \subset  \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\)
+  Let \(X\) be a finite-dimensional, irreducible, CAT(0) cube complex with an essential and non-elementary group action \(\Gamma \to \Aut(X)\). For every measure \(\mu\) either \(\hat H_\mu\) contains a pair of strongly separated hyperplanes or there exists a pair \(\mathfrak{h} \in H_\mu^-\) and \(\mathfrak{k} \in H_\mu^+\) of halfspaces, such that the hyperplanes \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_\mu\) we have  \(\mathfrak{h} \subset \mathfrak{l} \subset  \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\)
 \end{lemma}
 
 \begin{proof}
@@ -324,7 +324,7 @@
       \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{l}^\ast \neq \varnothing\quad \text{and}\\
       \mathfrak{m}^\ast \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^\ast \cap \mathfrak{l}^\ast \neq \varnothing.
     \end{align*}
-    Hence, \(\mathfrak{m}\) were transverse to \(\mathfrak{k}\), which is a contradiction to the strong separatedness of either \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\).
+    Hence, \(\mathfrak{m}\) were transverse to \(\mathfrak{k}\), which is a contradiction to the strong separateness of either \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\).
   \item If \((\mathfrak{h}, \mathfrak{k})\) are strongly separated and we have any \(\mathfrak{m} \in \mathcal{H}\). Then \(g^{-1}\mathfrak{m} \in \mathcal{H}\) and it is parallel to either \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, \(\mathfrak{m}\) is parallel to either \(g\mathfrak{h}\) or \(g\mathfrak{k}\). The opposite direction is analogous.
   \end{enumerate}
 \end{proof}
@@ -335,7 +335,7 @@
 \end{lemma}
 
 \begin{proof}
-  We fix \(\mu_0\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemman~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
+  We fix \(\mu_0\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5
   \]
@@ -343,9 +343,9 @@
 
   We would like to show that \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) for each \(\mathfrak{l} \in H_{\mu_i}\) and every \(i\). This is in fact already true for every \(l \in H_{\mu_i} \cap H_{\mu_0}\) and since this intersection is not empty, we fix for each \(i\) one \(\mathfrak{l}_i\).
 
-  Now, for every \(\mathfrak{l}\) as above, we see that \(\mathfrak{l}\) can be parallel to at most one \(\mathfrak{h}_i\), since they are pairwise strongly separated. If it is transverse to any \(\mathfrak{h}_i\), where \(1 \leq i \leq 4\), we are done, because in this case \(\mathfrak{l}\) is parallal to \(\mathfrak{h}_0\) and \(\mathfrak{h}_5\). Assume that \(\mathfrak{l}\) were transverse to \(\mathfrak{h}_0\). Then it would have to be parallel to \(\mathfrak{h}_1\) and we could consider the follwoing cases. We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) were either \(\mathfrak{l}\) or its complement. In either case, we would have \(\mathfrak{l}', \mathfrak{l}_i \in H_{mu_i}\) and thus thes same were also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen. The only remaining case were, where \(\mathfrak{h_0} \subset \mathfrak{h}_1 \subset \mathfrak{l}'\), but then \(\mathfrak{h}_0\) could not be transverse to \(\mathfrak{l}\). Thus \(\mathfrak{l}\) can never be transverse to \(\mathfrak{h}_0\). Analogously, one can show that \(\mathfrak{l}\) is never transverse to \(\mathfrak{h}_5\).
+  Now, for every \(\mathfrak{l}\) as above, we see that \(\mathfrak{l}\) can be parallel to at most one \(\mathfrak{h}_i\), since they are pairwise strongly separated. If it is transverse to any \(\mathfrak{h}_i\), where \(1 \leq i \leq 4\), we are done, because in this case \(\mathfrak{l}\) is parallel to \(\mathfrak{h}_0\) and \(\mathfrak{h}_5\). Assume that \(\mathfrak{l}\) were transverse to \(\mathfrak{h}_0\). Then it would have to be parallel to \(\mathfrak{h}_1\) and we could consider the following cases. We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) were either \(\mathfrak{l}\) or its complement. In either case, we would have \(\mathfrak{l}', \mathfrak{l}_i \in H_{mu_i}\) and thus these same were also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen. The only remaining case were, where \(\mathfrak{h_0} \subset \mathfrak{h}_1 \subset \mathfrak{l}'\), but then \(\mathfrak{h}_0\) could not be transverse to \(\mathfrak{l}\). Thus \(\mathfrak{l}\) can never be transverse to \(\mathfrak{h}_0\). Analogously, one can show that \(\mathfrak{l}\) is never transverse to \(\mathfrak{h}_5\).
 
-  If \(\mathfrak{l}\) is parallel to each \(\mathfrak{h}_i\), then \(\mathfrak{l}' \not\subset \mathfrak{h_0}\), since otherwise \(H_{\mu_i}\) would again contain pairs of strongly separated halfspaces. By the same argument \(\mathfrak{h}_5 \not\subset \mathfrak{l}'\), wehre \(\mathfrak{l}'\) is defined as above. As before we yield \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) or \(\mathfrak{h}_0 \subset \mathfrak{l}^\ast \subset \mathfrak{h}_5\).
+  If \(\mathfrak{l}\) is parallel to each \(\mathfrak{h}_i\), then \(\mathfrak{l}' \not\subset \mathfrak{h_0}\), since otherwise \(H_{\mu_i}\) would again contain pairs of strongly separated halfspaces. By the same argument \(\mathfrak{h}_5 \not\subset \mathfrak{l}'\), where \(\mathfrak{l}'\) is defined as above. As before we yield \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) or \(\mathfrak{h}_0 \subset \mathfrak{l}^\ast \subset \mathfrak{h}_5\).
 \end{proof}
 
 \begin{thm}[{\cite[Theorem~4.1]{Caprace2010}}]
@@ -432,7 +432,7 @@
   However, \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.\todo{Understand and prove this last sentence.}
   
   \todo{make reducible case nicer}
-  In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we getthat the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
+  In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
 \end{proof}
 
 \subsection{Main proof}
@@ -446,7 +446,7 @@
 \begin{proof}
   By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action.
 
-  Consider th map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
+  Consider the map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
   \begin{align*}
     |H_{g\mu}|
     & = |\{\mathfrak{h} \in \mathcal{H} \mid (g\mu)(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
@@ -480,7 +480,7 @@
         T\colon \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ T(\mu, \nu) \coloneqq |\tau((H_\mu \cap H_\nu^+) \cup (H_\nu \cap H_\mu^+)).
       \]
       By Lemma~\ref{lem:tau} this is a measurable map as a composition of measurable maps. Furthermore, it is \(\Gamma\)-equivariant and thus essentially constant by ergodicity. By Lemma~\ref{lem:finite-terminal}, we know that any subset of \(H_\mu\) and \(H_\nu\) contains only finitely many terminal elements. Hence the essential value must be finite. Hence \(T\) (ignoring taking the cardinality) we have an \(\Gamma\)-equivariant map to \(\operatorname{Pot}_f(\mathcal{H})\) using Corollary~\ref{cor:4.5}, we see that the essential values must be 0. In this case \(H_\mu \cap H_\nu^+\) contains no terminal elements for almost all \((\mu, \nu)\). However, Proposition~\ref{prop:4.10} shows that this is a contradiction to the finite dimensionality of \(X\).
-    \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use agian Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case. 
+    \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use again Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case. 
     \item[\(M = \infty\):] 
     \end{description}
   \end{description}
@@ -490,7 +490,7 @@
 
 \begin{lemma}[{\cite[Lemma~2.9]{MR3509968}}]
   \label{lem:2.9}
-  Let \(X = X_1 \times \dots X_m\) be a product of CAT(0) spaces \(X_j\) and let \(G = G_1 \times \dots \times G_m\), wherer \(G \leq \Isom(X_j)\). Then any \(G_j\)-fixed point in \(\partial_\sphericalangle X_j\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
+  Let \(X = X_1 \times \dots X_m\) be a product of CAT(0) spaces \(X_j\) and let \(G = G_1 \times \dots \times G_m\), where \(G \leq \Isom(X_j)\). Then any \(G_j\)-fixed point in \(\partial_\sphericalangle X_j\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
 \end{lemma}
 
 \begin{proof}
@@ -517,7 +517,7 @@
 \begin{proof}
   Let \(Y \subset X\) be the essential factor and \(Y = Y_1 \times \dots \times Y_m\) its decomposition into irreducible factors. Furthermore, let \(\Gamma_0\) be the finite index subgroup of \(\Gamma\) preserving this decomposition.
 
-  We will first show that the \(\Gamma_0\) action on each \(Y_i\) is essential. By construction \(\Gamma\) acts essentialy on \(Y\) and since \(\Gamma_0\) has finite index in \(\Gamma\) the same is true for \(\Gamma_0\). We would like to apply Lemma~\ref{lem:ess-unbounded}. For this we note that any halfspace \(\mathfrak{h}_i \in \mathcal{\hat H}(Y_i)\) defines a unique halfspace in \(Y\) via
+  We will first show that the \(\Gamma_0\) action on each \(Y_i\) is essential. By construction \(\Gamma\) acts essentially on \(Y\) and since \(\Gamma_0\) has finite index in \(\Gamma\) the same is true for \(\Gamma_0\). We would like to apply Lemma~\ref{lem:ess-unbounded}. For this we note that any halfspace \(\mathfrak{h}_i \in \mathcal{\hat H}(Y_i)\) defines a unique halfspace in \(Y\) via
   \[
     \mathfrak{h} \coloneqq Y_1 \times \dots \times Y_{i-1} \times \mathfrak{h}_i \times Y_{i+1} \times \dots \times Y_k.
   \]
@@ -527,11 +527,11 @@
 \end{proof}
 
 \begin{cor}[\cite{MR3509968}]
-  Let \(\Gamma \to \Aut(X)\) be a group acting on a finite dimensional CAT(0) cube complex \(X\). Assume that ther is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \partial Y \subseteq \partial X\).
+  Let \(\Gamma \to \Aut(X)\) be a group acting on a finite dimensional CAT(0) cube complex \(X\). Assume that there is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \partial Y \subseteq \partial X\).
 \end{cor}
 
 \begin{proof}
-  Since ther is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we also have no finite orbits of \(\Gamma\) in \(\partial_\sphericalangle Y\). We decompose \(Y\) as \(Y = Y_1 \times \dots \times Y_m\), where each \(Y_i\) is irreducible (which is possible by Proposition~\ref{prop:cs-2.6}). By Lemma~\ref{lem:2.28} we know that \(\Gamma_0 \leq \Gamma\) has still no finite orbit in \(\partial_\sphericalangle Y_i\) for each \(i\) and the action on each \(Y_i\) is essential.\todo{Problem: How can \(\Gamma\) operate on these factors?}
+  Since there is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we also have no finite orbits of \(\Gamma\) in \(\partial_\sphericalangle Y\). We decompose \(Y\) as \(Y = Y_1 \times \dots \times Y_m\), where each \(Y_i\) is irreducible (which is possible by Proposition~\ref{prop:cs-2.6}). By Lemma~\ref{lem:2.28} we know that \(\Gamma_0 \leq \Gamma\) has still no finite orbit in \(\partial_\sphericalangle Y_i\) for each \(i\) and the action on each \(Y_i\) is essential.\todo{Problem: How can \(\Gamma\) operate on these factors?}
 
   Assume that \(\Gamma\) acts on each \(Y_i\), then, by Theorem~\ref{thm:4.1}, we find \(\phi_i \colon B \to \partial Y_i\) which are measurable and \(\Gamma\)-equivariant. Each halfspaces in \(Y_i\) corresponds to a unique halfspace in \(Y\) and thus for family of ultrafilters \(\alpha_i \in \bar Y_i\) can be mapped to an ultrafilter \(\alpha \in \bar Y\). This can be most easily seen in the product space definition of \(\bar Y\), since then we just join the tuples of \(\alpha_i\) (after choosing an appropriate enumeration of \(\bar Y\)). The choice condition is then automatically satisfied and for the consistency condition, we only have to note that if two halfspaces come from two different \(\alpha_i\), then they must be transverse. Using basic open sets it is easy to see that this map is continuous and hence measurable. Lastly, \(\bar Y \subset \bar X\), since \(Y\) is convex subcomplex. All in all, we see that the \(\phi_i\) lead to a measurable map \(\phi\colon B \to \bar X\). Since each the image of each \(\phi_i\) lies in the non-terminating ultrafilters of \(Y_i\), we see that each ultrafilter in the image of \(\phi\) has at least one non-terminating descending chain and thus we have that indeed \(\phi\) takes values in \(\partial X\).
 \end{proof}

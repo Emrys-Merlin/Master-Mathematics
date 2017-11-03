@@ -16,15 +16,15 @@ The following proposition collects some facts about how cubical isomorphisms act
   \item \(\forall \mathfrak{h} \in \mathcal{H}(X)\colon g(\mathfrak{h}^\ast) = (g\mathfrak{h})^\ast\)
   \item \(\mathfrak{h,h'} \in \mathcal{H}(X)\colon \mathfrak{h} \subset \mathfrak{h'} \Rightarrow g\mathfrak{h} \subset g\mathfrak{h'}\)
   \item \(\alpha \in \bar X \Rightarrow g\alpha \in \bar X\)
-  \item If \(\alpha\) satisfies the descending chaing condition then so does \(g\alpha\).
+  \item If \(\alpha\) satisfies the descending chain condition then so does \(g\alpha\).
   \end{enumerate}
 \end{prop}
 
 \begin{proof}
-  1.\ is an immedate consequence of the fact, that \(g\) is an isometry. This leads directly to 2 and 3. For 4.\ we only need that \(g\) is a bijection and 5 and 6 are then simple applications of 4.
+  1.\ is an immediate consequence of the fact, that \(g\) is an isometry. This leads directly to 2 and 3. For 4.\ we only need that \(g\) is a bijection and 5 and 6 are then simple applications of 4.
 \end{proof}
 
-With the above proposition in place we already see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. It would be preferable, if the image lay in the homeomorphisms of \(X\). This will be acomplished with the next lemma.
+With the above proposition in place we already see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. It would be preferable, if the image lay in the homeomorphisms of \(X\). This will be accomplished with the next lemma.
 
 \begin{lemma}
   Let \(g \in \Aut(X)\) and \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) \subset \bar X\) a basic open set. Then we have
@@ -124,7 +124,7 @@ The above definition has one interesting immediate consequence:
 
 \begin{lemma}[{\cite[Section~2.a]{Bader2006}}]
   \label{lem:coeff-product}
-  If \(\Gamma\) acts doubly ergodict with coefficients on \(B\). Then for every measure preserving ergodic \(\Gamma\)-space \((X, \mu)\), the space \(B \times B \times X\) is ergodic.
+  If \(\Gamma\) acts doubly ergodic with coefficients on \(B\). Then for every measure preserving ergodic \(\Gamma\)-space \((X, \mu)\), the space \(B \times B \times X\) is ergodic.
 \end{lemma}
 
 \begin{defin}[Strong \(\Gamma\)-boundary]
@@ -144,13 +144,13 @@ The above definition has one interesting immediate consequence:
 \end{thm}
 
 \begin{proof}
-  Consider \(C(X)\) the space of continuous functions from \(X\) to \(\R\). Together with the supremum norm this is a Banach space, which (by the previous lemma) is also separable. Furthermore, there exists a group action of \(\Gamma\) onf \(C(X)\) via \((gf)(x) = f(g^{-1}x)\) for each \(g \in \Gamma\), \(f \in C(X)\) and \(x \in X\). This action is clearly via isometries. Also for \(\mu \in \mathcal{P}(X)\) we define the action to be \((g\mu)(A) = \mu(g^{-1} A)\) for everye \(g \in \Gamma\) and \(A \in \Sigma\). Then the dual pairing established in the Riesz-Markow representation theorem yields \(\langle gf, \mu\ \rangle = \langle f, g^{-1} \mu \rangle\) or in other words \(g^\ast = g^{-1}\).
+  Consider \(C(X)\) the space of continuous functions from \(X\) to \(\R\). Together with the supremum norm this is a Banach space, which (by the previous lemma) is also separable. Furthermore, there exists a group action of \(\Gamma\) on \(C(X)\) via \((gf)(x) = f(g^{-1}x)\) for each \(g \in \Gamma\), \(f \in C(X)\) and \(x \in X\). This action is clearly via isometries. Also for \(\mu \in \mathcal{P}(X)\) we define the action to be \((g\mu)(A) = \mu(g^{-1} A)\) for every \(g \in \Gamma\) and \(A \in \Sigma\). Then the dual pairing established in the Riesz-Markow representation theorem yields \(\langle gf, \mu\ \rangle = \langle f, g^{-1} \mu \rangle\) or in other words \(g^\ast = g^{-1}\).
   Next, consider
   \[
     \alpha: \Gamma \times B \to \Isom(C(X)), (g, b) \mapsto g.
   \]
   This is a left cocycle.
-  Since \(X\) is compact, we have \(C(X) = C_0(X)\) and thus, using the Riesz-Markow representation theorem, we yield \(C(X)^\ast \cong M_{s}(X)\). By Corollary~\ref{cor:banach-alaoglu} we know that \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of \(M_s(X)\). Furthermore, \(\mathcal{P}(X)\) is convex and non-empty (take any normalized dirac measure), thus we can choose \(A_b = \mathcal{P}(X)\) for all \(b \in B\). This is in fact an \(\alpha\)-invariant Borel field. Since \(B\) is a strong \(\Gamma\)-boundary, the \(\Gamma\) action is amenable and we yield a measurable map \(\phi \colon B \to C(X)^\ast_1\) such that \(\phi(b) \in A_b = \mathcal{P}(X)\), i.\,e.\ \(\phi \colon B \to \mathcal{P}(X)\) (which is still measuralbe). Lastly, we have
+  Since \(X\) is compact, we have \(C(X) = C_0(X)\) and thus, using the Riesz-Markow representation theorem, we yield \(C(X)^\ast \cong M_{s}(X)\). By Corollary~\ref{cor:banach-alaoglu} we know that \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of \(M_s(X)\). Furthermore, \(\mathcal{P}(X)\) is convex and non-empty (take any normalized Dirac measure), thus we can choose \(A_b = \mathcal{P}(X)\) for all \(b \in B\). This is in fact an \(\alpha\)-invariant Borel field. Since \(B\) is a strong \(\Gamma\)-boundary, the \(\Gamma\) action is amenable and we yield a measurable map \(\phi \colon B \to C(X)^\ast_1\) such that \(\phi(b) \in A_b = \mathcal{P}(X)\), i.\,e.\ \(\phi \colon B \to \mathcal{P}(X)\) (which is still measurable). Lastly, we have
   \begin{align*}
     \phi(gb) & = \alpha^\ast(g, b) \phi(b)\\
                & = \left(\alpha(g,b)^{-1}\right)^\ast \phi(b)\\
@@ -161,7 +161,7 @@ The above definition has one interesting immediate consequence:
 
 \begin{cor}
   \label{cor:p(x)}
-  Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Rolle compactification. Let \(\Gamma \to \Aut(X)\) be a discrete countable group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of probability measures on \(\bar X\).
+  Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Roller compactification. Let \(\Gamma \to \Aut(X)\) be a discrete countable group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of probability measures on \(\bar X\).
 \end{cor}
 
 \begin{proof}
