@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+  [
+  vertex/.style={
+    circle,
+    fill=black,
+    minimum size=1mm,
+    inner sep=0pt
+  },
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position 0.5 with {\arrow{#1}}
+    },
+    postaction={decorate}
+  }
+  ]
+  \node (0) at (0,0) [vertex] {};
+  \node (1) at (1,0) [vertex] {};
+  \node (2) at (120:1) [vertex] {};
+  \node (3) at (240:1) [vertex] {};
+  \draw[dashed] (3) -- (240:1.5);
+  \begin{scope}[shift={(1,0)}]
+    \node (4) at ( 60:1) [vertex] {};
+    \node (5) at (300:1) [vertex] {};
+    \draw[dashed]
+    (4) -- ( 60:1.5)
+    (5) -- (300:1.5);
+  \end{scope}
+  \begin{scope}[shift={(120:1)}]
+    \node (6) at ( 60:1) [vertex] {};
+    \node (7) at (180:1) [vertex] {};
+    \draw[dashed]
+    (6) -- (60:1.5)
+    (7) -- (180:1.5);
+  \end{scope}
+  \draw[->-={>}]
+  (0) -- (1);
+  \draw[->-={<}]
+  (0) -- (2);
+  \draw[->-={<}]
+  (0) -- (3);
+  \draw[->-={<}]
+  (1) -- (4);
+  \draw[->-={>}]
+  (1) -- (5);
+  \draw[->-={<}]
+  (2) -- (6);
+  \draw[->-={<}]
+  (2) -- (7);
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:

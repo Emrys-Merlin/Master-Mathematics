@@ -62,7 +62,17 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{defin}
 
 \begin{bsp}
-  \todo{example for trees}
+  We will have a look at ultrafilters at the example of a tree. In this case each edge defines a unique hyperplane and hence the choice of a halfspace is equivalent to assigning a direction to an edge. We will adopt the notation that the arrow, we assign to an edge will point towards the chosen halfspace. Since each ultrafilter contains either a halfspace or its complement, we have to assign an arrow to each edge. The consistencey condition implies that if we have an outgoing edge at a vertex, then all other edges must be incoming. In other words, an ultrafilter converts our undirected tree into a directed one such that each vertex has at most one outgoing edge. An example of this can be found in Figure~\ref{fig:ultrafilter}
+  \begin{figure}[htbp]
+    \centering
+    \input{./images/tree.tex}
+    \caption{A tree with inscribed ultrafilter}
+    \label{fig:ultrafilter}
+  \end{figure}
+
+  This reformulation leads to another interesting observation. If all vertices have one outgoing edge, then we can start a geodesic ray from any vertex following the ultrafilter. Each of these geodesic rays will merge after finitely many steps and emanate on. Hence, each of these ultrafilters defines one element at the visual boundary of the tree. Additionally, one can convince oneself that the only other possibility is, that there is exactly one vertex with no outgoing edge (c.\,f.\ Sageev's lecture notes\todo{sageev lecture notes}). Hence, these ultrafilters define a unique vertex in the tree.
+
+  In this sense we see that in the case of trees ultrafilters are a reformulation of the visual compactification of the CAT(0) space. 
 \end{bsp}
 
 \begin{defin}
