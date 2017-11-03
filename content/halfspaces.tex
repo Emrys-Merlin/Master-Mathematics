@@ -18,22 +18,10 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
 \end{defin}
 
 \begin{bsp}
-  Figure~\ref{fig:hyperplanes} contains an example of a CAT(0) cube complex with an edge equivalence class of edges and associated hyperplane. 
+  Figure~\ref{fig:hyperplanes} contains an example of a CAT(0) cube complex with an edge equivalence class of edges (dark blue) and associated hyperplane (light blue). 
   \begin{figure}[htbp]
     \centering
-    \begin{tikzpicture}
-      [scale=2]
-      \draw[blue,dashed] (0.5,0.5) -- (0.5,1.5);
-      \fill[blue!20] (0, 0.5) -- (1, 0.5) -- (1.5, 1) -- (0.5, 1) -- (0, 0.5);
-      \draw[blue!20] (1.5,1) -- (2.5,1);
-      \draw[red] (1.5, 1.5) -- (1,1) -- (0,1) -- (0.5,1.5) -- (1.5,1.5) -- (2.5,1.5)  -- (3.5,1.5);
-      \draw[green] (2.5,0.5) -- (1.5,0.5) -- (1,0) -- (0,0);
-      \draw[green,dashed] (0,0) -- (0.5,0.5) -- (1.5,0.5);
-      \draw[blue] (0,0) -- (0, 1)
-      (1,0) -- (1,1)
-      (1.5,0.5) -- (1.5,1.5)
-      (2.5,0.5) -- (2.5,1.5);
-    \end{tikzpicture}
+    \input{./images/halfspace.tex}
     \caption{Example of a CAT(0) cube complex with a hyperplane inscribed. The darek blue edges form an edge equivalence class, which defines the blue hyperplane. The red and green parts indicate the two halfspaces associated to the hyperplane.}
     \label{fig:hyperplanes}
   \end{figure}
@@ -54,6 +42,10 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
 \begin{defin}[Halfspaces]
   The two connected components of \(X \setminus \mathfrak{h}\) are called \emph{halfspaces}. If \(\halfspace{h} \subset X \setminus \mathfrak{\hat h}\) is one of these halfspaces, then \(\halfspace{h}^\ast\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \sqcup\, \mathfrak{\hat h}\, \sqcup\, \halfspace{h}^\ast \).
 \end{defin}
+
+\begin{bsp}
+  Figure~\ref{fig:hyperplanes} also indicates the two halfspaces (red and green color).
+\end{bsp}
 
 \begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]
   \label{thm:common-intersection}
@@ -98,7 +90,7 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
 \end{lemma}
 
 \begin{proof}
-  We will call the set of the lemma \(M\) and the corresponding set of hyperplanes \(\hat M\). Clearly, the two sets are bijective. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to transverse \(\mathfrak{\hat l}\) meaning that \(\mathfrak{\hat l}\) is one of the hyperplanes defined by \(c\).
+  We will call the set of the lemma \(M\) and the corresponding set of hyperplanes \(\hat M\). Clearly, the two sets are one-to-one. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to transverse \(\mathfrak{\hat l}\) meaning that \(\mathfrak{\hat l}\) is one of the hyperplanes defined by an edge in \(c\).
 \end{proof}
 
 %%% Local Variables:
