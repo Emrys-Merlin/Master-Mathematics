@@ -5,7 +5,7 @@
 \label{sec:treminal-elements}
 
 \begin{defin}
-  Let \(\mathcal{H}' \subset \mathcal{H}\). An element \(\mathfrak{h} \in \mathcal{H}'\) is called
+  Let \(\mathcal{H}\) be the pocset of halfspaces of a CAT(0) cube complex and \(\mathcal{H}' \subset \mathcal{H}\) a subset. An element \(\mathfrak{h} \in \mathcal{H}'\) is called
   \begin{itemize}
   \item \emph{minimal in \(\mathcal{H}'\)} if for very \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
   \item \emph{maximal in \(\mathcal{H}'\)} if \(\mathfrak{h}^\ast\) is minimal in \(\mathcal{H}'\) or
@@ -13,6 +13,8 @@
   \end{itemize}
   Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) \to \operatorname{Pot}(\mathcal{H})\) be the map that assigns to each subset of \(\mathcal{H}\) its set of terminal elements.
 \end{defin}
+
+\todo{add example of ultrafilters and move lemma about \(\R^d\) to this point}
 
 \begin{lemma}
   \label{lem:tau}
@@ -23,29 +25,28 @@
   We take an arbitrary cylinder set \(C(F_1, F_2)\) and are interested in the preimage
   \begin{align*}
     \tau^{-1}(C(F_1, F_2))
-    & = \{H \subset \mathcal{H} \mid F_1 \subset H \text{ are terminal elements and } \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \text{ is not terminal }\} \\
-    & = \{H \subset \mathcal{H} \mid F_1 \subset H \text{ are terminal elements}\} \cap \{H \subset \mathcal{H} \mid \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \text{ is not terminal}\}\\
-    & = T \cap N.
+    & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H) \text{ and } \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau{H}\} \\
+    & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H)\} \cap \{H \subset \mathcal{H} \mid \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau(H)\}\\
+    & \eqqcolon T \cap N.
   \end{align*}
   Considering the first set \(T\) we have the following decomposition:
   \begin{align*}
     T
-    & = \bigcap_{\mathfrak{h} \in F_1}\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{is terminal}\}\\
-    & = \bigcap_{\mathfrak{h} \in F_1}\left (\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{is minimal}\} \cup \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{is maximal}\}\right )\\
+    & = \bigcap_{\mathfrak{h} \in F_1}\{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}\\
+    & = \bigcap_{\mathfrak{h} \in F_1}\left (\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ minimal}\} \cup \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ maximal}\}\right )\\
     & = \bigcap_{\mathfrak{h} \in F_1}\left ( \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{k} \subset \mathfrak{h}}}C(\{\mathfrak{h}\}, \{\mathfrak{k}\}) \cup \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{h} \subset\mathfrak{k}}} C(\{\mathfrak{h}\}, \{\mathfrak{k}\})\right ).
   \end{align*}
-  This set is measurable as a countable intersection and union of measurable sets. Let us turn towards \(N\):
+  This set is measurable as it is a countable intersection and union of measurable sets. Let us turn towards \(N\):
   \begin{align*}
     N
-    & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \text{ are not terminal elements and } F_2 \setminus F \cap H = \varnothing\}\\
-    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \text{ are not terminal elements}\} \cap C(\varnothing, F_2 \setminus F)\right).\\
+    & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H) \text{ and } (F_2 \setminus F) \cap H = \varnothing\}\\
+    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H)\} \cap C(\varnothing, F_2 \setminus F)\right).\\
   \end{align*}
-  If we can show that the set, where a finite subset of elements are not allowed to be terminal is measurable, we are done. This can be achieved via an induction over \(n = |F|\). \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Let us assume the assertion were true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) were now to contain \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F = F \setminus \{\mathfrak{h}\}\), we could do the following decomposition:
+  If we can show that the set, where a finite subset of elements are not allowed to be terminal is measurable, we are done. This can be achieved via an induction over \(n = |F|\). The case \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Assume the assertion is true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) were now to contain \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F = F \setminus \{\mathfrak{h}\}\), we could do the following decomposition:
   \begin{align*}
-    \{H \subset \mathcal{H} \mid F \subset \mathcal{H} \text{ are not terminal elemenets}\}
-    & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \text{ are not terminal elements}\}\\
-    & = \{H \subset \mathcal{H} \mid \tilde{F} \text{ are not terminal elements}\} \\
-    & \ \ \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ is terminal}\}.
+    \{H \subset \mathcal{H} \mid F \subset \mathcal{H} \setminus \tau(H)\}
+    & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \subset H \setminus \tau(H)\}\\
+    & = \{H \subset \mathcal{H} \mid \tilde{F} \subset H \setminus \tau(H)\} \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}.
   \end{align*}
   The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(C(F_1, F_2))\) is measurable.
 \end{proof}
@@ -131,7 +132,7 @@
 \end{proof}
 
 \begin{defin}
-  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite Graph \emph{upper triangular}, if there exist a numbering \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite graph \emph{upper triangular}, if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
   \begin{align*}
     o(v_j) & = D - j\quad \text{and}\\
     i(v_j) & = j - 1.
@@ -139,7 +140,7 @@
 \end{defin}
 
 \begin{lemma}[{\cite[Lemma~A.6]{MR3509968}}]
-  If \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) is a complete directed finite graph with \(|V| = D\). Then there exists a \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
+  If \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) is a complete directed finite graph with \(|V| = D\) then there exists a \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
 \end{lemma}
 
 \begin{proof}
@@ -147,7 +148,7 @@
   \[
     \sum_{v \in V} o(v) + i(v) \geq D(D-1).
   \]
-  Since all edges that start somewhere, have to end somewhere, we have
+  Since all edges that start somewhere have to end somewhere, we have:
   \[
     \sum_{v \in V} o(v) = \sum_{v \in V} i(v),
   \]
@@ -159,7 +160,7 @@
   \[
     \sum_{v \in V} o(v) < \frac{D(D-1)}{2},
   \]
-  which is a contradiction. Hence there must exist at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\)
+  which is a contradiction. Hence there exists at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\)
 \end{proof}
 
 \begin{lemma}[{\cite[Lemma~A.8]{MR3509968}}]
@@ -176,14 +177,22 @@
   \]
   we have \(|V_D| \geq 5^{N-D}\)
 
-  Observe, that it is sufficient to prove this statement for finite graphs, since for infinite graphs, we can always consider a finite sub graph with sufficiently many vertices. Thus we will proceed with the finite case.
+  Observe that it is sufficient to prove this statement for finite graphs, since for infinite graphs, we can always consider a finite sub graph with sufficiently many vertices. Thus we will proceed with the finite case.
   \begin{description}
-  \item[\(D = 1\):] By the previous lemma we can find a \(v_1 \in V\) such that \(o(v_1) \geq \frac{|V| - 1}{2} \geq \frac{V}{5} \geq 5^{n-1}\). Then \(\mathcal{G}(\{v_1\}, \varnothing)\) is clearly complete and upper triangular. Furthermore, we have that
+  \item[\(D = 1\):] By the previous lemma we can find a \(v_1 \in V\) such that
+    \[
+      o(v_1) \geq \frac{|V| - 1}{2} \geq \frac{V}{5} \geq 5^{n-1}.
+    \]
+    Then \(\mathcal{G}(\{v_1\}, \varnothing)\) is clearly complete and upper triangular. Furthermore, we have that
     \[
       V_1 = \{v \in V \mid \overline{v_1v} \in E\},
     \]
-    since \(\mathcal{G}\) does not contain loops. However, then we have \(|V_1| = |o(v_1)| \geq 5^{N-1}\) as we wanted to show.
-  \item[\(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by the previous Lemma, we find a vertex \(v_{D+1} \in V_D\) such that \(o(v_{D+1}) \geq \frac{|V_D| -1}{2} \geq \frac{|V_D|}{5} \geq 5^{N - (D+1)}\). By construction this vertex is connected via an incoming edge to each of the \(v_i\). If we set
+    since \(\mathcal{G}\) does not contain loops. However, then we have \(|V_1| = |o(v_1)| \geq 5^{N-1}\) and we are done.
+  \item[\(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by the previous Lemma, we find a vertex \(v_{D+1} \in V_D\) such that
+    \[
+      o(v_{D+1}) \geq \frac{|V_D| -1}{2} \geq \frac{|V_D|}{5} \geq 5^{N - (D+1)}.
+    \]
+    By construction this vertex is connected via an incoming edge to each of the \(v_i\). If we set
     \[
       E_{D+1} = E_D \cup \{\overline{v_iv_{D+1}} \mid \forall i = 1, \dots, D\},
     \]
@@ -197,7 +206,13 @@
 
 \begin{prop}[{\cite[Proposition~4.10]{MR3509968}}]
   \label{prop:4.10}
-  If for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) we have \(|H_\mu| = |H_\nu| = \infty\), \(H_\mu \cap H_\nu = \varnothing\) and \(H_\mu \cap H_\mu^+\) has no minimal elements. Then \(X\) contains cubes of arbitrarily large dimension.
+  If for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) we have:
+  \begin{itemize}
+  \item \(|H_\mu| = |H_\nu| = \infty\),
+  \item \(H_\mu \cap H_\nu = \varnothing\) and
+  \item \(\tau(H_\mu \cap H_\nu^+) = \varnothing\)
+  \end{itemize}
+  then \(X\) contains cubes of arbitrarily large dimension.
 \end{prop}
 
 \begin{proof}
@@ -236,13 +251,13 @@
 \end{prop}
 
 \begin{proof}
-  Let \(v \in Y\). Then either \(v \in A\), which is \(\Gamma\)-invariant or \(v\) lies on a geodesic joining two vertices of \(A\). Since this geodesic is mapped to another geodesic joining two vertices of \(A\) under \(\Gamma\), we again have that \(v\) rests in \(Y\) under the \(\Gamma\)-action. All in all \(Y\) is \(\Gamma\)-invariant. The same is true for \(X \setminus Y\). Furthermore, \(X\) is connected and we can find \(v \in Y\) and \(w \in X \setminus Y\), such that the two are connected by an edge. Let \(\mathfrak{\hat h} = \mathfrak{\hat h}(vw)\) with \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Since \(Y\) is strongly convex, we have that \(Y \subset \mathfrak{h}\). Now, for each \(g \in \Gamma\), we have \(gv \in Y\) and \(gw \in X \setminus Y\) and since \(g\) acts by combinatorial maps, the two vertices are still joined by an edge. However, this means that \(d(\Gamma w, \mathfrak{\hat h}) = 1\), which is a contradiction to the fact that \(\Gamma\) acts essential. Thus \(Y = X\).
+  Let \(v \in Y\). Then either \(v \in A\), which is \(\Gamma\)-invariant, or \(v\) lies on a geodesic joining two vertices of \(A\). Since this geodesic is mapped to another geodesic joining two vertices of \(A\) under \(\Gamma\), we again have that \(v\) stays in \(Y\) under the \(\Gamma\)-action. All in all \(Y\) is a \(\Gamma\)-invariant set. The same is true for \(X \setminus Y\). Furthermore, \(X\) is connected and we can find \(v \in Y\) and \(w \in X \setminus Y\), such that the two are connected by an edge. Let \(\mathfrak{\hat h} = \mathfrak{\hat h}(vw)\) with \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Since \(Y\) is strongly convex, we have that \(Y \subset \mathfrak{h}\). Now, for each \(g \in \Gamma\), we have \(gv \in Y\) and \(gw \in X \setminus Y\). Since \(g\) acts by combinatorial maps, the two vertices are still joined by an edge. However, this means that \(d(\Gamma w, \mathfrak{\hat h}) = 1\), which is a contradiction to the fact that \(\Gamma\) acts essential. Thus \(Y = X\).
 
-  By the previous lemma, we know that the hyperplanes of \(X\) decompose as the ones contained in \(\mathcal{\hat H'} = \mathcal{\hat H}(A)\) and the once separating one \(X_\alpha\) from another \(X_{\alpha'}\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating two above mentioned copies. We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find two \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find two vertices \(y,y' \in X_{\alpha'}\). However, then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets and hence \(X\) splits as the required product.
+  By the previous lemma, we know that the hyperplanes of \(X\) decompose as the ones contained in \(\mathcal{\hat H'} = \mathcal{\hat H}(A)\) and the ones separating one \(X_\alpha\) from another \(X_{\alpha'}\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating two above mentioned copies. We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find two \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find two vertices \(y,y' \in X_{\alpha'}\). However, then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets and hence \(X\) splits as the required product.
 \end{proof}
 
-\begin{defin}[strongly separated halfspaces]
-  Two parallel hyperplanes are called \emph{strongly separated}, if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated}, if the same is true for their associated hyperplanes.
+\begin{defin}[Strongly separated halfspaces]
+  Two parallel hyperplanes are called \emph{strongly separated} if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated} if the same is true for their associated hyperplanes.
 \end{defin}
 
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
@@ -271,8 +286,8 @@
   \label{prop:cs-5.1}
   Let \(X\) be a finite-dimensional unbounded CAT(0) cube complex such that \(\Aut(X)\) acts essentially and without fixed point at infinity. Then the following conditions are equivalent:
   \begin{enumerate}
-  \item \(X\) is irreducible
-  \item There is a pair of strongly separated hyperplanes
+  \item \(X\) is irreducible.
+  \item There is a pair of strongly separated hyperplanes.
   \item For each halfspace \(\mathfrak{h}\) there is a pair of strongly separated halfspaces \(\mathfrak{h_i}\) such that \(\mathfrak{h}_1 \subset \mathfrak{h} \subset \mathfrak{h}_2\).
   \end{enumerate}
 \end{prop}
@@ -454,7 +469,7 @@
     & = |\{\mathfrak{gh} \in \mathcal{H} \mid \mu(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
     & = |g H_\mu|
   \end{align*}
-  and the map is \(\Gamma\)-invariant. By the ergodicity of \(\mathcal{P}(\bar X)\)we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
+  and the map is \(\Gamma\)-invariant. By the ergodicity of \(\mathcal{P}(\bar X)\) we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
 
   Up to measure 0 the image of \(\psi\) lies in \(\mathcal{E} \coloneqq \{ \mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). This set is measurable by Lemma~\ref{lem:measurable-mu} applied to the case \(I = \{\text{\nfrac{} 1/2}\}\) and using the preimage of \(\varnothing\).
 
@@ -517,11 +532,11 @@
 \begin{proof}
   Let \(Y \subset X\) be the essential factor and \(Y = Y_1 \times \dots \times Y_m\) its decomposition into irreducible factors. Furthermore, let \(\Gamma_0\) be the finite index subgroup of \(\Gamma\) preserving this decomposition.
 
-  We will first show that the \(\Gamma_0\) action on each \(Y_i\) is essential. By construction \(\Gamma\) acts essentially on \(Y\) and since \(\Gamma_0\) has finite index in \(\Gamma\) the same is true for \(\Gamma_0\). We would like to apply Lemma~\ref{lem:ess-unbounded}. For this we note that any halfspace \(\mathfrak{h}_i \in \mathcal{\hat H}(Y_i)\) defines a unique halfspace in \(Y\) via
+  We will first show that the \(\Gamma_0\)-action on each \(Y_i\) is essential. By construction \(\Gamma\) acts essentially on \(Y\) and since \(\Gamma_0\) has finite index in \(\Gamma\) the same is true for \(\Gamma_0\). We would like to apply Lemma~\ref{lem:ess-unbounded}. For this we note that any halfspace \(\mathfrak{h}_i \in \mathcal{\hat H}(Y_i)\) defines a unique halfspace in \(Y\) via
   \[
     \mathfrak{h} \coloneqq Y_1 \times \dots \times Y_{i-1} \times \mathfrak{h}_i \times Y_{i+1} \times \dots \times Y_k.
   \]
-  Using this each hyperplane \(\mathfrak{\hat h}_i = \{\mathfrak{h}_i , \mathfrak{h}_i^\ast\} \in \mathcal{\hat H}(Y_i)\) defines an associated hyperplane \(\mathfrak{\hat h} = \{\mathfrak{h}, \mathfrak{h}^\ast\}\). Since \(\Gamma_0\) acts essentially on \(Y\), Lemma~\ref{lem:ess-unbounded} assures us, that there exists \(g \in \Gamma_0\) and an \(n \in \N\) such that \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\) (after possibly switching \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\)), but then we have \(g^n \mathfrak{h}_i \subsetneq \mathfrak{h}_i\) and using the same lemma in the other direction, we yield that \(\Gamma_0\) acts essentially on each \(Y_i\).
+  Using this each hyperplane \(\mathfrak{\hat h}_i = \{\mathfrak{h}_i , \mathfrak{h}_i^\ast\} \in \mathcal{\hat H}(Y_i)\) defines an associated hyperplane \(\mathfrak{\hat h} = \{\mathfrak{h}, \mathfrak{h}^\ast\}\). Since \(\Gamma_0\) acts essentially on \(Y\), Lemma~\ref{lem:ess-unbounded} assures us that there exists \(g \in \Gamma_0\) and an \(n \in \N\) such that \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\) (after possibly switching \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\)), but then we have \(g^n \mathfrak{h}_i \subsetneq \mathfrak{h}_i\) and using the same lemma in the other direction, we yield that \(\Gamma_0\) acts essentially on each \(Y_i\).
 
   Secondly, we would like to show that \(Y_i\) does not have a fixed point as infinity. We will achieve this by contraposition. Assume that \(\Gamma_0 \leq \Gamma\) does posses a finite orbit. Passing to a further finite index subgroup, which we will still call \(\Gamma_0\), we can assume that \(\Gamma_0\) has a fixed point at infinity. However, then we can apply Lemma~\ref{lem:2.9} and see that we have a \(\Gamma_0\)-fixed point in \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and again by the finite index \(\Gamma\) must have a finite orbit at infinity.
 \end{proof}

@@ -279,6 +279,7 @@ In this section I am concerned with some general properties of (probability) mea
 I will begin by collecting some important measure theoretic and functional analytic results
 
 \begin{defin}
+  \label{def:vanishing}
   Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
   \[
     C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < \epsilon\}.
@@ -314,6 +315,7 @@ I will begin by collecting some important measure theoretic and functional analy
 \end{prop}
 
 \begin{thm}[Riesz-Markow representation, {\cite[Thm 6.19]{RudinFunctional}}]
+  \label{thm:riesz-markow}
   If \(X\) is a locally compact Hausdorff space, then every bounded linear functional \(\Phi\) on \(C_0(X)\) is represented by a unique regular complex Borel measure \(\mu\) in the sense that \[
     \Phi f = \int_X f \d\mu
   \]
