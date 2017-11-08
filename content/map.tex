@@ -1,67 +1,109 @@
 \section{The boundary map}
 \label{sec:map}
 
-\subsection{Terminal elements}
+\subsection{The construction of the boundary map}
 \label{sec:treminal-elements}
 
-\begin{defin}
-  Let \(\mathcal{H}\) be the pocset of halfspaces of a CAT(0) cube complex and \(\mathcal{H}' \subset \mathcal{H}\) a subset. An element \(\mathfrak{h} \in \mathcal{H}'\) is called
-  \begin{itemize}
-  \item \emph{minimal in \(\mathcal{H}'\)} if for very \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
-  \item \emph{maximal in \(\mathcal{H}'\)} if \(\mathfrak{h}^\ast\) is minimal in \(\mathcal{H}'\) or
-  \item \emph{terminal in \(\mathcal{H}'\)} if it is either minimal or maximal in \(\mathcal{H}'\).
-  \end{itemize}
-  Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) \to \operatorname{Pot}(\mathcal{H})\) be the map that assigns to each subset of \(\mathcal{H}\) its set of terminal elements.
-\end{defin}
-
-\todo{add example of ultrafilters and move lemma about \(\R^d\) to this point}
+The construction of the actual map will be acomplished in this section. The main ingredient is that we need \(H_\mu\) to be empty for almost all \(\mu \in \mathcal{P}(\bar X)\). 
 
 \begin{lemma}
-  \label{lem:tau}
-  \(\tau\) is measurable.
+  \label{lem:H=0}
+  Let \(X\) be a finite-dimensional, irreducible, locally finite CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with regard to the pushforward measure from \(B\), then there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \bar X\).
 \end{lemma}
 
 \begin{proof}
-  We take an arbitrary cylinder set \(C(F_1, F_2)\) and are interested in the preimage
+  By Corollary~\ref{cor:p(x)} we have a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). The central observation is, that if \(H_\mu= \varnothing\), then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condiction we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
+
+  By assumption we know that the image of \(\psi\) lies up to measure 0 in the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). We can hence concatenate it with the map
   \begin{align*}
-    \tau^{-1}(C(F_1, F_2))
-    & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H) \text{ and } \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau{H}\} \\
-    & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H)\} \cap \{H \subset \mathcal{H} \mid \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau(H)\}\\
-    & \eqqcolon T \cap N.
+    \xi\colon \mathcal{E} &\to \bar X,\\
+    \mu &\mapsto H_\mu^+.
   \end{align*}
-  Considering the first set \(T\) we have the following decomposition:
-  \begin{align*}
-    T
-    & = \bigcap_{\mathfrak{h} \in F_1}\{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}\\
-    & = \bigcap_{\mathfrak{h} \in F_1}\left (\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ minimal}\} \cup \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ maximal}\}\right )\\
-    & = \bigcap_{\mathfrak{h} \in F_1}\left ( \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{k} \subset \mathfrak{h}}}C(\{\mathfrak{h}\}, \{\mathfrak{k}\}) \cup \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{h} \subset\mathfrak{k}}} C(\{\mathfrak{h}\}, \{\mathfrak{k}\})\right ).
-  \end{align*}
-  This set is measurable as it is a countable intersection and union of measurable sets. Let us turn towards \(N\):
-  \begin{align*}
-    N
-    & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H) \text{ and } (F_2 \setminus F) \cap H = \varnothing\}\\
-    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H)\} \cap C(\varnothing, F_2 \setminus F)\right).\\
-  \end{align*}
-  If we can show that the set, where a finite subset of elements are not allowed to be terminal is measurable, we are done. This can be achieved via an induction over \(n = |F|\). The case \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Assume the assertion is true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) were now to contain \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F = F \setminus \{\mathfrak{h}\}\), we could do the following decomposition:
-  \begin{align*}
-    \{H \subset \mathcal{H} \mid F \subset \mathcal{H} \setminus \tau(H)\}
-    & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \subset H \setminus \tau(H)\}\\
-    & = \{H \subset \mathcal{H} \mid \tilde{F} \subset H \setminus \tau(H)\} \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}.
-  \end{align*}
-  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(C(F_1, F_2))\) is measurable.
+  This map is measurable thanks to Lemma~\ref{lem:measurable-mu} applied to the case \({(\text{\nfrac 1/2}, 1]}\) and \(\Gamma\)-equivariant.
+
+  All in all we have that \(\xi \circ \psi\) is our desired map \(\phi\).
 \end{proof}
 
-\begin{lemma}
-  \label{lem:finite-terminal}
-  For any \(H \subset H_\mu\) we have that \(|\tau(H)| < \infty\).
+As a next step to our main theorem we would like to convince ourselves that any map of the above type not only takes values in \(\bar X\), but in \(\partial X\). This will be accomplished with the next lemma.
+
+\begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
+  \label{lem:4.11}
+  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
-  By Lemma~\ref{lem:interval} and Theorem~\ref{lem:interval}, we know that \(\bar X(H_\mu)\) is an interval and is embeddable in some \(\R^d\). In \(\R^d\) the halfspaces are along coordinate axes and for each of those we can have at most one maximal and one minimal halfspace. So all in all no matter which \(H \subset H_\mu \subset \mathcal{H}(\R^d)\) we choose, it can never contain more than \(2d\) terminal elements.
+  We may first assume that \(X\) is irreducible and consider the map
+  \[
+    B \to \N \cup \{\infty\},\ x \mapsto |\tau(\phi(x))|,
+  \]
+  which is measurable and \(\Gamma\)-invariant. Hence by ergodicity it is essentially constant with essential value \(M\). If we can show, that \(M = 0\), we are done as then the image of \(\phi\) essentially contains only non-terminating ultrafilters.
+
+  For this purpose let us consider the following map
+  \[
+    B \times B \to \N \cup \{\infty\},\ (x,y) \mapsto |\tau(\mathcal{H}(\phi(x), \phi(y)))|,
+  \]
+  which is again measurable as a composition of measurable maps (consider the previous lemma) and \(\Gamma\)-invariant and again we yield an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
+
+  Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
+
+  However, \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.\todo{Understand and prove this last sentence.}
+  
+  \todo{make reducible case nicer}
+  In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
 \end{proof}
 
-\subsection{Lemmas for case \(M=0\)}
+So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. So we are left with the taks to prove, that this is the only possible case. As first step is provided in the following two lemmas:
+
+\begin{lemma}
+  \label{lem:h-const}
+  The map
+  \begin{align*}
+    \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
+    \mu &\mapsto |H_\mu|
+  \end{align*}
+  is essentially constant.
+\end{lemma}
+
+\begin{proof}
+  The map is \(\Gamma\)-equivariant and measurably as a concatenation of measurable maps (c.f.~Section~\ref{sec:meas-maps}). Since the group action is ergodic with regard to the pushforward measure on \(\mathcal{P}(\bar X)\) from \(B\), we see that the map is essentially constant.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:finite-zero}
+  If \(|H_\mu|\) is essentially constant and not infinite then \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\).
+\end{lemma}
+
+\begin{proof}
+  We consider the map
+  \begin{align*}
+    \mathcal{P}(\bar X) & \to \operatorname{Pot}_f(\mathcal{H}),\\
+    \mu & \mapsto H_\mu.
+  \end{align*}
+  This map is measurable and \(\Gamma\)-equivariant. Hence, by Corollary~\ref{cor:4.5}, we know that its image has to be essentially \(\varnothing\) in order for our \(\Gamma\)-action to be essential.
+\end{proof}
+
+All in all we see that, if we can show that \(|H_\mu|\) cannot be infinite for almost all \(\mu \in \mathcal{P}(\bar X)\), we are done. However, this is the most involved case and will need the next two sections, but first we need one last lemma:
+
+\begin{lemma}
+  \label{lem:hh-const}
+  The map
+  \begin{align*}
+    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \N \cup \{infty\},
+    (\mu, \nu) &\mapsto |H_\mu \cap H_\nu|
+  \end{align*}
+  is essentially constant.
+\end{lemma}
+
+\begin{proof}
+  This map is again measurabel and \(\Gamma\)-equivariant (c.\,f.~Section~\ref{sec:meas-maps}) and hence essentially constant by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\).
+\end{proof}
+
+The following two sections will show that \(|H_\mu| = \infty\) and \(|H_\mu \cap \H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) are impossible. 
+
+\subsection{Exclusion of the case \(|H_\mu \cap H_\nu| = 0\)}
 \label{sec:M=0}
+
+Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) would imply that our cube complex is not finite-dimensional.
 
 \begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
   \label{lem:4.13}
@@ -226,8 +268,10 @@
   Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\) this leads to a set of \(D\) transverse halfspaces. Since these intersect pairwise, we know (Theorem~\ref{thm:common-intersection}) that the common intersection is not empty and an element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence this cube has at least dimension \(D\). Since \(D\) was arbitrary this shows, that \(X\) contains cubes of arbitrary dimension.
 \end{proof}
 
-\subsection{Lemmas for \(M = \infty\)}
+\subsection{Exclusion of the case \(|H_\mu \cap H_\nu| = \infty\)}
 \label{sec:M=infty}
+
+Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) would imply that the \(\Gamma\)-action is not essential.
 
 \begin{defin}
   Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edge path joining the two also lies completely in \(Y\).
@@ -378,79 +422,7 @@
   
 \end{proof}
 
-\subsection{The image of the boundary map}
-\label{sec:nt-uf}
-
-
-\begin{defin}
-  Let \(\alpha\) and \(\beta\) be two ultrafilters. Then
-  \[
-    \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta\}
-  \]
-  is the set of separating halfspaces of \(\alpha\) and \(\beta\).
-\end{defin}
-
-\begin{rem}
-  \label{rem:interval}
-  Indeed we have that \(\mathcal{H}(x,y) = \mathcal{H}([x,y])\), i.\,e.\ the halfspaces separating \(x\) and \(y\) are exactly the halfspaces of the interval \([x,y]\). Together with the embedding into an \(\R^d\) by Theorem~\ref{thm:interval}, we yield that the number of terminal elements in \(\mathcal{H}(x,y)\) must always be finite.
-\end{rem}
-
-\begin{lemma}[{\cite[Lemma~4.12]{MR3509968}}]
-  \label{lem:4.12}
-  Let \(\alpha\) and \(\beta\) be two ultrafilters and \(\mathfrak{h} \in \tau(\alpha)\). Then \(\mathfrak{h} \notin \beta\) if and only if \(\mathfrak{h} \in \tau(\mathcal{H}(\alpha,\beta))\).
-\end{lemma}
-
-\begin{proof}
-  If \(\mathfrak{h} \in \beta\), then \(\mathfrak{h}\) does not separate \(\alpha\) and \(\beta\) hence \(\mathfrak{h} \notin \mathcal{H}(\alpha, \beta)\) and in the end also \(\mathfrak{h} \notin \tau(\mathcal{H}(\alpha, \beta))\). Conversely, assume \(\mathfrak{h} \notin \tau(\mathcal{H}(\alpha, \beta))\). If \(\mathfrak{h} \notin \mathcal{H}(\alpha, \beta)\) then \(\mathfrak{h} \in \beta\). Otherwise \(\mathfrak{h}\) were not a terminal element in \(\mathcal{H}(\alpha, \beta)\). However, this is impossible since \(\mathfrak{h}\) is terminal in \(\alpha\).
-\end{proof}
-
-\begin{lemma}
-  The map
-  \[
-    f\colon \bar X \times \bar X \to \operatorname{Pot}(\mathcal{H}),\ (\alpha, \beta)\mapsto \mathcal{H}(\alpha, \beta)
-  \]
-  is measurable.
-\end{lemma}
-
-\begin{proof}
-  We will indeed see that the map is even continuous. Take \(\mathfrak{h}_1,\dots \mathfrak{h}_n, \mathfrak{h}_1', \dots, \mathfrak{h}_l' \in \mathcal{H}\) and consider the following preimage
-  \begin{align*}
-    f^{-1}(\mathcal{C}(\{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}, \{\mathfrak{h}_1', \dots \mathfrak{h}_l'\}))  = & \{(\alpha, \beta) \in \bar X \times \bar X \mid \forall i \leq n\colon \mathfrak{h}_i \in \alpha \wedge \mathfrak{h}_i^\ast \in \beta\\
-    & \wedge \forall j \leq l \colon \mathfrak{h}_j'^\ast \in \alpha \vee \mathfrak{h}_j' \in \beta\}\\
-    = & (\mathcal{C}(\{\mathfrak{h}_1, \dots \mathfrak{h}_n\}, \varnothing)  \times \bar X)\\
-    & \cap (\bar X \times C(\{\mathfrak{h}_1^\ast, \dots, \mathfrak{h}_n^\ast\}))\\
-                                                                                                                  & \cap \left ( \bigcap_{j=1}^l \left[(\mathcal{C}(\{h\}_j'^\ast, \varnothing) \times \bar X) \cup (\bar X \times \mathcal{C}(\{\mathfrak{h}_j'\}, \varnothing))\right]\right).
-  \end{align*}
-  This set is open as a finite intersection of basic open sets. Hence \(f\) is continuous and measurable.
-\end{proof}
-
-\begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
-  \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
-\end{lemma}
-
-\begin{proof}
-  We may first assume that \(X\) is irreducible and consider the map
-  \[
-    B \to \N \cup \{\infty\},\ x \mapsto |\tau(\phi(x))|,
-  \]
-  which is measurable and \(\Gamma\)-invariant. Hence by ergodicity it is essentially constant with essential value \(M\). If we can show, that \(M = 0\), we are done as then the image of \(\phi\) essentially contains only non-terminating ultrafilters.
-
-  For this purpose let us consider the following map
-  \[
-    B \times B \to \N \cup \{\infty\},\ (x,y) \mapsto |\tau(\mathcal{H}(\phi(x), \phi(y)))|,
-  \]
-  which is again measurable as a composition of measurable maps (consider the previous lemma) and \(\Gamma\)-invariant and again we yield an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
-
-  Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
-
-  However, \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.\todo{Understand and prove this last sentence.}
-  
-  \todo{make reducible case nicer}
-  In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
-\end{proof}
-
-\subsection{Main proof}
+\subsection{The main theorem}
 \label{sec:main-proof}
 
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
@@ -459,47 +431,52 @@
 \end{thm}
 
 \begin{proof}
-  By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action.
-
-  Consider the map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
+  By Lemma~\ref{lem:h-const} \(|H_\mu|\) is essentially constant. If \(H_\mu\) were infinite, then Corollary~\ref{cor:4.21} would show that \(H_\mu \cap H_\nu\) could not be infinite for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). Hence we could find a map taking values in the set of \emph{finite} subsets of \(\mathcal{H}\), namely
   \begin{align*}
-    |H_{g\mu}|
-    & = |\{\mathfrak{h} \in \mathcal{H} \mid (g\mu)(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
-    & = |\{\mathfrak{h} \in \mathcal{H} \mid \mu(g^{-1} \mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
-    & = |\{\mathfrak{gh} \in \mathcal{H} \mid \mu(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
-    & = |g H_\mu|
+    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) & \to \operatorname{Pot}_f(\mathcal{H}),\\
+    (\mu,\nu) &\mapsto H_\mu \cap H_\nu.
   \end{align*}
-  and the map is \(\Gamma\)-invariant. By the ergodicity of \(\mathcal{P}(\bar X)\) we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
+  In order for the \(\Gamma\)-action to be essential, we see by help of Corollary~\ref{cor:4.5} that \(H_\mu \cap H_\nu\) needs to be empty for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\), but this is impossible by Proposition~\ref{prop:4.10}. This implies that the case \(|H_\mu| = \infty\) for almost all \(\mu \in \mathcal{P}(\bar X)\) is impossible. Then Lemma~\ref{lem:finite-zero} implies that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\). This allows us to apply Lemma~\ref{lem:H=0} and Lemma~\ref{lem:4.11}, which yield our map.
+  % By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action.
 
-  Up to measure 0 the image of \(\psi\) lies in \(\mathcal{E} \coloneqq \{ \mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). This set is measurable by Lemma~\ref{lem:measurable-mu} applied to the case \(I = \{\text{\nfrac{} 1/2}\}\) and using the preimage of \(\varnothing\).
+  % Consider the map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
+  % \begin{align*}
+  %   |H_{g\mu}|
+  %   & = |\{\mathfrak{h} \in \mathcal{H} \mid (g\mu)(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
+  %   & = |\{\mathfrak{h} \in \mathcal{H} \mid \mu(g^{-1} \mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
+  %   & = |\{\mathfrak{gh} \in \mathcal{H} \mid \mu(\mathfrak{h}) = \text{\nfrac{} 1/2}\}|\\
+  %   & = |g H_\mu|
+  % \end{align*}
+  % and the map is \(\Gamma\)-invariant. By the ergodicity of \(\mathcal{P}(\bar X)\) we have that it is essentially constant. Let \(N \in \N \cup \{\infty\}\) be this essential value. If \(N = 0\) we will find our desired map as follows:
 
-  If \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter and we have a well-defined mapped
-  \[
-    \xi\colon \mathcal{E} \to \bar X,\ \mu \mapsto H_\mu^+.
-  \]
-  This map is measurable (again thanks to Lemma~\ref{lem:measurable-mu} this time applied to \(I = (\text{\nfrac{} 1/2}, 1]\)) and as above \(\Gamma\)-equivariant (up to measure 0). All in all we yield the desired map \(\phi = \xi \circ \psi\) which is both measurable and \(\Gamma\)-equivariant as a concatenation of measurable and \(\Gamma\)-equivariant functions.
+  % Up to measure 0 the image of \(\psi\) lies in \(\mathcal{E} \coloneqq \{ \mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). This set is measurable by Lemma~\ref{lem:measurable-mu} applied to the case \(I = \{\text{\nfrac{} 1/2}\}\) and using the preimage of \(\varnothing\).
 
-  With the help of Lemma~\ref{lem:4.11} we see that the image of \(\phi\) will lie in the non-terminating ultrafilters of \(X\).
+  % If \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter and we have a well-defined mapped
+  % \[
+  %   \xi\colon \mathcal{E} \to \bar X,\ \mu \mapsto H_\mu^+.
+  % \]
+  % This map is measurable (again thanks to Lemma~\ref{lem:measurable-mu} this time applied to \(I = (\text{\nfrac{} 1/2}, 1]\)) and as above \(\Gamma\)-equivariant (up to measure 0). All in all we yield the desired map \(\phi = \xi \circ \psi\) which is both measurable and \(\Gamma\)-equivariant as a concatenation of measurable and \(\Gamma\)-equivariant functions.
 
-  All that is left to prove now, is that the essential value \(N\) can take only the value \(0\). For this we will consider multiple cases
-  \begin{description}
-  \item[\(0 < N < \infty\):] In this case we would have a measurable and \(\Gamma\)-equivariant map \(\mathcal{P}(\bar X) \to Pot_f(\mathcal{H})\) which by Corollary~\ref{cor:4.5} would imply that the \(Gamma\)-action on \(Y\) is not essential.
-  \item[\(N = \infty\):] This case is a bit more involved and we have to consider another measurable and \(\Gamma\)-equivariant map
-    \[
-      \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ (\mu, \nu) \mapsto |H_\mu \cap H_\nu|.
-    \]
-    Again by ergodicity on \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X)\) it is essentially constant and we have another essential value \(M \in \N \cup \{\infty\}\).
-    \begin{description}
-    \item[\(M = 0\):] For this case we have to consider yet another map, namely
-      \[
-        T\colon \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ T(\mu, \nu) \coloneqq |\tau((H_\mu \cap H_\nu^+) \cup (H_\nu \cap H_\mu^+)).
-      \]
-      By Lemma~\ref{lem:tau} this is a measurable map as a composition of measurable maps. Furthermore, it is \(\Gamma\)-equivariant and thus essentially constant by ergodicity. By Lemma~\ref{lem:finite-terminal}, we know that any subset of \(H_\mu\) and \(H_\nu\) contains only finitely many terminal elements. Hence the essential value must be finite. Hence \(T\) (ignoring taking the cardinality) we have an \(\Gamma\)-equivariant map to \(\operatorname{Pot}_f(\mathcal{H})\) using Corollary~\ref{cor:4.5}, we see that the essential values must be 0. In this case \(H_\mu \cap H_\nu^+\) contains no terminal elements for almost all \((\mu, \nu)\). However, Proposition~\ref{prop:4.10} shows that this is a contradiction to the finite dimensionality of \(X\).
-    \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use again Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case. 
-    \item[\(M = \infty\):] 
-    \end{description}
-  \end{description}
+  % With the help of Lemma~\ref{lem:4.11} we see that the image of \(\phi\) will lie in the non-terminating ultrafilters of \(X\).
 
+  % All that is left to prove now, is that the essential value \(N\) can take only the value \(0\). For this we will consider multiple cases
+  % \begin{description}
+  % \item[\(0 < N < \infty\):] In this case we would have a measurable and \(\Gamma\)-equivariant map \(\mathcal{P}(\bar X) \to Pot_f(\mathcal{H})\) which by Corollary~\ref{cor:4.5} would imply that the \(Gamma\)-action on \(Y\) is not essential.
+  % \item[\(N = \infty\):] This case is a bit more involved and we have to consider another measurable and \(\Gamma\)-equivariant map
+  %   \[
+  %     \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ (\mu, \nu) \mapsto |H_\mu \cap H_\nu|.
+  %   \]
+  %   Again by ergodicity on \(\mathcal{P}(\bar X) \times \mathcal{P}(\bar X)\) it is essentially constant and we have another essential value \(M \in \N \cup \{\infty\}\).
+  %   \begin{description}
+  %   \item[\(M = 0\):] For this case we have to consider yet another map, namely
+  %     \[
+  %       T\colon \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \to \N \cup \{\infty\},\ T(\mu, \nu) \coloneqq |\tau((H_\mu \cap H_\nu^+) \cup (H_\nu \cap H_\mu^+)).
+  %     \]
+  %     By Lemma~\ref{lem:tau} this is a measurable map as a composition of measurable maps. Furthermore, it is \(\Gamma\)-equivariant and thus essentially constant by ergodicity. By Lemma~\ref{lem:finite-terminal}, we know that any subset of \(H_\mu\) and \(H_\nu\) contains only finitely many terminal elements. Hence the essential value must be finite. Hence \(T\) (ignoring taking the cardinality) we have an \(\Gamma\)-equivariant map to \(\operatorname{Pot}_f(\mathcal{H})\) using Corollary~\ref{cor:4.5}, we see that the essential values must be 0. In this case \(H_\mu \cap H_\nu^+\) contains no terminal elements for almost all \((\mu, \nu)\). However, Proposition~\ref{prop:4.10} shows that this is a contradiction to the finite dimensionality of \(X\).
+  %   \item[\(0 < M < \infty\):] This case is completely analogous to the case \(0 < N < \infty\) and we use again Corollary~\ref{cor:4.5} to infer that the \(\Gamma\)-action were not essential in this case. 
+  %   \item[\(M = \infty\):] 
+  %   \end{description}
+  % \end{description}
 \end{proof}
 
 

@@ -1,7 +1,7 @@
-\subsection{The complex}
+\subsection{Cube complexes}
 \label{sec:complex}
 \begin{defin}[Cubes]
-  A subset \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Let \(H \subset M_\kappa\E^n\)  be a hyperplane, containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \preceq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(\E^m\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
+  A subset \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Let \(H \subset \E^n\)  be a hyperplane of dimension \(m \leq n\), containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \preceq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(\E^m\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
   \begin{align*}
     C^{(m)} \coloneqq \bigcup \{F \mid F \preceq C \text{ and } \dim F \leq m\}.
   \end{align*}
@@ -17,6 +17,7 @@
 
 \begin{rem}
   \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). Furthermore, in this case all its edges have length \(\frac{\pi}{2}\).
+  \todo{sphere of small radius}
 \end{rem}
 
 \begin{defin}[Cube complexes]\ 
@@ -35,10 +36,10 @@
     \end{align*}
     where \(\sim\) is given by the restriction of the equivalence relation on \(\mathcal{C}\) to the disjoint union of the \(m\)-skeleta of the cells.
 
-  \item Fix \(x \in X\). Then the \emph{star of \(x\)} is defined by
-    \begin{align*}
-      \st(x) \coloneqq \bigcup \left\{\mathring C \relmid C \subset X \text{ a cube and } x \in C\right\}.
-    \end{align*}
+  % \item Fix \(x \in X\). Then the \emph{star of \(x\)} is defined by
+  %   \begin{align*}
+  %     \st(x) \coloneqq \bigcup \left\{\mathring C \relmid C \subset X \text{ a cube and } x \in C\right\}.
+  %   \end{align*}
   \item Let \((x_i)_{i \in I}\) be a family of all the points with \(x_i \in C_{\lambda(i)}\), such that \(p_{\lambda(i)}(x_i) = x\). Consider the disjoint union \(\bigcup_{i \in I} \lk(x_i, C_{\lambda(i)} \times {i})\) together with the equivalence relation \((u_i, i) \sim (u_j, j)\) if there exist \(t_i, t_j > 0\) such that \(\exp_{x_i}(t_i u_i) \in C_{\lambda(i)}\), \(\exp_{x_j}(t_j u_j) \in C_{\lambda(j)}\) and \(p_{\lambda(i)}(\exp_{x_i}(t_i u_i)) = p_{\lambda(j)}(\exp_{x_j}(t_j u_j))\). Then the \emph{link of \(x\) in \(K\)} is given by
     \begin{align*}
       \lk(x, X) \coloneqq \quot{\bigcup_{i \in I} \lk(x_{\lambda(i)}, C_{\lambda(i)})}{\sim}.
@@ -112,7 +113,7 @@
 In the following is a short list of deeper results about cube complexes, which we will need in the following, but which we will not be able to prove. The interested reader may find the results in~\cite[Appendices A, B]{MR3029427}. For the finite dimensional case we refer to~\cite[Sec. I.7, II.5]{MR1744486}.
 
 \begin{thm}[{\cite[I.7.10]{MR1744486}}]
-  If \(X\) is a cube complex, then \(d\) is a metric.
+  Every cube complex \(X\) is a metric space, when equipped with path metric \(d\) induced by piecewise linear paths in \(X\).
 \end{thm}
 
 % \begin{proof}
@@ -139,16 +140,16 @@ In the following is a short list of deeper results about cube complexes, which w
 
 \begin{thm}[Gromov's link condition, {\cite[Thm B.8]{MR3029427}}, {\cite[Thm II.5.20]{MR1744486}}]
   \label{thm:link}
-  A cube complex \(K\) is \emph{non-positively curved} if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex.
+  A cube complex \(X\) is \emph{non-positively curved} if and only if \(\lk(v,X)\) is a flag complex for each vertex \(v \in X\).
 
-  A cube complex \(K\) is \emph{CAT(0)} if and only if \(\lk(v,K)\) of each vertex \(v \in K\) is a flag complex and \(K\) is simply connected.
+  A cube complex \(X\) is \emph{CAT(0)} if and only if \(\lk(v,X)\)  is a flag complex for each vertex \(v \in X\) and \(X\) is simply connected.
 \end{thm}
 
 \begin{bsp}
   \label{bsp:ccc}
   \begin{description}
-  \item[Graphs:] The link of every vertex in a graph is a set of disconnected vertices, which is by the non-existence of any higher dimensional simplices a flag complex. Hence, every graph is non-positively curved. In the case of graphs simply connectedness is equivalent to the graph being a tree, such that we see that CAT(0) cube complexes are in a natural way generalization of trees.
-  \item[Sphere:] Figure~\ref{fig:sphere} contains three representation of the two-dimensional sphere. All of these are counterexamples in one way or another. The first is an example for a representation consisting of cubes (or in this case \emph{one} cube), which is not a cube complex in our definition (c.\,f.\ Remark~\ref{rem:complex}) as the cube is not embedded  into the quotient. Nonetheless, one can define a links for the vertices and we see that the these are not simplicial complexes, since one contains a loop and the other contains parallel edges. These two examples are representative for what can go wrong. Looking at the second example, we see that we can indeed realize the sphere as a cube complex in our sense, however, we still have an non-simplicial vertex link. Lastly, we can even find a realization as a cube complex, such that the vertex links are simplicial. However, even then the link is not flag.
+  \item[Graphs:] The link of every vertex in a graph is a set of disconnected vertices, which is by the non-existence of any higher dimensional simplices a flag complex. Hence, every graph is non-positively curved. In the case of graphs simply connectedness is equivalent to the graph being a tree, such that we see that CAT(0) cube complexes are in a natural way a generalization of trees.
+  \item[Sphere:] Figure~\ref{fig:sphere} contains three representations of the two-dimensional sphere. All of these are counterexamples in one way or another. The first is an example for a representation consisting of cubes (or in this case \emph{one} cube), which is not a cube complex according to our definition (c.\,f.\ Remark~\ref{rem:complex}) as the cube is not embedded  into the quotient. Nonetheless, one can define a links for the vertices and we see that the these are not simplicial complexes, since one contains a loop and the other contains parallel edges. Looking at the second example, we see that we can indeed realize the sphere as a cube complex in our sense, however, we still have an non-simplicial vertex link. Lastly, we can even find a realization as a cube complex, such that the vertex links are simplicial. However, even then the link is not flag.
 
     Naturally, this is as it should be as we know that a sphere is an example of a positively curved space and our definition should be in accordance with this other definition in the case of manifolds.
     \begin{figure}[htbp]
@@ -166,7 +167,7 @@ In the following is a short list of deeper results about cube complexes, which w
     \end{figure}
 
     The above considerations generalize to tori in arbitrary dimensions. Indeed the interesting vertex links consist always of \(2^n\) simplices of dimension \(n-1\), where \(n\geq2\) is the dimension of the torus, where the simplices are glued together along their \((n-2)\)-faces. However, this simplicial complex is always flag. By the construction we have no complete graph of the one skeleton with \(n+1\) vertices, so there is no \(n\)-simplex missing. Additionally, all complete graphs with \(\leq n\) vertices are contained in one of the first four simplices, hence they span a simplex.
-  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes, which are indeed imbedded in the quotient. The interesting vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be genaralized to all higher genus surfaces, which is again in accordance with our definition, as all these higher genus surfaces are negatively curved.
+  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes, which are indeed imbedded in the quotient. The interesting vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be genaralized to all higher genus surfaces, which is again expected, as all these higher genus surfaces are negatively curved.
     \begin{figure}[htbp]
       \centering
       \input{./images/genus-2.tex}
@@ -178,6 +179,37 @@ In the following is a short list of deeper results about cube complexes, which w
   \item[Products:]\todo{write example for products}
   \end{description}
 \end{bsp}
+
+\begin{defin}
+  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\). It is called \emph{locally countable} if every \(x \in X\) is contained in at most countably many cubes.
+\end{defin}
+
+\begin{prop}[{\cite[Prop.~14]{Rolli2012}}]
+  Let \(X\) be a cube complex. Then the following are equivalent:
+  \begin{enumerate}
+  \item \(X\) is locally finite,
+  \item Each bounded subset of \(X\) meets only finitely many cubes,
+  \item \(X\) is proper (i.\,e.\ closed balls are compact) and
+  \item \(X\) is locally compact.
+  \end{enumerate}
+\end{prop}
+
+\begin{lemma}
+  \label{lem:lf-countable}
+  If \(X\) is a locally countable CAT(0) cube complex. Let \(V(X)\) be its vertex set equipped with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\)the sets \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) are countable.
+\end{lemma}
+
+\begin{proof}
+  We fix \(x_0 \in V(X)\) and proceed by induction. \(X_0 = \{x_0\}\) since \(d\) is a metric. Now, assume \(X_n\) to be countable and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local countability \(N(x)\) is countable. Thus
+  \[
+    X_{n+1} \subset \bigcup_{x \in X_n} N(x)
+  \]
+  is a countable set.
+\end{proof}
+
+\begin{rem}
+  In this thesis we will be mostly concerned with connectec, locally countable, finite dimensional CAT(0) cube complexes. We will recall in each section which assumptions are necessary on our space.
+\end{rem}
 
 \subsection{Combinatorial maps}
 \label{sec:comb-map}
@@ -194,7 +226,7 @@ In the following is a short list of deeper results about cube complexes, which w
     \]
     can be represented as \(f_{\lambda,\omega}(x) = \sum_{i=1}^n a_i f(v_i)\), where \(v_1, \dots, v_n\) are the vertices of \(C_\lambda\) and \(x = \sum_{i=1}^n a_i v_i\) is an arbitrary element of \(C_\lambda\) in its convex representation.
   \end{enumerate}
-  \(\Aut(X)\) will denote the automorphism group of a cube complex \(X\).
+  The automorphism group of a cube complex \(X\) will be denoted by \(\Aut(X)\).
 \end{defin}
 
 \begin{rem}
@@ -240,7 +272,7 @@ In the following is a short list of deeper results about cube complexes, which w
   \]
   Since \(U\) is open and \(x \in \mathring{C}\), we can choose \(\epsilon\) small enough such that \(y \in U \cap C\), but by construction we have \(f(y) = f(x)\), which is a contradiction to the fact that \(f|_U\) is homeomorphism. Hence the \(f(v_i)\) need to be pairwise differnt, but this is already sufficient to show that \(f|_C\) is an isometry.
 
-  For the second claim consider \(z \in X\). Then there exists an \(\epsilon(z)\) such that each \(y \in in B(z, \epsilon(z))\) and \(z\) lie in a common cube (c.\,f.~\cite[I.7.8-9]{MR1744486}) and by \textcite[I.7.33]{MR1744486} we have that it is always positve. Let \(0 < \epsilon \leq \epsilon(z)\), such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
+  For the second claim consider \(z \in X\). Then there exists an \(\epsilon(z)\) such that each \(y \in B(z, \epsilon(z))\) and \(z\) lie in a common cube (c.\,f.~\cite[I.7.8-9]{MR1744486}) and by \textcite[I.7.33]{MR1744486} we have that it is always positve. Let \(0 < \epsilon \leq \epsilon(z)\), such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
   Assume there is no common cube containing both \(x\) and \(y\).
   Let us consider the case that \(\tilde x \in \supp(\tilde y) \subset \tilde C\) and consider \(C = \supp(y)\) and \(C' = \supp(x)\). Then \(f|_C\colon C \xrightarrow{\sim} \supp(\tilde y)\). Hence, there exists \(x' \in C\), such that \(f(x') = \tilde x\). Furthermore, \(x\) and \(y\) lie both in \(B\) yielding that \(z \in C \cap C'\). We consider the two straight line segments \(c\) and \(c'\) connecting \(x\) and \(x'\) to \(z\) respectively. Since \(f\) is combinatorial \(f \circ c\) and \(f \circ c'\) are also straight line segments in a common cube. Both segments have identical endpoints and therefore must coincide. However, except for the endpoint \(z\) the segments \(c\) and \(c'\) need to be disjoint as they lie in the interior of \(C\) and \(C'\) respectively. Additionally at some point they will enter \(B\). However, this leads to a contradiction regarding the injectivity of \(f\) on \(B\).
 
@@ -267,9 +299,9 @@ In the following is a short list of deeper results about cube complexes, which w
 \begin{proof}
   Consider the embeddings \(p_\lambda\colon C_\lambda \to X\), \(v_\lambda \coloneqq p_\lambda(0)\) and \(F_\lambda \coloneqq p^{-1}(\{v_\lambda\})\). Then for each \(f \in F_\lambda\) we yield a unique lift \(p_{\lambda, f}\colon C_\lambda \to \tilde X\).
   Doing this for each \(\lambda\) we construct a map
-  \[
-    \pi \colon \bigcup_{\lambda \in \Lambda} \bigcup_{f \in F_{\lambda}} C_\lambda \times {\lambda, f} \to \tilde X.
-  \]
+  \begin{align*}
+    \pi \colon \bigcup_{\lambda \in \Lambda} \bigcup_{f \in F_{\lambda}} C_\lambda \times \{\lambda\, f\} \to \tilde X.
+  \end{align*}
   This \(\pi\) is surjective and open. Additionally, all the lifted maps \(p_{\lambda, f}\) are injective. So as a last step to show that this \(\pi\) defines a cube complex structure on \(\tilde X\) one needs to see that the gluing is realized by isometries. So take \(x \in C_\lambda\) and \(y \in C_{\lambda'}\) such that \(p_{\lambda,f}(x) = p_{\lambda', f'}(y)\). This also implies that \(p_\lambda(x) = p_{\lambda'}(y)\). Since \(X\) is a cube complex we find an isometry \(\phi\colon \supp(x) \to \supp(y)\) such that \(p_{\lambda'} \circ \phi  = p_\lambda\). Consider
   \[
     A \coloneqq \{z \in \supp(x) \mid (p_{\lambda', f'} \circ \phi)(z) = p_{\lambda, f}(z)\}.
@@ -301,38 +333,6 @@ In the following is a short list of deeper results about cube complexes, which w
   With the notation of the previos proposition, it holds that \(\dim X = \dim \tilde X\).
 \end{cor}
 
-
-\begin{defin}
-  A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\). It is called \emph{locally countable} if every \(x \in X\) is contained in at most countably many cubes.
-\end{defin}
-
-\begin{prop}[{\cite[Prop.~14]{Rolli2012}}]
-  Let \(X\) be a cube complex. Then the following are equivalent:
-  \begin{enumerate}
-  \item \(X\) is locally finite,
-  \item Each bounded subset of \(X\) meets only finitely many cubes,
-  \item \(X\) is proper (i.\,e.\ closed balls are compact) and
-  \item \(X\) is locally compact.
-  \end{enumerate}
-\end{prop}
-
-\begin{lemma}
-  \label{lem:lf-countable}
-  If \(X\) is a locally countable CAT(0) cube complex. Let \(V(X)\) be its vertex set considered with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\)the sets \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) are countable.
-\end{lemma}
-
-\begin{proof}
-  We fix \(x_0 \in V(X)\) and proceed by induction. \(X_0 = \{x_0\}\) since \(d\) is a metric. Now, assume \(X_n\) to be countable and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local countability \(N(x)\) is countable. Thus
-  \[
-    X_{n+1} \subset \bigcup_{x \in X_n} N(x)
-  \]
-  is a countable set.
-\end{proof}
-
-
-\begin{rem}
-  From now on we will assume that all our complexes are connected, locally countable and finite-dimensional.
-\end{rem}
 
 %%% Local Variables:
 %%% mode: latex

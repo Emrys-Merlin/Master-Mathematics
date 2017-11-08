@@ -1,38 +1,6 @@
 \section{The essential core}
 \label{sec:essential}
 
-\begin{defin}[The essential core]
-  A halfspace \(h \in \mathcal{H}\) is called \emph{\(\Gamma\)-essential}, if for some \(x \in X\) the orbit in \(h\), \(\Gamma x \cap h\), is \emph{not} a bounded distance away from \(\hat h\). A hyperplane \(\hat h \in \mathcal{\hat H}\) is called \emph{\(\Gamma\)-essential}, if both its halfspaces are \(\Gamma\)-essential and \emph{half-essential}, if only one of its halfspaces is \(\Gamma\)-essential.
-
-  \(\Ess(X,\Gamma)\subset \mathcal{\hat H}(X)\) denotes the set of all essential hyperplanes. Accordingly, \(\nEss(X,\Gamma) \subset \mathcal{\hat H}(X)\) denotes the set of all non-essential hyperplanes, leading to
-  \[
-    \mathcal{\hat H}(X) = \Ess(X, \Gamma) \sqcup \nEss(X, \Gamma).
-  \]
-\end{defin}
-
-The above definition leads to the following consequence:
-
-\begin{prop}
-  \(\Ess(X, \Gamma)\) and \(\nEss(X, \Gamma)\) are \(\Gamma\)-invariant.
-\end{prop}
-
-\begin{defin}
-  The \emph{essential core} is the complex corresponding to the the hyperplanes \(\Ess(X, \Gamma)\). It can be isometrically embedded into \(X\).
-\end{defin}
-
-\begin{prop}[{\cite[Proposition~3.5]{Caprace2010}}]
-  \label{prop:cs-3.5}
-  Let \(X\) be a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\). Assume that at least one of the following two conditions is satisfied:
-  \begin{enumerate}
-  \item \(\Gamma\) has finitely many orbits of hyperplanes or
-  \item \(\Gamma\) has not fixed point at infinity.
-  \end{enumerate}
-  Then the essential core of \(X\) is unbounded if and only if \(\Gamma\) has no fixed point. In that case the essential core embeds as a \(\Gamma\)-invariant convex subcomplex \(Y\) of \(X\).
-\end{prop}
-
-\begin{rem}
-  Even if \(X\) is irreducible the same might not be true for the essential core \(Y\). \todo{find counterexample for reducible essential core}
-\end{rem}
 
 %%% Local Variables:
 %%% mode: latex

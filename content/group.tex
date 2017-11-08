@@ -78,6 +78,38 @@ The above definition has one interesting immediate consequence:
   We first check, that we have no finite orbit in \(X\) itself. This can be established via the rotation. Taking any vertx \(v\) we can rotate around this vertex multiple times and with each one the original \(v\) will be pushed deeper down the tree. Hence, every orbit contains infinitely many points. In order to see that there are no finite orbits at infinity, we need to check when to geodesic rays have bounded distance from one another. However, in a tree this is only the case if they coincide after finitely many steps. Hence, every geodesic ray has a unique representative emanating from the root \(r\). Choosing any such geodesic ray, we can generate infinitely many inequivalent ones by reflecting at vertices traversed by it, showing again that there is no finite orbit.
 \end{bsp}
 
+\begin{defin}[The essential core]
+  A halfspace \(h \in \mathcal{H}\) is called \emph{\(\Gamma\)-essential}, if for some \(x \in X\) the orbit in \(h\), \(\Gamma x \cap h\), is \emph{not} a bounded distance away from \(\hat h\). A hyperplane \(\hat h \in \mathcal{\hat H}\) is called \emph{\(\Gamma\)-essential}, if both its halfspaces are \(\Gamma\)-essential and \emph{half-essential}, if only one of its halfspaces is \(\Gamma\)-essential.
+
+  \(\Ess(X,\Gamma)\subset \mathcal{\hat H}(X)\) denotes the set of all essential hyperplanes. Accordingly, \(\nEss(X,\Gamma) \subset \mathcal{\hat H}(X)\) denotes the set of all non-essential hyperplanes, leading to
+  \[
+    \mathcal{\hat H}(X) = \Ess(X, \Gamma) \sqcup \nEss(X, \Gamma).
+  \]
+\end{defin}
+
+The above definition leads to the following consequence:
+
+\begin{prop}
+  \(\Ess(X, \Gamma)\) and \(\nEss(X, \Gamma)\) are \(\Gamma\)-invariant.
+\end{prop}
+
+\begin{defin}
+  The \emph{essential core} is the complex corresponding to the the hyperplanes \(\Ess(X, \Gamma)\).
+\end{defin}
+
+\begin{prop}[{\cite[Proposition~3.5]{Caprace2010}}]
+  \label{prop:cs-3.5}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\). Assume that at least one of the following two conditions is satisfied:
+  \begin{enumerate}
+  \item \(\Gamma\) has finitely many orbits of hyperplanes or
+  \item \(\Gamma\) has not fixed point at infinity.
+  \end{enumerate}
+  Then the essential core of \(X\) is unbounded if and only if \(\Gamma\) has no fixed point. In that case the essential core embeds as a \(\Gamma\)-invariant convex subcomplex \(Y\) of \(X\).
+\end{prop}
+
+\begin{rem}
+  Even if \(X\) is irreducible the same might not be true for the essential core \(Y\). \todo{find counterexample for reducible essential core}
+\end{rem}
 
 \begin{defin}[Essential action]
   A group action \(\Gamma \to \Aut(X)\) is called \emph{essential}, if the essential core of \(\Gamma\) is the whole space \(X\).
@@ -173,6 +205,152 @@ The above definition has one interesting immediate consequence:
   \label{lem:coeff-product}
   If \(\Gamma\) acts doubly ergodic with coefficients on \(B\). Then for every measure preserving ergodic \(\Gamma\)-space \((X, \mu)\), the space \(B \times B \times X\) is ergodic.
 \end{lemma}
+\begin{defin}
+  Let \((M, \Sigma, \mu)\) be a measure space. \(B \in \Sigma\) is called \emph{atomic}, if \(\mu(B) > 0\) and for all measurable \(A \subset B\) we have \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). \(M\) is called \emph{purely atomic}, if there exists a partition of \(M\) consisting of measurable sets, such that each of these sets is atomic.
+\end{defin}
+
+\begin{lemma}
+  \label{lem:ergodic-atomic}
+  Let \((M, \Sigma, \mu)\) be a measure space and \(\Gamma\) a finite group acting ergodically on it. Then \(M\) is purely atomic.
+\end{lemma}
+
+\begin{proof}
+  We have to find the above mentioned partition and start by considering the following set:
+  \[
+    \Lambda \coloneqq \{A \in \Sigma \mid \mu(A) > 0\}.
+  \]
+  This set is clearly partially ordered under inclusion. Furthermore, observer that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity and since \(\Gamma\) also acts measure preserving \(\mu(A) > \text{\nfrac 1/n}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
+  \[
+    \Lambda = \{A \in \Sigma \mid \mu(A) \geq n^{-1}\}.
+  \]
+  Next consider a descending chain \(A_1 \supset A_2 \supset A_3 \supset \dots\) in \(\Lambda\). Then \(A \coloneqq \cap_i A_i\) is also measurable and since
+  \[
+    \mu\left(\bigcap_{i=1}^k A_i \right) = \mu(A_k) \geq \frac1n
+  \]
+  we have \(\mu(A) \geq n^{-1}\) and \(A\) lies in \(\Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). Observe that for each \(g \in \Gamma\), \(gA\) is also a minimal element, indeed if \(B \subset gA\), then \(g^{-1} B \subset A\), hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
+
+  Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we yield that \(\mu(A) = 1\). We claim that in this case \(M\) is already atomic. Take any \(B \in \Sigma\).
+  Then
+  \[
+    \mu(B) = \mu(B \cap A) + \mu(B \cap A^c) = \mu(B \cap A),
+  \]
+  since \(A^c\) is a null-set. We see that \(B \cap A \subset A\) and thus either \(\mu(B \cap A) = 0\) or \(B  \cap A \in \Lambda\) and hence \(B \cap A = A\) and \(\mu(B) = 1 = \mu(M)\).
+
+  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\) we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there must exist at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) were \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define
+  \begin{align*}
+    B_1 & \coloneqq A \setminus g_1A\\
+    B_i & \coloneqq B_{i-1} \setminus g_i A \quad \forall i = 2, \dots, l.
+  \end{align*}
+  We claim that \(\mu(B_i) = \mu(A) >0\) for each \(i\). Indeed, by induction we have
+  \begin{align*}
+    \mu(B_1) & = \mu(A) - \mu(A \cap g_1A) = \mu(A) \quad \text{and}\\
+    \mu(A) & \geq \mu(B_i) = \mu(B_{i-1}) - \mu(B_{i-1} \cap g_iA) \geq \mu(A) - \mu(A \cap g_i A) = \mu(A).
+  \end{align*}
+  Hence \(B_i \in \Lambda\) and \(B_i = A\) for each \(i\). However, then we have
+  \[
+    A \cap g_iA = B_i \cap g_iA = (B_{i-1} \setminus g_iA) \cap g_iA = \varnothing.
+  \]
+  All in all we have that
+  \[
+    \bigcup_{g \in \Gamma} gA = \bigsqcup_{i=0}^l g_i A,
+  \]
+  where we set \(g_0 = e\). Thus this set has full measure. If we now define
+  \begin{align*}
+    B_0 & \coloneqq M \setminus \left (\bigsqcup_{i=1}^l g_iA \right) \supset A\\
+    B_i & \coloneqq g_iA \qquad \forall i = 1, \dots, l
+  \end{align*}
+  Then \(M = \sqcup_i B_i\) and analogously to before we can show that each of these sets is atomic.
+\end{proof}
+
+\begin{lemma}[{\cite[Lem 4.3]{MR3509968}}]
+  Let \(\Gamma\) be a group acting on a measure space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \vartheta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
+\end{lemma}
+
+\begin{proof}
+  We proceed by contradiction. Assume that \(\Gamma\) acts doubly ergodic on \(M\), but that there exists a finite index subgroup \(\Gamma_0 \leq \Gamma\) which does not act ergodically on \(M\). We can find a finite index normal subgroup of \(\Gamma\) within \(\Gamma_0\), which would still act non-ergodically on \(M\). Hence without loss of generality we can assume that \(\Gamma_0\) is normal in \(\Gamma\).
+
+  We would consider the set
+  \[
+    \Lambda \coloneqq \{A \subset M \text{ measurable} \mid gA = g \quad \forall g \in \Gamma_0\}.
+  \]
+  This is a \(\sigma\)-subalgebra and since \(\Gamma_0\) is normal it inherits a \(\Gamma\)-action. Applying Mackey's point realization (Theorem~\ref{thm:mackey}), we find a standard Borel space \((M_0, \Sigma_0, \vartheta_0)\) and a measurable, \(\Gamma\)-equivariant map \(p\colon M \to M_0\), which induces a bijection on the two \(\sigma\)-algebras \(\Lambda\) and \(\Sigma_0\) and \(\vartheta_0 = p_\ast \vartheta\). Via this pushforward \(\Gamma\) would also act (doubly) ergodic(ally) on \(M_0\) and on the \(\sigma\)-algebra \(\Sigma_0\) we in fact find a well defined group action \(\bar \Gamma \coloneqq \quot{\Gamma}{\Gamma_0}\), which is still ergodic, because all elements of the algebra are \(\Gamma_0\) invariant.
+
+  However, applying Lemma~\ref{lem:ergodic-atomic} this would imply that \(M_0\) were purely atomic. If \(M_0\) were atomic itself then \(\Gamma_0\) would act ergodically on \(M\). Indeed, any \(A \in \Lambda\) would correspond  to exactly one \(A_0 \in \Sigma_0\) such that \(p^{-1}(A_0)= A\) and hence
+  \[
+    \vartheta(A) = \vartheta_0(A_0) \in \{0, 1\},
+  \]
+  if \(M_0\) were atomic. A contradiction.
+
+  Therefore, we could assume that there exists an atomic subset \(B \subset M\), such that \(0 < \vartheta_0(B) < 1\). We would consider \(A \coloneqq p^{-1}(B)\) and would have also in this case \(0 < \vartheta(A) < 1\). We claim that the set
+  \[
+    X \coloneqq \bigcup_{\bar g \in \bar \Gamma}gA \times gA \subset M \times M
+  \]
+  were neither null nor conull. However, this were a contradiction, since \(X\) is \(\Gamma\)-invariant and \(\Gamma\) is assumed to act doubly ergodic.
+
+  In order to see this, we first note that \(X\) were well-defined, as \(A\) is \(\Gamma_0\)-invariant and thus the action of \(\Gamma\) factors through \(\bar \Gamma\). Additionally, \(X\) were not null as it would contain \(A \times A\). Lastly, we claim that up to a null set \(A \times A^c\) is contained in \(X^c\). In particular, we have
+  \[
+    (\vartheta\times\vartheta)(A \times A^c \cap X) \leq \sum_{\bar g \in \bar \Gamma} \vartheta(A \cap gA) \cdot \vartheta(A^c \cap gA).
+  \]
+  Now \(A \cap gA\) lies still in \(\Lambda\), but, on \(\Lambda\), \(A\) is atomic and hence we have \(\vartheta(A \cap gA) \in \{0, \vartheta(A)\}\). So either \(\vartheta(A \cap gA)\) or \(\vartheta(A^c \cap gA)\) were 0 and the right-hand side of the above equation would vanish.
+\end{proof}
+
+\begin{lemma}[{\cite[Lem. 4.4]{MR3509968}}]
+  \label{lem:4.4}
+  Let \(C\) be a countable set with a \(\Gamma\)-action and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If \(\psi \colon B \times B \to C\) or \(\psi \colon B \to C\) is a \(\Gamma\)-equivariant measurable map, then \(\psi\) is essentially constant.
+\end{lemma}
+
+\begin{proof}
+  Since \(\Gamma\) acts ergodically on \(B \times B\) the same is true for the action on \(C\) equipped with the pushforward measure \(\mu \coloneqq \psi_\ast(\beta \times \beta)\). Next, we choose representatives \((y_n)_{n \in \N}\) of the equivalence classes of \(\quot{\im \psi}{\Gamma}\). Indeed, since \(C\) is countable, we really only need countably many representatives. With this we have
+  \[
+    \im \psi = \bigsqcup_{n \in \N} \Gamma \cdot y_n
+  \]
+  and thus
+  \[
+    1 = \mu(\im \psi) = \sum_{n \in \N} \mu(\Gamma \cdot y_n).
+  \]
+  However, each \(\Gamma \cdot y_n\) is \(\Gamma\)-invariant and by ergodicity we yield \(\mu(\Gamma \cdot y_n) \in \{0,1\}\). All in all we see that there exists exactly one \(n \in \N\) such that \(\mu(\Gamma \cdot y_n) = 1\). We define \(D \coloneqq \Gamma \cdot y_n\) and observe that \(\Gamma\) acts transitively on this countable set.
+
+  First, we consider the case that \(D\) is finite. In this case we find a finite index subgroup \(\Gamma_0 \leq \Gamma\) which acts trivially on \(D\). Furthermore, by the previous lemma we know that \(\Gamma_0\) still acts ergodically on \(D\). As previously we can decompose \(D\) via
+  \[
+    1 = \mu(D) = \sum_{x \in D} \mu(\{x\}).
+  \]
+  By the trivial action each of these atomic spaces is \(\Gamma_0\)-invariant and hence for exactly one \(x \in D\) we have \(\mu(\{x\}) = 1\). Hence \(\psi\) is essentially constant with essential value \(x\).
+
+  Lastly, we need to consider the case that \(D\) is infinite. Indeed, we will show that this cannot happen. We consider the Bernoulli space \(A \coloneqq \{0,1\}^D\) together with the standard Bernoulli measure \(\lambda\) (c.\,f.~\cite[29]{Klenke}). Since \(\Gamma\) acts transitively on \(D\) we get that the action of \(\Gamma\) on \(A\) via \(g\chi_S \coloneqq \chi_{gS}\), where \(S\) is any subset of \(D\) and \(g \in \Gamma\), is ergodic (c.\,f.~\cite[Example~20.26]{Klenke}).
+  By Lemma~\ref{lem:coeff-product}, we then have that \(B \times B \times A\) is ergodic and we can consider the following map
+  \[
+    f\colon B \times B \times A \to \R,\ (x,y,\chi_s) \mapsto \chi_s(\psi(x,y)).
+  \]
+  \(f\) is \(G\)-invariant under the diagonal action and hence essentially constant. Denote this value by \(y \in \{0,1\}\). Then by Fubini's theorem we have that
+  \[
+    B \times B \to \R,\ (x,y) \mapsto \int_A f(x,y,\chi_S) \d\mu(\chi_S)
+  \]
+  exists for almost all \((x,y) \in B \times B\) and is also essentially constant with value \(y\). Fixing a value \((x_0, y_0)\) for which this is true, we see that \(\chi_S(x_0,y_0) = y\) for almost all \(\chi_S \in A\). However, by construction of the standard Bernoulli measure on \(A\) we have that
+  \[
+    \mu(\{\chi_S \in A \mid \chi_S(d) = 1 \}) = \mu(\{\chi_S \in A \mid \chi_S(d) = 0\}) = \text{\nfrac 1/2}
+  \]
+  for every \(d \in D\). This is a contradiction to the previous statement, if we consider \(d = \psi(x_0, y_0)\). Hence \(D\) cannot be infinite and we are done.
+\end{proof}
+
+\begin{lemma}[{\cite[Proposition~3.2]{Caprace2010}}]
+  \label{lem:ess-unbounded}
+  Let \(X\) be a finite dimensional CAT(0) cube complex, \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) and \(\Gamma \leq \Aut(X)\). Then the following are equivalent
+  \begin{enumerate}
+  \item \(\mathfrak{\hat h} \in \Ess(X,\Gamma)\),
+  \item  \(X(\Gamma \cdot \mathfrak{\hat h})\) is unbounded and
+  \item \(\Gamma\) \emph{skewers} \(\mathfrak{\hat h}\), i.\,e.\ there exists \(g \in \Gamma\) and an \(n \in \N\) such that for one \(\mathfrak{h}\) of the two halfspaces of \(\mathfrak{\hat h}\) we have \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\).
+  \end{enumerate}
+   if and only if
+\end{lemma}
+
+\begin{cor}[{\cite[Cor. 4.5]{MR3509968}}]
+  \label{cor:4.5}
+  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\) and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If there exists a \(\Gamma\)-equivariant measurable map \(B \times B \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(B \to \operatorname{Pot}_f(\mathcal{H}(X))\), whose image is not essentially \(\varnothing\), then the \(\Gamma\)-action on \(X\) is not essential.
+\end{cor}
+
+\begin{proof}
+  By Lemma~\ref{lem:4.4}, the map is essentially constant. Hence, the image must be a \(\Gamma\)-invariant finite subset of \(\mathcal{H}(X)\). In particular, there is a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\).\todo{again up to measure 0} Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite and thus by Lemma~\ref{lem:ess-unbounded} \(\mathfrak{\hat h}\) is not essential and the group action is neither.
+\end{proof}
 
 \begin{defin}[Strong \(\Gamma\)-boundary]
   Let \(\Gamma\) be a locally compact group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary}, if there is a measurable group action of \(\Gamma\) on \(B\) and this action is
@@ -213,7 +391,7 @@ The above definition has one interesting immediate consequence:
 
 \begin{cor}
   \label{cor:p(x)}
-  Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Roller compactification. Let \(\Gamma \to \Aut(X)\) be a discrete countable group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of probability measures on \(\bar X\).
+  Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Roller compactification. Let \(\Gamma \to \Aut(X)\) be a group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of probability measures on \(\bar X\).
 \end{cor}
 
 \begin{proof}

@@ -1,157 +1,85 @@
 \section{Measure theoretic preliminaries}
 \label{sec:measure}
 
+\subsection{Properties of probability measures on \(\bar X\)}
+\label{sec:prob}
+
+In this section I am concerned with some general properties of (probability) measures on the Roller compactification. These properties will be needed in the construction of the boundary map, especially for the construction of a map from the strong \(\Gamma\)-boundary \(B\) to \(P(\bar X)\) via the amenable action of \(\Gamma\) on \(B\). Thus we need to see that \(P(\bar X)\) is weak-\(\ast\) compact, convex and non-empty and contained in the unit ball of the dual of some topological vector space on which we have a group action by isometries of \(\Gamma\).
+
+I will begin by collecting some important measure theoretic and functional analytic results
+
+\begin{defin}
+  \label{def:vanishing}
+  Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
+  \[
+    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < \epsilon\}.
+  \]
+\end{defin}
+
+\begin{defin}
+  Let \((X, \Sigma)\) be a measure space. A map \(\mu \colon \Sigma \to \R\) is called a \emph{signed measure} if it is \(\sigma\)-additive, i.\,e.
+  \[
+    \mu\left(\bigcup_{i \in \N}A_i \right) = \sum_{i \in \N} \mu(A_i)
+  \]
+  for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). This is meant in the sense that the right hand side needs to converge.
+
+  For any \(A \in \Sigma\) the \emph{total variation} \(|\mu|(A)\) is defined as
+  \[
+    |\mu|(A) \coloneqq \sup \left\{\sum_{i \in \N} \mu(A_i) \relmid A_i \in \Sigma \text{ and } A = \dot \bigcup_{i \in \N} A_i \right \}.
+  \]
+  The \emph{positive} and \emph{negative variation} are defined as
+  \[
+    \mu^\pm \coloneqq \frac12 (|\mu| \pm \mu).
+  \]
+  We call \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\). If \(\Sigma\) is the Borel \(\sigma\)-algebra of a topology on \(X\), then a measure \(\mu\) is called Borel, if every \(x \in X\) has an open neighborhood \(U \subset X\) such that \(\mu(U) > 0\).
+  
+  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A = \inf \{ \mu{U} \mid U \supset A \text{ open}\})\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
+\end{defin}
+
+\begin{rem}
+  In this thesis we are mostly interested in probability measures and hence our measures are always finite. Thus we defined signed measures and the like only with image in \(\R\), ignoring infinities. Since we have this restrictions in place, the above definition of measures in fact satisfies all the standard conditions, in particular \(\mu(\varnothing) = 0\).
+\end{rem}
+
+\begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
+  \(|\mu|\) and \(\mu^\pm\) are measures on \((X, \Sigma)\) and \(|\mu|(X) < \infty\) holds.
+\end{prop}
+
+\begin{thm}[Riesz-Markow representation, {\cite[Thm 6.19]{RudinFunctional}}]
+  \label{thm:riesz-markow}
+  If \(X\) is a locally compact Hausdorff space, then every bounded linear functional \(\Phi\) on \(C_0(X)\) is represented by a unique regular complex Borel measure \(\mu\) in the sense that \[
+    \Phi f = \int_X f \d\mu
+  \]
+  for every element \(f \in C_0(X)\). Moreover, there is \(\|\Phi\| = |\mu|(X)\). In other words, there exists an isometry of normed vector spaces between \(X^\ast\) the dual of \(X\) equipped with the operator norm \(\|\cdot \|\) and \(M_{s}(X)\) the space of signed measures equipped with total variation \(|\mu|(X)\) as norm.
+\end{thm}
+
+\begin{thm}[Banach-Alaoglu, {\cite{RudinAnalysis}}]
+  If \(V\) is a neighborhood of 0 in a topological vector space \(X\) and if
+  \[
+    K \coloneqq \{ \Phi \in X^\ast \mid |\Phi x| \leq 1 \quad \forall x \in V\},
+  \]
+  then \(K\) is weak\(\ast\)-compact.
+\end{thm}
+
+\begin{cor}
+  \label{cor:banach-alaoglu}
+  If \(X\) is a compact metric space, then the space of all regular probability measures \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of all signed measures \(M_{s}(X)\).
+\end{cor}
+
+\begin{proof}
+  Considering \(C_0(X)\) together with the supremum norm is a Banach space and choosing the unit ball as \(V\), we yield that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. Since for each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\) it follows that \(P(X) \subset B\). Thus we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\) and we are done. However,
+  \begin{align*}
+    P \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X f \d\mu \geq 0 \quad \forall f \geq 0\right\},\\
+    N \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X \d\mu = \int_X \chi_X \d\mu = 1\right\},s\\
+    \mathcal{P}(X)  = & B \cap P \cap N.
+  \end{align*}
+  The second set assures that the measure is positive and the last enforces the normalization. This are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
+\end{proof}
+
 \begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}}]
   \label{thm:mackey}
   Let \((M, \sigma, \vartheta)\) be a standard probability space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a subs-sigma-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable, \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
 \end{thm}\todo{so far only in lecture notes on poisson boundary. Find better source.}
 
-\begin{defin}
-  Let \((M, \Sigma, \mu)\) be a measure space. \(B \in \Sigma\) is called \emph{atomic}, if \(\mu(B) > 0\) and for all measurable \(A \subset B\) we have \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). \(M\) is called \emph{purely atomic}, if there exists a partition of \(M\) consisting of measurable sets, such that each of these sets is atomic.
-\end{defin}
-
-\begin{lemma}
-  \label{lem:ergodic-atomic}
-  Let \((M, \Sigma, \mu)\) be a measure space and \(\Gamma\) a finite group acting ergodically on it. Then \(M\) is purely atomic.
-\end{lemma}
-
-\begin{proof}
-  We have to find the above mentioned partition and start by considering the following set:
-  \[
-    \Lambda \coloneqq \{A \in \Sigma \mid \mu(A) > 0\}.
-  \]
-  This set is clearly partially ordered under inclusion. Furthermore, observer that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity and since \(\Gamma\) also acts measure preserving \(\mu(A) > \text{\nfrac 1/n}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
-  \[
-    \Lambda = \{A \in \Sigma \mid \mu(A) \geq n^{-1}\}.
-  \]
-  Next consider a descending chain \(A_1 \supset A_2 \supset A_3 \supset \dots\) in \(\Lambda\). Then \(A \coloneqq \cap_i A_i\) is also measurable and since
-  \[
-    \mu\left(\bigcap_{i=1}^k A_i \right) = \mu(A_k) \geq \frac1n
-  \]
-  we have \(\mu(A) \geq n^{-1}\) and \(A\) lies in \(\Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). Observe that for each \(g \in \Gamma\), \(gA\) is also a minimal element, indeed if \(B \subset gA\), then \(g^{-1} B \subset A\), hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
-
-  Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we yield that \(\mu(A) = 1\). We claim that in this case \(M\) is already atomic. Take any \(B \in \Sigma\).
-  Then
-  \[
-    \mu(B) = \mu(B \cap A) + \mu(B \cap A^c) = \mu(B \cap A),
-  \]
-  since \(A^c\) is a null-set. We see that \(B \cap A \subset A\) and thus either \(\mu(B \cap A) = 0\) or \(B  \cap A \in \Lambda\) and hence \(B \cap A = A\) and \(\mu(B) = 1 = \mu(M)\).
-
-  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\) we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there must exist at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) were \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define
-  \begin{align*}
-    B_1 & \coloneqq A \setminus g_1A\\
-    B_i & \coloneqq B_{i-1} \setminus g_i A \quad \forall i = 2, \dots, l.
-  \end{align*}
-  We claim that \(\mu(B_i) = \mu(A) >0\) for each \(i\). Indeed, by induction we have
-  \begin{align*}
-    \mu(B_1) & = \mu(A) - \mu(A \cap g_1A) = \mu(A) \quad \text{and}\\
-    \mu(A) & \geq \mu(B_i) = \mu(B_{i-1}) - \mu(B_{i-1} \cap g_iA) \geq \mu(A) - \mu(A \cap g_i A) = \mu(A).
-  \end{align*}
-  Hence \(B_i \in \Lambda\) and \(B_i = A\) for each \(i\). However, then we have
-  \[
-    A \cap g_iA = B_i \cap g_iA = (B_{i-1} \setminus g_iA) \cap g_iA = \varnothing.
-  \]
-  All in all we have that
-  \[
-    \bigcup_{g \in \Gamma} gA = \bigsqcup_{i=0}^l g_i A,
-  \]
-  where we set \(g_0 = e\). Thus this set has full measure. If we now define
-  \begin{align*}
-    B_0 & \coloneqq M \setminus \left (\bigsqcup_{i=1}^l g_iA \right) \supset A\\
-    B_i & \coloneqq g_iA \qquad \forall i = 1, \dots, l
-  \end{align*}
-  Then \(M = \sqcup_i B_i\) and analogously to before we can show that each of these sets is atomic.
-\end{proof}
-
-\begin{lemma}[{\cite[Lem 4.3]{MR3509968}}]
-  Let \(\Gamma\) be a group acting on a measure space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \vartheta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
-\end{lemma}
-
-\begin{proof}
-  We proceed by contradiction. Assume that \(\Gamma\) acts doubly ergodic on \(M\), but that there exists a finite index subgroup \(\Gamma_0 \leq \Gamma\) which does not act ergodically on \(M\). We can find a finite index normal subgroup of \(\Gamma\) within \(\Gamma_0\), which would still act non-ergodically on \(M\). Hence without loss of generality we can assume that \(\Gamma_0\) is normal in \(\Gamma\).
-
-  We would consider the set
-  \[
-    \Lambda \coloneqq \{A \subset M \text{ measurable} \mid gA = g \quad \forall g \in \Gamma_0\}.
-  \]
-  This is a \(\sigma\)-subalgebra and since \(\Gamma_0\) is normal it inherits a \(\Gamma\)-action. Applying Mackey's point realization (Theorem~\ref{thm:mackey}), we find a standard Borel space \((M_0, \Sigma_0, \vartheta_0)\) and a measurable, \(\Gamma\)-equivariant map \(p\colon M \to M_0\), which induces a bijection on the two \(\sigma\)-algebras \(\Lambda\) and \(\Sigma_0\) and \(\vartheta_0 = p_\ast \vartheta\). Via this pushforward \(\Gamma\) would also act (doubly) ergodic(ally) on \(M_0\) and on the \(\sigma\)-algebra \(\Sigma_0\) we in fact find a well defined group action \(\bar \Gamma \coloneqq \quot{\Gamma}{\Gamma_0}\), which is still ergodic, because all elements of the algebra are \(\Gamma_0\) invariant.
-
-  However, applying Lemma~\ref{lem:ergodic-atomic} this would imply that \(M_0\) were purely atomic. If \(M_0\) were atomic itself then \(\Gamma_0\) would act ergodically on \(M\). Indeed, any \(A \in \Lambda\) would correspond  to exactly one \(A_0 \in \Sigma_0\) such that \(p^{-1}(A_0)= A\) and hence
-  \[
-    \vartheta(A) = \vartheta_0(A_0) \in \{0, 1\},
-  \]
-  if \(M_0\) were atomic. A contradiction.
-
-  Therefore, we could assume that there exists an atomic subset \(B \subset M\), such that \(0 < \vartheta_0(B) < 1\). We would consider \(A \coloneqq p^{-1}(B)\) and would have also in this case \(0 < \vartheta(A) < 1\). We claim that the set
-  \[
-    X \coloneqq \bigcup_{\bar g \in \bar \Gamma}gA \times gA \subset M \times M
-  \]
-  were neither null nor conull. However, this were a contradiction, since \(X\) is \(\Gamma\)-invariant and \(\Gamma\) is assumed to act doubly ergodic.
-
-  In order to see this, we first note that \(X\) were well-defined, as \(A\) is \(\Gamma_0\)-invariant and thus the action of \(\Gamma\) factors through \(\bar \Gamma\). Additionally, \(X\) were not null as it would contain \(A \times A\). Lastly, we claim that up to a null set \(A \times A^c\) is contained in \(X^c\). In particular, we have
-  \[
-    (\vartheta\times\vartheta)(A \times A^c \cap X) \leq \sum_{\bar g \in \bar \Gamma} \vartheta(A \cap gA) \cdot \vartheta(A^c \cap gA).
-  \]
-  Now \(A \cap gA\) lies still in \(\Lambda\), but, on \(\Lambda\), \(A\) is atomic and hence we have \(\vartheta(A \cap gA) \in \{0, \vartheta(A)\}\). So either \(\vartheta(A \cap gA)\) or \(\vartheta(A^c \cap gA)\) were 0 and the right-hand side of the above equation would vanish.
-\end{proof}
-
-\begin{lemma}[{\cite[Lem. 4.4]{MR3509968}}]
-  \label{lem:4.4}
-  Let \(C\) be a countable set with a \(\Gamma\)-action and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If \(\psi \colon B \times B \to C\) or \(\psi \colon B \to C\) is a \(\Gamma\)-equivariant measurable map, then \(\psi\) is essentially constant.
-\end{lemma}
-
-\begin{proof}
-  Since \(\Gamma\) acts ergodically on \(B \times B\) the same is true for the action on \(C\) equipped with the pushforward measure \(\mu \coloneqq \psi_\ast(\beta \times \beta)\). Next, we choose representatives \((y_n)_{n \in \N}\) of the equivalence classes of \(\quot{\im \psi}{\Gamma}\). Indeed, since \(C\) is countable, we really only need countably many representatives. With this we have
-  \[
-    \im \psi = \bigsqcup_{n \in \N} \Gamma \cdot y_n
-  \]
-  and thus
-  \[
-    1 = \mu(\im \psi) = \sum_{n \in \N} \mu(\Gamma \cdot y_n).
-  \]
-  However, each \(\Gamma \cdot y_n\) is \(\Gamma\)-invariant and by ergodicity we yield \(\mu(\Gamma \cdot y_n) \in \{0,1\}\). All in all we see that there exists exactly one \(n \in \N\) such that \(\mu(\Gamma \cdot y_n) = 1\). We define \(D \coloneqq \Gamma \cdot y_n\) and observe that \(\Gamma\) acts transitively on this countable set.
-
-  First, we consider the case that \(D\) is finite. In this case we find a finite index subgroup \(\Gamma_0 \leq \Gamma\) which acts trivially on \(D\). Furthermore, by the previous lemma we know that \(\Gamma_0\) still acts ergodically on \(D\). As previously we can decompose \(D\) via
-  \[
-    1 = \mu(D) = \sum_{x \in D} \mu(\{x\}).
-  \]
-  By the trivial action each of these atomic spaces is \(\Gamma_0\)-invariant and hence for exactly one \(x \in D\) we have \(\mu(\{x\}) = 1\). Hence \(\psi\) is essentially constant with essential value \(x\).
-
-  Lastly, we need to consider the case that \(D\) is infinite. Indeed, we will show that this cannot happen. We consider the Bernoulli space \(A \coloneqq \{0,1\}^D\) together with the standard Bernoulli measure \(\lambda\) (c.\,f.~\cite[29]{Klenke}). Since \(\Gamma\) acts transitively on \(D\) we get that the action of \(\Gamma\) on \(A\) via \(g\chi_S \coloneqq \chi_{gS}\), where \(S\) is any subset of \(D\) and \(g \in \Gamma\), is ergodic (c.\,f.~\cite[Example~20.26]{Klenke}).
-  By Lemma~\ref{lem:coeff-product}, we then have that \(B \times B \times A\) is ergodic and we can consider the following map
-  \[
-    f\colon B \times B \times A \to \R,\ (x,y,\chi_s) \mapsto \chi_s(\psi(x,y)).
-  \]
-  \(f\) is \(G\)-invariant under the diagonal action and hence essentially constant. Denote this value by \(y \in \{0,1\}\). Then by Fubini's theorem we have that
-  \[
-    B \times B \to \R,\ (x,y) \mapsto \int_A f(x,y,\chi_S) \d\mu(\chi_S)
-  \]
-  exists for almost all \((x,y) \in B \times B\) and is also essentially constant with value \(y\). Fixing a value \((x_0, y_0)\) for which this is true, we see that \(\chi_S(x_0,y_0) = y\) for almost all \(\chi_S \in A\). However, by construction of the standard Bernoulli measure on \(A\) we have that
-  \[
-    \mu(\{\chi_S \in A \mid \chi_S(d) = 1 \}) = \mu(\{\chi_S \in A \mid \chi_S(d) = 0\}) = \text{\nfrac 1/2}
-  \]
-  for every \(d \in D\). This is a contradiction to the previous statement, if we consider \(d = \psi(x_0, y_0)\). Hence \(D\) cannot be infinite and we are done.
-\end{proof}
-
-\begin{lemma}[{\cite[Proposition~3.2]{Caprace2010}}]
-  \label{lem:ess-unbounded}
-  Let \(X\) be a finite dimensional CAT(0) cube complex, \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) and \(\Gamma \leq \Aut(X)\). Then the following are equivalent
-  \begin{enumerate}
-  \item \(\mathfrak{\hat h} \in \Ess(X,\Gamma)\),
-  \item  \(X(\Gamma \cdot \mathfrak{\hat h})\) is unbounded and
-  \item \(\Gamma\) \emph{skewers} \(\mathfrak{\hat h}\), i.\,e.\ there exists \(g \in \Gamma\) and an \(n \in \N\) such that for one \(\mathfrak{h}\) of the two halfspaces of \(\mathfrak{\hat h}\) we have \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\).
-  \end{enumerate}
-   if and only if
-\end{lemma}
-
-\begin{cor}[{\cite[Cor. 4.5]{MR3509968}}]
-  \label{cor:4.5}
-  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\) and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If there exists a \(\Gamma\)-equivariant measurable map \(B \times B \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(B \to \operatorname{Pot}_f(\mathcal{H}(X))\), whose image is not essentially \(\varnothing\), then the \(\Gamma\)-action on \(X\) is not essential.
-\end{cor}
-
-\begin{proof}
-  By Lemma~\ref{lem:4.4}, the map is essentially constant. Hence, the image must be a \(\Gamma\)-invariant finite subset of \(\mathcal{H}(X)\). In particular, there is a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\).\todo{again up to measure 0} Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite and thus by Lemma~\ref{lem:ess-unbounded} \(\mathfrak{\hat h}\) is not essential and the group action is neither.
-\end{proof}
 
 \subsection{Weighted halfspaces}
 \label{sec:weight}
@@ -166,6 +94,66 @@
   \end{align*} 
   The above four sets are called \emph{balanced, heavy, light} and \emph{unbalanced halfspaces} respectively.
 \end{defin}
+
+\begin{lemma}[{\cite[Lem.\ 4.6]{MR3509968}}]
+  \label{lem:4.6}
+  Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
+  \begin{enumerate}
+  \item \(H_\mu\) is closed under involution. Also, involution is a bijection between \(H_\mu^+\) and \(H_\mu^-\).
+  \item There is the following partition \(\mathcal{H}(X) = H_\mu \sqcup H_\mu^\pm = H_\mu \sqcup H_\mu^+ \sqcup H_\mu^-\).
+  \item If \(\mathfrak{h, k} \in H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)), then either \(\mathfrak{h} \pitchfork k\) or all halfspaces between \(\mathfrak{h}\) and \(\mathfrak{k}\) lie in \(H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)).
+  % \item There are no facing triples\todo{facing triples} of halfspaces in \(H_\mu\). If \(X\) is not Euclidean\todo{Euclidean}, then \(H_\mu^+ \neq \varnothing\).\todo{check if I need this and if not remove it}
+  \item If \(H_\mu\) and \(H_\nu\) are not empty and \(H_\mu \cap H_\nu = \varnothing\), then \(H_\mu \cap H_\nu^+ \neq \varnothing\) and \(H_\mu \cap H_\nu^- \neq \varnothing\).
+  \item If \(\mathfrak{h, k}  \in H_\mu\) are two parallel halfspaces with \(\mathfrak{h} \subset \mathfrak{k}\), then \(\mu)(\mathfrak{h}^\ast \cap \mathfrak{k}) = 0\).
+  \item The assignments \(\mu \mapsto H_\mu\), \(\mu \mapsto H_\mu^+\) and \(\mu \mapsto H_\mu^-\) are \(\Aut(X)\)-equivariant for the natural actions on \(\mathcal{P}(\bar X)\) and \(\operatorname{Pot}(\mathcal{H}(X))\).
+  \end{enumerate}
+\end{lemma}
+\todo{check if I need \(H_\mu^+ \neq \varnothing\) if not euclidean and if I need facing triples.}
+
+\begin{proof}
+  1.\ -- 3.\ are clear from the definitions and the additivity of the measure. For 4.\ we see that \(H_\mu \subset H_\nu^+ \cap H_\nu^-\). Since \(H_\mu\) is invariant under involution, but \(H_\nu^+\) and \(H_\nu^-\) get interchanged, we see that both intersections cannot be empty. The last assertion follows again easily from the definitions.
+\end{proof}
+
+
+\subsection{Measurability of certain maps}
+\label{sec:meas-maps}
+
+In the main proof of our theorem ergodicity will play a central role. We will mostly use it in the form that measurable \(\Gamma\)-invariant maps have to be essentially constant. Hence, we need all our important maps to be measurable. These proofs are mainly technical and not very enlightening, which is why they were exported to this section.
+
+\begin{lemma}
+  \label{lem:tau}
+   Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) to \operatorname{Pot}(\mathcal{H})\) the map assigning to each subset of \(\mathcal{H}\) its set of terminal elements (c.\,f.~Definition~\ref{defin:tau}). Then \(\tau\) is measurable.
+\end{lemma}
+
+\begin{proof}
+  We take an arbitrary cylinder set \(C(F_1, F_2)\) and are interested in the preimage
+  \begin{align*}
+    \tau^{-1}(C(F_1, F_2))
+    & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H) \text{ and } \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau{H}\} \\
+    & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H)\} \cap \{H \subset \mathcal{H} \mid \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau(H)\}\\
+    & \eqqcolon T \cap N.
+  \end{align*}
+  Considering the first set \(T\) we have the following decomposition:
+  \begin{align*}
+    T
+    & = \bigcap_{\mathfrak{h} \in F_1}\{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}\\
+    & = \bigcap_{\mathfrak{h} \in F_1}\left (\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ minimal}\} \cup \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ maximal}\}\right )\\
+    & = \bigcap_{\mathfrak{h} \in F_1}\left ( \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{k} \subset \mathfrak{h}}}C(\{\mathfrak{h}\}, \{\mathfrak{k}\}) \cup \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{h} \subset\mathfrak{k}}} C(\{\mathfrak{h}\}, \{\mathfrak{k}\})\right ).
+  \end{align*}
+  This set is measurable as it is a countable intersection and union of measurable sets. Let us turn towards \(N\):
+  \begin{align*}
+    N
+    & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H) \text{ and } (F_2 \setminus F) \cap H = \varnothing\}\\
+    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H)\} \cap C(\varnothing, F_2 \setminus F)\right).\\
+  \end{align*}
+  If we can show that the set, where a finite subset of elements are not allowed to be terminal is measurable, we are done. This can be achieved via an induction over \(n = |F|\). The case \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Assume the assertion is true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) were now to contain \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F = F \setminus \{\mathfrak{h}\}\), we could do the following decomposition:
+  \begin{align*}
+    \{H \subset \mathcal{H} \mid F \subset \mathcal{H} \setminus \tau(H)\}
+    & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \subset H \setminus \tau(H)\}\\
+    & = \{H \subset \mathcal{H} \mid \tilde{F} \subset H \setminus \tau(H)\} \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}.
+  \end{align*}
+  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(C(F_1, F_2))\) is measurable.
+\end{proof}
 
 \begin{lemma}
   \label{lem:measurable-countable}
@@ -217,41 +205,6 @@
   \]
 \end{proof}
 
-\begin{lemma}[{\cite[Lem.\ 4.6]{MR3509968}}]
-  \label{lem:4.6}
-  Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
-  \begin{enumerate}
-  \item \(H_\mu\) is closed under involution. Also, involution is a bijection between \(H_\mu^+\) and \(H_\mu^-\).
-  \item There is the following partition \(\mathcal{H}(X) = H_\mu \sqcup H_\mu^\pm = H_\mu \sqcup H_\mu^+ \sqcup H_\mu^-\).
-  \item If \(\mathfrak{h, k} \in H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)), then either \(\mathfrak{h} \pitchfork k\) or all halfspaces between \(\mathfrak{h}\) and \(\mathfrak{k}\) lie in \(H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)).
-  % \item There are no facing triples\todo{facing triples} of halfspaces in \(H_\mu\). If \(X\) is not Euclidean\todo{Euclidean}, then \(H_\mu^+ \neq \varnothing\).\todo{check if I need this and if not remove it}
-  \item If \(H_\mu\) and \(H_\nu\) are not empty and \(H_\mu \cap H_\nu = \varnothing\), then \(H_\mu \cap H_\nu^+ \neq \varnothing\) and \(H_\mu \cap H_\nu^- \neq \varnothing\).
-  \item If \(\mathfrak{h, k}  \in H_\mu\) are two parallel halfspaces with \(\mathfrak{h} \subset \mathfrak{k}\), then \(\mu)(\mathfrak{h}^\ast \cap \mathfrak{k}) = 0\).
-  \item The assignments \(\mu \mapsto H_\mu\), \(\mu \mapsto H_\mu^+\) and \(\mu \mapsto H_\mu^-\) are \(\Aut(X)\)-equivariant for the natural actions on \(\mathcal{P}(\bar X)\) and \(\operatorname{Pot}(\mathcal{H}(X))\).
-  \end{enumerate}
-\end{lemma}
-\todo{check if I need \(H_\mu^+ \neq \varnothing\) if not euclidean and if I need facing triples.}
-
-\begin{proof}
-  1.\ -- 3.\ are clear from the definitions and the additivity of the measure. For 4.\ we see that \(H_\mu \subset H_\nu^+ \cap H_\nu^-\). Since \(H_\mu\) is invariant under involution, but \(H_\nu^+\) and \(H_\nu^-\) get interchanged, we see that both intersections cannot be empty. The last assertion follows again easily from the definitions.
-\end{proof}
-
-\begin{defin}
-  Let \(x,y \in \bar X\). Then the \emph{interval \([x,y]\)} is defined via
-  \[
-    [x,y] \coloneqq \bigcap_{\mathfrak{h} \in x \cap y} \mathfrak{h} \subset X
-  \]
-\end{defin}
-
-
-\begin{lemma}
-  Let \(X\) be a CAT(0) cube complex and \(\alpha \in \bar X\) an ultrafilter. If \(\alpha^\ast\) is an ultrafilter then \(\bar X = [\alpha, \alpha^\ast]\).
-\end{lemma}
-
-\begin{proof}
-  Since no halfspace can be contained in both \(\alpha\) and \(\alpha^\ast\) we have an empty intersection and thus the equality \(\bar X = [\alpha, \alpha^\ast]\) holds.
-\end{proof}
-
 \begin{lemma}[{\cite[Lem. 4.7]{MR3509968}}]
   \label{lem:interval}
   The complex \(\bar X(H_\mu)\) is an interval.
@@ -265,85 +218,26 @@
   be the projection. \(p\) is continuous and we can push forward \(\mu\) along \(p\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(6) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to the previous lemma.
 \end{proof}
 
-\begin{thm}[{\cite[Theorem 1.14]{Brodzki2009}}]
-  \label{thm:interval}
-  Let \(X\) be a finite dimensional CAT(0) cube complex and \([x,y] \subset \bar X\) an interval. Then \([x,y]\) is isometrically embeddable in \(\R^d\) considered as a CAT(0) cube complex equipped with the \(l_1\)-metric.
-\end{thm}
-
-
-\subsection{Properties of probability measures on \(\bar X\)}
-\label{sec:prob}
-
-In this section I am concerned with some general properties of (probability) measures on the Roller compactification. These properties will be needed in the construction of the boundary map, especially for the construction of a map from the strong \(\Gamma\)-boundary \(B\) to \(P(\bar X)\) via the amenable action of \(\Gamma\) on \(B\). Thus we need to see that \(P(\bar X)\) is weak-\(\ast\) compact, convex and non-empty and contained in the unit ball of the dual of some topological vector space on which we have a group action by isometries of \(\Gamma\).
-
-I will begin by collecting some important measure theoretic and functional analytic results
-
-\begin{defin}
-  \label{def:vanishing}
-  Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
+\begin{lemma}
+  The map
   \[
-    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < \epsilon\}.
+    f\colon \bar X \times \bar X \to \operatorname{Pot}(\mathcal{H}),\ (\alpha, \beta)\mapsto \mathcal{H}(\alpha, \beta)
   \]
-\end{defin}
-
-\begin{defin}
-  Let \(X, \Sigma\) be a measure space. A map \(\mu \colon \Sigma \to \R\) is called a \emph{signed measure} if it is \(\sigma\)-additive, i.\,e.
-  \[
-    \mu\left(\bigcup_{i \in \N}A_i \right) = \sum_{i \in \N} \mu(A_i)
-  \]
-  for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). This is meant in the sense that the right hand side needs to converge.
-
-  For any \(A \in \Sigma\) the \emph{total variation} \(|\mu|(A)\) is defined as
-  \[
-    |\mu|(A) \coloneqq \sup \left\{\sum_{i \in \N} \mu(A_i) \relmid A_i \in \Sigma \text{ and } A = \dot \bigcup_{i \in \N} A_i \right \}.
-  \]
-  The \emph{positive} and \emph{negative variation} are defined as
-  \[
-    \mu^\pm \coloneqq \frac12 (|\mu| \pm \mu).
-  \]
-  We call \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\). If \(\Sigma\) is the Borel \(\sigma\)-algebra of a topology on \(X\), then a measure \(\mu\) is called Borel, if every \(x \in X\) has an open neighborhood \(U \subset X\) such that \(\mu(U) > 0\).
-  
-  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A = \inf \{ \mu{U} \mid U \supset A \text{ open}\})\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
-\end{defin}
-
-\begin{rem}
-  In this thesis we are mostly interested in probability measures and hence our measures are always finite. Thus we defined signed measures and the like only with image in \(\R\), ignoring infinities. Since we have this restrictions in place, the above definition of measures in fact satisfies all the standard conditions, in particular \(\mu(\varnothing) = 0\).
-\end{rem}
-
-\begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
-  \(|\mu|\) and \(\mu^\pm\) are measures on \(X, \Sigma\) and \(|\mu|(X) < \infty\) holds.
-\end{prop}
-
-\begin{thm}[Riesz-Markow representation, {\cite[Thm 6.19]{RudinFunctional}}]
-  \label{thm:riesz-markow}
-  If \(X\) is a locally compact Hausdorff space, then every bounded linear functional \(\Phi\) on \(C_0(X)\) is represented by a unique regular complex Borel measure \(\mu\) in the sense that \[
-    \Phi f = \int_X f \d\mu
-  \]
-  for every element \(f \in C_0(X)\). Moreover, there is \(\|\Phi\| = |\mu|(X)\). In other words, there exists an isometry of normed vector spaces between \(X^\ast\) the dual of \(X\) equipped with the operator norm \(\|\cdot \|\) and \(M_{s}(X)\) the space of signed measures equipped with total variation \(|\mu|(X)\) as norm.
-\end{thm}
-
-\begin{thm}[Banach-Alaoglu, {\cite{RudinAnalysis}}]
-  If \(V\) is a neighborhood of 0 in a topological vector space \(X\) and if
-  \[
-    K \coloneqq \{ \Phi \in X^\ast \mid |\Phi x| \leq 1 \quad \forall x \in V\},
-  \]
-  then \(K\) is weak\(\ast\)-compact.
-\end{thm}
-
-\begin{cor}
-  \label{cor:banach-alaoglu}
-  If \(X\) is a compact metric space, then the space of all regular probability measures \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of all signed measures \(M_{s}(X)\).
-\end{cor}
+  is measurable.
+\end{lemma}
 
 \begin{proof}
-  Considering \(C_0(X)\) together with the supremum norm is a Banach space and choosing the unit ball as \(V\), we yield that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. Since for each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\) it follows that \(P(X) \subset B\). Thus we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\) and we are done. However,
+  We will indeed see that the map is even continuous. Take \(\mathfrak{h}_1,\dots \mathfrak{h}_n, \mathfrak{h}_1', \dots, \mathfrak{h}_l' \in \mathcal{H}\) and consider the following preimage
   \begin{align*}
-    P \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X f \d\mu \geq 0 \quad \forall f \geq 0\right\}\\
-    N \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X \d\mu = \int_X \chi_X \d\mu = 1\right\}\\
-    \mathcal{P}(X)  = & B \cap P \cap N.
+    f^{-1}(\mathcal{C}(\{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}, \{\mathfrak{h}_1', \dots \mathfrak{h}_l'\}))  = & \{(\alpha, \beta) \in \bar X \times \bar X \mid \forall i \leq n\colon \mathfrak{h}_i \in \alpha \wedge \mathfrak{h}_i^\ast \in \beta\\
+    & \wedge \forall j \leq l \colon \mathfrak{h}_j'^\ast \in \alpha \vee \mathfrak{h}_j' \in \beta\}\\
+    = & (\mathcal{C}(\{\mathfrak{h}_1, \dots \mathfrak{h}_n\}, \varnothing)  \times \bar X)\\
+    & \cap (\bar X \times C(\{\mathfrak{h}_1^\ast, \dots, \mathfrak{h}_n^\ast\}))\\
+                                                                                                                  & \cap \left ( \bigcap_{j=1}^l \left[(\mathcal{C}(\{h\}_j'^\ast, \varnothing) \times \bar X) \cup (\bar X \times \mathcal{C}(\{\mathfrak{h}_j'\}, \varnothing))\right]\right).
   \end{align*}
-  The second set assures that the measure is positive and the last enforces the normalization. This are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
+  This set is open as a finite intersection of basic open sets. Hence \(f\) is continuous and measurable.
 \end{proof}
+
 
 %%% Local Variables:
 %%% mode: latex

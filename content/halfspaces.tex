@@ -22,7 +22,7 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   \begin{figure}[htbp]
     \centering
     \input{./images/halfspace.tex}
-    \caption{Example of a CAT(0) cube complex with a hyperplane inscribed. The dark blue edges form an edge equivalence class, which defines the blue hyperplane. The red and green parts indicate the two halfspaces associated to the hyperplane.}
+    \caption{Example of a CAT(0) cube complex with a hyperplane inscribed. The dark blue edges form an edge equivalence class, which defines the blue hyperplane. The red and green parts indicate the two halfspaces associated to the hyperplane. The figure follows closely the example in \textcite{sageev-lecture-notes}.}
     \label{fig:hyperplanes}
   \end{figure}
 \end{bsp}
@@ -36,7 +36,7 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
 \end{cor}
 
 \begin{thm}[Separation, {\cite[Proposition 21]{Rolli2012}}]
-  Any hyperplane \(\mathfrak{\hat h}\) separates \(X\) in exactly two connected components.
+  Any hyperplane \(\mathfrak{\hat h}\) separates \(X\) in exactly two convex connected components.
 \end{thm}
 
 \begin{defin}[Halfspaces]
@@ -73,7 +73,7 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   \[
     Y_n \coloneqq \{(x,y) \in X_{n-1} \times X_{n} \mid y \in N(x)\} \subset X_{n-1} \times X_n \quad \forall n \in \N.
   \]
-  By Lemma~\ref{lem:lf-countable} these are countable and we have that
+  By Lemma~\ref{lem:lf-countable} the sets \(X_n\) are countable and we have that
   \[
     \mathcal{\hat H} = \bigcup_{n=1}^\infty \bigcup_{e \in Y_n} \mathfrak{\hat h}([e])
   \]
