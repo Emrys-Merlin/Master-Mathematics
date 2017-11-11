@@ -52,7 +52,7 @@ As a next step to our main theorem we would like to convince ourselves that any 
   In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
 \end{proof}
 
-So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. So we are left with the taks to prove, that this is the only possible case. As first step is provided in the following two lemmas:
+So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. So we are left with the task to prove, that this is the only possible case. As first step is provided in the following two lemmas:
 
 \begin{lemma}
   \label{lem:h-const}
@@ -65,7 +65,7 @@ So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find 
 \end{lemma}
 
 \begin{proof}
-  The map is \(\Gamma\)-equivariant and measurably as a concatenation of measurable maps (c.f.~Section~\ref{sec:meas-maps}). Since the group action is ergodic with regard to the pushforward measure on \(\mathcal{P}(\bar X)\) from \(B\), we see that the map is essentially constant.
+  The map is \(\Gamma\)-equivariant and measurable as a concatenation of measurable maps (c.f.~Section~\ref{sec:meas-maps}). Since the group action is ergodic with regard to the pushforward measure on \(\mathcal{P}(\bar X)\) from \(B\), we see that the map is essentially constant.
 \end{proof}
 
 \begin{lemma}
@@ -88,7 +88,7 @@ All in all we see that, if we can show that \(|H_\mu|\) cannot be infinite for a
   \label{lem:hh-const}
   The map
   \begin{align*}
-    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \N \cup \{infty\},
+    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
     (\mu, \nu) &\mapsto |H_\mu \cap H_\nu|
   \end{align*}
   is essentially constant.
@@ -98,7 +98,7 @@ All in all we see that, if we can show that \(|H_\mu|\) cannot be infinite for a
   This map is again measurabel and \(\Gamma\)-equivariant (c.\,f.~Section~\ref{sec:meas-maps}) and hence essentially constant by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\).
 \end{proof}
 
-The following two sections will show that \(|H_\mu| = \infty\) and \(|H_\mu \cap \H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) are impossible. 
+The following two sections will contain all the technical details in order to exculde the cases \(|H_\mu| = \infty\) and \(|H_\mu \cap \H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). In the last section we will plug everything together and prove our main theorem.
 
 \subsection{Exclusion of the case \(|H_\mu \cap H_\nu| = 0\)}
 \label{sec:M=0}
@@ -291,7 +291,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 
 \begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
   \label{prop:4.17}
-  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(\bar X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is the Roller compactification of some other CAT(0) cube complex.
+  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family (with more than one member) of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(\bar X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is the Roller compactification of some other CAT(0) cube complex.
 \end{prop}
 
 \begin{proof}
@@ -300,13 +300,9 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   By the previous lemma, we know that the hyperplanes of \(X\) decompose as the ones contained in \(\mathcal{\hat H'} = \mathcal{\hat H}(A)\) and the ones separating one \(X_\alpha\) from another \(X_{\alpha'}\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating two above mentioned copies. We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find two \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find two vertices \(y,y' \in X_{\alpha'}\). However, then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets and hence \(X\) splits as the required product.
 \end{proof}
 
-\begin{defin}[Strongly separated halfspaces]
-  Two parallel hyperplanes are called \emph{strongly separated} if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated} if the same is true for their associated hyperplanes.
-\end{defin}
-
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
   \label{lem:4.18}
-  If \(|H_\mu| = \infty\)\todo{check if I need this first condition} and \(H_\mu\) contains strongly separated halfspaces, then \(H_\mu^+\) satisfies the descending chain condition.
+  If \(|H_\mu| = \infty\)\todo{check if I need this first condition} and \(H_\mu\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}), then \(H_\mu^+\) satisfies the descending chain condition.
 \end{lemma}
 
 \begin{proof}
@@ -321,20 +317,29 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know by Lemma~\ref{lem:finite-interval} that there are only finitely many halfspaces between the two. Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
 \end{proof}
 
-\begin{lemma}[{\cite[Double Skewering Lemma]{Caprace2010}}]
-  \label{lem:cs-dsl}
-  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(\Gamma \leq \Aut(X)\) be a group acting essentially and without fixed point at infinity. Then for any two halfspaces \(\mathfrak{k} \subset \mathfrak{h}\), there exists \(g \in \Gamma\) such that \(g \mathfrak{h} \subsetneq \mathfrak{k} \subset \mathfrak{h}\).
+
+\begin{lemma}
+  \label{lem:strongly-sep}
+  Let \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{l}\) be three halfspaces in \(\mathcal{H}\) and \(g \in \Gamma\). Then
+  \begin{enumerate}
+  \item if \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\) are strongly separated, then the same is true for \((\mathfrak{h}, \mathfrak{l})\) and
+  \item \((\mathfrak{h}, \mathfrak{k})\) is strongly separated if and only if the same is true for \((g\mathfrak{h}, g\mathfrak{k})\).
+  \end{enumerate}
 \end{lemma}
 
-\begin{prop}[{\cite[Proposition~5.1]{Caprace2010}}]
-  \label{prop:cs-5.1}
-  Let \(X\) be a finite-dimensional unbounded CAT(0) cube complex such that \(\Aut(X)\) acts essentially and without fixed point at infinity. Then the following conditions are equivalent:
+\begin{proof}
   \begin{enumerate}
-  \item \(X\) is irreducible.
-  \item There is a pair of strongly separated hyperplanes.
-  \item For each halfspace \(\mathfrak{h}\) there is a pair of strongly separated halfspaces \(\mathfrak{h_i}\) such that \(\mathfrak{h}_1 \subset \mathfrak{h} \subset \mathfrak{h}_2\).
+  \item Assume that \(\mathfrak{m}\) were transverse to both \(\mathfrak{h}\) and \(\mathfrak{l}\). Then we would have
+    \begin{align*}
+      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^{\phantom{\ast}} & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
+      \mathfrak{m}^\ast \cap \mathfrak{k}^{\phantom{\ast}}  & \supset \mathfrak{m}^\ast \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
+      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{l}^\ast \neq \varnothing\quad \text{and}\\
+      \mathfrak{m}^\ast \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^\ast \cap \mathfrak{l}^\ast \neq \varnothing.
+    \end{align*}
+    Hence, \(\mathfrak{m}\) were transverse to \(\mathfrak{k}\), which is a contradiction to the strong separateness of either \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\).
+  \item If \((\mathfrak{h}, \mathfrak{k})\) are strongly separated and we have any \(\mathfrak{m} \in \mathcal{H}\). Then \(g^{-1}\mathfrak{m} \in \mathcal{H}\) and it is parallel to either \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, \(\mathfrak{m}\) is parallel to either \(g\mathfrak{h}\) or \(g\mathfrak{k}\). The opposite direction is analogous.
   \end{enumerate}
-\end{prop}
+\end{proof}
 
 \begin{lemma}[{\cite[Lemma~4.19]{MR3509968}}]
   \label{lem:4.19}
@@ -342,6 +347,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 \end{lemma}
 
 \begin{proof}
+  \todo{streamline proof using previous lemma}
   Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition~\ref{prop:cs-5.1} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find a \(g \in \Gamma\) such that
   \[
     g\mathfrak{k}_1 \subset g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1 \subset g^{-1} \mathfrak{k}_2.
@@ -366,27 +372,6 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   If we take any other \(\mathfrak{l}' \in H_\mu\), then \(\mathfrak{k} \not\subset \mathfrak{l}'\) and \(\mathfrak{k} \not \subset \mathfrak{l}'^\ast\), because of the measure. Additionally, \(\mathfrak{l}' \not\pitchfork \mathfrak{k}\), since then it would be parallel to \(\mathfrak{k}_3\) and as before we would have \(\mathfrak{k}_3 \not\subset \mathfrak{l}'\) and \(\mathfrak{k}_3 \not\subset \mathfrak{l}'^\ast\). Hence, \(\mathfrak{l}'\) or \(\mathfrak{l}'^\ast\) would have to contain \(\mathfrak{k}_3\) and thus \(\mathfrak{k}\). All in all this shows that either \(\mathfrak{l}'\) or \(\mathfrak{l}'^\ast\) would have to contain \(\mathfrak{k}\). After a possible renaming, we can assume that \(\mathfrak{l}' \subset \mathfrak{k}\). A similar argument applied to \(\mathfrak{h}\) and \(\mathfrak{l}'\), will then show that \(\mathfrak{h} \subset \mathfrak{l}'\) and hence \(\mathfrak{\hat l}' \in \mathfrak{h}^\ast \cap \mathfrak{k}\).
 \end{proof}
 
-\begin{lemma}
-  Let \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{l}\) be three halfspaces in \(\mathcal{H}\) and \(g \in \Gamma\). Then
-  \begin{enumerate}
-  \item if \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\) are strongly separated, then the same is true for \((\mathfrak{h}, \mathfrak{l})\) and
-  \item \((\mathfrak{h}, \mathfrak{k})\) is strongly separated if and only if the same is true for \((g\mathfrak{h}, g\mathfrak{k})\).
-  \end{enumerate}
-\end{lemma}
-
-\begin{proof}
-  \begin{enumerate}
-  \item Assume that \(\mathfrak{m}\) were transverse to both \(\mathfrak{h}\) and \(\mathfrak{l}\). Then we would have
-    \begin{align*}
-      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^{\phantom{\ast}} & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
-      \mathfrak{m}^\ast \cap \mathfrak{k}^{\phantom{\ast}}  & \supset \mathfrak{m}^\ast \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
-      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{l}^\ast \neq \varnothing\quad \text{and}\\
-      \mathfrak{m}^\ast \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^\ast \cap \mathfrak{l}^\ast \neq \varnothing.
-    \end{align*}
-    Hence, \(\mathfrak{m}\) were transverse to \(\mathfrak{k}\), which is a contradiction to the strong separateness of either \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\).
-  \item If \((\mathfrak{h}, \mathfrak{k})\) are strongly separated and we have any \(\mathfrak{m} \in \mathcal{H}\). Then \(g^{-1}\mathfrak{m} \in \mathcal{H}\) and it is parallel to either \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, \(\mathfrak{m}\) is parallel to either \(g\mathfrak{h}\) or \(g\mathfrak{k}\). The opposite direction is analogous.
-  \end{enumerate}
-\end{proof}
 
 \begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
   \label{lem:4.20}
@@ -409,7 +394,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 
 \begin{thm}[{\cite[Theorem~4.1]{Caprace2010}}]
   \label{thm:cs-flipping}
-  Assume that \(X\) is a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) be any subgroup. Let \(\mathfrak{h} \in \mathcal{H}(X)\) such that \(g\mathfrak{h} \not\subset \mathfrak{h}\) for each \(g \in \Gamma \setminus \{e\}\). Then \(\Gamma\) has a fixed point in the visual boundary or \(\mathfrak{h}\) is not essential with regard to \(\Gamma\).
+  Assume that \(X\) is a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) be any subgroup. Let \(\mathfrak{h} \in \mathcal{H}(X)\) such that \(\mathfrak{h}^\ast \not\subset g\mathfrak{h}\) for each \(g \in \Gamma\). Then \(\Gamma\) has a fixed point in the visual boundary or \(\mathfrak{h}\) is not essential with regard to \(\Gamma\).
 \end{thm}
 
 \begin{cor}[{\cite[Corollary~4.21]{MR3509968}}]
@@ -431,12 +416,49 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 \end{thm}
 
 \begin{proof}
-  By Lemma~\ref{lem:h-const} \(|H_\mu|\) is essentially constant. If \(H_\mu\) were infinite, then Corollary~\ref{cor:4.21} would show that \(H_\mu \cap H_\nu\) could not be infinite for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). Hence we could find a map taking values in the set of \emph{finite} subsets of \(\mathcal{H}\), namely
+  By Lemma~\ref{lem:h-const} \(|H_\mu|\) is essentially constant.
+  If \(H_\mu\) is finite we can invoke Lemma~\ref{lem:finite-zero} in order to see that \(H_\mu\) needs to be empty. Hence Lemma~\ref{lem:H=0} and Lemma~\ref{lem:4.11} lead to our desired map.
+
+  The only thing left to prove is, that \(H_\mu\) cannot be infinite. Contrarily, assume that it were and consider the sets \(H_\mu \cap H_\nu\). By Lemma~\ref{lem:hh-const} their cardinality must be essentially constant and we consider the case that the sets are infinite for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\).
+  We consider the subset
+  \[
+    \mathcal{E} \coloneqq \{(\mu, \nu) \in \mathcal{P}(\bar X) \times \mathcal{P}(\bar X)\mid H_\mu = H_\nu\}.
+  \]
+  This set is \(\Gamma\)-invariant and measurable\todo{think about measurability} and by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), we see that it has either measure 0 or measure 1. Let us consider the two cases
+  \begin{description}
+  \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset, \(\Gamma\)-invariant subset \(M \subset \mathcal{P}(X)\)\todo{understand why you find this \(\Gamma\)-invariant full measure subset}, such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). This leads to \(H_{g\nu} = gH_\nu = H_\nu\) for all \(\nu \in M\) because of the \(\Gamma\)-invariance. The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
+    The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in \H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, which is a contradiction to the fact that it is irreducible.
+  \item[\(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We define the set
+    \[
+      \mathcal{S} \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}.
+    \]
+    By Lemma~\ref{lem:strongly-sep} we see that this set is \(\Gamma\)-invariant and we can consider the following map
+    \begin{align*}
+      \mathcal{P}(\bar X) &\to \N \cup \{infty\},
+      \mu &\mapsto |H_\mu \times H_\mu \cap \mathcal{S}|,
+    \end{align*}
+    which is by the above observation \(\Gamma\)-invariant and also measurable\todo{measurability}. Hence, it is essentially constant. If the essential value is greater than 0, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the set \(H_\mu^+ \cap H_\nu\) contain terminal elements, whenerver the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
+    \begin{align*}
+      \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
+      (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
+    \end{align*}
+    is \(\Gamma\)-equivariant and measurable\todo{measurability} and Corollary~\ref{cor:4.5} assures that \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence there exists a \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(nu\), which is a contradiction.
+  \end{description}
+  Hence we see that \(H_\mu \cap H_\nu\) cannot be infinite, but then we have the map
   \begin{align*}
     \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) & \to \operatorname{Pot}_f(\mathcal{H}),\\
-    (\mu,\nu) &\mapsto H_\mu \cap H_\nu.
+    (\mu,\nu) &\mapsto H_\mu \cap H_\nu,
   \end{align*}
-  In order for the \(\Gamma\)-action to be essential, we see by help of Corollary~\ref{cor:4.5} that \(H_\mu \cap H_\nu\) needs to be empty for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\), but this is impossible by Proposition~\ref{prop:4.10}. This implies that the case \(|H_\mu| = \infty\) for almost all \(\mu \in \mathcal{P}(\bar X)\) is impossible. Then Lemma~\ref{lem:finite-zero} implies that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\). This allows us to apply Lemma~\ref{lem:H=0} and Lemma~\ref{lem:4.11}, which yield our map.
+  which is \(\Gamma\)-invariant and measurable (c.\,f.~Section~\ref{sec:meas-maps}) and takes values in the finite subsets of \(\mathcal{H}\). With the help of Corollary~\ref{cor:4.5}, we see that this implies that \(H_\mu \cap H_\nu\) need to be empty for almost all \(\mu\) and \(\nu\).
+
+  In this case we consider the following map
+  \begin{align*}
+    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \N \cup \{infty\},\\
+    (\mu, \nu) \mapsto |\tau([H_\mu \cap H_\nu^+] \cup [H_\nu \cap H_\mu^+])|,
+  \end{align*}
+  where \(\tau\) is the mapp assigning the set of terminal elements of any subset of \(\mathcal{H}\) (c.\,f.~Definition~\ref{defin:tau}). This map is again measurable and \(\Gamma\)-invariant\todo{show measurability} and hence essentially constant. Furthermore, by Lemme~\ref{lem:finite-terminal} we see that the map takes only finite values. However, invoking again Corollary~\ref{cor:4.5}, we have that \([H_\mu \cap H_\nu^+] \cup [H_\nu \cap H_\mu^+]\) contains no terminal elements for almost all \(\mu\) and \(\nu\). This allows us to apply Proposition~\ref{prop:4.10}, which leads to the impossibility of the case \(H_\mu \cap H_\nu = \varnothing\). 
+  
+  This implies that the case \(|H_\mu| = \infty\) for almost all \(\mu \in \mathcal{P}(\bar X)\) is impossible. Then Lemma~\ref{lem:finite-zero} implies that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\). This allows us to apply Lemma~\ref{lem:H=0} and Lemma~\ref{lem:4.11}, which yield our map.
   % By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action.
 
   % Consider the map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
@@ -477,45 +499,6 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   %   \item[\(M = \infty\):] 
   %   \end{description}
   % \end{description}
-\end{proof}
-
-
-\begin{lemma}[{\cite[Lemma~2.9]{MR3509968}}]
-  \label{lem:2.9}
-  Let \(X = X_1 \times \dots X_m\) be a product of CAT(0) spaces \(X_j\) and let \(G = G_1 \times \dots \times G_m\), where \(G \leq \Isom(X_j)\). Then any \(G_j\)-fixed point in \(\partial_\sphericalangle X_j\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
-\end{lemma}
-
-\begin{proof}
-  Let \(d_i\) respectively \(d\) be the CAT(0) metrics on \(X_i\) respectively \(X\). Up to permuting the indices we can assume that we have a \(G_1\)-fixed point in \(\partial_\sphericalangle X_1\). Let the geodesic ray \(l_1\colon [0,\infty) \to X_1\) represent this fixed point, i.\,e.\
-  \[
-    \sup_{t \geq 0} d_1(l_1(t), g_1l_1(t)) < \infty
-  \]
-  for every \(g_1 \in G_1\). For each \(i > 1\) we fix a point \(x_i \in X_i\). Then
-  \[
-    l\colon [0, \infty) \to X,\ t \mapsto (l_1(t), x_2, \dots, x_m)
-  \]
-  is a geodesic in \(X\) and for any \(g = (g_1, \dots, g_m) \in G\) we have
-  \[
-    \sup_{t \geq 0} d^2(l(t), gl(t)) = \sup_{t \geq 0} \left [ d_1^2(l_1(t), g_1l_1(t)) + \sum_{i=2}^m d_i^2(x_i, g_ix_i)\right] < \infty.
-  \]
-  Hence \(l\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
-\end{proof}
-
-\begin{lemma}[{\cite[Lemma~2.28]{MR3509968}}]
-  \label{lem:2.28}
-  Let \(X\) be a finite dimensional CAT(0) cube complex and let \(\Gamma \to \Aut(X)\) be a non-elementary action. Then the \(\Gamma_0\)-action on the irreducible factors of the essential core is also non-elementary and essential, where \(\Gamma_0\) is the finite index subgroup preserving this decomposition.
-\end{lemma}
-
-\begin{proof}
-  Let \(Y \subset X\) be the essential factor and \(Y = Y_1 \times \dots \times Y_m\) its decomposition into irreducible factors. Furthermore, let \(\Gamma_0\) be the finite index subgroup of \(\Gamma\) preserving this decomposition.
-
-  We will first show that the \(\Gamma_0\)-action on each \(Y_i\) is essential. By construction \(\Gamma\) acts essentially on \(Y\) and since \(\Gamma_0\) has finite index in \(\Gamma\) the same is true for \(\Gamma_0\). We would like to apply Lemma~\ref{lem:ess-unbounded}. For this we note that any halfspace \(\mathfrak{h}_i \in \mathcal{\hat H}(Y_i)\) defines a unique halfspace in \(Y\) via
-  \[
-    \mathfrak{h} \coloneqq Y_1 \times \dots \times Y_{i-1} \times \mathfrak{h}_i \times Y_{i+1} \times \dots \times Y_k.
-  \]
-  Using this each hyperplane \(\mathfrak{\hat h}_i = \{\mathfrak{h}_i , \mathfrak{h}_i^\ast\} \in \mathcal{\hat H}(Y_i)\) defines an associated hyperplane \(\mathfrak{\hat h} = \{\mathfrak{h}, \mathfrak{h}^\ast\}\). Since \(\Gamma_0\) acts essentially on \(Y\), Lemma~\ref{lem:ess-unbounded} assures us that there exists \(g \in \Gamma_0\) and an \(n \in \N\) such that \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\) (after possibly switching \(\mathfrak{h}\) and \(\mathfrak{h}^\ast\)), but then we have \(g^n \mathfrak{h}_i \subsetneq \mathfrak{h}_i\) and using the same lemma in the other direction, we yield that \(\Gamma_0\) acts essentially on each \(Y_i\).
-
-  Secondly, we would like to show that \(Y_i\) does not have a fixed point as infinity. We will achieve this by contraposition. Assume that \(\Gamma_0 \leq \Gamma\) does posses a finite orbit. Passing to a further finite index subgroup, which we will still call \(\Gamma_0\), we can assume that \(\Gamma_0\) has a fixed point at infinity. However, then we can apply Lemma~\ref{lem:2.9} and see that we have a \(\Gamma_0\)-fixed point in \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and again by the finite index \(\Gamma\) must have a finite orbit at infinity.
 \end{proof}
 
 \begin{cor}[\cite{MR3509968}]

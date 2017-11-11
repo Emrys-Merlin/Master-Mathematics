@@ -75,6 +75,11 @@ I will begin by collecting some important measure theoretic and functional analy
   The second set assures that the measure is positive and the last enforces the normalization. This are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
 \end{proof}
 
+\begin{lemma}[{\cite[Thm.\ V.6.6]{Conway}}]
+  \label{lem:continuous-separable}
+  If \(X\) is a compact metric space then the space of continuous functions \(C(X)\) is separable.
+\end{lemma}
+
 \begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}}]
   \label{thm:mackey}
   Let \((M, \sigma, \vartheta)\) be a standard probability space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a subs-sigma-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable, \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
@@ -104,16 +109,44 @@ I will begin by collecting some important measure theoretic and functional analy
   \item If \(\mathfrak{h, k} \in H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)), then either \(\mathfrak{h} \pitchfork k\) or all halfspaces between \(\mathfrak{h}\) and \(\mathfrak{k}\) lie in \(H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)).
   % \item There are no facing triples\todo{facing triples} of halfspaces in \(H_\mu\). If \(X\) is not Euclidean\todo{Euclidean}, then \(H_\mu^+ \neq \varnothing\).\todo{check if I need this and if not remove it}
   \item If \(H_\mu\) and \(H_\nu\) are not empty and \(H_\mu \cap H_\nu = \varnothing\), then \(H_\mu \cap H_\nu^+ \neq \varnothing\) and \(H_\mu \cap H_\nu^- \neq \varnothing\).
-  \item If \(\mathfrak{h, k}  \in H_\mu\) are two parallel halfspaces with \(\mathfrak{h} \subset \mathfrak{k}\), then \(\mu)(\mathfrak{h}^\ast \cap \mathfrak{k}) = 0\).
+  \item If \(\mathfrak{h, k}  \in H_\mu\) are two parallel halfspaces with \(\mathfrak{h} \subset \mathfrak{k}\), then \(\mu(\mathcal{C}(\mathfrak{h}^\ast) \cap \mathcal{C}(\mathfrak{k})) = 0\).
   \item The assignments \(\mu \mapsto H_\mu\), \(\mu \mapsto H_\mu^+\) and \(\mu \mapsto H_\mu^-\) are \(\Aut(X)\)-equivariant for the natural actions on \(\mathcal{P}(\bar X)\) and \(\operatorname{Pot}(\mathcal{H}(X))\).
   \end{enumerate}
 \end{lemma}
 \todo{check if I need \(H_\mu^+ \neq \varnothing\) if not euclidean and if I need facing triples.}
 
 \begin{proof}
-  1.\ -- 3.\ are clear from the definitions and the additivity of the measure. For 4.\ we see that \(H_\mu \subset H_\nu^+ \cap H_\nu^-\). Since \(H_\mu\) is invariant under involution, but \(H_\nu^+\) and \(H_\nu^-\) get interchanged, we see that both intersections cannot be empty. The last assertion follows again easily from the definitions.
+  1.\ -- 3.\ are clear from the definitions and the additivity of the measure. For 4.\ we see that \(H_\mu \subset H_\nu^+ \cap H_\nu^-\). Since \(H_\mu\) is invariant under involution, but \(H_\nu^+\) and \(H_\nu^-\) get interchanged, we see that both intersections cannot be empty. For 5. we have
+  \begin{align*}
+    \frac{1}{2} = \mu(\mathcal{C}(\mathfrak{k}))
+    & = \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h^\ast})) + \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h}))\\
+    & = \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h^\ast})) + \mu(\mathcal{C}(\mathfrak{h}))\\
+    & = \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h^\ast})) + \frac{1}{2},
+  \end{align*}
+  where we have \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) because we have \(\mathfrak{h} \subset \mathfrak{k}\) and ultrafilters satisfy the consistency condition. Hence, \(\mu(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})) = 0\). The last assertion follows again easily from the definitions.
 \end{proof}
 
+\begin{lemma}[{\cite[Lem. 4.7]{MR3509968}}]
+  \label{lem:interval}
+  The complex \(\bar X(H_\mu)\) is an interval.
+\end{lemma}
+
+\begin{proof}
+  Let
+  \[
+    p \colon \bar X \to \bar X (H_\mu), \alpha \mapsto \alpha \cap H_\mu
+  \]
+  be the projection. \(p\) is continuous and we can push forward \(\mu\) along \(p\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:finite-terminal}
+  For any \(H \subset H_\mu\) we have that \(|\tau(H)| < \infty\).
+\end{lemma}
+
+\begin{proof}
+  By Lemma~\ref{lem:interval} and Theorem~\ref{thm:interval}, we know that \(\bar X(H_\mu)\) is an interval and is embeddable in some \(\R^d\). The observation in Example~\ref{bsp:finite-terminal} shows that any subset \(H \subset H_\mu \subset \mathcal{H}(\R^d)\) has at most \(2d\) terminal elements.
+\end{proof}
 
 \subsection{Measurability of certain maps}
 \label{sec:meas-maps}
@@ -122,7 +155,7 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
 
 \begin{lemma}
   \label{lem:tau}
-   Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) to \operatorname{Pot}(\mathcal{H})\) the map assigning to each subset of \(\mathcal{H}\) its set of terminal elements (c.\,f.~Definition~\ref{defin:tau}). Then \(\tau\) is measurable.
+   Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) \to \operatorname{Pot}(\mathcal{H})\) the map assigning to each subset of \(\mathcal{H}\) its set of terminal elements (c.\,f.~Definition~\ref{defin:tau}). Then \(\tau\) is measurable.
 \end{lemma}
 
 \begin{proof}
@@ -205,18 +238,6 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
   \]
 \end{proof}
 
-\begin{lemma}[{\cite[Lem. 4.7]{MR3509968}}]
-  \label{lem:interval}
-  The complex \(\bar X(H_\mu)\) is an interval.
-\end{lemma}
-
-\begin{proof}
-  Let
-  \[
-    p \colon \bar X \to \bar X (H_\mu), \alpha \mapsto \alpha \cap H_\mu
-  \]
-  be the projection. \(p\) is continuous and we can push forward \(\mu\) along \(p\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(6) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to the previous lemma.
-\end{proof}
 
 \begin{lemma}
   The map

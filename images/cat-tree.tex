@@ -1,0 +1,62 @@
+\begin{tikzpicture}
+    [
+  vertex/.style={
+    circle,
+    fill=black,
+    minimum size=1mm,
+    inner sep=0pt
+  },
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position 0.5 with {\arrow{#1}}
+    },
+    postaction={decorate}
+  },
+  scale=0.7,
+  ]
+  \node (m) at ( 0, 0) [vertex,label=270:\(m\)] {};
+  \node (p) at ( 0, 5) [vertex,label=090:\(p\)] {};
+  \node (q) at (-3, 0) [vertex,label=180:\(q\)] {};
+  \node (r) at ( 4, 0) [vertex,label=360:\(r\)] {};
+  \coordinate [label={[blue]270:\(x\)}] (x) at (-1.5,0) {};
+  \coordinate [label={[blue]180:\(y\)}] (y) at ( 0,3.5) {};
+  \draw (q) -- (x)
+  (p) -- (y)
+  (m) -- (r);
+  \draw [|-,blue] (x) -- (m);
+  \draw [-|,blue] (m) -- (y);
+
+  \node at ( 0, 1) [vertex] {};
+  \node at ( 0, 2) [vertex] {};
+  \node at ( 0, 3) [vertex] {};
+  \node at ( 0, 4) [vertex] {};
+  \node at (-1, 0) [vertex] {};
+  \node at (-2, 0) [vertex] {};
+  \node at ( 1, 0) [vertex] {};
+  \node at ( 2, 0) [vertex] {};
+  \node at ( 3, 0) [vertex] {};
+  \begin{scope}[shift={(6,0)}]
+    \coordinate [label=180:\(\bar q\)] (q) at ( 0, 0) {};
+    \coordinate [label=360:\(\bar r\)] (r) at ( 7, 0) {};
+    \coordinate [label=090:\(\bar p\)] (p) at ( 2.286, 7.667) {};
+    \coordinate [label={[green]270:\(\bar x_1\)}] (x1) at ( 1.5, 0) {};
+    \coordinate [label={[green]180:\(\bar y_2\)}] (y2) at (6.5/8*2.286, 6.5/8*7.667);
+    \coordinate [label={[green]180:\(\bar x_2\)}] (x2) at (1.5/8*2.286, 1.5/8*7.667);
+    %\coordinate [label={[green]360:\(\bar y_1\)}] (y1) at ()
+    \draw (x2) -- (q) -- (r) -- (p) -- (y2);
+    \draw [green] (y2) -- (x1);
+    \draw [dashed] (x1) arc (0:74:1.5);
+    \draw [dashed] (y2) arc (253:301:1.5) coordinate[label={[green]360:\(\bar y_1\)}] (y1);
+    \draw [blue] (x2) -- node [midway,label={[blue]180:\(d(x,y) = \|\bar x_2 - \bar y\|_2\)}] {} (y2);
+    \draw [black!40] (x1) -- (x2);
+    \draw [green] (x1) -- (y1);
+    \draw [black!40] (y1) -- (y2);
+    \draw [green] (y1) -- (x2);
+  \end{scope}
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:

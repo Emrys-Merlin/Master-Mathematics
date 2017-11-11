@@ -82,14 +82,21 @@ This section is concerned with basic metric properties of spaces and their conne
 \end{defin}
 
 \begin{bsp}
-  \todo{Elaborate CAT examples}
-  \begin{enumerate}
- % \item CAT(\(\kappa\)) contained etc
-  \item \(\E^n\) without a diamond. Still locally CAT(0), but not globally
-  \item Trees
+  \begin{description}
+    % \item CAT(\(\kappa\)) contained etc
+  \item[Euclidean space:] \(\E^n\) is by definition a CAT(0) space. Furthermore, it is easy to see if we remove the interior \(\Delta\) of a non-degenerate triangle from \(\E^2\) and equip this space with the induced length metric (i.\,e.\ the distance between two points is given by the infimum of the length over all piecewise linear paths), then \(\E^2 \setminus \Delta\) is no longer CAT(0), as the interior of \(\Delta\) is missing which lengthens all shortest paths which would normally go through the interior. However, this space is still non-positively curved since all balls can be chosen so small that they do contain at most parts of two sides of the triangle. In these balls all triangles correspond to regular filled triangles in \(\E^2\).
+  \item[Trees:]
+    \begin{figure}[htbp]
+      \centering
+      \input{./images/cat-tree.tex}
+      \caption{A triangle in a tree and the corresponding comparison triangle in \(\E^2\). The different choices of comparison points for \(x\) and \(y\) are inscribed as \(\bar x_i\) and \(\bar y_i\). The blue segment in the comparison triangle corresponds to the only comparison pair with the same length as in the tree. The three green line segments are all longer.}
+      \label{fig:cat-tree}
+    \end{figure}
+    Trees form another example of CAT(0) spaces when equipped with the edge metric. Every triangle in a tree takes the form of one midpoint \(m\) with three edge paths connecting \(m\) to the three vertices \(p,q\) and \(r\). Otherwise, we would have a proper cycle in the graph, which therefore could not be a tree. However, this implies that any point on the triangle, always lies on two of its sides at the same time and this leads to two corresponding points in the comparison triangle. This situation is depicted in Figure~\ref{fig:cat-tree}. This leads to the consequence, that any two points \(x,y \in \Delta(p,q,r)\) have a representative lying on a common side in the comparison triangle (in our example below this corresponds to \(\bar x_2\) and \(\bar y_2\)) with the blue line segment joining the two. These two representatives satisfy the CAT(0) inequality trivially. If we compare \(\bar x_1\) to \(\bar y_2\), we note that \(\bar \Delta(\bar x_1, \bar x_2, \bar q)\) is an isosceles triangle, meaning that \(\angle(\bar x_2, \bar x_1, \bar y_2) \geq \frac{\pi}{2}\). This shows that \(\|\bar x_1 - \bar y_2\|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). By symmetry the same is true in the case of \(\bar x_2\) and \(\bar y_1\). The last case is to consider \(\bar x_1\) and \(\bar y_1\). However, then we have the rectangle \(\bar x1, \bar x_2, \bar y_2, \bar y_1\). Using the two isosceles triangles \(\Delta(\bar q, \bar x_1, \bar x_2)\) and \(\Delta(\bar p, \bar y_1, \bar y_2)\), we see that the ractangle has angles of more than \(\frac{pi}{2}\) at the vertices \(\bar x_2\) and \(\bar y_2\). Hence, \(\|\bar x_1 - \bar y_1 \|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). All in all we see that the triangle satisfies the CAT(0) inequality. Since every tree is geodesic, we see that trees indeed are CAT(0) spaces.
+  \item[Hyperbolic space:] For completeness sake, we would like to mention that every hyperbolic \(n\)-space \(\H^n\) is CAT(0). The interested reader may find further information in \textcite[Section~II.1]{MR1744486}.
   % \item \(\bigvee_{n \in \N} (\sphere_n, x_n)\), where \(\sphere_n = \frac{1}{\sqrt{n}} \sphere^1
     % \cong M_n^1\) and \(x_n \in \sphere_n\). Not CAT(\(\kappa\)) for any \(\kappa\), not even locally.
-  \end{enumerate}
+  \end{description}
 \end{bsp}
 
 
@@ -112,7 +119,7 @@ This section is concerned with basic metric properties of spaces and their conne
 %   \end{itemize}
 % \end{defin}
 
-This section will contain some important facts about general CAT(0) spaces. Where no proof is given, it can be found in \cite{MR1744486}. Recall that the general definition of a CAT(\(\kappa\)) space was given in Definition~\ref{def:cat}. 
+This section will contain some important facts about general CAT(0) spaces. Where no proof is given, it can be found in \cite{MR1744486}.
 
 \begin{prop}[{\cite[Prop II.1.4]{MR1744486}}]
   Let \(X\) be a CAT(0) space. Then
@@ -148,9 +155,32 @@ On CAT(0) spaces one regularly defines a boundary via identifying certain geodes
 \end{rem}
 
 \begin{bsp}
-  \todo{examples for visual boundary}
+  \begin{description}
+  \item[Euclidean space:] In \(\E^n\) two geodesics (i.\,e.\ straight lines) are equivalent if and only if they are parallel. Hence, we can fix any point \(x \in \E^n\) and see that there is a one-to-one correspondes between points at the visual boundary and (signed) directions. In other words, we attach an \(n-1\)-sphere at infinity and indeed it can be shown that \(\E^n \sqcup \partial_\sphericalangle \E^n\) is homeomorphic to the closed unit ball \(D^n\), with \(\E^n\) being homeomorphic to the interior (c.\,f.~\cite[Section~II.8]{MR1744486}).
+  \item[Trees:] In the case of trees, every edge path is a geodesic and two of them \(c_1\) and \(c_2\) are equivalent if and only if there exist \(n,m \in \N\) such that \(c_1(t+m) = c_2(t+n)\) for all \(t\geq0\). This means that up to a finite starting interval the two geodesics have to coincide. In other words we are only interested in the \enquote{tails} of the geodesic rays.
+  \end{description}
 \end{bsp}
 
+\begin{lemma}[{\cite[Lemma~2.9]{MR3509968}}]
+  \label{lem:2.9}
+  Let \(X = X_1 \times \dots X_m\) be a product of CAT(0) spaces \(X_j\) and let \(G = G_1 \times \dots \times G_m\), where \(G_j \leq \Isom(X_j)\). Then any \(G_j\)-fixed point in \(\partial_\sphericalangle X_j\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
+\end{lemma}
+
+\begin{proof}
+  Let \(d_i\) respectively \(d\) be the CAT(0) metrics on \(X_i\) respectively \(X\). Up to permuting the indices we can assume that we have a \(G_1\)-fixed point in \(\partial_\sphericalangle X_1\). Let the geodesic ray \(l_1\colon [0,\infty) \to X_1\) represent this fixed point, i.\,e.\
+  \[
+    \sup_{t \geq 0} d_1(l_1(t), g_1l_1(t)) < \infty
+  \]
+  for every \(g_1 \in G_1\). For each \(i > 1\) we fix a point \(x_i \in X_i\). Then
+  \[
+    l\colon [0, \infty) \to X,\ t \mapsto (l_1(t), x_2, \dots, x_m)
+  \]
+  is a geodesic in \(X\) and for any \(g = (g_1, \dots, g_m) \in G\) we have
+  \[
+    \sup_{t \geq 0} d^2(l(t), gl(t)) = \sup_{t \geq 0} \left [ d_1^2(l_1(t), g_1l_1(t)) + \sum_{i=2}^m d_i^2(x_i, g_ix_i)\right] < \infty.
+  \]
+  Hence \(l\) defines a \(G\)-fixed point in \(\partial_\sphericalangle X\).
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex

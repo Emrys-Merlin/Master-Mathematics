@@ -139,7 +139,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
     \]
     is an ultrafilter. Furthermore, it satisfies the descending chain condition and any ultrafilter satisfying the descending chain condition arises in this way.
   \item The map \(V(X) \to \mathcal{U}(X) \coloneqq \mathcal{U}(\mathcal{H}),\ v \mapsto \alpha_v\) is injective, continuous and the image is dense in \(\mathcal{U}(X)\). 
-  \item If \(X\) is locally finite, then the image of \(V(X)\) is open in \(\mathcal{U}(X)\).
+  % \item If \(X\) is locally finite, then the image of \(V(X)\) is open in \(\mathcal{U}(X)\).
   \end{enumerate}
 \end{thm}
 
@@ -149,9 +149,21 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 
     If \(\alpha\) satisfies the descending chain condition, then each halfspace contains a minimal halfspace of \(\alpha\). If we take the set of minimal halfspaces of \(\alpha\), then all the elements must be pairwise transverse. Furthermore, since \(X\) is finite-dimensional every set of pairwise transverse elements must be finite (indeed smaller than \(\dim X\)). By Theorem~\ref{thm:common-intersection}, we find that the intersection over all minimal elements is non-empty and contains a vertex \(v\). We claim that \(\alpha_v = \alpha\). Indeed, if \(\mathfrak{h} \in \alpha\), then there exists a minimal element \(\mathfrak{k} \in \alpha\) and \(v \in \mathfrak{k}\) hence also in \(\mathfrak{h}\) and \(\mathfrak{h} \in \alpha_v\). Conversely, if \(\mathfrak{h} \not \in \alpha\) then \(\mathfrak{h}^\ast \in \alpha\) and as before \(v \in \mathfrak{h}^\ast\) and \(\mathfrak{h} \not \in \alpha_v\).
   \item In order to see the injectivity consider two vertices \(v \neq w\). Then there exists a halfspace \(\mathfrak{h}\) separating the two, i.\,e.\ \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Hence, \(\mathfrak{h} \in \alpha_v\) and \(\mathfrak{h}^\ast \in \alpha_w\) and \(\alpha_v \neq \alpha_w\). The continuity is clear, since we have the discrete topology on \(V(X)\). Lastly, we have to show that the image is dense. We consider a basic open set \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) in \(\mathcal{U}(X)\). Without loss of generality we can assume that the \(\mathfrak{h}_i\) are pairwise transverse. If they were contained in each other, we could remove redundant elements and if we have a pair of halfspaces which is identified under involution, then the set were empty. However, in this case we know again by Theorem~\ref{thm:common-intersection} that \(\bigcap_{i=1}^n \mathfrak{h}_i\) contains a vertex \(v\) and hence \(\alpha_v \in \mathcal{U}\).
-  \item We will show that each \(\alpha_v\) contains an open neighborhood that is completely contained in the image of our map. Indeed, we will see that \(\{\alpha_v\}\) is open in \(\mathcal{U}(X)\). Since \(X\) is locally finite, \(v\) is contained in finitely many cubes. In particular it is contained in only finitely many edges. Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n\) bet the set of halfspaces containing \(v\) defined by those edges. We claim that \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) = \{\alpha_v\}\). Let \(\alpha \in \mathcal{U}\). Assume there exists \(\mathfrak{h} \in \alpha\) such that \(v \not \in \mathfrak{h}\). Take \(\tilde w \in \mathfrak{h}\) and choose a shortest edge path between \(v\) and \(\tilde w\). At some point this path will have to cross \(\mathfrak{\hat h}\) and we choose \(w\) as the first vertex on the path in \(\mathfrak{h}\). Then the shrunk segment between \(v\) and \(w\) is still a shortest path. Furthermore, the path must cross one of the \(\mathfrak{\hat h}_i\). After a possible relabeling, let \(\mathfrak{h}_1, \dots, \mathfrak{h}_k\) be the subset of halfspaces that separates \(v\) from \(w\). Then for \(k+1 \leq i \leq n\) we have \(w \in \mathfrak{h}_i \cap \mathfrak{h}\). Assume that all the \(\mathfrak{h}_i\) for \(i \leq k\) were transverse to \(\mathfrak{h}\). Then again with the help of Theorem~\ref{thm:common-intersection} we would have that \(\bigcap_{i=1}^n \mathfrak{h}_i \cap \mathfrak{h}\) is not empty. However, \(\bigcap_{i=1}^n \mathfrak{h}_i = \{v\}\). This is a contradiction to the fact that \(v \not\in \mathfrak{h}\). Hence, we must have that at least one \(\mathfrak{h}_i\) is nested with \(\mathfrak{h}\). However, the only possibility is \(\mathfrak{h}_i \subset \mathfrak{h}^\ast\).\todo{not so easy, rewrite} Since \(\alpha \in \mathcal{U}\), we have \(\mathfrak{h}_i \in \alpha\) and by consistence also \(\mathfrak{h}^\ast \in \alpha\), which is a contradiction. Hence, \(\alpha_v\) is the only ultrafilter in \(\mathcal{U}\).
+  % \item We will show that each \(\alpha_v\) contains an open neighborhood that is completely contained in the image of our map. Indeed, we will see that \(\{\alpha_v\}\) is open in \(\mathcal{U}(X)\). Since \(X\) is locally finite, \(v\) is contained in finitely many cubes. In particular it is contained in only finitely many edges. Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n\) bet the set of halfspaces containing \(v\) defined by those edges. We claim that \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) = \{\alpha_v\}\). Let \(\alpha \in \mathcal{U}\). Assume there exists \(\mathfrak{h} \in \alpha\) such that \(v \not \in \mathfrak{h}\). Take \(\tilde w \in \mathfrak{h}\) and choose a shortest edge path between \(v\) and \(\tilde w\). At some point this path will have to cross \(\mathfrak{\hat h}\) and we choose \(w\) as the first vertex on the path in \(\mathfrak{h}\). Then the shrunk segment between \(v\) and \(w\) is still a shortest path. Furthermore, the path must cross one of the \(\mathfrak{\hat h}_i\). After a possible relabeling, let \(\mathfrak{h}_1, \dots, \mathfrak{h}_k\) be the subset of halfspaces that separates \(v\) from \(w\). Then for \(k+1 \leq i \leq n\) we have \(w \in \mathfrak{h}_i \cap \mathfrak{h}\). Assume that all the \(\mathfrak{h}_i\) for \(i \leq k\) were transverse to \(\mathfrak{h}\). Then again with the help of Theorem~\ref{thm:common-intersection} we would have that \(\bigcap_{i=1}^n \mathfrak{h}_i \cap \mathfrak{h}\) is not empty. However, \(\bigcap_{i=1}^n \mathfrak{h}_i = \{v\}\). This is a contradiction to the fact that \(v \not\in \mathfrak{h}\). Hence, we must have that at least one \(\mathfrak{h}_i\) is nested with \(\mathfrak{h}\). However, the only possibility is \(\mathfrak{h}_i \subset \mathfrak{h}^\ast\).\todo{not so easy, rewrite} Since \(\alpha \in \mathcal{U}\), we have \(\mathfrak{h}_i \in \alpha\) and by consistence also \(\mathfrak{h}^\ast \in \alpha\), which is a contradiction. Hence, \(\alpha_v\) is the only ultrafilter in \(\mathcal{U}\).
   \end{enumerate}
 \end{proof}
+
+\begin{rem}
+  It is often assumed that a space is an open subset of its compactification. In our case this can fail, as can be seen from the following example: We consider a countable family consisting of copies of the non-negative reals \(\R_{\geq0}\) and their standard cubulation. We glue these lines together at their respective origins (and call this vertex \(\ast\)). This construction leads to a tree and hence to a CAT(0) cube complex. We claim that any open neighborhood of the ultrafilter \(\alpha_\ast\) contains an ultrafilter which does not satisfy the descending chain condition. The construction is depicted in Figure~\ref{fig:roller-counterexample}
+  \begin{figure}[htbp]
+    \centering
+    \input{./images/roller-counterexample.tex}
+    \caption{The left-hand side depicts the ultrafilter \(\alpha_\ast\). The blue edges depict the halfspaces, determined by \(\mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\). The green branch is a branch containing no \(\mathfrak{h}_i\) and whose halfspaces can therefore be reversed. This leads to the ultrafilter \(\alpha\) on the right-hand side.}
+    \label{fig:roller-counterexample}
+  \end{figure}
+
+  Let \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) be any basic open set containing \(\alpha_\ast\). Then \(\mathfrak{h}_i \in \alpha_\ast\). We recall from Example~\ref{bsp:ccc} that in the case of trees, halfspaces correspond to the choice of a direction at an edge and in the case of \(\alpha_\ast\) all arrows have to point towards \(\ast\). Since we have infinitely many lines starting from \(\ast\), but only finitely many arrows prescribed by the \(\mathcal{h}_i\), we can construct the follwing ultrafilter: We take \(\alpha_\ast\) and choose a branch which does not contain one of the edges with prescribed direction (the green branch in the figure). On this branch we reverse all arrows. This leads to a new ultrafilter \(\alpha\) (each vertex has at most one outgoing edge), which does not satisfy the descending chain condition, but nonetheless lies in \(\mathcal{U}\).
+\end{rem}
 
 Now that we have defined the Roller boundary, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. The former form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
 
@@ -241,8 +253,8 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
   \]
 \end{defin}
 
-
 \begin{lemma}
+  \label{lem:x-interval}
   Let \(X\) be a CAT(0) cube complex and \(\alpha \in \bar X\) an ultrafilter. If \(\alpha^\ast\) is an ultrafilter then \(\bar X = [\alpha, \alpha^\ast]\).
 \end{lemma}
 
@@ -266,16 +278,13 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
   Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) \to \operatorname{Pot}(\mathcal{H})\) be the map that assigns to each subset of \(\mathcal{H}\) its set of terminal elements.
 \end{defin}
 
-\todo{add example of ultrafilters and move lemma about \(\R^d\) to this point}
-
-\begin{lemma}
-  \label{lem:finite-terminal}
-  For any \(H \subset H_\mu\) we have that \(|\tau(H)| < \infty\).
-\end{lemma}
-
-\begin{proof}
-  By Lemma~\ref{lem:interval} and Theorem~\ref{lem:interval}, we know that \(\bar X(H_\mu)\) is an interval and is embeddable in some \(\R^d\). In \(\R^d\) the halfspaces are along coordinate axes and for each of those we can have at most one maximal and one minimal halfspace. So all in all no matter which \(H \subset H_\mu \subset \mathcal{H}(\R^d)\) we choose, it can never contain more than \(2d\) terminal elements.
-\end{proof}
+\begin{bsp}
+  \label{bsp:finite-terminal}
+  \begin{description}
+  \item[DCC ultrafilters:] Every ultrafilter satisfying the descending chain condition contains minimal and hence terminal elements. If the CAT(0) cube complex is finite-dimensional, there can be at most finitely many transverse halfspaces and hence only finitely many minimal elements. In general, we cannot say anything about maximal elements in ultrafilters. 
+  \item[Euclidean space:] In \(\R^d\) with its standard cubulation, we know that all halfspaces are parallel to coordinate axes and along each axis we can have at most one minimal and one maximal elment. This implies that any subset of halfspaces of \(\R^d\) can have at most \(2d\) terminal elements. With the help of Theorem~\ref{thm:interval} this reasoning can be extended to intervals, since they are embeddable into some \(\R^d\).
+  \end{description}
+\end{bsp}
 
 \begin{defin}
   Let \(\alpha\) and \(\beta\) be two ultrafilters. Then
@@ -301,7 +310,6 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
 
 \subsection{Embeddings of Roller compactification}
 \label{sec:embedding-roller}
-\todo{probabily remove}
 
 In this section we are interested in the question when the CAT(0) cube complex \(X'\) associated to a involution invariant subset \(\mathcal{H}' \subset \mathcal{H}(X)\) is embeddable in \(X\). This is not always possible, however, there are sufficient conditions for \(\mathcal{H}'\) to ensure the existence of an embedding \(\bar X' \hookrightarrow \bar X\).
 
@@ -310,6 +318,7 @@ In this section we are interested in the question when the CAT(0) cube complex \
 \end{defin}
 
 \begin{lemma}[{\cite[Lemma~2.6]{MR3509968}}]
+  \label{lem:lifting}
   Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. Assume that \(\mathcal{H}'\) admits a lifting decomposition \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\). Then there is a continuous injective map
   \begin{align*}
     i\colon \bar X' \coloneqq X(\mathcal{H}') & \to \bar X,\\

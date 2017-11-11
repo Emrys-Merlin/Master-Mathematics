@@ -17,7 +17,6 @@
 
 \begin{rem}
   \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). Furthermore, in this case all its edges have length \(\frac{\pi}{2}\).
-  \todo{sphere of small radius}
 \end{rem}
 
 \begin{defin}[Cube complexes]\ 
@@ -134,8 +133,15 @@ In the following is a short list of deeper results about cube complexes, which w
 \end{thm}
 
 
-\begin{defin}[Flag complex]
-  A \emph{flag complex} \(K\) is a simplicial complex, such that each complete subgraph of its 1-skeleton of \(n\) vertices, spans a \(n-1\) simplex in \(K\).
+\begin{defin}[Flag complexes and joins]
+  \begin{itemize}
+  \item A pair \(K = (S, P)\) is called a \emph{simplicial complex}, if \(S\) is a set and \(P \subset \operatorname{Pot}(S)\) such that if \(X \in P\) and \(Y \subset X\) is not empty then \(Y \in P\). We will assume that \(P\) will contain all singletons of \(S\), i.\,e.\ \(\{s\} \in P\) for every \(s \in S\). Let \(X \in P\), if \(n \coloneqq |X| < \infty\) then \(X\) is called a \((n-1)\)-simplex. In the cases \(n=2\) and \(n=1\) it is called an \emph{edge} or an \emph{vertex} respectively.
+  \item A \emph{flag complex} \(K\) is a simplicial complex, such that each complete subgraph of its 1-skeleton of \(n\) vertices, spans a \(n-1\) simplex in \(K\).
+  \item Let \(K_1 = (S_1, P_1)\) and \(K_2 = (S_2, P_2)\) be two simplicial complexes then their \emph{join} \(K\) is defined to consist of the set \(S \coloneqq S_1 \sqcup S_2\) and
+    \[
+      P \coloneqq \{\{x_1, \dots, x_n, y_1, \dots, y_m\} \subset S_1 \sqcup s_2 \mid \{x_1, \dots x_n\} \in P_1 \text{ and } \{y_1, \dots, y_m\} \in P_2\} \sqcup P_1 \sqcup P_2.
+    \]
+  \end{itemize}
 \end{defin}
 
 \begin{thm}[Gromov's link condition, {\cite[Thm B.8]{MR3029427}}, {\cite[Thm II.5.20]{MR1744486}}]
@@ -176,9 +182,38 @@ In the following is a short list of deeper results about cube complexes, which w
     \end{figure}
 
     As in the previous example, these surfaces lead to a cube complex structure on the universal cover, which can be chosen to be \(\mathbb{H}^2\), which leads to another example of a CAT(0) cube complex.
-  \item[Products:]\todo{write example for products}
   \end{description}
 \end{bsp}
+
+\begin{lemma}
+  \label{lem:flag}
+  The join \(K = (S,P)\) of two simplicial complexes \(K_1 = (S_1, P_1)\) and \(K_2 = (S_2, P_2)\) is a simplicial complex. If the \(K_i\) were flag, so is \(K\).
+\end{lemma}
+
+\begin{proof}
+  Let \(X \in P\) and \(\varnothing \neq Y \subset X\). The set \(X\) can be decomposed as \(X = X_1 \sqcup X_2\), where \(X_i \in P_i\). With this we have \(Y = Y_1 \sqcup Y_2\) where \(Y_i \coloneqq X_i \cap Y\). Since \(Y\) is non-empty not both \(Y_i\) can be empty. If both are non-empty, then since \(K_i\) is a simplicial simplex, we have \(Y_i \in P_i\) and thus \(Y \in P\). If one is empty (without loss of generality assume \(Y_2 = \varnothing\)), then \(Y = Y_1 \in P_1 \subset P\). With this we conclude that \(K\) is a simplicial complex.
+
+  Now, let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeletn, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as the \(K_i\) are flag and we have \(P_i \subset P\). In the remaining case have that \(X_1 = \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 = \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \cup X_2 \in P\) by definition. Hence \(K\) is flag.
+\end{proof}
+
+\begin{prop}
+  \label{prop:product-cat}
+  Let \(X_1\) and \(X_2\) be two cube complexes then \(X \coloneqq X_1 \times X_2\) is a cube complex. If both \(X_i\) are CAT(0) so is \(X\).
+\end{prop}
+
+\begin{proof}
+  If \(X_1\) and \(X_2\) are cube complexes, we have the following maps:
+  \begin{align*}
+    p_i \colon \bigcup_{\lambda \in \Lambda_i} C_\lambda \times \{\lambda\} \to X_i
+  \end{align*}
+  Hence, we have the map
+  \[
+    p_1 \times p_2 \colon \bigcup_{\lambda' \in \Lambda_1} \bigcup_{\lambda \in \Lambda_2} C_{\lambda'} \times C_{\lambda'} \times \{\lambda'\} \times \{\lambda\} \to X_1 \times X_2
+  \]
+  and the maps \(p_{\lambda, \lambda'}(x_1,x_2) \coloneqq (p_1 \times p_2)(x_1, x_2, \lambda', \lambda) = (p_1(x_1, \lambda'), p_2(x_2, \lambda))\). These maps are injective because each \(p_i(\cdot, \lambda)\) is. So the only thing left to prove is that we find the isometries gluing the cubes. However, this also works on each factor separately.
+
+  Let \((v,w) \in X\) be a vertex and \(Y \in \lk((v,w), X)\)\todo{finish product proof} 
+\end{proof}
 
 \begin{defin}
   A cube complex \(X\) is called \emph{locally finite} if every \(x \in X\) is contained in only finitely many cubes. It is called \emph{locally compact} if for every \(x \in X\) there exists a compact neighborhood \(K \subset X\). It is called \emph{locally countable} if every \(x \in X\) is contained in at most countably many cubes.
