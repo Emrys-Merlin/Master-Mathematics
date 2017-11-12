@@ -259,6 +259,83 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
   This set is open as a finite intersection of basic open sets. Hence \(f\) is continuous and measurable.
 \end{proof}
 
+\begin{lemma}
+  \label{lem:measurable-str-sep}
+  The map
+  \begin{align*}
+    \mathcal{P}(\bar X) & \to \N \cup \{\infty\},\\
+    \mu & \mapsto |H_\mu\times H_\mu \cap \mathcal{S}|,
+  \end{align*}
+  where
+  \[
+    \mathcal{S}\coloneqq \{(\mathfrak{h},\mathfrak{k}) \in \mathcal{H}^2 \mid \mathfrak{h} \text{ and} \mathfrak{k} \text{ are strongly separated}\}
+  \]
+  is measurable.
+\end{lemma}
+
+
+\begin{proof}
+  We decompose the map as follows
+  \begin{alignat*}{4}
+    \mathcal{P}(\bar X) &\to \mathcal{P}(\bar X)^2&&\to \operatorname{Pot}(\mathcal{H}^2) &&\to \operatorname{Pot}(\mathcal{H}^2) &&\to \N \cup \{\infty\},\\
+    \mu &\mapsto (\mu, \mu) &&\mapsto (H_\mu, H_\mu)&&\mapsto H_\mu \times H_\mu \cap \mathcal{S} &&\mapsto |H_\mu \times H_\mu \cap \mathcal{S}|.
+  \end{alignat*}
+  The first map is continuous and hence measurable. The second map is measurable, because the map on each factor is measurable by Lemma~\ref{lem:measurable-mu}. The last map is measurable by Lemma~\ref{lem:measurable-countable}. We are left with the middle map. Consider the two finite subsets \(F, G \subset \mathcal{H}^2\). Then the preimage of the associated cylinder set is given by
+  \begin{align*}
+    P & \coloneqq \{(H, K) \in \operatorname{Pot}(\mathcal{H})^2 \mid F \subset H \times K \wedge G \subset (H \times K)^c \wedge (\mathfrak{h}, \mathfrak{k}) \in H \times K \text{ is strongly separable}\}\\
+      & = \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in F} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)\\
+      & \cap \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in G} \mathcal{C}(\mathfrak{h})^c \times \operatorname{Pot}(\mathcal{H}) \cup \operatorname{Pot}(\mathcal{H}) \times \mathcal{C}(\mathfrak{k})^c \right)\\
+      & \cap \left( \bigcap_{\substack{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}^2\\\text{not str.\ sep.}}} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)^c,
+  \end{align*}
+  which is a countable union of measurable sets. Hence our map is measurable as a concatenation of measurable sets.
+\end{proof}
+
+\begin{lemma}
+  Let \(A\) be a set then the maps
+  \begin{align*}
+    f \colon \operatorname{Pot}(A)^2 & \to \operatorname{Pot}(A)\\
+    (H, K) & \mapsto H \cap K
+  \end{align*}
+  and
+  \begin{align*}
+     \colon \operatorname{Pot}(A)^2 & \to \operatorname{Pot}(A)\\
+    (H, K) & \mapsto H \cup K
+  \end{align*}
+  are measurable with regard to Borel-\(\sigma\)-algebra of the cylinder topology.
+\end{lemma}
+
+\begin{proof}
+  \label{lem:measurable-intersection-union}
+  Let \(F, G \subset A\) be two finite subsets. Then we have
+  \begin{align*}
+    f^{-1}(C(F,G))
+    & = \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cap K \wedge G \subset H^c \cup K^c\} \\
+    & = \bigcap_{f \in F} \mathcal{C}(f) \times \mathcal{C}(f)\\
+    & \cap \bigcap_{g \in G} (\mathcal{C}(g)^c \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times \mathcal{C}(g)^c)
+  \end{align*}
+  and
+  \begin{align*}
+    g^{-1}(C(F,G))
+    & = \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cup K \wedge G \subset H^c \cap K^c\} \\
+    & = \bigcap_{f \in F} (\mathcal{C}(f) \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times\mathcal{C}(f))\\
+    & \cap \bigcap_{g \in G} \mathcal{C}(g)^c \times \mathcal{C}(g)^c.
+  \end{align*}
+  Hence both maps are measurable.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:measurable-tau-int}
+  The map
+  \begin{align*}
+    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
+    (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
+  \end{align*}
+  is measurable.
+\end{lemma}
+
+\begin{proof}
+  We know that the diagonal embedding and the product of measurable functions is again measurable. Hence the only interesting thing to see is that the intersection and union preserver measurability. However, this has been proven in Lemma~\ref{lem:measurable-intersection-union}. Together with Lemma~\ref{lem:tau} this proves the assertion.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex

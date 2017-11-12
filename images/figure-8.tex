@@ -1,0 +1,255 @@
+\begin{tikzpicture}
+  [
+  vertex/.style={
+    circle,
+    fill=black,
+    minimum size=1mm,
+    inner sep=0pt
+  },
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position 0.5 with {\arrow{#1}}
+    },
+    postaction={decorate}
+  }
+  ]
+
+  \node (0) at (0,0) [vertex] {};
+  \draw[->] (0,0) arc (0:180: 0.5);
+  \draw (0,0) arc (360:180: 0.5);
+  \draw[>={Stealth},->] (0,0) arc (0:180:-0.5);
+  \draw (0,0) arc (360:180:-0.5);
+
+  \begin{scope}[shift={(5,0)},scale=1.5]
+    \node (0) at ( 0, 0) [vertex] {};
+    \node (1) at ( 1, 0) [vertex] {};
+    \node (2) at ( 0, 1) [vertex] {};
+    \node (3) at (-1, 0) [vertex] {};
+    \node (4) at ( 0,-1) [vertex] {};
+    \draw[->-={>}] (0) -- (1);
+    \draw[>={Stealth},->-={>}] (0) -- (2);
+    \draw[->-={<}] (0) -- (3);
+    \draw[>={Stealth},->-={<}] (0) -- (4);
+    \begin{scope}[shift={(0,1)}, scale=0.5]
+      \node (0) at ( 0, 0) [vertex] {};
+      \node (1) at ( 1, 0) [vertex] {};
+      \node (2) at ( 0, 1) [vertex] {};
+      \node (3) at (-1, 0) [vertex] {};
+      \draw[->-={>[scale=0.5]}] (0) -- (1);
+      \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (2);
+      \draw[->-={<[scale=0.5]}] (0) -- (3);
+      \begin{scope}[shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[->-={>[scale=0.5]}] (0) -- (1);
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (2);
+        \draw[->-={<[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      \begin{scope}[rotate=090,shift={(0,1)},scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (1);
+        \draw[->-={<[scale=0.5]}] (0) -- (2);
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      % \begin{scope}[rotate=180,shift={(0,1)}, scale=0.5]
+      %   \node (0) at ( 0, 0) [vertex] {};
+      %   \node (1) at ( 1, 0) [vertex] {};
+      %   \node (2) at ( 0, 1) [vertex] {};
+      %   \node (3) at (-1, 0) [vertex] {};
+      %   \draw[->-={<[scale=0.5]}] (0) -- (1);
+      %   \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (2);
+      %   \draw[->-={>[scale=0.5]}] (0) -- (3);
+      % \end{scope}
+      \begin{scope}[rotate=270,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (1);
+        \draw[->-={>[scale=0.5]}] (0) -- (2);
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+    \end{scope}
+    \begin{scope}[rotate=090,shift={(0,1)},scale=0.5]
+      \node (0) at ( 0, 0) [vertex] {};
+      \node (1) at ( 1, 0) [vertex] {};
+      \node (2) at ( 0, 1) [vertex] {};
+      \node (3) at (-1, 0) [vertex] {};
+      \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (1);
+      \draw[->-={<[scale=0.5]}] (0) -- (2);
+      \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (3);
+      \begin{scope}[rotate=270,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[->-={>[scale=0.5]}] (0) -- (1);
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (2);
+        \draw[->-={<[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      \begin{scope}[rotate=000,shift={(0,1)},scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (1);
+        \draw[->-={<[scale=0.5]}] (0) -- (2);
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      \begin{scope}[rotate=090,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[->-={<[scale=0.5]}] (0) -- (1);
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (2);
+        \draw[->-={>[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      % \begin{scope}[rotate=270,shift={(0,1)}, scale=0.5]
+      %   \node (0) at ( 0, 0) [vertex] {};
+      %   \node (1) at ( 1, 0) [vertex] {};
+      %   \node (2) at ( 0, 1) [vertex] {};
+      %   \node (3) at (-1, 0) [vertex] {};
+      %   \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (1);
+      %   \draw[->-={>[scale=0.5]}] (0) -- (2);
+      %   \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (3);
+      % \end{scope}
+    \end{scope}
+    \begin{scope}[rotate=180,shift={(0,1)}, scale=0.5]
+      \node (0) at ( 0, 0) [vertex] {};
+      \node (1) at ( 1, 0) [vertex] {};
+      \node (2) at ( 0, 1) [vertex] {};
+      \node (3) at (-1, 0) [vertex] {};
+      \draw[->-={<[scale=0.5]}] (0) -- (1);
+      \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (2);
+      \draw[->-={>[scale=0.5]}] (0) -- (3);
+      % \begin{scope}[shift={(0,1)}, scale=0.5]
+      %   \node (0) at ( 0, 0) [vertex] {};
+      %   \node (1) at ( 1, 0) [vertex] {};
+      %   \node (2) at ( 0, 1) [vertex] {};
+      %   \node (3) at (-1, 0) [vertex] {};
+      %   \draw[->-={>[scale=0.5]}] (0) -- (1);
+      %   \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (2);
+      %   \draw[->-={<[scale=0.5]}] (0) -- (3);
+      % \end{scope}
+      \begin{scope}[rotate=270,shift={(0,1)},scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (1);
+        \draw[->-={<[scale=0.5]}] (0) -- (2);
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      \begin{scope}[rotate=000,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[->-={<[scale=0.5]}] (0) -- (1);
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (2);
+        \draw[->-={>[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      \begin{scope}[rotate=090,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (1);
+        \draw[->-={>[scale=0.5]}] (0) -- (2);
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+    \end{scope}
+    \begin{scope}[rotate=270,shift={(0,1)}, scale=0.5]
+      \node (0) at ( 0, 0) [vertex] {};
+      \node (1) at ( 1, 0) [vertex] {};
+      \node (2) at ( 0, 1) [vertex] {};
+      \node (3) at (-1, 0) [vertex] {};
+      \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (1);
+      \draw[->-={>[scale=0.5]}] (0) -- (2);
+      \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (3);
+      \begin{scope}[rotate=090,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[->-={>[scale=0.5]}] (0) -- (1);
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (2);
+        \draw[->-={<[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      % \begin{scope}[rotate=090,shift={(0,1)},scale=0.5]
+      %   \node (0) at ( 0, 0) [vertex] {};
+      %   \node (1) at ( 1, 0) [vertex] {};
+      %   \node (2) at ( 0, 1) [vertex] {};
+      %   \node (3) at (-1, 0) [vertex] {};
+      %   \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (1);
+      %   \draw[->-={<[scale=0.5]}] (0) -- (2);
+      %   \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (3);
+      % \end{scope}
+      \begin{scope}[rotate=270,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[->-={<[scale=0.5]}] (0) -- (1);
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (2);
+        \draw[->-={>[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+      \begin{scope}[rotate=000,shift={(0,1)}, scale=0.5]
+        \node (0) at ( 0, 0) [vertex] {};
+        \node (1) at ( 1, 0) [vertex] {};
+        \node (2) at ( 0, 1) [vertex] {};
+        \node (3) at (-1, 0) [vertex] {};
+        \draw[>={Stealth},->-={<[scale=0.5]}] (0) -- (1);
+        \draw[->-={>[scale=0.5]}] (0) -- (2);
+        \draw[>={Stealth},->-={>[scale=0.5]}] (0) -- (3);
+        \draw[dotted] (1) -- ( 1.7,0);
+        \draw[dotted] (2) -- ( 0,1.7);
+        \draw[dotted] (3) -- (-1.7,0);
+      \end{scope}
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:
