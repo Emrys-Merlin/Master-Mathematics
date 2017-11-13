@@ -4,9 +4,9 @@
 \subsection{Properties of probability measures on \(\bar X\)}
 \label{sec:prob}
 
-In this section I am concerned with some general properties of (probability) measures on the Roller compactification. These properties will be needed in the construction of the boundary map, especially for the construction of a map from the strong \(\Gamma\)-boundary \(B\) to \(P(\bar X)\) via the amenable action of \(\Gamma\) on \(B\). Thus we need to see that \(P(\bar X)\) is weak-\(\ast\) compact, convex and non-empty and contained in the unit ball of the dual of some topological vector space on which we have a group action by isometries of \(\Gamma\).
+In this section we are concerned with some general properties of (probability) measures on the Roller compactification. These properties will be needed in the construction of the boundary map, especially for the construction of a map from the strong \(\Gamma\)-boundary \(B\) to \(P(\bar X)\) via the amenable action of \(\Gamma\) on \(B\). Thus we need to see that \(P(\bar X)\) is weak-\(\ast\) compact, convex and non-empty and contained in the unit ball of the dual of some topological vector space on which we have a group action by isometries of \(\Gamma\).
 
-I will begin by collecting some important measure theoretic and functional analytic results
+We will begin by collecting some important measure theoretic and functional analytic results
 
 \begin{defin}
   \label{def:vanishing}
@@ -80,17 +80,11 @@ I will begin by collecting some important measure theoretic and functional analy
   If \(X\) is a compact metric space then the space of continuous functions \(C(X)\) is separable.
 \end{lemma}
 
-\begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}}]
-  \label{thm:mackey}
-  Let \((M, \sigma, \vartheta)\) be a standard probability space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a subs-sigma-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable, \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
-\end{thm}\todo{so far only in lecture notes on poisson boundary. Find better source.}
-
-
 \subsection{Weighted halfspaces}
 \label{sec:weight}
 
 \begin{defin}
-  Let \(\mathcal{P}(\bar X)\) denote the space of probability measures on \(\bar X\). If \(\mu \in \mathcal{P}(\bar X)\) define
+  Let \(\mu\) be a probability measure on \(\bar X\). We define
   \begin{align*}
     H_\mu^{\phantom{+}} \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) = \mu(\mathcal{C}(h^\ast))\},\\
     H_\mu^+ \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) > \text{\nfrac{} 1/2} \},\\
@@ -133,9 +127,10 @@ I will begin by collecting some important measure theoretic and functional analy
 
 \begin{proof}
   Let
-  \[
-    p \colon \bar X \to \bar X (H_\mu), \alpha \mapsto \alpha \cap H_\mu
-  \]
+  \begin{align*}
+    p \colon \bar X &\to \bar X (H_\mu),\\
+    \alpha &\mapsto \alpha \cap H_\mu
+  \end{align*}
   be the projection. \(p\) is continuous and we can push forward \(\mu\) along \(p\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
 \end{proof}
 
@@ -152,6 +147,34 @@ I will begin by collecting some important measure theoretic and functional analy
 \label{sec:meas-maps}
 
 In the main proof of our theorem ergodicity will play a central role. We will mostly use it in the form that measurable \(\Gamma\)-invariant maps have to be essentially constant. Hence, we need all our important maps to be measurable. These proofs are mainly technical and not very enlightening, which is why they were exported to this section.
+
+When not noted oterhwise, we will assume that \(X\) is a locally countable, finite-dimensional CAT(0) cube complex with \(\mathcal{H} \coloneqq \mathcal{H}(X)\) its pocset of halfspaces.
+
+\begin{lemma}
+  \label{lem:measurable-countable}
+  Let \(N\) be a countable set. Then
+  \begin{align*}
+    f\colon \operatorname{Pot}(N) &\to \N \cup \{\infty\},\\
+    A &\mapsto |A|
+  \end{align*}
+  is measurable, where \(\N \cup \{\infty\}\) is equipped with the discrete topology.
+\end{lemma}
+
+\begin{proof}
+  We have to show that a basis of the topology is mapped to measurable sets via the preimage. So let us consider first \(n \in \N\). Then we have
+  \begin{align*}
+    f^{-1}(\{n\})
+    & = \{ A \subset N \mid |A| = n\}\\
+    & = \bigcup_{\substack{A \subset N\\|A| = N}} \left ( \bigcap_{\substack{F \subset N\\|F|< \infty}}C(A,F)\right),
+  \end{align*}
+  where \(C(A,F)\) is a cylinder set as defined in Definition~\ref{def:pot-top}. Since the set of all finite subsets of \(N\) is countable, the above preimage is measurable as a countable union and intersection of measurable sets.
+
+  Lastly, we have to consider \(f^{-1}(\{\infty\})\). However, here we have
+  \[
+    f^{-1}(\{\infty\}) = N \setminus \left (\bigcup_{n=0}^\infty f^{-1}(\{n\})\right)
+  \]
+  which is measurable as the complement of a measurable set.
+\end{proof}
 
 \begin{lemma}
   \label{lem:tau}
@@ -188,36 +211,14 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
   The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(C(F_1, F_2))\) is measurable.
 \end{proof}
 
-\begin{lemma}
-  \label{lem:measurable-countable}
-  Let \(N\) be a countable set. Then
-  \[
-    f\colon \operatorname{Pot}(N) \to \N \cup \{\infty\},\ A \mapsto |A|
-  \]
-  is measurable, where \(\N \cup \{\infty\}\) is equipped with the discrete topology.
-\end{lemma}
-\begin{proof}
-  We have to show that a basis of the topology is mapped to measurable sets via the preimage. So let us consider first \(n \in \N\). Then we have
-  \begin{align*}
-    f^{-1}(\{n\})
-    & = \{ A \subset N \mid |A| = n\}\\
-    & = \bigcup_{\substack{A \subset N\\|A| = N}} \left ( \bigcap_{\substack{F \subset N\\|F|< \infty}}C(A,F)\right),
-  \end{align*}
-  where \(C(A,F)\) is a cylinder set as defined in Definition~\ref{def:pot-top}. Since the set of all finite subsets of \(N\) is countable, the above preimage is measurable as a countable union and intersection of measurable sets.
-
-  Lastly, we have to consider \(f^{-1}(\{\infty\})\). However, here we have
-  \[
-    f^{-1}(\{\infty\}) = N \setminus \left (\bigcup_{n=0}^\infty f^{-1}(\{n\})\right)
-  \]
-  which is measurable as the complement of a measurable set.
-\end{proof}
 
 \begin{lemma}[{\cites[Lem.\ A.1]{MR3509968}}]
   \label{lem:measurable-mu}
   Let \(I \subset [0,1]\) be a subinterval that is either open, closed or half open. Let \(H^I_\mu \coloneqq \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) \in I\}\). Then the map
-  \[
-    \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}(X)), \mu \mapsto H^I_\mu
-  \]
+  \begin{align*}
+    \mathcal{P}(\bar X) &\to \operatorname{Pot}(\mathcal{H}(X)),\\
+    \mu &\mapsto H^I_\mu
+  \end{align*}
   is measurable with respect to the weak\(\ast\)-topology on \(\mathcal{P}(X)\).
 \end{lemma}
 
@@ -227,9 +228,10 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
     K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in C(F_1, F_2)\}.
   \]
   For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h})) \in I\}\). We would like to convince ourselves that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence, \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
-  \[
-    T_f\colon \mathcal{P}(\bar X) \to \R,\ \mu \mapsto \int_X f \d\mu
-  \]
+  \begin{align*}
+    T_f\colon \mathcal{P}(\bar X) &\to \R,\\
+    \mu &\mapsto \int_X f \d\mu
+  \end{align*}
   is continuous (for each \(f \in C(\bar X)\)). Hence, \(T \coloneqq T_{\chi_{\mathfrak{\tilde h}}}\) is continuous and thus also measurable. Furthermore, we have that \(T^{-1}(I) = E_I(\mathfrak{h})\). \(I\) is measurable, so the same is true for \(E_I(\mathfrak{h})\).
 
   Together with the following observation this finishes the proof:
@@ -241,10 +243,11 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
 
 \begin{lemma}
   The map
-  \[
-    f\colon \bar X \times \bar X \to \operatorname{Pot}(\mathcal{H}),\ (\alpha, \beta)\mapsto \mathcal{H}(\alpha, \beta)
-  \]
-  is measurable.
+  \begin{align*}
+    f\colon \bar X \times \bar X &\to \operatorname{Pot}(\mathcal{H}),\\
+    (\alpha, \beta) &\mapsto \mathcal{H}(\alpha, \beta),
+  \end{align*}
+  where \(\mathcal{H}(\alpha, \beta)\) is the set of halfspaces separating \(\alpha\) from \(\beta\) (c.\,f.\ Definition~\ref{defin:separating}),  is measurable.
 \end{lemma}
 
 \begin{proof}
@@ -298,7 +301,7 @@ In the main proof of our theorem ergodicity will play a central role. We will mo
   \end{align*}
   and
   \begin{align*}
-     \colon \operatorname{Pot}(A)^2 & \to \operatorname{Pot}(A)\\
+    g \colon \operatorname{Pot}(A)^2 & \to \operatorname{Pot}(A)\\
     (H, K) & \mapsto H \cup K
   \end{align*}
   are measurable with regard to Borel-\(\sigma\)-algebra of the cylinder topology.

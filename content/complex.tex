@@ -1,5 +1,8 @@
 \subsection{Cube complexes}
 \label{sec:complex}
+
+We are now able to define the central object of our thesis: CAT(0) cube complexes. First, we will introduce Euclidean cube and some necessary notation (faces and links). Afterwards, we are ready to define the gluing process that will lead to cube complexes. We will state some basic properties and define flag complexes. This allows us to connect the geometric property of being CAT(0) to a purely combinatorial notion which is stated in Gromov's link condition. Lastly, we will turn towards locally countable complexes and prove some necessary lemmas concerning the countability of vertex sets.
+
 \begin{defin}[Cubes]
   A subset \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Let \(H \subset \E^n\)  be a hyperplane of dimension \(m \leq n\), containing \(C\) in one of its half-spaces. If \(F \coloneqq H \cap C \neq \varnothing\), then \(F\) is called a \emph{face} of \(C\), it is called \emph{proper}, if \(F \neq C\). The notation \(F \preceq C\) will be applied for faces. The \emph{dimension} of \(F\) is the dimension of the smallest \(m\)-plane containing \(F\). The \emph{interior} of \(F\), \(\mathring F\), is the interior of \(F\) considered as a subspace of the \(m\)-plane equipped with its \(\E^m\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
   \begin{align*}
@@ -166,7 +169,7 @@ In the following is a short list of deeper results about cube complexes, which w
       \caption{Realization of a sphere as a cube complex and its vertex link. This shows that the sphere is not non-positivelye curved, since we have three pairwise connected vertices, but no 2-simplex.}
       \label{fig:sphere}
     \end{figure}
-  \item[Torus:] Figure~\ref{fig:torus} contains a realization of a two-dimensional torus as a cube complex. The vertex links show that the torus is indeed non-positively curved, which is again what we would expect, since a torus is an example of a flat space. However, it is not a CAT(0) cube complex, as it is not simply connected. A generalization of the Hadamard-Cartan theorem shows, that the universal cover of a non-positively curved cube complex is always CAT(0). Indeed, as we will see later, the universal cover can always be given the structure of a cube complex, such that the only interesting thing to convince oneself of is that the vertex links stay flag. In the case of a torus the universal cover can be chosen to be \(\R^2\) with its standard cubulation via \(\Z^2\) and we are not surprised that this is a CAT(0) cube complex.
+  \item[Torus:] Figure~\ref{fig:torus} contains a realization of a two-dimensional torus as a cube complex. The vertex links show that the torus is indeed non-positively curved, which is again what we would expect, since a torus is an example of a flat space. However, it is not a CAT(0) cube complex, as it is not simply connected. A generalization of the Cartan-Hadamard theorem shows that the universal cover of a non-positively curved cube complex is always CAT(0). In the case of a torus the universal cover can be chosen to be \(\R^2\) with its standard cubulation via \(\Z^2\) and we are not surprised that this is a CAT(0) cube complex.
     \begin{figure}[htbp]
       \centering
       \input{./images/torus.tex}
@@ -175,7 +178,7 @@ In the following is a short list of deeper results about cube complexes, which w
     \end{figure}
 
     The above considerations generalize to tori in arbitrary dimensions. Indeed the interesting vertex links consist always of \(2^n\) simplices of dimension \(n-1\), where \(n\geq2\) is the dimension of the torus, where the simplices are glued together along their \((n-2)\)-faces. However, this simplicial complex is always flag. By the construction we have no complete graph of the one skeleton with \(n+1\) vertices, so there is no \(n\)-simplex missing. Additionally, all complete graphs with \(\leq n\) vertices are contained in one of the first four simplices, hence they span a simplex.
-  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes, which are indeed imbedded in the quotient. The interesting vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be genaralized to all higher genus surfaces, which is again expected, as all these higher genus surfaces are negatively curved.
+  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes, which are indeed embedded in the quotient. The interesting vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be generalized to all higher genus surfaces, which is again expected, as all these higher genus surfaces are negatively curved.
     \begin{figure}[htbp]
       \centering
       \input{./images/genus-2.tex}
@@ -252,6 +255,8 @@ In the following is a short list of deeper results about cube complexes, which w
 
 \subsection{Combinatorial maps}
 \label{sec:comb-map}
+
+This is a very short section concerned with maps between cube complexes. It is essential to understand these maps in order to comprehend group actions on CAT(0) cube complexes and the decompoition of the complexes in factors.
 
 \begin{defin}[Morphisms of cube complexes]
   \label{def:morphism-ccc}

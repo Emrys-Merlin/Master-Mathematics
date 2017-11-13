@@ -1,11 +1,12 @@
 \section{CAT(0) cube complexes}
 \label{sec:complexes}
+This chapter is divided into four sections, which are all concerned with the introduction of our basic object of study: CAT(0) cube complexes. The first section will introduce general metric preliminaries and properties of CAT(0) spaces. Afterwards, we will be in a position to introduce cubes and cube complexes and give a combinatorial condition for them to be CAT(0). The next section is closely related with the former, as we will need to talk about maps between CAT(0) cube complexes. As it turns out, combinatorial maps are the right generalization of simplicial maps to be useful for us. In this section, we will also introduce the automorphism group of CAT(0) cube complex. Lastly, we will talk a bit more about the geometry of the complexes and introduce hyperplanes and halfspaces. These objects will be heavily used throughout this thesis and will be especially important in the next chapter, when they are used to construct the Roller compactification of our complexes.
 
 \subsection{Preliminaries on metric and CAT(0) spaces}
 \label{sec:metric}
-This section is concerned with basic metric properties of spaces and their connection to CAT(\(0\)) spaces. The exposition follows closely~\cite{MR1744486}.
+This section is concerned with basic metric properties of spaces and their connection to CAT(\(0\)) spaces. First, we will define all the necessary objects to define CAT(0) spaces. Afterwards, we will state some basic results about their geometry and topology. The section will end with the definition of the visual boundary of CAT(0) space. The exposition follows closely~\cite{MR1744486} and~\cite{Rolli2012}.
 
-\begin{defin}~
+\begin{defin}[Geodesics]%~
   \begin{itemize}
   % \item Let \(X\neq \varnothing\) be a set. \(d\colon X \times X \to \R_{\geq 0} (\cup \{\infty\})\) is called a \emph{metric}, if for all \(x,y,z \in X\)
   %   \begin{enumerate}
@@ -38,7 +39,7 @@ This section is concerned with basic metric properties of spaces and their conne
 % \end{rem}
 
 \begin{bsp}
-  The pair \((\E^n, d_0)\), where \(\E^n = \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is a length space which is uniquely geodesic. The space \(\E^n \setminus {0}\) is still a length space, but no longer geodesic, since every pair of antipodal points can no longer be joined by a line segment.. If a whole cube \(C= [0,1]^n\) (or any other subset with non-empty interior) is removed, \(\E^n \setminus C\) is no longer a length space with regard to the induced metric. 
+  The pair \((\E^n, d_0)\), where \(\E^n = \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is a length space which is uniquely geodesic. The space \(\E^n \setminus {0}\) is still a length space, but no longer geodesic, since every pair of antipodal points can no longer be joined by a line segment.. If a whole cube \(C= [0,1]^n\) (or any other subset with non-empty interior) is removed, \(\E^n \setminus C\) is no longer a length space with regard to the restriction of the  metric. 
   % \item \((\sphere^n, d_\kappa)\), \(\kappa > 0\), is the unit sphere in \(\E^{n+1}\) together with the metric \(d_{\kappa}(x,y) = \frac{1}{\sqrt{\kappa}} \cdot \angle (x,y)\). This space is uniquely \(\frac{\pi}{\sqrt{\kappa}}\)-geodesic.
   % \item \((\hyperbole^n, d_\kappa)\), \(\kappa < 0\), is the hyperbolic \(n\)-space
   %   \begin{align*}
@@ -93,7 +94,7 @@ This section is concerned with basic metric properties of spaces and their conne
       \label{fig:cat-tree}
     \end{figure}
     Trees form another example of CAT(0) spaces when equipped with the edge metric. Every triangle in a tree takes the form of one midpoint \(m\) with three edge paths connecting \(m\) to the three vertices \(p,q\) and \(r\). Otherwise, we would have a proper cycle in the graph, which therefore could not be a tree. However, this implies that any point on the triangle, always lies on two of its sides at the same time and this leads to two corresponding points in the comparison triangle. This situation is depicted in Figure~\ref{fig:cat-tree}. This leads to the consequence, that any two points \(x,y \in \Delta(p,q,r)\) have a representative lying on a common side in the comparison triangle (in our example below this corresponds to \(\bar x_2\) and \(\bar y_2\)) with the blue line segment joining the two. These two representatives satisfy the CAT(0) inequality trivially. If we compare \(\bar x_1\) to \(\bar y_2\), we note that \(\bar \Delta(\bar x_1, \bar x_2, \bar q)\) is an isosceles triangle, meaning that \(\angle(\bar x_2, \bar x_1, \bar y_2) \geq \frac{\pi}{2}\). This shows that \(\|\bar x_1 - \bar y_2\|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). By symmetry the same is true in the case of \(\bar x_2\) and \(\bar y_1\). The last case is to consider \(\bar x_1\) and \(\bar y_1\). However, then we have the rectangle \(\bar x1, \bar x_2, \bar y_2, \bar y_1\). Using the two isosceles triangles \(\Delta(\bar q, \bar x_1, \bar x_2)\) and \(\Delta(\bar p, \bar y_1, \bar y_2)\), we see that the ractangle has angles of more than \(\frac{pi}{2}\) at the vertices \(\bar x_2\) and \(\bar y_2\). Hence, \(\|\bar x_1 - \bar y_1 \|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). All in all we see that the triangle satisfies the CAT(0) inequality. Since every tree is geodesic, we see that trees indeed are CAT(0) spaces.
-  \item[Hyperbolic space:] For completeness sake, we would like to mention that every hyperbolic \(n\)-space \(\H^n\) is CAT(0). The interested reader may find further information in \textcite[Section~II.1]{MR1744486}.
+  \item[Hyperbolic space:] For completeness sake, we would like to mention that every hyperbolic \(n\)-space \(\mathbb{H}^n\) is CAT(0). The interested reader may find further information in \textcite[Section~II.1]{MR1744486}.
   % \item \(\bigvee_{n \in \N} (\sphere_n, x_n)\), where \(\sphere_n = \frac{1}{\sqrt{n}} \sphere^1
     % \cong M_n^1\) and \(x_n \in \sphere_n\). Not CAT(\(\kappa\)) for any \(\kappa\), not even locally.
   \end{description}
@@ -118,6 +119,8 @@ This section is concerned with basic metric properties of spaces and their conne
 %     \end{align}
 %   \end{itemize}
 % \end{defin}
+
+\subsubsection*{Properties of general CAT(0) spaces}
 
 This section will contain some important facts about general CAT(0) spaces. Where no proof is given, it can be found in \cite{MR1744486}.
 

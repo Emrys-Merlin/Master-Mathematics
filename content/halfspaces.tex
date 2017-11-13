@@ -1,7 +1,6 @@
 \subsection{Halfspaces}
 \label{sec:halfspaces}
-
-This section follows closely the lecture notes by \textcite{Rolli2012}.
+We will introduce hyperplanes and halfspaces and talk about their geometric properties. We will see that they are convex and have rather strong intersection properties. Later, we will introduce strongly separated halfspaces, whose special role will becom aparent in Section~\ref{sec:group}. Lastly, we will be concerned with some combinatorial properties of halfspaces. The first part of this section follows particularly closely the lecture notes by \textcite{Rolli2012}.
 
 \begin{defin}[Hyperplanes]
   Let \(X\) be a cube complex
@@ -47,11 +46,6 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   Figure~\ref{fig:hyperplanes} also indicates the two halfspaces (red and green color).
 \end{bsp}
 
-\begin{defin}[Strongly separated halfspaces]
-  \label{defin:strong-sep}
-  Two parallel hyperplanes are called \emph{strongly separated} if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated} if the same is true for their associated hyperplanes.
-\end{defin}
-
 \begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]
   \label{thm:common-intersection}
   \begin{enumerate}
@@ -67,9 +61,17 @@ This section follows closely the lecture notes by \textcite{Rolli2012}.
   \end{enumerate}
 \end{thm}
 
-\todo{Überleitung}
+This closes our discussion of geometric properties. The following definition will play a central role in Section~\ref{sec:group} (see for example Proposition~\ref{prop:cs-5.1}).
+
+\begin{defin}[Strongly separated halfspaces]
+  \label{defin:strong-sep}
+  Two parallel hyperplanes are called \emph{strongly separated} if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated} if the same is true for their associated hyperplanes.
+\end{defin}
+
+We close this section with two technical results. The first is concerned with the countability of \(\mathcal{H}\) which is an important technical detail for the metrizability of the Roller compactification (see Corollary~\ref{cor:comp-met}). The second result shows is the last missing step to see that every CAT(0) cube complex gives rise to a discrete pocset as defined in the next section.
 
 \begin{cor}
+  \label{cor:halfspace-countable}
   If \(X\) is a locally countable CAT(0) cube complex. Then its set of hyperplanes \(\mathcal{\hat H}\) and its set of halfspaces \(\mathcal{H}\) are countable.
 \end{cor}
 

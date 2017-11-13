@@ -1,11 +1,11 @@
-\section{Pocsets and the Roller boundary}
+\section{Pocsets and the Roller compactification}
 \label{sec:roller}
 
 \subsection{Pocsets and Ultrafilters}
 \label{sec:pocset}
 
 \begin{defin}[Pocset, {\cite{Roller1999}}]
-  \begin{enumerate}
+  \begin{itemize}
   \item A \emph{pocset} is a triple \((P, \prec, \ast)\) consisting of a set \(P\) a partial ordering \(\prec\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, we will often drop the triple and will only write \(P\) when talking about the pocset. \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) such that \(A \prec B\) implies that \(f(A) \prec f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. 
   \item A pocset \(P\) is called \emph{discrete}, if for any two \(A, B \in P\) the \emph{interval}
     \[
@@ -14,7 +14,7 @@
     is finite.
   \item Two elements \(A,B\) of a pocset \(P\) are called \emph{nested}, if they satisfy \(A \prec B\), \(A^\ast \prec B\), \(A \prec B^\ast\) or \(A^\ast \prec B^\ast\). Otherwise they are called \emph{transverse}.
   \item A pocset \(P\) is called \emph{finite width}, if there exists a constant \(N \in \N\) such that the cardinality of any subset of transverse elements of \(P\) is bounded from above by \(N\).
-  \end{enumerate}
+  \end{itemize}
 \end{defin}
 
 \begin{rem}
@@ -52,8 +52,15 @@ The above proposition leads to the following definition:
 \end{prop}
 
 \begin{defin}[Ultrafilter]
-  \todo{make definition clearer}
-  Let \((A, \prec, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. Let \(P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a\) and \(\alpha \in P(A)\). We will use the notation \(a \in \alpha\) for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation in mind, an \emph{ultrafilter} \(\alpha \in P(A)\) satisfies the following condition: If \(a\) is in \(\alpha\) and \(a \subset b\) holds for some \(b \in A\), then \(b\) is already in \(\alpha\) (This condition is called \emph{consistency condition}). We denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. \(P(A)\) can be topologized using the product topology, if one understands the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem, see e.\,g.~\cite[Chapter~10]{MR1275831}) \(P(A)\) becomes a compact topological space. A basis of topology is given by the sets of the form
+  Let \((A, \prec, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via: \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. We define
+  \[
+    P(A) \coloneqq \prod_{\tilde a \in \tilde A} \tilde a,
+  \]
+  i.\,e.\ \(P(A)\) is the product over all the two element sets containing an element of \(A\) and its opposite under involution. Let \(\alpha \in P(A)\). We will use the notation \enquote{\(a \in \alpha\)} for some \(a \in A\) to mean that the natural projection \(P(A) \to \tilde a\) maps \(\alpha\) to \(a\) (instead of to \(a^\ast\)). With this notation introduced, we define:
+  
+  An element \(\alpha \in P(A)\) is called an \emph{ultrafilter}, if it satisfies the so called \emph{consistency condition}, namely: If \(a \in \alpha\) and \(b \in A\) such that \(a \subset b\) then \(b \in \alpha\).
+
+  We denote by \(\mathcal{U}(A) \subset P(A)\) the subset of all ultrafilters. The set \(P(A)\) can be topologized using the product topology, if the two element sets \(\tilde a\) to be topologized by the discrete topology. With this (using Tychonoff's theorem, see e.\,g.~\cite[Chapter~10]{MR1275831}) the set \(P(A)\) becomes a compact topological space. A basis of the topology is given by the sets of the form
 \[
   \mathcal{U}(a_1,\dots, a_n) \coloneqq \{\alpha \in P(A) \mid a_1, \dots, a_n \in \alpha\},
 \]
@@ -88,7 +95,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 %   Now, consider that \(\mathfrak{h} \in \alpha\) is minimal. Let \(\mathfrak{h}' \in \beta\) and \(\mathfrak{\tilde h}\) be any halfspace with \(\mathfrak{h}' \subset \mathfrak{\tilde h}\). If \(\mathfrak{h}' \neq \mathfrak{h}\) then \(\mathfrak{h}' \in \alpha \) and hence \(\mathfrak{\tilde h} \in \alpha\). Additionally, \(\mathfrak{\tilde h} \neq \mathfrak{h}\) and it follows that \(\mathfrak{\tilde h} \in \beta\). If \(\mathfrak{h}' = \mathfrak{h}\) then it follows that \(\mathfrak{\tilde h}^\ast \subset \mathfrak{h}\) and thus we have equality. Showing again that \(\mathfrak{\tilde h} = \mathfrak{h}^\ast \in \beta\).
 % \end{proof}
 
-\subsection{The Roller boundary}
+\subsection{The Roller compactification}
 \label{sec:rb}
 
 % For now, we denote by \(\mathcal{U}(X)\) the set of all ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a distance in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).\todo{what do I want with this?}
@@ -116,11 +123,13 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 
 \begin{cor}
   \label{cor:comp-met}
-  If \(A\) is countable then \(\mathcal{U}(A)\) is a compact metrizable space.
+  If \(A\) is countable then \(\mathcal{U}(A)\) is a compact metrizable space. In particular, if \(X\) is a locally countable CAT(0) cube complex and \(\mathcal{H}\) is its pocset of halfspaces then \(\mathcal{U}(\mathcal{H})\) is a compact metrizable space.
 \end{cor}
 
 \begin{proof}
   By~\textcite[Thm.\ 4.2.2]{Engelking} it holds that every countable product of metrizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
+
+  If \(X\) is locally countable, then the pocset \(\mathcal{H}\) is countable by Corollary~\ref{cor:halfspace-countable}.
 \end{proof}
 
 \begin{defin}
@@ -154,7 +163,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{proof}
 
 \begin{rem}
-  It is often assumed that a space is an open subset of its compactification. In our case this can fail, as can be seen from the following example: We consider a countable family consisting of copies of the non-negative reals \(\R_{\geq0}\) and their standard cubulation. We glue these lines together at their respective origins (and call this vertex \(\ast\)). This construction leads to a tree and hence to a CAT(0) cube complex. We claim that any open neighborhood of the ultrafilter \(\alpha_\ast\) contains an ultrafilter which does not satisfy the descending chain condition. The construction is depicted in Figure~\ref{fig:roller-counterexample}
+  It is often assumed that a space is an open subset of its compactification. In our case this can fail, as can be seen from the following example: We consider an infinite family of copies of the non-negative reals \(\R_{\geq0}\) with their standard cubulation. We glue these lines together at their respective origins (and call this vertex \(\ast\)). This construction leads to a tree and hence to a CAT(0) cube complex. We claim that any open neighborhood of the ultrafilter \(\alpha_\ast\) contains an ultrafilter which does not satisfy the descending chain condition. The construction is depicted in Figure~\ref{fig:roller-counterexample}
   \begin{figure}[htbp]
     \centering
     \input{./images/roller-counterexample.tex}
@@ -162,10 +171,10 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
     \label{fig:roller-counterexample}
   \end{figure}
 
-  Let \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) be any basic open set containing \(\alpha_\ast\). Then \(\mathfrak{h}_i \in \alpha_\ast\). We recall from Example~\ref{bsp:ccc} that in the case of trees, halfspaces correspond to the choice of a direction at an edge and in the case of \(\alpha_\ast\) all arrows have to point towards \(\ast\). Since we have infinitely many lines starting from \(\ast\), but only finitely many arrows prescribed by the \(\mathcal{h}_i\), we can construct the follwing ultrafilter: We take \(\alpha_\ast\) and choose a branch which does not contain one of the edges with prescribed direction (the green branch in the figure). On this branch we reverse all arrows. This leads to a new ultrafilter \(\alpha\) (each vertex has at most one outgoing edge), which does not satisfy the descending chain condition, but nonetheless lies in \(\mathcal{U}\).
+  Let \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) be any basic open set containing \(\alpha_\ast\). Then \(\mathfrak{h}_i \in \alpha_\ast\). We recall from Example~\ref{bsp:ccc} that in the case of trees, halfspaces correspond to the choice of a direction at an edge and in the case of \(\alpha_\ast\) all arrows have to point towards \(\ast\). Since we have infinitely many branches with \(\ast\) as their root, but only finitely many arrows prescribed by the \(\mathfrak{h}_i\), we can construct the follwing ultrafilter: We take \(\alpha_\ast\) and choose a branch which does not contain one of the edges with prescribed direction (the green branch in the figure). On this branch we reverse all arrows. This leads to a new ultrafilter \(\alpha\) (each vertex has at most one outgoing edge), which does not satisfy the descending chain condition, but nonetheless lies in \(\mathcal{U}\).
 \end{rem}
 
-Now that we have defined the Roller boundary, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. The former form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
+Now that we have defined the Roller compactificatoin, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. This form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
 
 \begin{defin}
   \label{def:pot-top}
@@ -268,6 +277,20 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
 \end{thm}
 
 \begin{defin}
+  \label{defin:separating}
+  Let \(\alpha\) and \(\beta\) be two ultrafilters. Then
+  \[
+    \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta\}
+  \]
+  is the set of separating halfspaces of \(\alpha\) and \(\beta\).
+\end{defin}
+
+\begin{rem}
+  \label{rem:interval}
+  Indeed we have that \(\mathcal{H}(x,y) = \mathcal{H}([x,y])\), i.\,e.\ the halfspaces separating \(x\) and \(y\) are exactly the halfspaces of the interval \([x,y]\). Together with the embedding into an \(\R^d\) by Theorem~\ref{thm:interval}, we yield that the number of terminal elements in \(\mathcal{H}(x,y)\) must always be finite.
+\end{rem}
+
+\begin{defin}
   \label{defin:tau}
   Let \(\mathcal{H}\) be the pocset of halfspaces of a CAT(0) cube complex and \(\mathcal{H}' \subset \mathcal{H}\) a subset. An element \(\mathfrak{h} \in \mathcal{H}'\) is called
   \begin{itemize}
@@ -285,19 +308,6 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
   \item[Euclidean space:] In \(\R^d\) with its standard cubulation, we know that all halfspaces are parallel to coordinate axes and along each axis we can have at most one minimal and one maximal elment. This implies that any subset of halfspaces of \(\R^d\) can have at most \(2d\) terminal elements. With the help of Theorem~\ref{thm:interval} this reasoning can be extended to intervals, since they are embeddable into some \(\R^d\).
   \end{description}
 \end{bsp}
-
-\begin{defin}
-  Let \(\alpha\) and \(\beta\) be two ultrafilters. Then
-  \[
-    \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta\}
-  \]
-  is the set of separating halfspaces of \(\alpha\) and \(\beta\).
-\end{defin}
-
-\begin{rem}
-  \label{rem:interval}
-  Indeed we have that \(\mathcal{H}(x,y) = \mathcal{H}([x,y])\), i.\,e.\ the halfspaces separating \(x\) and \(y\) are exactly the halfspaces of the interval \([x,y]\). Together with the embedding into an \(\R^d\) by Theorem~\ref{thm:interval}, we yield that the number of terminal elements in \(\mathcal{H}(x,y)\) must always be finite.
-\end{rem}
 
 \begin{lemma}[{\cite[Lemma~4.12]{MR3509968}}]
   \label{lem:4.12}

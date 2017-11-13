@@ -6,7 +6,7 @@
 
 In this section we would like to remark on how one can extend a group action on a CAT(0) cube complex \(X\) to its Roller compactification \(\bar X\). For that matter, let in the following \(\Gamma\) be a discrete countable group with an action \(\Gamma \to \Aut(X)\), where \(X\) is a finite dimensional CAT(0) cube complex. The group \(\Aut(X)\) consists of the combinatorial isomorphisms (c.\,.f.\ Def.~\ref{def:morphism-ccc}).
 
-The following proposition collects some facts about how cubical isomorphisms act on \(X\). The notation can be found in Section~\ref{sec:complexes} and~\ref{sec:roller}.
+The following proposition collects some facts about how combinatorial isomorphisms act on \(X\). The notation can be found in Section~\ref{sec:complexes} and~\ref{sec:roller}.
 
 \begin{prop}
   Let \(g \in \Aut(X)\). Then there holds
@@ -155,7 +155,7 @@ The above definition leads to the following consequence:
   \begin{enumerate}
   \item \(\mathfrak{\hat h} \in \Ess(X,\Gamma)\),
   \item  \(X(\Gamma \cdot \mathfrak{\hat h})\) is unbounded and
-  \item \(\Gamma\) \emph{skewers} \(\mathfrak{\hat h}\), i.\,e.\ there exists \(g \in \Gamma\) and an \(n \in \N\) such that for one \(\mathfrak{h}\) of the two halfspaces of \(\mathfrak{\hat h}\) we have \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\).
+  \item \(\Gamma\) \emph{skewers} \(\mathfrak{\hat h}\), i.\,e.\ there exists \(g \in \Gamma\) and \(n \in \N\) such that for one \(\mathfrak{h}\) of the two halfspaces of \(\mathfrak{\hat h}\) we have \(g^n \mathfrak{h} \subsetneq \mathfrak{h}\).
   \end{enumerate}
 \end{lemma}
 
@@ -163,6 +163,11 @@ The above definition leads to the following consequence:
   \label{lem:cs-dsl}
   Let \(X\) be a finite-dimensional CAT(0) cube complex and \(\Gamma \leq \Aut(X)\) be a group acting essentially and without fixed point at infinity. Then for any two halfspaces \(\mathfrak{k} \subset \mathfrak{h}\), there exists \(g \in \Gamma\) such that \(g \mathfrak{h} \subsetneq \mathfrak{k} \subset \mathfrak{h}\).
 \end{lemma}
+
+\begin{thm}[{\cite[Theorem~4.1]{Caprace2010}}]
+  \label{thm:cs-flipping}
+  Assume that \(X\) is a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) be any subgroup. Let \(\mathfrak{h} \in \mathcal{H}(X)\) such that \(\mathfrak{h}^\ast \not\subset g\mathfrak{h}\) for each \(g \in \Gamma\). Then \(\Gamma\) has a fixed point in the visual boundary or \(\mathfrak{h}\) is not essential with regard to \(\Gamma\).
+\end{thm}
 
 \begin{prop}[{\cite[Proposition~5.1]{Caprace2010}}]
   \label{prop:cs-5.1}
@@ -198,7 +203,6 @@ The above definition leads to the following consequence:
 \end{proof}
 
 \begin{bsp}
-  \todo{add geodesic flow}
   Consider the Bernoulli space \(B \coloneqq \{0,1\}^{\Z}\) with the product \(\sigma\)-algebra stemming from the discrete topology on each of the sets \(\{0,1\}\). We equip this space with the measure \(\mu\), comming from the uniform distribution on each factor. Lastly, we let \(\Z\) act on this space via a shift operation. Then \textcite[Example 20.26]{Klenke} shows that this system is ergodic.
 \end{bsp}
 
@@ -245,16 +249,16 @@ The above definition leads to the following consequence:
   \[
     \mu\left(\bigcap_{i=1}^k A_i \right) = \mu(A_k) \geq \frac1n
   \]
-  we have \(\mu(A) \geq n^{-1}\) and \(A\) lies in \(\Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). Observe that for each \(g \in \Gamma\), \(gA\) is also a minimal element, indeed if \(B \subset gA\), then \(g^{-1} B \subset A\), hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
+  we have \(\mu(A) \geq n^{-1}\) and \(A\) lies in \(\Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). Observe that for each \(g \in \Gamma\), the set \(gA\) is also a minimal element. Indeed if \(B \subset gA\), then \(g^{-1} B \subset A\), hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
 
-  Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we yield that \(\mu(A) = 1\). We claim that in this case \(M\) is already atomic. Take any \(B \in \Sigma\).
+  Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we have \(\mu(A) = 1\). We claim that in this case \(M\) is already atomic. Take any \(B \in \Sigma\).
   Then
   \[
     \mu(B) = \mu(B \cap A) + \mu(B \cap A^c) = \mu(B \cap A),
   \]
   since \(A^c\) is a null-set. We see that \(B \cap A \subset A\) and thus either \(\mu(B \cap A) = 0\) or \(B  \cap A \in \Lambda\) and hence \(B \cap A = A\) and \(\mu(B) = 1 = \mu(M)\).
 
-  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\) we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there must exist at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) were \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define
+  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\) we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there must exist at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) would be \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define
   \begin{align*}
     B_1 & \coloneqq A \setminus g_1A\\
     B_i & \coloneqq B_{i-1} \setminus g_i A \quad \forall i = 2, \dots, l.
@@ -280,8 +284,21 @@ The above definition leads to the following consequence:
   Then \(M = \sqcup_i B_i\) and analogously to before we can show that each of these sets is atomic.
 \end{proof}
 
+\begin{defin}
+  A measurable space \((B, \Sigma)\) is called a \emph{standard Borel space}, if it is isomorphic (as a measurable space) to a measurable set \(E \subset X\), where \(X\) is a complete separable metric space equipped with its Borel \(\sigma\)-algebra.
+
+  A measure space \((B, \Sigma, \mu)\) is called a \emph{Lebesgue space} if it is a standard Borel space and \(\mu\) is a regular probability measure.
+
+  Let \((B, \Sigma)\) be a measurable space. We can define an equivalence relation on all measures on \(\Sigma\) via \(\mu \sim \nu\) if and only if the null-sets of \(\mu\) and \(\nu\) coincide. An equivalence class \([\mu]\) is called a \emph{measure class}. If a group \(\Gamma\) acts by measurable transformations on \(B\), then \(\Gamma\) \emph{preserves measure classes} if for every measure \(\mu\) of \(\Sigma\) we have that \(\mu(B) = 0\) implies that \(\mu(g^{-1} B) = 0\) for every \(B \in \Sigma\) and \(g \in \Gamma\).
+\end{defin}
+
+\begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}, \cite[Corollary~B.6]{Zimmer84}}]
+  \label{thm:mackey}
+  Let \((M, \sigma, \vartheta)\) be a standard Borel space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a subs-sigma-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
+\end{thm}
+
 \begin{lemma}[{\cite[Lem 4.3]{MR3509968}}]
-  Let \(\Gamma\) be a group acting on a measure space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \vartheta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
+  Let \(\Gamma\) be a group acting on a Lebesgue space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \vartheta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
 \end{lemma}
 
 \begin{proof}
@@ -291,7 +308,7 @@ The above definition leads to the following consequence:
   \[
     \Lambda \coloneqq \{A \subset M \text{ measurable} \mid gA = g \quad \forall g \in \Gamma_0\}.
   \]
-  This is a \(\sigma\)-subalgebra and since \(\Gamma_0\) is normal it inherits a \(\Gamma\)-action. Applying Mackey's point realization (Theorem~\ref{thm:mackey}), we find a standard Borel space \((M_0, \Sigma_0, \vartheta_0)\) and a measurable, \(\Gamma\)-equivariant map \(p\colon M \to M_0\), which induces a bijection on the two \(\sigma\)-algebras \(\Lambda\) and \(\Sigma_0\) and \(\vartheta_0 = p_\ast \vartheta\). Via this pushforward \(\Gamma\) would also act (doubly) ergodic(ally) on \(M_0\) and on the \(\sigma\)-algebra \(\Sigma_0\) we in fact find a well defined group action \(\bar \Gamma \coloneqq \quot{\Gamma}{\Gamma_0}\), which is still ergodic, because all elements of the algebra are \(\Gamma_0\) invariant.
+  This is a \(\sigma\)-subalgebra and since \(\Gamma_0\) is normal it inherits a \(\Gamma\)-action. Applying Mackey's point realization (Theorem~\ref{thm:mackey}), we find a standard Borel space \((M_0, \Sigma_0, \vartheta_0)\) and a measurable \(\Gamma\)-equivariant map \(p\colon M \to M_0\), which induces a bijection on the two \(\sigma\)-algebras \(\Lambda\) and \(\Sigma_0\) and \(\vartheta_0 = p_\ast \vartheta\). Via this pushforward, \(\Gamma\) would also act (doubly) ergodic(ally) on \(M_0\) and on the \(\sigma\)-algebra \(\Sigma_0\). We in fact find a well defined group action \(\bar \Gamma \coloneqq \quot{\Gamma}{\Gamma_0}\), which is still ergodic, because all elements of the algebra are \(\Gamma_0\) invariant.
 
   However, applying Lemma~\ref{lem:ergodic-atomic} this would imply that \(M_0\) were purely atomic. If \(M_0\) were atomic itself then \(\Gamma_0\) would act ergodically on \(M\). Indeed, any \(A \in \Lambda\) would correspond  to exactly one \(A_0 \in \Sigma_0\) such that \(p^{-1}(A_0)= A\) and hence
   \[
@@ -299,13 +316,11 @@ The above definition leads to the following consequence:
   \]
   if \(M_0\) were atomic. A contradiction.
 
-  Therefore, we could assume that there exists an atomic subset \(B \subset M\), such that \(0 < \vartheta_0(B) < 1\). We would consider \(A \coloneqq p^{-1}(B)\) and would have also in this case \(0 < \vartheta(A) < 1\). We claim that the set
+  Therefore, we assume that there exists an atomic subset \(B \subset M\), with \(0 < \vartheta_0(B) < 1\). We consider \(A \coloneqq p^{-1}(B)\) and have also in this case \(0 < \vartheta(A) < 1\). We claim that the set
   \[
     X \coloneqq \bigcup_{\bar g \in \bar \Gamma}gA \times gA \subset M \times M
   \]
-  were neither null nor conull. However, this were a contradiction, since \(X\) is \(\Gamma\)-invariant and \(\Gamma\) is assumed to act doubly ergodic.
-
-  In order to see this, we first note that \(X\) were well-defined, as \(A\) is \(\Gamma_0\)-invariant and thus the action of \(\Gamma\) factors through \(\bar \Gamma\). Additionally, \(X\) were not null as it would contain \(A \times A\). Lastly, we claim that up to a null set \(A \times A^c\) is contained in \(X^c\). In particular, we have
+  is neither null nor conull. However, we will see that this is a contradiction, since \(X\) is \(\Gamma\)-invariant and \(\Gamma\) is assumed to act doubly ergodic. In order to see this, we first note that \(X\) were well-defined, as \(A\) is \(\Gamma_0\)-invariant and thus the action of \(\Gamma\) factors through \(\bar \Gamma\). Additionally, \(X\) is not null as it contains \(A \times A\). Lastly, we claim that up to a null set \(A \times A^c\) is contained in \(X^c\). In particular, we have
   \[
     (\vartheta\times\vartheta)(A \times A^c \cap X) \leq \sum_{\bar g \in \bar \Gamma} \vartheta(A \cap gA) \cdot \vartheta(A^c \cap gA).
   \]
@@ -315,13 +330,6 @@ The above definition leads to the following consequence:
 \subsection{Strong \(\Gamma\)-boundaries}
 \label{sec:grp-boundary}
 
-\begin{defin}
-  A measurable space \((B, \Sigma)\) is called a \emph{standard Borel space}, if it is isomorphic (as a measurable space) to a measurable set \(E \subset X\), where \(X\) is a complete separable metric space equipped with its Borel \(\sigma\)-algebra.
-
-  A measure space \((B, \Sigma, \mu)\) is called a \emph{Lebesgue space} if it is a standard Borel space and \(\mu\) is a regular probability measure.
-
-  Let \((B, \Sigma)\) be a measurable space. We can define an equivalence relation on all measures on \(\Sigma\) via \(\mu \sim \nu\) if and only if the null-sets of \(\mu\) and \(\nu\) coincide. An equivalence class \([\mu]\) is called a \emph{measure class}. If a group \(\Gamma\) acts by measurable transformations on \(B\), then \(\Gamma\) \emph{preserves measure classes} if for every measure \(\mu\) of \(\Sigma\) we have that \(\mu(B) = 0\) implies that \(\mu(g^{-1} B) = 0\) for every \(B \in \Sigma\) and \(g \in \Gamma\).
-\end{defin}
 
 \begin{defin}[Amenable group action]
   Let \(E\) be a separable Banach space. Then we denote by \(E^\ast_1\) the unit ball in its dual space. Let \(S\) be a standard Borel space and for each \(s \in S\) consider \(A_s \subset E^\ast_1\) a non-empty convex weak\(\ast\)-compact subspace. Then \((A_s)_{s \in S}\) will be called a \emph{Borel field of compact convex sets} if \(\{(s, \lambda) \mid \lambda \in A_s\}\) is a Borel subset of \(S \times E^\ast_1\).

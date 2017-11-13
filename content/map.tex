@@ -98,7 +98,7 @@ All in all we see that, if we can show that \(|H_\mu|\) cannot be infinite for a
   This map is again measurabel and \(\Gamma\)-equivariant (c.\,f.~Section~\ref{sec:meas-maps}) and hence essentially constant by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\).
 \end{proof}
 
-The following two sections will contain all the technical details in order to exculde the cases \(|H_\mu| = \infty\) and \(|H_\mu \cap \H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). In the last section we will plug everything together and prove our main theorem.
+The following two sections will contain all the technical details in order to exculde the cases \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). In the last section we will plug everything together and prove our main theorem.
 
 \subsection{Exclusion of the case \(|H_\mu \cap H_\nu| = 0\)}
 \label{sec:M=0}
@@ -384,19 +384,13 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   If \(\mathfrak{l}\) is parallel to each \(\mathfrak{h}_i\), then \(\mathfrak{l}' \not\subset \mathfrak{h_0}\), since otherwise \(H_{\mu_i}\) would again contain pairs of strongly separated halfspaces. By the same argument \(\mathfrak{h}_5 \not\subset \mathfrak{l}'\), where \(\mathfrak{l}'\) is defined as above. As before we yield \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) or \(\mathfrak{h}_0 \subset \mathfrak{l}^\ast \subset \mathfrak{h}_5\).
 \end{proof}
 
-\begin{thm}[{\cite[Theorem~4.1]{Caprace2010}}]
-  \label{thm:cs-flipping}
-  Assume that \(X\) is a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) be any subgroup. Let \(\mathfrak{h} \in \mathcal{H}(X)\) such that \(\mathfrak{h}^\ast \not\subset g\mathfrak{h}\) for each \(g \in \Gamma\). Then \(\Gamma\) has a fixed point in the visual boundary or \(\mathfrak{h}\) is not essential with regard to \(\Gamma\).
-\end{thm}
-
 \begin{cor}[{\cite[Corollary~4.21]{MR3509968}}]
   \label{cor:4.21}
-  Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no strongly separated pairs in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\) then the \(\Gamma\)-action is non-essential.
+  Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no strongly separated pairs in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\) then the \(\Gamma\)-action is non-essential or \(\Gamma\) has a fixed point in the visual boundary.
 \end{cor}
 
 \begin{proof}
-  \todo{prove this}
-  
+  We fix a generic measure \(\mu_0\) with a generic \(\Gamma\)-invariant set \(B_0\) such that for every \(\nu \in B_0\) we have that \(H_{\mu_0} \cap H_\nu \neq \varnothing\).\todo{find the set}\ By Lemma~\ref{lem:4.20} we find two halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) for each hyperplane \(\mathfrak{\hat l} \in \mathcal{\hat H}_\nu\) with \(\nu \in B_0\), we have that (after a possible involution of \(\mathfrak{l}\)) \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\). In particular, fix such an \(\mathfrak{l} \in H_{\mu_0}\). We know that \(g\mu_0 \in B_0\) by the \(\Gamma\)-invariance. Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). Theorem~\ref{thm:cs-flipping} finishes the proof.
 \end{proof}
 
 \subsection{The main theorem}
@@ -419,7 +413,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   If \(f\colon \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}), \mu \mapsto H_\mu\), then \(\mathcal{E} = (f \times f)^{-1}(\Delta)\), where \(\Delta \subset \operatorname{Pot}(\mathcal{H})^2\) is the diagonal. The set \(\operatorname{Pot}(\mathcal{H})\) is Hausdorff with regard to the cylinder topology. Hence \(\Delta\) is closed and measurable. \(f \times f\) is also measurable and we yield that the same is true for \(\mathcal{E}\). Furthermore, \(\mathcal{E}\) is \(\Gamma\)-invariant and by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), we see that it has either measure 0 or measure 1. Let us consider the two cases
   \begin{description}
   \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset, \(\Gamma\)-invariant subset \(M \subset \mathcal{P}(X)\)\todo{understand why you find this \(\Gamma\)-invariant full measure subset}, such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). This leads to \(H_{g\nu} = gH_\nu = H_\nu\) for all \(\nu \in M\) because of the \(\Gamma\)-invariance. The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
-    The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in \H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, which is a contradiction to the fact that it is irreducible.
+    The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, which is a contradiction to the fact that it is irreducible.
   \item[\(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We define the set
     \[
       \mathcal{S} \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}.
