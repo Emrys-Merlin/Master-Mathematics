@@ -1,12 +1,18 @@
 \section{Pocsets and the Roller compactification}
 \label{sec:roller}
 
+This chapter is divided into three sections. First, we will introduce pocsets and ultrafilters, which are the main ingredients in the so called Roller compactification of the vertex set of a CAT(0) cube complex. And indeed this compactification is described in detail in the second section. In a more general sense the whole chapter is dedicated to the interplay between CAT(0) cube complexes and discrete pocsets. \textcite{Roller1999} showed that there is indeed a one-to-one-correspondence and a switching between these two equivalent points of view is an important tool in this field of study.
+
+Lastly, we are interested in one special case of the above mentioned correspondence: If \(\mathcal{H'} \subset \mathcal{H}\) are both pocsets, under which circumstances will the associated complex \(X(\mathcal{H}')\) be a subcomplex of \(X(\mathcal{H})\)? We will be able to give a partial answer by providing a sufficient condition.
+
 \subsection{Pocsets and Ultrafilters}
 \label{sec:pocset}
 
+In this section we will introduce a special type of partially ordered sets (or short: posets). These sets are special in that they have a certain fixed point free involution. As a name \emph{pocset} was established. After having established this notion, we are in a position to introduce \emph{ultrafilters}, which are the necessary objects to construct a compactification of the vertex set of a CAT(0) cube complex. In this section we will mostly be interested in topological and metric properties of the set of all ultrafilters. The connection to CAT(0) cube complexes will be established in the next section.
+
 \begin{defin}[Pocset, {\cite{Roller1999}}]
   \begin{itemize}
-  \item A \emph{pocset} is a triple \((P, \prec, \ast)\) consisting of a set \(P\) a partial ordering \(\prec\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, we will often drop the triple and will only write \(P\) when talking about the pocset. \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) such that \(A \prec B\) implies that \(f(A) \prec f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. 
+  \item A \emph{pocset} is a triple \((P, \prec, \ast)\) consisting of a set \(P\) a partial ordering \(\prec\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, we will often drop the triple and will only write \(P\) when talking about the pocset. The map \(f \colon P \to P'\), where \(P\) and \(P'\) are pocsets, is called a \emph{pocset morphism}, if for all \(A, B \in P\) such that \(A \prec B\) implies that \(f(A) \prec f(B)\) and \(f(A^\ast) = f(A)^\ast\) holds. 
   \item A pocset \(P\) is called \emph{discrete}, if for any two \(A, B \in P\) the \emph{interval}
     \[
       [A,B] = \{C \in P \mid A \prec C \prec B\}
@@ -68,7 +74,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{defin}
 
 \begin{bsp}
-  We will have a look at ultrafilters at the example of a tree. In this case each edge defines a unique hyperplane and hence the choice of a halfspace is equivalent to assigning a direction to an edge. We will adopt the notation that the arrow, we assign to an edge will point towards the chosen halfspace. Since each ultrafilter contains either a halfspace or its complement, we have to assign an arrow to each edge. The consistencey condition implies that if we have an outgoing edge at a vertex, then all other edges must be incoming. In other words, an ultrafilter converts our undirected tree into a directed one such that each vertex has at most one outgoing edge. An example of this can be found in Figure~\ref{fig:ultrafilter}
+  We will have a look at ultrafilters at the example of a tree. In this case each edge defines a unique hyperplane and hence the choice of a halfspace is equivalent to assigning a direction to an edge. We will adopt the notation that the arrow, we assign to an edge will point towards the chosen halfspace. Since each ultrafilter contains either a halfspace or its complement, we have to assign an arrow to each edge. The consistency condition implies that if we have an outgoing edge at a vertex, then all other edges must be incoming. In other words, an ultrafilter converts our undirected tree into a directed one such that each vertex has at most one outgoing edge. An example of this can be found in Figure~\ref{fig:ultrafilter}
   \begin{figure}[htbp]
     \centering
     \input{./images/tree.tex}
@@ -95,15 +101,6 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 %   Now, consider that \(\mathfrak{h} \in \alpha\) is minimal. Let \(\mathfrak{h}' \in \beta\) and \(\mathfrak{\tilde h}\) be any halfspace with \(\mathfrak{h}' \subset \mathfrak{\tilde h}\). If \(\mathfrak{h}' \neq \mathfrak{h}\) then \(\mathfrak{h}' \in \alpha \) and hence \(\mathfrak{\tilde h} \in \alpha\). Additionally, \(\mathfrak{\tilde h} \neq \mathfrak{h}\) and it follows that \(\mathfrak{\tilde h} \in \beta\). If \(\mathfrak{h}' = \mathfrak{h}\) then it follows that \(\mathfrak{\tilde h}^\ast \subset \mathfrak{h}\) and thus we have equality. Showing again that \(\mathfrak{\tilde h} = \mathfrak{h}^\ast \in \beta\).
 % \end{proof}
 
-\subsection{The Roller compactification}
-\label{sec:rb}
-
-% For now, we denote by \(\mathcal{U}(X)\) the set of all ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a distance in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).\todo{what do I want with this?}
-
-% \begin{defin}
-%   For any \(x \in X\), we define \(\alpha_x \in \mathcal{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
-% \end{defin}
-
 \begin{prop}
   Let \(A\) be a pocset then the set of all ultrafilters \(\mathcal{U}(A)\) is a compact space.
 \end{prop}
@@ -127,10 +124,28 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{cor}
 
 \begin{proof}
-  By~\textcite[Thm.\ 4.2.2]{Engelking} it holds that every countable product of metrizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
+  By~\textcite[Theorem~4.2.2]{Engelking} it holds that every countable product of metrizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
 
   If \(X\) is locally countable, then the pocset \(\mathcal{H}\) is countable by Corollary~\ref{cor:halfspace-countable}.
 \end{proof}
+
+\begin{rem}
+  This is one of the central places, where we need our CAT(0) cube complexes to be locally countable and it might seem like a slight technicality. However, it is essential that \(\mathcal{U}(\mathcal{H})\) is metrizable in order for certain vector spaces of continuous functions to be separable. Otherwise, we could not construct the first part of our boundary map (see Theorem~\ref{thm:p(x)} and Corollary~\ref{cor:p(x)}).
+\end{rem}
+
+\subsection{The Roller compactification}
+\label{sec:rb}
+
+This section contains the connection between CAT(0) cube complexes, pocsets and ultrafilters. This connection was first discovered by \textcite{Roller1999}. Hence all construction in this direction inherited his name. We will first define two special kinds of ultrafilters. Afterwards, we will show how to embed the vertex set of a CAT(0) cube complex into its set of ultrafilters over the pocset of halfspaces. 
+
+The last part of this section is concerned with a second equivalent way to define ultrafilters. In the previous section we introduce them as a subset of a product space. Alternatively, one can define it as a subset of a power set. We will prove the equivalence of the two notions and from then on only use the point of view established in this section. The advantage is that it is often more natural to work in the subset context. Additionally, many of the maps in the later chapters concerning ultrafilters are defined in a \enquote{set context}, such that we cannot avoid talking about this construction. 
+
+% For now, we denote by \(\mathcal{U}(X)\) the set of all ultrafilters of the pocset of halfspaces of \(X\). Next, consider \(\alpha, \beta \in \mathcal{U}(X)\) and define \(d(\alpha, \beta) \coloneqq \# \{ \mathfrak{h} \in \mathcal{H}(X)\mid \mathfrak{h} \in \alpha \wedge \mathfrak{h}^\ast \in \beta\}\). This is not a distance in the ordinary sense on \(\mathcal{U}(X)\) because it might take \(+\infty\) as a value. However, with its help we can define a graph \(G\) with the ultrafilters as its vertices and edges between \(\alpha\) and \(\beta\), whenever \(d(\alpha, \beta) = 1\).\todo{what do I want with this?}
+
+% \begin{defin}
+%   For any \(x \in X\), we define \(\alpha_x \in \mathcal{U}(X)\) by always choosing the halfspace containing \(x\). It follows readily from the definition that this is an ultrafilter. An ultrafilter that arises in this manner is called a \emph{principal ultrafilter}
+% \end{defin}
+
 
 \begin{defin}
   An ultrafilter \(\alpha\) satisfies the \emph{descending chain condition}, if all descending chains in \(\alpha\) become stationary.
@@ -171,10 +186,10 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
     \label{fig:roller-counterexample}
   \end{figure}
 
-  Let \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) be any basic open set containing \(\alpha_\ast\). Then \(\mathfrak{h}_i \in \alpha_\ast\). We recall from Example~\ref{bsp:ccc} that in the case of trees, halfspaces correspond to the choice of a direction at an edge and in the case of \(\alpha_\ast\) all arrows have to point towards \(\ast\). Since we have infinitely many branches with \(\ast\) as their root, but only finitely many arrows prescribed by the \(\mathfrak{h}_i\), we can construct the follwing ultrafilter: We take \(\alpha_\ast\) and choose a branch which does not contain one of the edges with prescribed direction (the green branch in the figure). On this branch we reverse all arrows. This leads to a new ultrafilter \(\alpha\) (each vertex has at most one outgoing edge), which does not satisfy the descending chain condition, but nonetheless lies in \(\mathcal{U}\).
+  Let \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) be any basic open set containing \(\alpha_\ast\). Then \(\mathfrak{h}_i \in \alpha_\ast\). We recall from Example~\ref{bsp:ccc} that in the case of trees, halfspaces correspond to the choice of a direction at an edge and in the case of \(\alpha_\ast\) all arrows have to point towards \(\ast\). Since we have infinitely many branches with \(\ast\) as their root, but only finitely many arrows prescribed by the \(\mathfrak{h}_i\), we can construct the following ultrafilter: We take \(\alpha_\ast\) and choose a branch which does not contain one of the edges with prescribed direction (the green branch in the figure). On this branch we reverse all arrows. This leads to a new ultrafilter \(\alpha\) (each vertex has at most one outgoing edge), which does not satisfy the descending chain condition, but nonetheless lies in \(\mathcal{U}\).
 \end{rem}
 
-Now that we have defined the Roller compactificatoin, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. This form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
+Now that we have defined the Roller compactification, we have to consider a second equivalent construction. The advantage of the above construction was, that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. This form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
 
 \begin{defin}
   \label{def:pot-top}
@@ -305,7 +320,7 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
   \label{bsp:finite-terminal}
   \begin{description}
   \item[DCC ultrafilters:] Every ultrafilter satisfying the descending chain condition contains minimal and hence terminal elements. If the CAT(0) cube complex is finite-dimensional, there can be at most finitely many transverse halfspaces and hence only finitely many minimal elements. In general, we cannot say anything about maximal elements in ultrafilters. 
-  \item[Euclidean space:] In \(\R^d\) with its standard cubulation, we know that all halfspaces are parallel to coordinate axes and along each axis we can have at most one minimal and one maximal elment. This implies that any subset of halfspaces of \(\R^d\) can have at most \(2d\) terminal elements. With the help of Theorem~\ref{thm:interval} this reasoning can be extended to intervals, since they are embeddable into some \(\R^d\).
+  \item[Euclidean space:] In \(\R^d\) with its standard cubulation, we know that all halfspaces are parallel to coordinate axes and along each axis we can have at most one minimal and one maximal element. This implies that any subset of halfspaces of \(\R^d\) can have at most \(2d\) terminal elements. With the help of Theorem~\ref{thm:interval} this reasoning can be extended to intervals, since they are embeddable into some \(\R^d\).
   \end{description}
 \end{bsp}
 
@@ -320,8 +335,11 @@ With the above theorem in place, we can switch viewpoints whenever necessary. Ac
 
 \subsection{Embeddings of Roller compactification}
 \label{sec:embedding-roller}
+In Remark~\ref{rem:roller} we outlined the connection between discrete pocsets and CAT(0) cube complexes. We saw that each discrete pocset has a unique CAT(0) cube complex associated to it. Now, let \(X\) be any CAT(0) cube complex and \(\mathcal{H}\) is pocset of halfspaces. Then any involution invariant subset \(\mathcal{H}' \subset \mathcal{H}\) is a pocset in its own right with associated CAT(0) cube complex \(X'\). One question one might ask, is, under which circumstances it is possible to embed \(X'\) into \(X\). This section will establish a sufficient condition by introducing the notion of a \emph{lifting decomposition}.
 
-In this section we are interested in the question when the CAT(0) cube complex \(X'\) associated to a involution invariant subset \(\mathcal{H}' \subset \mathcal{H}(X)\) is embeddable in \(X\). This is not always possible, however, there are sufficient conditions for \(\mathcal{H}'\) to ensure the existence of an embedding \(\bar X' \hookrightarrow \bar X\).
+In later sections we will use this to construct a family of subcomplexes in \(X\), which we need for our final proof.
+
+If not noted otherwise \(X\) is to be assumed a locally finite, finite-dimensional CAT(0) cube complex.
 
 \begin{defin}
   Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. A \emph{lifting decomposition} of \(\mathcal{H}'\) is a choice of a subset \(W \subset \mathcal{H} \setminus \mathcal{H}'\) satisfying the partial choice and consistency condition and so that \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\).
@@ -331,7 +349,7 @@ In this section we are interested in the question when the CAT(0) cube complex \
   \label{lem:lifting}
   Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. Assume that \(\mathcal{H}'\) admits a lifting decomposition \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\). Then there is a continuous injective map
   \begin{align*}
-    i\colon \bar X' \coloneqq X(\mathcal{H}') & \to \bar X,\\
+    i\colon \bar X' \coloneqq \bar X(\mathcal{H}') & \to \bar X,\\
             \alpha & \mapsto \alpha \sqcup W,
   \end{align*}
   whose image is given by \(i(\bar X') = \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\) (c.\,f.\ Definition~\ref{def:pot-top}).

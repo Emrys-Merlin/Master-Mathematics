@@ -1,20 +1,16 @@
 \section{Measure theoretic preliminaries}
 \label{sec:measure}
 
-\subsection{Properties of probability measures on \(\bar X\)}
+Since we are interested in a measurable map it is only natural that measure theory will play an important role in the main proof. Hence, we have this dedicated chapter introducing the necessary notation.
+
+This chapter is divided in three sections with the second one being the most important. The first sections collects general facts about measures, measure theory and functional analysis and is mainly without proofs and the last contains a collections of unrelated lemmas proving measurability for some maps, which will be used later on. All of these maps are technical in nature and the same is true for the proofs.
+
+The second section introduces the notion of \emph{weighted halfspaces}, which are central to our problem and it is unlikely that the reader will have encountered them before. We will define them and highlight some of their elementary properties.
+
+\subsection{Properties of probability measures}
 \label{sec:prob}
 
-In this section we are concerned with some general properties of (probability) measures on the Roller compactification. These properties will be needed in the construction of the boundary map, especially for the construction of a map from the strong \(\Gamma\)-boundary \(B\) to \(P(\bar X)\) via the amenable action of \(\Gamma\) on \(B\). Thus we need to see that \(P(\bar X)\) is weak-\(\ast\) compact, convex and non-empty and contained in the unit ball of the dual of some topological vector space on which we have a group action by isometries of \(\Gamma\).
-
-We will begin by collecting some important measure theoretic and functional analytic results
-
-\begin{defin}
-  \label{def:vanishing}
-  Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
-  \[
-    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0 \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < \epsilon\}.
-  \]
-\end{defin}
+This section is conglomeration of facts about measures and their connection to certain spaces of continuous functions. We will need deep measure theoretic and functional analytic results, which will mostly be stated without proof. All the results will culminate in Section~\ref{sec:grp-boundary} in Theorem~\ref{thm:p(x)}, which is the first big step to our boundary map.
 
 \begin{defin}
   Let \((X, \Sigma)\) be a measure space. A map \(\mu \colon \Sigma \to \R\) is called a \emph{signed measure} if it is \(\sigma\)-additive, i.\,e.
@@ -44,12 +40,20 @@ We will begin by collecting some important measure theoretic and functional anal
   \(|\mu|\) and \(\mu^\pm\) are measures on \((X, \Sigma)\) and \(|\mu|(X) < \infty\) holds.
 \end{prop}
 
-\begin{thm}[Riesz-Markow representation, {\cite[Thm 6.19]{RudinFunctional}}]
+\begin{defin}
+  \label{def:vanishing}
+  Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
+  \[
+    C_0(X) \coloneqq \{f \in C(X) \mid \forall \epsilon > 0\ \exists K \subset X \text{ compact}\colon f|_{X\setminus K} < \epsilon\}.
+  \]
+\end{defin}
+
+\begin{thm}[Riesz-Markow representation, {\cite[Theorem 6.19]{RudinFunctional}}]
   \label{thm:riesz-markow}
   If \(X\) is a locally compact Hausdorff space, then every bounded linear functional \(\Phi\) on \(C_0(X)\) is represented by a unique regular complex Borel measure \(\mu\) in the sense that \[
     \Phi f = \int_X f \d\mu
   \]
-  for every element \(f \in C_0(X)\). Moreover, there is \(\|\Phi\| = |\mu|(X)\). In other words, there exists an isometry of normed vector spaces between \(X^\ast\) the dual of \(X\) equipped with the operator norm \(\|\cdot \|\) and \(M_{s}(X)\) the space of signed measures equipped with total variation \(|\mu|(X)\) as norm.
+  for every element \(f \in C_0(X)\). Moreover, there is \(\|\Phi\| = |\mu|(X)\). In other words, there exists an isometry of normed vector spaces between \(X^\ast\) the (topological) dual of \(X\) equipped with the operator norm \(\|\cdot \|\) and \(M_{s}(X)\) the space of signed measures equipped with total variation \(|\mu|(X)\) as norm.
 \end{thm}
 
 \begin{thm}[Banach-Alaoglu, {\cite{RudinAnalysis}}]
@@ -75,7 +79,7 @@ We will begin by collecting some important measure theoretic and functional anal
   The second set assures that the measure is positive and the last enforces the normalization. This are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
 \end{proof}
 
-\begin{lemma}[{\cite[Thm.\ V.6.6]{Conway}}]
+\begin{lemma}[{\cite[Theorem~V.6.6]{Conway}}]
   \label{lem:continuous-separable}
   If \(X\) is a compact metric space then the space of continuous functions \(C(X)\) is separable.
 \end{lemma}
@@ -83,18 +87,22 @@ We will begin by collecting some important measure theoretic and functional anal
 \subsection{Weighted halfspaces}
 \label{sec:weight}
 
+This section defines the main technical tool for our main proof, namely \emph{weighted halfspaces}. These are special subsets of the pocset of halfspaces \(\mathcal{H}\) of a CAT(0) cube complex, which are defined using probability measures on the Roller compactification. In order to understand the following section, it is important to keep the notation introduced in Sections~\ref{sec:halfspaces} and~\ref{sec:rb} in mind.
+
+If not noted otherwise, \(X\) is assumed to be a locally finite, finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\).
+
 \begin{defin}
-  Let \(\mu\) be a probability measure on \(\bar X\). We define
+  Let \(\mu\) be a regular probability measure on \(\bar X\). We define
   \begin{align*}
-    H_\mu^{\phantom{+}} \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) = \mu(\mathcal{C}(h^\ast))\},\\
-    H_\mu^+ \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) > \text{\nfrac{} 1/2} \},\\
-    H_\mu^- \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) < \text{\nfrac{} 1/2}\} \text{ and}\\
-    H_\mu^\pm \coloneqq &\ \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) \neq \text{\nfrac{} 1/2}\}.
+    H_\mu^{\phantom{+}} \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) = \mu(\mathcal{C}(\mathfrak{h}^\ast))\},\\
+    H_\mu^+ \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) > \text{\nfrac{} 1/2} \},\\
+    H_\mu^- \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) < \text{\nfrac{} 1/2}\} \text{ and}\\
+    H_\mu^\pm \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) \neq \text{\nfrac{} 1/2}\}.
   \end{align*} 
   The above four sets are called \emph{balanced, heavy, light} and \emph{unbalanced halfspaces} respectively.
 \end{defin}
 
-\begin{lemma}[{\cite[Lem.\ 4.6]{MR3509968}}]
+\begin{lemma}[{\cite[Lemma\ 4.6]{MR3509968}}]
   \label{lem:4.6}
   Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
   \begin{enumerate}
@@ -120,7 +128,7 @@ We will begin by collecting some important measure theoretic and functional anal
   where we have \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) because we have \(\mathfrak{h} \subset \mathfrak{k}\) and ultrafilters satisfy the consistency condition. Hence, \(\mu(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})) = 0\). The last assertion follows again easily from the definitions.
 \end{proof}
 
-\begin{lemma}[{\cite[Lem. 4.7]{MR3509968}}]
+\begin{lemma}[{\cite[Lemma 4.7]{MR3509968}}]
   \label{lem:interval}
   The complex \(\bar X(H_\mu)\) is an interval.
 \end{lemma}
@@ -131,7 +139,7 @@ We will begin by collecting some important measure theoretic and functional anal
     p \colon \bar X &\to \bar X (H_\mu),\\
     \alpha &\mapsto \alpha \cap H_\mu
   \end{align*}
-  be the projection. \(p\) is continuous and we can push forward \(\mu\) along \(p\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
+  be the projection. Since \(p\) is continuous and we can push forward \(\mu\) along it. Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. The set \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing and regular. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
 \end{proof}
 
 \begin{lemma}
@@ -146,9 +154,9 @@ We will begin by collecting some important measure theoretic and functional anal
 \subsection{Measurability of certain maps}
 \label{sec:meas-maps}
 
-In the main proof of our theorem ergodicity will play a central role. We will mostly use it in the form that measurable \(\Gamma\)-invariant maps have to be essentially constant. Hence, we need all our important maps to be measurable. These proofs are mainly technical and not very enlightening, which is why they were exported to this section.
+In the main proof of our theorem ergodicity will play a central role (see Section~\ref{sec:ergodic}). We will mostly use it in the form that measurable \(\Gamma\)-invariant maps have to be essentially constant. Hence, we need all our important maps to be measurable. These proofs are mainly technical and not very enlightening, which is why they were exported to this section.
 
-When not noted oterhwise, we will assume that \(X\) is a locally countable, finite-dimensional CAT(0) cube complex with \(\mathcal{H} \coloneqq \mathcal{H}(X)\) its pocset of halfspaces.
+If not noted otherwise, we will assume that \(X\) is a locally countable, finite-dimensional CAT(0) cube complex with \(\mathcal{H} \coloneqq \mathcal{H}(X)\) its pocset of halfspaces and \(\bar X\) its Roller compactification.
 
 \begin{lemma}
   \label{lem:measurable-countable}
@@ -212,7 +220,7 @@ When not noted oterhwise, we will assume that \(X\) is a locally countable, fini
 \end{proof}
 
 
-\begin{lemma}[{\cites[Lem.\ A.1]{MR3509968}}]
+\begin{lemma}[{\cites[Lemma~ A.1]{MR3509968}}]
   \label{lem:measurable-mu}
   Let \(I \subset [0,1]\) be a subinterval that is either open, closed or half open. Let \(H^I_\mu \coloneqq \{h \in \mathcal{H}(X) \mid \mu(\mathcal{C}(h)) \in I\}\). Then the map
   \begin{align*}
@@ -232,7 +240,7 @@ When not noted oterhwise, we will assume that \(X\) is a locally countable, fini
     T_f\colon \mathcal{P}(\bar X) &\to \R,\\
     \mu &\mapsto \int_X f \d\mu
   \end{align*}
-  is continuous (for each \(f \in C(\bar X)\)). Hence, \(T \coloneqq T_{\chi_{\mathfrak{\tilde h}}}\) is continuous and thus also measurable. Furthermore, we have that \(T^{-1}(I) = E_I(\mathfrak{h})\). \(I\) is measurable, so the same is true for \(E_I(\mathfrak{h})\).
+  is continuous (for each \(f \in C(\bar X)\)). Hence, \(T \coloneqq T_{\chi_{\mathfrak{\tilde h}}}\) is continuous and thus also measurable. Furthermore, we have that \(T^{-1}(I) = E_I(\mathfrak{h})\). The interval \(I\) is measurable, so the same is true for \(E_I(\mathfrak{h})\).
 
   Together with the following observation this finishes the proof:
   \[

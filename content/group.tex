@@ -1,12 +1,15 @@
 \section{Group actions on CAT(0) cube complexes and strong group boundaries}
 \label{sec:group}
+This chapter is divided in four sections which themselves belong to two general topics. The first two sections are concerned with group actions of a group \(\Gamma\) on a CAT(0) cube complex \(X\). First, we will convince ourselves that a group action ab automorphisms always extends to an action on \(\bar X\) by homeomorphisms. This will be accomplished in Section~\ref{sec:ga-roller}. Then we will introduce two properties for group actions on \(X\), namely \emph{non-elementarity} and \emph{essentiality}. Interestingly, these two properties are rather of a different kind. The first is more concerned with the CAT(0) structure (in particular, the visual boundary) of our space, whereas the second is more concerned with the combinatorial structure of the halfspaces of \(X\).
 
-\subsection{Extending the group action to the Roller boundary}
+The last two sections are concerned with the definition of \emph{strong \(\Gamma\)-boundaries}. First we have a section dedicated to (doubly) ergodic group actions and some elementary consequences (especially concerning the ergodic action of finite groups). In the last section we will generalize the notion of ergodicity to \emph{ergodic group actions with coefficients} and additionally introduce \emph{amenable group actions}. With these two concepts in place, we can finally define a strong group boundary and immediately use it to construct the first half of our boundary map.
+
+\subsection{Extending a group action to the Roller boundary}
 \label{sec:ga-roller}
 
-In this section we would like to remark on how one can extend a group action on a CAT(0) cube complex \(X\) to its Roller compactification \(\bar X\). For that matter, let in the following \(\Gamma\) be a discrete countable group with an action \(\Gamma \to \Aut(X)\), where \(X\) is a finite dimensional CAT(0) cube complex. The group \(\Aut(X)\) consists of the combinatorial isomorphisms (c.\,.f.\ Def.~\ref{def:morphism-ccc}).
+In this section we would like to remark on how one can extend a group action on a CAT(0) cube complex \(X\) to its Roller compactification \(\bar X\). For that matter, let in the following \(\Gamma\) be a group with an action \(\Gamma \to \Aut(X)\), where \(X\) is a finite dimensional CAT(0) cube complex. The group \(\Aut(X)\) consists of the combinatorial isomorphisms (c.\,.f.\ Def.~\ref{def:morphism-ccc}).
 
-The following proposition collects some facts about how combinatorial isomorphisms act on \(X\). The notation can be found in Section~\ref{sec:complexes} and~\ref{sec:roller}.
+The following proposition collects some facts about how combinatorial isomorphisms act on \(X\). The notation can be found in Section~\ref{sec:halfspaces} and~\ref{sec:roller}.
 
 \begin{prop}
   Let \(g \in \Aut(X)\). Then there holds
@@ -21,7 +24,7 @@ The following proposition collects some facts about how combinatorial isomorphis
 \end{prop}
 
 \begin{proof}
-  The firest statement is an immediate consequence of the fact, that \(g\) is an isometry. This leads directly to statement 2 and 3. For statement 4 we only need that \(g\) is a bijection and statements 5 and 6 are then simple applications of 4.
+  The first statement is an immediate consequence of the fact, that \(g\) is an isometry. This leads directly to statement 2 and 3. For statement 4 we only need that \(g\) is a bijection and statements 5 and 6 are then simple applications of 4.
 \end{proof}
 
 With the above proposition in place we already see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. We would prefer the image to lie in the homeomorphisms of \(\bar X\). This will be accomplished with the next lemma.
@@ -41,13 +44,14 @@ Together we arrive at the following result.
   Let \(\Gamma\) be a group and \(\Gamma \to \Aut(X)\) a group action on a CAT(0) cube complex \(X\). Then this action extends to an action \(\Gamma \to \operatorname{Homeo}(\bar X)\) on the Roller compactification.
 \end{thm}
 
-\subsection{Special group actions on CAT(0) cube complexes}
+\subsection{Non-elementary and essential group actions}
 \label{sec:special}
+
+Not every group action on a CAT(0) cube complex leads to our desired boundary map. There are two additionally properties we need to demand in order for our construction to work. These two are introduced in this section. The first is non-elementarity which is concerned with fixed points of the group in \(X\) and in the visual boundary of \(X\) (see Definition~\ref{defin:visual}). The second is essentiality which is concerned with the interplay of the group with the halfspaces \(\mathcal{H}\) of \(X\). The section will close with some results by \textcite{Caprace2010}.
 
 \begin{defin}[(Non-)elementary action]
   A group action \(\Gamma \to \Aut(X)\) is called \emph{elementary}, if there exists a finite orbit of the action on \(X \sqcup \partial_{\sphericalangle}X\). Otherwise the action is called \emph{non-elementary}.
 \end{defin}
-
 
 The above definition has one interesting immediate consequence:
 \begin{prop}
@@ -60,7 +64,7 @@ The above definition has one interesting immediate consequence:
 
   Another example is \(X \coloneqq \R^d\) with its standard cubulation and any cyclic subgroup of \(\Z^d\) acting by translations. This action has no finite orbits in \(\R^d\), but every point at infinity is fixed. Indeed, two rays define the same point at infinity if and only if they are parallel. However, a translated ray is still parallel to the untranslated ray.
 
-  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8}. The space \(X\) is not a cube complex in our definition, howerver its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. We let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
+  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8}. The space \(X\) is not a cube complex in our definition, however its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. We let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
   \begin{figure}[htbp]
     \centering
     \input{./images/figure-8.tex}
@@ -72,7 +76,7 @@ The above definition has one interesting immediate consequence:
   \[
     g_1v_m, g_1v_{m-1}, \dots, g_1v_1, v_1, \dots, v_n
   \]
-  and since we are in a tree this is the unique path. Hence \(g_1c\) must transvers \(\overline{v_1w_1} = \overline{v_1 (g_1v_1)}\). However, every vertex is at most visited once by \(g_1c\) and its first vertex is \(w_1\). So we need \(m=1\) and \(g_1e_1 = \overline{v_1w_1}\). However, this is impossible, because deck transformations conserve signing of edges. So we established that \(g_ic\) and \(c\) are always inequivalent, showing that any orbit in the visual boundary is infinite.
+  and since we are in a tree this is the unique path. Hence \(g_1c\) must transverse \(\overline{v_1w_1} = \overline{v_1 (g_1v_1)}\). However, every vertex is at most visited once by \(g_1c\) and its first vertex is \(w_1\). So we need \(m=1\) and \(g_1e_1 = \overline{v_1w_1}\). However, this is impossible, because deck transformations conserve signing of edges. So we established that \(g_ic\) and \(c\) are always inequivalent, showing that any orbit in the visual boundary is infinite.
     % As an example for a non-elmentary action, we consider an infinite complete binary tree \(X\). That means we have a root vertex \(r\) which has exactly two children and each child has again exactly two children and so forth. We consider the group \(\Gamma\) acting on \(X\) generated by the following operations: Reflection and rotation at arbitrary vertices. Reflection switches the two subtrees of a vertex and rotation replaces itself with one of its children and the parent moving further down in the tree. The idea of these generating operations can be found in Figures~\ref{fig:rotation} and~\ref{fig:reflection}.
 
   % \begin{figure}[htbp]{}
@@ -183,6 +187,10 @@ The above definition leads to the following consequence:
 \subsection{(Doubly) ergodic group actions}
 \label{sec:ergodic}
 
+We not only need certain properties of our group action on our complex, but also on its so called strong boundary (which will be introduced in the next section). One of these properties is \emph{ergodicity}. We will mostly use it to make certain maps essentially constant. One other guise we need it in is that ergodic actions of finite groups lead to purely atomic spaces (c.\,f.\ Definition~\ref{defin:atomic} and Lemma~\ref{lem:ergodic-atomic}). Lastly, we will introduce \emph{standard Borel} and \emph{Lebesgue spaces} and prove one last technical lemma making use of this definition and Mackey's point realization (Theorem~\ref{thm:mackey}).
+
+Unless noted otherwise, \(\Gamma\) will denote a topological group, whose topology is second countable and locally compact.
+
 \begin{defin}[(Doubly) ergodic action]
   Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure-preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied:
   \begin{enumerate}
@@ -199,11 +207,11 @@ The above definition leads to the following consequence:
 \begin{proof}
   Let us first consider that every \(\Gamma\)-invariant measurable set \(E\) satisfies \(\mu(E) \in \{0,1\}\). Let \(f \colon B \to \R\) be measurable and \(\Gamma\)-invariant. Then for every \(c \in \R\), we have \(f^{-1}(c)\) is a measurable \(\Gamma\)-invariant set. Hence, it has either measure 0 or 1. Since \(B\) is a disjoint union of all these preimages, we see that there exists exactly one \(c \in \R\) such that \(f^{-1}(c)\) has full measure, which means that \(f\) is essentially constant.
 
-  For the other direction consider a \(\Gamma\)-invariant measurable set \(E\). Then its indicator function \(\chi_E\) is a measurable, \(\Gamma\)-invariant map and hence essentially constant. However, this is equivalent for \(\mu(E) \in \{0,1\}\).
+  For the other direction consider a \(\Gamma\)-invariant measurable set \(E\). Then its indicator function \(\chi_E\) is a measurable, \(\Gamma\)-invariant map and hence essentially constant implying \(\mu(E) \in \{0,1\}\).
 \end{proof}
 
 \begin{bsp}
-  Consider the Bernoulli space \(B \coloneqq \{0,1\}^{\Z}\) with the product \(\sigma\)-algebra stemming from the discrete topology on each of the sets \(\{0,1\}\). We equip this space with the measure \(\mu\), comming from the uniform distribution on each factor. Lastly, we let \(\Z\) act on this space via a shift operation. Then \textcite[Example 20.26]{Klenke} shows that this system is ergodic.
+  Consider the Bernoulli space \(B \coloneqq \{0,1\}^{\Z}\) with the product \(\sigma\)-algebra stemming from the discrete topology on each of the sets \(\{0,1\}\). We equip this space with the measure \(\mu\), coming from the uniform distribution on each factor. Lastly, we let \(\Z\) act on this space via a shift operation. Then \textcite[Example 20.26]{Klenke} shows that this system is ergodic.
 \end{bsp}
 
 \begin{prop}
@@ -227,8 +235,10 @@ The above definition leads to the following consequence:
   \]
   because of the equivariance. Thus by the ergodicity on \(A\) we have \(\mu(f^{-1}(E))= 0\) or \(\mu(f^{-1}(E)) = 1\). However, \(\mu(f^{-1}(E))\) is exactly the definition of \(f_\ast\mu(E)\).
 \end{proof}
+
 \begin{defin}
-  Let \((M, \Sigma, \mu)\) be a measure space. \(B \in \Sigma\) is called \emph{atomic}, if \(\mu(B) > 0\) and for all measurable \(A \subset B\) we have \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). \(M\) is called \emph{purely atomic}, if there exists a partition of \(M\) consisting of measurable sets, such that each of these sets is atomic.
+  \label{defin:atomic}
+  Let \((M, \Sigma, \mu)\) be a measure space. A set \(B \in \Sigma\) is called \emph{atomic}, if \(\mu(B) > 0\) and for all measurable \(A \subset B\) we have \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). The space \(M\) is called \emph{purely atomic}, if there exists a partition of \(M\) consisting of measurable sets, such that each of these sets is atomic.
 \end{defin}
 
 \begin{lemma}
@@ -241,7 +251,7 @@ The above definition leads to the following consequence:
   \[
     \Lambda \coloneqq \{A \in \Sigma \mid \mu(A) > 0\}.
   \]
-  This set is clearly partially ordered under inclusion and not empty. Furthermore, observer that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity and since \(\Gamma\) also acts measure preserving \(\mu(A) > n^{-1}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
+  This set is clearly partially ordered under inclusion and not empty. Furthermore, observe that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity and since \(\Gamma\) also acts measure preserving \(\mu(A) > n^{-1}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
   \[
     \Lambda = \{A \in \Sigma \mid \mu(A) \geq n^{-1}\}.
   \]
@@ -294,11 +304,11 @@ The above definition leads to the following consequence:
 
 \begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}, \cite[Corollary~B.6]{Zimmer84}}]
   \label{thm:mackey}
-  Let \((M, \sigma, \vartheta)\) be a standard Borel space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a subs-sigma-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
+  Let \((M, \Sigma, \vartheta)\) be a standard Borel space. Let a locally compact, second countable group \(\Gamma\) act on \(M\) by measurable transformations. Let \(\Lambda\) be a sub-\(\sigma\)-algebra of \(\Sigma\) which is \(\Gamma\)-invariant, and such that for any \(A \in \Lambda\) and \(g \in \Gamma\) we have \(\vartheta(A) = 0 \) if and only if \(\vartheta(gA) = 0\). Then there exists a standard probability \(G\)-space \((M', \Sigma', \vartheta')\) and a \(\Lambda\)-measurable \(\Gamma\)-equivariant map \(p \colon M \to M'\) such that \(p_\ast \vartheta = \vartheta'\).
 \end{thm}
 
-\begin{lemma}[{\cite[Lem 4.3]{MR3509968}}]
-  Let \(\Gamma\) be a group acting on a Lebesgue space \((M, \vartheta)\). If \(\Gamma\) acts ergodically \((M \times M, \vartheta \times \vartheta)\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \((M, \vartheta)\).
+\begin{lemma}[{\cite[Lemma 4.3]{MR3509968}}]
+  Let \(\Gamma\) be a group acting on a Lebesgue space \((M, \vartheta)\). If \(\Gamma\) acts doubly ergodically  on \(M\), then every  finite index subgroup \(\Gamma_0 \leq \Gamma\) acts ergodically on \(M\).
 \end{lemma}
 
 \begin{proof}
@@ -306,7 +316,7 @@ The above definition leads to the following consequence:
 
   We would consider the set
   \[
-    \Lambda \coloneqq \{A \subset M \text{ measurable} \mid gA = g \quad \forall g \in \Gamma_0\}.
+    \Lambda \coloneqq \{A \subset M \text{ measurable} \mid gA = A \quad \forall g \in \Gamma_0\}.
   \]
   This is a \(\sigma\)-subalgebra and since \(\Gamma_0\) is normal it inherits a \(\Gamma\)-action. Applying Mackey's point realization (Theorem~\ref{thm:mackey}), we find a standard Borel space \((M_0, \Sigma_0, \vartheta_0)\) and a measurable \(\Gamma\)-equivariant map \(p\colon M \to M_0\), which induces a bijection on the two \(\sigma\)-algebras \(\Lambda\) and \(\Sigma_0\) and \(\vartheta_0 = p_\ast \vartheta\). Via this pushforward, \(\Gamma\) would also act (doubly) ergodic(ally) on \(M_0\) and on the \(\sigma\)-algebra \(\Sigma_0\). We in fact find a well defined group action \(\bar \Gamma \coloneqq \quot{\Gamma}{\Gamma_0}\), which is still ergodic, because all elements of the algebra are \(\Gamma_0\) invariant.
 
@@ -330,6 +340,13 @@ The above definition leads to the following consequence:
 \subsection{Strong \(\Gamma\)-boundaries}
 \label{sec:grp-boundary}
 
+Finally, we are in a position to define \emph{strong \(\Gamma\)-boundaries} for certain topological groups \(\Gamma\). These are group theoretic objects and we would like it to be the domain of our boundary map. Indeed, at the end of this section, we will be able to construct the first half of this map. However, first we need to introduce another two group action properties. We need to define a \emph{amenable group actions}, which is a generalization of amenable groups. Afterwards, we will generalize \emph{ergodic group actions} as defined in the previous sections to \emph{ergodic group actions with coefficients}. Both definitions are rather technical in nature, however, their two main applications are rather simpler to grasp.
+
+The first main application consists in Theorem~\ref{thm:p(x)} and Corollary~\ref{thm:p(x)}, in which we construct a measurable \(\Gamma\)-equivariant map  \(\psi\colon B \to \mathcal{P}(\bar X)\), where \(B\) is a strong group boundary and \(\mathcal{P}(\bar X)\) is the set of all regular probability measures on \(X\). This is the only place in the entire proof, where we use the amenability of the group action.
+
+The second main application consists in Corollary~\ref{cor:coeff-ergodic}, namely that ergodicity with coefficients implies ergodicity in the regular sense. A couple of other results making explicit use of ergodicity with coefficients are proven in this section, too.
+
+Unless noted otherwise, the topology of our group \(\Gamma\) is assumed to be second countable and locally compact.
 
 \begin{defin}[Amenable group action]
   Let \(E\) be a separable Banach space. Then we denote by \(E^\ast_1\) the unit ball in its dual space. Let \(S\) be a standard Borel space and for each \(s \in S\) consider \(A_s \subset E^\ast_1\) a non-empty convex weak\(\ast\)-compact subspace. Then \((A_s)_{s \in S}\) will be called a \emph{Borel field of compact convex sets} if \(\{(s, \lambda) \mid \lambda \in A_s\}\) is a Borel subset of \(S \times E^\ast_1\).
@@ -355,16 +372,17 @@ The above definition leads to the following consequence:
 \end{lemma}
 
 \begin{cor}
+  \label{cor:coeff-ergodic}
   If a group action is doubly ergodic with coefficients it is doubly ergodic in the usual sense.
 \end{cor}
 
 \begin{proof}
-  We choose a singelton for \(X\) and apply the previous lemma.
+  We choose a singleton for \(X\) and apply the previous lemma.
 \end{proof}
 
-\begin{lemma}[{\cite[Lem. 4.4]{MR3509968}}]
+\begin{lemma}[{\cite[Lemma~4.4]{MR3509968}}]
   \label{lem:4.4}
-  Let \(C\) be a countable set with a \(\Gamma\)-action and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If \(\psi \colon B \times B \to C\) or \(\psi \colon B \to C\) is a \(\Gamma\)-equivariant measurable map, then \(\psi\) is essentially constant.
+  Let \(C\) be a countable set with a \(\Gamma\)-action and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with coefficients. If \(\psi \colon B \times B \to C\) or \(\psi \colon B \to C\) is a \(\Gamma\)-equivariant measurable map, then \(\psi\) is essentially constant.
 \end{lemma}
 
 \begin{proof}
@@ -402,7 +420,7 @@ The above definition leads to the following consequence:
 
 \begin{cor}[{\cite[Cor. 4.5]{MR3509968}}]
   \label{cor:4.5}
-  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\) and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with Hilbert coefficients. If there exists a \(\Gamma\)-equivariant measurable map \(B \times B \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(B \to \operatorname{Pot}_f(\mathcal{H}(X))\), whose image is not essentially \(\varnothing\), then the \(\Gamma\)-action on \(X\) is not essential.
+  Let \(\operatorname{Pot}_f(\mathcal{H}(X)) \subset \operatorname{Pot}(\mathcal{H}(X))\) be the set containing only finite subsets of \(\mathcal{H}(X)\) and \((B, \vartheta)\) a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with coefficients. If there exists a \(\Gamma\)-equivariant measurable map \(B \times B \to \operatorname{Pot}_f(\mathcal{H}(X))\) or \(B \to \operatorname{Pot}_f(\mathcal{H}(X))\), whose image is not essentially \(\varnothing\), then the \(\Gamma\)-action on \(X\) is not essential.
 \end{cor}
 
 \begin{proof}
@@ -418,6 +436,7 @@ The above definition leads to the following consequence:
 \end{defin}
 
 \begin{thm}
+  \label{thm:p(x)}
   Let \(B\) be a strong \(\Gamma\)-boundary and \(X\) a compact metric space with a continuous \(\Gamma\) action. Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \mathcal{P}(X)\), where \(\mathcal{P}(X)\) is the set of all probability measures on \(X\).
 \end{thm}
 
@@ -444,7 +463,9 @@ The above definition leads to the following consequence:
 
 \begin{cor}
   \label{cor:p(x)}
-  Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Roller compactification. Let \(\Gamma \to \Aut(X)\) be a group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of probability measures on \(\bar X\).
+  Let \(X\) be a finite dimensional CAT(0) cube complex and \(\bar X\) its Roller compactification. Let \(\Gamma \to \Aut(X)\) be a group acting on \(X\). Furthermore, let \(B\) be a strong \(\Gamma\)-boundary. Then there exists \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \mathcal{P}(\bar X)\), where \(\mathcal{P}(\bar X)\) is the set of regular probability measures on \(\bar X\).
+
+  Additionally, \(\mathcal{P}(\bar X)\) inherits a probability measure via the pushforward from \(B\) and the group action of \(\Gamma\) on \(\mathcal{P}(\bar X)\) is doubly ergodic with coefficients with regard to this measure.
 \end{cor}
 
 \begin{proof}

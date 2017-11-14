@@ -1,10 +1,11 @@
 \section{The boundary map}
 \label{sec:map}
 
+Finally, we can construct our boundary map. This process will take this complete chapter. The actual construction will be achieved in the first section. However, we will need additional assumptions to accomplish it. Hence, we need to prove that these additional assumptions are always satisfied. This involves a bit of work and many of the necessary results have been divided up into the second and the third section. The last section, then, contains the final statement of our theorem (Theorem~\ref{thm:4.1}) and its proof, plugging together all the results established in the previous sections. We will close this thesis with a slight generalization of Theorem~\ref{thm:4.1} which can be found in Corollary~\ref{cor:4.2}.
+
 \subsection{The construction of the boundary map}
 \label{sec:treminal-elements}
-
-The construction of the actual map will be acomplished in this section. The main ingredient is that we need \(H_\mu\) to be empty for almost all \(\mu \in \mathcal{P}(\bar X)\). 
+In this section we will construct the actual boundary map, making use of additional assumptions, namely that the set of balanced halfspaces \(H_\mu\) (Section~\ref{sec:weight}) is empty for almost every regular probability measure \(\mu\) (with regard to the measure mentioned in Corollary~\ref{cor:p(x)}). In a second step, we will prove that if the map exists its image will always lie in the Roller boundary \(\partial X\). The remainder of this chapter will then be dedicated to show that these additional assumptions are always satisfied.
 
 \begin{lemma}
   \label{lem:H=0}
@@ -12,7 +13,7 @@ The construction of the actual map will be acomplished in this section. The main
 \end{lemma}
 
 \begin{proof}
-  By Corollary~\ref{cor:p(x)} we have a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). The central observation is, that if \(H_\mu= \varnothing\), then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condiction we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
+  By Corollary~\ref{cor:p(x)} we have a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). The central observation is, that if \(H_\mu= \varnothing\), then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
 
   By assumption we know that the image of \(\psi\) lies up to measure 0 in the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). We can hence concatenate it with the map
   \begin{align*}
@@ -52,7 +53,7 @@ As a next step to our main theorem we would like to convince ourselves that any 
   In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
 \end{proof}
 
-So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. So we are left with the task to prove, that this is the only possible case. As first step is provided in the following two lemmas:
+So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. So we are left with the task to prove, that this is the only possible case. A first step is provided by the following two lemmas:
 
 \begin{lemma}
   \label{lem:h-const}
@@ -65,7 +66,7 @@ So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find 
 \end{lemma}
 
 \begin{proof}
-  The map is \(\Gamma\)-equivariant and measurable as a concatenation of measurable maps (c.f.~Section~\ref{sec:meas-maps}). Since the group action is ergodic with regard to the pushforward measure on \(\mathcal{P}(\bar X)\) from \(B\), we see that the map is essentially constant.
+  The map is \(\Gamma\)-invariant and measurable as a concatenation of measurable maps (c.f.~Section~\ref{sec:meas-maps}). Since the group action is ergodic with regard to the pushforward measure on \(\mathcal{P}(\bar X)\) from \(B\), we see that the map is essentially constant.
 \end{proof}
 
 \begin{lemma}
@@ -95,19 +96,19 @@ All in all we see that, if we can show that \(|H_\mu|\) cannot be infinite for a
 \end{lemma}
 
 \begin{proof}
-  This map is again measurabel and \(\Gamma\)-equivariant (c.\,f.~Section~\ref{sec:meas-maps}) and hence essentially constant by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\).
+  This map is again measurable and \(\Gamma\)-invariant (c.\,f.~Section~\ref{sec:meas-maps}) and hence essentially constant by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\).
 \end{proof}
 
-The following two sections will contain all the technical details in order to exculde the cases \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). In the last section we will plug everything together and prove our main theorem.
+The following two sections will contain all the technical details in order to exclude the cases \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) or \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\). In the last section we will plug everything together and prove our main theorem.
 
 \subsection{Exclusion of the case \(|H_\mu \cap H_\nu| = 0\)}
 \label{sec:M=0}
 
-Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) would imply that our cube complex is not finite-dimensional.
+This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) is impossible in our setting. In the main proof, only Proposition~\ref{prop:4.10} will be used. Everything else is just a build up (in particular the introduction of strictly upper triangular directed graphs).
 
 \begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
   \label{lem:4.13}
-  Let \((\mu_i)_{i \in \N_0}\) be a sequence of pairwise generic probability measures on \(\mathcal{P}(\bar X)\) (i.\,e.\ \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\)), such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then up to switching \(i\) and \(j\), any pair of measures \(\mu_i\) and \(\mu_j\), satisfies the following condition:
+  Let \((\mu_i)_{i \in \N_0}\) be a sequence of pairwise generic probability measures in \(\mathcal{P}(\bar X)\) such that \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\) and such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then up to switching \(i\) and \(j\), any pair of measures \(\mu_i\) and \(\mu_j\), satisfies the following condition:
 
   There exists \(C(i,j) \in \N\) such that for every \(n \geq C(i,j)\) there is an \(M_n \geq C(i,j)\) such that if \(m \geq M_n\) then \(\mathfrak{\hat h}^j_m \pitchfork \mathfrak{\hat h}^i_n\). 
 \end{lemma}
@@ -156,7 +157,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for al
       D \coloneqq \min \{m_4 \mid (n_4, m_4) \in N_4\},
     \]
     where \(n_4 \in \N\) was fixed such that the above set is not empty. We yield that if \(m \geq B\) and \(n \in \N\) is arbitrary, we have \((n, m) \notin N_2\). As above, if \(N_3 \) is empty, this is sufficient to show that \(\N_D = N_1 \sqcup N_4\).
-  \item[\(N_j \neq \varnothing\ \forall j \in\{2,3,4\}\):] In this case we can use the constants defined above and set \(C \coloneqq \max \{A,B,D\}\). Then if \((n,m) \in \N_C \setminus N_1\), we have \(m \geq B\) and hence \((n,m) \notin N_2\) and \(n \geq D\) meaning \((n,m) \notin N_4\). All in all this leads to \(\N_C = N_1 \sqcup N_3\).
+  \item[\(N_j \neq \varnothing\ \ \forall j \in\{2,3,4\}\):] In this case we can use the constants defined above and set \(C \coloneqq \max \{A,B,D\}\). Then if \((n,m) \in \N_C \setminus N_1\), we have \(m \geq B\) and hence \((n,m) \notin N_2\) and \(n \geq D\) meaning \((n,m) \notin N_4\). All in all this leads to \(\N_C = N_1 \sqcup N_3\).
   \end{description}
   Now that we have the above decomposition, we will prove the desired claim.
   \begin{description}
@@ -174,7 +175,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for al
 \end{proof}
 
 \begin{defin}
-  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite graph \emph{upper triangular}, if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\) which are denoted its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. The first condition allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete}, if it is complete as an undirected graph, i.\,e.\ each vertex is connected via an (undirected) edge to each other vertex. For each \(v \in V\) we will by \(o(v) \subset E\) denote the number of \emph{outgoing edges} and by \(i(v) \subset E\) the number of \emph{incoming edges}. We will call a complete directed finite graph \emph{strictly upper triangular}, if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
   \begin{align*}
     o(v_j) & = D - j\quad \text{and}\\
     i(v_j) & = j - 1.
@@ -219,7 +220,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for al
   \]
   we have \(|V_D| \geq 5^{N-D}\)
 
-  Observe that it is sufficient to prove this statement for finite graphs, since for infinite graphs, we can always consider a finite sub graph with sufficiently many vertices. Thus we will proceed with the finite case.
+  Observe that it is sufficient to prove this statement for finite graphs, since for infinite graphs, we can always consider a finite subgraph with sufficiently many vertices. Thus, we will reduce to the finite case.
   \begin{description}
   \item[\(D = 1\):] By the previous lemma we can find a \(v_1 \in V\) such that
     \[
@@ -271,7 +272,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for al
 \subsection{Exclusion of the case \(|H_\mu \cap H_\nu| = \infty\)}
 \label{sec:M=infty}
 
-Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) would imply that the \(\Gamma\)-action is not essential.
+This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) is impossible in our setting. In this case, there are many parallel statements many of which are used directly in the proof of the main theorem.
 
 \begin{defin}
   Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edge path joining the two also lies completely in \(Y\).
@@ -279,7 +280,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 
 \begin{lemma}[{\cite[Lemma~4.16]{MR3509968}}]
   \label{lem:4.16}
-  Let \(X\) be a CAT(0) cube complex and \(A \subset X\) consists of (not necessarily connected) cubes. If \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\), then
+  Let \(X\) be a CAT(0) cube complex and let \(A \subset X\) be a set consisting of (not necessarily connected) cubes. If \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\), then
   \[
     \mathcal{\hat H}(Y) = \mathcal{\hat H}(A) \sqcup \{\mathfrak{\hat h} \in \mathcal{\hat H}(Y) \mid \mathfrak{\hat h} \text{ separates } A \text{ in at least two non-trivial subsets}\}.
   \]
@@ -314,7 +315,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   \[
     H_\mu^+ = P(\mathfrak{h}) \cup P(\mathfrak{k}).
   \]
-  Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know by Lemma~\ref{lem:finite-interval} that there are only finitely many halfspaces between the two. Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
+  Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). The case \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know by Lemma~\ref{lem:finite-interval} that there are only finitely many halfspaces between the two. Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
 \end{proof}
 
 
@@ -396,6 +397,8 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 \subsection{The main theorem}
 \label{sec:main-proof}
 
+Finally, we are in a position to prove our main theorem. The statement can be found in Theorem~\ref{thm:4.1} and a slight generalization takes the form of Corollary~\ref{cor:4.2}. The proofs will use all the technical details of the previous sections. Additionally, we will make heavy use of the measurability results of Section~\ref{sec:meas-maps}, results for essential and non-elementary group actions on CAT(0) cube complexes in Section~\ref{sec:special} and results concerning strong group boundaries in the Sections~\ref{sec:ergodic} and~\ref{sec:grp-boundary}.
+
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
   Let \(\Gamma \to \Aut(Y)\) be a group action on an irreducible finite dimensional CAT(0) cube complex \(Y\). Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial Y\) taking values in the non-terminating ultrafilters in \(\partial Y\).
@@ -410,7 +413,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   \[
     \mathcal{E} \coloneqq \{(\mu, \nu) \in \mathcal{P}(\bar X) \times \mathcal{P}(\bar X)\mid H_\mu = H_\nu\}.
   \]
-  If \(f\colon \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}), \mu \mapsto H_\mu\), then \(\mathcal{E} = (f \times f)^{-1}(\Delta)\), where \(\Delta \subset \operatorname{Pot}(\mathcal{H})^2\) is the diagonal. The set \(\operatorname{Pot}(\mathcal{H})\) is Hausdorff with regard to the cylinder topology. Hence \(\Delta\) is closed and measurable. \(f \times f\) is also measurable and we yield that the same is true for \(\mathcal{E}\). Furthermore, \(\mathcal{E}\) is \(\Gamma\)-invariant and by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), we see that it has either measure 0 or measure 1. Let us consider the two cases
+  If \(f\colon \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}), \mu \mapsto H_\mu\), then \(\mathcal{E} = (f \times f)^{-1}(\Delta)\), where \(\Delta \subset \operatorname{Pot}(\mathcal{H})^2\) is the diagonal. The set \(\operatorname{Pot}(\mathcal{H})\) is Hausdorff with regard to the cylinder topology. Hence \(\Delta\) is closed and measurable. The map \(f \times f\) is also measurable and we yield that the same is true for \(\mathcal{E}\). Furthermore, \(\mathcal{E}\) is \(\Gamma\)-invariant and by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), we see that it has either measure 0 or measure 1. Let us consider the two cases
   \begin{description}
   \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset, \(\Gamma\)-invariant subset \(M \subset \mathcal{P}(X)\)\todo{understand why you find this \(\Gamma\)-invariant full measure subset}, such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). This leads to \(H_{g\nu} = gH_\nu = H_\nu\) for all \(\nu \in M\) because of the \(\Gamma\)-invariance. The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
     The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, which is a contradiction to the fact that it is irreducible.
@@ -423,12 +426,16 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
       \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
       \mu &\mapsto |H_\mu \times H_\mu \cap \mathcal{S}|,
     \end{align*}
-    which is by the above observation \(\Gamma\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep}). Hence, it is essentially constant. If the essential value is greater than 0, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the set \(H_\mu^+ \cap H_\nu\) contain terminal elements, whenerver the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
-    \begin{align*}
-      \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
-      (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
-    \end{align*}
-    is \(\Gamma\)-equivariant and measurable (c.\,f.\ Lemma~\ref{lem:measurable-tau-int}) and Corollary~\ref{cor:4.5} assures that \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence there exists a \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(\nu\), which is a contradiction.
+    which is by the above observation \(\Gamma\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep}). Hence, it is essentially constant.
+    \begin{itemize}
+    \item     If the essential value is greater than 0, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the set \(H_\mu^+ \cap H_\nu\) contain terminal elements, whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
+      \begin{align*}
+        \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
+        (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
+      \end{align*}
+      is \(\Gamma\)-equivariant and measurable (c.\,f.\ Lemma~\ref{lem:measurable-tau-int}) and Corollary~\ref{cor:4.5} assures that \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence there exists a \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(\nu\), which is a contradiction.
+    \item If the essential value is 0, i.\,e.\ \(H_\mu\) does not contain strongly separated halfspaces for almost all \(\mu\), we can apply Corollary~\ref{cor:4.21} and find a contradiction regarding the essentiality or the non-elementarity of the action.
+    \end{itemize}
   \end{description}
   Hence we see that \(H_\mu \cap H_\nu\) cannot be infinite, but then we have the map
   \begin{align*}
@@ -442,7 +449,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
     \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
     (\mu, \nu) &\mapsto |\tau([H_\mu \cap H_\nu^+] \cup [H_\nu \cap H_\mu^+])|,
   \end{align*}
-  where \(\tau\) is the mapp assigning the set of terminal elements of any subset of \(\mathcal{H}\) (c.\,f.~Definition~\ref{defin:tau}). This map is again measurable (c.\,f.\ Lemmas~\ref{lem:measurable-countable} and~\ref{lem:measurable-tau-int}) and \(\Gamma\)-invariant and hence essentially constant. Furthermore, by Lemma~\ref{lem:finite-terminal} we see that the map takes only finite values. However, invoking again Corollary~\ref{cor:4.5}, we have that \([H_\mu \cap H_\nu^+] \cup [H_\nu \cap H_\mu^+]\) contains no terminal elements for almost all \(\mu\) and \(\nu\). This allows us to apply Proposition~\ref{prop:4.10}, which leads to the impossibility of the case \(H_\mu \cap H_\nu = \varnothing\) and hence of \(|H_\mu| = \infty\). 
+  where \(\tau\) is the map assigning the set of terminal elements of any subset of \(\mathcal{H}\) (c.\,f.~Definition~\ref{defin:tau}). This map is again measurable (c.\,f.\ Lemmas~\ref{lem:measurable-countable} and~\ref{lem:measurable-tau-int}) and \(\Gamma\)-invariant and hence essentially constant. Furthermore, by Lemma~\ref{lem:finite-terminal} we see that the map takes only finite values. However, invoking again Corollary~\ref{cor:4.5}, we have that \([H_\mu \cap H_\nu^+] \cup [H_\nu \cap H_\mu^+]\) contains no terminal elements for almost all \(\mu\) and \(\nu\). This allows us to apply Proposition~\ref{prop:4.10}, which leads to the impossibility of the case \(H_\mu \cap H_\nu = \varnothing\) and hence of \(|H_\mu| = \infty\). 
   % By Corollary~\ref{cor:p(x)}, we yield a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Via this map we can pushforward the probability measure \(\vartheta\) on \(B\) to \(\mathcal{P}(\bar X)\). With the help of Proposition~\ref{prop:coeff-ergodic} and Lemma~\ref{lemma:ergodicity-pushforward} \(\mathcal{P}(\bar X)\) becomes (doubly) ergodic with regard to the \(\Gamma\) action.
 
   % Consider the map \(\mathcal{P}(\bar X) \to \N \cup \{\infty\},\ \mu \mapsto |H_\mu|\). This map is measurable because of Lemma~\ref{lem:measurable-mu} and~\ref{lem:measurable-countable}. Additionally consider \(g \in \Gamma\), then we have
@@ -465,7 +472,7 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
 
   % With the help of Lemma~\ref{lem:4.11} we see that the image of \(\phi\) will lie in the non-terminating ultrafilters of \(X\).
 
-  % All that is left to prove now, is that the essential value \(N\) can take only the value \(0\). For this we will consider multiple cases
+  % All that is pleft to prove now, is that the essential value \(N\) can take only the value \(0\). For this we will consider multiple cases
   % \begin{description}
   % \item[\(0 < N < \infty\):] In this case we would have a measurable and \(\Gamma\)-equivariant map \(\mathcal{P}(\bar X) \to Pot_f(\mathcal{H})\) which by Corollary~\ref{cor:4.5} would imply that the \(Gamma\)-action on \(Y\) is not essential.
   % \item[\(N = \infty\):] This case is a bit more involved and we have to consider another measurable and \(\Gamma\)-equivariant map
@@ -485,7 +492,8 @@ Here we will see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) w
   % \end{description}
 \end{proof}
 
-\begin{cor}[\cite{MR3509968}]
+\begin{cor}[{\cite[Corollary~4.2]{MR3509968}}]
+  \label{cor:4.2}
   Let \(\Gamma \to \Aut(X)\) be a group acting on a finite dimensional CAT(0) cube complex \(X\). Assume that there is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \partial Y \subseteq \partial X\).
 \end{cor}
 

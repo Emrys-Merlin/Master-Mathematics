@@ -20,7 +20,7 @@ This section is concerned with basic metric properties of spaces and their conne
       d(c(t), c(t')) = \lambda \cdot |t - t'| 
     \end{align*}
     for all \(t,t' \in [a,b]\).
-  \item The pair \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
+  \item The pair \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)), if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic}, if this geodesic is unique. The pair \((X,d)\) is called \emph{(uniquely) geodesic}, if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
   % \item The \emph{length} of a curve \(c\colon [a,b] \to X\) is defined as
   %   \begin{align*}
   %     l(c) \coloneqq \left\{\sum_{i=1}^n d(c(t_i), c(t_{i-1})) \relmid a = t_0 \leq t_0 \leq \dots \leq t_n = b \text{ a subdivision} \right\}.
@@ -93,7 +93,7 @@ This section is concerned with basic metric properties of spaces and their conne
       \caption{A triangle in a tree and the corresponding comparison triangle in \(\E^2\). The different choices of comparison points for \(x\) and \(y\) are inscribed as \(\bar x_i\) and \(\bar y_i\). The blue segment in the comparison triangle corresponds to the only comparison pair with the same length as in the tree. The three green line segments are all longer.}
       \label{fig:cat-tree}
     \end{figure}
-    Trees form another example of CAT(0) spaces when equipped with the edge metric. Every triangle in a tree takes the form of one midpoint \(m\) with three edge paths connecting \(m\) to the three vertices \(p,q\) and \(r\). Otherwise, we would have a proper cycle in the graph, which therefore could not be a tree. However, this implies that any point on the triangle, always lies on two of its sides at the same time and this leads to two corresponding points in the comparison triangle. This situation is depicted in Figure~\ref{fig:cat-tree}. This leads to the consequence, that any two points \(x,y \in \Delta(p,q,r)\) have a representative lying on a common side in the comparison triangle (in our example below this corresponds to \(\bar x_2\) and \(\bar y_2\)) with the blue line segment joining the two. These two representatives satisfy the CAT(0) inequality trivially. If we compare \(\bar x_1\) to \(\bar y_2\), we note that \(\bar \Delta(\bar x_1, \bar x_2, \bar q)\) is an isosceles triangle, meaning that \(\angle(\bar x_2, \bar x_1, \bar y_2) \geq \frac{\pi}{2}\). This shows that \(\|\bar x_1 - \bar y_2\|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). By symmetry the same is true in the case of \(\bar x_2\) and \(\bar y_1\). The last case is to consider \(\bar x_1\) and \(\bar y_1\). However, then we have the rectangle \(\bar x1, \bar x_2, \bar y_2, \bar y_1\). Using the two isosceles triangles \(\Delta(\bar q, \bar x_1, \bar x_2)\) and \(\Delta(\bar p, \bar y_1, \bar y_2)\), we see that the ractangle has angles of more than \(\frac{pi}{2}\) at the vertices \(\bar x_2\) and \(\bar y_2\). Hence, \(\|\bar x_1 - \bar y_1 \|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). All in all we see that the triangle satisfies the CAT(0) inequality. Since every tree is geodesic, we see that trees indeed are CAT(0) spaces.
+    Trees form another example of CAT(0) spaces when equipped with the edge metric. Every triangle in a tree takes the form of one midpoint \(m\) with three edge paths connecting \(m\) to the three vertices \(p,q\) and \(r\). Otherwise, we would have a proper cycle in the graph, which therefore could not be a tree. However, this implies that any point on the triangle, always lies on two of its sides at the same time and this leads to two corresponding points in the comparison triangle. This situation is depicted in Figure~\ref{fig:cat-tree}. This leads to the consequence, that any two points \(x,y \in \Delta(p,q,r)\) have a representative lying on a common side in the comparison triangle (in our example below this corresponds to \(\bar x_2\) and \(\bar y_2\)) with the blue line segment joining the two. These two representatives satisfy the CAT(0) inequality trivially. If we compare \(\bar x_1\) to \(\bar y_2\), we note that \(\bar \Delta(\bar x_1, \bar x_2, \bar q)\) is an isosceles triangle, meaning that \(\angle(\bar x_2, \bar x_1, \bar y_2) \geq \frac{\pi}{2}\). This shows that \(\|\bar x_1 - \bar y_2\|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). By symmetry the same is true in the case of \(\bar x_2\) and \(\bar y_1\). The last case is to consider \(\bar x_1\) and \(\bar y_1\). However, then we have the rectangle \(\bar x1, \bar x_2, \bar y_2, \bar y_1\). Using the two isosceles triangles \(\Delta(\bar q, \bar x_1, \bar x_2)\) and \(\Delta(\bar p, \bar y_1, \bar y_2)\), we see that the rectangle has angles of more than \(\frac{pi}{2}\) at the vertices \(\bar x_2\) and \(\bar y_2\). Hence, \(\|\bar x_1 - \bar y_1 \|_2 \geq \|\bar x_2 - \bar y_2\|_2 = d(x,y)\). All in all we see that the triangle satisfies the CAT(0) inequality. Since every tree is geodesic, we see that trees indeed are CAT(0) spaces.
   \item[Hyperbolic space:] For completeness sake, we would like to mention that every hyperbolic \(n\)-space \(\mathbb{H}^n\) is CAT(0). The interested reader may find further information in \textcite[Section~II.1]{MR1744486}.
   % \item \(\bigvee_{n \in \N} (\sphere_n, x_n)\), where \(\sphere_n = \frac{1}{\sqrt{n}} \sphere^1
     % \cong M_n^1\) and \(x_n \in \sphere_n\). Not CAT(\(\kappa\)) for any \(\kappa\), not even locally.
@@ -133,7 +133,7 @@ This section will contain some important facts about general CAT(0) spaces. Wher
 \end{prop}
 
 \begin{defin}
-  Let \(X,Y\) be metric spaces. \(\phi \colon X \to Y\) is called
+  Let \(X,Y\) be metric spaces. The map \(\phi \colon X \to Y\) is called
   \begin{itemize}
   \item an \emph{isometric embedding}, if \(d_X(x,y) = d_Y(\phi(x), \phi(y))\) for any two \(x,y \in X\),
   \item an \emph{isometry}, if it is an isometric embedding and surjective (and hence bijective) and
@@ -148,7 +148,8 @@ This section will contain some important facts about general CAT(0) spaces. Wher
 On CAT(0) spaces one regularly defines a boundary via identifying certain geodesic rays. This so called \emph{visual boundary} will play a minor role in this thesis, but we will still need it. 
 
 \begin{defin}[Visual boundary, {\cite[Sec.~II.8]{MR1744486}}]
-  Let \(\gamma_i \colon [0, \infty) \to X\) be two geodesic rays. \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that \(d(\gamma_1(t), \gamma_2(t)) < K\) for all \(t \geq 0\). The set of equivalence classes of this relation \(\partial_\sphericalangle X\) is called the \emph{visual boundary of \(X\)}.
+  \label{defin:visual}
+  Let \(\gamma_i \colon [0, \infty) \to X\) be two geodesic rays. We define \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that \(d(\gamma_1(t), \gamma_2(t)) < K\) for all \(t \geq 0\). The set of equivalence classes of this relation \(\partial_\sphericalangle X\) is called the \emph{visual boundary of \(X\)}.
 
   Clearly, each group action on \(X\) by isometries extends to an action on \(\partial_\sphericalangle X\).
 \end{defin}
@@ -159,7 +160,7 @@ On CAT(0) spaces one regularly defines a boundary via identifying certain geodes
 
 \begin{bsp}
   \begin{description}
-  \item[Euclidean space:] In \(\E^n\) two geodesics (i.\,e.\ straight lines) are equivalent if and only if they are parallel. Hence, we can fix any point \(x \in \E^n\) and see that there is a one-to-one correspondes between points at the visual boundary and (signed) directions. In other words, we attach an \(n-1\)-sphere at infinity and indeed it can be shown that \(\E^n \sqcup \partial_\sphericalangle \E^n\) is homeomorphic to the closed unit ball \(D^n\), with \(\E^n\) being homeomorphic to the interior (c.\,f.~\cite[Section~II.8]{MR1744486}).
+  \item[Euclidean space:] In \(\E^n\) two geodesics (i.\,e.\ straight lines) are equivalent if and only if they are parallel. Hence, we can fix any point \(x \in \E^n\) and see that there is a one-to-one correspondence between points at the visual boundary and (signed) directions. In other words, we attach an \(n-1\)-sphere at infinity and indeed it can be shown that \(\E^n \sqcup \partial_\sphericalangle \E^n\) is homeomorphic to the closed unit ball \(D^n\), with \(\E^n\) being homeomorphic to the interior (c.\,f.~\cite[Section~II.8]{MR1744486}).
   \item[Trees:] In the case of trees, every edge path is a geodesic and two of them \(c_1\) and \(c_2\) are equivalent if and only if there exist \(n,m \in \N\) such that \(c_1(t+m) = c_2(t+n)\) for all \(t\geq0\). This means that up to a finite starting interval the two geodesics have to coincide. In other words we are only interested in the \enquote{tails} of the geodesic rays.
   \end{description}
 \end{bsp}
