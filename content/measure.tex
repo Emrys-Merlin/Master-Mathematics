@@ -29,7 +29,12 @@ This section is conglomeration of facts about measures and their connection to c
   \]
   We call \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\). If \(\Sigma\) is the Borel \(\sigma\)-algebra of a topology on \(X\), then a measure \(\mu\) is called Borel, if every \(x \in X\) has an open neighborhood \(U \subset X\) such that \(\mu(U) > 0\).
   
-  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A = \inf \{ \mu{U} \mid U \supset A \text{ open}\})\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
+  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A) = \inf \{ \mu(U) \mid U \supset A \text{ open}\}\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
+
+  The support of a Beorel measure \(\mu\) is defined to be the set
+  \[
+    \supp(\mu) \coloneqq \{x \in X \mid \forall U \subset X \text{ open, s.\,t.\ } x \in U\colon \mu(U) > 0\}.
+  \]
 \end{defin}
 
 \begin{rem}
@@ -39,6 +44,21 @@ This section is conglomeration of facts about measures and their connection to c
 \begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
   \(|\mu|\) and \(\mu^\pm\) are measures on \((X, \Sigma)\) and \(|\mu|(X) < \infty\) holds.
 \end{prop}
+
+\begin{lemma}
+  \label{lem:mu-supp}
+  Let \(X\) be a topological space and \(\mu\) inner regular measure on \(X\). Then we have for every measurable set \(A \subset X \setminus \supp(\mu)\) that \(\mu(A) = 0\). In particular, if \(\mu\) is non-zero the set \(\supp(\mu)\) is not empty.
+\end{lemma}
+
+\begin{proof}
+  We fix a measurable \(A \subset X \setminus \supp(\mu)\). Since \(\mu\) is inner regular, we find a sequence of compact sets \(K_n \subset A\) such that \(\mu(K_n) \xrightarrow{n \to \infty} \mu(A)\). Let \(x \in K_n\), then \(x \not \in \supp(\mu)\) and there exists \(U_x \subset X\) open such that \(x \in U_x\) and \(\mu(U_x) = 0\). Since \(K_n\) is compact we find an \(l = l(n) \in \N\) and finitely many \(x_1, \dots, x_l \in K_n\) such that \(K_n \subset \bigcup_{i=1}^l U_{x_i}\). Hence, we have
+  \[
+    \mu(K_n) \leq \sum_{i=1}^l \mu(U_{x_i}) = 0
+  \]
+  for every \(n \in \N\). By the convergence we yield \(\mu(A) = 0\).
+
+  If \(\supp(\mu)\) were empty, then the set \(X \setminus \supp(\mu)\) would be measurable of full (non-zero) measure, which is a contradiction.
+\end{proof}
 
 \begin{defin}
   \label{def:vanishing}
@@ -115,7 +135,6 @@ If not noted otherwise, \(X\) is assumed to be a locally finite, finite-dimensio
   \item The assignments \(\mu \mapsto H_\mu\), \(\mu \mapsto H_\mu^+\) and \(\mu \mapsto H_\mu^-\) are \(\Aut(X)\)-equivariant for the natural actions on \(\mathcal{P}(\bar X)\) and \(\operatorname{Pot}(\mathcal{H}(X))\).
   \end{enumerate}
 \end{lemma}
-\todo{check if I need \(H_\mu^+ \neq \varnothing\) if not euclidean and if I need facing triples.}
 
 \begin{proof}
   1.\ -- 3.\ are clear from the definitions and the additivity of the measure. For 4.\ we see that \(H_\mu \subset H_\nu^+ \cap H_\nu^-\). Since \(H_\mu\) is invariant under involution, but \(H_\nu^+\) and \(H_\nu^-\) get interchanged, we see that both intersections cannot be empty. For 5. we have
@@ -139,7 +158,7 @@ If not noted otherwise, \(X\) is assumed to be a locally finite, finite-dimensio
     p \colon \bar X &\to \bar X (H_\mu),\\
     \alpha &\mapsto \alpha \cap H_\mu
   \end{align*}
-  be the projection. Since \(p\) is continuous and we can push forward \(\mu\) along it. Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. The set \(\supp(p_\ast \mu)\) is not empty as \(\mu\) is non-vanishing and regular. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
+  be the projection. Since \(p\) is continuous and we can push forward \(\mu\) along it. Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. The set \(\supp(p_\ast \mu)\) is not empty by Lemma~\ref{lem:mu-supp}. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) were not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) would be an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and we would need its measure to be positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
 \end{proof}
 
 \begin{lemma}
@@ -351,4 +370,5 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Master"
+%%% ispell-local-dictionary: "en_US"
 %%% End:

@@ -11,6 +11,8 @@
 \usepackage{float}
 \graphicspath{ {images/} }
 
+\newcounter{savepage}
+
 
 \newfontfamily\nfrac[Fractions=On]{Linux Libertine O}
 
@@ -94,6 +96,7 @@ This work has been set using {\LaTeX} and {\KOMAScript}.\\[\baselineskip]
 
 \pagenumbering{roman}
 \selectlanguage{german}
+\currentpdfbookmark{Title page}{title}
 \maketitle
 \selectlanguage{english}
 
@@ -108,8 +111,10 @@ This work has been set using {\LaTeX} and {\KOMAScript}.\\[\baselineskip]
 
 % Nur bis section, nicht bis subsection
 \setcounter{tocdepth}{2}
+\currentpdfbookmark{Contents}{toc}
 \tableofcontents
 \cleardoubleoddstandardpage{}
+\setcounter{savepage}{\arabic{page}}
 \pagenumbering{arabic}
 \input{content/intro}
 \cleardoubleoddstandardpage{}
@@ -133,7 +138,8 @@ This work has been set using {\LaTeX} and {\KOMAScript}.\\[\baselineskip]
 \input{content/map}
 \cleardoubleoddstandardpage{}
 
-
+\pagenumbering{roman}
+\setcounter{page}{\thesavepage}
 \input{content/acknowledgement.tex}
 \cleardoubleoddstandardpage{}
 \input{appendix}
@@ -146,4 +152,5 @@ This work has been set using {\LaTeX} and {\KOMAScript}.\\[\baselineskip]
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
+%%% ispell-local-dictionary: "en_US"
 %%% End: 

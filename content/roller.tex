@@ -23,39 +23,6 @@ In this section we will introduce a special type of partially ordered sets (or s
   \end{itemize}
 \end{defin}
 
-\begin{rem}
-  \label{rem:roller}
-  In his habilitation \textcite{Roller1999} showed that there is a one to one correspondence between discrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets is easy to realize, one takes the pocset of halfspaces \(\mathcal{H}(X)\) (which is discrete by Lemma~\ref{lem:finite-interval}). The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
-
-  One important observation is, that every CAT(0) cube complex is already uniquely defined by its pocset of halfspaces, which leads to the following observation.
-\end{rem}
-
-\begin{prop}[{\cite[Lemma~2.5]{Caprace2010}}]
-  A CAT(0) cube complex \(X\) splits as a (proper) product if and only if  there  exists a partition \(\mathcal{H}(X) = \mathcal{H}_1 \sqcup \mathcal{H}_2\), such that each halfspace in \(\mathcal{H}_1\) is transverse to each halfspace in \(\mathcal{H}_2\).
-\end{prop}
-
-\begin{proof}[Sketch of proof]
-  The key observation is, that if we have two CAT(0) cube complexes \(X_1\) and \(X_2\) and we consider the cube complex \(X_1 \times X_2\), then the halfspaces take the form \(\mathfrak{h} \times X_2\) for any \(\mathfrak{h} \in \mathcal{H}(X_1)\) or \(X_1 \times \mathfrak{k}\) for any \(\mathfrak{k} \in \mathcal{H}(X_2)\). And two of this different types of halfspaces will always be transverse. Thus if \(X\) splits as a product, then this argument shows, that we find the desired partition. If we have the partition, then the \(\mathcal{H}_i\) are easily to be seen pocsets. Hence, up to isomorphism, we find two unique CAT(0) cube complexes corresponding to the two pocsets and their product has the same set of halfspaces as \(X\). By the aforementioned uniqueness they have to be isomorphic.
-\end{proof}
-
-The above proposition leads to the following definition:
-
-\begin{defin}
-  A CAT(0) cube complex \(X\) is called \emph{reducible}, if it can be decomposed as a (proper) product of CAT(0) cube complexes. Otherwise, it is called \emph{irreducible}.
-\end{defin}
-
-\begin{prop}[{\cite[Proposition~2.6]{Caprace2010}}]
-  \label{prop:cs-2.6}
-  A finite-dimensional CAT(0) cube complex \(X\) admits an (up to permutation) canonical decomposition
-  \[
-    X = X_1 \times \dots \times X_m
-  \]
-  into a product of irreducible cube complexes \(X_i\). Every automorphism of \(X\) preserves that decomposition, up to a permutation of possibly isomorphic factors. In particular, the image of the canonical embedding
-  \[
-    \Aut(X_1) \times \dots \times \Aut(X_m) \hookrightarrow \Aut(X)
-  \]
-  has finite index in \(\Aut(X)\).
-\end{prop}
 
 \begin{defin}[Ultrafilter]
   Let \((A, \prec, \ ^\ast)\) be a pocset. Let \(\tilde A\) be the set of equivalence classes via: \(a \sim b\) if and only if \(a^\ast = b\) or \(a = b\). This is in fact an equivalence relation. We define
@@ -132,6 +99,37 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \begin{rem}
   This is one of the central places, where we need our CAT(0) cube complexes to be locally countable and it might seem like a slight technicality. However, it is essential that \(\mathcal{U}(\mathcal{H})\) is metrizable in order for certain vector spaces of continuous functions to be separable. Otherwise, we could not construct the first part of our boundary map (see Theorem~\ref{thm:p(x)} and Corollary~\ref{cor:p(x)}).
 \end{rem}
+
+\subsubsection*{The pocset of halfspaces of a CAT(0) cube complex}
+\label{pocset-halfspaces}
+
+\begin{rem}
+  \label{rem:roller}
+  In his habilitation \textcite{Roller1999} showed that there is a one to one correspondence between discrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets is easy to realize, one takes the pocset of halfspaces \(\mathcal{H}(X)\) (which is discrete by Lemma~\ref{lem:finite-interval}). The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
+
+  One important observation is, that every CAT(0) cube complex is already uniquely defined by its pocset of halfspaces, which leads to the following observation.
+\end{rem}
+
+\begin{prop}[{\cite[Lemma~2.5]{Caprace2010}}]
+  A CAT(0) cube complex \(X\) is reducible, i.\,e.\ \(X\) splits as a (proper) product if and only if  there  exists a partition \(\mathcal{H}(X) = \mathcal{H}_1 \sqcup \mathcal{H}_2\), such that each halfspace in \(\mathcal{H}_1\) is transverse to each halfspace in \(\mathcal{H}_2\).
+\end{prop}
+
+\begin{proof}[Sketch of proof]
+  The key observation is, that if we have two CAT(0) cube complexes \(X_1\) and \(X_2\) and we consider the cube complex \(X_1 \times X_2\), then the halfspaces take the form \(\mathfrak{h} \times X_2\) for any \(\mathfrak{h} \in \mathcal{H}(X_1)\) or \(X_1 \times \mathfrak{k}\) for any \(\mathfrak{k} \in \mathcal{H}(X_2)\). And two of this different types of halfspaces will always be transverse. Thus if \(X\) splits as a product, then this argument shows, that we find the desired partition. If we have the partition, then the \(\mathcal{H}_i\) are easily to be seen pocsets. Hence, up to isomorphism, we find two unique CAT(0) cube complexes corresponding to the two pocsets and their product has the same set of halfspaces as \(X\). By the aforementioned uniqueness they have to be isomorphic.
+\end{proof}
+
+\begin{prop}[{\cite[Proposition~2.6]{Caprace2010}}]
+  \label{prop:cs-2.6}
+  A finite-dimensional CAT(0) cube complex \(X\) admits an (up to permutation) canonical decomposition
+  \[
+    X = X_1 \times \dots \times X_m
+  \]
+  into a product of irreducible cube complexes \(X_i\). Every automorphism of \(X\) preserves that decomposition, up to a permutation of possibly isomorphic factors. In particular, the image of the canonical embedding
+  \[
+    \Aut(X_1) \times \dots \times \Aut(X_m) \hookrightarrow \Aut(X)
+  \]
+  has finite index in \(\Aut(X)\).
+\end{prop}
 
 \subsection{The Roller compactification}
 \label{sec:rb}
@@ -403,4 +401,5 @@ If not noted otherwise \(X\) is to be assumed a locally finite, finite-dimension
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Master"
+%%% ispell-local-dictionary: "en_US"
 %%% End:
