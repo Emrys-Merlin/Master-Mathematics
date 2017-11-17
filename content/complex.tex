@@ -116,6 +116,7 @@ We are now able to define the central object of our thesis: CAT(0) cube complexe
 In the following is a short list of deeper results about cube complexes, which we will need in the following, but which we will not be able to prove. The interested reader may find the results in~\cite[Appendices A, B]{MR3029427}. For the finite dimensional case we refer to~\cite[Sec. I.7, II.5]{MR1744486}.
 
 \begin{thm}[{\cite[I.7.10]{MR1744486}}]
+  \label{thm:metric}
   Every cube complex \(X\) is a metric space, when equipped with path metric \(d\) induced by piecewise linear paths in \(X\).
 \end{thm}
 
@@ -382,6 +383,10 @@ This is a very short section concerned with maps between cube complexes. It is e
 % \begin{cor}
 %   With the notation of the previos proposition, it holds that \(\dim X = \dim \tilde X\).
 % \end{cor}
+
+\begin{rem}
+  In the last two sections we saw that there are two closely intertwined sides to CAT(0) cube complexes. First, there is the combinatorial nature of their construction, which is also mirrored in the definition of combinatorial maps. Second, there is the geometric structure as CAT(0) spaces. As stated in Theorem~\ref{thm:metric}, \(X\) is a metric space with regard to the path metric and it is also with regard to this metric, that it is a CAT(0) space. However, often (and in particular in our case) one prefers to work on the combinatorial side and introduces a second metric on the vertex set \(V(X) \coloneqq X^{(0)}\)  of \(X\). This so called \emph{edge metric} is given by the infimum over the length of all paths between vertices along edges, i.\,e.\ the infimum of the length over all paths in the 1-skeleton \(X^{(1)}\). Indeed, because of Gromov's link condition (Theorem~\ref{thm:link}), we are in the special situation that all the geometric information of our space is already encoded in its 1-skeleton (or equivalently in its vertex set equipped with the edge metric). This is also the reason why in the following chapters the length metric of CAT(0) cube complexes will not appear any longer and we will mostly be concerned with its vertex set and the equipped edge metric.
+\end{rem}
 
 %%% Local Variables:
 %%% mode: latex
