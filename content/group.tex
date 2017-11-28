@@ -191,8 +191,25 @@ We not only need certain properties of our group action on our complex, but also
 
 Unless noted otherwise, \(\Gamma\) will denote a topological group, whose topology is second countable and locally compact.
 
+\begin{defin}[Measure class preserving action]
+  Let \((B, \Sigma)\) be a measurable space. We can define an equivalence relation on all measures on \(\Sigma\) via \(\mu \sim \nu\) if and only if the null-sets of \(\mu\) and \(\nu\) coincide. An equivalence class \([\mu]\) is called a \emph{measure class}. If a group \(\Gamma\) acts by measurable transformations on \(B\), then \(\Gamma\) \emph{preserves measure classes} if for every measure \(\mu\) of \(\Sigma\) we have that \(\mu(B) = 0\) implies that \(\mu(g^{-1} B) = 0\) for every \(B \in \Sigma\) and \(g \in \Gamma\).
+\end{defin}
+
+\begin{lemma}
+  \label{lem:countable-orbit}
+  Let \((M, \Sigma, \mu)\) be a measure space on which a countable group \(\Gamma\) acts by measurable and measure class preserving transformations. Let \(B \in \Sigma\) such that \(\mu(M \setminus B) = 0\). Then there exists \(x \in M\) such that \(\Gamma \cdot x \subset B\).
+\end{lemma}
+
+\begin{proof}
+  We define
+  \[
+    A \coloneqq \{x \in B \mid \exists g \in \Gamma\colon gx \in B^c\} = B \cap \left( \bigcup_{g \in \Gamma} gB^c\right) \subset \bigcup_{g \in \Gamma} gB^c.
+  \]
+  Since \(\Gamma\) acts measure class preserving, we have that \(\mu(gB^c) = 0\) for every \(g \in \Gamma\). As \(\Gamma\) is countable, we have that \(\mu(A) = 0\). Hence \(B \setminus A\) has full measure. In particular it is not empty and every \(x \in B \setminus A\) satisfies \(\Gamma \cdot x \subset B\).
+\end{proof}
+
 \begin{defin}[(Doubly) ergodic action]
-  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure-preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied:
+  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure class preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ the following lemma):
   \begin{enumerate}
   \item For every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\) or
   \item every measurable \(\Gamma\)-invariant map \(f\colon B \to \R\) is essentially constant.
@@ -299,7 +316,6 @@ Unless noted otherwise, \(\Gamma\) will denote a topological group, whose topolo
 
   A measure space \((B, \Sigma, \mu)\) is called a \emph{Lebesgue space} if it is a standard Borel space and \(\mu\) is a regular probability measure.
 
-  Let \((B, \Sigma)\) be a measurable space. We can define an equivalence relation on all measures on \(\Sigma\) via \(\mu \sim \nu\) if and only if the null-sets of \(\mu\) and \(\nu\) coincide. An equivalence class \([\mu]\) is called a \emph{measure class}. If a group \(\Gamma\) acts by measurable transformations on \(B\), then \(\Gamma\) \emph{preserves measure classes} if for every measure \(\mu\) of \(\Sigma\) we have that \(\mu(B) = 0\) implies that \(\mu(g^{-1} B) = 0\) for every \(B \in \Sigma\) and \(g \in \Gamma\).
 \end{defin}
 
 \begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}, \cite[Corollary~B.6]{Zimmer84}}]
@@ -424,7 +440,7 @@ Unless noted otherwise, the topology of our group \(\Gamma\) is assumed to be se
 \end{cor}
 
 \begin{proof}
-  By Lemma~\ref{lem:4.4}, the map is essentially constant. Hence, the image must be a \(\Gamma\)-invariant finite subset of \(\mathcal{H}(X)\). In particular, there is a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\).\todo{again up to measure 0} Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite and thus by Lemma~\ref{lem:ess-unbounded} \(\mathfrak{\hat h}\) is not essential and the group action is neither.
+  By Lemma~\ref{lem:4.4}, the map is essentially constant. Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\). Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite and thus by Lemma~\ref{lem:ess-unbounded} \(\mathfrak{\hat h}\) is not essential and the group action is neither.
 \end{proof}
 
 \begin{defin}[Strong \(\Gamma\)-boundary]

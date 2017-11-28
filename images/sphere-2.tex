@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+  [
+  vertex/.style={
+    circle,
+    fill=black,
+    minimum size=1mm,
+    inner sep=0pt
+  },
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position 0.5 with {\arrow{#1}}
+    },
+    postaction={decorate}
+  }
+  ]
+  \node at (0,0) [vertex] {}
+  edge [->-={>}] (1,0)
+  node at (1,0) [vertex] {}
+  edge [->-={<}] (2,0)
+  node at (2,0) [vertex] {}
+  edge [->-={<<}] (2,1)
+  node at (2,1) [vertex] {}
+  edge [>={Stealth},->-={>}] (1,1)
+  node at (1,1) [vertex] {}
+  edge [>={Stealth},->-={<}] (0,1)
+  node at (0,1) [vertex] {}
+  edge [->-={>>}] (0,0);
+  \draw (1,0) -- (1,1);
+  \begin{scope}[shift={(3,0.5)}]
+    \node at (0,0) [vertex] {}
+    edge [bend left] (1,0)
+    node  at (1,0) [vertex] {}
+    edge [bend left] (0,0);
+  \end{scope}
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:

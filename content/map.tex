@@ -29,7 +29,7 @@ As a next step to our main theorem we would like to convince ourselves that any 
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma \to \Aut(X)\) an essential action on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
+  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma\) a discrete, countable group with an essential action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
@@ -47,7 +47,7 @@ As a next step to our main theorem we would like to convince ourselves that any 
 
   Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
-  However, \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.\todo{Understand and prove this last sentence.}
+  However, by Lemma~\ref{lem:countable-orbit} \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.
   
   \todo{make reducible case nicer}
   In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
@@ -274,6 +274,8 @@ This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) 
 
 This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) is impossible in our setting. In this case, there are many parallel statements many of which are used directly in the proof of the main theorem.
 
+Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group and \(X\) a locally countable, finite dimensional, irreducible CAT(0) cube complex.
+
 \begin{defin}
   Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edge path joining the two also lies completely in \(Y\).
 \end{defin}
@@ -303,7 +305,7 @@ This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) 
 
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
   \label{lem:4.18}
-  If \(|H_\mu| = \infty\)\todo{check if I need this first condition} and \(H_\mu\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}), then \(H_\mu^+\) satisfies the descending chain condition.
+  If \(H_\mu\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}), then \(H_\mu^+\) satisfies the descending chain condition.
 \end{lemma}
 
 \begin{proof}
@@ -368,11 +370,11 @@ This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) 
 
 \begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
   \label{lem:4.20}
-  Let \(\mu_i \in \mathcal{P}(\bar X)\) be measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_i} \cap H_{\mu_j} \neq \varnothing\) for all \(i,j\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_{\mu_j}\), \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\).
+  Let \(\mu_i \in \mathcal{P}(\bar X)\) be a family of measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_{i_0}} \cap H_{\mu_i} \neq \varnothing\) for all \(i\) and a fixed \(i_0\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_{\mu_j}\), \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\).
 \end{lemma}
 
 \begin{proof}
-  We fix \(\mu_0\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
+  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5
   \]
@@ -391,9 +393,17 @@ This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) 
 \end{cor}
 
 \begin{proof}
-  We fix a generic measure \(\mu_0\) with a generic \(\Gamma\)-invariant set \(B_0\) such that for every \(\nu \in B_0\) we have that \(H_{\mu_0} \cap H_\nu \neq \varnothing\).\todo{find the set}\ By Lemma~\ref{lem:4.20} we find two halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) for each hyperplane \(\mathfrak{\hat l} \in \mathcal{\hat H}_\nu\) with \(\nu \in B_0\), we have that (after a possible involution of \(\mathfrak{l}\)) \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\). In particular, fix such an \(\mathfrak{l} \in H_{\mu_0}\). We know that \(g\mu_0 \in B_0\) by the \(\Gamma\)-invariance. Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). Theorem~\ref{thm:cs-flipping} finishes the proof.
-\end{proof}
+  By the construction of the product measure, we find a measure \(\mu_0\) and a subset \(B_0 \subset \mathcal{P}(\bar X)\) of full measure, such that for all \(\nu \in B_0\), we have
+  \[
+    H_{\mu_0} \cap H_\nu \neq \varnothing.
+  \]
+  By Lemma~\ref{lem:4.20} we find two halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) for each hyperplane \(\mathfrak{\hat l} \in \mathcal{\hat H}_\nu\) with \(\nu \in B_0\), we have that (after a possible involution of \(\mathfrak{l}\)) \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\).
 
+  Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a \(\nu_0 \in B_0\) such that \(\Gamma \nu_0 \subset B_0\). 
+
+  We fix now an \(\mathfrak{l} \in H_{\nu_0}\). We know that \(g\nu_0 \in B_0\). Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). Theorem~\ref{thm:cs-flipping} then finishes the proof.
+\end{proof}
+  
 \subsection{The main theorem}
 \label{sec:main-proof}
 
@@ -401,7 +411,7 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
 
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
-  Let \(\Gamma \to \Aut(Y)\) be a group action on an irreducible finite dimensional CAT(0) cube complex \(Y\). Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial Y\) taking values in the non-terminating ultrafilters in \(\partial Y\).
+  Let \(\Gamma\) be a discrete, countable group acting on an irreducible finite dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial X\) taking values in the non-terminating ultrafilters in \(\partial X\).
 \end{thm}
 
 \begin{proof}
@@ -415,7 +425,12 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
   \]
   If \(f\colon \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}), \mu \mapsto H_\mu\), then \(\mathcal{E} = (f \times f)^{-1}(\Delta)\), where \(\Delta \subset \operatorname{Pot}(\mathcal{H})^2\) is the diagonal. The set \(\operatorname{Pot}(\mathcal{H})\) is Hausdorff with regard to the cylinder topology. Hence \(\Delta\) is closed and measurable. The map \(f \times f\) is also measurable and we yield that the same is true for \(\mathcal{E}\). Furthermore, \(\mathcal{E}\) is \(\Gamma\)-invariant and by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), we see that it has either measure 0 or measure 1. Let us consider the two cases
   \begin{description}
-  \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset, \(\Gamma\)-invariant subset \(M \subset \mathcal{P}(X)\)\todo{understand why you find this \(\Gamma\)-invariant full measure subset}, such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). This leads to \(H_{g\nu} = gH_\nu = H_\nu\) for all \(\nu \in M\) because of the \(\Gamma\)-invariance. The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
+  \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset \(M \subset \mathcal{P}(X)\), such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). By Lemma~\ref{lem:countable-orbit} we find a \(\mu \in M\) such that
+    \[
+      H_{g\nu} = gH_\nu = H_{g\nu} = H_\mu = H_\nu
+    \]
+    for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
+
     The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, which is a contradiction to the fact that it is irreducible.
   \item[\(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We define the set
     \[

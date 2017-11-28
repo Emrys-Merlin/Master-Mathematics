@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+  [
+  vertex/.style={
+    circle,
+    fill=black,
+    minimum size=1mm,
+    inner sep=0pt
+  },
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position 0.5 with {\arrow{#1}}
+    },
+    postaction={decorate}
+  }
+  ]
+  \node at (0,0) [vertex] {}
+  edge [->-={>}] (1,0)
+  node at (1,0) [vertex] {}
+  edge [->-={<}] (1,1)
+  node at (1,1) [vertex] {}
+  edge [->-={<<}] (0,1)
+  node at (0,1) [vertex] {}
+  edge [->-={>>}] (0,0);
+  \node at (2.5,0) [vertex] {};
+  \draw (2.5,0) to [out=45,in=135,loop] (2.5,0);
+  \node at (2,1) [vertex] {}
+  edge [bend right] (3,1)
+  node at (3,1) [vertex] {}
+  edge [bend right] (2,1);
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:
