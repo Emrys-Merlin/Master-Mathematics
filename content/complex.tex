@@ -190,10 +190,10 @@ In the following we will list some useful results about cube complexes. For the 
       \subcaptionbox{\label{fig:sphere-a}}[.4\linewidth]{\input{./images/sphere-1.tex}}%
       \subcaptionbox{\label{fig:sphere-b}}[.4\linewidth]{\input{./images/sphere-2.tex}}
       \subcaptionbox{\label{fig:sphere-c}}[1\linewidth]{\input{./images/sphere.tex}}%
-      \caption{Three topological realizations of a sphere and their vertex links. Figure~\ref{fig:sphere-a} is not a cube complex, whereas Figures~\ref{fig:sphere-b} and~\ref{fig:sphere-c} are. In Figure~\ref{fig:sphere-b} the link is not a simplicial complex (parallel edges). In Figure~\ref{fig:sphere-c} the link is simplicial, but still not flag, as the necessary 2-simplex is missing.}
+      \caption{Three topological realizations of a sphere and their vertex links. Figure~\subref{fig:sphere-a} is not a cube complex, whereas Figures~\subref{fig:sphere-b} and~\subref{fig:sphere-c} are. In Figure~\subref{fig:sphere-b} the link is not a simplicial complex (parallel edges). In Figure~\subref{fig:sphere-c} the link is simplicial, but still not flag.}
       \label{fig:sphere}
     \end{figure}
-  \item[Torus:] Figure~\ref{fig:torus} contains a realization of a two-dimensional torus as a cube complex. The vertex links show that the torus is indeed non-positively curved, which is again what we would expect, since a torus is an example of a flat space. However, it is not a CAT(0) cube complex, as it is not simply connected. A generalization of the Cartan-Hadamard theorem shows that the universal cover of a non-positively curved cube complex is always CAT(0). In the case of a torus the universal cover can be chosen to be \(\R^2\) with its standard cubulation via \(\Z^2\) and we are not surprised that this is a CAT(0) cube complex.
+  \item[Torus:] Figure~\ref{fig:torus} contains a realization of a two-dimensional torus as a cube complex. The vertex links show that the torus is indeed non-positively curved. This is what we would expect, since a torus is an example of a flat space. However, it is not a CAT(0) cube complex, as it is not simply connected. A generalization of the Cartan-Hadamard theorem shows that the universal cover of a non-positively curved cube complex is always CAT(0). In the case of a torus the universal cover can be chosen to be \(\R^2\) with its standard cubulation via \(\Z^2\).
     \begin{figure}[htbp]
       \centering
       \input{./images/torus.tex}
@@ -201,8 +201,8 @@ In the following we will list some useful results about cube complexes. For the 
       \label{fig:torus}
     \end{figure}
 
-    The above considerations generalize to tori in arbitrary dimensions. Indeed the interesting vertex links consist always of \(2^n\) simplices of dimension \(n-1\), where \(n\geq2\) is the dimension of the torus, where the simplices are glued together along their \((n-2)\)-faces. However, this simplicial complex is always flag. By the construction we have no complete graph of the one skeleton with \(n+1\) vertices, so there is no \(n\)-simplex missing. Additionally, all complete graphs with \(\leq n\) vertices are contained in one of the first four simplices, hence they span a simplex.
-  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes, which are indeed embedded in the quotient. The interesting vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be generalized to all higher genus surfaces, which is again expected, as all these higher genus surfaces are negatively curved.
+    The above considerations generalize to tori in arbitrary dimensions.
+  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes embedded in the quotient. The vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be generalized to all higher genus surfaces. Thi is expected, as all these higher genus surfaces are negatively curved.
     \begin{figure}[htbp]
       \centering
       \input{./images/genus-2.tex}
@@ -210,40 +210,44 @@ In the following we will list some useful results about cube complexes. For the 
       \label{fig:genus-2}
     \end{figure}
 
-    As in the previous example, these surfaces lead to a cube complex structure on the universal cover, which can be chosen to be \(\mathbb{H}^2\), which leads to another example of a CAT(0) cube complex.
+    As in the previous example, these surfaces lead to a cube complex structure on the universal cover, which can be chosen to be \(\mathbb{H}^2\).
   \end{description}
 \end{bsp}
 
 \begin{lemma}
   \label{lem:flag}
-  The join \(K = (S,P)\) of two simplicial complexes \(K_1 = (S_1, P_1)\) and \(K_2 = (S_2, P_2)\) is a simplicial complex. If the \(K_i\) were flag, so is \(K\).
+  The join \(K = (S,P)\) of two simplicial complexes \(K_1 = (S_1, P_1)\) and \(K_2 = (S_2, P_2)\) is a simplicial complex. If \(K_1\) and \(K_2\) are flag, so is \(K\).
 \end{lemma}
 
 \begin{proof}
-  Let \(X \in P\) and \(\varnothing \neq Y \subset X\). The set \(X\) can be decomposed as \(X = X_1 \sqcup X_2\), where \(X_i \in P_i\). With this we have \(Y = Y_1 \sqcup Y_2\) where \(Y_i \coloneqq X_i \cap Y\). Since \(Y\) is non-empty not both \(Y_i\) can be empty. If both are non-empty, then since \(K_i\) is a simplicial simplex, we have \(Y_i \in P_i\) and thus \(Y \in P\). If one is empty (without loss of generality assume \(Y_2 = \varnothing\)), then \(Y = Y_1 \in P_1 \subset P\). With this we conclude that \(K\) is a simplicial complex.
+  Let \(X \in P\) and \(\varnothing \neq Y \subset X\). The set \(X\) can be decomposed as \(X = X_1 \sqcup X_2\), where \(X_i \in P_i\). With this we have \(Y = Y_1 \sqcup Y_2\) where \(Y_i \coloneqq X_i \cap Y\). Since \(Y\) is non-empty not both \(Y_i\) can be empty. If both are non-empty then we have \(Y_i \in P_i\) and thus \(Y \in P\) (We use that the \(K_i\) are simplicial complexes). If one is empty (without loss of generality assume \(Y_2 = \varnothing\)), then \(Y = Y_1 \in P_1 \subset P\). We conclude that \(K\) is a simplicial complex.
 
-  Now, let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeleton, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as the \(K_i\) are flag and we have \(P_i \subset P\). In the remaining case have that \(X_1 = \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 = \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \cup X_2 \in P\) by definition. Hence \(K\) is flag.
+  We will now show that \(K\) is flag. Let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeleton, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as the \(K_i\) is flag and we have \(P_i \subset P\). Otherwise \(X_1 \coloneqq \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 \coloneqq \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \cup X_2 \in P\) by definition. Hence \(K\) is flag.
 \end{proof}
 
 \begin{prop}
   \label{prop:product-cat}
-  Let \(X_1\) and \(X_2\) be two cube complexes then \(X \coloneqq X_1 \times X_2\) is a cube complex. If both \(X_i\) are CAT(0) so is \(X\).
+  Let \(X_1\) and \(X_2\) be two cube complexes then \(X \coloneqq X_1 \times X_2\) is a cube complex. If \(X_1\) and \(X_2\) are both CAT(0), so is \(X\).
 \end{prop}
 
 \begin{proof}
-  If \(X_1\) and \(X_2\) are cube complexes, we have the following maps:
+  We will first prove that \(X_1 \times X_2\) is a cube complex. If \(X_1\) and \(X_2\) are cube complexes, we have the following maps:
   \begin{align*}
-    p_i \colon \bigcup_{\lambda \in \Lambda_i} C_\lambda \times \{\lambda\} \to X_i
+    p_i \colon \bigsqcup_{\lambda \in \Lambda_i} C_\lambda \to X_i
   \end{align*}
   Hence, we have the map
   \[
-    p_1 \times p_2 \colon \bigcup_{\lambda' \in \Lambda_1} \bigcup_{\lambda \in \Lambda_2} C_{\lambda'} \times C_{\lambda'} \times \{\lambda'\} \times \{\lambda\} \to X_1 \times X_2
+    p_1 \times p_2 \colon \bigsqcup_{\lambda' \in \Lambda_1} \bigsqcup_{\lambda \in \Lambda_2} C_{\lambda'} \times C_{\lambda} \to X_1 \times X_2
   \]
-  and the maps \(p_{\lambda, \lambda'}(x_1,x_2) \coloneqq (p_1 \times p_2)(x_1, x_2, \lambda', \lambda) = (p_1(x_1, \lambda'), p_2(x_2, \lambda))\). These maps are injective because each \(p_i(\cdot, \lambda)\) is. So the only thing left to prove is that we find the isometries gluing the cubes. However, this also works on each factor separately.
+  and via the embedding of the cubes the maps
+  \[
+    p_{\lambda', \lambda} \colon C_{\lambda'} \times C_{\lambda} \to X_1 \times X_2.
+  \]
+  These maps are injective because each \(p_i\) is on every cube. We will now prove that the glue by isometries. However, this also works on each factor separately.
 
-  For the second assertion we would like to show that for any vertex \((v,w) \in X\) we have that \(\lk((v,w), X)\) is the join of \(\lk(v, X_1)\) and \(\lk(w,X_2)\). We use Remark~\ref{rem:complex} and think of the link inscribed into the complex. Let us start with two Euclidean cubes \(C_{\lambda'}\) and \(C_\lambda\) and the origin as the vertex. Let \(n = \dim C_{\lambda'}\) and \(k = \dim C_\lambda\). Then a vertex \(v \in \lk(0, C_{\lambda'} \times C_{\lambda})\) is uniquely defined by the unique coordinate \(v_i\) which is non-zero. If \(i \leq n\) then \(v\) corresponds to a vertex in \(\lk(0, C_{\lambda'})\), otherwise to a vertex in \(\lk(0, C_\lambda)\). Now, the three links are indeed a \((n-1)\)-, \((k-1)\)- and \((n+k-1)\)-simplex which shows that we have \(\lk(0, C_{\lambda'} \times C_\lambda) = \lk(0, C_{\lambda'}) \ast \lk(0, C_{\lambda})\).
+  We turn towards the prove that \(X\) is CAT(0). We will show that for any vertex \((v,w) \in X\) the link \(\lk((v,w), X)\) is the join of \(\lk(v, X_1)\) and \(\lk(w,X_2)\). We use Remark~\ref{rem:complex} and think of the link as inscribed into the complex. Let us start with two Euclidean cubes \(C_{\lambda'}\) and \(C_\lambda\) and the origin as the vertex. Let \(n = \dim C_{\lambda'}\) and \(k = \dim C_\lambda\). Then a vertex \(v \in \lk(0, C_{\lambda'} \times C_{\lambda})\) is uniquely defined by the unique coordinate \(v_i\) which is non-zero. If \(i \leq n\) then \(v\) corresponds to a vertex in \(\lk(0, C_{\lambda'})\), otherwise to a vertex in \(\lk(0, C_\lambda)\). Now, the three links are indeed a \((n-1)\)-, \((k-1)\)- and \((n+k-1)\)-simplex and we have \(\lk(0, C_{\lambda'} \times C_\lambda) = \lk(0, C_{\lambda'}) \ast \lk(0, C_{\lambda})\).
 
-  In the case of a general \(X\), we can accomplish the above decomposition on each cube separately. Since the isometric gluing is also factor wise, it preserves the decomposition, such that we have \(\lk((v,w) X) = \lk(v, X_1) \ast \lk(v, X_2)\). With this assertion in place Lemma~\ref{lem:flag} finishes the proof.
+  In the case of a general \(X\), we can accomplish the above decomposition on each cube separately. Since the isometric gluing is also factor wise, it preserves the decomposition and we have \(\lk((v,w), X) = \lk(v, X_1) \ast \lk(v, X_2)\). With this assertion in place Lemma~\ref{lem:flag} finishes the proof.
 \end{proof}
 
 The above proposition leads to the following definition:
@@ -260,7 +264,7 @@ The above proposition leads to the following definition:
   Let \(X\) be a cube complex. Then the following are equivalent:
   \begin{enumerate}
   \item \(X\) is locally finite,
-  \item Each bounded subset of \(X\) meets only finitely many cubes,
+  \item each bounded subset of \(X\) meets only finitely many cubes,
   \item \(X\) is proper (i.\,e.\ closed balls are compact) and
   \item \(X\) is locally compact.
   \end{enumerate}
@@ -268,11 +272,11 @@ The above proposition leads to the following definition:
 
 \begin{lemma}
   \label{lem:lf-countable}
-  If \(X\) is a locally countable CAT(0) cube complex. Let \(V(X)\) be its vertex set equipped with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\)the sets \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) are countable.
+  If \(X\) is a locally countable CAT(0) cube complex. Let \(V(X)\) be its vertex set equipped with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\) the set \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) is countable.
 \end{lemma}
 
 \begin{proof}
-  We fix \(x_0 \in V(X)\) and proceed by induction. We have \(X_0 = \{x_0\}\) since \(d\) is a metric. Now, assume \(X_n\) to be countable and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local countability \(N(x)\) is countable. Thus
+  We fix \(x_0 \in V(X)\) and proceed by induction. Since \(d\) is a metric we have \(X_0 = \{x_0\}\). Now, assume \(X_n\) to be countable and let for each \(x \in V(X)\) be \(N(x)\) the set of its neighboring vertices (i.\,e.\ all vertices connected by an edge to \(x\) or equivalently all vertices with distance 1 from \(x\)). Because of the local countability \(N(x)\) is countable. Thus
   \[
     X_{n+1} \subset \bigcup_{x \in X_n} N(x)
   \]
@@ -286,7 +290,7 @@ The above proposition leads to the following definition:
 \subsection{Combinatorial maps}
 \label{sec:comb-map}
 
-This is a very short section concerned with maps between cube complexes. It is essential to understand these maps in order to comprehend group actions on CAT(0) cube complexes and the decomposition of the complexes in factors.
+This is a very short section concerned with maps between cube complexes. We will deal with these maps in order to understand group actions on CAT(0) cube complexes and the decomposition of the complexes in factors.
 
 \begin{defin}[Morphisms of cube complexes]
   \label{def:morphism-ccc}
@@ -304,15 +308,15 @@ This is a very short section concerned with maps between cube complexes. It is e
 \end{defin}
 
 \begin{rem}
-  The above definition of a combinatorial map is completely analogous to the one of a simplicial map (confer for example~\cite{Singer}).
+  The above definition of a combinatorial map is completely analogous to the one of a simplicial map of simplicial complexes (confer for example~\cite{Singer}).
 \end{rem}
 
 \begin{lemma}
-  After possibly rotating \(C_\lambda \subset \R^n\) and \(C_\omega \subset \R^m\) the map \(f_{\lambda, \omega}\) is induced by the restriction of the natural projection from \(\R^n\) to \(\R^m\). In particular we have \(n \geq m\).
+  After possibly rotating \(C_\lambda \subset \R^n\) and \(C_\omega \subset \R^m\), the map \(f_{\lambda, \omega}\) is induced by the restriction of the natural projection from \(\R^n\) to \(\R^m\). In particular we have \(n \geq m\).
 \end{lemma}
 
 \begin{cor}
-  \(f_C\colon C \to Y\) is distance non-increasing for each cube \(C \subset X\).
+  The map \(f_C\colon C \to Y\) is distance non-increasing for each cube \(C \subset X\).
 \end{cor}
 
 \begin{prop}

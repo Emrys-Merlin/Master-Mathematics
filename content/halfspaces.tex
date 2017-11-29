@@ -1,18 +1,18 @@
 \subsection{Halfspaces}
 \label{sec:halfspaces}
-We will introduce hyperplanes and halfspaces and talk about their geometric properties. We will see that they are convex and have rather strong intersection properties. Later, we will introduce strongly separated halfspaces, whose special role will become apparent in Section~\ref{sec:group}. Lastly, we will be concerned with some combinatorial properties of halfspaces. The first part of this section follows particularly closely the lecture notes by \textcite{Rolli2012}.
+We will introduce hyperplanes, halfspaces and talk about their geometric properties. We will see that they are convex and have rather strong intersection properties. Later, we will introduce strongly separated halfspaces, who will play a special role in Section~\ref{sec:group}. Lastly, we will be concerned with some combinatorial properties of halfspaces. The first part of this section follows the lecture notes by \textcite{Rolli2012}.
 
 \begin{defin}[Hyperplanes]
-  Let \(X\) be a cube complex
+  Let \(X\) be a cube complex.
   \begin{itemize}
-  \item 0-, 1- and 2-dimensional cubes are respectively called \emph{vertices, edges and squares}.
-  \item A \emph{square relation} on the set of edges is given by \(e \sim e'\) if and only if there is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and such that any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). If we allow for an edge to be opposite to itself, this yields an equivalence relation of the set of all edges.
-  \item A midcube \(M \subset X\) is \emph{transverse} to a square relation class \(E = [e]_\sim\), write \(M \pitchfork E\), if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
+  \item The 0-, 1- and 2-dimensional cubes are respectively called \emph{vertices, edges and squares}.
+  \item We say that two edges \(e\) and \(e'\) are equivalent (\(e \sim e'\)) if and only if either \(e' = e\) or there is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). Note that this is an equivalence relation and we will call it \emph{square relation}.
+  \item A midcube \(M \subset X\) is \emph{transverse} to a square relation class \(E = [e]_\sim\) (write \(M \pitchfork E\)) if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
   \item The \emph{hyperplane} defined by \(E\) is given by
     \begin{align*}
       \mathfrak{\hat h}(E) \coloneqq \bigcup_{M \pitchfork E} M \subset X.
     \end{align*}
-    If the equivalence class \(E\) is not important, we will often write \(\mathfrak{\hat h}\) instead of \(\mathfrak{\hat h}(E)\).
+    We will often write \(\mathfrak{\hat h}\) instead of \(\mathfrak{\hat h}(E)\).
   \end{itemize}
 \end{defin}
 
@@ -27,7 +27,7 @@ We will introduce hyperplanes and halfspaces and talk about their geometric prop
 \end{bsp}
 
 \begin{prop}[Convexity of halfspaces,{\cite[Propositions 18 \& 19]{Rolli2012}}]
-  Let \(X\) be a CAT(0) cube complex and \(\mathfrak{\hat h} \subset X\) be a hyperplane. Then \(\mathfrak{\hat h}\) is closed and convex. Furthermore, if \(\mathfrak{\hat h}\) contains at least two points of the image of any geodesic \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{\hat h}\).
+  Let \(X\) be a CAT(0) cube complex and \(\mathfrak{\hat h} \subset X\) be a hyperplane. Then \(\mathfrak{\hat h}\) is closed and convex. Furthermore, if \(\mathfrak{\hat h}\) contains at least two points of the image of any geodesic \(\gamma\) then the whole image of \(\gamma\) is contained in \(\halfspace{\hat h}\).
 \end{prop}
 
 \begin{cor}
@@ -61,14 +61,18 @@ We will introduce hyperplanes and halfspaces and talk about their geometric prop
   \end{enumerate}
 \end{thm}
 
-This closes our discussion of geometric properties. The following definition will play a central role in Section~\ref{sec:group} (see for example Proposition~\ref{prop:cs-5.1}).
+This concludes our discussion of geometric properties. The following definition will play a central role in Section~\ref{sec:group} (see for example Proposition~\ref{prop:cs-5.1}).
 
 \begin{defin}[Strongly separated halfspaces]
   \label{defin:strong-sep}
   Two parallel hyperplanes are called \emph{strongly separated} if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated} if the same is true for their associated hyperplanes.
 \end{defin}
 
-We close this section with two technical results. The first is concerned with the countability of \(\mathcal{H}\) which is an important technical detail for the metrizability of the Roller compactification (see Corollary~\ref{cor:comp-met}). The second result shows is the last missing step to see that every CAT(0) cube complex gives rise to a discrete pocset as defined in the next section.
+\begin{bsp}
+  \todo{example of strongly separated halfspaces}
+\end{bsp}
+
+We close this section with two technical results. The first one will be employed in the metrizability of the Roller compactification (see Corollary~\ref{cor:comp-met}). The second result will be used in Section~\ref{sec:rb} (see Remark~\ref{rem:roller}).
 
 \begin{cor}
   \label{cor:halfspace-countable}
@@ -97,7 +101,7 @@ We close this section with two technical results. The first is concerned with th
 \end{lemma}
 
 \begin{proof}
-  We will call the set of the lemma \(M\) and the corresponding set of hyperplanes \(\hat M\). Clearly, the two sets are one-to-one. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to transverse \(\mathfrak{\hat l}\) meaning that \(\mathfrak{\hat l}\) is one of the hyperplanes defined by an edge in \(c\).
+  Let \(M\) be the set as in the main statement and \(\hat M\) the set of corresponding hyperplanes. Clearly, the two sets are one-to-one. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to cross \(\mathfrak{\hat l}\) so \(\mathfrak{\hat l}\) is one of the hyperplanes defined by an edge in \(c\).
 \end{proof}
 
 %%% Local Variables:

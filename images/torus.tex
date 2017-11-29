@@ -20,30 +20,18 @@
   \node at (-2,-2) [vertex,draw,label= 45:\(y\)] {};
   \node at (-2, 2) [vertex,draw,label=315:\(y\)] {};
   \node at ( 2,-2) [vertex,draw,label=135:\(y\)] {};
-\end{tikzpicture}
-% \hfill{}
-\hspace{2cm}
-% link of torus
-\begin{tikzpicture}
-  [
-  vertex/.style={
-    circle,
-    fill=black,
-    minimum size=1mm,
-    inner sep=0pt
-  }
-  ]
-  \node at (0,0) [vertex] {}
-  edge (0,1)
-  node at (0,1) [vertex] {}
-  edge (1,1)
-  node at (1,1) [vertex]{}
-  edge (1,0)
-  node at (1,0) [vertex]{}
-  edge (0,0);
-\end{tikzpicture}
 
-
+  \begin{scope}[shift={(3.5,-0.5)}, scale=1.5]
+    \node at (0,0) [vertex] {}
+    edge (0,1)
+    node at (0,1) [vertex] {}
+    edge (1,1)
+    node at (1,1) [vertex]{}
+    edge (1,0)
+    node at (1,0) [vertex]{}
+    edge (0,0);
+  \end{scope}
+\end{tikzpicture}
 
 %%% Local Variables:
 %%% mode: latex
