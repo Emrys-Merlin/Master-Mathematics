@@ -1,9 +1,13 @@
 \section{Pocsets and the Roller compactification}
 \label{sec:roller}
 
-This chapter is divided into three sections. In Section~\ref{sec:pocset}, we will introduce pocsets and ultrafilters, which are the main ingredients in the so called Roller compactification of the vertex set of a CAT(0) cube complex. And indeed this compactification is described in detail in Section~\ref{sec:rb}. In a more general sense the whole chapter is dedicated to the interplay between CAT(0) cube complexes and discrete pocsets. \textcite{Roller1999} showed that there is indeed a one-to-one-correspondence and a switching between these two equivalent points of view is an important tool in this field of study.
+This chapter is divided into five sections. In Section~\ref{sec:pocset}, we will introduce pocsets and ultrafilters, which are the main ingredients in the so called Roller compactification of the vertex set of a CAT(0) cube complex. And indeed this compactification is described in detail in Section~\ref{sec:rb}. In a more general sense the whole chapter is dedicated to the interplay between CAT(0) cube complexes and discrete pocsets. \textcite{Roller1999} showed that there is indeed a one-to-one-correspondence and a switching between these two equivalent points of view is an important tool in this field of study.
 
-In Section~\ref{sec:embedding-roller}, we are interested in one special case of the above mentioned correspondence: If \(\mathcal{H'} \subset \mathcal{H}\) are both pocsets, under which circumstances will the associated complex \(X(\mathcal{H}')\) be a subcomplex of \(X(\mathcal{H})\)? We will be able to give a partial answer by providing a sufficient condition (which however might not be necessary).
+Section~\ref{sec:set-ultrafilters} is again concerned with ultrafilters. There are two equivalent ways to define them and we will need both. The first viewpoint (taken in Section~\ref{sec:pocset}) has advantages when it comes to topological and metrical properties of the Roller compactification, whereas the second viewpoint (in Section~\ref{sec:set-ultrafilters}) is more natural, when it comes to talking about measurability and is easier to relate to other subsets of halfspaces. The main result in this Section is Theorem~\ref{thm:uf-equivalence}, showing that the two viewpoints are indeed equivalent.
+
+Section~\ref{sec:terminal-elements} is only loosly related to the previous sections. We will introduce intervals of ultrafilters, which are special subcomplexes of CAT(0) cube complexes. The most interesting property of these intervals in our case is that they are always embeddable into some \(\R^d\) (considered as a CAT(0) cube complex). The second topic of the section are so called terminal elements. These are all the elements in a set of halfspaces that are minimal or maximal with regard to inclusion. The existence or non-existence of these elements is one cornerstone of the main proof. Intervals have strong restrictions when it comes to the existence of terminal elements (c.\,f.\ Example~\ref{bsp:finite-terminal}) which is why they are so interesting for us.
+
+In Section~\ref{sec:embedding-roller}, we are interested in one special case of the above mentioned correspondence between pocsets and CAT(0) cube complexes: If \(\mathcal{H'} \subset \mathcal{H}\) are both pocsets, under which circumstances will the associated complex \(X(\mathcal{H}')\) be a subcomplex of \(X(\mathcal{H})\)? We will be able to give a partial answer by providing a sufficient condition (which however might not be necessary).
 
 \subsection{Pocsets and Ultrafilters}
 \label{sec:pocset}
@@ -94,7 +98,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{cor}
 
 \begin{proof}
-  By~\textcite[Theorem~4.2.2]{Engelking} it holds that every countable product of metrizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
+  By \textcite[Theorem~4.2.2]{Engelking} it holds that every countable product of me\-trizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
 \end{proof}
 
 
@@ -279,6 +283,7 @@ Now that we have defined the Roller compactification, we have to consider a seco
 \end{proof}
 
 \begin{thm}
+  \label{thm:uf-equivalence}
   The spaces \(\mathcal{U}(X)\) and \(\mathcal{U}_s(X)\) are homeomorphic.
 \end{thm}
 

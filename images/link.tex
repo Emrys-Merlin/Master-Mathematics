@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+    [
+  vertex/.style={
+    circle,
+    fill=blue,
+    minimum size=1mm,
+    inner sep=0pt
+  },
+  ->-/.style={
+    decoration={
+      markings,
+      mark=at position 0.5 with {\arrow{#1}}
+    },
+    postaction={decorate}
+  }
+  ]
+  \coordinate (0) at (0,0);
+  \coordinate (1) at (1,0);
+  \coordinate (2) at (1,1);
+  \coordinate (3) at (0,1);
+  \coordinate (4) at (160:1);
+  \coordinate (5) at (210:1);
+  \draw (0) -- (1) -- (2) -- (3) -- (0);
+  \draw (0) -- (4);
+  \draw (0) -- (5);
+  \node (a) at (0.33,0) [vertex] {};
+  \node (b) at (0,0.33) [vertex] {};
+  \node (c) at (160:0.33) [vertex] {};
+  \node (d) at (210:0.33) [vertex] {};
+  \draw [blue] (0.33,0) arc (0:90:0.33);
+  \draw [blue, dashed] (0,0.33) arc (90:360:0.33);
+
+  \begin{scope}[shift={(4,.5)}, scale=.5]
+    \node (a) at (1,0) [vertex] {};
+    \node (b) at (0,1) [vertex] {};
+    \node (c) at (160:1) [vertex] {};
+    \node (d) at (210:1) [vertex] {};
+    \draw [blue] (a) -- (b);
+  \end{scope}
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:

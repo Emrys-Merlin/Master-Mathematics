@@ -59,7 +59,13 @@ Now, that we have introduced the vocuabulary concerning Euclidean cubes, we turn
   \label{rem:complex}
   \begin{itemize}
   \item In the language of \(M_\kappa\)-polyhedral complexes the link \(\lk(x, X)\) is a \(M_1\)-polyhedral complex whenever \(x\) is a vertex of \(X\). For more details see \textcite[Section~I.7]{MR1744486}. Although all the cells of \(\lk(x,X)\) consist of simplices, it might happen that \(\lk(x,X)\) is not a simplicial complex. An example is given below in Example~\ref{bsp:ccc}. 
-  \item Since the cubes are glued isometrically, one can think of \(\lk(x,X)\) as being inscribed in \(X\). The key observation is that one can fix \(t_i\) respectively \(t_j\) to any value smaller than 1 (one common choice is {\nfrac 1/3}). Then the maps \(p_{\lambda(i)}(\exp_{x_i}(t_i \cdot))\) induce the embedding. Vertices correspond to the intersection of the 1-skeleton with the image of this embedding and edges must lie in the 2-skeleton. \todo{draw a picture}
+  \item Since the cubes are glued isometrically, one can think of \(\lk(x,X)\) as being inscribed in \(X\). The key observation is that one can fix \(t_i\) respectively \(t_j\) to any value smaller than 1 (one common choice is {\nfrac 1/3}). Then the maps \(p_{\lambda(i)}(\exp_{x_i}(t_i \cdot))\) induce the embedding. Vertices correspond to the intersection of the 1-skeleton with the image of this embedding and edges must lie in the 2-skeleton. See Figure~\ref{fig:link}.
+    \begin{figure}[htbp]
+      \centering
+      \input{./images/link.tex}
+      \caption{The left-hand side depicts a CAT(0) cube complex (black). One vertex link is inscribed into the complex via the intersection of a small sphere (blue). The right-hand side depicts the vertex link withou the CAT(0) cube complex.}
+      \label{fig:link}
+    \end{figure}
   \item Our definition of a cube complex is not standard. Normally, the above defined object is called a cubical complex (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). The difference between the two concepts lies solely in the fact, that in the cubical case we need the maps \(p_\lambda\) to be injective on the whole cube, whereas in the cube case they are only assumed to be injective on the \emph{interior} of each cube. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence we will adopt it from the start.
   \item By definition two cubes either intersect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes (c.\,f.\ Definition~\ref{defin:flag}). 
   \end{itemize}

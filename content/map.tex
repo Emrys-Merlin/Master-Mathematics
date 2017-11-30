@@ -129,7 +129,11 @@ This section contains lemmas that will be need to see that \(|H_\mu| = \infty\) 
   \]
   where \(j \in \{2,3,4\}\). We will consider different cases, depending on which \(N_j\) are not empty. If at most one of the \(N_j\ (j = 2,3,4)\)  is not empty, we have nothing to prove. So we turn towards the cases, where at most two of the sets are non-empty.
   \begin{description}
-  \item[\(N_2 \neq \varnothing \neq N_3\):] We can take \((n_3, m_3) \in N_3\) and \((n,m) \in N_2\) and define \(m' \coloneqq \min\{m, m_3\}\). Then we have the following two inclusions
+  \item[\(N_2 \neq \varnothing \neq N_3\):] We can take \((n_3, m_3) \in N_3\) and \((n,m) \in N_2\) and define
+    \[
+      m' \coloneqq \min\{m, m_3\}.
+    \]
+    Then we have the following two inclusions
     \begin{align*}
       \mathfrak{h}_{n_3} & \subset \mathfrak{k}_{m_3} \subset \mathfrak{k}_{m'} \quad \text{and}\\
       \mathfrak{h}_{n}^\ast & \subset \mathfrak{k}_m \subset \mathfrak{k}_{m'}.
@@ -350,11 +354,14 @@ Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group 
 \end{lemma}
 
 \begin{proof}
-  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition~\ref{prop:cs-5.1} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find a \(g \in \Gamma\) such that
-  \[
-    g\mathfrak{k}_1 \subset g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1 \subset g^{-1} \mathfrak{k}_2.
-  \]
-  Using Lemma~\ref{lem:strongly-sep} we see that the pairs \((g\mathfrak{k}_2, \mathfrak{k}_2)\), \((\mathfrak{k}_1,g^{-1}\mathfrak{k}_1)\), \((g\mathfrak{k}_1, g\mathfrak{k}_2)\), \((g\mathfrak{k}_1, \mathfrak{k}_1)\), \((g^{-1}\mathfrak{k}_1, g^{-1}\mathfrak{k}_2)\), \((\mathfrak{k}_2,g^{-1}\mathfrak{k}_2)\) and \((g\mathfrak{k}_1, g^{-1}\mathfrak{k}_2)\) consist of strongly separated halfspaces.
+  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition\ \ref{prop:cs-5.1} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find a \(g \in \Gamma\) such that
+  % \[
+  %   g\mathfrak{k}_1 \subset g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1 \subset g^{-1} \mathfrak{k}_2.
+  % \]
+  \begin{center}
+    \input{./content/lemma-4-19}
+  \end{center}
+  The arcs in the diagram connect strongly separated halfspaces which were identified using Lemma~\ref{lem:strongly-sep}.
 
   We would like to show that \(g\mathfrak{k}_1 \in H_\mu^-\) and \(g^{-1}\mathfrak{k}_2 \in H_\mu^+\). If neither \(\mathfrak{k}_i\) is in \(H_\mu\), we are done (since \(\mathfrak{l}\) is in \(H_\mu\)). Suppose that \(\mathfrak{k}_2\) is in \(H_\mu\), then \(\mathfrak{k}_1 \in H_\mu^-\), because \(H_\mu\) contains no strongly separated halfspaces. Thus by the additivity of the measure we also have \(g\mathfrak{k}_1 \in H_\mu^-\). Additionally, \(g^{-1}\mathfrak{k}_2 \in H_\mu^+\) again since it is strongly separated from \(\mathfrak{k}_2\). The case if \(\mathfrak{k}_1 \in H_\mu\) can be proven similarly.
 

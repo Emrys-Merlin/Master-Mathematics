@@ -46,9 +46,9 @@ We will introduce hyperplanes, halfspaces and talk about their geometric propert
   Figure~\ref{fig:hyperplanes} also indicates the two halfspaces (red and green color).
 \end{bsp}
 
-\begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]
+\begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]\ 
   \label{thm:common-intersection}
-  \begin{enumerate}
+  \begin{enumerate} 
   \item Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n\) be halfplanes with pairwise non-trivial intersection. Then
     \begin{align*}
       \bigcap_{i=1}^n \mathfrak{h}_i \neq \varnothing.
@@ -65,11 +65,20 @@ This concludes our discussion of geometric properties. The following definition 
 
 \begin{defin}[Strongly separated halfspaces]
   \label{defin:strong-sep}
-  Two parallel hyperplanes are called \emph{strongly separated} if there is no hyperplane transverse to both. Two halfspaces are called \emph{strongly separated} if the same is true for their associated hyperplanes.
+  Two hyperplanes are \emph{strongly separated} if they are parallel and there is no hyperplane transverse to both. Two halfspaces are \emph{strongly separated} if the same is true for their associated hyperplanes.
 \end{defin}
 
 \begin{bsp}
-  \todo{example of strongly separated halfspaces}
+  The space \(\R^d\) with its standard cubulation is one example of a CAT(0) cube complex without any strongly separated hyperplanes. Indeed, any pair of parallel hyperplanes are orthogonal to some coordinate axis. Any hyperplane containing this axis is transverse to both.
+
+  As an example with strongly separated halfspaces, consider the tree depicted in Figure~\ref{fig:str-sep}. There we have three pairwise parallel hyperplanes \(\mathfrak{\hat h}, \mathfrak{\hat k}\) and \(\mathfrak{\hat l}\). Hence, any pair is strongly separated.
+
+  \begin{figure}[htbp]
+    \centering
+    \input{./images/str-sep.tex}
+    \caption{A tree with three pairwise parallel hyperplanes \(\mathfrak{\hat h}, \mathfrak{\hat k}\) and \(\mathfrak{\hat l}\).}
+    \label{fig:str-sep}
+  \end{figure}
 \end{bsp}
 
 We close this section with two technical results. The first one will be employed in the metrizability of the Roller compactification (see Corollary~\ref{cor:comp-met}). The second result will be used in Section~\ref{sec:rb} (see Remark~\ref{rem:roller}).

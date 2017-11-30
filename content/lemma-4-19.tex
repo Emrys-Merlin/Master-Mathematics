@@ -1,0 +1,29 @@
+\begin{tikzpicture}[
+  node distance = 0.25,
+  ]
+  \node (gk1) {\(g\mathfrak{k}_1\)};
+  \node[right = of gk1] (1) {\(\subset\)};
+  \node[right = of 1] (gk2) {\(g\mathfrak{k}_2\)};
+  \node[right = of gk2] (2) {\(\subset\)};
+  \node[right = of 2] (k1) {\(\mathfrak{k}_1\)};
+  \node[right = of k1] (3) {\(\subset\)};
+  \node[right = of 3] (l) {\(\mathfrak{l}\)};
+  \node[right = of l] (4) {\(\subset\)};
+  \node[right = of 4] (k2) {\(\mathfrak{k}_2\)};
+  \node[right = of k2] (5) {\(\subset\)};
+  \node[right = of 5] (hk1) {\(g^{-1}\mathfrak{k}_1\)};
+  \node[right = of hk1] (6) {\(\subset\)};
+  \node[right = of 6] (hk2) {\(g^{-1}\mathfrak{k}_2\).};
+  \draw (gk1) to[ bend right] (gk2);
+  \draw (k1) to[ bend right] (k2);
+  \draw (hk1) to[ bend right] (hk2);
+  \draw (gk2) to[ bend right] (k2);
+  \draw (k2) to[bend right] (hk2);
+  \draw (k1) to[bend left] (hk1);
+  \draw (gk1) to[bend left] (k1);
+\end{tikzpicture}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Master"
+%%% End:

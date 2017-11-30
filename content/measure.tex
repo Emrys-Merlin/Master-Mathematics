@@ -3,7 +3,7 @@
 
 Measure theory will play an important role in the main proof. Hence, we have this dedicated chapter introducing the necessary notation.
 
-This chapter is divided in three sections. Section~\ref{sec:weight} is the most important. Section~\ref{sec:prob} collects general facts about measures, measure theory and functional analysis and is mainly without proofs and Section~\ref{sec:meas-maps} contains a collections of unrelated lemmas proving measurability for some maps, which will be used later on. All of these maps are technical in nature and the same is true for the proofs.
+This chapter is divided in three sections. Section~\ref{sec:weight} is the most important. Section~\ref{sec:prob} collects general facts about measures, measure theory and functional analysis and is main\-ly without proofs and Section~\ref{sec:meas-maps} contains a collections of unrelated lemmas proving measurability for some maps, which will be used later on. All of these maps are technical in nature and the same is true for the proofs.
 
 Section~\ref{sec:weight} introduces the notion of \emph{weighted halfspaces}, which are central to our problem and it is unlikely that the reader will have encountered them before. We will define them and highlight some of their elementary properties.
 
@@ -29,7 +29,7 @@ This section is conglomeration of facts about measures and their connection to c
 \begin{defin}[Positive, negative and total variation]
     For any \(A \in \Sigma\) and any signed measure \(\mu\) the \emph{total variation} \(|\mu|(A)\) is defined as
   \[
-    |\mu|(A) \coloneqq \sup \left\{\sum_{i \in \N} \mu(A_i) \relmid A_i \in \Sigma \text{ and } A = \dot \bigcup_{i \in \N} A_i \right \}.
+    |\mu|(A) \coloneqq \sup \left\{\sum_{i \in \N} \mu(A_i) \relmid A_i \in \Sigma \text{ and } A = \bigsqcup_{i \in \N} A_i \right \}.
   \]
   The \emph{positive} and \emph{negative variation} are defined as
   \[
@@ -56,7 +56,7 @@ Often the \(\sigma\)-algebras we are considering stem from a topology on our spa
 
 Lastly, let us recall the definition of measurable maps and how to pushforward measures along these maps:
 
-\begin{defin}[Measurable maps, essentially constant maps and pushforward]
+\begin{defin}[Measurable maps]
   \label{defin:pushforward}
   Let \((A, \Sigma_A)\) and \((B, \Sigma_B)\) be two measure spaces and \(f\colon A \to B\) a map. \(f\) is called \emph{measurable} if \(f^{-1}(S) \in \Sigma_A\) for every \(S \in \Sigma_B\).
 
@@ -135,7 +135,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 
 This section defines the main technical tool for our main proof, namely \emph{weighted halfspaces}. These are special subsets of the pocset of halfspaces \(\mathcal{H}\) of a CAT(0) cube complex, which are defined using probability measures on the Roller compactification. In order to understand the following section, it is important to keep the notation introduced in Sections~\ref{sec:halfspaces} and~\ref{sec:rb} in mind.
 
-Unless noted otherwise, \(X\) is assumed to be a connected, locally finite, finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introducd in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
+Unless noted otherwise, \(X\) is assumed to be a connected, locally finite, finite-dimensio\-nal CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introducd in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
 
 \begin{defin}
   Let \(\mu\) be a regular probability measure on \(\bar X\). We define
@@ -308,15 +308,20 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \end{lemma}
 
 \begin{proof}
-  We will see that the map is even continuous. Take \(\mathfrak{h}_1,\dots \mathfrak{h}_n, \mathfrak{h}_1', \dots, \mathfrak{h}_l' \in \mathcal{H}\) and consider the following preimage
+  We will see that the map is even continuous. Take
   \begin{align*}
-    f^{-1}(\mathcal{C}(\{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}, \{\mathfrak{h}_1', \dots \mathfrak{h}_l'\}))  = & \{(\alpha, \beta) \in \bar X \times \bar X \mid (\forall i \leq n\colon \mathfrak{h}_i \in \alpha \wedge \mathfrak{h}_i^\ast \in \beta)\\
+    F & \coloneqq \{\mathfrak{h}_1,\dots \mathfrak{h}_n\} \subset \mathcal{H} \quad \text{and}\\
+    G & \coloneqq \{\mathfrak{h}_1', \dots, \mathfrak{h}_l'\} \subset \mathcal{H}
+  \end{align*}
+  and consider the following preimage
+  \begin{align*}
+    f^{-1}(\mathcal{C}(F, G))  = & \{(\alpha, \beta) \in \bar X \times \bar X \mid (\forall i \leq n\colon \mathfrak{h}_i \in \alpha \wedge \mathfrak{h}_i^\ast \in \beta)\\
     & \wedge (\forall j \leq l \colon \mathfrak{h}_j'^\ast \in \alpha \vee \mathfrak{h}_j' \in \beta)\}\\
     = & (\mathcal{C}(\{\mathfrak{h}_1, \dots \mathfrak{h}_n\}, \varnothing)  \times \bar X)\\
     & \cap (\bar X \times C(\{\mathfrak{h}_1^\ast, \dots, \mathfrak{h}_n^\ast\}))\\
                                                                                                                   & \cap \left ( \bigcap_{j=1}^l \left[(\mathcal{C}(\{h\}_j'^\ast, \varnothing) \times \bar X) \cup (\bar X \times \mathcal{C}(\{\mathfrak{h}_j'\}, \varnothing))\right]\right).
   \end{align*}
-  This set is open as a finite intersection of basic open sets. Hence \(f\) is continuous and measurable.
+  This set is open as a finite intersection of basic open sets. Hence, \(f\) is continuous and measurable.
 \end{proof}
 
 \begin{lemma}
@@ -342,7 +347,8 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
   \end{alignat*}
   \(f\) is continuous and hence measurable. \(g\) is measurable, because the map on each factor is measurable by Lemma~\ref{lem:measurable-mu}. \(j\) is measurable by Lemma~\ref{lem:measurable-countable}. We are left with \(h\). Consider the two finite subsets \(F, G \subset \mathcal{H}^2\). Then the preimage of the associated cylinder set is given by
   \begin{align*}
-    h^{-1}(\mathcal{C}(F,G)) & \coloneqq \{(H, K) \in \operatorname{Pot}(\mathcal{H})^2 \mid F \subset H \times K \wedge G \subset (H \times K)^c \wedge (\mathfrak{h}, \mathfrak{k}) \in H \times K \text{ is str.\ sep.}\}\\
+    h^{-1}(\mathcal{C}(F,G)) & \coloneqq \{(H, K) \in \operatorname{Pot}(\mathcal{H})^2 \mid F \subset H \times K \wedge G \subset (H \times K)^c\\
+    & \wedge (\mathfrak{h}, \mathfrak{k}) \in H \times K \text{ is strongly separated}\}\\
       & = \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in F} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)\\
       & \cap \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in G} \mathcal{C}(\mathfrak{h})^c \times \operatorname{Pot}(\mathcal{H}) \cup \operatorname{Pot}(\mathcal{H}) \times \mathcal{C}(\mathfrak{k})^c \right)\\
       & \cap \left( \bigcap_{\substack{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}^2\\\text{not str.\ sep.}}} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)^c,
