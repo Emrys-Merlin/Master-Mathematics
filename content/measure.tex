@@ -54,6 +54,23 @@ Often the \(\sigma\)-algebras we are considering stem from a topology on our spa
   The maps \(|\mu|\) and \(\mu^\pm\) are measures on \((X, \Sigma)\) and \(|\mu|(X) < \infty\) holds.
 \end{prop}
 
+Lastly, let us recall the definition of measurable maps and how to pushforward measures along these maps:
+
+\begin{defin}[Measurable maps, essentially constant maps and pushforward]
+  \label{defin:pushforward}
+  Let \((A, \Sigma_A)\) and \((B, \Sigma_B)\) be two measure spaces and \(f\colon A \to B\) a map. \(f\) is called \emph{measurable} if \(f^{-1}(S) \in \Sigma_A\) for every \(S \in \Sigma_B\).
+
+  Let \(\mu\) be a (signed) measure on \(A\) and \(f\) measurable. Then \(f\) is called \emph{essentially constant (with regard to \(\mu\))} if there exists a conull set \(S \in \Sigma_A\) such that \(f|_S\) is constant. The \emph{pushforward of \(\mu\) along \(f\)} is defined via
+  \[
+    (f_\ast \mu)(S) \coloneqq \mu(f^{-1}(S))
+  \]
+  for every \(S \in \Sigma_B\).
+\end{defin}
+
+\begin{rem}
+  Clearly, \(f_\ast\mu\) is again a (signed) measure.
+\end{rem}
+
 \begin{lemma}
   \label{lem:mu-supp}
   Let \(X\) be a topological space and \(\mu\) inner regular measure on \(X\). Then we have for every measurable set \(A \subset X \setminus \supp(\mu)\) that \(\mu(A) = 0\). In particular, if \(\mu\) is non-zero the set \(\supp(\mu)\) is not empty.
