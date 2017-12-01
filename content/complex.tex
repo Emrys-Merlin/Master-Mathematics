@@ -26,7 +26,7 @@ We are now able to define the central object of our thesis: CAT(0) cube complexe
   \(\lk(v,C) \subset \sphere^{n-1}\) is a simplex for all vertices \(v \in C\). In this case all its edges have length \(\frac{\pi}{2}\).
 \end{rem}
 
-Now, that we have introduced the vocuabulary concerning Euclidean cubes, we turn towards cube complexes. These are obtained by gluing \emph{disjoint} cubes along their face via \emph{isometries}. These restrictions ascertain that many of the combinatorial properties we know of simplicial complexes will extend to cube complexes, too.
+Now, that we have introduced the vocabulary concerning Euclidean cubes, we turn towards cube complexes. These are obtained by gluing \emph{disjoint} cubes along their face via \emph{isometries}. These restrictions ascertain that many of the combinatorial properties we know of simplicial complexes will extend to cube complexes, too.
 
 \begin{defin}[Cube complexes]\ 
   \begin{itemize}
@@ -63,7 +63,7 @@ Now, that we have introduced the vocuabulary concerning Euclidean cubes, we turn
     \begin{figure}[htbp]
       \centering
       \input{./images/link.tex}
-      \caption{The left-hand side depicts a CAT(0) cube complex (black). One vertex link is inscribed into the complex via the intersection of a small sphere (blue). The right-hand side depicts the vertex link withou the CAT(0) cube complex.}
+      \caption{The left-hand side depicts a CAT(0) cube complex (black). One vertex link is inscribed into the complex via the intersection of a small sphere (blue). The right-hand side depicts the vertex link without the CAT(0) cube complex.}
       \label{fig:link}
     \end{figure}
   \item Our definition of a cube complex is not standard. Normally, the above defined object is called a cubical complex (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). The difference between the two concepts lies solely in the fact, that in the cubical case we need the maps \(p_\lambda\) to be injective on the whole cube, whereas in the cube case they are only assumed to be injective on the \emph{interior} of each cube. However, as \textcite[Thm.~C.4]{MR3029427} has shown in the case of CAT(0) cube complexes the two definitions are equivalent, hence we will adopt it from the start.
@@ -160,13 +160,13 @@ In the following we will list some useful results about cube complexes. For the 
   \label{defin:flag}
   \begin{itemize}
   \item
-    Let \(S\) be a set an \(P \subset \operatorname{Pot}(S)\). A pair \(K = (S, P)\) is called a \emph{simplicical complex} if \(\{s\} \in P\) for every \(s \in S\) and for every \(X \in P\) and \(Y \subset X\) with \(Y \neq \varnothing\) then \(Y \in P\).
+    Let \(S\) be a set an \(P \subset \operatorname{Pot}(S)\). A pair \(K = (S, P)\) is called a \emph{simplicial complex} if \(\{s\} \in P\) for every \(s \in S\) and for every \(X \in P\) and \(Y \subset X\) with \(Y \neq \varnothing\) then \(Y \in P\).
 
     A \emph{\(n\)-simplex} is an element \(X \in P\) such that \(|X| = n+1\).
 
     A \(0\)-simplex is called a \emph{vertex} and a \(1\)-simplex is called an \emph{edge}.
   \item
-    A simplicial complex \(K = (S,P)\) is \emph{flag}, if every finite subset of \(S\) that is pairwise joined by edges spans a simplex (see\ \cite[Defintion II.5.15]{MR1744486}).
+    A simplicial complex \(K = (S,P)\) is \emph{flag}, if every finite subset of \(S\) that is pairwise joined by edges spans a simplex (see\ \cite[Definition II.5.15]{MR1744486}).
   \item Let \(K_1 = (S_1, P_1)\) and \(K_2 = (S_2, P_2)\) be two simplicial complexes. Their \emph{join} \(K\) is the simplicial complex \((S,P)\) such that \(S \coloneqq S_1 \sqcup S_2\) and \(X \in P\) if and only if one of the following is true:
     \begin{enumerate}
     \item \(X \in P_1\),
@@ -208,7 +208,7 @@ In the following we will list some useful results about cube complexes. For the 
     \end{figure}
 
     The above considerations generalize to tori in arbitrary dimensions.
-  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes embedded in the quotient. The vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be generalized to all higher genus surfaces. Thi is expected, as all these higher genus surfaces are negatively curved.
+  \item[Higher genus surfaces:] In order to complete our discussion of surfaces, we consider in Figure~\ref{fig:genus-2} the example of a genus 2 surface. Inscribed in the standard octagon, there are four more geodesics creating eight cubes embedded in the quotient. The vertex links are clearly flag and so we see that the surface can be realized as a non-positively curved cube complex. The construction can be generalized to all higher genus surfaces. This is expected, as all these higher genus surfaces are negatively curved.
     \begin{figure}[htbp]
       \centering
       \input{./images/genus-2.tex}
