@@ -1,8 +1,8 @@
 \section{Group actions on CAT(0) cube complexes and strong group boundaries}
 \label{sec:group}
-This chapter is divided in four sections, which themselves cover two general topics. The first two sections deal with group actions of a group \(\Gamma\) on a CAT(0) cube complex \(X\). First, we will convince ourselves that a group action via automorphisms always extends to an action on \(\bar X\) by homeomorphisms. This will be accomplished in Section~\ref{sec:ga-roller}. Then we will introduce two properties for group actions on \(X\), namely \emph{non-elementarity} and \emph{essentiality}. Interestingly, these two properties are rather of a different kind. The first is more concerned with the CAT(0) structure (in particular, the visual boundary) of our space, whereas the second is more concerned with the combinatorial structure of the halfspaces of \(X\).\todo{say more about non-elementarity and essentiality}
+This chapter is divided in four sections, which themselves cover two general topics. The first two sections deal with group actions of a group \(\Gamma\) on a CAT(0) cube complex \(X\). First, we will convince ourselves that a group action via automorphisms always extends to an action on \(\bar X\) by homeomorphisms. This will be accomplished in Section~\ref{sec:ga-roller}. Then we will introduce two properties for group actions on \(X\), namely \emph{non-elementarity} (introduced in~\cite{MR3509968}) and \emph{essentiality} (introduced in~\cite{Caprace2010}). Interestingly, these two properties are rather of a different kind. The first is more concerned with the CAT(0) structure, namely, it excludes the existence of any finite orbits in \(X\) or in the visual boundary \(\partial_\sphericalangle X\). Whereas the second is more concerned with the combinatorial structure of the halfspaces of \(X\). Here we want orbits of the group to get arbitrarily far away from each hyperplane (on both of its sides).
 
-The last two sections are concerned with the definition of \emph{strong \(\Gamma\)-boundaries}. First we have a section dedicated to (doubly) ergodic group actions and some elementary consequences (especially concerning the ergodic action of finite groups). In the last section we will generalize the notion of ergodicity to \emph{ergodic group actions with coefficients} and additionally introduce \emph{amenable group actions}. With these two concepts in place, we can finally define a strong group boundary and immediately use it to construct the first half of our boundary map.\todo{say more about strong boundaries}\todo{cite sources for group section}
+The last two sections are concerned with the definition of \emph{strong \(\Gamma\)-boundaries}. In spirit these are Poisson boundaries for certain random walks on a second countable, locally compact group \(\Gamma\) (see Example~\ref{bsp:poisson} or\ \cite{MR2006560}). They are defined via two properties. The first is a strengthening of the notion of ergodicity. Hence, in Section~\ref{sec:ergodic} we will first recall the notion of (standard) ergodicity. Our two most important consequences are encoded in Lemmas~\ref{lem:ergodic-atomic} and\ \ref{lem:4.3}. Afterwards, we will introduce \emph{ergodicity with coefficients} and relate it to the notion of essentiality defined before (Corollary~\ref{cor:4.5}).  Lastly, we will introduce the second property, namely \emph{amenability}. This property guarantees the existence of certain measurable and almost everywhere \(\Gamma\)-equivariant maps from the strong \(\Gamma\)-boundary to the dual of a separable Banach space. In our case we will use it to construct a map to \(\mathcal{P}(\bar X)\) the set of regular probability measures on \(\bar X\). The result is recorded in Corollary~\ref{cor:p(x)}. The notion of a strong \(\Gamma\)-boundary was first introduced by \textcite{MR2153026}. Many of the concepts of ergodicity with coefficients and amenability were also present in Monod's thesis~\cite{MR2715399}. For an overview I would recommend the treatise by \textcite{MR2006560}.
 
 \subsection{Extending a group action to the Roller boundary}
 \label{sec:ga-roller}
@@ -14,7 +14,7 @@ The following proposition collects some facts about how combinatorial isomorphis
 \begin{prop}
   Let \(g \in \Aut(X)\). Then the following holds:
   \begin{enumerate}
-  \item if \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) then \( g\mathfrak{\hat h} \in \mathcal{\hat H}(X)\),
+  \item if \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) then \(g\mathfrak{\hat h} \in \mathcal{\hat H}(X)\),
   \item if \(\mathfrak{h} \in \mathcal{H}(X)\) then \( g\mathfrak{h} \in \mathcal{H}(X)\),
   \item for every\(\mathfrak{h} \in \mathcal{H}(X)\colon g(\mathfrak{h}^\ast) = (g\mathfrak{h})^\ast\),
   \item if \(\mathfrak{h,h'} \in \mathcal{H}(X)\colon \mathfrak{h} \subset \mathfrak{h'}\) then \(g\mathfrak{h} \subset g\mathfrak{h'}\),
@@ -30,7 +30,10 @@ The following proposition collects some facts about how combinatorial isomorphis
 With the above proposition in place, we see that each group action \(\Gamma \to \Aut(X)\) immediately leads to an action \(\Gamma \to \operatorname{Perm}(\bar X)\). However, this is not yet what we want. We would prefer the image to lie in the homeomorphisms of \(\bar X\). This will be accomplished with the next lemma.
 
 \begin{lemma}
-  Let \(g \in \Aut(X)\) and \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) \subset \bar X\) a basic open set. Then we have
+  Let \(g \in \Aut(X)\) and \[
+    \mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n) \subset \bar X
+  \]
+  a basic open set. Then we have
   \[
     g^{-1} \mathcal{U} = \mathcal{U}(g^{-1}\mathfrak{h}_1, \dots, g^{-1}\mathfrak{h}_n).
   \]
@@ -67,7 +70,7 @@ The previous observation already provides many examples for elementary actions b
 \begin{bsp}[\(\R^d\)]
   Another example is \(X \coloneqq \R^d\) with its standard cubulation and any cyclic subgroup of \(\Z^d\) acting by translations. This action has no finite orbits in \(\R^d\), but every point at infinity is fixed. Indeed, two rays define the same point at infinity if and only if they are parallel. However, a translated ray is still parallel to the untranslated ray.
 
-  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8}. The space \(X\) is not a cube complex in our definition, however its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. We let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
+  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8} (We note that this is also the Cayley graph of the free group with two generators). The space \(X\) is not a cube complex in our definition, however its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. We let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
   \begin{figure}[htbp]
     \centering
     \input{./images/figure-8.tex}
@@ -162,7 +165,7 @@ The above definition leads to the following consequence:
 \subsubsection*{Consequences of non-elementary and essential group actions}
 \label{cons-non-el-ess}
 
-This paragraph contains some consequences and chracterizations of non-elementary and essential group actions. All of these have been found by \textcite{Caprace2010} and we refer the reader to this text for the proofs.
+This paragraph contains some consequences and characterizations of non-elementary and essential group actions. All of these have been found by \textcite{Caprace2010} and we refer the reader to this text for the proofs.
 
 \begin{lemma}[{\cite[Proposition~3.2]{Caprace2010}}]
   \label{lem:ess-unbounded}
@@ -281,7 +284,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   \[
     \Lambda \coloneqq \{A \in \Sigma \mid \mu(A) > 0\}.
   \]
-  This set is clearly partially ordered under inclusion and not empty. Now, observe that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity. Since \(\Gamma\) also preservs measures \(\mu(A) > n^{-1}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
+  This set is clearly partially ordered under inclusion and not empty. Now, observe that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity. Since \(\Gamma\) also preserves measures \(\mu(A) > n^{-1}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
   \[
     \Lambda = \{A \in \Sigma \mid \mu(A) \geq n^{-1}\}.
   \]
@@ -384,7 +387,7 @@ In the rest of the section, we will use the following notation, unless stated ot
 \item \(\Gamma\) denotes a second countable, locally compact group,
 \item \(E\) denotes a separable Banach space,
 \item \(E^\ast_1\) denotes the unit ball in the dual of \(E\) and
-\item \(S\) denots a standard Borel spaces.
+\item \(S\) denotes a standard Borel spaces.
 \end{itemize}
 We also assume that \(\Gamma\) acts on \(S\) preserving measure classes.
 
