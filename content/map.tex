@@ -29,11 +29,11 @@ As a next step to our main theorem we would like to convince ourselves that any 
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable CAT(0) cube complex, \(\Gamma\) a discrete, countable group with an essential action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a doubly ergodic \(\Gamma\)-space with quasi-invariant measure \(\nu\) and \(\phi\colon B \to \bar X\) a measurable \(\Gamma\)-equivariant map. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
+  Let \(X\) be a finite dimensional, locally countable, irreducible CAT(0) cube complex, \(\Gamma\) a discrete, countable group with an essential action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubyle ergodic with coefficients and \(\phi\colon B \to \bar X\) a measurable map which is \(\Gamma\)-equivariant almost everywhere. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
-  We may first assume that \(X\) is irreducible and consider the map
+  Consider the map
   \[
     B \to \N \cup \{\infty\},\ x \mapsto |\tau(\phi(x))|,
   \]
@@ -48,9 +48,6 @@ As a next step to our main theorem we would like to convince ourselves that any 
   Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
   However, by Lemma~\ref{lem:countable-orbit} \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.
-  
-  \todo{make reducible case nicer}
-  In the case that \(X\) is reducible we can decompose it into its irreducible factors and we find a finite index subgroup of \(\Gamma\), which respects this decomposition. This subgroup will still act ergodically on each of the factor. Thus using each projection the factors we get that the image of each separate \(\phi\) lands in the non-terminating ultrafilters. Since \(\bar X\) consists of the Cartesian product of the ultrafilters of the factors, we see that also in that case the image lands in the non-terminating ultrafilters.
 \end{proof}
 
 So far we have seen, that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. So we are left with the task to prove, that this is the only possible case. A first step is provided by the following two lemmas:
@@ -418,7 +415,11 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
 
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
-  Let \(\Gamma\) be a discrete, countable group acting on an irreducible finite dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \partial X\) taking values in the non-terminating ultrafilters in \(\partial X\).
+  Let \(\Gamma\) be a discrete, countable group acting on an irreducible finite dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a measurable map
+  \[
+    \phi\colon B \to \partial X
+  \]
+  which is \(\Gamma\)-equivairant almost everywhere and which takes values in the non-terminating ultrafilters in \(\partial X\).
 \end{thm}
 
 \begin{proof}
@@ -514,15 +515,27 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
   % \end{description}
 \end{proof}
 
-\begin{cor}[{\cite[Corollary~4.2]{MR3509968}}]
+If we loosen the restrictions on \(\Gamma\), we can still find a map \(\phi\). However, it will only be \(\Gamma_0\)-equivariant for a finite index subgroup \(\Gamma_0 \leq \Gamma\). Additionally, we cannot be sure that the image lies in the non-terminating ultrafilters. The precise statement is as follows:
+
+\begin{cor}
   \label{cor:4.2}
-  Let \(\Gamma \to \Aut(X)\) be a group acting on a finite dimensional CAT(0) cube complex \(X\). Assume that there is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \partial Y \subseteq \partial X\).
+  Let \(\Gamma \to \Aut(X)\) be a discrete, countable group acting on a connected, locally countable, finite-dimensional CAT(0) cube complex \(X\). Assume that there is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a finite index subgroup \(\Gamma_0 \leq \Gamma\) and a measurable map
+  \[
+    \phi \colon B \to \partial Y \subseteq \partial X
+  \]
+  which is \(\Gamma_0\)-equivariant almost everywhere.
 \end{cor}
 
 \begin{proof}
-  Since there is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we also have no finite orbits of \(\Gamma\) in \(\partial_\sphericalangle Y\). We decompose \(Y\) as \(Y = Y_1 \times \dots \times Y_m\), where each \(Y_i\) is irreducible (which is possible by Proposition~\ref{prop:cs-2.6}). By Lemma~\ref{lem:2.28} we know that \(\Gamma_0 \leq \Gamma\) has still no finite orbit in \(\partial_\sphericalangle Y_i\) for each \(i\) and the action on each \(Y_i\) is essential.\todo{Problem: How can \(\Gamma\) operate on these factors?}
+  Since there is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we also have no finite orbits of \(\Gamma\) in \(\partial_\sphericalangle Y\). We decompose \(Y\) as \(Y = Y_1 \times \dots \times Y_m\), where each \(Y_i\) is irreducible (which is possible by Proposition~\ref{prop:cs-2.6}). Let \(\Gamma_0 \leq \Gamma\) be the finite index subgroup preserving the irreducible decomposition of \(Y\) (Proposition~\ref{prop:cs-2.6}). By Lemma~\ref{lem:2.28} we know that \(\Gamma_0\) has still no finite orbit in \(\partial_\sphericalangle Y_i\) for each \(i\) and the action on each \(Y_i\) is essential. Essentiality then implies that \(\Gamma_0\) has no fixed point in any \(Y_i\). Thus, \(\Gamma_0\) also acts non-elementary on each factor.
 
-  Assume that \(\Gamma\) acts on each \(Y_i\), then, by Theorem~\ref{thm:4.1}, we find \(\phi_i \colon B \to \partial Y_i\) which are measurable and \(\Gamma\)-equivariant. Each halfspaces in \(Y_i\) corresponds to a unique halfspace in \(Y\) and thus for family of ultrafilters \(\alpha_i \in \bar Y_i\) can be mapped to an ultrafilter \(\alpha \in \bar Y\). This can be most easily seen in the product space definition of \(\bar Y\), since then we just join the tuples of \(\alpha_i\) (after choosing an appropriate enumeration of \(\bar Y\)). The choice condition is then automatically satisfied and for the consistency condition, we only have to note that if two halfspaces come from two different \(\alpha_i\), then they must be transverse. Using basic open sets it is easy to see that this map is continuous and hence measurable. Lastly, \(\bar Y \subset \bar X\), since \(Y\) is convex subcomplex. All in all, we see that the \(\phi_i\) lead to a measurable map \(\phi\colon B \to \bar X\). Since each the image of each \(\phi_i\) lies in the non-terminating ultrafilters of \(Y_i\), we see that each ultrafilter in the image of \(\phi\) has at least one non-terminating descending chain and thus we have that indeed \(\phi\) takes values in \(\partial X\).
+  By Theorem~\ref{thm:str-bnd-subgrp}, we know that \(B\) is a strong \(\Gamma_0\)-boundary. Hence, Theorem~\ref{thm:4.1} is applicable for each factor \(Y_i\) and we yield the measurable maps
+  \[
+    \phi_i \colon B \to \partial Y_i
+  \]
+  which are \(\Gamma_0\)-invariant almost everywhere and which take values in the non-terminating ultrafilters. 
+
+  Each halfspaces in \(Y_i\) corresponds to a unique halfspace in \(Y\) and thus for family of ultrafilters \(\alpha_i \in \bar Y_i\) can be mapped to an ultrafilter \(\alpha \in \bar Y\). This can be most easily seen in the product space definition of \(\bar Y\), since then we just join the tuples of \(\alpha_i\) (after choosing an appropriate enumeration of \(\bar Y\)). The choice condition is then automatically satisfied and for the consistency condition, we only have to note that if two halfspaces come from two different \(\alpha_i\), then they must be transverse. Using basic open sets it is easy to see that this map is continuous and hence measurable. Lastly, by Lemma~\ref{lem:roller-bnd-embedding} we have the (measurable) inclusion \(\bar Y \subset \bar X\). All in all, we see that the \(\phi_i\) lead to a measurable map \(\phi\colon B \to \bar X\). Since the image of each \(\phi_i\) lies in the non-terminating ultrafilters of \(Y_i\), we see that each ultrafilter in the image of \(\phi\) has at least one non-terminating descending chain and thus we have that indeed \(\phi\) takes values in \(\partial X\).
 \end{proof}
 
 %%% Local Variables:
