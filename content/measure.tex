@@ -334,20 +334,20 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \end{lemma}
 
 \begin{proof}
-  We will see that the map is even continuous. Take
+  We will see that the map is even continuous. Take finite subsets \(F,G \subset \mathcal{H}\) and consider the following preimage
   \begin{align*}
-    F & \coloneqq \{\mathfrak{h}_1,\dots \mathfrak{h}_n\} \subset \mathcal{H} \quad \text{and}\\
-    G & \coloneqq \{\mathfrak{h}_1', \dots, \mathfrak{h}_l'\} \subset \mathcal{H}
+    f^{-1}(\mathcal{C}(F, G))  & = \{(\alpha, \beta) \in \bar X^2 \mid F \subset \mathcal{H}(\alpha, \beta) \} \cap \{(\alpha, \beta) \in \bar X^2  \mid G \cap \mathcal{H}(\alpha, \beta) = \varnothing\}\\
+                                 &\eqqcolon S \cap N.
   \end{align*}
-  and consider the following preimage
+  We will consider \(S\) and \(N\) separately:
   \begin{align*}
-    f^{-1}(\mathcal{C}(F, G))  = & \{(\alpha, \beta) \in \bar X \times \bar X \mid (\forall i \leq n\colon \mathfrak{h}_i \in \alpha \wedge \mathfrak{h}_i^\ast \in \beta)\\
-    & \wedge (\forall j \leq l \colon \mathfrak{h}_j'^\ast \in \alpha \vee \mathfrak{h}_j' \in \beta)\}\\
-    = & (\mathcal{C}(\{\mathfrak{h}_1, \dots \mathfrak{h}_n\}, \varnothing)  \times \bar X)\\
-    & \cap (\bar X \times C(\{\mathfrak{h}_1^\ast, \dots, \mathfrak{h}_n^\ast\}))\\
-                                                                                                                  & \cap \left ( \bigcap_{j=1}^l \left[(\mathcal{C}(\{h\}_j'^\ast, \varnothing) \times \bar X) \cup (\bar X \times \mathcal{C}(\{\mathfrak{h}_j'\}, \varnothing))\right]\right).
+    S & = \bigcup_{F' \subset F} \left( \mathcal{C}(F' \cup (F \setminus F')^\ast, \varnothing) \times \mathcal{C}(F'^\ast  \cup F \setminus F', \varnothing) \right)
   \end{align*}
-  This set is open as a finite intersection of basic open sets. Hence, \(f\) is continuous and measurable.
+  and
+  \begin{align*}
+    N & = \bigcap_{\mathfrak{h} \in G}\left[(\mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{h})) \cup (\mathcal{C}(\mathfrak{h}^\ast) \times \mathcal{C}(\mathfrak{h}^\ast))\right].
+  \end{align*}
+  Then \(f^{-1}(F,G)\) is open as a finite intersection of open sets. Hence, \(f\) is continuous and measurable.
 \end{proof}
 
 \begin{lemma}
