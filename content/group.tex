@@ -272,7 +272,7 @@ Unless noted otherwise, \(\Gamma\) will denote a countable, discrete group.
 
 \begin{lemma}
   \label{lem:countable-orbit}
-  Let \((M, \Sigma, \mu)\) be a measure space on which a countable group \(\Gamma\) acts by measurable and measure class preserving transformations. Let \(B \in \Sigma\) such that \(\mu(M \setminus B) = 0\). Then there exists \(x \in M\) such that \(\Gamma \cdot x \subset B\).
+  Let \((M, \Sigma, \mu)\) be a measure space on which a countable group \(\Gamma\) acts by measurable and measure class preserving transformations. Let \(B \in \Sigma\) be a conull subspace. Then there exists \(x \in M\) such that \(\Gamma \cdot x \subset B\).
 \end{lemma}
 
 \begin{proof}
@@ -332,7 +332,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
 
 \begin{defin}
   \label{defin:atomic}
-  Let \((M, \Sigma, \mu)\) be a measure space. A set \(B \in \Sigma\) is called \emph{atomic} if \(\mu(B) > 0\) and for all measurable \(A \subset B\) either \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). The space \(M\) is \emph{purely atomic} if there exists a partition of \(M\) consisting atomic sets.
+  Let \((M, \Sigma, \mu)\) be a measure space. A set \(B \in \Sigma\) is called \emph{atomic} if \(\mu(B) > 0\) and for all measurable \(A \subset B\) either \(\mu(A) = 0\) or \(\mu(A) = \mu(B)\). The space \(M\) is \emph{purely atomic} if there exists a partition of \(M\) consisting of atomic sets.
 \end{defin}
 
 \begin{lemma}
@@ -554,7 +554,7 @@ We also assume that \(\Gamma\) acts on \(S\) preserving measure classes.
 With this remark in place, we can turn to the final definition:
 
 \begin{defin}[Amenable group action]
-  Let \(\alpha\colon \Gamma \times S \to M\) be a cocycle. A Borel field \((A_s)_{s \in S}\) is called \emph{\(\alpha\)-invariant} if \(\alpha^\ast(g, s) A_{s} = A_{gs}\) for each \(g \in \Gamma\) and almost all \(s \in S\).
+  Let \(\alpha\colon \Gamma \times S \to \Isom(E)\) be a cocycle. A Borel field \((A_s)_{s \in S}\) is called \emph{\(\alpha\)-invariant} if \(\alpha^\ast(g, s) A_{s} = A_{gs}\) for each \(g \in \Gamma\) and almost all \(s \in S\).
 
   The \(\Gamma\)-action on \(S\) is called \emph{amenable} if for every separable Banach space \(E\), every Borelian (left) cocycle \(\alpha \colon \Gamma \times S \to \Isom(E)\) and every \(\alpha\)-invariant Borel field \((A_s)_{s \in S}\), there exists a Borel map \(\phi \colon S \to E^\ast_1\) such that \(\phi(s) \in A_s\) for almost all \(s\) and for each \(g \in \Gamma\) we have \(\alpha^\ast(g, s) \phi(s) = \phi(gs)\) almost everywhere.
 \end{defin}
@@ -570,14 +570,18 @@ With this remark in place, we can turn to the final definition:
   \end{enumerate}
 \end{defin}
 
-\begin{bsp}
+\begin{bsp}[The Furstenberg-Poisson boundary]
   \label{bsp:poisson}
-  In his paper, \textcite[Theorem 3]{MR2006560} showed that the Poisson boundary of any spread out, non-degenerate, symmetric random walk on a locally compact, second countable group \(\Gamma\) is a strong \(\Gamma\)-boundary. A measure \(\mu\) on \(\Gamma\) is called \emph{spread out} (or \emph{étalée}) if there exists a convolution power \(\mu^{\ast n}\) which is not singular with respect to the Haar measure class on \(\Gamma\), i.\,e.\ there is no partition \(\Gamma = A \sqcup B\) such that \(\mu^{\ast n}\) is zero on all measurable subsets of \(A\) and the Haar measure class is zero on all measurable subsets of \(B\). The measure is called \emph{non-degenerate} if the minimal closed semigroup \(S \subset \Gamma\) with \(\mu(S) = 1\) is all of \(\Gamma\). A random walk is called spread out or non-degenerate if the measure \(\mu\) of the associated transition probability is spread out or non-degenerate. For details please refer to~\cite[Section 3]{MR2006560}.
+  In his paper, \textcite[Theorem 3]{MR2006560} showed that the Furstenberg-Poisson boundary of any spread out, non-degenerate, symmetric random walk on a locally compact, second countable group \(\Gamma\) is a strong \(\Gamma\)-boundary. A measure \(\mu\) on \(\Gamma\) is called \emph{spread out} (or \emph{étalée}) if there exists a convolution power \(\mu^{\ast n}\) which is not singular with respect to the Haar measure class on \(\Gamma\), i.\,e.\ there is no partition \(\Gamma = A \sqcup B\) such that \(\mu^{\ast n}\) is zero on all measurable subsets of \(A\) and the Haar measure class is zero on all measurable subsets of \(B\). The measure is called \emph{non-degenerate} if the minimal closed semigroup \(S \subset \Gamma\) with \(\mu(S) = 1\) is all of \(\Gamma\). A measure is called \emph{symmetric}, if \(\mu = f_\ast \mu\), where \(f\) is the continuous map given by inversion on \(\Gamma\). A random walk is called spread out, non-degenerate or symmetric if the same is true for the measure \(\mu\) of the associated transition probability. For details please refer to~\cite[Section 3]{MR2006560}.
 \end{bsp}
+
+\begin{rem}
+  The previous example is the one most often encountered. Indeed, in his paper \textcite{MR2006560} used the Furstenberg-Poisson boundary to prove that every locally compact, \(\sigma\)-compact group (and in particular, every countable, discrete group) admits a strong \(\Gamma\)-boundary. 
+\end{rem}
 
 In the following, we will need that strong \(\Gamma\)-boundaries are well behaved under going over to finite index subgroups:
 
-\begin{thm}[{\cite[Lemma~5.4.3]{MR2715399} \cite[Proposition~3.2.4]{MR2006560}}]
+\begin{thm}[{\cite[Lemma~5.4.3]{MR2715399},\ \cite[Proposition~3.2.4]{MR2006560}}]
   \label{thm:str-bnd-subgrp}
   Let \(\Gamma\) be a countable, discrete group and \(\Gamma_0 \leq \Gamma\) a finite index subgroup. If \((B, \Sigma, \vartheta)\) is a strong \(\Gamma\)-boundary then it is also a strong \(\Gamma_0\)-boundary.
 \end{thm}
