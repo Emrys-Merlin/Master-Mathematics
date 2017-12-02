@@ -339,7 +339,7 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
 
 \begin{thm}[{\cite[Theorem 1.14]{Brodzki2009}}]
   \label{thm:interval}
-  Let \(X\) be a finite dimensional CAT(0) cube complex and \([x,y] \subset \bar X\) an interval. Then \([x,y]\) is isometrically embeddable in \(\R^d\) considered as a CAT(0) cube complex equipped with the \(l_1\)-metric.
+  Let \(X\) be a CAT(0) cube complex of finite dimension \(d\) and \([x,y] \subset \bar X\) an interval. Then \([x,y]\) is isometrically embeddable in \(\R^d\) considered as a CAT(0) cube complex equipped with the \(l_1\)-metric.
 \end{thm}
 
 \begin{defin}
@@ -347,7 +347,7 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
   Let \(\alpha\) and \(\beta\) be two ultrafilters. The \emph{set of separating halfspaces} of \(\alpha\) and \(\beta\) is defined as
 
   \[
-    \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta\}.
+    \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta \text{ or vice versa}\}.
   \]
 \end{defin}
 
@@ -355,6 +355,38 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
   \label{rem:interval}
   Indeed we have that \(\mathcal{H}(x,y) = \mathcal{H}([x,y])\), i.\,e.\ the halfspaces separating \(x\) and \(y\) are exactly the halfspaces of the interval \([x,y]\).
 \end{rem}
+
+\begin{lemma}[{\cite[Lemma 1.16]{Brodzki2009}}]
+  \label{lem:b-1.16}
+  Let \(X\) be a CAT(0) cube complex of (finite) dimension \(d\) and \(\alpha, \beta \in \bar X\). Then we have
+  \[
+    \mathcal{H}(\alpha, \beta) = P_1 \sqcup \dots \sqcup P_d,
+  \]
+  where each \(P_i\) contains halfspaces whose associated hyperplanes are parallel. Some of the \(P_i\) might be empty.
+\end{lemma}
+
+\begin{rem}
+  \label{rem:b-1.16}
+  By construction, each of the non-empty \(P_i\) contains exactly two chains. The first by choosing an arbitrary element and considering all halfspaces that are comparable to this element. The second by involution on this chain.
+\end{rem}
+
+\begin{cor}
+  Let \(X\) be a CAT(0) cube complex of (finite) dimension \(d\) and \(\alpha, \beta \in \bar X\). Then the set
+  \[
+    \{(\gamma, \delta) \in \bar X^2 \mid [\gamma, \delta] = [\alpha, \beta]\}
+  \]
+  contains at most \(2^d\) elements.
+\end{cor}
+
+\begin{proof}
+  As we noted in Remark~\ref{rem:interval}, \(\mathcal{H}(\alpha,\beta) = \mathcal{H}([\alpha, \beta])\). Because of the Roller duality, it satisfies to work on the pocset of halfspaces. By Lemma~\ref{lem:b-1.16} we have the decomposition
+  \[
+    \mathcal{H}(\alpha, \beta) = P_1 \sqcup \dots \sqcup P_d.
+  \]
+  Any other elements \(\gamma, \delta \in \bar X\) with the same set of halfspaces must admit the same decomposition. Let \(\mathfrak{h}, \mathfrak{k} \in P_i\) and \(\mathfrak{h} \in \alpha\). Hence, \(\mathfrak{h}^\ast \in \beta\). If \(\mathfrak{h} \subset \mathfrak{k}\), then \(\mathfrak{k} \in \alpha\) because of the consistency condition. If \(\mathfrak{k} \subset \mathfrak{h}\) then \(\mathfrak{k}^\ast \in \beta\) because of the consistency condition and again we have \(\mathfrak{k} \in \alpha\). We see that \(\alpha\) contains a chain in \(P_i\)  and \(\beta\) contains the chain under involution (see Remark~\ref{rem:b-1.16}).
+
+  However, the same is true for any other pair \((\gamma, \delta)\) having the same decomposition \(P_i\). Since each \(P_i\) contains 0 or 2 chains, we see that there are at most \(2^d\) possible choices of how these two chains might be divided between \(\gamma\) and \(\delta\).
+\end{proof}
 
 \begin{defin}
   \label{defin:tau}
