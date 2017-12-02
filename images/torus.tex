@@ -11,17 +11,18 @@
   \draw [>={Stealth},>>-] (-2, 0) -- (-2, 1) (-2, 1) -- (-2, 2);
   \draw [dashed] ( 0, 2) -- ( 0,-2);
   \draw [dashed] ( 2, 0) -- (-2, 0);
-  \node at ( 0, 0) [vertex,draw,label= 45:\(x\)] {};
-  \node at ( 2, 0) [vertex,draw,label=135:\(z_1\)] {};
-  \node at (-2, 0) [vertex,draw,label= 45:\(z_1\)] {};
-  \node at ( 0, 2) [vertex,draw,label=315:\(z_2\)] {};
-  \node at ( 0,-2) [vertex,draw,label= 45:\(z_2\)] {};
-  \node at ( 2, 2) [vertex,draw,label=225:\(y\)] {};
-  \node at (-2,-2) [vertex,draw,label= 45:\(y\)] {};
-  \node at (-2, 2) [vertex,draw,label=315:\(y\)] {};
-  \node at ( 2,-2) [vertex,draw,label=135:\(y\)] {};
+  \node at ( 0, 0) [vertex,draw,label= 45:\(x_1\)] {};
+  \node at ( 2, 0) [vertex,draw,label=135:\(x_2\)] {};
+  \node at (-2, 0) [vertex,draw,label= 45:\(x_2\)] {};
+  \node at ( 0, 2) [vertex,draw,label=315:\(x_3\)] {};
+  \node at ( 0,-2) [vertex,draw,label= 45:\(x_3\)] {};
+  \node at ( 2, 2) [vertex,draw,label=225:\(x_4\)] {};
+  \node at (-2,-2) [vertex,draw,label= 45:\(x_4\)] {};
+  \node at (-2, 2) [vertex,draw,label=315:\(x_4\)] {};
+  \node at ( 2,-2) [vertex,draw,label=135:\(x_4\)] {};
 
   \begin{scope}[shift={(3.5,-0.5)}, scale=1.5]
+    \node at (0.5, -0.5) {\(\lk(x_i)\)};
     \node at (0,0) [vertex] {}
     edge (0,1)
     node at (0,1) [vertex] {}
