@@ -9,7 +9,7 @@ In this section we will construct the actual boundary map, making use of additio
 
 \begin{lemma}
   \label{lem:H=0}
-  Let \(X\) be a finite-dimensional, irreducible, locally finite CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with regard to the pushforward measure from \(B\), then there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \bar X\).
+  Let \(X\) be a finite-dimensional, locally finite CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with regard to the pushforward measure from \(B\), then there exists a \(\Gamma\)-equivariant measurable map \(\phi\colon B \to \bar X\).
 \end{lemma}
 
 \begin{proof}
@@ -29,7 +29,7 @@ As a next step to our main theorem we would like to convince ourselves that any 
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable, irreducible CAT(0) cube complex, \(\Gamma\) a discrete, countable group with an essential action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubyle ergodic with coefficients and \(\phi\colon B \to \bar X\) a measurable map which is \(\Gamma\)-equivariant almost everywhere. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
+  Let \(X\) be a finite dimensional, locally countable, CAT(0) cube complex, \(\Gamma\) a discrete, countable group with an essential action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubyle ergodic with coefficients and \(\phi\colon B \to \bar X\) a measurable map which is \(\Gamma\)-equivariant almost everywhere. Then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
@@ -45,7 +45,7 @@ As a next step to our main theorem we would like to convince ourselves that any 
   \]
   which is again measurable as a composition of measurable maps (consider the previous lemma) and \(\Gamma\)-invariant and again we yield an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
 
-  Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0)) > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
+  Lastly, we will show that this is incompatible with the case that \(M > 0\). Assume that \(M > 0\) were the case, then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0))| > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12} we have that for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
   However, by Lemma~\ref{lem:countable-orbit} \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.
 \end{proof}
@@ -295,7 +295,7 @@ Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group 
 
 \begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
   \label{prop:4.17}
-  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family (with more than one member) of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(\bar X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is the Roller compactification of some other CAT(0) cube complex.
+  Let \(X\) be a CAT(0) cube complex and \(\Gamma \to \Aut(X)\) an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family (with more than one member) of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(X = \overline{X(\mathcal{\hat H}')} \times Z\), where \(Z\) is some other CAT(0) cube complex.
 \end{prop}
 
 \begin{proof}
@@ -415,7 +415,7 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
 
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
-  Let \(\Gamma\) be a discrete, countable group acting on an irreducible finite dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a measurable map
+  Let \(\Gamma\) be a discrete, countable group acting on an finite dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary, there exists a measurable map
   \[
     \phi\colon B \to \partial X
   \]
@@ -439,7 +439,11 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
     \]
     for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
 
-    The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, which is a contradiction to the fact that it is irreducible.
+    The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \). Then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, namely
+    \[
+      X = X(H_\mu) \times Z.
+    \]
+    However, \(X(H_\mu)\) is an interval. Clearly, every of the irreducible factors in \(X(H_\mu)\) are also intervals (just project the ultrafilters to the factors). However, this is a contradiction to the non-elementarity of \(\Gamma\)-action by Corollary~\ref{cor:f-3.21}.
   \item[\(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We define the set
     \[
       \mathcal{S} \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}.
@@ -457,7 +461,33 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
         (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
       \end{align*}
       is \(\Gamma\)-equivariant and measurable (c.\,f.\ Lemma~\ref{lem:measurable-tau-int}) and Corollary~\ref{cor:4.5} assures that \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence there exists a \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(\nu\), which is a contradiction.
-    \item If the essential value is 0, i.\,e.\ \(H_\mu\) does not contain strongly separated halfspaces for almost all \(\mu\), we can apply Corollary~\ref{cor:4.21} and find a contradiction regarding the essentiality or the non-elementarity of the action.
+    \item If the essential value is 0, i.\,e.\ \(H_\mu\) does not contain strongly separated halfspaces for almost all \(\mu\). Let
+      \[
+        X = X_1 \times \dots \times X_n
+      \]
+      be the decomposition of \(X\) into irreducible components and let
+      \[
+        \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n
+      \]
+      the associated decomposition of halfspaces. Furthermore, let \(\Gamma_0 \leq \Gamma\) be the finite index subgroup respecting this decomposition. By Lemma~\ref{lem:proj-weight}, we find projections
+      \[
+        p_i\colon \bar X \to \bar X_i
+      \]
+      and have
+      \[
+        H_{p_{i\ast}\mu} = H_\mu \cap \mathcal{H}_i.
+      \]
+      Consider the set 
+      \[
+        B_i \coloneqq \{(\mu, \nu) \in \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \mid H_\mu \cap H_\nu \cap \mathcal{H}_i \neq \varnothing\} 
+      \]
+      We claim that there exists an \(i\) such that \(B_i\) has full measure. Indeed, \(\Gamma_0\) still acts doubly ergodically on \(\mathcal{P}(\bar X)\) and the \(B_i\) are measurable (this follows from Lemmas~\ref{lem:measurable-mu} and\ \ref{lem:measurable-intersection-union}), we see that they have either measure 0 or 1. Let \(B \subset \mathcal{P}(\bar X)^2\) such that \(H_\mu \cap H_\nu \neq \varnothing\), which has full measure by assumption. Furthermore, we have
+      \[
+        B = \bigcup_{i=1}^n B_i.
+      \]
+      Hence, we have that at least one \(B_i\) has non-zero (and thus full) measure.
+
+      We have that \(H_\mu \cap \mathcal{H}_i\) does not contain pairs of strongly separated halfspaces for almost all \(\mu\) and that \(H_\mu \cap H_\nu \cap \mathcal{H}_i\) is non-empty for almost all \(\mu\) and \(\nu\). Hence, we can apply Corollary~\ref{cor:4.21} to the irreducibel CAT(0) cube complex \(X_i\) and the group \(\Gamma_0\). This shows that \(\Gamma_0\) does either not act essential or elementary on \(X_i\). This is a contradiction to Lemma~\ref{lem:2.28}.
     \end{itemize}
   \end{description}
   Hence we see that \(H_\mu \cap H_\nu\) cannot be infinite, but then we have the map
@@ -519,23 +549,19 @@ Before finishing this treatise, we would like to generalize our main theorem. We
 
 \begin{cor}
   \label{cor:4.2}
-  Let \(\Gamma \to \Aut(X)\) be a discrete, countable group acting on a connected, locally countable, finite-dimensional CAT(0) cube complex \(X\). Assume that there is no finite orbit in the visual boundary \(\partial_\sphericalangle X\) and denote by \(Y\) the essential core of \(X\). Then there exists a finite index subgroup \(\Gamma_0 \leq \Gamma\) and a measurable map
+  Let \(\Gamma \to \Aut(X)\) be a discrete, countable group acting on a connected, locally countable, finite-dimensional CAT(0) cube complex \(X\). Assume that the action is non-elementary and denote by \(Y\) the essential core of \(X\). Then there exists a measurable map
   \[
     \phi \colon B \to \partial Y \subseteq \partial X
   \]
-  which is \(\Gamma_0\)-equivariant almost everywhere.
+  which is \(\Gamma\)-equivariant almost everywhere.
 \end{cor}
 
 \begin{proof}
-  Since there is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we also have no finite orbits of \(\Gamma\) in \(\partial_\sphericalangle Y\). We decompose \(Y\) as \(Y = Y_1 \times \dots \times Y_m\), where each \(Y_i\) is irreducible (which is possible by Proposition~\ref{prop:cs-2.6}). Let \(\Gamma_0 \leq \Gamma\) be the finite index subgroup preserving the irreducible decomposition of \(Y\) (Proposition~\ref{prop:cs-2.6}). By Lemma~\ref{lem:2.28} we know that \(\Gamma_0\) has still no finite orbit in \(\partial_\sphericalangle Y_i\) for each \(i\) and the action on each \(Y_i\) is essential. Essentiality then implies that \(\Gamma_0\) has no fixed point in any \(Y_i\). Thus, \(\Gamma_0\) also acts non-elementary on each factor.
-
-  By Theorem~\ref{thm:str-bnd-subgrp}, we know that \(B\) is a strong \(\Gamma_0\)-boundary. Hence, Theorem~\ref{thm:4.1} is applicable for each factor \(Y_i\) and we yield the measurable maps
+  Since there is no finite orbit of \(\Gamma\) in the visual boundary, we also have no fixed point there. Hence, we can apply Proposition~\ref{prop:cs-3.5}, which yields that the essential core \(Y\) is not empty. As a convex subcomplex, we have \(\partial_\sphericalangle Y \subset \partial_\sphericalangle X\) and we see that \(\Gamma\) acts non-elementary on \(Y\), too. By definition, the action \(\Gamma\) on \(Y\) is also essential. Hence, we can apply Theorem~\ref{thm:4.1} and find the map
   \[
-    \phi_i \colon B \to \partial Y_i
+    \phi\colon B \to \partial Y.
   \]
-  which are \(\Gamma_0\)-invariant almost everywhere and which take values in the non-terminating ultrafilters. 
-
-  Each halfspaces in \(Y_i\) corresponds to a unique halfspace in \(Y\) and thus for family of ultrafilters \(\alpha_i \in \bar Y_i\) can be mapped to an ultrafilter \(\alpha \in \bar Y\). This can be most easily seen in the product space definition of \(\bar Y\), since then we just join the tuples of \(\alpha_i\) (after choosing an appropriate enumeration of \(\bar Y\)). The choice condition is then automatically satisfied and for the consistency condition, we only have to note that if two halfspaces come from two different \(\alpha_i\), then they must be transverse. Using basic open sets it is easy to see that this map is continuous and hence measurable. Lastly, by Lemma~\ref{lem:roller-bnd-embedding} we have the (measurable) inclusion \(\bar Y \subset \bar X\). All in all, we see that the \(\phi_i\) lead to a measurable map \(\phi\colon B \to \bar X\). Since the image of each \(\phi_i\) lies in the non-terminating ultrafilters of \(Y_i\), we see that each ultrafilter in the image of \(\phi\) has at least one non-terminating descending chain and thus we have that indeed \(\phi\) takes values in \(\partial X\).
+  With the help of Lemma~\ref{lem:roller-bnd-embedding}, we can embedd \(\partial Y\) into \(\partial X\) in a natural way that is compatible with the \(\Gamma\)-action.
 \end{proof}
 
 %%% Local Variables:

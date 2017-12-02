@@ -370,7 +370,8 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
   By construction, each of the non-empty \(P_i\) contains exactly two chains. The first by choosing an arbitrary element and considering all halfspaces that are comparable to this element. The second by involution on this chain.
 \end{rem}
 
-\begin{cor}
+\begin{cor}[{\cite[Corollary~2.8]{fernós}}]
+  \label{cor:finite-interval}
   Let \(X\) be a CAT(0) cube complex of (finite) dimension \(d\) and \(\alpha, \beta \in \bar X\). Then the set
   \[
     \{(\gamma, \delta) \in \bar X^2 \mid [\gamma, \delta] = [\alpha, \beta]\}
@@ -379,7 +380,7 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
 \end{cor}
 
 \begin{proof}
-  As we noted in Remark~\ref{rem:interval}, \(\mathcal{H}(\alpha,\beta) = \mathcal{H}([\alpha, \beta])\). Because of the Roller duality, it satisfies to work on the pocset of halfspaces. By Lemma~\ref{lem:b-1.16} we have the decomposition
+  As we noted in Remark~\ref{rem:interval}, \(\mathcal{H}(\alpha,\beta) = \mathcal{H}([\alpha, \beta])\). Because of the Roller duality, it is enough to work on the pocset of halfspaces. By Lemma~\ref{lem:b-1.16} we have the decomposition
   \[
     \mathcal{H}(\alpha, \beta) = P_1 \sqcup \dots \sqcup P_d.
   \]

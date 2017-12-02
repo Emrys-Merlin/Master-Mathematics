@@ -133,9 +133,9 @@ The above definition leads to the following consequence:
   Then the essential core of \(X\) is unbounded if and only if \(\Gamma\) has no fixed point. In that case the essential core embeds as a \(\Gamma\)-invariant convex subcomplex \(Y\) of \(X\).
 \end{prop}
 
-\begin{rem}
-  Even if \(X\) is irreducible the same might not be true for the essential core \(Y\). \todo{find counterexample for reducible essential core}
-\end{rem}
+% \begin{rem}
+%   Even if \(X\) is irreducible the same might not be true for the essential core \(Y\). \todo{find counterexample for reducible essential core}
+% \end{rem}
 
 \begin{defin}[Essential action]
   A group action \(\Gamma \to \Aut(X)\) is called \emph{essential} if the essential core of \(\Gamma\) is the whole space \(X\).
@@ -230,6 +230,34 @@ This paragraph contains some consequences and characterizations of non-elementar
   \end{enumerate}
 \end{prop}
 
+\begin{prop}[{\cite[Proposition~3.6]{Caprace2010}}]
+  \label{prop:cs-3.6}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\). Let \((Y_a)_{a \in A}\) be a \(\Gamma\)-invariant family of closed convex subsets of \(X\).
+
+  If for any finite subset \(B \subset A\) the intersection \(\bigcap_{a \in B}Y_a\)  is non-empty then either \(\bigcap_{a \in A} Y_a\) is a non-empty \(\Gamma\)-invariant subspace or \(\bigcap_{a \in A} \partial_{\sphericalangle} Y \subset \partial_{\sphericalangle}X\) contains a finite \(\Gamma\)-orbit. In particular, in this case \(\Gamma\) acts elementary on \(X\).
+\end{prop}
+
+\begin{lemma}[{\cite[Lemma 3.19]{fernós}}]
+  \label{lem:f-3.19}
+  If \(X\) is an interval then \(\Aut(X)\) is elementary.
+\end{lemma}
+
+\begin{proof}
+  By Corollary~\ref{cor:finite-interval}, we know that there are only finitely many \(\alpha, \beta \in \bar X\) such that \(X = [\alpha, \beta]\). Since \(X\) is clearly \(\Aut(X)\) invariant, we see that \(Aut(X)\) acts by permutations on the finite set
+  \[
+    I = \{(\alpha, \beta) \in \bar X^2 \mid X = [\alpha, \beta]\}.
+  \]
+  Hence, we find a finite index subgroup \(\Gamma_0 \leq \Aut(X)\) fixing each element in \(I\). Let \((\alpha, \beta) \in I\). By construction, we have \(g\alpha = \alpha\) for all \(g \in fGamma_0\). Hence, the collection of halfspaces given by \(\alpha\) is \(\Gamma_0\)-invariant. Taking \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). If any of the \(\mathfrak{\hat h}_i\) are parallel, we have seen in the proof of Corollary~\ref{cor:finite-interval} that the corrseponding halfspaces in \(\alpha\) form a chain. Hence, their intersection is never empty. If the two halfspaces are transverse, their intersection is also non-empty. Hence, we can invoke Theorem~\ref{thm:common-intersection} to see that \(\bigcap_{i=1}^n \mathfrak{h}_i\) is non-empty, as well. We can now apply Proposition~\ref{prop:cs-3.6} and see that \(\Gamma_0\) acts elementary in \(X\). Since \(\Gamma_0\) has finite index in \(\Aut(X)\) every finite orbit of \(\Gamma_0\) leads to a finite orbit in \(\Aut(X)\). Hence, \(\Aut(X)\) acts elementary as well.
+\end{proof}
+
+\begin{cor}[{\cite[Corollary 3.21]{fernós}}]
+  \label{cor:f-3.21}
+  If \(\Gamma \to \Aut(X)\) is non-elementary then no factor in the irreducible decomposition of \(X\) is an interval.
+\end{cor}
+
+\begin{proof}
+  Let \(Y\) be one of the factors and \(\Gamma_0 \leq \Gamma\) the finite index subgroup preserving the decomposition. By Lemma~\ref{lem:2.28}, we know that \(\Gamma_0\) acts non-elementary on each factor, in particular on \(Y\). However, \(\Gamma_0 \leq \Aut(Y)\) and hence \(\Aut(Y)\) has to act non-elementary, too. Otherwise, we would find finite orbits of \(\Aut(Y)\), which would directly lead to finite orbits of \(\Gamma_0\). However, then Lemma~\ref{lem:f-3.19} finishes the proof.
+\end{proof}
 
 \subsection{(Doubly) ergodic group actions}
 \label{sec:ergodic}

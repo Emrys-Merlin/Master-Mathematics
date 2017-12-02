@@ -201,6 +201,31 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally finite, fini
   By Lemma~\ref{lem:interval} and Theorem~\ref{thm:interval}, we know that \(\bar X(H_\mu)\) is an interval and is embeddable in some \(\R^d\). The observation in Example~\ref{bsp:finite-terminal} shows that any subset \(H \subset H_\mu \subset \mathcal{H}(\R^d)\) has at most \(2d\) terminal elements.
 \end{proof}
 
+\begin{lemma}
+  \label{lem:proj-weight}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and \(Y\) one of its irreducible factors with pocset of halfspaces \(\mathcal{H}'\). Then the projection
+  \begin{align*}
+    p\colon \bar X & \to \bar Y,\\
+    \alpha \mapsto \alpha \cap \mathcal{H}'
+  \end{align*}
+  is continuous. If \(\mu\) is a regular probability measure on \(\bar X\) we have
+  \[
+    H_{p_\ast \mu} = H_\mu \cap \mathcal{H}'
+  \]
+\end{lemma}
+
+\begin{proof}
+  Let \(F, G \subset \mathcal{H}'\) be finite. Then
+  \begin{align*}
+    p^{-1}(\mathcal{C_{\mathcal{H}'}}(F,G)) = \mathcal{C_{\mathcal{H}}}(F,G) \subset \mathcal{H}
+  \end{align*}
+  and \(p\) is continuous. Hence, the pushforward of the measure is well defined and for every \(\mathfrak{h} \in \mathcal{H}'\) we have
+  \[
+    (p_\ast \mu))(\mathcal{C}_{\mathcal{H}'}(\mathfrak{h})) = \mu(p^{-1}(\mathcal{C}_{\mathcal{H}'}(\mathfrak{h}))) = \mu(\mathcal{C}_{\mathcal{H}}(\mathfrak{h}))
+  \]
+  proving the last equality.
+\end{proof}
+
 \subsection{Measurability of certain maps}
 \label{sec:meas-maps}
 
