@@ -433,9 +433,9 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
   \]
   If \(f\colon \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H}), \mu \mapsto H_\mu\), then \(\mathcal{E} = (f \times f)^{-1}(\Delta)\), where \(\Delta \subset \operatorname{Pot}(\mathcal{H})^2\) is the diagonal. The set \(\operatorname{Pot}(\mathcal{H})\) is Hausdorff with regard to the cylinder topology. Hence \(\Delta\) is closed and measurable. The map \(f \times f\) is also measurable and we yield that the same is true for \(\mathcal{E}\). Furthermore, \(\mathcal{E}\) is \(\Gamma\)-invariant and by the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), we see that it has either measure 0 or measure 1. Let us consider the two cases
   \begin{description}
-  \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset \(M \subset \mathcal{P}(X)\), such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). By Lemma~\ref{lem:countable-orbit} we find a \(\mu \in M\) such that
+  \item[\(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\) and by the definition of the product measure we can find a \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset \(M \subset \mathcal{P}(X)\), such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). By Lemma~\ref{lem:countable-orbit} we find a \(\nu \in M\) such that
     \[
-      H_{g\nu} = gH_\nu = H_{g\nu} = H_\mu = H_\nu
+      H_{g\nu} = gH_\nu = H_{g\nu} = H_{\mu_0} = H_\nu
     \]
     for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We would now like to show that not all of these subcomplexes are identical. In order to achieve this, we will need to show that the lifting decomposition is not \(\Gamma\)-invariant.
 
@@ -515,7 +515,7 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
   % \end{description}
 \end{proof}
 
-If we loosen the restrictions on \(\Gamma\), we can still find a map \(\phi\). However, it will only be \(\Gamma_0\)-equivariant for a finite index subgroup \(\Gamma_0 \leq \Gamma\). Additionally, we cannot be sure that the image lies in the non-terminating ultrafilters. The precise statement is as follows:
+Before finishing this treatise, we would like to generalize our main theorem. We would both like to lessen the restrictions on \(\Gamma\) by only assuming no finite orbits in the visual boundary and on \(X\) by allowing reducibility. It turns out that this is possible. However, we will have to allow for two drawbacks. First, \(\phi\) will only be equivariant with regard to a finit index subgroup of \(\Gamma\). Secondly, the image of \(\phi\) might not lie in the non-terminating ultrafilters, but it will still lie in \(\partial X\). The precise statement is as follows:
 
 \begin{cor}
   \label{cor:4.2}
