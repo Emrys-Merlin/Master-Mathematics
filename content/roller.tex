@@ -334,12 +334,17 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
 
 \begin{lemma}
   \label{lem:x-interval}
-  Let \(X\) be a CAT(0) cube complex and \(\alpha \in \bar X\) an ultrafilter. If \(\alpha^\ast\) is an ultrafilter then \(\bar X = [\alpha, \alpha^\ast]\).
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(\alpha \in \bar X\) an ultrafilter. If \(\alpha^\ast\) is an ultrafilter then \(X = [\alpha, \alpha^\ast]\).
 \end{lemma}
 
 \begin{proof}
-  Since no halfspace can be contained in both \(\alpha\) and \(\alpha^\ast\), we have an empty intersection and thus \(\bar X = [\alpha, \alpha^\ast]\).
+  Since no halfspace can be contained in both \(\alpha\) and \(\alpha^\ast\), we have an empty intersection and thus \(X = [\alpha, \alpha^\ast]\).
 \end{proof}
+
+\begin{bsp}[Euclidean space]
+  \label{bsp:euclidean-interval}
+  The above lemma immediately shows that every \(\R^d\) with its standard cubulation is an interval. Indeed, every hyperplane \(\mathfrak{\hat h}\) is orthogonal to a coordinate axis given by a unit vector \(e_i\). We choose the halfspace \(\mathfrak{h}\) such that there exists a \(K>0\) such that \(\lambda e_i \in \mathfrak{h}\) for all \(\lambda > K\). This is an ultrafilter \(\alpha\) and the opposite \(\alpha^\ast\) is given by all the halfspaces such that there exists a \(K > 0\) sucht that \(-\lambda e_i \in \mathfrak{h}\) for all \(\lambda > K\). This is again an ultrafilter. 
+\end{bsp}
 
 \begin{thm}[{\cite[Theorem 1.14]{Brodzki2009}}]
   \label{thm:interval}
