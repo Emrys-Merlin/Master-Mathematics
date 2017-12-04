@@ -248,7 +248,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
   \begin{align*}
     f^{-1}(\{n\})
     & = \{ A \subset N \mid |A| = n\}\\
-    & = \bigcup_{\substack{A \subset N\\|A| = N}} \left ( \bigcap_{\substack{F \subset N\\|F|< \infty}}\mathcal{C}(A,F)\right),
+    & = \bigcup_{\substack{A \subset N\\|A| = n}} \left ( \bigcap_{\substack{F \subset N\\|F|< \infty}}\mathcal{C}(A,F)\right),
   \end{align*}
   where \(\mathcal{C}(A,F)\) is a cylinder set as defined in Definition~\ref{def:pot-top}. Since the set of all finite subsets of \(N\) is countable, the above preimage is measurable as it is a countable union and intersection of measurable sets.
 
@@ -265,9 +265,9 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \end{lemma}
 
 \begin{proof}
-  We take an arbitrary cylinder set \(C(F_1, F_2)\) and are interested in the preimage
+  We take an arbitrary cylinder set \(\mathcal{C}(F_1, F_2)\) and are interested in the preimage
   \begin{align*}
-    \tau^{-1}(C(F_1, F_2))
+    \tau^{-1}(\mathcal{C}(F_1, F_2))
     & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H) \text{ and } \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau{H}\} \\
     & = \{H \subset \mathcal{H} \mid F_1 \subset \tau(H)\} \cap \{H \subset \mathcal{H} \mid \forall \mathfrak{h} \in F_2\colon \mathfrak{h} \in H\ \Rightarrow\ \mathfrak{h} \not\in \tau(H)\}\\
     & \eqqcolon T \cap N.
@@ -277,13 +277,13 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
     T
     & = \bigcap_{\mathfrak{h} \in F_1}\{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}\\
     & = \bigcap_{\mathfrak{h} \in F_1}\left (\{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ minimal}\} \cup \{H \subset \mathcal{H} \mid \mathfrak{h} \in H \text{ maximal}\}\right )\\
-    & = \bigcap_{\mathfrak{h} \in F_1}\left ( \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{k} \subset \mathfrak{h}}}C(\{\mathfrak{h}\}, \{\mathfrak{k}\}) \cup \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{h} \subset\mathfrak{k}}} C(\{\mathfrak{h}\}, \{\mathfrak{k}\})\right ).
+    & = \bigcap_{\mathfrak{h} \in F_1}\left ( \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{k} \subset \mathfrak{h}}}\mathcal{C}(\{\mathfrak{h}\}, \{\mathfrak{k}\}) \cup \bigcap_{\substack{\mathfrak{k} \in \mathcal{H}\\\mathfrak{h} \subset\mathfrak{k}}} \mathcal{C}(\{\mathfrak{h}\}, \{\mathfrak{k}\})\right ).
   \end{align*}
   This set is measurable as it is a countable intersection and union of measurable sets. We now decompose \(N\):
   \begin{align*}
     N
     & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H) \text{ and } (F_2 \setminus F) \cap H = \varnothing\}\\
-    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H)\} \cap C(\varnothing, F_2 \setminus F)\right).\\
+    & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H)\} \cap \mathcal{C}(\varnothing, F_2 \setminus F)\right).\\
   \end{align*}
   We will now show that the set where a finite subset of elements are not terminal is measurable. This will conclude the proof. This can be achieved via an induction over \(n = |F|\). The case \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Assume the assertion is true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) contains \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F \coloneqq F \setminus \{\mathfrak{h}\}\), we do the following decomposition:
   \begin{align*}
@@ -291,7 +291,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
     & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \subset H \setminus \tau(H)\}\\
     & = \{H \subset \mathcal{H} \mid \tilde{F} \subset H \setminus \tau(H)\} \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}.
   \end{align*}
-  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(C(F_1, F_2))\) is measurable.
+  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(\mathcal{C}(F_1, F_2))\) is measurable.
 \end{proof}
 
 
@@ -308,7 +308,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \begin{proof}
   In Section~\ref{sec:roller} we defined a topology on the power set (c.\,f.\ Definition~\ref{def:pot-top} and Proposition~\ref{prop:pot-top}). Hence, we need to show that the preimages of the basic open sets are mapped to measurable sets in \(\mathfrak{P}(\bar X)\). So let \(F_1, F_2 \subset \mathcal{H}(X)\) be finite and consider the cylinder set \(\mathcal{C}(F_1, F_2)\). Then the preimage is given by the set
   \[
-    K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in C(F_1, F_2)\}.
+    K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in \mathcal{C}(F_1, F_2)\}.
   \]
   For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h})) \in I\}\). We will now show that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence, \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
   \begin{align*}
@@ -401,14 +401,14 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
   \label{lem:measurable-intersection-union}
   Let \(F, G \subset A\) be two finite subsets. Then we have
   \begin{align*}
-    f^{-1}(C(F,G))
+    f^{-1}(\mathcal{C}(F,G))
     & = \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cap K \wedge G \subset H^c \cup K^c\} \\
     & = \bigcap_{f \in F} \mathcal{C}(f) \times \mathcal{C}(f)\\
     & \cap \bigcap_{g \in G} (\mathcal{C}(g)^c \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times \mathcal{C}(g)^c)
   \end{align*}
   and
   \begin{align*}
-    g^{-1}(C(F,G))
+    g^{-1}(\mathcal{C}(F,G))
     & = \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cup K \wedge G \subset H^c \cap K^c\} \\
     & = \bigcap_{f \in F} (\mathcal{C}(f) \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times\mathcal{C}(f))\\
     & \cap \bigcap_{g \in G} \mathcal{C}(g)^c \times \mathcal{C}(g)^c.
