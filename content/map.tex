@@ -9,7 +9,7 @@ In this section we will construct the actual boundary map, making use of additio
 
 \begin{lemma}
   \label{lem:H=0}
-  Let \(X\) be a finite-dimensional, locally finite CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with regard to the pushforward measure from \(B\), then there exists a measurable map \(\phi\colon B \to \bar X\) which is \(\Gamma\)-equivariant almost everywhere.
+  Let \(X\) be a finite-dimensional, locally countable CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with regard to the pushforward measure from \(B\), then there exists a measurable map \(\phi\colon B \to \bar X\) which is \(\Gamma\)-equivariant almost everywhere.
 \end{lemma}
 
 \begin{proof}
@@ -103,7 +103,7 @@ The following two sections will contain all the technical details in order to ex
 
 This section contains lemmas that will be needed to see that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) is impossible in our setting. In the main proof, only Proposition~\ref{prop:4.10} will be used. Everything else is just a build up (in particular, the introduction of strictly upper triangular directed graphs).
 
-Unless noted otherwise, \(X\) will be assumed to be a connected, locally finite, finite-dimensional CAT(0) cube complex and \(\Gamma\) a discrete, countable group.
+Unless noted otherwise, \(X\) will be assumed to be a connected, locally countable, finite-dimensional CAT(0) cube complex and \(\Gamma\) a discrete, countable group.
 
 \begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
   \label{lem:4.13}
@@ -186,6 +186,7 @@ Unless noted otherwise, \(X\) will be assumed to be a connected, locally finite,
 \end{defin}
 
 \begin{lemma}[{\cite[Lemma~A.6]{MR3509968}}]
+  \label{lem:A.6}
   If \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) is a complete directed finite graph with \(|V| = D\) then there exists a \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
 \end{lemma}
 
@@ -225,7 +226,7 @@ Unless noted otherwise, \(X\) will be assumed to be a connected, locally finite,
 
   Observe that it is sufficient to prove this statement for finite graphs, since for infinite graphs, we can always consider a finite subgraph with sufficiently many vertices. Thus, we will reduce to the finite case.
   \begin{description}
-  \item[\(D = 1\):] By the previous lemma we can find a \(v_1 \in V\) such that
+  \item[\(D = 1\):] By Lemma~\ref{lem:A.6} we can find a \(v_1 \in V\) such that
     \[
       o(v_1) \geq \frac{|V| - 1}{2} \geq \frac{V}{5} \geq 5^{n-1}.
     \]
@@ -234,7 +235,7 @@ Unless noted otherwise, \(X\) will be assumed to be a connected, locally finite,
       V_1 = \{v \in V \mid \overline{v_1v} \in E\},
     \]
     since \(\mathcal{G}\) does not contain loops. However, then we have \(|V_1| = o(v_1) \geq 5^{N-1}\) and we are done.
-  \item[\(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by the previous Lemma, we find a vertex \(v_{D+1} \in V_D\) such that
+  \item[\(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by the Lemma~\ref{lem:A.6}, we find a vertex \(v_{D+1} \in V_D\) such that
     \[
       o(v_{D+1}) \geq \frac{|V_D| -1}{2} \geq \frac{|V_D|}{5} \geq 5^{N - (D+1)}.
     \]
@@ -380,11 +381,11 @@ Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group 
 \end{lemma}
 
 \begin{proof}
-  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply the previous lemma to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
+  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply Lemma~\ref{lem:4.19} to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5
   \]
-  and since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, by the previous lemma we have that the above halfspaces are pairwise strongly separated.
+  and since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, by the Lemma~\ref{lem:strongly-sep} we have that the above halfspaces are pairwise strongly separated.
 
   We would like to show that \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) for each \(\mathfrak{l} \in H_{\mu_i}\) and every \(i\). This is in fact already true for every \(l \in H_{\mu_i} \cap H_{\mu_0}\) and since this intersection is not empty, we fix for each \(i\) one \(\mathfrak{l}_i\).
 
@@ -445,7 +446,7 @@ Finally, we are in a position to prove our main theorem. The statement can be fo
 
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
-  Let \(\Gamma\) be a discrete, countable group acting on an connecte, locally finite, finite-dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary there exists a measurable map
+  Let \(\Gamma\) be a discrete, countable group acting on a connectee, locally countable, finite-dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \(B\) is a strong \(\Gamma\)-boundary there exists a measurable map
   \[
     \phi\colon B \to \partial X
   \]

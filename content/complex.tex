@@ -322,15 +322,17 @@ This is a very short section concerned with maps between cube complexes. We will
 \end{lemma}
 
 \begin{cor}
+  \label{cor:non-inc}
   The map \(f_C\colon C \to Y\) is distance non-increasing for each cube \(C \subset X\).
 \end{cor}
 
 \begin{prop}
+  \label{prop:non-inc}
   Let \(f\colon X \to Y\) be a combinatorial map. Then \(f\) is distance non-increasing, i.\,e.\ \(d_Y(f(x), f(y)) \leq d_X(x,y)\) for all \(x,y \in X\). In particular a combinatorial isomorphism is an isometry.
 \end{prop}
 
 \begin{proof}
-  By the combinatorial structure of \(f\) each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). For each \(x,y \in X\) we denote by \(\operatorname{PL}(x,y)\) the piecewise linear paths joining \(x\) to \(y\). Furthermore, each segment of \(c\) lying in a cube is shortened by the previous corollary. Hence, \(l(f \circ c) \leq l(c)\) and thus
+  By the combinatorial structure of \(f\) each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). For each \(x,y \in X\) we denote by \(\operatorname{PL}(x,y)\) the piecewise linear paths joining \(x\) to \(y\). Furthermore, each segment of \(c\) lying in a cube is shortened by Corollary~\ref{cor:non-inc}. Hence, \(l(f \circ c) \leq l(c)\) and thus
   \begin{align*}
     d_X(x,y)
     & = \inf\left\{l(c) \relmid c \in \operatorname{PL}(x,y)\right\}\\

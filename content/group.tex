@@ -67,38 +67,24 @@ The above definition has one interesting immediate consequence:
 
 The previous observation already provides many examples for elementary actions by considering any group action on a finite cube complex. Let us consider an example of a cube complex with infinitely many vertices:
 
-\begin{bsp}[\(\R^d\)]
-  Another example is \(X \coloneqq \R^d\) with its standard cubulation and any cyclic subgroup of \(\Z^d\) acting by translations. This action has no finite orbits in \(\R^d\), but every point at infinity is fixed. Indeed, two rays define the same point at infinity if and only if they are parallel. However, a translated ray is still parallel to the untranslated ray.
+\begin{bsp}
+  \label{bsp:elementary}
+  \begin{description}
+  \item[Euclidean space:] An example of an elementar action is \(X \coloneqq \R^d\) with its standard cubulation and any cyclic subgroup of \(\Z^d\) acting by translations. This action has no finite orbits in \(\R^d\), but every point at infinity is fixed. Indeed, two rays define the same point at infinity if and only if they are parallel. However, a translated ray is still parallel to the untranslated ray.
+  \item[A tree:]  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8} (We note that this is also the Cayley graph of the free group with two generators). The space \(X\) is not a cube complex in our definition, however its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. We let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
+    \begin{figure}[htbp]
+      \centering
+      \input{./images/figure-8.tex}
+      \caption{The pointed sum of two spheres \(X \coloneqq S^1 \vee S^1\) and its universal cover\(\tilde X\). The arrows indicate which edges in the universal cover correspond to which loop in \(X\).}
+      \label{fig:figure-8}
+    \end{figure}
 
-  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8} (We note that this is also the Cayley graph of the free group with two generators). The space \(X\) is not a cube complex in our definition, however its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. We let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
-  \begin{figure}[htbp]
-    \centering
-    \input{./images/figure-8.tex}
-    \caption{The pointed sum of two spheres \(X \coloneqq S^1 \vee S^1\) and its universal cover\(\tilde X\). The arrows indicate which edges in the universal cover correspond to which loop in \(X\).}
-    \label{fig:figure-8}
-  \end{figure}
-
-  The universal cover is always a normal covering. This implies that \(\Gamma\) acts transitively on the vertices. Hence \(\Gamma\) has no finite orbit in \(\tilde X\). Now, consider any geodesic ray \(c\) represented by its vertices \((v_i)_{i \in \N}\). Then each edge \(e_i \coloneqq \overline{v_iv_{i+1}}\) has an assigned signing by an arrow and after translating by a deck transformation, this signing will be the same. Without loss of generality assume that \(e_i\) has signing \tikz{\draw[->] (0,0) -- (0.3,0)}. We choose one of the neighbors \(w_i\) of \(v_i\) such that \(\overline{v_iw_i}\) has signing \tikz{\draw[>={Stealth},->] (0,0) -- (0.3,0)}. Then we choose \(g_i \in \Gamma\) such that \(g_iv_i = w_i\). We claim that \(g_ic\) and \(c\) are not equivalent. Since we can drop any finite number of starting vertices, it satisfies to show the assertion in the case \(i=1\). If \(g_1c\) and \(c\) were equivalent then there exists an \(m \in \N\) such that \(g_1v_m\) is a vertex in \(c\), call it \(v_n\). There is a path connecting the two, namely
-  \[
-    g_1v_m, g_1v_{m-1}, \dots, g_1v_1, v_1, \dots, v_n.
-  \]
-  Since we are in a tree, this is the unique path. Hence \(g_1c\) must transverse \(\overline{v_1w_1} = \overline{v_1 (g_1v_1)}\). However, every vertex is at most visited once by \(g_1c\) and its first vertex is \(w_1\). So we need \(m=1\) and \(g_1e_1 = \overline{v_1w_1}\). However, this is impossible, because deck transformations conserve signing of edges. So we established that \(g_ic\) and \(c\) are always inequivalent, showing that any orbit in the visual boundary is infinite.
-    % As an example for a non-elmentary action, we consider an infinite complete binary tree \(X\). That means we have a root vertex \(r\) which has exactly two children and each child has again exactly two children and so forth. We consider the group \(\Gamma\) acting on \(X\) generated by the following operations: Reflection and rotation at arbitrary vertices. Reflection switches the two subtrees of a vertex and rotation replaces itself with one of its children and the parent moving further down in the tree. The idea of these generating operations can be found in Figures~\ref{fig:rotation} and~\ref{fig:reflection}.
-
-  % \begin{figure}[htbp]{}
-  %   \centering
-  %   \input{./images/rotation.tex}
-  %   \caption{Rotation of a binary (sub-)tree}
-  %   \label{fig:rotation}
-  % \end{figure}
-
-  % \begin{figure}[htbp]
-  %   \centering
-  %   \input{./images/reflection.tex}
-  %   \caption{Reflection of a binary (sub-)tree}
-  %   \label{fig:reflection}
-  % \end{figure}
-  % We first check, that we have no finite orbit in \(X\) itself. This can be established via the rotation. Taking any vertx \(v\) we can rotate around this vertex multiple times and with each one the original \(v\) will be pushed deeper down the tree. Hence, every orbit contains infinitely many points. In order to see that there are no finite orbits at infinity, we need to check when to geodesic rays have bounded distance from one another. However, in a tree this is only the case if they coincide after finitely many steps. Hence, every geodesic ray has a unique representative emanating from the root \(r\). Choosing any such geodesic ray, we can generate infinitely many inequivalent ones by reflecting at vertices traversed by it, showing again that there is no finite orbit.
+    The universal cover is always a normal covering. This implies that \(\Gamma\) acts transitively on the vertices. Hence \(\Gamma\) has no finite orbit in \(\tilde X\). Now, consider any geodesic ray \(c\) represented by its vertices \((v_i)_{i \in \N}\). Then each edge \(e_i \coloneqq \overline{v_iv_{i+1}}\) has an assigned signing by an arrow and after translating by a deck transformation, this signing will be the same. Without loss of generality assume that \(e_i\) has signing \tikz{\draw[->] (0,0) -- (0.3,0)}. We choose one of the neighbors \(w_i\) of \(v_i\) such that \(\overline{v_iw_i}\) has signing \tikz{\draw[>={Stealth},->] (0,0) -- (0.3,0)}. Then we choose \(g_i \in \Gamma\) such that \(g_iv_i = w_i\). We claim that \(g_ic\) and \(c\) are not equivalent. Since we can drop any finite number of starting vertices, it satisfies to show the assertion in the case \(i=1\). If \(g_1c\) and \(c\) were equivalent then there exists an \(m \in \N\) such that \(g_1v_m\) is a vertex in \(c\), call it \(v_n\). There is a path connecting the two, namely
+    \[
+      g_1v_m, g_1v_{m-1}, \dots, g_1v_1, v_1, \dots, v_n.
+    \]
+    Since we are in a tree, this is the unique path. Hence \(g_1c\) must transverse \(\overline{v_1w_1} = \overline{v_1 (g_1v_1)}\). However, every vertex is at most visited once by \(g_1c\) and its first vertex is \(w_1\). So we need \(m=1\) and \(g_1e_1 = \overline{v_1w_1}\). However, this is impossible, because deck transformations conserve signing of edges. So we established that \(g_ic\) and \(c\) are always inequivalent, showing that any orbit in the visual boundary is infinite.
+  \end{description}
 \end{bsp}
 
 \subsubsection*{Essential group actions}
@@ -247,11 +233,11 @@ This paragraph contains some consequences and characterizations of non-elementar
   \[
     I = \{(\alpha, \beta) \in \bar X^2 \mid X = [\alpha, \beta]\}.
   \]
-  Hence, we find a finite index subgroup \(\Gamma_0 \leq \Aut(X)\) fixing each element in \(I\). Let \((\alpha, \beta) \in I\). By construction, we have \(g\alpha = \alpha\) for all \(g \in fGamma_0\). Hence, the collection of halfspaces given by \(\alpha\) is \(\Gamma_0\)-invariant. Taking \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). If any of the \(\mathfrak{\hat h}_i\) are parallel, we have seen in the proof of Corollary~\ref{cor:finite-interval} that the corrseponding halfspaces in \(\alpha\) form a chain. Hence, their intersection is never empty. If the two halfspaces are transverse, their intersection is also non-empty. Hence, we can invoke Theorem~\ref{thm:common-intersection} to see that \(\bigcap_{i=1}^n \mathfrak{h}_i\) is non-empty, as well. We can now apply Proposition~\ref{prop:cs-3.6} and see that \(\Gamma_0\) acts elementary in \(X\). Since \(\Gamma_0\) has finite index in \(\Aut(X)\) every finite orbit of \(\Gamma_0\) leads to a finite orbit in \(\Aut(X)\). Hence, \(\Aut(X)\) acts elementary as well.
+  Hence, we find a finite index subgroup \(\Gamma_0 \leq \Aut(X)\) fixing each element in \(I\). Let \((\alpha, \beta) \in I\). By construction, we have \(g\alpha = \alpha\) for all \(g \in \Gamma_0\). Hence, the collection of halfspaces given by \(\alpha\) is \(\Gamma_0\)-invariant. Taking \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). If any of the \(\mathfrak{\hat h}_i\) are parallel, we have seen in the proof of Corollary~\ref{cor:finite-interval} that the corrseponding halfspaces in \(\alpha\) form a chain. Hence, their intersection is never empty. If the two halfspaces are transverse, their intersection is also non-empty. Hence, we can invoke Theorem~\ref{thm:common-intersection} to see that \(\bigcap_{i=1}^n \mathfrak{h}_i\) is non-empty, as well. We can now apply Proposition~\ref{prop:cs-3.6} and see that \(\Gamma_0\) acts elementary in \(X\). Since \(\Gamma_0\) has finite index in \(\Aut(X)\) every finite orbit of \(\Gamma_0\) leads to a finite orbit in \(\Aut(X)\). Hence, \(\Aut(X)\) acts elementary as well.
 \end{proof}
 
 \begin{rem}
-  With the previous lemma, Example~\ref{bsp:euclidean-interval} shows that every group action on \(\R^d\) via CAT(0) cube complex automorphisms is elementary.
+  With the previous lemma, Example~\ref{bsp:euclidean-interval} shows that we could have chosen every group action by combinatorial automorphisms in Example~\ref{bsp:elementary} not only cyclic subgroups of \(\Z^d\).
 \end{rem}
 
 \begin{cor}[{\cite[Corollary 3.21]{fernós}}]
@@ -288,7 +274,7 @@ Unless noted otherwise, \(\Gamma\) will denote a countable, discrete group.
 \end{proof}
 
 \begin{defin}[(Doubly) ergodic action]
-  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ the following lemma):
+  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure class preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ the following lemma):
   \begin{enumerate}
   \item For every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\);
   \item every measurable \(\Gamma\)-invariant map \(f\colon B \to \R\) is essentially constant.
@@ -349,15 +335,11 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   \[
     \Lambda \coloneqq \{A \in \Sigma \mid \mu(A) > 0\}.
   \]
-  This set is clearly partially ordered under inclusion and not empty. Now, observe that for each \(A \in \Sigma\) such that \(\mu(A) > 0\), we have that \(\mu(\Gamma \cdot A) = 1\) by ergodicity. Since \(\Gamma\) also preserves measures \(\mu(A) > n^{-1}\), where \(n \coloneqq |\Gamma|\). Thus we can rewrite \(\Lambda\) as
+  This set is clearly partially ordered under inclusion and not empty. Consider a descending chain \(A_1 \supset A_2 \supset A_3 \supset \dots\) in \(\Lambda\). Then \(A \coloneqq \cap_i A_i\) is also measurable, and since
   \[
-    \Lambda = \{A \in \Sigma \mid \mu(A) \geq n^{-1}\}.
+    \mu\left(\bigcup_{g \in \Gamma} gA\right) = \lim_{k \to \infty} \mu\left( \bigcap_{i=1}^k \bigcup_{g\in \Gamma} gA_i\right) = \lim_{k \to \infty} \mu\left(\bigcup_{g \in \Gamma} gA_k\right) = 1
   \]
-  Next consider a descending chain \(A_1 \supset A_2 \supset A_3 \supset \dots\) in \(\Lambda\). Then \(A \coloneqq \cap_i A_i\) is also measurable, and since
-  \[
-    \mu\left(\bigcap_{i=1}^k A_i \right) = \mu(A_k) \geq \frac1n
-  \]
-  we have \(\mu(A) \geq n^{-1}\) and \(A\) lies in \(\Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). Observe that for each \(g \in \Gamma\), the set \(gA\) is also a minimal element. Indeed, if \(B \subset gA\) then \(g^{-1} B \subset A\). Hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
+  we have that at least one of the sets \(gA\) has non-zero measure for some \(g \in \Gamma\). Next, we note that \(\Gamma\) acts measure class preserving. Hence, if any of the sets \(gA\) has zero measure, then all of them have zero measure. All in all we yield \(A \in \Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). We note that the above reasoning also shows that if \(B \in \Lambda\) then \(gB \in \Lambda\) for every \(g \in \Gamma\) by means of the measure class preserving action. Observe that for each \(g \in \Gamma\), the set \(gA\) is also a minimal element. Indeed, if \(B \subset gA\) then \(g^{-1} B \subset A\). Hence \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
 
   Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we have \(\mu(A) = 1\). We claim that in this case \(M\) is atomic. Take any \(B \in \Sigma\).
   Then
@@ -466,7 +448,7 @@ The second main application consists in Corollary~\ref{cor:coeff-ergodic}, namel
 \end{cor}
 
 \begin{proof}
-  We choose a singleton for \(X\) and apply the previous lemma.
+  We choose a singleton for \(X\) and apply Lemma~\ref{lem:coeff-product}.
 \end{proof}
 
 \begin{lemma}[{\cite[Lemma~4.4]{MR3509968}}]
@@ -485,7 +467,7 @@ The second main application consists in Corollary~\ref{cor:coeff-ergodic}, namel
   \]
   However, each \(\Gamma \cdot y_n\) is \(\Gamma\)-invariant and by ergodicity we yield \(\mu(\Gamma \cdot y_n) \in \{0,1\}\). All in all we see that there exists exactly one \(n \in \N\) such that \(\mu(\Gamma \cdot y_n) = 1\). We define \(D \coloneqq \Gamma \cdot y_n\) and observe that \(\Gamma\) acts transitively on this countable set.
 
-  First, we consider the case that \(D\) is finite. In this case we find a finite index subgroup \(\Gamma_0 \leq \Gamma\) which acts trivially on \(D\). Furthermore, by the previous lemma we know that \(\Gamma_0\) still acts ergodically on \(D\). As previously, we can decompose \(D\) via
+  First, we consider the case that \(D\) is finite. In this case we find a finite index subgroup \(\Gamma_0 \leq \Gamma\) which acts trivially on \(D\). Furthermore, by the Lemma~\ref{lem:4.3} we know that \(\Gamma_0\) still acts ergodically on \(D\). As previously, we can decompose \(D\) via
   \[
     1 = \mu(D) = \sum_{x \in D} \mu(\{x\}).
   \]

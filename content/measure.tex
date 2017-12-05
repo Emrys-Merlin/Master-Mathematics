@@ -7,10 +7,13 @@ This chapter is divided in three sections. Section~\ref{sec:weight} is the most 
 
 Section~\ref{sec:weight} introduces the notion of \emph{weighted halfspaces}, which are central to our problem and it is unlikely that the reader will have encountered them before. We will define them and highlight some of their elementary properties.
 
-\subsection{Properties of probability measures}
+\subsection{Properties of probability measures and functional analysis}
 \label{sec:prob}
 
 This section is conglomeration of facts about measures and their connection to certain spaces of continuous functions. We will need deep measure theoretic and functional analytic results, which we will mostly state without proof. All the results will culminate in Section~\ref{sec:grp-boundary} in Theorem~\ref{thm:p(x)}, which is the first big step to our boundary map.
+
+\subsubsection*{Probability measures}
+\label{sec:prob-measures}
 
 \begin{defin}[Signed and probability measures]
   Let \((X, \Sigma)\) be a measure space. A map \(\mu \colon \Sigma \to \R\) is called a \emph{signed measure} if it is \emph{\(\sigma\)-additive}, i.\,e.
@@ -86,6 +89,9 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
   If \(\supp(\mu)\) were empty, then the set \(X \setminus \supp(\mu)\) would be measurable of full (non-zero) measure, which is a contradiction.
 \end{proof}
 
+\subsubsection*{Functional analytic preliminaries}
+\label{sec:func-ana}
+
 \begin{defin}
   \label{def:vanishing}
   Let \(X\) be a topological space. The vector space \(C_0(X)\) of \emph{continuous functions vanishing at infinity} is defined via
@@ -125,9 +131,11 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
   The second set assures that the measure is positive and the last enforces the normalization. These are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
 \end{proof}
 
+We will close the section with a result concerning the separability of the vector space of continuous functions:
+
 \begin{lemma}[{\cite[Theorem~V.6.6]{Conway}}]
   \label{lem:continuous-separable}
-  If \(X\) is a compact metric space then the space of continuous functions \(C(X)\) is separable.
+  If \(X\) is a compact metric space then the vector space of continuous functions \(C(X)\) equipped with the supremum norm is separable.
 \end{lemma}
 
 \subsection{Weighted halfspaces}
@@ -135,7 +143,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 
 This section defines the main technical tool for our main proof, namely \emph{weighted halfspaces}. These are special subsets of the pocset of halfspaces \(\mathcal{H}\) of a CAT(0) cube complex, which are defined using probability measures on the Roller compactification. In order to understand the following section, it is important to keep the notation introduced in Sections~\ref{sec:halfspaces} and~\ref{sec:rb} in mind.
 
-Unless noted otherwise, \(X\) is assumed to be a connected, locally finite, finite-dimensio\-nal CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introduced in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
+Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, finite-dimensio\-nal CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introduced in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
 
 \begin{defin}
   \label{defin:weight}
@@ -206,7 +214,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally finite, fini
   Let \(X\) be a finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and \(Y\) one of its irreducible factors with pocset of halfspaces \(\mathcal{H}'\). Then the projection
   \begin{align*}
     p\colon \bar X & \to \bar Y,\\
-    \alpha \mapsto \alpha \cap \mathcal{H}'
+    \alpha & \mapsto \alpha \cap \mathcal{H}'
   \end{align*}
   is continuous. If \(\mu\) is a regular probability measure on \(\bar X\) we have
   \[

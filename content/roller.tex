@@ -123,7 +123,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 
 \begin{rem}
   \label{rem:roller}
-  In his habilitation \textcite{Roller1999} showed that there is a one to one correspondence between discrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets has been realized in the previous proposition. The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
+  In his habilitation \textcite{Roller1999} showed that there is a one to one correspondence between discrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets has been realized in Proposition~\ref{prop:pocset-halfspaces}. The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
 
   Every CAT(0) cube complex is uniquely defined by its pocset of halfspaces, which leads to the following observation.
 \end{rem}
@@ -204,9 +204,10 @@ This section contains the connection between CAT(0) cube complexes, pocsets and 
 \begin{thm}[The Roller compactification]
   \label{thm:roller-compactification}
   Let \(X\) be a finite-dimensional CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathcal{H}, \subset, \ast)\). Then the map
-  \[
-    \iota\colon V(X) \to \mathcal{U}(\mathcal{H}),\ v \mapsto \alpha_v
-  \]
+  \begin{align*}
+    \iota\colon V(X) &\hookrightarrow \mathcal{U}(\mathcal{H}),\\
+    v &\mapsto \alpha_v
+  \end{align*}
   is injective, continuous and the image is dense in \(\mathcal{U}(\mathcal{H})\). 
 \end{thm}
 
@@ -348,7 +349,7 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
 
 \begin{thm}[{\cite[Theorem 1.14]{Brodzki2009}}]
   \label{thm:interval}
-  Let \(X\) be a CAT(0) cube complex of finite dimension \(d\) and \([x,y] \subset \bar X\) an interval. Then \([x,y]\) is isometrically embeddable in \(\R^d\) considered as a CAT(0) cube complex equipped with the \(l_1\)-metric.
+  Let \(X\) be a CAT(0) cube complex of finite dimension \(d\) and \([\alpha,\beta] \subset \bar X\) an interval. Then \([\alpha,\beta]\) is isometrically embeddable in \(\R^d\) considered as a CAT(0) cube complex equipped with the \(l_1\)-metric.
 \end{thm}
 
 \begin{defin}
@@ -362,7 +363,7 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
 
 \begin{rem}
   \label{rem:interval}
-  Indeed we have that \(\mathcal{H}(x,y) = \mathcal{H}([x,y])\), i.\,e.\ the halfspaces separating \(x\) and \(y\) are exactly the halfspaces of the interval \([x,y]\).
+  Indeed we have that \(\mathcal{H}(\alpha,\beta) = \mathcal{H}([\alpha,\beta])\), i.\,e.\ the halfspaces separating \(\alpha\) and \(\beta\) are exactly the halfspaces of the interval \([\alpha,\beta]\).
 \end{rem}
 
 \begin{lemma}[{\cite[Lemma 1.16]{Brodzki2009}}]
@@ -432,7 +433,7 @@ In Remark~\ref{rem:roller} we outlined the connection between discrete pocsets a
 
 We will need this construction later in Section~\ref{sec:main-proof} in order to use Proposition~\ref{prop:4.17}.
 
-Unless noted otherwise \(X\) is to be assumed a connected, locally finite, finite-dimensional CAT(0) cube complex.
+Unless noted otherwise \(X\) is to be assumed a connected, locally countable, finite-dimensional CAT(0) cube complex.
 
 \begin{defin}
   Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. A \emph{lifting decomposition} of \(\mathcal{H}'\) is a choice of a subset \(W \subset \mathcal{H} \setminus \mathcal{H}'\) satisfying the partial choice and consistency condition and such that \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\).
