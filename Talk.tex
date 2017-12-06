@@ -1,0 +1,423 @@
+\documentclass[english]{scrartcl} %final
+\input{header_std}
+\input{header_math}
+\input{header_artcl}
+
+\usepackage{chemformula}
+\usepackage[exponent-product = \cdot]{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\graphicspath{ {images/} }
+
+\newcounter{savepage}
+
+
+\newfontfamily\nfrac[Fractions=On]{Linux Libertine O}
+
+\usepackage{ccicons}
+
+% needed as language in bibliography is mixed (and set to english)
+\hyphenation{strong-ly}
+\hyphenation{hy-per-plane}
+\hyphenation{fi-nite=di-men-sion-al}
+\hyphenation{me-triz-able}
+\hyphenation{main-ly}
+
+\addfontfeature{Fractions=On}
+\subject{Master Defense}
+\title{A boundary map to the Roller boundary of a CAT(0) cube complex}
+\author{Tim Adler}
+\date{21.12.2017}
+
+\begin{document}
+\maketitle
+
+The main theorem of the thesis is:
+
+\begin{thm}
+  \label{cor:4.2}
+  Let \(\Gamma \to \Aut(X)\) be a discrete, countable group acting on a connected, locally countable, finite-dimensional CAT(0) cube complex \(X\), \((B,\Sigma, \vartheta)\) a strong \(\Gamma\)-boundary and \(\partial X\) the Roller boundary of \(X\). Assume that the \(\Gamma\)-action is non-elementary. Then there exists a measurable map
+  \[
+    \phi \colon B \to \partial X
+  \]
+  which is \(\Gamma\)-equivariant almost everywhere.
+\end{thm}
+
+\tableofcontents
+
+\section{CAT(0) cube complexes}
+\label{sec:ccc}
+
+\begin{defin}[Cubes]
+  A set \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. 
+  The \emph{link of \(x\) in \(C\)} for a vertex \(x\) is given by
+  \begin{align*}
+    \lk(x,C) \coloneqq C \cap \sphere^{n-1}(x, \text{\nfrac 1/3}),
+  \end{align*}
+\end{defin}
+
+\begin{defin}[Cube complexes]~\vspace{-6pt}
+  \begin{itemize}
+  \item A cube complex is a disjoint union of cubes which are glued by isometries along their edges. Each cube needs to embedded in the complex.
+
+    A \emph{midcube of \(C\)} is the image of a midcube of \(F\) under \(p_\lambda\).
+  \item Let \(x \in X\) and \((x_i)_{i \in I}\) be the family of all the points \(x_i \in C_{\lambda(i)}\) such that \(p_{\lambda(i)}(x_i) = x\).
+    \[
+      \lk(x, X) \coloneqq \quot{\bigsqcup_{i \in I} \lk(x_i, C_{\lambda(i)})}{\sim}
+    \]
+  \item An \emph{automorphism} of a CC is a bijective map restricting to isometries on cubes.
+  \end{itemize}
+\end{defin}
+\begin{figure}[htbp]
+  \centering
+  \input{./images/link.tex}
+  \caption{CCC with inscribed link}
+  \label{fig:link}
+\end{figure}
+
+\begin{bsp}[{\cite{sageev-lecture-notes}}]~\vspace{-6pt}
+  \label{bsp:ccc}
+  \begin{itemize}
+  \item Graphs 
+  \item Sphere 
+    \begin{figure}[htbp]
+      \centering
+      \subcaptionbox{\label{fig:sphere-a}}[.4\linewidth]{\input{./images/sphere-1.tex}}%
+      \subcaptionbox{\label{fig:sphere-b}}[.4\linewidth]{\input{./images/sphere-2.tex}}
+      \subcaptionbox{\label{fig:sphere-c}}[1\linewidth]{\input{./images/sphere.tex}}%
+      \caption{Sphere}
+      \label{fig:sphere}
+    \end{figure}
+  \item Torus
+    \begin{figure}[htbp]
+      \centering
+      \input{./images/torus.tex}
+      \caption{Torus}
+      \label{fig:torus}
+    \end{figure}
+
+  \item Higher genus surfaces
+    \begin{figure}[htbp]
+      \centering
+      \input{./images/genus-2.tex}
+      \caption{Genus 2 surface}
+      \label{fig:genus-2}
+    \end{figure}
+  \item Products of CCCs
+  \end{itemize}
+\end{bsp}
+
+\begin{thm}[{\cite[I.7.10]{MR1744486}}]
+  \label{thm:metric}
+  Every cube complex \(X\) is a metric space, when equipped with path metric \(d\) induced by the piecewise linear paths in \(X\).
+\end{thm}
+
+\begin{defin}[Flag complexes and joins]
+  \label{defin:flag}
+  A simplicial complex \(K\) is \emph{flag}, if every finite set of vertices of \(K\) that is pairwise joined by edges spans a simplex (see\ \cite[Definition II.5.15]{MR1744486}).
+\end{defin}
+
+\begin{thm}[Gromov's link condition, {\cite[Theorem B.8]{MR3029427}}, {\cite[Theorem II.5.20]{MR1744486}}]
+  \label{thm:link}
+  A cube complex \(X\) is \emph{non-positively curved} if and only if \(\lk(v,X)\) is a flag complex for each vertex \(v \in X\).
+
+  A cube complex \(X\) is \emph{CAT(0)} if and only if \(\lk(v,X)\)  is a flag complex for each vertex \(v \in X\) and \(X\) is simply connected.
+\end{thm}
+
+\begin{rem}
+  CAT(0) in the usual sense.
+\end{rem}
+
+\begin{defin}[Visual boundary, {\cite[Sec.~II.8]{MR1744486}}]
+  \label{defin:visual}
+  Let \(\gamma_i \colon [0, \infty) \to X\) be two geodesic rays. We say \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that
+  \[
+    d(\gamma_1(t), \gamma_2(t)) < K
+  \]
+  for all \(t \geq 0\). The set of equivalence classes \(\partial_\sphericalangle X\) is called the \emph{visual boundary of \(X\)}.
+
+  Clearly, each group action on \(X\) by isometries extends to an action on \(\partial_\sphericalangle X\).
+\end{defin}
+
+\begin{bsp}~
+  \begin{itemize}
+  \item Euclidean space
+  \item Trees
+  \end{itemize}
+\end{bsp}
+
+\begin{defin}
+  \(X\) is called \emph{locally countable} if every \(x \in X\) is contained in at most countably many cubes.
+\end{defin}
+
+\begin{rem}
+  Talk about CAT(0) metric vs.\ edge metric.
+\end{rem}
+
+\begin{defin}[Hyperplanes]
+  Let \(X\) be a cube complex.
+  \begin{itemize}
+  \item We say that two edges \(e\) and \(e'\) are equivalent (\(e \sim e'\)) if and only if either \(e' = e\) or there is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). Note that this is an equivalence relation and we will call it \emph{square relation}.
+  \item A midcube \(M \subset X\) is \emph{transverse} to a square relation class \(E = [e]_\sim\) (write \(M \pitchfork E\)) if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
+  \item The \emph{hyperplane} defined by \(E\) is given by
+    \begin{align*}
+      \mathfrak{\hat h}(E) \coloneqq \bigcup_{M \pitchfork E} M \subset X.
+    \end{align*}
+    We will often write \(\mathfrak{\hat h}\) instead of \(\mathfrak{\hat h}(E)\).
+  \end{itemize}
+\end{defin}
+
+\begin{bsp}
+  Figure~\ref{fig:hyperplanes} contains an example of a CAT(0) cube complex with an edge equivalence class of edges (dark blue) and associated hyperplane (light blue). 
+  \begin{figure}[htbp]
+    \centering
+    \input{./images/halfspace.tex}
+    \caption{Example of a CAT(0) cube complex with a hyperplane inscribed. The dark blue edges form an edge equivalence class, which defines the blue hyperplane. The red and green parts indicate the two halfspaces associated to the hyperplane. The figure follows closely the example in \textcite{sageev-lecture-notes}.}
+    \label{fig:hyperplanes}
+  \end{figure}
+\end{bsp}
+
+\begin{thm}[Separation, {\cite[Proposition 21]{Rolli2012}}]
+  Any hyperplane \(\mathfrak{\hat h}\) separates \(X\) in exactly two convex connected components.
+\end{thm}
+
+\begin{defin}[Halfspaces]
+  The two connected components of \(X \setminus \mathfrak{h}\) are called \emph{halfspaces}. If \(\halfspace{h} \subset X \setminus \mathfrak{\hat h}\) is one of these halfspaces, then \(\halfspace{h}^\ast\) denotes the opposite halfspace leading to \(X = \halfspace{h}\, \sqcup\, \mathfrak{\hat h}\, \sqcup\, \halfspace{h}^\ast \).
+\end{defin}
+
+\begin{thm}[Intersection, {\cite[Proposition 22 \& 24]{Rolli2012}}]~\vspace{-6pt}
+  \label{thm:common-intersection}
+  \begin{enumerate} 
+  \item Let \(\mathfrak{\hat h}_1, \dots, \mathfrak{\hat h}_n\) be hyperplanes with pairwise non-trivial intersection. Then
+    \begin{align*}
+      \bigcap_{i=1}^n \mathfrak{\hat h}_i \neq \varnothing.
+    \end{align*}
+  \item Let \(\halfspace{h}_1, \dots, \halfspace{h}_n\) be halfspaces with pairwise non-trivial intersection. Then
+    \begin{align*}
+      \bigcap_{i=1}^n \halfspace{h}_i \neq \varnothing.
+    \end{align*}
+    In particular, the intersection contains a vertex of \(X\).
+  \end{enumerate}
+\end{thm}
+
+\section{Roller boundary}
+
+\begin{defin}[Pocset, {\cite{Roller1999}}]~\vspace{-6pt}
+  \begin{itemize}
+  \item A \emph{pocset} is a triple \((P, \prec, \ast)\) consisting of a set \(P\), a partial ordering \(\prec\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\).
+  \item A pocset \(P\) is called \emph{discrete} if for any two \(A, B \in P\) the \emph{interval}
+    \[
+      [A,B] \coloneqq \{C \in P \mid A \prec C \prec B\}
+    \]
+    is finite.
+  \item Two elements \(A,B\) of a pocset \(P\) are called \emph{nested} if they satisfy \(A \prec B\), \(A^\ast \prec B\), \(A \prec B^\ast\) or \(A^\ast \prec B^\ast\). Otherwise, they are called \emph{transverse}.
+  \item A pocset \(P\) is called \emph{finite width} if there exists a constant \(N \in \N\) such that the cardinality of any subset of transverse elements of \(P\) is bounded from above by \(N\).
+  \end{itemize}
+\end{defin}
+
+\begin{defin}[Ultrafilters]
+  We say that a subset \(\alpha \subset P\) satisfies:
+  \begin{enumerate}
+  \item the \emph{choice} condition if \(\alpha \cap \alpha^\ast = \varnothing\) and \(\alpha \sqcup \alpha^\ast = P\) and
+  \item the \emph{consistency} condition if whenever \(\mathfrak{h} \in \alpha\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k}\) then \(\mathfrak{k} \in \alpha\).
+  \end{enumerate}
+  A \emph{ultrafilter} is a set \(\alpha \subset \mathcal{H}\) that satisfies the choice and the consistency condition. We denote by \(\mathcal{U}(X) \subset \operatorname{Pot}(\mathcal{H}(X))\) the set of all ultrafilters and equip it with the subspace topology inherited from the power set.
+\end{defin}
+
+\begin{cor}
+  \label{cor:comp-met-2}
+  If \(P\) is countable then \(\mathcal{U}(P)\) is a compact metrizable space. 
+\end{cor}
+
+\begin{prop}
+  \label{prop:pocset-halfspaces}
+  Let \(X\) be a connected CAT(0) cube complex and \(\mathcal{H}\) its set of halfspaces. Furthermore, let
+  \begin{align*}
+    \ast \colon \mathcal{H} &\to \mathcal{H},\\
+    \mathfrak{h} & \mapsto \mathfrak{h}^\ast.
+  \end{align*}
+  Then \((\mathcal{H}, \subset, \ast)\) is a discrete pocset. If \(X\) is finite dimensional then \(\mathcal{H}\) has finite width. If \(X\) is locally countable then \(\mathcal{H}\) is countable.
+\end{prop}
+
+\begin{defin}
+  An ultrafilter \(\alpha\) satisfies the \emph{descending chain condition} if all descending chains in \(\alpha\) become stationary.
+
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(v \in X\) a vertex. Then
+  \[
+    \alpha_v \coloneqq \{\mathfrak{h} \in \mathcal{H}(X) \mid v \in \mathfrak{h}\}
+  \]
+  is called a \emph{principal ultrafilter} (see the next lemma).
+\end{defin}
+
+\begin{lemma}
+  \label{lem:principle-uf}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(v \in X\) a vertex. Then \(\alpha_v\) is an ultrafilter. Furthermore, it satisfies the descending chain condition and every ultrafilter satisfying the descending chain condition arises in this way.
+\end{lemma}
+
+\begin{thm}[The Roller compactification]
+  \label{thm:roller-compactification}
+  Let \(X\) be a finite-dimensional CAT(0) cube complex and \(V(X)\) its vertex set with associated pocset \((\mathcal{H}, \subset, \ast)\). Then the map
+  \begin{align*}
+    \iota\colon X^{(0)} &\hookrightarrow \mathcal{U}(\mathcal{H}),\\
+    v &\mapsto \alpha_v
+  \end{align*}
+  is injective, continuous and the image is dense in \(\mathcal{U}(\mathcal{H})\). 
+\end{thm}
+
+\begin{defin}
+  The \emph{Roller compactification} of a CAT(0) cube complex is \(\bar X \coloneqq \mathcal{U}(\mathcal{H})\). The \emph{Roller boundary} \(\partial X\) is the set of all ultrafilters which have at least one infinite descending chain (by abuse of notation one often writes \(\partial X \coloneqq \bar X \setminus X\)).
+\end{defin}
+
+\section{Non-elementary group actions}
+
+\begin{defin}[(Non-)elementary action]
+  A group action \(\Gamma \to \Aut(X)\) is called \emph{elementary} if there exists a finite orbit of the action on \(X \sqcup \partial_{\sphericalangle}X\). Otherwise the action is called \emph{non-elementary}.
+\end{defin}
+
+\begin{bsp}~\vspace{-6pt}
+  \label{bsp:elementary}
+  \begin{description}
+  \item[Elementary:] Every \(\R^d\) with every action.
+n  \item[Non-elementary:]
+    \begin{figure}[htbp]
+      \centering
+      \input{./images/figure-8.tex}
+      \caption{The pointed sum of two spheres \(X \coloneqq S^1 \vee S^1\) and its universal cover\(\tilde X\). The arrows indicate which edges in the universal cover correspond to which loop in \(X\).}
+      \label{fig:figure-8}
+    \end{figure}
+  \end{description}
+\end{bsp}
+
+\begin{defin}[Essential action]
+  A halfspace \(h \in \mathcal{H}\) is called \emph{\(\Gamma\)-essential} if for some \(x \in X\) the orbit in \(h\), \(\Gamma x \cap h\), is \emph{not} a bounded distance away from \(\hat h\).
+
+  A group action \(\Gamma \to \Aut(X)\) is called \emph{essential} if every halfspace is essential.
+\end{defin}
+
+\begin{bsp}
+  Consider \(X\coloneqq \R^d\) with the standard cubulation and the action of \(\Gamma \coloneqq \Z^d\) on it via translations. This action respects the cube complex structure. Additionally, every hyperplane in \(X\) is a hyperplane \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) in the usual Euclidean sense. The translates of any vertex get arbitrarily far away from \(\mathfrak{h}\) on either side. Hence \(\Gamma\) acts essentially on \(X\).
+\end{bsp}
+
+\section{Ergodic actions}
+
+\begin{defin}[Measure class preserving action]
+  Let \((B, \Sigma)\) be a measurable space. We can define an equivalence relation on all measures on \(\Sigma\) via \(\mu \sim \nu\) if and only if the null-sets of \(\mu\) and \(\nu\) coincide. An equivalence class \([\mu]\) is called a \emph{measure class}. If a group \(\Gamma\) acts by measurable transformations on \(B\), then \(\Gamma\) \emph{preserves measure classes} if for every measure \(\mu\) of \(\Sigma\) we have that \(\mu(B) = 0\) implies that \(\mu(g^{-1} B) = 0\) for every \(B \in \Sigma\) and \(g \in \Gamma\).
+\end{defin}
+
+\begin{defin}[(Doubly) ergodic action]
+  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure class preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ the following lemma):
+  \begin{enumerate}
+  \item For every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\);
+  \item every measurable \(\Gamma\)-invariant map \(f\colon B \to \R\) is essentially constant.
+  \end{enumerate}
+  The action is called \emph{doubly ergodic} if the diagonal action on \(B \times B\) equipped with the product measure is ergodic.
+\end{defin}
+
+\begin{defin}[Doubly ergodic action with coefficients]
+  Let \(\Gamma\) be a group and \((B, \Sigma, \vartheta)\) a Lebesgue space endowed with a measure class preserving \(\Gamma\)-action. The action of \(\Gamma\) on \(B\) is \emph{doubly ergodic with coefficients} if any weak\(\ast\)-measurable \(\Gamma\)-equivariant map \(B \times B \to E^\ast\) is essentially constant, where \(E^\ast\) is the topological dual of any separable Banach space \(E\) on which \(\Gamma \to \Isom(E)\) acts by isometries.
+\end{defin}
+
+\begin{lemma}[{\cite[Section~2.a]{Bader2006}}]
+  \label{lem:coeff-product}
+  Let \(\Gamma\) act doubly ergodic with coefficients on \(B\). Then for every measure preserving ergodic \(\Gamma\)-space \((X, \mu)\), the space \(B \times B \times X\) is ergodic.
+\end{lemma}
+
+\begin{cor}[{\cite[Cor. 4.5]{MR3509968}}]
+  \label{cor:4.5}
+  Let \(\operatorname{Pot}_f(\mathcal{H}) \subset \operatorname{Pot}(\mathcal{H})\) be the set containing only finite subsets of \(\mathcal{H}\). Let \((B, \Sigma, \vartheta)\) be a Lebesgue space with a measure class preserving \(\Gamma\)-action that is in addition doubly ergodic with coefficients. If there exists a \(\Gamma\)-equivariant measurable map \(B \times B \to \operatorname{Pot}_f(\mathcal{H}(X))\) or if there exists a \(\Gamma\)-equivariant measurable map\(B \to \operatorname{Pot}_f(\mathcal{H}(X))\), whose image is not essentially \(\varnothing\), then the \(\Gamma\)-action on \(X\) is not essential.
+\end{cor}
+
+\section{Strong \(\Gamma\)-boundary}
+
+\begin{thm}[\enquote{weak definition of amenability}]
+  \label{thm:p(x)}
+  Let \(B\) a standard Borel space on which \(\Gamma\) acts amenably and \(X\) a compact metric space with a continuous \(\Gamma\)-action. Then there exists a \(\Gamma\)-equivariant measurable map \(\phi \colon B \to \mathcal{P}(X)\), where \(\mathcal{P}(X)\) is the set of all regular probability measures on \(X\).
+\end{thm}
+
+\begin{defin}[Strong \(\Gamma\)-boundary]
+  Let \(\Gamma\) be a second countable, locally compact group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary} if there is a group action of \(\Gamma\) on \(B\) by measurable transformations, and this action is:
+  \begin{enumerate}
+  \item amenable, and
+  \item doubly ergodic with coefficients.
+  \end{enumerate}
+\end{defin}
+
+\begin{bsp}[The Furstenberg-Poisson boundary]
+  \label{bsp:poisson}
+  In his paper, \textcite[Theorem 3]{MR2006560} showed that the Furstenberg-Poisson boundary of any spread out, non-degenerate, symmetric random walk on a locally compact, second countable group \(\Gamma\) is a strong \(\Gamma\)-boundary. A measure \(\mu\) on \(\Gamma\) is called \emph{spread out} (or \emph{étalée}) if there exists a convolution power \(\mu^{\ast n}\) which is not singular with respect to the Haar measure class on \(\Gamma\), i.\,e.\ there is no partition \(\Gamma = A \sqcup B\) such that \(\mu^{\ast n}\) is zero on all measurable subsets of \(A\) and the Haar measure class is zero on all measurable subsets of \(B\). The measure is called \emph{non-degenerate} if the minimal closed semigroup \(S \subset \Gamma\) with \(\mu(S) = 1\) is all of \(\Gamma\). A measure is called \emph{symmetric}, if \(\mu = f_\ast \mu\), where \(f\) is the continuous map given by inversion on \(\Gamma\). A random walk is called spread out, non-degenerate or symmetric if the same is true for the measure \(\mu\) of the associated transition probability. For details please refer to~\cite[Section 3]{MR2006560}.
+
+  If \(\Gamma\) is a free group then the Furstenberg-Poisson boundary is equivalent to the visual (and hence, to the Roller) boundary of the Cayley tree of \(\Gamma\). More generally, \textcite{MR1815698} showed that if the first moment of the transition measure is finite and it is non-degenerate then for every hyperbolic group the Gromov boundary is equivalent to the Furstenberg-Poisson boundary.
+\end{bsp}
+
+\begin{rem}
+  The previous example is the one most often encountered. Indeed, in his paper \textcite{MR2006560} used the Furstenberg-Poisson boundary to prove that every locally compact, second countable \(\sigma\)-compact group (and in particular, every countable, discrete group) admits a strong \(\Gamma\)-boundary. 
+\end{rem}
+
+\section{Weighted halfspaces}
+
+\begin{defin}
+  \label{defin:weight}
+  Let
+  \[
+    \mathcal{C}(\mathfrak{h}) \coloneqq \{\alpha \in \bar X \mid \mathfrak{h} \in \alpha\}. 
+  \]
+  Then
+  \[
+    \mathcal{H} = \mathcal{C}(\mathfrak{h}) \sqcup \mathcal{C}(\mathfrak{h}^\ast).
+  \]
+  Let \(\mu\) be a regular probability measure on \(\bar X\). We define
+  \begin{align*}
+    H_\mu^{\phantom{+}} \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) = \mu(\mathcal{C}(\mathfrak{h}^\ast))\},\\
+    H_\mu^+ \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) > \text{\nfrac{} 1/2} \},\\
+    H_\mu^- \coloneqq &\ \{\mathfrak{h} \in \mathcal{H}(X) \mid \mu(\mathcal{C}(\mathfrak{h})) < \text{\nfrac{} 1/2}\} \text{ and}\\
+  \end{align*} 
+  The above four sets are called \emph{balanced, heavy, light} and \emph{unbalanced halfspaces} respectively.
+\end{defin}
+
+\section{Outline of the proof}
+
+\begin{lemma}[{\cite[Lemma\ 4.6]{MR3509968}}]
+  \label{lem:4.6}
+  Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
+  \begin{enumerate}
+  \item \(H_\mu^\ast = H_\mu\) and \(H_\mu^{+\ast} = H_\mu^-\).
+  \item \(\mathcal{H} = H_\mu \sqcup H_\mu^+ \sqcup H_\mu^-\).
+  \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+  \label{lem:H=0}
+  Let \(X\) be a finite-dimensional, locally countable CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with regard to the pushforward measure from \(B\), then there exists a measurable map \(\phi\colon B \to \bar X\) which is \(\Gamma\)-equivariant almost everywhere.
+\end{lemma}
+
+\begin{proof}
+  By Corollary~\ref{cor:p(x)} we have a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). The central observation is, that if \(H_\mu= \varnothing\), then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
+
+  By assumption we know that the image of \(\psi\) lies up to measure 0 in the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\). We can hence concatenate it with the map
+  \begin{align*}
+    \xi\colon \mathcal{E} &\to \bar X,\\
+    \mu &\mapsto H_\mu^+.
+  \end{align*}
+  This map is measurable thanks to Lemma~\ref{lem:measurable-mu} applied to the case \({(\text{\nfrac 1/2}, 1]}\) and \(\Gamma\)-equivariant.
+
+  All in all we have that \(\xi \circ \psi\) is our desired map \(\phi\).
+\end{proof}
+
+\begin{lemma}
+  \label{lem:finite-zero}
+  If \(|H_\mu|\) is essentially constant and not infinite then \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\).
+\end{lemma}
+
+\begin{lemma}
+  \label{lem:hh-const}
+  The map
+  \begin{align*}
+    \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
+    (\mu, \nu) &\mapsto |H_\mu \cap H_\nu|
+  \end{align*}
+  is essentially constant.
+\end{lemma}
+
+\printbibliography[heading=bibintoc]
+\end{document}
