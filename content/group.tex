@@ -67,7 +67,7 @@ The above definition has one interesting immediate consequence:
 
 The previous observation already provides many examples for elementary actions by considering any group action on a finite cube complex. Let us consider an example of a cube complex with infinitely many vertices:
 
-\begin{bsp}
+\begin{bsp}~\vspace{-6pt}
   \label{bsp:elementary}
   \begin{description}
   \item[Euclidean space:] An example of an elementar action is \(X \coloneqq \R^d\) with its standard cubulation and any cyclic subgroup of \(\Z^d\) acting by translations. This action has no finite orbits in \(\R^d\), but every point at infinity is fixed. Indeed, two rays define the same point at infinity if and only if they are parallel. However, a translated ray is still parallel to the untranslated ray.
@@ -90,7 +90,7 @@ The previous observation already provides many examples for elementary actions b
 \subsubsection*{Essential group actions}
 \label{sec:essential}
 
-\begin{defin}[The essential core]
+\begin{defin}[Essential halfspaces]
   A halfspace \(h \in \mathcal{H}\) is called \emph{\(\Gamma\)-essential} if for some \(x \in X\) the orbit in \(h\), \(\Gamma x \cap h\), is \emph{not} a bounded distance away from \(\hat h\). A hyperplane \(\hat h \in \mathcal{\hat H}\) is called \emph{\(\Gamma\)-essential} if both its halfspaces are \(\Gamma\)-essential. It is called \emph{half-essential} if only one of its halfspaces is \(\Gamma\)-essential.
 
   \(\Ess(X,\Gamma)\) denotes the set of all essential hyperplanes. Accordingly, \(\nEss(X,\Gamma)\) denotes the set of all non-essential hyperplanes, leading to
@@ -105,7 +105,7 @@ The above definition leads to the following consequence:
   The sets \(\Ess(X, \Gamma)\) and \(\nEss(X, \Gamma)\) are \(\Gamma\)-invariant.
 \end{prop}
 
-\begin{defin}
+\begin{defin}[The essential core]
   The \emph{essential core} is the CAT(0) cube complex corresponding to the the pocset of halfspaces associated to \(\Ess(X, \Gamma)\).
 \end{defin}
 
@@ -201,7 +201,7 @@ This paragraph contains some consequences and characterizations of non-elementar
   Let \(X\) be a finite-dimensional CAT(0) cube complex and \(\Gamma \leq \Aut(X)\) be a group acting essentially and without fixed point at infinity. Then for any two halfspaces \(\mathfrak{k} \subset \mathfrak{h}\), there exists \(g \in \Gamma\) such that \(g \mathfrak{h} \subsetneq \mathfrak{k} \subset \mathfrak{h}\).
 \end{lemma}
 
-\begin{thm}[{\cite[Theorem~4.1]{Caprace2010}}]
+\begin{thm}[Flipping Lemma, {\cite[Theorem~4.1]{Caprace2010}}]
   \label{thm:cs-flipping}
   Assume that \(X\) is a finite-dimensional CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) be any subgroup. Let \(\mathfrak{h} \in \mathcal{H}(X)\) such that \(\mathfrak{h}^\ast \not\subset g\mathfrak{h}\) for each \(g \in \Gamma\). Then \(\Gamma\) has a fixed point in the visual boundary or \(\mathfrak{h}\) is not essential with regard to \(\Gamma\).
 \end{thm}
@@ -378,7 +378,6 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   A measurable space \((B, \Sigma)\) is called a \emph{standard Borel space} if it is isomorphic (as a measurable space) to a measurable set \(E \subset X\), where \(X\) is a complete separable metric space equipped with its Borel \(\sigma\)-algebra.
 
   A measure space \((B, \Sigma, \mu)\) is called a \emph{Lebesgue space} if it is a standard Borel space and \(\mu\) is a regular probability measure.
-
 \end{defin}
 
 \begin{thm}[Mackey's point realization, {\cite[330]{Mackey1962}, \cite[Corollary~B.6]{Zimmer84}}]
@@ -520,7 +519,6 @@ In the rest of the section, we will use the following notation, unless stated ot
 \end{itemize}
 We also assume that \(\Gamma\) acts on \(S\) preserving measure classes.
 
-
 \begin{defin}[Borel field]
   For each \(s \in S\) consider a non-empty convex weak\(\ast\)-compact subspace \(A_s \subset E^\ast_1\). Then \((A_s)_{s \in S}\) will be called a \emph{Borel field of compact convex sets} if \(\{(s, \lambda) \mid \lambda \in A_s\}\) is a Borel subset of \(S \times E^\ast_1\).  
 \end{defin}
@@ -549,7 +547,7 @@ With this remark in place, we can turn to the final definition:
 \label{str-bdry}
 
 \begin{defin}[Strong \(\Gamma\)-boundary]
-  Let \(\Gamma\) be a locally compact group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary} if there is a group action of \(\Gamma\) on \(B\) by measurable transformations, and this action is:
+  Let \(\Gamma\) be a second countable, locally compact group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary} if there is a group action of \(\Gamma\) on \(B\) by measurable transformations, and this action is:
   \begin{enumerate}
   \item amenable, and
   \item doubly ergodic with coefficients.
@@ -564,7 +562,7 @@ With this remark in place, we can turn to the final definition:
 \end{bsp}
 
 \begin{rem}
-  The previous example is the one most often encountered. Indeed, in his paper \textcite{MR2006560} used the Furstenberg-Poisson boundary to prove that every locally compact, \(\sigma\)-compact group (and in particular, every countable, discrete group) admits a strong \(\Gamma\)-boundary. 
+  The previous example is the one most often encountered. Indeed, in his paper \textcite{MR2006560} used the Furstenberg-Poisson boundary to prove that every locally compact, second countable, \(\sigma\)-compact group (and in particular, every countable, discrete group) admits a strong \(\Gamma\)-boundary. 
 \end{rem}
 
 In the following, we will need that strong \(\Gamma\)-boundaries are well behaved under going over to finite index subgroups:

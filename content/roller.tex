@@ -1,20 +1,18 @@
 \section{Pocsets and the Roller compactification}
 \label{sec:roller}
+The whole chapter is dedicated to the interplay between CAT(0) cube complexes and discrete pocsets. \textcite{Roller1999} showed that there is indeed a one-to-one-correspondence between these two points of view, which is an important tool in this field of study.
 
-This chapter is divided into five sections. In Section~\ref{sec:pocset}, we will introduce pocsets and ultrafilters, which are the main ingredients in the so called Roller compactification of the vertex set of a CAT(0) cube complex. And indeed this compactification is described in detail in Section~\ref{sec:rb}. In a more general sense the whole chapter is dedicated to the interplay between CAT(0) cube complexes and discrete pocsets. \textcite{Roller1999} showed that there is indeed a one-to-one-correspondence and a switching between these two equivalent points of view is an important tool in this field of study.
-
-Section~\ref{sec:set-ultrafilters} is again concerned with ultrafilters. There are two equivalent ways to define them and we will need both. The first viewpoint (taken in Section~\ref{sec:pocset}) has advantages when it comes to topological and metrical properties of the Roller compactification, whereas the second viewpoint (in Section~\ref{sec:set-ultrafilters}) is more natural, when it comes to talking about measurability and is easier to relate to other subsets of halfspaces. The main result in this Section is Theorem~\ref{thm:uf-equivalence}, showing that the two viewpoints are indeed equivalent.
-
-Section~\ref{sec:terminal-elements} is only loosely related to the previous sections. We will introduce intervals of ultrafilters, which are special subcomplexes of CAT(0) cube complexes. The most interesting property of these intervals in our case is that they are always embeddable into some \(\R^d\) (considered as a CAT(0) cube complex). The second topic of the section are so called terminal elements. These are all the elements in a set of halfspaces that are minimal or maximal with regard to inclusion. The existence or non-existence of these elements is one cornerstone of the main proof. Intervals have strong restrictions when it comes to the existence of terminal elements (c.\,f.\ Example~\ref{bsp:finite-terminal}) which is why they are so interesting for us.
-
+This chapter is divided into five sections. In Section~\ref{sec:pocset}, we will introduce pocsets and ultrafilters, which are the main ingredients in the so called Roller compactification of the vertex set of a CAT(0) cube complex. This compactification is described in detail in Section~\ref{sec:rb}. In a more general sense 
+Section~\ref{sec:set-ultrafilters} is again concerned with ultrafilters. There are two equivalent ways to define them and we will need both. The first viewpoint (in Section~\ref{sec:pocset}) has advantages when it comes to topological and metrical properties of the Roller compactification, whereas the second viewpoint (in Section~\ref{sec:set-ultrafilters}) is more natural when it comes measurability. The main result in Section~\ref{sec:set-ultrafilters} is Theorem~\ref{thm:uf-equivalence}, showing that the two viewpoints are equivalent.
+Section~\ref{sec:terminal-elements} is only loosely related to the previous sections. We will introduce intervals of ultrafilters, which are special subcomplexes of CAT(0) cube complexes. The most interesting property of these intervals is that they are always embeddable into some \(\R^d\) (considered as a CAT(0) cube complex). The second topic of the section are so called terminal elements. These are all the elements in a set of halfspaces that are minimal or maximal with regard to inclusion. The existence or non-existence of these elements is one cornerstone of the main proof. Intervals have strong restrictions when it comes to the existence of terminal elements (c.\,f.\ Example~\ref{bsp:finite-terminal}) which is why they are so interesting for us.
 In Section~\ref{sec:embedding-roller}, we are interested in one special case of the above mentioned correspondence between pocsets and CAT(0) cube complexes: If \(\mathcal{H'} \subset \mathcal{H}\) are both pocsets, under which circumstances will the associated complex \(X(\mathcal{H}')\) be a subcomplex of \(X(\mathcal{H})\)? We will be able to give a partial answer by providing a sufficient condition (which however might not be necessary).
 
 \subsection{Pocsets and Ultrafilters}
 \label{sec:pocset}
 
-In this section we will introduce a special type of partially ordered sets (or short: posets). These sets are special in that they have a certain fixed point free involution. They are called \emph{pocset}. After having established this notion, we are in a position to introduce \emph{ultrafilters}, which are the necessary objects to construct a compactification of the vertex set of a CAT(0) cube complex. In this section we will mostly be interested in topological and metric properties of the set of all ultrafilters. The connection to CAT(0) cube complexes will be established in the next section.
+In this section we will introduce a special type of partially ordered sets (or short: posets). These sets are special because they have a certain fixed point free involution. They are called \emph{pocset}. After having established this notion, we will introduce \emph{ultrafilters}, which are the necessary objects to construct a compactification of the vertex set of a CAT(0) cube complex. In this section we will mostly be interested in topological and metric properties of the set of all ultrafilters. The connection to CAT(0) cube complexes will be established in the next section.
 
-\begin{defin}[Pocset, {\cite{Roller1999}}]
+\begin{defin}[Pocset, {\cite{Roller1999}}]~\vspace{-6pt}
   \begin{itemize}
   \item A \emph{pocset} is a triple \((P, \prec, \ast)\) consisting of a set \(P\), a partial ordering \(\prec\) on \(P\) and a fixed point free, order reversing involution \(\ast\) on \(P\). If no confusion can arise, we will often drop the triple and will only write \(P\) for short. Let \(P,P'\) be pocsets. The map \(f \colon P \to P'\) is called a \emph{pocset morphism} when the following conditions hold: Let \(A,B \in P\) then
     \begin{enumerate}
@@ -98,7 +96,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 \end{cor}
 
 \begin{proof}
-  By \textcite[Theorem~4.2.2]{Engelking} it holds that every countable product of me\-trizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
+  By \textcite[Theorem~4.2.2]{Engelking} it holds that every countable product of metrizable spaces leads to a metrizable space. Thus \(P(A)\) is a compact metrizable space. Since \(\mathcal{U}(A)\) is a closed subset the same is true for this space.
 \end{proof}
 
 
@@ -123,7 +121,7 @@ where \(a_1,\dots, a_n \in A\) are arbitrary elements.
 
 \begin{rem}
   \label{rem:roller}
-  In his habilitation \textcite{Roller1999} showed that there is a one to one correspondence between discrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets has been realized in Proposition~\ref{prop:pocset-halfspaces}. The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
+  In his habilitation \textcite{Roller1999} showed that there is a one-to-one correspondence between discrete pocsets and CAT(0) cube complexes. The direction from the complexes \(X\) to the pocsets has been realized in Proposition~\ref{prop:pocset-halfspaces}. The other way around is far more involved and makes heavy use of so called \emph{ultrafilters} as defined below. This Roller construction is what lead to the Roller compactification of every finite-dimensional CAT(0) cube complex.
 
   Every CAT(0) cube complex is uniquely defined by its pocset of halfspaces, which leads to the following observation.
 \end{rem}
@@ -234,7 +232,7 @@ This section contains the connection between CAT(0) cube complexes, pocsets and 
 \subsection{(Set-)ultrafilters}
 \label{sec:set-ultrafilters}
 
-Now that we have defined the Roller compactification, we have to consider a second equivalent construction. The advantage of the above construction was that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. This form has its advantages when it comes to talking about measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
+Now that we have defined the Roller compactification, we have to consider a second equivalent construction. The advantage of the above construction was that the topological and metric properties were easy to establish. However, the disadvantage of the construction is that the ultrafilters are not simply sets or more precisely special subsets of \(\mathcal{H}(X)\), but elements in a product space. This form has its advantages when it comes to measurability of certain maps. Therefore, we will establish this second viewpoint as well and prove the equivalence of the two.
 
 \begin{defin}
   \label{def:pot-top}
@@ -251,7 +249,7 @@ Now that we have defined the Roller compactification, we have to consider a seco
 \end{prop}
 
 \begin{proof}
-  There are two properties we have to establish
+  There are two properties we have to establish:
   \begin{enumerate}
   \item We have to show that the union of all cylinder sets is all of the power set. However, \(\mathcal{C}(\varnothing, \varnothing) = \operatorname{Pot}(A)\).
   \item We have to show that the intersection of two cylinder sets is a union of arbitrarily many cylinder sets. Thus let \(F_1, F_2, G_1, G_2 \subset A\) be finite and consider
@@ -264,7 +262,7 @@ Now that we have defined the Roller compactification, we have to consider a seco
   \end{enumerate}
 \end{proof}
 
-\begin{defin}
+\begin{defin}[(set-)ultrafilters]
   We say that a subset \(\alpha \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) satisfies:
   \begin{enumerate}
   \item the \emph{partial choice} condition if \(\alpha \cap \alpha^\ast = \varnothing\),
@@ -323,13 +321,13 @@ Now that we have defined the Roller compactification, we have to consider a seco
 
 In this section we will first introduce \emph{intervals} of ultrafilters. These are special subsets of CAT(0) cube complexes. If they are interpreted as a complex in their own right, they can be embedded into some \(\R^d\) with its standard cubulation (see Theorem~\ref{thm:interval}).
 
-Secondly, we will introduce \emph{terminal elements}. The existence or non-existence of these is one of the main technical tools in our main proof. We will see that interval can have at most finitely many terminal elements.
+Additionally, we will introduce \emph{terminal elements}. The existence or non-existence of these is one of the main technical tools in our main proof. We will see that interval can have at most finitely many terminal elements.
 
 \begin{defin}
   \label{defin:uf-interval}
   Let \(\alpha,\beta \in \bar X\). The \emph{interval \([\alpha,\beta]\)} is defined as
   \[
-    [\alpha,\beta] \coloneqq \bigcap_{\mathfrak{h} \in \alpha \cap \beta} \mathfrak{h} \subset X
+    [\alpha,\beta] \coloneqq \bigcap_{\mathfrak{h} \in \alpha \cap \beta} \mathfrak{h} \subset X.
   \]
 \end{defin}
 
@@ -355,7 +353,6 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
 \begin{defin}
   \label{defin:separating}
   Let \(\alpha\) and \(\beta\) be two ultrafilters. The \emph{set of separating halfspaces} of \(\alpha\) and \(\beta\) is defined as
-
   \[
     \mathcal{H}(\alpha,\beta) \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid \mathfrak{h} \in \alpha \text{ and } \mathfrak{h}^\ast \in \beta \text{ or vice versa}\}.
   \]
@@ -384,7 +381,7 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
   \label{cor:finite-interval}
   Let \(X\) be a CAT(0) cube complex of (finite) dimension \(d\) and \(\alpha, \beta \in \bar X\). Then the set
   \[
-    \{(\gamma, \delta) \in \bar X^2 \mid [\gamma, \delta] = [\alpha, \beta]\}
+    \{(\gamma, \delta) \in \bar X \times \bar X \mid [\gamma, \delta] = [\alpha, \beta]\}
   \]
   contains at most \(2^d\) elements.
 \end{cor}
@@ -403,15 +400,14 @@ Secondly, we will introduce \emph{terminal elements}. The existence or non-exist
   \label{defin:tau}
   Let \(\mathcal{H}\) be the pocset of halfspaces of a CAT(0) cube complex and \(\mathcal{H}' \subset \mathcal{H}\) a subset. An element \(\mathfrak{h} \in \mathcal{H}'\) is called
   \begin{itemize}
-  \item \emph{minimal in \(\mathcal{H}'\)} if for very \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
+  \item \emph{minimal in \(\mathcal{H}'\)} if for every \(\mathfrak{k} \in \mathcal{H'}\) we have either \(\mathfrak{k} \pitchfork \mathfrak{h},\ \mathfrak{h} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{k}^\ast\),
   \item \emph{maximal in \(\mathcal{H}'\)} if \(\mathfrak{h}^\ast\) is minimal in \(\mathcal{H}'\),
   \item \emph{terminal in \(\mathcal{H}'\)} if it is either minimal or maximal in \(\mathcal{H}'\).
   \end{itemize}
   Let \(\tau\colon \operatorname{Pot}(\mathcal{H}) \to \operatorname{Pot}(\mathcal{H})\) be the map that assigns to each subset of \(\mathcal{H}\) its set of terminal elements.
 \end{defin}
 
-\begin{bsp}
-  \label{bsp:finite-terminal}
+\begin{bsp}\label{bsp:finite-terminal}~\vspace{-6pt}
   \begin{description}
   \item[DCC ultrafilters:] Every ultrafilter satisfying the descending chain condition contains minimal (and hence terminal) elements. If the CAT(0) cube complex is finite-dimensional, there can be at most finitely many transverse halfspaces and hence only finitely many minimal elements. In general, we cannot say anything about maximal elements in ultrafilters. 
   \item[Euclidean space:] In \(\R^d\) with its standard cubulation, we know that all halfspaces are parallel to coordinate axes and along each axis we can have at most one minimal and one maximal element. This implies that any subset of halfspaces of \(\R^d\) can have at most \(2d\) terminal elements. With the help of Theorem~\ref{thm:interval} this reasoning can be extended to intervals.
@@ -433,7 +429,7 @@ In Remark~\ref{rem:roller} we outlined the connection between discrete pocsets a
 
 We will need this construction later in Section~\ref{sec:main-proof} in order to use Proposition~\ref{prop:4.17}.
 
-Unless noted otherwise \(X\) is to be assumed a connected, locally countable, finite-dimensional CAT(0) cube complex.
+Unless noted otherwise \(X\) is a connected, locally countable, finite-dimensional CAT(0) cube complex.
 
 \begin{defin}
   Let \(\mathcal{H}' \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) be an involution invariant subset of halfspaces. A \emph{lifting decomposition} of \(\mathcal{H}'\) is a choice of a subset \(W \subset \mathcal{H} \setminus \mathcal{H}'\) satisfying the partial choice and consistency condition and such that \(\mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast\).
@@ -448,7 +444,7 @@ Unless noted otherwise \(X\) is to be assumed a connected, locally countable, fi
   \end{align*}
   whose image is given by \(i(\bar X') = \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\) (c.\,f.\ Definition~\ref{def:pot-top}).
 
-  Furthermore, if \(\mathcal{H}' = \varnothing\), then \(i(\bar X')\) is a point. If \(W\) contains an infinite descending chain then \(i(\bar X') \subset \partial X\).
+  Furthermore, if \(\mathcal{H}' = \varnothing\), then \(i(\bar X')\) is a point. If\ \(W\) contains an infinite descending chain then \(i(\bar X') \subset \partial X\).
 \end{lemma}
 
 \begin{proof}
