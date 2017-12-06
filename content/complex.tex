@@ -130,14 +130,18 @@ In the following we will list some useful results about cube complexes. For the 
 
 \begin{thm}[{\cite[I.7.10]{MR1744486}}]
   \label{thm:metric}
-  Every cube complex \(X\) is a metric space, when equipped with metric \(d\) induced by the piecewise linear paths in \(X\).
+  Every cube complex \(X\) is a metric space, when equipped with metric \(d_p\) induced by the piecewise linear paths in \(X\).
 \end{thm}
 
 With the above definition we can define:
 
 \begin{defin}[CAT(0) cube complex]
-  A \emph{CAT(0) cube complex} is a cube complex \(X\) such that the pair \((X,d)\) is a CAT(0) space, where \(d\) is the metric induced by hte piecewise linear paths on \(X\).
+  A \emph{CAT(0) cube complex} is a cube complex \(X\) such that the pair \((X,d_p)\) is a CAT(0) space, where \(d_p\) is the metric induced by hte piecewise linear paths on \(X\).
 \end{defin}
+
+\begin{rem}
+  Altough the path metric \(d\) gives \(X\) its CAT(0) structure, this metric is often of no great importance in the theory of CAT(0) cube complexes. The reason for this is described in Remark~\ref{rem:geom-comb}.
+\end{rem}
 
 % \begin{proof}
 %   The symmetry in triangle enequality follow directly from the definition. It remains to prove that \(d(x,y) = 0\) implies \(x = y\). In order to do that, we claim that if \(d(x,y) < \epsilon(x)\), then there exists a cube \(C \subset K\), such that \(x, y \in C\) with preimages \(\bar x, \bar y \in C_\lambda\) such that \(d(x,y) = d_{C_\lambda}(\bar x,\bar y)\). The claim then follows directly. However, we will not show this claim directly but further reduce the assertion. We consider \(m\)-strings \(s \coloneqq (x_0, \dots, x_m) \in K^{m+1}\), with the property that each sucessive pair of points \(x_{i-1}, x_i\) are contained in a common cube \(C_i\). With this we define the length of a string as \(l(s) = \sum_{i=1}^n d_{C_i}(x_{i-1}, x_i)\), where \(d_{C_i}\) is the metric on \(C_i\) induced by any of its preimages under the natural projection.
@@ -283,6 +287,11 @@ The above proposition leads to the following definition:
   \end{enumerate}
 \end{prop}
 
+\begin{defin}[Edge metric]
+  \label{defin:edge-metric}
+  The \emph{edge metric} on \(V(X) = X^{(0)}\) the vertex set of \(X\) is the graph metric of the 1-skeleton \(X^{(1)}\) considered as a simplicial graph with all edges assigned unit length.
+\end{defin}
+
 \begin{lemma}
   \label{lem:lf-countable}
   If \(X\) is a locally countable CAT(0) cube complex. Let \(V(X)\) be its vertex set equipped with the edge metric \(d\). Then for every \(x_0 \in V(X)\) and \(n \in \N_0\) the set \(X_n \coloneqq \{x \in V(X) \mid d(x_0, x) = n\}\) is countable.
@@ -427,7 +436,8 @@ This is a very short section concerned with maps between cube complexes. We will
 % \end{cor}
 
 \begin{rem}
-  In the last two sections we saw that there are two closely intertwined aspects to CAT(0) cube complexes. First, there is the combinatorial nature of their construction, which is also mirrored in the definition of combinatorial maps. Second, there is the geometric structure as CAT(0) spaces. As stated in Theorem~\ref{thm:metric}, \(X\) is a metric space with regard to the path metric and it is also with regard to this metric, that it is a CAT(0) space. However, often (and in particular in our case) one prefers to work on the combinatorial side and introduces a second metric on the vertex set \(V(X) \coloneqq X^{(0)}\)  of \(X\). This so called \emph{edge metric} is given by the infimum over the length of all paths between vertices along edges, i.\,e.\ the infimum of the length over all paths in the 1-skeleton \(X^{(1)}\). Indeed, because of Gromov's link condition (Theorem~\ref{thm:link}), we are in the special situation that all the geometric information of our space is already encoded in its 1-skeleton (or equivalently in its vertex set equipped with the edge metric). This is also the reason why in the following chapters the length metric of CAT(0) cube complexes will not appear any longer and we will mostly be concerned with its vertex set and the equipped edge metric.
+  \label{rem:geom-comb}
+  In the last two sections we saw that there are two closely intertwined aspects to CAT(0) cube complexes. First, there is the combinatorial nature of their construction, which is also mirrored in the definition of combinatorial maps. Second, there is the geometric structure as CAT(0) spaces. As stated in Theorem~\ref{thm:metric}, \(X\) is a metric space with regard to the path metric and it is also with regard to this metric, that it is a CAT(0) space. However, often (and in particular in our case) one prefers to work on the combinatorial side and introduces a second metric on the vertex set \(V(X) \coloneqq X^{(0)}\)  of \(X\). This so-called \emph{edge metric}, as seen in Definition~\ref{defin:edge-metric}, is given by the infimum over the length of all paths between vertices along edges, i.\,e.\ the infimum of the length over all paths in the 1-skeleton \(X^{(1)}\). Indeed, because of Gromov's link condition (Theorem~\ref{thm:link}), we are in the special situation that all the geometric information of our space is already encoded in its 1-skeleton (or equivalently in its vertex set equipped with the edge metric). This is also the reason why in the following chapters the length metric of CAT(0) cube complexes will not appear any longer and we will mostly be concerned with its vertex set and the equipped edge metric.
 \end{rem}
 
 %%% Local Variables:
