@@ -3,10 +3,9 @@
 
 Measure theory will play an important role in the main proof. Hence, we have this dedicated chapter introducing the necessary notation.
 
-This chapter is divided in three sections. Section~\ref{sec:weight} is the most important. Section~\ref{sec:prob} collects general facts about measures, measure theory and functional analysis and is main\-ly without proofs and Section~\ref{sec:meas-maps} contains a collections of unrelated lemmas proving measurability for some maps, which will be used later on. All of these maps are technical in nature and the same is true for the proofs.
-
-Section~\ref{sec:weight} introduces the notion of \emph{weighted halfspaces}, which are central to our problem and it is unlikely that the reader will have encountered them before. We will define them and highlight some of their elementary properties.
-
+This chapter is divided in three sections. Section~\ref{sec:prob} collects general facts about measures, measure theory and functional analysis and is mainly without proofs. 
+Section~\ref{sec:weight} introduces the notion of \emph{weighted halfspaces}, which are central to our problem. We will define them and highlight some of their elementary properties. Section~\ref{sec:weight} is the most important of the three.
+Section~\ref{sec:meas-maps} contains a collections of unrelated lemmas proving measurability for some maps, which will be used later on. All of these maps are technical in nature and the same is true for the proofs.
 \subsection{Properties of probability measures and functional analysis}
 \label{sec:prob}
 
@@ -20,9 +19,11 @@ This section is conglomeration of facts about measures and their connection to c
   \[
     \mu\left(\bigcup_{i \in \N}A_i \right) = \sum_{i \in \N} \mu(A_i)
   \]
-  for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). This is meant in the sense that the right hand side needs to converge.
+  for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). Here we mean that the right hand side needs to converge.
 
   We call \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\).
+
+  \(B \in \Sigma\) is called \emph{null}, if \(\mu(S) = 0\) and \emph{conull} if its complement is null.
 \end{defin}
 
 \begin{rem}
@@ -42,15 +43,17 @@ This section is conglomeration of facts about measures and their connection to c
 
 Often the \(\sigma\)-algebras we are considering stem from a topology on our space, i.\,e.\ are the Borel \(\sigma\)-algebra of topology. In this case we would also like our measures to be related to the topology of our space. Hence we need the following definitions:
 
-\begin{defin}[Borel and regular measures]
+\begin{defin}[Borel measures and support]
   If \(\Sigma\) is the Borel \(\sigma\)-algebra of a topology on \(X\), then a measure \(\mu\) is called \emph{Borel}, if every \(x \in X\) has an open neighborhood \(U \subset X\) such that \(\mu(U) > 0\).
-  
-  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A) = \inf \{ \mu(U) \mid U \supset A \text{ open}\}\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
 
   The support of a Borel measure \(\mu\) is defined to be the set
   \[
     \supp(\mu) \coloneqq \{x \in X \mid \forall U \subset X \text{ open, s.\,t.\ } x \in U\colon \mu(U) > 0\}.
   \]
+\end{defin}
+
+\begin{defin}[Regular measures]
+  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A) = \inf \{ \mu(U) \mid U \supset A \text{ open}\}\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
 \end{defin}
 
 \begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
@@ -143,7 +146,7 @@ We will close the section with a result concerning the separability of the vecto
 
 This section defines the main technical tool for our main proof, namely \emph{weighted halfspaces}. These are special subsets of the pocset of halfspaces \(\mathcal{H}\) of a CAT(0) cube complex, which are defined using probability measures on the Roller compactification. In order to understand the following section, it is important to keep the notation introduced in Sections~\ref{sec:halfspaces} and~\ref{sec:rb} in mind.
 
-Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, finite-dimensio\-nal CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introduced in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
+Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introduced in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
 
 \begin{defin}
   \label{defin:weight}
@@ -176,7 +179,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, f
 
   For 4.\ we see that \(H_\mu \subset H_\nu^+ \cap H_\nu^-\). Since \(H_\mu\) is invariant under involution, but \(H_\nu^+\) and \(H_\nu^-\) get interchanged, we see that both intersections cannot be empty.
 
-  For 5. we have
+  For 5.\ we have
   \begin{align*}
     \frac{1}{2} = \mu(\mathcal{C}(\mathfrak{k}))
     & = \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h^\ast})) + \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h}))\\
