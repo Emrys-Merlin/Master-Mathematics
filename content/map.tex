@@ -29,7 +29,7 @@ We will now prove that any \(\phi\) as above not only takes values in \(\bar X\)
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable, CAT(0) cube complex. Let  \(\Gamma\) be a discrete, countable group with an essential action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubly ergodic with coefficients. If \(\phi\colon B \to \bar X\) is a measurable map which is \(\Gamma\)-equivariant almost everywhere, then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
+  Let \(X\) be a finite dimensional, locally countable, CAT(0) cube complex. Let  \(\Gamma\) be a discrete, countable group with an essential and non-elementary action \(\Gamma \to \Aut(X)\) on \(X\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubly ergodic with coefficients. If \(\phi\colon B \to \bar X\) is a measurable map which is \(\Gamma\)-equivariant almost everywhere, then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
@@ -49,7 +49,7 @@ We will now prove that any \(\phi\) as above not only takes values in \(\bar X\)
 
   Lastly, we will show that this is incompatible with the case \(M > 0\). To the contrary, assume \(M > 0\), then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0))| > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12}, for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
-  However, by Lemma~\ref{lem:countable-orbit} \(B_0\) contains a \(\Gamma\)-orbit and hence this contradicts the fact that the action is essential.
+  However, by Lemma~\ref{lem:countable-orbit} \(B_0\) contains a \(\Gamma\)-orbit, i.\,e.\ there exists a \(y \in B_0\) such that \(g\mathfrak{h} \in \phi(y)\) for every \(g \in \Gamma\). Now, \(\Gamma\) acts non-elementary and essential. By Theorem~\ref{thm:cs-flipping}, we find \(g \in \Gamma\) such that \(g\mathfrak{h} \subset \mathfrak{h}^\ast\), but by consistency, we would then have \(\mathfrak{h}^\ast \in \phi(y)\) which is a contradiction to the choice condition.
 \end{proof}
 
 \subsection{The case \(0 < |H_\mu| < \infty\)}
