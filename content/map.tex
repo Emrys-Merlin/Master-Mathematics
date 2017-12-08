@@ -318,10 +318,10 @@ We will prove this proposition by finding a decomposition of \(\mathcal{H}\) in 
 
 \begin{prop}[{\cite[Corollary~4.21]{MR3509968}}]
   \label{prop:4.21}
-  Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no strongly separated pairs in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\) then the \(\Gamma\)-action is non-essential or \(\Gamma\) has a fixed point in the visual boundary.
+  Let \(X\) be irreducible. Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no strongly separated pairs in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\) then the \(\Gamma\)-action is non-essential or \(\Gamma\) has a fixed point in the visual boundary.
 \end{prop}
 
-We will find a contradiction to the Flipping Lemma (Theorem~\ref{thm:cs-flipping}). We will see that if there are no strongly separated halfspaces in every\(H_\mu\) then we can two halfspaces \(\mathfrak{h}, \mathfrak{k} \in \mathcal{H}\) such that for almost every \(\mu\) and every \(\mathfrak{l} \in H_\mu\) we have
+We will find a contradiction to the Flipping Lemma (Theorem~\ref{thm:cs-flipping}). We will see that if there are no strongly separated halfspaces in every\(H_\mu\) then we can find two halfspaces \(\mathfrak{h}, \mathfrak{k} \in \mathcal{H}\) such that for almost every \(\mu\) and every \(\mathfrak{l} \in H_\mu\) we have
 \begin{align}
   \mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}.\label{eq:flip}
 \end{align}
@@ -363,19 +363,19 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
   \label{lem:4.18}
-  If \(H_\mu\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}), then \(H_\mu^+\) satisfies the descending chain condition.
+  Let \(X = X_1 \times \dots \times X_n\) be the decomposition of \(X\) into irreducible factor and \(\mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n\) the associated decomposition of halfspaces. If \(H_\mu \cap \mathcal{H}_i\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}) for every \(i\), then \(H_\mu^+\) satisfies the descending chain condition.
 \end{lemma}
 
 \begin{proof}
-  Let \(\mathfrak{h, k} \in H_\mu\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated and define
+  Let \((\mathfrak{h}_i)_{i \in \N}\) be a descending chain in \(H_\mu^+\). Because all \(\mathfrak{h}_i\) are parallel, they all lie in a commen \(\mathcal{H}_k\). Without loss of generality we assume \(k=1\). Now, take \(\mathfrak{h, k} \in H_\mu \cap \mathcal{H}_1\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated in \(\mathcal{H}_1\) and define
   \[
-    P(\mathfrak{h}) \coloneqq \{\mathfrak{l} \in H_\mu^+ \mid \mathfrak{h} \parallel \mathfrak{l}\}.
+    P(\mathfrak{h}) \coloneqq \{\mathfrak{l} \in H_\mu^+ \cap \mathcal{H}_1 \mid \mathfrak{h} \parallel \mathfrak{l}\}.
   \]
-  Because of the strong separation, each \(\mathfrak{l} \in \mathcal{H}\) is parallel to \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, we have
+  Because of the strong separation, each \(\mathfrak{l} \in \mathcal{H}_1\) is parallel to \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, we have
   \[
-    H_\mu^+ = P(\mathfrak{h}) \cup P(\mathfrak{k}).
+    H_\mu^+ \cap \mathcal{H}_1 = P(\mathfrak{h}) \cup P(\mathfrak{k}).
   \]
-  Next, we consider a descending chain \(\mathfrak{h_1} \supset \mathfrak{h_2} \supset \dots\) in \(H_\mu^+\). By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). The case \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know by Lemma~\ref{lem:finite-interval} that there are only finitely many halfspaces between the two. Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
+  We return to our descending chain. By going over to a subsequence, we can assume that all halfspaces lie in either \(P(\mathfrak{h})\) or \(P(\mathfrak{k})\). Without loss of generality, we choose \(P(\mathfrak{h})\). The case \(\mathfrak{h}_n \subset \mathfrak{h}\) and \(\mathfrak{h}_n \subset \mathfrak{h}^\ast\) cannot happen, as \(\mu(\mathfrak{h}) = \mu(\mathfrak{h}^\ast) < \mu(\mathfrak{h}_n)\). In the case that \(\mathfrak{h} \subset \mathfrak{h}_n\), we know by Lemma~\ref{lem:finite-interval} that there are only finitely many halfspaces between the two. Hence, the chain must terminate. The same argument holds in the case \(\mathfrak{h}^\ast \subset \mathfrak{h}_n\).
 \end{proof}
 
 
@@ -467,34 +467,6 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
   Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a \(\nu_0 \in B_0\) such that \(\Gamma \nu_0 \subset B_0\). 
 
   We fix now an \(\mathfrak{l} \in H_{\nu_0}\). We know that \(g\nu_0 \in B_0\). Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). Theorem~\ref{thm:cs-flipping} then finishes the proof in the irreducible case.
-
-  Now, we allow \(X\) to be reducible. Let
-      \[
-        X = X_1 \times \dots \times X_n
-      \]
-      be the decomposition of \(X\) into irreducible components, and let
-      \[
-        \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n
-      \]
-      the associated decomposition of halfspaces. Furthermore, let \(\Gamma_0 \leq \Gamma\) be the finite index subgroup respecting this decomposition. By Lemma~\ref{lem:proj-weight}, we find projections
-      \[
-        p_i\colon \bar X \to \bar X_i
-      \]
-      and have
-      \[
-        H_{p_{i\ast}\mu} = H_\mu \cap \mathcal{H}_i.
-      \]
-      Consider the set 
-      \[
-        B_i \coloneqq \{(\mu, \nu) \in \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) \mid H_\mu \cap H_\nu \cap \mathcal{H}_i \neq \varnothing\}. 
-      \]
-      We claim that there exists an \(i\) such that \(B_i\) has full measure. Indeed, \(\Gamma_0\) still acts doubly ergodically on \(\mathcal{P}(\bar X)\) (this is a consequence of Theorem~\ref{thm:str-bnd-subgrp}) and the \(B_i\) are measurable (this follows from Lemmas~\ref{lem:measurable-mu} and\ \ref{lem:measurable-intersection-union}), we see that they have either measure 0 or 1. Let \(B \subset \mathcal{P}(\bar X)^2\) such that \(H_\mu \cap H_\nu \neq \varnothing\), which has full measure by assumption. Furthermore, we have
-      \[
-        B = \bigcup_{i=1}^n B_i.
-      \]
-      Hence, we have that at least one \(B_i\) has non-zero (and thus full) measure.
-
-      We have that \(H_\mu \cap \mathcal{H}_i\) does not contain pairs of strongly separated halfspaces for almost all \(\mu\) and that \(H_\mu \cap H_\nu \cap \mathcal{H}_i\) is non-empty for almost all \(\mu\) and \(\nu\). Hence, we can apply the above argument to the irreducible CAT(0) cube complex \(X_i\) and the group \(\Gamma_0\). This shows that \(\Gamma_0\) does either not act essential or elementary on \(X_i\). This is a contradiction to Lemma~\ref{lem:2.28}.
 \end{proof}
   
 \subsection{The main theorem}
@@ -533,24 +505,32 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
       X = X(H_\mu) \times Z.
     \]
     However, \(X(H_\mu)\) is an interval. Clearly, every one of the irreducible factors in \(X(H_\mu)\) are also intervals (just project the ultrafilters to the factors). However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that \(\Gamma\)-action is non-elementarity.
-  \item[Case \(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We define the set
+  \item[Case \(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We decompose \(X\) into its irreducible factors
     \[
-      \mathcal{S} \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}.
+      X = X_1 \times \dots \times X_n
     \]
-    By Lemma~\ref{lem:strongly-sep} we see that this set is \(\Gamma\)-invariant and we can consider the following map
+    and \(\mathcal{H}\) in to the associated subsets of pairwise transverse halfspaces
+    \[
+      \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup H_n.
+    \]
+    Furthermore, we denote by \(\Gamma_0 \leq \Gamma\) the finite index subgroup respecting this decomposition. Then \(\Gamma_0\) acts still non-elementary and essential on \(X\). We define the set
+    \[
+      \mathcal{S_i} \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}_i \times \mathcal{H}_i \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated in } \mathcal{H}_i\}.
+    \]
+    By Lemma~\ref{lem:strongly-sep} we see that this set is \(\Gamma_0\)-invariant and we can consider the following maps
     \begin{align*}
       \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
-      \mu &\mapsto |H_\mu \times H_\mu \cap \mathcal{S}|,
+      \mu &\mapsto |H_\mu \times H_\mu \cap \mathcal{S_i}|,
     \end{align*}
-    which is by the above observation \(\Gamma\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep}). Hence, it is essentially constant. We have two cases depending on the essential value.
+    which is by the above observation \(\Gamma_0\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep} together with Lemma~\ref{lem:proj-weight}). Hence, they are essentially constant (Lemma~\ref{lem:4.3}). We have two cases depending on the essential values \(N_i\).
     \begin{description}
-    \item[Case 1:] If the essential value is greater than 0, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the set \(H_\mu^+ \cap H_\nu\) contain terminal elements, whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
+    \item[Case 1:] The value \(N_i > 0\) for all \(i\), i.\,e.\ there strongly separated hyperplanes in all \(H_\mu \cap \mathcal{H}_i\). Hence, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the sets \(H_\mu^+ \cap H_\nu\) contain terminal elements, whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
       \begin{align*}
         \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
         (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
       \end{align*}
       is \(\Gamma\)-equivariant and measurable (c.\,f.\ Lemma~\ref{lem:measurable-tau-int}) and Corollary~\ref{cor:4.5} assures that \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence there exists \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(\nu\), which is a contradiction.
-    \item[Case 2:] If the essential value is 0, i.\,e.\ \(H_\mu\) does not contain strongly separated halfspaces for almost all \(\mu\). In this case, we can apply Proposition~\ref{prop:4.21} and find a contradiction.
+    \item[Case 2:] The value \(N_i = 0\) for at least one \(i\). Without loss of generality we can assume \(N_1 = 0\). The space \(X_1\) is irreducible, \(H_{p_{1\ast}\mu} = H_\mu \cap \mathcal{H}_1\) does not contain pairs of strongly separated halfspaces. Furthermore, \(H_{p_{1,\ast}\mu} \cap H_{p_{1\ast}}\mu = \varnothing\) for almost all \(\mu, \nu\). Hence, we can apply Proposition~\ref{prop:4.21} and find a contradiction to the fact that \(\Gamma_0\) is both essential and non-elementary.
     \end{description}
   \end{description}
   Hence we see that \(H_\mu \cap H_\nu\) cannot be infinite, but then we have the map
