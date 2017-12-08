@@ -5,7 +5,7 @@ We will introduce hyperplanes, halfspaces and talk about their geometric propert
 \begin{defin}[Hyperplanes]
   Let \(X\) be a cube complex.
   \begin{itemize}
-  \item The 0-, 1- and 2-dimensional cubes are respectively called \emph{vertices, edges and squares}.
+  \item The 0-, 1- and 2-dimensional cubes are called \emph{vertices, edges} and \emph{squares} respectively.
   \item We say that two edges \(e\) and \(e'\) are equivalent (\(e \sim e'\)) if and only if either \(e' = e\) or there is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). Note that this is an equivalence relation and we will call it \emph{square relation}.
   \item A midcube \(M \subset X\) is \emph{transverse} to a square relation class \(E = [e]_\sim\) (write \(M \pitchfork E\)) if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
   \item The \emph{hyperplane} defined by \(E\) is given by
@@ -65,7 +65,7 @@ This concludes our discussion of geometric properties. The following definition 
 
 \begin{defin}[Strongly separated halfspaces]
   \label{defin:strong-sep}
-  Two hyperplanes are \emph{strongly separated} if they are parallel and there is no hyperplane transverse to both. Two halfspaces are \emph{strongly separated} if the same is true for their associated hyperplanes.
+  Two hyperplanes are \emph{strongly separated} if they are parallel (i.\,e.\ they do not intersect) and there is no hyperplane transverse to both. Two halfspaces are \emph{strongly separated} if the same is true for their associated hyperplanes.
 \end{defin}
 
 \begin{bsp}
@@ -81,7 +81,7 @@ This concludes our discussion of geometric properties. The following definition 
   \end{figure}
 \end{bsp}
 
-We close this section with two technical results. The first one will be employed in the metrizability of the Roller compactification (see Corollary~\ref{cor:comp-met}). The second result will be used in Section~\ref{sec:rb} (see Remark~\ref{rem:roller}).
+We close this section with two technical results. The first one will be employed in the metrizability of the Roller compactification (see Corollary~\ref{cor:comp-met}). The significance of the second result will become clear in Proposition~\ref{prop:pocset-halfspaces} and Remark~\ref{rem:roller}.
 
 \begin{cor}
   \label{cor:halfspace-countable}
@@ -97,10 +97,8 @@ We close this section with two technical results. The first one will be employed
   \[
     \mathcal{\hat H} = \bigcup_{n=1}^\infty \bigcup_{e \in Y_n} \mathfrak{\hat h}([e])
   \]
-  is countable. Since every hyperplane has exactly two halfspaces associated to it the same is true for \(\mathcal{H}\).
+  is countable. Since every hyperplane has exactly two halfspaces associated to it, the same is true for \(\mathcal{H}\).
 \end{proof}
-
-We close this section with a lemma showing that \enquote{parallel} halfspaces can at most contain finitely many halfspaces in between. The significance of this property will become clear in Proposition~\ref{prop:pocset-halfspaces} and Remark~\ref{rem:roller}.
 
 \begin{lemma}
   \label{lem:finite-interval}
@@ -111,7 +109,7 @@ We close this section with a lemma showing that \enquote{parallel} halfspaces ca
 \end{lemma}
 
 \begin{proof}
-  Let \(M\) be the set as in the main statement and \(\hat M\) the set of corresponding hyperplanes. Clearly, the two sets are one-to-one. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to cross \(\mathfrak{\hat l}\) so \(\mathfrak{\hat l}\) is one of the hyperplanes defined by an edge in \(c\).
+  Let \(M\) be the set as in the statement above and \(\hat M\) the set of corresponding hyperplanes. Clearly, the two sets are one-to-one. We take any vertex \(v \in \mathfrak{h}\)  and \(w \in \mathfrak{k}^\ast\). Then there exists a finite edge path \(c\) joining the two. We claim that \(\hat M\) is a subset of all the hyperplanes defined by the edges in \(c\). Indeed, let \(\mathfrak{l} \in M\). Then \(v \in \mathfrak{l}\) and \(w \in \mathfrak{l}^\ast\). Hence, \(c\) has to cross \(\mathfrak{\hat l}\). So \(\mathfrak{\hat l}\) is one of the hyperplanes defined by an edge in \(c\).
 \end{proof}
 
 %%% Local Variables:

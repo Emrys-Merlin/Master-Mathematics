@@ -3,19 +3,19 @@
 
 Measure theory will play an important role in the main proof. Hence, we have this dedicated chapter introducing the necessary notation.
 
-This chapter is divided in three sections. Section~\ref{sec:prob} collects general facts about measures, measure theory and functional analysis and is mainly without proofs. 
-Section~\ref{sec:weight} introduces the notion of \emph{weighted halfspaces}, which are central to our problem. We will define them and highlight some of their elementary properties. Section~\ref{sec:weight} is the most important of the three.
+This chapter is divided in three sections. Section~\ref{sec:prob} collects general facts about measures, measure theory and functional analysis.
+Section~\ref{sec:weight} introduces the notion of \emph{weighted halfspaces} which are central to our problem. We will define them and highlight some of their elementary properties. Section~\ref{sec:weight} is the most important of the three.
 Section~\ref{sec:meas-maps} contains a collections of unrelated lemmas proving measurability for some maps, which will be used later on. All of these maps are technical in nature and the same is true for the proofs.
 \subsection{Properties of probability measures and functional analysis}
 \label{sec:prob}
 
-This section is conglomeration of facts about measures and their connection to certain spaces of continuous functions. We will need deep measure theoretic and functional analytic results, which we will mostly state without proof. All the results will culminate in Section~\ref{sec:grp-boundary} in Theorem~\ref{thm:p(x)}, which is the first big step to our boundary map.
+This section is conglomeration of facts about measures and their connection to certain spaces of continuous functions. We will need deep measure theoretic and functional analytic results, which we will mostly state without proof. All of the results will culminate in Section~\ref{sec:grp-boundary} in Theorem~\ref{thm:p(x)} which is the first big step towards our boundary map.
 
 \subsubsection*{Probability measures}
 \label{sec:prob-measures}
 
 \begin{defin}[Signed and probability measures]
-  Let \((X, \Sigma)\) be a measure space. A map \(\mu \colon \Sigma \to \R\) is called a \emph{signed measure} if it is \emph{\(\sigma\)-additive}, i.\,e.
+  Let \((B, \Sigma)\) be a measure space. A map \(\mu \colon \Sigma \to \R\) is called a \emph{signed measure} if it is \emph{\(\sigma\)-additive}, i.\,e.
   \[
     \mu\left(\bigcup_{i \in \N}A_i \right) = \sum_{i \in \N} \mu(A_i)
   \]
@@ -23,11 +23,11 @@ This section is conglomeration of facts about measures and their connection to c
 
   We call \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\).
 
-  \(B \in \Sigma\) is called \emph{null}, if \(\mu(S) = 0\) and \emph{conull} if its complement is null.
+  \(A \in \Sigma\) is called \emph{null}, if \(\mu(A) = 0\) and \emph{conull} or \emph{full measure} if its complement is null.
 \end{defin}
 
 \begin{rem}
-  In this thesis we are mostly interested in probability measures and hence our measures are always finite. Thus we defined signed measures and the like only with image in \(\R\), ignoring infinities. Since we have this restrictions in place, the above definition of measures in fact satisfies all the standard conditions, in particular \(\mu(\varnothing) = 0\).
+  In this thesis we are mostly interested in probability measures and hence our measures are always finite. Thus we defined signed measures only with image in \(\R\), ignoring infinities. Since we have this restrictions in place, the above definition of signed measures in fact satisfies all the standard conditions, in particular \(\mu(\varnothing) = 0\).
 \end{rem}
 
 \begin{defin}[Positive, negative and total variation]
@@ -41,6 +41,10 @@ This section is conglomeration of facts about measures and their connection to c
   \]
 \end{defin}
 
+\begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
+  The maps \(|\mu|\) and \(\mu^\pm\) are measures on \((X, \Sigma)\) and \(|\mu|(X) < \infty\) holds.
+\end{prop}
+
 Often the \(\sigma\)-algebras we are considering stem from a topology on our space, i.\,e.\ are the Borel \(\sigma\)-algebra of topology. In this case we would also like our measures to be related to the topology of our space. Hence we need the following definitions:
 
 \begin{defin}[Borel measures and support]
@@ -48,17 +52,13 @@ Often the \(\sigma\)-algebras we are considering stem from a topology on our spa
 
   The support of a Borel measure \(\mu\) is defined to be the set
   \[
-    \supp(\mu) \coloneqq \{x \in X \mid \forall U \subset X \text{ open, s.\,t.\ } x \in U\colon \mu(U) > 0\}.
+    \supp(\mu) \coloneqq \{x \in X \mid \forall\ U \subset X \text{ open, with } x \in U\colon \mu(U) > 0\}.
   \]
 \end{defin}
 
 \begin{defin}[Regular measures]
-  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A) = \inf \{ \mu(U) \mid U \supset A \text{ open}\}\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular in the before mentioned sense (This makes sense because of the next proposition).
+  A Borel measure \(\mu\) is called \emph{inner regular} if \(\mu(A) = \sup \{ \mu(K) \mid K \subset A \text{ compact}\}\) and \emph{outer regular} if \(\mu(A) = \inf \{ \mu(U) \mid U \supset A \text{ open}\}\). If it is both it is called \emph{regular}. A signed Borel measure \(\mu\) is called \emph{regular} if \(|\mu|\) is regular.
 \end{defin}
-
-\begin{prop}[{\cite[Ch.\ 6.1]{RudinFunctional}}]
-  The maps \(|\mu|\) and \(\mu^\pm\) are measures on \((X, \Sigma)\) and \(|\mu|(X) < \infty\) holds.
-\end{prop}
 
 Lastly, let us recall the definition of measurable maps and how to pushforward measures along these maps:
 
@@ -79,7 +79,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 
 \begin{lemma}
   \label{lem:mu-supp}
-  Let \(X\) be a topological space and \(\mu\) inner regular measure on \(X\). Then we have for every measurable set \(A \subset X \setminus \supp(\mu)\) that \(\mu(A) = 0\). In particular, if \(\mu\) is non-zero the set \(\supp(\mu)\) is not empty.
+  Let \(X\) be a topological space and \(\mu\) an inner regular measure on \(X\). Then for every measurable set \(A \subset X \setminus \supp(\mu)\) we have that \(\mu(A) = 0\). In particular, if \(\mu\) is non-zero the set \(\supp(\mu)\) is not empty.
 \end{lemma}
 
 \begin{proof}
@@ -87,7 +87,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
   \[
     \mu(K_n) \leq \sum_{i=1}^l \mu(U_{x_i}) = 0
   \]
-  for every \(n \in \N\). By the convergence we yield \(\mu(A) = 0\).
+  for every \(n \in \N\). By the convergence, we obtain \(\mu(A) = 0\).
 
   If \(\supp(\mu)\) were empty, then the set \(X \setminus \supp(\mu)\) would be measurable of full (non-zero) measure, which is a contradiction.
 \end{proof}
@@ -106,7 +106,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 \begin{thm}[Riesz-Markow representation, {\cite[Theorem 6.19]{RudinFunctional}}]
   \label{thm:riesz-markow}
   Let \(X\) be a locally compact Hausdorff space. Every bounded linear functional \(\Phi\) on \(C_0(X)\) is represented by a unique regular signed Borel measure \(\mu\) in the sense that \[
-    \Phi f = \int_X f \d\mu
+    \Phi f = \int_{\hspace{-5pt}X}\hspace{-5pt}f \d\mu
   \]
   for every element \(f \in C_0(X)\). Moreover, we have \(\|\Phi\| = |\mu|(X)\). In other words, there exists an isometry of normed vector spaces between \(X^\ast\) the (topological) dual of \(X\) equipped with the operator norm \(\|\cdot \|\) and \(M_{s}(X)\) the space of signed measures equipped with total variation \(|\mu|(X)\) as norm.
 \end{thm}
@@ -125,13 +125,13 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 \end{cor}
 
 \begin{proof}
-  Note \(C_0(X)\) together with the supremum norm is a Banach space. Let \(V\) be the unit ball in \(C_0(X)\). We yield that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. For each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\). Thus it follows that \(P(X) \subset B\). Now, we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\). However,
+  Note, \(C_0(X)\) together with the supremum norm is a Banach space. Let \(V\) be the unit ball in \(C_0(X)\). We obtain that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. For each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\). Thus it follows that \(P(X) \subset B\). Now, we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\). However,
   \begin{align*}
     P \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X f \d\mu \geq 0 \quad \forall f \geq 0\right\},\\
     N \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X \d\mu = \int_X \chi_X \d\mu = 1\right\},\\
     \mathcal{P}(X)  = & B \cap P \cap N.
   \end{align*}
-  The second set assures that the measure is positive and the last enforces the normalization. These are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
+  The second set ensures that the measure is positive and the last enforces the normalization. These are all the necessary restrictions to a probability measure. Additionally, these sets are clearly weak\(\ast\)-closed.
 \end{proof}
 
 We will close the section with a result concerning the separability of the vector space of continuous functions:
@@ -162,7 +162,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, f
 
 \begin{lemma}[{\cite[Lemma\ 4.6]{MR3509968}}]
   \label{lem:4.6}
-  Let \(\mu,\nu \in \mathcal{P}(\bar X)\)
+  Let \(\mu,\nu \in \mathcal{P}(\bar X)\).
   \begin{enumerate}
   \item \(H_\mu\) is closed under involution. Also, involution is a bijection between \(H_\mu^+\) and \(H_\mu^-\).
   \item There is the following partition \(\mathcal{H}(X) = H_\mu \sqcup H_\mu^\pm = H_\mu \sqcup H_\mu^+ \sqcup H_\mu^-\).
@@ -186,7 +186,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, f
     & = \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h^\ast})) + \mu(\mathcal{C}(\mathfrak{h}))\\
     & = \mu(\mathcal{C}(\mathfrak{k}) \cap \mathcal{C}(\mathfrak{h^\ast})) + \frac{1}{2},
   \end{align*}
-  where we have \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) because we have \(\mathfrak{h} \subset \mathfrak{k}\) and ultrafilters satisfy the consistency condition. Hence, \(\mu(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})) = 0\). The last assertion follows again easily from the definitions.
+  where we have \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) because we have \(\mathfrak{h} \subset \mathfrak{k}\) and ultrafilters satisfy the consistency condition. Hence, \(\mu(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})) = 0\). Assertion 6 follows again easily from the definitions.
 \end{proof}
 
 \begin{lemma}[{\cite[Lemma 4.7]{MR3509968}}]
@@ -200,7 +200,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, f
     p \colon \bar X &\to \bar X (H_\mu),\\
     \alpha &\mapsto \alpha \cap H_\mu
   \end{align*}
-  be the projection. Since \(p\) is continuous, we can push forward \(\mu\) along it. Denote the pushforward by \(p_\ast\mu\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. The set \(\supp(p_\ast \mu)\) is not empty by Lemma~\ref{lem:mu-supp}. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. So let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) is not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) is an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and its measure positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is indeed zero. Hence we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
+  be the projection. Since \(p\) is continuous, we can have \(p_\ast\mu\). Next, choose \(\alpha \in \supp(p_\ast \mu)\), i.\,e.\ every open neighborhood of \(\alpha\) must have non-zero measure. The set \(\supp(p_\ast \mu)\) is not empty by Lemma~\ref{lem:mu-supp}. We claim that \(\alpha^\ast\) is also an ultrafilter. It automatically satisfies the choice condition, so we only need to check consistency. Let \(\mathfrak{h} \in \alpha^\ast\) and \(\mathfrak{k} \in H_\mu\) such that \(\mathfrak{h} \subset \mathfrak{k}\). Assume that \(\mathfrak{k}\) is not in \(\alpha^\ast\). Then \(\mathcal{C}(\mathfrak{h^\ast}) \cap \mathcal{C}(\mathfrak{k})\) is an open neighborhood of \(\alpha\) in \(\bar X(H_\mu)\) and its measure positive. However, by Lemma~\ref{lem:4.6}(5) we know that the measure is zero. Hence, we have \(\mathfrak{k} \in \alpha^\ast\) and we can conclude the proof thanks to Lemma~\ref{lem:x-interval}.
 \end{proof}
 
 \begin{lemma}
@@ -230,7 +230,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, f
   \begin{align*}
     p^{-1}(\mathcal{C_{\mathcal{H}'}}(F,G)) = \mathcal{C_{\mathcal{H}}}(F,G) \subset \mathcal{H}
   \end{align*}
-  and \(p\) is continuous. Hence, the pushforward of the measure is well defined and for every \(\mathfrak{h} \in \mathcal{H}'\) we have
+  and \(p\) is continuous. Hence, the pushforward of the measure is well-defined and for every \(\mathfrak{h} \in \mathcal{H}'\) we have
   \[
     (p_\ast \mu))(\mathcal{C}_{\mathcal{H}'}(\mathfrak{h})) = \mu(p^{-1}(\mathcal{C}_{\mathcal{H}'}(\mathfrak{h}))) = \mu(\mathcal{C}_{\mathcal{H}}(\mathfrak{h}))
   \]
@@ -267,7 +267,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
   \[
     f^{-1}(\{\infty\}) = N \setminus \left (\bigcup_{n=0}^\infty f^{-1}(\{n\})\right)
   \]
-  which is measurable as it is the complement of a measurable set.
+  which is measurable as the complement of a measurable set.
 \end{proof}
 
 \begin{lemma}
@@ -302,7 +302,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
     & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \subset H \setminus \tau(H)\}\\
     & = \{H \subset \mathcal{H} \mid \tilde{F} \subset H \setminus \tau(H)\} \setminus \{H \subset \mathcal{H} \mid \mathfrak{h} \in \tau(H)\}.
   \end{align*}
-  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we yield that \(\tau^{-1}(\mathcal{C}(F_1, F_2))\) is measurable.
+  The first set is measurable by induction hypothesis, the second one is measurable by our computations above. All in all we obtain that \(\tau^{-1}(\mathcal{C}(F_1, F_2))\) is measurable.
 \end{proof}
 
 
@@ -317,7 +317,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \end{lemma}
 
 \begin{proof}
-  In Section~\ref{sec:roller} we defined a topology on the power set (c.\,f.\ Definition~\ref{def:pot-top} and Proposition~\ref{prop:pot-top}). Hence, we need to show that the preimages of the basic open sets are mapped to measurable sets in \(\mathfrak{P}(\bar X)\). So let \(F_1, F_2 \subset \mathcal{H}(X)\) be finite and consider the cylinder set \(\mathcal{C}(F_1, F_2)\). Then the preimage is given by the set
+  In Section~\ref{sec:roller} we defined a topology on the power set (c.\,f.\ Definition~\ref{def:pot-top} and Proposition~\ref{prop:pot-top}). Hence, we need to show that the preimages of the basic open sets are mapped to measurable sets in \(\mathcal{P}(\bar X)\). So let \(F_1, F_2 \subset \mathcal{H}(X)\) be finite and consider the cylinder set \(\mathcal{C}(F_1, F_2)\). Then the preimage is given by the set
   \[
     K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in \mathcal{C}(F_1, F_2)\}.
   \]
@@ -359,7 +359,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
   \begin{align*}
     N & = \bigcap_{\mathfrak{h} \in G}\left[(\mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{h})) \cup (\mathcal{C}(\mathfrak{h}^\ast) \times \mathcal{C}(\mathfrak{h}^\ast))\right].
   \end{align*}
-  Then \(f^{-1}(F,G)\) is open as a finite intersection of open sets. Hence, \(f\) is continuous and measurable.
+  Then \(f^{-1}(F,G)\) is open as a finite intersection of open sets.
 \end{proof}
 
 \begin{lemma}
