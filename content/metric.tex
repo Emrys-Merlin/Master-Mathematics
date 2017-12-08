@@ -9,79 +9,34 @@ This section is concerned with basic metric properties of spaces and their conne
 \subsubsection*{Generalities on metric spaces}
 \label{sec:gen-met}
 
-\begin{defin}[Geodesics]~
+\begin{defin}[Geodesics]~\vspace{-6pt}
   \begin{itemize}
-  % \item Let \(X\neq \varnothing\) be a set. \(d\colon X \times X \to \R_{\geq 0} (\cup \{\infty\})\) is called a \emph{metric}, if for all \(x,y,z \in X\)
-  %   \begin{enumerate}
-  %   \item \(d(x,y) = 0\) if and only if \(x = y\),
-  %   \item \(d(x,y) = d(y,x)\) and
-  %   \item \(d(x,y) + d(y,z) \geq d(x,z)\).
-  %   \end{enumerate}
-  %   The pair \((X,d)\) is called a \emph{metric space}.
   \item Let \((X, d)\) be a metric space. A \emph{geodesic} from \(x\) to \(y\) with \(x,y \in X\) is a map \(c\colon [a,b] \to X\) such that \(c(a) = x\), \(c(b) = y\) and there exists a constant \(\lambda > 0\) with
     \begin{align*}
       d(c(t), c(t')) = \lambda \cdot |t - t'| 
     \end{align*}
     for all \(t,t' \in [a,b]\).
   \item The pair \((X,d)\) is called \emph{\(r\)-geodesic} (\(r > 0\)) if \(d(x,y) < r\) implies that there is a geodesic joining \(x\) and \(y\). It is called \emph{uniquely \(r\)-geodesic} if this geodesic is unique (up to reparametrization). The pair \((X,d)\) is called \emph{(uniquely) geodesic} if it is (uniquely) \(r\)-geodesic for all \(r > 0\).
-  % \item The \emph{length} of a curve \(c\colon [a,b] \to X\) is defined as
-  %   \begin{align*}
-  %     l(c) \coloneqq \left\{\sum_{i=1}^n d(c(t_i), c(t_{i-1})) \relmid a = t_0 \leq t_0 \leq \dots \leq t_n = b \text{ a subdivision} \right\}.
-  %   \end{align*}
-  %   \(c\) is called \emph{rectifiable} if \(l(c) < \infty\).
-  % \item \(d\) is called a \emph{length metric} if
-  %   \begin{align*}
-  %     d(x,y) = \inf \{l(c) \mid c \text{ rectifiable joining } x \text{ and } y\}
-  %   \end{align*}
-  %   for arbitrary \(x,y \in X\), where \(\inf\varnothing = \infty\). In this case \((X,d)\) is called a \emph{length space}.
   \end{itemize}
 \end{defin}
 
-% \begin{rem}
-%   In this thesis the metric is allowed to take the value \(\infty\). This is a bit unusual, but convenient in the setting of length spaces, where it might be that a path does not exist.
-% \end{rem}
-
-\begin{bsp}~
+\begin{bsp}~\vspace{-6pt}
   \begin{description}
   \item[Euclidean space:] The pair \((\E^n, d_0)\), where \(\E^n \coloneqq \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is uniquely geodesic. The space \(\E^n \setminus \{0\}\) is no longer geodesic, since every pair of antipodal points can no longer be joined by a line segment. 
   \item[Riemannian manifolds:] By the Hopf-Rinow theorem, every complete Riemannian manifold is geodesic, but not necessarily uniquely geodesic (consider the sphere).
   \end{description}
-  % \item \((\sphere^n, d_\kappa)\), \(\kappa > 0\), is the unit sphere in \(\E^{n+1}\) together with the metric \(d_{\kappa}(x,y) = \frac{1}{\sqrt{\kappa}} \cdot \angle (x,y)\). This space is uniquely \(\frac{\pi}{\sqrt{\kappa}}\)-geodesic.
-  % \item \((\hyperbole^n, d_\kappa)\), \(\kappa < 0\), is the hyperbolic \(n\)-space
-  %   \begin{align*}
-  %     \hyperbole^n & = \left\{x = (x_0, \dots, x_n)\in \R^{n+1} \relmid \langle x, x \rangle_{1,n} = -x_0^2 + \sum_{i=1}^n x_i^2 = -1 \right\} \quad \text{with}\\
-  %     d_\kappa(x,y) & = \frac{1}{\sqrt{-\kappa}} \cdot \operatorname{arcosh} \langle x,y \rangle_{1,n}.
-  %   \end{align*}
-  %   This space is also a length space and uniquely geodesic.
 \end{bsp}
 
-% \begin{defin}
-%   Let
-%   \begin{align*}
-%     M_\kappa^n \coloneqq
-%     \begin{cases}
-%       \sphere^n & \kappa > 0\\
-%       \E^n & \kappa = 0\\
-%       \hyperbole^n & \kappa < 0
-%     \end{cases} \text{ and }
-%     D_\kappa =
-%     \begin{cases}
-%       \frac{\pi}{\sqrt{\kappa}} & \kappa > 0\\
-%       \infty & \kappa \leq 0
-%     \end{cases}.
-%   \end{align*}
-%   Then \((M_\kappa^n, d_\kappa)\) is called the \emph{model space of curvature \(\kappa\)}. \(D_\kappa\) denotes its \emph{diameter}.
-% \end{defin}
-
-% \begin{rem}
-%   As a reference for the above implicit claims~\cite[Sec.\ I.2, I.6]{MR1744486} can be used.
-% \end{rem}
-
-\begin{defin}[CAT(0) and non-positive curvature spaces]~
-  \label{def:cat}
+\begin{defin}[Comparison triangles]~\vspace{-6pt}
   \begin{itemize}
   \item Let \((X,d)\) be a metric space. A \emph{geodesic triangle} \(\Delta \subset X\) consists of three points \(p,q,r \in X\), its \emph{vertices}, together with a choice of three edges, that is geodesic segments \([p,q], [q,r], [r, p]\) joining them (Recall that geodesics might not be unique). If necessary, the notation \(\Delta = \Delta(p,q,r)\) or \(\Delta = \Delta([p,q], [q,r], [r,p])\) will be used. The first case is a slight abuse of notation, as the three vertices might not determine the triangle.
   \item A \emph{comparison triangle} in \(\E^2\) for \(\Delta = \Delta(p,q,r) \subset \E^2\) is a choice of three points \(\bar p, \bar q, \bar r \in \E^2\) such that \(\|\bar p- \bar q\| = d(p, q)\), \(\|\bar q- \bar r\| = d(q, r)\) and \(\|\bar r- \bar p\| = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). Such a comparison triangle always exists \cite[c.\,f.][Sec.\ I.2]{MR1744486}.
+  \end{itemize}
+\end{defin}
+
+\begin{defin}[CAT(0) and non-positive curvature spaces]~\vspace{-6pt}
+  \label{def:cat}
+  \begin{itemize}
   \item Let \(\Delta = \Delta(p,q,r) \subset X\) be a triangle and \(\bar \Delta = \Delta(\bar p, \bar q, \bar r) \subset \E^2\) its comparison triangle. Each point \(x \in [p,q]\) has a unique associated point \(\bar x \in [\bar p, \bar q]\), which has the same distance from \(\bar p\) and \(\bar q\) as \(x\) from \(p\) and \(q\). The same is of course true for any point lying on any other edge.
 
     With this in mind we say that \(\Delta\) satisfies the \emph{CAT(\(0\)) inequality} if \(d(x,y) \leq \|\bar x- \bar y\|\) for any \(x, y \in \Delta\) and \(\bar x, \bar y \in \bar \Delta \subset \E^2\) the two associated points defined above.
@@ -90,9 +45,8 @@ This section is concerned with basic metric properties of spaces and their conne
   \end{itemize}
 \end{defin}
 
-\begin{bsp}~
+\begin{bsp}~\vspace{-6pt}
   \begin{description}
-    % \item CAT(\(\kappa\)) contained etc
   \item[Euclidean space:] \(\E^n\) is by definition a CAT(0) space. Furthermore, it is easy, to see if we remove the interior \(\Delta\) of a non-degenerate triangle from \(\E^2\) and equip this space with the induced length metric (i.\,e.\ the distance between two points is given by the infimum of the length over all piecewise linear paths), then \(\E^2 \setminus \Delta\) is no longer CAT(0). Indeed, the interior of \(\Delta\) is missing and this lengthens all shortest paths which would normally go through the interior. However, this space is still non-positively curved.
   \item[Trees:]
     \begin{figure}[htbp]

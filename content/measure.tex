@@ -146,7 +146,7 @@ We will close the section with a result concerning the separability of the vecto
 
 This section defines the main technical tool for our main proof, namely \emph{weighted halfspaces}. These are special subsets of the pocset of halfspaces \(\mathcal{H}\) of a CAT(0) cube complex, which are defined using probability measures on the Roller compactification. In order to understand the following section, it is important to keep the notation introduced in Sections~\ref{sec:halfspaces} and~\ref{sec:rb} in mind.
 
-Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introduced in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
+Unless noted otherwise, \(X\) is a connected, locally countable, finite-dimensional CAT(0) cube complex with pocset of halfspaces \(\mathcal{H}\) and Roller compactification \(\bar X\). Recall the topology on \(\bar X\) introduced in Definition~\ref{def:pot-top} with open sets \(\mathcal{C}(\mathfrak{h})\) with \(\mathfrak{h} \in \bar X\).
 
 \begin{defin}
   \label{defin:weight}
@@ -240,7 +240,7 @@ Unless noted otherwise, \(X\) is assumed to be a connected, locally countable, f
 \subsection{Measurability of certain maps}
 \label{sec:meas-maps}
 
-In the main proof of our theorem ergodicity will play a central role (see Section~\ref{sec:ergodic}). We will mostly use it in the form that measurable \(\Gamma\)-invariant maps have to be essentially constant. Hence, we need all our important maps to be measurable. These proofs are mainly technical.
+In the main proof of our theorem ergodicity will play a central role (see Section~\ref{sec:ergodic}). We will mostly use it in the form that measurable \(\Gamma\)-invariant maps have to be essentially constant. Hence, we need all our important maps to be measurable. These proofs are mainly technical and have been collected in this section. The results are mostly stand-alone and there is no deeper connection between them.
 
 If not noted otherwise, we will assume that \(X\) is a locally countable, finite-dimensional CAT(0) cube complex with \(\mathcal{H} \coloneqq \mathcal{H}(X)\) its pocset of halfspaces and \(\bar X\) its Roller compactification.
 
@@ -348,7 +348,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \begin{proof}
   We will see that the map is even continuous. Take finite subsets \(F,G \subset \mathcal{H}\) and consider the following preimage
   \begin{align*}
-    f^{-1}(\mathcal{C}(F, G))  & = \{(\alpha, \beta) \in \bar X^2 \mid F \subset \mathcal{H}(\alpha, \beta) \} \cap \{(\alpha, \beta) \in \bar X^2  \mid G \cap \mathcal{H}(\alpha, \beta) = \varnothing\}\\
+    f^{-1}(\mathcal{C}(F, G))  & = \{(\alpha, \beta) \in \bar X \times \bar X \mid F \subset \mathcal{H}(\alpha, \beta) \} \cap \{(\alpha, \beta) \in \bar X \times \bar X  \mid G \cap \mathcal{H}(\alpha, \beta) = \varnothing\}\\
                                  &\eqqcolon S \cap N.
   \end{align*}
   We will consider \(S\) and \(N\) separately:
@@ -371,7 +371,7 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
   \end{align*}
   where
   \[
-    \mathcal{S}\coloneqq \{(\mathfrak{h},\mathfrak{k}) \in \mathcal{H}^2 \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}
+    \mathcal{S}\coloneqq \{(\mathfrak{h},\mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}
   \]
   is measurable.
 \end{lemma}
@@ -397,12 +397,12 @@ If not noted otherwise, we will assume that \(X\) is a locally countable, finite
 \begin{lemma}
   Let \(A\) be a set. The maps
   \begin{align*}
-    f \colon \operatorname{Pot}(A)^2 & \to \operatorname{Pot}(A)\\
+    f \colon \operatorname{Pot}(A) \times \operatorname{Pot}(A) & \to \operatorname{Pot}(A)\\
     (H, K) & \mapsto H \cap K
   \end{align*}
   and
   \begin{align*}
-    g \colon \operatorname{Pot}(A)^2 & \to \operatorname{Pot}(A)\\
+    g \colon \operatorname{Pot}(A) \times \operatorname{Pot}(A) & \to \operatorname{Pot}(A)\\
     (H, K) & \mapsto H \cup K
   \end{align*}
   are measurable with regard to the Borel-\(\sigma\)-algebra of the cylinder topology.

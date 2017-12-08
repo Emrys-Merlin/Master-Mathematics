@@ -1,7 +1,7 @@
 \section{The boundary map}
 \label{sec:map}
 
-Finally, we can construct our boundary map. This process will take this whole chapter. The actual construction will be achieved in Section~\ref{sec:construction}. However, we will need the additional assumption that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\) (see Lemma~\ref{lem:H=0}). Afterwards, we will prove that the boundary map (if it exists) will only take values in the Roller boundary \(\partial X\) instead of in the whole Roller compactification \(\bar X\). Then we will have to prove that \(H_\mu\) is indeed empty for almost all \(\mu\). Section~\ref{sec:N=finite} will deal with the rather simple case \(0 < |H_\mu| < \infty\). Section~\ref{sec:N=infty} will construct the tools to deal with the case \(|H_\mu| = \infty\). This case is the most involved and we will have to split it into further subcases in order to deal with it. The detailed startegies for all the cases can be found at the start of each paragraph. Section~\ref{sec:main-proof} contains the statement (Theorem~\ref{thm:4.1}) and the proof of our main theorem. Additionally, it contains a slight generalization in the form of Corollary~\ref{cor:4.2}.
+Finally, we can construct the boundary map as in Theorem~\ref{thm:4.1}. This process will take this whole chapter. The actual construction will be achieved in Section~\ref{sec:construction}. However, we will need the additional assumption that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\) (see Lemma~\ref{lem:H=0}). Afterwards, we will prove that the boundary map (if it exists) will only take values in the Roller boundary \(\partial X\) instead of in the whole Roller compactification \(\bar X\). Then we will have to prove that \(H_\mu\) is indeed empty for almost all \(\mu\). Section~\ref{sec:N=finite} will deal with the rather simple case \(0 < |H_\mu| < \infty\). Section~\ref{sec:N=infty} will construct the tools to deal with the case \(|H_\mu| = \infty\). This case is the most involved and we will have to split it into further subcases in order to deal with it. The detailed startegies for all the cases can be found at the start of each paragraph. Section~\ref{sec:main-proof} contains the statement (Theorem~\ref{thm:4.1}) and the proof of our main theorem. Additionally, it contains a slight generalization in the form of Corollary~\ref{cor:4.2}.
 
 \subsection{The construction of the boundary map}
 \label{sec:construction}
@@ -90,7 +90,7 @@ All in all we see that if we can show that \(|H_\mu|\) is finite for almost all 
 \subsection{The case \(|H_\mu| = \infty\)}
 \label{sec:N=infty}
 
-This is the most involved case. The following two paragraphs will contain all the technical details in order to exclude it. We will divide this case into two subcases, namely \(|H_\mu \cap H_\nu| = 0\) and \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu\). The strategy is always to find a contradiction to either the essentiality of the group action, the non-elementarity of the group action or the finite-dimensionality of the complex. The central result of Paragraph~\ref{sec:M=0} is Proposition~\ref{prop:4.10}. The central results of Paragraph~\ref{sec:M=infty} are Proposition~\ref{prop:4.17} and Proposition~\ref{prop:4.21}. Lemma~\ref{lem:4.18} and Lemma~\ref{lem:strongly-sep} are also used in the main proof, but their complete content is given there.
+This is the most involved case. The following two paragraphs will contain all the technical details in order to exclude it. We will divide this case into two subcases, namely \(|H_\mu \cap H_\nu| = 0\) and \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu\). The strategy is always to find a contradiction to either the essentiality of the group action, the non-elementarity of the group action or to the fact that the complex is finite-dimensional. The central result of Paragraph~\ref{sec:M=0} is Proposition~\ref{prop:4.10}. The central results of Paragraph~\ref{sec:M=infty} are Proposition~\ref{prop:4.17} and Proposition~\ref{prop:4.21}. Lemma~\ref{lem:4.18} and Lemma~\ref{lem:strongly-sep} are also used in the main proof, but their complete content is given there.
 For the two subcases to make sense, we need the following lemma:
 
 \begin{lemma}
@@ -130,7 +130,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 
 \begin{lemma}
   \label{lem:sep-n}
-  Let \(\mu, \nu \in \mathcal{P}(\bar X)\) be two regular probability measures such that \(H_\mu \cap H_\nu = \varnothing\) and such that there exists an infinte descending chain \(\mathfrak{h}_n\in H_\mu^+\) and an infinite descending chain \(\mathfrak{k}_m \in H_\nu^+\). Then there exists a \(C \in \N\) such that we have a decomposition
+  Let \(\mu, \nu \in \mathcal{P}(\bar X)\) be two regular probability measures such that \(H_\mu \cap H_\nu = \varnothing\) and such that there exists an infinte descending chain \(\mathfrak{h}_n\in H_\mu^+\) and an infinite descending chain \(\mathfrak{k}_m \in H_\nu^+\). Then there exists \(C \in \N\) such that we have a decomposition
   \[
     \N_C \subset N_1 \sqcup N_j,
   \]
@@ -216,7 +216,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 \end{proof}
 
 \subsubsection*{Preliminaries on directed graphs}
-We did not dedicate a whole chapter to directed graphs as they are only necessary to understand the above mentioned proposition. For the main proof, the understanding of this paragraph is not necessary.
+We did not dedicate a whole chapter to directed graphs as they are only necessary to understand the above mentioned proposition. For the main proof, in depth knowledge of this paragraph is not necessary. We will only need the technical result that every complete directed graph has a subgraph with the same vertex set that is strictly upper triangular (Lemma~\ref{lem:A.8}).
 
 \begin{defin}
   A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\), its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. This allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete} if it is complete as an undirected graph, i.\,e.\ each pair of vertices is joined by a single (undirected) edge.. For each \(v \in V\) we will denote by \(o(v)\) the number of \emph{outgoing edges} and by \(i(v)\) the number of \emph{incoming edges}. A complete directed finite graph is \emph{strictly upper triangular} if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
