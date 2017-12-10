@@ -90,7 +90,7 @@ All in all we see that if we can show that \(|H_\mu|\) is finite for almost all 
 \subsection{The case \(|H_\mu| = \infty\)}
 \label{sec:N=infty}
 
-This is the most involved case. The following two paragraphs will contain all the technical details in order to exclude it. We will divide this case into two subcases, namely \(|H_\mu \cap H_\nu| = 0\) and \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu\). The strategy is always to find a contradiction to either the essentiality of the group action, the non-elementarity of the group action or to the fact that the complex is finite-dimensional. The central result of Paragraph~\ref{sec:M=0} is Proposition~\ref{prop:4.10}. The central results of Paragraph~\ref{sec:M=infty} are Proposition~\ref{prop:4.17} and Proposition~\ref{prop:4.21}. Lemma~\ref{lem:4.18} and Lemma~\ref{lem:strongly-sep} are also used in the main proof, but their complete content is given there.
+This is the most involved case. The following two paragraphs will contain all the technical details in order to exclude it. We will divide this case into two subcases, namely \(|H_\mu \cap H_\nu| = 0\) and \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu\). The strategy is always to find a contradiction to either the essentiality of the group action, the non-elementarity of the group action or to the fact that the complex is finite-dimensional. The central result of Paragraph~\ref{sec:M=0} is Proposition~\ref{prop:4.10}. The central results of Paragraph~\ref{sec:M=infty} are Proposition~\ref{prop:4.21} and Proposition~\ref{prop:f-3.32}. Lemma~\ref{lem:4.18} and Lemma~\ref{lem:strongly-sep} are also used in the main proof, but their complete content is given there.
 For the two subcases to make sense, we need the following lemma:
 
 \begin{lemma}
@@ -310,12 +310,13 @@ Here we will prove that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\)
 
 Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group and \(X\) a connected, locally countable, finite dimensional CAT(0) cube complex.
 
-\begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
-  \label{prop:4.17}
-  Let \(\Gamma \to \Aut(X)\) be an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family (with at least two members) of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(X = X(\mathcal{\hat H}') \times Z\), where \(Z\) is some other CAT(0) cube complex.
-\end{prop}
 
-We will prove this proposition by finding a decomposition of \(\mathcal{H}\) in two sets of pairwise transverse halfspaces. In the main proof, we will then get a contradiction concerning the essentiality of the \(\Gamma\)-action using Corollary~\ref{cor:f-3.21}.
+% \begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
+%   \label{prop:4.17}
+%   Let \(\Gamma \to \Aut(X)\) be an essential action. Let \(\mathcal{H}' \subset \mathcal{H}(X)\) be a \(\Gamma\)-invariant subset of halfspaces and \(X_\alpha \subset X\) a \(\Gamma\)-invariant family (with at least two members) of subcomplexes such that \(\mathcal{\hat H}(X_\alpha) = \mathcal{\hat H}'\). Let \(Y\) be the smallest strongly convex subcomplex containing \(A \coloneqq \cup_\alpha X_\alpha\). Then \(Y = X\) and \(X = X(\mathcal{\hat H}') \times Z\), where \(Z\) is some other CAT(0) cube complex.
+% \end{prop}
+
+% We will prove this proposition by finding a decomposition of \(\mathcal{H}\) in two sets of pairwise transverse halfspaces. In the main proof, we will then get a contradiction concerning the essentiality of the \(\Gamma\)-action using Corollary~\ref{cor:f-3.21}.
 
 \begin{prop}[{\cite[Corollary~4.21]{MR3509968}}]
   \label{prop:4.21}
@@ -328,35 +329,47 @@ We will find a contradiction to the Flipping Lemma (Theorem~\ref{thm:cs-flipping
 \end{align}
 For the precise statement please see Lemma~\ref{lem:4.20}. Of course, this property prevents the \enquote{flipping} of \(\mathfrak{l}\). The main work lies in establishing Equation~\eqref{eq:flip}.
 
-\subsubsection*{Towards the proof of Proposition~\ref{prop:4.17}}
+\begin{prop}[{\cite[Corollary~3.32]{fernós}}]
+  \label{prop:f-3.32}
+  Assume we have an essential and non-elementary action of \(\Gamma\) on \(X\), and \(\Gamma_0 \leq \Gamma\) of finite index. If \(\mathcal{H}' \subset \mathcal{H}\) is a non-empty sub-pocset such that
+  \begin{itemize}
+  \item \(\Gamma_0 \cdot \mathcal{H}' = \mathcal{H}'\), and
+  \item if \(\mathfrak{h}, \mathfrak{h}' \in \mathcal{H}'\) with \(\mathfrak{h} \subset \mathfrak{h}'\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{h}'\) then \(\mathfrak{k} \in \mathcal{H}'\),
+  \end{itemize}
+  then either \(\mathcal{H}' = \mathcal{H}\) or \(X = X' \times X''\) and \(\mathcal{H}'\) is the halfspace structure for \(X'\).
+\end{prop}
 
-As stated above, we will decompose the pocset of halfspaces \(\mathcal{H}\) into two sets of pairwise transverse halfspaces. This leads to the desired product decomposition. First, we need another definition:
+We will prove this with the help of strongly separated halfspaces. We will first consider the irreducible case and show that then \(\mathcal{H} = \mathcal{H}'\) using an infinite sequence of strongly separated halfspaces in \(\mathcal{H}'\). In the reducible case, we will apply the same reasoning on each irreducible factor separately. This leads to the product decomposition
 
-\begin{defin}
-  Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edge path joining the two also lies completely in \(Y\).
-\end{defin}
+% \subsubsection*{Towards the proof of Proposition~\ref{prop:4.17}}
 
-\begin{lemma}[{\cite[Lemma~4.16]{MR3509968}}]
-  \label{lem:4.16}
-  Let \(A \subset X\) be a set consisting of (not necessarily connected) cubes. If \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\), then
-  \[
-    \mathcal{\hat H}(Y) = \mathcal{\hat H}(A) \sqcup \{\mathfrak{\hat h} \in \mathcal{\hat H}(Y) \mid \mathfrak{\hat h} \text{ separates } A \text{ in at least two non-trivial subsets}\}.
-  \]
-\end{lemma}
+% As stated above, we will decompose the pocset of halfspaces \(\mathcal{H}\) into two sets of pairwise transverse halfspaces. This leads to the desired product decomposition. First, we need another definition:
 
-\begin{proof}
-  Let \(\mathfrak{\hat h} = (\mathfrak{h}, \mathfrak{h}^\ast) \in \mathcal{\hat H}(Y) \setminus \mathcal{\hat H}(A)\). If \(A\) were in \(\mathfrak{h}\), then any geodesic between two points of \(A\) is also contained in \(\mathfrak{h}\), otherwise the geodesic would cross \(\mathfrak{\hat h}\) twice. Hence, \(Y \subset \mathfrak{h}\), as \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\). However, this is a contradiction to the fact that \(\mathfrak{\hat h} \in \mathcal{\hat H}(Y)\).
-\end{proof}
+% \begin{defin}
+%   Let \(Y \subset X\) be a subcomplex. Then \(Y\) is called \emph{strongly convex}, if for every two vertices in \(Y\) we have that every shortest edge path joining the two also lies completely in \(Y\).
+% \end{defin}
 
-\begin{proof}[Proof of Proposition~\ref{prop:4.17}]
-  Let \(v \in Y\). Then either \(v \in A\), which is \(\Gamma\)-invariant, or \(v\) lies on a geodesic joining two vertices of \(A\). Since this geodesic is mapped to another geodesic joining two vertices of \(A\) under \(\Gamma\), we again have that \(v\) stays in \(Y\) under the \(\Gamma\)-action. All in all \(Y\) is a \(\Gamma\)-invariant set. The same is true for \(X \setminus Y\). Furthermore, \(X\) is connected and we can find \(v \in Y\) and \(w \in X \setminus Y\), such that the two are connected by an edge. Let \(\mathfrak{\hat h} = \mathfrak{\hat h}(\overline{vw})\) with \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Since \(Y\) is strongly convex, we have that \(Y \subset \mathfrak{h}\). Now, for each \(g \in \Gamma\), we have \(gv \in Y\) and \(gw \in X \setminus Y\). Since \(g\) acts by combinatorial maps, the two vertices are still joined by an edge. However, this means that \(d(\Gamma w, \mathfrak{\hat h}) = 1\), which is a contradiction to the fact that \(\Gamma\) acts essential. Thus \(Y = X\).
+% \begin{lemma}[{\cite[Lemma~4.16]{MR3509968}}]
+%   \label{lem:4.16}
+%   Let \(A \subset X\) be a set consisting of (not necessarily connected) cubes. If \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\), then
+%   \[
+%     \mathcal{\hat H}(Y) = \mathcal{\hat H}(A) \sqcup \{\mathfrak{\hat h} \in \mathcal{\hat H}(Y) \mid \mathfrak{\hat h} \text{ separates } A \text{ in at least two non-trivial subsets}\}.
+%   \]
+% \end{lemma}
 
-  By Lemma~\ref{lem:4.16}, we know that the hyperplanes \(\mathcal{\hat H}\) of \(X\) decompose as
-  \[
-    \mathcal{\hat H} = \mathcal{\hat H(A)} \sqcup \{\mathfrak{\hat h} \in \mathfrak{\hat H} \mid \exists \alpha, \alpha'\colon \mathfrak{h} \text{ separates } X_\alpha  \text{ from } X_{\alpha'}\}.
-  \]
-  We set \(\mathcal{\hat H'} \coloneqq \mathcal{\hat H}(A)\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating \(X_\alpha\) from \(X_{\alpha'}\). We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find vertices \(y,y' \in X_{\alpha'}\). Then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets, and \(X\) splits as the required product.
-\end{proof}
+% \begin{proof}
+%   Let \(\mathfrak{\hat h} = (\mathfrak{h}, \mathfrak{h}^\ast) \in \mathcal{\hat H}(Y) \setminus \mathcal{\hat H}(A)\). If \(A\) were in \(\mathfrak{h}\), then any geodesic between two points of \(A\) is also contained in \(\mathfrak{h}\), otherwise the geodesic would cross \(\mathfrak{\hat h}\) twice. Hence, \(Y \subset \mathfrak{h}\), as \(Y\) is the smallest strongly convex subcomplex of \(X\) containing \(A\). However, this is a contradiction to the fact that \(\mathfrak{\hat h} \in \mathcal{\hat H}(Y)\).
+% \end{proof}
+
+% \begin{proof}[Proof of Proposition~\ref{prop:4.17}]
+%   Let \(v \in Y\). Then either \(v \in A\), which is \(\Gamma\)-invariant, or \(v\) lies on a geodesic joining two vertices of \(A\). Since this geodesic is mapped to another geodesic joining two vertices of \(A\) under \(\Gamma\), we again have that \(v\) stays in \(Y\) under the \(\Gamma\)-action. All in all \(Y\) is a \(\Gamma\)-invariant set. The same is true for \(X \setminus Y\). Furthermore, \(X\) is connected and we can find \(v \in Y\) and \(w \in X \setminus Y\), such that the two are connected by an edge. Let \(\mathfrak{\hat h} = \mathfrak{\hat h}(\overline{vw})\) with \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Since \(Y\) is strongly convex, we have that \(Y \subset \mathfrak{h}\). Now, for each \(g \in \Gamma\), we have \(gv \in Y\) and \(gw \in X \setminus Y\). Since \(g\) acts by combinatorial maps, the two vertices are still joined by an edge. However, this means that \(d(\Gamma w, \mathfrak{\hat h}) = 1\), which is a contradiction to the fact that \(\Gamma\) acts essential. Thus \(Y = X\).
+
+%   By Lemma~\ref{lem:4.16}, we know that the hyperplanes \(\mathcal{\hat H}\) of \(X\) decompose as
+%   \[
+%     \mathcal{\hat H} = \mathcal{\hat H(A)} \sqcup \{\mathfrak{\hat h} \in \mathfrak{\hat H} \mid \exists \alpha, \alpha'\colon \mathfrak{h} \text{ separates } X_\alpha  \text{ from } X_{\alpha'}\}.
+%   \]
+%   We set \(\mathcal{\hat H'} \coloneqq \mathcal{\hat H}(A)\). Consider any \(\mathfrak{\hat h} \in \mathcal{\hat H'}\) and any \(\mathfrak{\hat k}\) separating \(X_\alpha\) from \(X_{\alpha'}\). We need to show that these hyperplanes are transverse. Since \(\mathfrak{\hat h}\) separates \(X_\alpha\) we can find \(x, x' \in X_\alpha\) such that \(x \in \mathfrak{h}\) and \(x' \in \mathfrak{h}^\ast\). Analogously, we find vertices \(y,y' \in X_{\alpha'}\). Then \(x,x' \in \mathfrak{k}\) and \(y,y' \in \mathfrak{k}^\ast\) (or vice versa) and we have that the four intersections \(\mathfrak{h} \cap \mathfrak{k},\ \mathfrak{h} \cap \mathfrak{k}^\ast,\ \mathfrak{h}^\ast \cap \mathfrak{k}\) and \(\mathfrak{h}^\ast \cap \mathfrak{k}^\ast\) are non-empty. Thus \(\mathcal{H}\) splits in two transverse subsets, and \(X\) splits as the required product.
+% \end{proof}
 
 \subsubsection*{Towards the proof of Proposition~\ref{prop:4.21}}
 
@@ -469,7 +482,41 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 
   We fix an \(\mathfrak{l} \in H_{\nu_0}\). We know that \(g\nu_0 \in B_0\). Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). Theorem~\ref{thm:cs-flipping} then finishes the proof in the irreducible case.
 \end{proof}
-  
+
+\subsubsection*{Towards the proof of Proposition~\ref{prop:f-3.32}}
+
+\begin{lemma}[{\cite[Lemma~3.31]{fernós}}]
+  \label{lem:f-3.31}
+  Suppose that \(X\) is irreducible with a non-elementary and essential action of the group \(\Gamma\). Any non-empty subset \(\mathcal{H}' \subset  \mathcal{H}\) verifying the following properties must be equal to \(\mathcal{H}\):
+  \begin{itemize}
+  \item \((\mathcal{H}')^\ast = \mathcal{H}'\),
+  \item \(\Gamma \cdot \mathcal{H}' = \mathcal{H}'\), and
+  \item if \(\mathfrak{h}, \mathfrak{h}' \in \mathcal{H}'\) with \(\mathfrak{h} \subset \mathfrak{h}'\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{h}'\) then \(\mathfrak{k} \in \mathcal{H}'\).
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  Let \(\mathfrak{h}_0 \in \mathcal{H}'\). By Proposition, we find \(\mathfrak{k}, \mathfrak{l} \in \mathcal{H}\) such that \(\mathfrak{k}\) and \(\mathfrak{l}\) are strongly separated and we have
+  \[
+    \mathfrak{k} \subset \mathfrak{h}_0 \subset \mathfrak{l}.
+  \]
+  By the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}), we find \(g \in \Gamma\) such that \(g\mathfrak{l} \subsetneq \mathfrak{k}\). By Lemma~\ref{lem:strongly-sep}, \(g\mathfrak{h}_0\) and \(\mathfrak{l}\) are. Then \(g^2\mathfrak{h}_0\) and \(g\mathfrak{l}\) are strongly separated, too. And lastly, we obtain that \(g^2\mathfrak{h}_0\) and \(\mathfrak{h}_0\) are strongly separated. With this in mind we define the sequence
+  \[
+    \dots \subset \mathfrak{h}_{-2} \subset \mathfrak{h}_{-1} \subset \mathfrak{h} \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \dots
+  \]
+  where \(\mathfrak{h}_{-n} = g^{2n}\mathfrak{h}_0\) and \(\mathfrak{h}_n = g^{-2n}\mathfrak{h}_0\) for each \(n \in \N\). By the previous observations the elements of the sequence are pairwise strongly separated. Additionally, we have \(\mathfrak{h}_i \in \mathcal{H}'\) for every \(i \in \Z\), since \(\mathfrak{H}'\) is \(\Gamma\)-invariant.
+
+  Now, let \(\mathfrak{m} \in \mathcal{H}\) be any halfspace. Then \(\mathfrak{m}\) is transverse to at most one \(\mathfrak{h}_i\). However, this implies that either \(\mathfrak{m}\) or \(\mathfrak{m}^\ast\) is comparable to the other elements of the sequence and hence, we must find \(i \in \Z\) such that \(\mathfrak{h}_n \subset \mathfrak{m}' \subset \mathfrak{h}_{n+1}\) where \(\mathfrak{m}'\) is either \(\mathfrak{m}\) or \(\mathfrak{m}^\ast\). By assumption, \(\mathfrak{m}'\) lies in \(\mathcal{H}'\) and because \(\mathcal{H}'\) is closed under involution the same is true for \(\mathfrak{m}\).
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:f-3.32}]
+  If \(X\) is irreducible, we can apply Lemma~\ref{lem:f-3.31} and find that \(\mathcal{H} = \mathcal{H}'\). Otherwise, let
+  \[
+    \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n
+  \]
+  the decomposition into sets of pairwise transverse halfspaces corresponding to the irreducible decomposition. By Lemma~\ref{lem:2.28}, we can assume without loss of generality that \(\Gamma_0\) preserves this decomposition. Then we can apply Lemma~\ref{lem:f-3.31} on each of the sets \(\mathcal{H}' \cap \mathcal{H}_i\) considered as subsets of the pocsets \(\mathcal{H}_i\). Then the intersection is either empty, or we have \(\mathcal{H}' \cap \mathcal{H}_i = \mathcal{H}_i\). With this we see that \(X\) decomposes as the desired product.
+\end{proof}
+
 \subsection{The main theorem}
 \label{sec:main-proof}
 
@@ -499,13 +546,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \[
       H_{g\nu} = gH_\nu = H_{g\nu} = H_{\mu_0} = H_\nu
     \]
-    for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset and the decomposition \(\mathcal{H} = H_\mu \sqcup H_{g\mu}^+ \sqcup H_{g\mu}^-\) is a lifting decomposition for every \(g \in \Gamma\). Then by Lemma~\ref{lem:lifting} we find for each \(g\nu\) a subcomplex \(\bar X_{g\nu} \subset \bar X\) with \(H_{g\nu} = H_\nu\) as its corresponding pocset of halfspaces. We will now show that not all of these subcomplexes are identical. In order to achieve this, we will show that the lifting decomposition is not \(\Gamma\)-invariant.
-
-    The \(\Gamma\)-action on \(X\) is essential and without fixed point at infinity, hence we can apply Theorem~\ref{thm:cs-flipping} and see that if for any \(\mathfrak{h} \in H_{\nu}^+\) there exists a \(g \in \Gamma\) such that \(\mathfrak{h} \subset g^{-1}\mathfrak{h}^\ast \), then we have that \(g^{-1}\mathfrak{h} \in H_\nu^+\) and by definition \(g^{-1} \mathfrak{h} \in H_{g^{-1}\nu}^-\). Hence \(H_\nu^+ \cap H_{g^{-1}\nu}^- \neq \varnothing\) and the same is true for \(H_{g\nu}^+ \cap H_{\nu}^-\). If we take any \(\mathfrak{h} \in \mathcal{H}\) such that \(g\mathfrak{h} \in H_{g\nu}^+ \cap H_\nu^-\), then \(\mathfrak{h} \in H_{\nu}^+\), but \(g\mathfrak{h} \not \in H_\mu^+\), as it lies in \(H_\nu^-\). Hence, not all lifting decompositions are the same and some of the subcomplexes have to differ. This allows us to apply Proposition~\ref{prop:4.17}, which shows that in this case our cube complex would split as a product of two cube complexes, namely
-    \[
-      X = X(H_\mu) \times Z.
-    \]
-    However, \(X(H_\mu)\) is an interval. Clearly, every one of the irreducible factors in \(X(H_\mu)\) are also intervals (just project the ultrafilters to the factors). However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that \(\Gamma\)-action is non-elementarity.
+    for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset that is additionally closed under involution. By Lemma~\ref{lem:4.6}, we cann apply Proposition~\ref{prop:f-3.32}. Hence, either \(\mathcal{H} = H_\mu\) or \(X = X' \times X''\), where \(X'\) has \(H_\mu\) as its pocset of halfspaces. In both cases, the irreducible factors of \(X\) would contain an interval, since \(X(H_\mu)\) is an interval by Lemma~\ref{lem:interval}. However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that the \(\Gamma\)-action is non-elementary.
   \item[Case \(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We decompose \(X\) into its irreducible factors
     \[
       X = X_1 \times \dots \times X_n
