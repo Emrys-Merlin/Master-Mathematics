@@ -1,26 +1,26 @@
 \section{The boundary map}
 \label{sec:map}
 
-Finally, we can construct the boundary map as in Theorem~\ref{thm:4.1}. This process will take this whole chapter. The actual construction will be achieved in Section~\ref{sec:construction}. However, we will need the additional assumption that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\) (see Lemma~\ref{lem:H=0}). Afterwards, we will prove that the boundary map (if it exists) will only take values in the Roller boundary \(\partial X\) instead of in the whole Roller compactification \(\bar X\). Then we will have to prove that \(H_\mu\) is indeed empty for almost all \(\mu\). Section~\ref{sec:N=finite} will deal with the rather simple case \(0 < |H_\mu| < \infty\). Section~\ref{sec:N=infty} will construct the tools to deal with the case \(|H_\mu| = \infty\). This case is the most involved and we will have to split it into further subcases in order to deal with it. The detailed startegies for all the cases can be found at the start of each paragraph. Section~\ref{sec:main-proof} contains the statement (Theorem~\ref{thm:4.1}) and the proof of our main theorem. Additionally, it contains a slight generalization in the form of Corollary~\ref{cor:4.2}.
+Finally, we can construct the boundary map as in Theorem~\ref{thm:4.1}. This process will take the whole chapter. The actual construction will be achieved in Section~\ref{sec:construction}. However, we will need the additional assumption that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\) (see Lemma~\ref{lem:H=0}). Afterwards, we will prove that the boundary map (if it exists) will only take values in the Roller boundary \(\partial X\) instead of in the whole Roller compactification \(\bar X\). Then we will have to prove that \(H_\mu\) is indeed empty for almost all \(\mu\). Section~\ref{sec:N=finite} will deal with the rather simple case \(0 < |H_\mu| < \infty\). Section~\ref{sec:N=infty} will construct the tools to deal with the case \(|H_\mu| = \infty\). This case is the most involved and we will have to split it into further subcases in order to deal with it. The detailed startegies for all the cases can be found at the start of each paragraph. Section~\ref{sec:main-proof} contains the statement (Theorem~\ref{thm:4.1}) and the proof of our main theorem. Additionally, it contains a slight generalization in the form of Corollary~\ref{cor:4.2}.
 
 \subsection{The construction of the boundary map}
 \label{sec:construction}
-In this section we will construct the actual boundary map first assuming that the set of balanced halfspaces \(H_\mu\) (Section~\ref{sec:weight}) is empty for almost every regular probability measure \(\mu\) (with respect to the measure mentioned in Corollary~\ref{cor:p(x)}). Then we will prove that its image lies in the Roller boundary \(\partial X\).
+In this section we will construct the actual boundary map first assuming that the set of balanced halfspaces \(H_\mu\) (see Section~\ref{sec:weight}) is empty for almost every regular probability measure \(\mu\) (with respect to the measure mentioned in Corollary~\ref{cor:p(x)}). Then we will prove that its image lies in the Roller boundary \(\partial X\).
 
 \begin{lemma}
   \label{lem:H=0}
-  Let \(X\) be a finite-dimensional, locally countable CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B, \vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with respect to the pushforward measure from \(B\), then there exists a measurable map \(\phi\colon B \to \bar X\) which is \(\Gamma\)-equivariant almost everywhere.
+  Let \(X\) be a finite-dimensional, locally countable CAT(0) cube complex and \(\Gamma\) a group with an action \(\Gamma \to \Aut(X)\) that is essential and non-elementary. Furthermore, let \((B,\Sigma,\vartheta)\) be a strong \(\Gamma\)-boundary. If \(H_\mu = \varnothing\) for almost all \(\mu \in \mathcal{P}(\bar X)\) with respect to the pushforward measure from \(B\), then there exists a measurable map \(\phi\colon B \to \bar X\) which is \(\Gamma\)-equivariant almost everywhere.
 \end{lemma}
 
 \begin{proof}
-  By Corollary~\ref{cor:p(x)} we have a \(\Gamma\)-equivariant measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\). Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). We will first prove that if \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
+  By Corollary~\ref{cor:p(x)}, we have a measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\) which is \(\Gamma\)-equivariant almost everywhere. Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). We will first prove that if \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
 
-  By assumption the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\) has full measure. Since \(\psi\) is only well-defined up to a null set, we can concatenate it with the map
+  By assumption, the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\) has full measure. Since \(\psi\) is only well-defined up to a null set, we can concatenate it with the map
   \begin{align*}
     \xi\colon \mathcal{E} &\to \bar X,\\
     \mu &\mapsto H_\mu^+.
   \end{align*}
-  By Lemma~\ref{lem:measurable-mu} applied to \({(\text{\nfrac 1/2}, 1]}\) this map is measurable and \(\Gamma\)-equivariant almost everywhere.
+  By Lemma~\ref{lem:measurable-mu} applied to the interval\({(\text{\nfrac 1/2}, 1]}\), this map is measurable and \(\Gamma\)-equivariant almost everywhere.
 
   All in all we have that \(\xi \circ \psi\) is our desired map \(\phi\).
 \end{proof}
@@ -29,7 +29,7 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
-  Let \(X\) be a finite dimensional, locally countable, CAT(0) cube complex. Let  \(\Gamma\) be a discrete, countable group with an essential and non-elementary action \(\Gamma \to \Aut(X)\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubly ergodic with coefficients. If \(\phi\colon B \to \bar X\) is a measurable map which is \(\Gamma\)-equivariant almost everywhere, then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
+  Let \(X\) be a finite-dimensional, locally countable CAT(0) cube complex. Let  \(\Gamma\) be a discrete, countable group with an essential and non-elementary action \(\Gamma \to \Aut(X)\), \((B, \nu)\) a Lebesgue space on which \(\Gamma\) acts doubly ergodic with coefficients. If \(\phi\colon B \to \bar X\) is a measurable map which is \(\Gamma\)-equivariant almost everywhere, then \(\phi\) takes values in the non-terminating ultrafilters of \(X\).
 \end{lemma}
 
 \begin{proof}
@@ -38,24 +38,24 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
     B & \to \N \cup \{\infty\}\\
     x & \mapsto |\tau(\phi(x))|,
   \end{align*}
-  which is measurable and \(\Gamma\)-invariant. By ergodicity it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) essentially contains only non-terminating ultrafilters and we are done.
+  which is measurable (Lemma~\ref{lem:tau}) and \(\Gamma\)-invariant (\(\tau\) was defined in Defintion~\ref{defin:tau}). By ergodicity it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) essentially contains only non-terminating ultrafilters and we are done.
 
   For this purpose, let us consider the following map
   \begin{align*}
     B \times B & \to \N \cup \{\infty\},\\
     (x,y) & \mapsto |\tau(\mathcal{H}(\phi(x), \phi(y)))|.
   \end{align*}
-  It is measurable as it is a composition of measurable maps (consider Lemma~\ref{lem:measurable-interval}) and \(\Gamma\)-invariant. Again we obtain an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N\) is essentially 0.
+  It is measurable as it is a composition of measurable maps (consider Lemma~\ref{lem:measurable-interval}) and \(\Gamma\)-invariant. Again we obtain an essential value \(N\). By Remark~\ref{rem:interval} we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5} this would mean that the action of \(\Gamma\) is inessential, unless \(N = 0\).
 
   Lastly, we will show that this is incompatible with the case \(M > 0\). Contrarily, assume \(M > 0\), then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0))| > 0\) and a set \(B_0 \subset B\) of full measure, such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12}, for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
-  However, by Lemma~\ref{lem:countable-orbit} \(B_0\) contains a \(\Gamma\)-orbit, i.\,e.\ there exists a \(y \in B_0\) such that \(g\mathfrak{h} \in \phi(y)\) for every \(g \in \Gamma\). Now, \(\Gamma\) acts non-elementary and essential. By Theorem~\ref{thm:cs-flipping}, we find \(g \in \Gamma\) such that \(g\mathfrak{h} \subset \mathfrak{h}^\ast\), but by consistency, we would then have \(\mathfrak{h}^\ast \in \phi(y)\) which is a contradiction to the choice condition.
+  However, by Lemma~\ref{lem:countable-orbit}, \(B_0\) contains a \(\Gamma\)-orbit, i.\,e.\ there exists a \(y \in B_0\) such that \(g\mathfrak{h} \in \phi(y)\) for every \(g \in \Gamma\). Now, \(\Gamma\) acts non-elementary and essential. By Theorem~\ref{thm:cs-flipping}, we find \(g \in \Gamma\) such that \(g\mathfrak{h} \subset \mathfrak{h}^\ast\), but by consistency, we would then have \(\mathfrak{h}^\ast \in \phi(y)\) which is a contradiction to the choice condition of ultrafilters.
 \end{proof}
 
 \subsection{The case \(0 < |H_\mu| < \infty\)}
 \label{sec:N=finite}
 
-So far we have seen that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. We will now prove that if \(|H_\mu|\) is finite then it is already 0. So after this section we will be left with the case that \(|H_\mu|\) is infinite. The following two lemmas capture the precise statement. The main argument in the proof of Lemma~\ref{lem:finite-zero} is Corllary~\ref{cor:4.5}, which gives us a contradiction to the essentiality of the \(\Gamma\)-action.
+So far we have seen that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. We will now prove that if \(|H_\mu|\) is finite then it is already 0. So after this section we will be left with the case that \(|H_\mu|\) is infinite. The following two lemmas capture the precise ideas. The main argument in the proof of Lemma~\ref{lem:finite-zero} is Corllary~\ref{cor:4.5}, which gives us a contradiction to the essentiality of the \(\Gamma\)-action.
 
 \begin{lemma}
   \label{lem:h-const}
@@ -90,7 +90,7 @@ All in all we see that if we can show that \(|H_\mu|\) is finite for almost all 
 \subsection{The case \(|H_\mu| = \infty\)}
 \label{sec:N=infty}
 
-This is the most involved case. The following two paragraphs will contain all the technical details in order to exclude it. We will divide this case into two subcases, namely \(|H_\mu \cap H_\nu| = 0\) and \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu, \nu\). The strategy is always to find a contradiction to either the essentiality of the group action, the non-elementarity of the group action or to the fact that the complex is finite-dimensional. The central result of Paragraph~\ref{sec:M=0} is Proposition~\ref{prop:4.10}. The central results of Paragraph~\ref{sec:M=infty} are Proposition~\ref{prop:4.21} and Proposition~\ref{prop:f-3.32}. Lemma~\ref{lem:4.18} and Lemma~\ref{lem:strongly-sep} are also used in the main proof, but their complete content is given there.
+This is the most involved case. The following two paragraphs will contain all the technical details in order to exclude it. We will divide this case into two subcases, namely \(|H_\mu \cap H_\nu| = 0\) and \(|H_\mu \cap H_\nu| = \infty\) for almost all \(\mu\) and \(\nu\). The strategy is always to find a contradiction to the essentiality of the group action, the non-elementarity of the group action or to the fact that the complex is finite-dimensional. The central result of Paragraph~\ref{sec:M=0} is Proposition~\ref{prop:4.10}. The central results of Paragraph~\ref{sec:M=infty} are Proposition~\ref{prop:4.21} and Proposition~\ref{prop:f-3.32}. Lemma~\ref{lem:4.18} and Lemma~\ref{lem:strongly-sep} are also used in the main proof, but their complete content is given there.
 For the two subcases to make sense, we need the following lemma:
 
 \begin{lemma}
@@ -112,7 +112,7 @@ For the two subcases to make sense, we need the following lemma:
 
 Here we will prove that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) cannot happen in our setting. More precisely, we will see that \(X\) could not be finite-dimensional. The precise statement is captured in the next proposition. It is the only result of this paragraph that will be used in the main proof of the theorem. The remainder of this paragraph is only necessary to understand the proof of this proposition.
 
-Unless noted otherwise, \(X\) will be assumed to be a connected, locally countable, finite-dimensional CAT(0) cube complex and \(\Gamma\) a discrete, countable group.
+Unless noted otherwise, \(X\) is a connected, locally countable, finite-dimensional CAT(0) cube complex and \(\Gamma\) a discrete, countable group.
 
 \begin{prop}[{\cite[Proposition~4.10]{MR3509968}}]
   \label{prop:4.10}
@@ -149,7 +149,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
   \[
     \N \times \N = N_1 \sqcup N_2 \sqcup N_3 \sqcup N_4.
   \] 
-  We will consider different cases, depending on which \(N_j\) are not empty. If at most one of the \(N_j\ (j = 2,3,4)\)  is not empty, we are done. So we deal with the cases where at most two of the sets are non-empty.
+  We will consider different cases, depending on which \(N_j\) are not empty. If at most one of the \(N_j\ (j = 2,3,4)\)  is not empty, we are done. So we deal with the cases where at least two of the sets are non-empty.
   \begin{description}
   \item[Case \(N_2, N_3 \neq \varnothing\):] We can take \((n_3, m_3) \in N_3\) and \((n,m) \in N_2\) and define
     \[
@@ -188,7 +188,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 
 \begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
   \label{lem:4.13}
-  Let \((\mu_i)_{i \in \N_0}\) be a sequence of pairwise generic probability measures in \(\mathcal{P}(\bar X)\) such that \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\) and such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then (up to switching \(i\) and \(j\)), any pair of measures \(\mu_i\) and \(\mu_j\) satisfies the following condition:
+  Let \((\mu_i)_{i \in \N_0}\) be a sequence of probability measures in \(\mathcal{P}(\bar X)\) such that \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\) and such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then (up to switching \(i\) and \(j\)), any pair of measures \(\mu_i\) and \(\mu_j\) satisfies the following condition:
 
   There exists \(C(i,j) \in \N\) such that for every \(n \geq C(i,j)\) there is an \(M_n \geq C(i,j)\) such that if \(m \geq M_n\) then \(\mathfrak{\hat h}^j_m \pitchfork \mathfrak{\hat h}^i_n\). 
 \end{lemma}
@@ -216,10 +216,10 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 \end{proof}
 
 \subsubsection*{Preliminaries on directed graphs}
-We did not dedicate a whole chapter to directed graphs as they are only necessary to understand the above mentioned proposition. For the main proof, in depth knowledge of this paragraph is not necessary. We will only need the technical result that every complete directed graph has a subgraph with the same vertex set that is strictly upper triangular (Lemma~\ref{lem:A.8}).
+We did not dedicate a whole section to directed graphs as they are only necessary to understand the above mentioned proposition. For the main proof, in depth knowledge of this paragraph is not necessary. We will only need the technical result that every complete directed graph has a subgraph with the same vertex set that is strictly upper triangular (Lemma~\ref{lem:A.8}).
 
 \begin{defin}
-  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\), its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. This allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete} if it is complete as an undirected graph, i.\,e.\ each pair of vertices is joined by a single (undirected) edge.. For each \(v \in V\) we will denote by \(o(v)\) the number of \emph{outgoing edges} and by \(i(v)\) the number of \emph{incoming edges}. A complete directed finite graph is \emph{strictly upper triangular} if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\), its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. This allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete} if it is complete as an undirected graph, i.\,e.\ each pair of vertices is joined by a single (undirected) edge. For each \(v \in V\) we will denote by \(o(v)\) the number of \emph{outgoing edges} and by \(i(v)\) the number of \emph{incoming edges}. A complete directed finite graph is \emph{strictly upper triangular} if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
   \begin{align*}
     o(v_j) & = D - j\quad \text{and}\\
     i(v_j) & = j - 1.
@@ -228,7 +228,7 @@ We did not dedicate a whole chapter to directed graphs as they are only necessar
 
 \begin{lemma}[{\cite[Lemma~A.6]{MR3509968}}]
   \label{lem:A.6}
-  If \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) is a complete directed finite graph with \(|V| = D\) then there exists a \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
+  If \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) is a complete directed finite graph with \(|V| = D\) then there exists \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
 \end{lemma}
 
 \begin{proof}
@@ -248,7 +248,7 @@ We did not dedicate a whole chapter to directed graphs as they are only necessar
   \[
     \sum_{v \in V} o(v) < \frac{D(D-1)}{2},
   \]
-  which is a contradiction. Hence there exists at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\)
+  which is a contradiction. Hence there exists at least one \(v \in V\) such that \(o(v) \geq \frac{D-1}{2}\).
 \end{proof}
 
 \begin{lemma}[{\cite[Lemma~A.8]{MR3509968}}]
@@ -265,7 +265,7 @@ We did not dedicate a whole chapter to directed graphs as they are only necessar
   \]
   we have \(|V_D| \geq 5^{N-D}\).
 
-  Observe that it is sufficient to prove this statement for finite graphs. Indeed for infinite graphs, we can always consider a finite subgraph with sufficiently many vertices. So we will reduce to the finite case.
+  Observe that it is sufficient to prove this statement for finite graphs. Indeed, for infinite graphs, we can always consider a finite subgraph with sufficiently many vertices. So we will reduce to the finite case.
   \begin{description}
   \item[Base: \(D = 1\):] By Lemma~\ref{lem:A.6} we can find a \(v_1 \in V\) such that
     \[
@@ -288,7 +288,7 @@ We did not dedicate a whole chapter to directed graphs as they are only necessar
     \[
       V_{D+1} = \{v \in V_D \mid \overline{v_{D+1}v} \in E\}
     \]
-    and thus \(|V_{D+1}| = o(v_{D+1}) \geq 5^{N- (D+1)}\), which completes the induction.
+    and thus \(|V_{D+1}| = o(v_{D+1}) \geq 5^{N- (D+1)}\) which completes the induction.
   \end{description}
 \end{proof}
 
@@ -300,7 +300,7 @@ We did not dedicate a whole chapter to directed graphs as they are only necessar
     C &\coloneqq \max\{C(i,j) \mid 1 \leq i < j \leq D\} \quad \text{and}\\
     M &\coloneqq \max\{M_C(i,j) \mid 1 \leq i < j \leq D\}.
   \end{align*}
-  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\), this leads to a set of \(D\) transverse halfspaces. Since they intersect pairwise,  by Theorem~\ref{thm:common-intersection}, the common intersection is not empty. An element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence, this cube has at least dimension \(D\). Since \(D\), \(X\) contains cubes of arbitrary dimension.
+  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\), this leads to a set of \(D\) transverse halfspaces. Since they intersect pairwise,  by Theorem~\ref{thm:common-intersection}, the common intersection is not empty. An element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence, this cube has at least dimension \(D\). Since \(D\) was chosen arbitrarily, \(X\) contains cubes of arbitrary dimension.
 \end{proof}
 
 \subsubsection{The case \(|H_\mu \cap H_\nu| = \infty\)}
@@ -308,8 +308,7 @@ We did not dedicate a whole chapter to directed graphs as they are only necessar
 
 Here we will prove that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = \infty\) cannot happen in our case. The two main results of the paragraph are stated in the following two propositions.
 
-Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group and \(X\) a connected, locally countable, finite dimensional CAT(0) cube complex.
-
+Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group and \(X\) a connected, locally countable, finite-dimensional CAT(0) cube complex.
 
 % \begin{prop}[{\cite[Proposition~4.17]{MR3509968}}]
 %   \label{prop:4.17}
@@ -381,7 +380,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 \end{lemma}
 
 \begin{proof}
-  Let \((\mathfrak{h}_i)_{i \in \N}\) be a descending chain in \(H_\mu^+\). Because all \(\mathfrak{h}_i\) are parallel, they all lie in a commen \(\mathcal{H}_k\). Without loss of generality we assume \(k=1\). Now, take \(\mathfrak{h, k} \in H_\mu \cap \mathcal{H}_1\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated in \(\mathcal{H}_1\) and define
+  Let \((\mathfrak{h}_i)_{i \in \N}\) be a descending chain in \(H_\mu^+\). Since all \(\mathfrak{h}_i\) are parallel, they all lie in a commen \(\mathcal{H}_k\). Without loss of generality we assume \(k=1\). Now, take \(\mathfrak{h, k} \in H_\mu \cap \mathcal{H}_1\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated in \(\mathcal{H}_1\) and define
   \[
     P(\mathfrak{h}) \coloneqq \{\mathfrak{l} \in H_\mu^+ \cap \mathcal{H}_1 \mid \mathfrak{h} \parallel \mathfrak{l}\}.
   \]
@@ -433,7 +432,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 
   We would like to show that \(g\mathfrak{k}_1 \in H_\mu^-\) and \(g^{-1}\mathfrak{k}_2 \in H_\mu^+\). If neither \(\mathfrak{k}_i\) is in \(H_\mu\), we are done (since \(\mathfrak{l}\) is in \(H_\mu\)). Suppose that \(\mathfrak{k}_2\) is in \(H_\mu\), then \(\mathfrak{k}_1 \in H_\mu^-\), because \(H_\mu\) contains no strongly separated halfspaces. Thus by the additivity of the measure we also have \(g\mathfrak{k}_1 \in H_\mu^-\). Additionally, \(g^{-1}\mathfrak{k}_2 \in H_\mu^+\) again since it is strongly separated from \(\mathfrak{k}_2\). The case if \(\mathfrak{k}_1 \in H_\mu\) can be proven similarly.
 
-  There is one additional step necessary. We define \(\mathfrak{h} \coloneqq g^2\mathfrak{k}_1 \in H_\mu^-\) and \(\mathfrak{k} \coloneqq g^{-2}\mathfrak{k}_2 \in H_\mu^+\), which are strongly separated by the same argument as above. Furthermore, we set \(\mathfrak{k_0} \coloneqq g\mathfrak{k}_1 \in H_\mu^-\) and \(\mathfrak{k}_3 \coloneqq g^{-1}\mathfrak{k}_2\). Then we have the following sequence:
+  There is one additional step necessary. We define \(\mathfrak{h} \coloneqq g^2\mathfrak{k}_1 \in H_\mu^-\) and \(\mathfrak{k} \coloneqq g^{-2}\mathfrak{k}_2 \in H_\mu^+\), which are strongly separated by Lemma~\ref{lem:strongly-sep}. Furthermore, we set \(\mathfrak{k_0} \coloneqq g\mathfrak{k}_1 \in H_\mu^-\) and \(\mathfrak{k}_3 \coloneqq g^{-1}\mathfrak{k}_2\). Then we have the following sequence:
   \[
     \mathfrak{h} \subset \mathfrak{k}_0 \subset \mathfrak{k}_3 \subset \mathfrak{k},
   \]
