@@ -1,7 +1,7 @@
 \section{The boundary map}
 \label{sec:map}
 
-Finally, we can construct the boundary map as in Theorem~\ref{thm:4.1}. This process will take the whole chapter. The actual construction will be achieved in Section~\ref{sec:construction}. However, we will need the additional assumption that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\) (see Lemma~\ref{lem:H=0}). Afterwards, we will prove that the boundary map (if it exists) will only take values in the Roller boundary \(\partial X\) instead of in the whole Roller compactification \(\bar X\). Then we will have to prove that \(H_\mu\) is indeed empty for almost all \(\mu\). Section~\ref{sec:N=finite} will deal with the rather simple case \(0 < |H_\mu| < \infty\). Section~\ref{sec:N=infty} will construct the tools to deal with the case \(|H_\mu| = \infty\). This case is the most involved and we will have to split it into further subcases in order to deal with it. The detailed startegies for all the cases can be found at the start of each paragraph. Section~\ref{sec:main-proof} contains the statement (Theorem~\ref{thm:4.1}) and the proof of our main theorem. Additionally, it contains a slight generalization in the form of Corollary~\ref{cor:4.2}.
+Finally, we can construct the boundary map as in Theorem~\ref{thm:4.1}. This process will take the whole chapter. The actual construction will be achieved in Section~\ref{sec:construction}. However, we will need the additional assumption that \(H_\mu\) is empty for almost all \(\mu \in \mathcal{P}(\bar X)\) (see Lemma~\ref{lem:H=0}). Afterwards, we will prove that the boundary map (if it exists) will only take values in the Roller boundary \(\partial X\) instead of in the whole Roller compactification \(\bar X\). Then we will have to prove that \(H_\mu\) is indeed empty for almost all \(\mu\). Section~\ref{sec:N=finite} will deal with the rather simple case \(0 < |H_\mu| < \infty\). Section~\ref{sec:N=infty} will construct the tools to deal with the case \(|H_\mu| = \infty\). This case is the most involved and we will have to split it into further subcases in order to deal with it. The detailed strategies for all the cases can be found at the start of each paragraph. Section~\ref{sec:main-proof} contains the statement (Theorem~\ref{thm:4.1}) and the proof of our main theorem. Additionally, it contains a slight generalization in the form of Corollary~\ref{cor:4.2}.
 
 \subsection{The construction of the boundary map}
 \label{sec:construction}
@@ -38,7 +38,7 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
     B & \to \N \cup \{\infty\},\\
     x & \mapsto |\tau(\phi(x))|,
   \end{align*}
-  which is measurable (Lemma~\ref{lem:tau}) and \(\Gamma\)-invariant (\(\tau\) was defined in Defintion~\ref{defin:tau}). By ergodicity, it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) essentially contains only non-terminating ultrafilters and we are done.
+  which is measurable (Lemma~\ref{lem:tau}) and \(\Gamma\)-invariant (\(\tau\) was defined in Definition~\ref{defin:tau}). By ergodicity, it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) essentially contains only non-terminating ultrafilters and we are done.
 
   For this purpose, let us consider the following map
   \begin{align*}
@@ -55,7 +55,7 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
 \subsection{The case \(0 < |H_\mu| < \infty\)}
 \label{sec:N=finite}
 
-So far we have seen that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. We will now prove that if \(|H_\mu|\) is finite, then it is already 0. So after this section we will be left with the case that \(|H_\mu|\) is infinite. The following two lemmas capture the precise ideas. The main argument in the proof of Lemma~\ref{lem:finite-zero} is Corllary~\ref{cor:4.5}, which gives us a contradiction to the essentiality of the \(\Gamma\)-action.
+So far we have seen that if \(H_\mu\) is empty for almost all \(\mu\), we find our desired map with all the necessary properties. We will now prove that if \(|H_\mu|\) is finite, then it is already 0. So after this section we will be left with the case that \(|H_\mu|\) is infinite. The following two lemmas capture the precise ideas. The main argument in the proof of Lemma~\ref{lem:finite-zero} is Corollary~\ref{cor:4.5}, which gives us a contradiction to the essentiality of the \(\Gamma\)-action.
 
 \begin{lemma}
   \label{lem:h-const}
@@ -130,7 +130,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 
 \begin{lemma}
   \label{lem:sep-n}
-  Let \(\mu, \nu \in \mathcal{P}(\bar X)\) be two regular probability measures such that \(H_\mu \cap H_\nu = \varnothing\) and such that there exists an infinte descending chain \(\mathfrak{h}_n\in H_\mu^+\) and an infinite descending chain \(\mathfrak{k}_m \in H_\nu^+\). Then there exists \(C \in \N\) such that we have a decomposition
+  Let \(\mu, \nu \in \mathcal{P}(\bar X)\) be two regular probability measures such that \(H_\mu \cap H_\nu = \varnothing\) and such that there exists an infinite descending chain \(\mathfrak{h}_n\in H_\mu^+\) and an infinite descending chain \(\mathfrak{k}_m \in H_\nu^+\). Then there exists \(C \in \N\) such that we have a decomposition
   \[
     \N_C \subset N_1 \sqcup N_j,
   \]
@@ -376,7 +376,7 @@ We will prove this with the help of strongly separated halfspaces. We will first
 
 \subsubsection*{Towards the proof of Proposition~\ref{prop:4.21}}
 
-As stated above, we will try to find a contradition to the Flipping Lemma (Theorem~\ref{thm:cs-flipping}). This is done by \enquote{flanking} any element \(\mathfrak{l}\) in \(H_\mu\) by two halfspaces thus preventing it from flipping.
+As stated above, we will try to find a contradiction to the Flipping Lemma (Theorem~\ref{thm:cs-flipping}). This is done by \enquote{flanking} any element \(\mathfrak{l}\) in \(H_\mu\) by two halfspaces thus preventing it from flipping.
 
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
   \label{lem:4.18}
@@ -384,7 +384,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 \end{lemma}
 
 \begin{proof}
-  Let \((\mathfrak{h}_i)_{i \in \N}\) be a descending chain in \(H_\mu^+\). Since all \(\mathfrak{h}_i\) are parallel, they all lie in a commen \(\mathcal{H}_k\). Without loss of generality we assume \(k=1\). Now, take \(\mathfrak{h, k} \in H_\mu \cap \mathcal{H}_1\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated in \(\mathcal{H}_1\) and define
+  Let \((\mathfrak{h}_i)_{i \in \N}\) be a descending chain in \(H_\mu^+\). Since all \(\mathfrak{h}_i\) are parallel, they all lie in a common \(\mathcal{H}_k\). Without loss of generality we assume \(k=1\). Now, take \(\mathfrak{h, k} \in H_\mu \cap \mathcal{H}_1\) with \(\mathfrak{h} \subset \mathfrak{k}\) strongly separated in \(\mathcal{H}_1\) and define
   \[
     P(\mathfrak{h}) \coloneqq \{\mathfrak{l} \in H_\mu^+ \cap \mathcal{H}_1 \mid \mathfrak{h} \parallel \mathfrak{l}\}.
   \]
@@ -548,7 +548,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \[
       H_{g\nu} = gH_\nu = H_{g\nu} = H_{\mu_0} = H_\nu
     \]
-    for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset that is additionally closed under involution. By Lemma~\ref{lem:4.6}, we cann apply Proposition~\ref{prop:f-3.32}. Hence, either \(\mathcal{H} = H_\mu\) or \(X = X' \times X''\), where \(X'\) has \(H_\mu\) as its pocset of halfspaces. In both cases, the irreducible factors of \(X\) would contain an interval, since \(X(H_\mu)\) is an interval by Lemma~\ref{lem:interval}. However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that the \(\Gamma\)-action is non-elementary.
+    for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset that is additionally closed under involution. By Lemma~\ref{lem:4.6}, we can apply Proposition~\ref{prop:f-3.32}. Hence, either \(\mathcal{H} = H_\mu\) or \(X = X' \times X''\), where \(X'\) has \(H_\mu\) as its pocset of halfspaces. In both cases, the irreducible factors of \(X\) would contain an interval, since \(X(H_\mu)\) is an interval by Lemma~\ref{lem:interval}. However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that the \(\Gamma\)-action is non-elementary.
   \item[Case \(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We decompose \(X\) into its irreducible factors
     \[
       X = X_1 \times \dots \times X_n
@@ -608,7 +608,7 @@ Before finishing this treatise, we would like to drop the essentiality condition
   \[
     \phi\colon B \to \partial Y.
   \]
-  With the help of Lemma~\ref{lem:roller-bnd-embedding}, we can embedd \(\partial Y\) into \(\partial X\) in a natural way that is compatible with the \(\Gamma\)-action.
+  With the help of Lemma~\ref{lem:roller-bnd-embedding}, we can embed \(\partial Y\) into \(\partial X\) in a natural way that is compatible with the \(\Gamma\)-action.
 \end{proof}
 
 %%% Local Variables:
