@@ -25,7 +25,7 @@ In this section we will construct the actual boundary map first assuming that th
   All in all we have that \(\xi \circ \psi\) is our desired map \(\phi\).
 \end{proof}
 
-We will now prove that any \(\phi\) as above only takes values in \(\partial X\). This will be accomplished with the next lemma.
+We will now prove that any \(\phi\) as above only takes values in \(\partial X\). This will be accomplished with the next lemma:
 
 \begin{lemma}[{\cite[Lemma~4.11]{MR3509968}}]
   \label{lem:4.11}
@@ -38,7 +38,7 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
     B & \to \N \cup \{\infty\},\\
     x & \mapsto |\tau(\phi(x))|,
   \end{align*}
-  which is measurable (Lemma~\ref{lem:tau}) and \(\Gamma\)-invariant (\(\tau\) was defined in Definition~\ref{defin:tau}). By ergodicity, it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) essentially contains only non-terminating ultrafilters and we are done.
+  which is measurable (Lemma~\ref{lem:tau}) and \(\Gamma\)-invariant (\(\tau\) was defined in Definition~\ref{defin:tau}). By ergodicity, it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) contains only non-terminating ultrafilters (up to measure 0) and we are done.
 
   For this purpose, let us consider the following map
   \begin{align*}
@@ -47,7 +47,7 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
   \end{align*}
   It is measurable as it is a composition of measurable maps (consider Lemma~\ref{lem:measurable-interval}) and \(\Gamma\)-invariant. Again we obtain an essential value \(N\). By Remark~\ref{rem:interval}, we have that \(N < \infty\) and hence \(\tau(\mathcal{H}(\phi(x), \phi(y)))\) takes values in \(\operatorname{Pot}_f(\mathcal{H})\). By Corollary~\ref{cor:4.5}, this would mean that the action of \(\Gamma\) is inessential, unless \(N = 0\).
 
-  Lastly, we will show that this is incompatible with the case \(M > 0\). Contrarily, assume \(M > 0\), then we could find a \(x_0 \in B\) such that \(|\tau(\phi(x_0))| > 0\) and a set \(B_0 \subset B\) of full measure such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12}, for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
+  Lastly, we will show that this is incompatible with the case \(M > 0\). Contrarily, assume \(M > 0\), then we could find \(x_0 \in B\) such that \(|\tau(\phi(x_0))| > 0\) and a set \(B_0 \subset B\) of full measure such that \(\tau(\mathcal{H}(\phi(x_0), \phi(y))) = \varnothing\) for all \(y \in B_0\). By Lemma~\ref{lem:4.12}, for all \(\mathfrak{h} \in \tau(\phi(x_0))\), we have \(\mathfrak{h} \in \phi(y)\).
 
   However, by Lemma~\ref{lem:countable-orbit}, \(B_0\) contains a \(\Gamma\)-orbit, i.\,e.\ there exists a \(y \in B_0\) such that \(g\mathfrak{h} \in \phi(y)\) for every \(g \in \Gamma\). Now, \(\Gamma\) acts non-elementary and essential. By Theorem~\ref{thm:cs-flipping}, we find \(g \in \Gamma\) such that \(g\mathfrak{h} \subset \mathfrak{h}^\ast\), but by consistency, we would then have \(\mathfrak{h}^\ast \in \phi(y)\) which is a contradiction to the choice condition of ultrafilters.
 \end{proof}
@@ -119,7 +119,7 @@ Unless noted otherwise, \(X\) is a connected, locally countable, finite-dimensio
   If for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) we have all of the following:
   \begin{itemize}
   \item \(|H_\mu| = |H_\nu| = \infty\),
-  \item \(H_\mu \cap H_\nu = \varnothing\) and
+  \item \(H_\mu \cap H_\nu = \varnothing\), and
   \item \(\tau(H_\mu \cap H_\nu^+) = \varnothing\),
   \end{itemize}
   then \(X\) contains cubes of arbitrarily large dimension.
@@ -280,7 +280,7 @@ We did not dedicate a whole section to directed graphs as they are only necessar
       V_1 = \{v \in V \mid \overline{v_1v} \in E\},
     \]
     since \(\mathcal{G}\) does not contain loops. However, then we have \(|V_1| = o(v_1) \geq 5^{N-1}\) and we are done.
-  \item[Inductive step: \(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by the Lemma~\ref{lem:A.6}, we find a vertex \(v_{D+1} \in V_D\) such that
+  \item[Inductive step: \(D \to D+1\):] By the induction hypothesis we find \(\{v_1, \dots, v_D\}\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete and strictly upper triangular and \(|V_D| \geq 5^{N-D}\). We consider the complete graph induced by \(\mathcal{G}\) on the set \(V_D \neq \varnothing\). Again by Lemma~\ref{lem:A.6}, we find a vertex \(v_{D+1} \in V_D\) such that
     \[
       o(v_{D+1}) \geq \frac{|V_D| -1}{2} \geq \frac{|V_D|}{5} \geq 5^{N - (D+1)}.
     \]
@@ -299,7 +299,7 @@ We did not dedicate a whole section to directed graphs as they are only necessar
 \begin{proof}[Proof of Proposition~\ref{prop:4.10}]
   Since \(H_\mu \cap H_\nu^+\) has no minimal elements for almost all \(\mu, \nu\), we can find a sequence \((\mu_i)_{i \in I}\) such that \(H_{\mu_0}^+ \cap H_{\mu_i}\) contains an infinite descending chain, which we denote by \((\mathfrak{h}^i_n)_{n \in \N}\). Thus, we can apply Lemma~\ref{lem:4.13} and find \(C(i,j) \in \N\) such that for all \(n \geq C(i,j)\) there is an \(M \geq c(i,j)\) such that if \(m > M_n\), we have \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) (after possibly switching \(i\) and \(j\)).
 
-  Using this, we can construct the graph \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the above mentioned \(C(i,j)\) exists. With this, \(\mathcal{G}\) becomes a directed graph and since the \(C(i,j)\) exists for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E_D)\) becomes strictly upper triangular. This implies that for each \(1\leq i < j \leq D\) there exists \(C(i,j)\) without needing to switch \(i\) and \(j\). We set
+  Using this, we can construct a graph \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the above mentioned \(C(i,j)\) exists. With this, \(\mathcal{G}\) becomes a directed graph and since \(C(i,j)\) exists for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E_D)\) becomes strictly upper triangular. This implies that for each \(1\leq i < j \leq D\) there exists \(C(i,j)\) without needing to switch \(i\) and \(j\). We set
   \begin{align*}
     C &\coloneqq \max\{C(i,j) \mid 1 \leq i < j \leq D\} \quad \text{and}\\
     M &\coloneqq \max\{M_C(i,j) \mid 1 \leq i < j \leq D\}.
@@ -323,7 +323,7 @@ Unless noted otherwise, \(\Gamma\) is assumed to be a discrete, countable group 
 
 \begin{prop}[{\cite[Corollary~4.21]{MR3509968}}]
   \label{prop:4.21}
-  Let \(X\) be irreducible. Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no strongly separated pairs in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\), then the \(\Gamma\)-action is non-essential or \(\Gamma\) has a fixed point in the visual boundary.
+  Let \(X\) be irreducible. Assume that for almost every \(\mu \in \mathcal{P}(\bar X)\), there are no pairs of strongly separated halfspaces in \(H_\mu\). If \(H_\mu \cap H_\nu \neq \varnothing\) for almost every pair \((\mu, \nu)\), then the \(\Gamma\)-action is non-essential or \(\Gamma\) has a fixed point in the visual boundary.
 \end{prop}
 
 We will find a contradiction to the Flipping Lemma (Theorem~\ref{thm:cs-flipping}). We will see that if there are no strongly separated halfspaces in every\(H_\mu\), then we can find two halfspaces \(\mathfrak{h}, \mathfrak{k} \in \mathcal{H}\) such that for almost every \(\mu\) and every \(\mathfrak{l} \in H_\mu\) we have
@@ -344,6 +344,7 @@ For the precise statement please see Lemma~\ref{lem:4.20}. Of course, this prope
 
 We will prove this with the help of strongly separated halfspaces. We will first consider the irreducible case and show that then \(\mathcal{H} = \mathcal{H}'\) using an infinite sequence of strongly separated halfspaces in \(\mathcal{H}'\). In the reducible case, we will apply the same reasoning on each irreducible factor separately. This leads to the product decomposition
 
+For both propositions, the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}) will be vital.
 % \subsubsection*{Towards the proof of Proposition~\ref{prop:4.17}}
 
 % As stated above, we will decompose the pocset of halfspaces \(\mathcal{H}\) into two sets of pairwise transverse halfspaces. This leads to the desired product decomposition. First, we need another definition:
@@ -380,7 +381,7 @@ As stated above, we will try to find a contradiction to the Flipping Lemma (Theo
 
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
   \label{lem:4.18}
-  Let \(X = X_1 \times \dots \times X_n\) be the decomposition of \(X\) into irreducible factors and \(\mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n\) the associated decomposition of halfspaces. If \(H_\mu \cap \mathcal{H}_i\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}) for every \(i\), then \(H_\mu^+\) satisfies the descending chain condition.
+  Let \(X = X_1 \times \dots \times X_n\) be the decomposition of \(X\) into irreducible factors and \(\mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n\) the associated decomposition of halfspaces. If \(H_\mu \cap \mathcal{H}_i\) contains strongly separated halfspaces considered as a subset of \(\mathcal{H}_i\) (c.\,f.~Definition~\ref{defin:strong-sep}) for every \(i\), then \(H_\mu^+\) satisfies the descending chain condition.
 \end{lemma}
 
 \begin{proof}
@@ -452,20 +453,20 @@ As stated above, we will try to find a contradiction to the Flipping Lemma (Theo
 \end{lemma}
 
 \begin{proof}
-  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply Lemma~\ref{lem:4.19} to find two strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
+  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply Lemma~\ref{lem:4.19} to find two strongly separated halfspaces \(\mathfrak{h}_2 \subset \mathfrak{h}_3\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5.
   \]
-  Since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, by the Lemma~\ref{lem:strongly-sep}, the above halfspaces are pairwise strongly separated.
+  Since \(\mathfrak{h}_2\) and \(\mathfrak{h}_3\) are strongly separated, by Lemma~\ref{lem:strongly-sep}, the above halfspaces are pairwise strongly separated.
 
   We would like to show that \(\mathfrak{h}_0 \subset \mathfrak{l} \subset \mathfrak{h}_5\) for each \(\mathfrak{l} \in H_{\mu_i}\) and every \(i\). This is in fact already true for every \(\mathfrak{l} \in H_{\mu_i} \cap H_{\mu_0}\). By assumption, we know that the intersection is not empty and we fix a \(\mathfrak{l}_i \in H_{\mu_i} \cap H_{\mu_0}\) for every \(i\).
 
   Now, for every \(\mathfrak{l} \in H_{\mu_i}\), we see that \(\mathfrak{l}\) can be parallel to at most one \(\mathfrak{h}_i\), since they are pairwise strongly separated. We will consider the following cases:
   \begin{description}
   \item[Case 1:] If \(\mathfrak{l}\) is transverse to any \(\mathfrak{h}_i\), where \(1 \leq i \leq 4\), we are done, because in this case \(\mathfrak{l}\) is parallel to \(\mathfrak{h}_0\) and \(\mathfrak{h}_5\).
-  \item[Case 2:] Assume that \(\mathfrak{l}\) were transverse to \(\mathfrak{h}_0\). We will see that this is impossible. In this case it is parallel to \(\mathfrak{h}_1\) and we consider the following two subcases:
+  \item[Case 2:] Assume that \(\mathfrak{l}\) is transverse to \(\mathfrak{h}_0\). We will see that this is impossible. In this case it is parallel to \(\mathfrak{h}_1\) and we consider the following two subcases:
     \begin{itemize}
-    \item We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) were either \(\mathfrak{l}\) or its complement. In either case, we would have \(\mathfrak{l}', \mathfrak{l}_i \in H_{\mu_i}\) and thus the same were also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen.
+    \item We could have the chain \(\mathfrak{l}' \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{l}_i\), where \(\mathfrak{l}'\) is either \(\mathfrak{l}\) or its complement. In either case, we have \(\mathfrak{l}', \mathfrak{l}_i \in H_{\mu_i}\) and thus the same is also true for the two enclosed halfspaces. However, \(\mathfrak{h}_1\) and \(\mathfrak{h}_2\) are strongly separated and \(H_{\mu_i}\) does not contain pairs of strongly separated halfspace, so this cannot happen.
     \item The only other possibility is where \(\mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{l}'\), but then \(\mathfrak{h}_0\) cannot be transverse to \(\mathfrak{l}\). 
     \end{itemize}
     Thus, \(\mathfrak{l}\) can never be transverse to \(\mathfrak{h}_0\). 
@@ -483,7 +484,7 @@ As stated above, we will try to find a contradiction to the Flipping Lemma (Theo
 
   Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a \(\nu_0 \in B_0\) such that \(\Gamma \nu_0 \subset B_0\). 
 
-  We fix an \(\mathfrak{l} \in H_{\nu_0}\). We know that \(g\nu_0 \in B_0\). Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). Theorem~\ref{thm:cs-flipping} then finishes the proof in the irreducible case.
+  We fix an \(\mathfrak{l} \in H_{\nu_0}\). We know that \(g\nu_0 \in B_0\). Hence, we have \(\mathfrak{h} \subset g\mathfrak{l} \subset \mathfrak{k}\) for all \(g \in \Gamma\). However, then \(\mathfrak{l}^\ast \not \subset g\mathfrak{l}\) for all \(g \in \Gamma\), because \(\mathfrak{k}\) cannot contain both \(\mathfrak{l}\) and \(\mathfrak{l}^\ast\). The Flipping Lemma (Theorem~\ref{thm:cs-flipping}) then finishes the proof.
 \end{proof}
 
 \subsubsection*{Towards the proof of Proposition~\ref{prop:f-3.32}}
@@ -544,7 +545,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \[
       H_{g\nu} = gH_\nu = H_{g\nu} = H_{\mu_0} = H_\nu
     \]
-    for every \(g \in \Gamma\). The set \(H_\nu\) is a pocset that is additionally closed under involution. By Lemma~\ref{lem:4.6}, we can apply Proposition~\ref{prop:f-3.32}. Hence, either \(\mathcal{H} = H_\mu\) or \(X = X' \times X''\), where \(X'\) has \(H_\mu\) as its pocset of halfspaces. In both cases, the irreducible factors of \(X\) would contain an interval, since \(X(H_\mu)\) is an interval by Lemma~\ref{lem:interval}. However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that the \(\Gamma\)-action is non-elementary.
+    for every \(g \in \Gamma\). Hence, \(H_\nu\) is \(\Gamma\)-invariant. The set \(H_\nu\) is additionally closed under involution. By Lemma~\ref{lem:4.6}, we can apply Proposition~\ref{prop:f-3.32}. Hence, either \(\mathcal{H} = H_\mu\) or \(X = X' \times X''\), where \(X'\) has \(H_\mu\) as its pocset of halfspaces. In both cases, the irreducible factors of \(X\) would contain an interval, since \(X'=X(H_\mu)\) is an interval by Lemma~\ref{lem:interval}. However, by Corollary~\ref{cor:f-3.21}, this contradicts the fact that the \(\Gamma\)-action is non-elementary.
   \item[Case \(\vartheta(\mathcal{E})=0\):] In this case we have \(H_\mu \neq H_\nu\) for almost all \(\mu\) and \(\nu\). We decompose \(X\) into its irreducible factors
     \[
       X = X_1 \times \dots \times X_n
@@ -553,7 +554,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \[
       \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup H_n.
     \]
-    Furthermore, we denote by \(\Gamma_0 \leq \Gamma\) the finite index subgroup respecting this decomposition. Then \(\Gamma_0\) acts still non-elementary and essential on \(X\). We define the set
+    Furthermore, we denote by \(\Gamma_0 \leq \Gamma\) the finite index subgroup respecting this decomposition. Then \(\Gamma_0\) acts still non-elementary and essential on \(X\) (Lemma~\ref{lem:2.28}). We define the set
     \[
       \mathcal{S}_i \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}_i \times \mathcal{H}_i \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated in } \mathcal{H}_i\}.
     \]
@@ -573,7 +574,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \item[Case 2:] The value \(N_i = 0\) for at least one \(i\). Without loss of generality, we can assume \(N_1 = 0\). The space \(X_1\) is irreducible, \(H_{p_{1\ast}\mu} = H_\mu \cap \mathcal{H}_1\) does not contain pairs of strongly separated halfspaces. Furthermore, \(H_{p_{1\ast}\mu} \cap H_{p_{1\ast}\nu} = \varnothing\) for almost all \(\mu, \nu\). Hence, we can apply Proposition~\ref{prop:4.21} and find a contradiction to the fact that \(\Gamma_0\) is both essential and non-elementary.
     \end{description}
   \end{description}
-  Hence, we see that \(H_\mu \cap H_\nu\) cannot be infinite. Thus, we have the map
+  We see that \(H_\mu \cap H_\nu\) cannot be infinite. Thus, we have the map
   \begin{align*}
     \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) & \to \operatorname{Pot}_f(\mathcal{H}),\\
     (\mu,\nu) &\mapsto H_\mu \cap H_\nu,
