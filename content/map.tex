@@ -336,7 +336,7 @@ For the precise statement please see Lemma~\ref{lem:4.20}. Of course, this prope
   \label{prop:f-3.32}
   Assume we have an essential and non-elementary action of \(\Gamma\) on \(X\), and \(\Gamma_0 \leq \Gamma\) of finite index. If \(\mathcal{H}' \subset \mathcal{H}\) is a non-empty sub-pocset such that
   \begin{itemize}
-  \item \(\Gamma_0 \cdot \mathcal{H}' = \mathcal{H}'\), and
+  \item \(\mathcal{H}'\) is \(\Gamma_0\)-invariant, and
   \item if \(\mathfrak{h}, \mathfrak{h}' \in \mathcal{H}'\) with \(\mathfrak{h} \subset \mathfrak{h}'\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{h}'\), then \(\mathfrak{k} \in \mathcal{H}'\),
   \end{itemize}
   then either \(\mathcal{H}' = \mathcal{H}\) or \(X = X' \times X''\) and \(\mathcal{H}'\) is the halfspace structure for \(X'\).
@@ -492,23 +492,19 @@ As stated above, we will try to find a contradiction to the Flipping Lemma (Theo
   \label{lem:f-3.31}
   Suppose that \(X\) is irreducible with a non-elementary and essential action of the group \(\Gamma\). Any non-empty sub-pocset \(\mathcal{H}' \subset  \mathcal{H}\) satisfying the following properties must be equal to \(\mathcal{H}\):
   \begin{itemize}
-  \item \(\Gamma \cdot \mathcal{H}' = \mathcal{H}'\), and
+  \item \(\mathcal{H}'\) is \(\Gamma\)-invariant, and
   \item if \(\mathfrak{h}, \mathfrak{h}' \in \mathcal{H}'\) with \(\mathfrak{h} \subset \mathfrak{h}'\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{h}'\), then \(\mathfrak{k} \in \mathcal{H}'\).
   \end{itemize}
 \end{lemma}
 
 \begin{proof}
-  Let \(\mathfrak{h}_0 \in \mathcal{H}'\). By Proposition~\ref{prop:cs-5.1}, we find \(\mathfrak{k}, \mathfrak{l} \in \mathcal{H}\) such that \(\mathfrak{k}\) and \(\mathfrak{l}\) are strongly separated and we have
+  Let \(\mathfrak{h} \in \mathcal{H}'\). By Proposition~\ref{prop:cs-5.1}, we find \(\mathfrak{k}, \mathfrak{l} \in \mathcal{H}\) such that \(\mathfrak{k}\) and \(\mathfrak{l}\) are strongly separated and we have
   \[
-    \mathfrak{k} \subset \mathfrak{h}_0 \subset \mathfrak{l}.
+    \mathfrak{k} \subset \mathfrak{h} \subset \mathfrak{l}.
   \]
-  By the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}), we find \(g \in \Gamma\) such that \(g\mathfrak{l} \subsetneq \mathfrak{k}\). By Lemma~\ref{lem:strongly-sep}, \(g\mathfrak{h}_0\) and \(\mathfrak{l}\) are. Then, \(g^2\mathfrak{h}_0\) and \(g\mathfrak{l}\) are strongly separated, too. And lastly, we obtain that \(g^2\mathfrak{h}_0\) and \(\mathfrak{h}_0\) are strongly separated. With this in mind we define the sequence
-  \[
-    \dots \subset \mathfrak{h}_{-2} \subset \mathfrak{h}_{-1} \subset \mathfrak{h} \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \dots
-  \]
-  where \(\mathfrak{h}_{-n} = g^{2n}\mathfrak{h}_0\) and \(\mathfrak{h}_n = g^{-2n}\mathfrak{h}_0\) for each \(n \in \N\). By the previous observations, the elements of the sequence are pairwise strongly separated. Additionally, we have \(\mathfrak{h}_i \in \mathcal{H}'\) for every \(i \in \Z\), since \(\mathfrak{H}'\) is \(\Gamma\)-invariant.
-
-  Now, let \(\mathfrak{m} \in \mathcal{H}\) be any halfspace. Then \(\mathfrak{m}\) is transverse to at most one \(\mathfrak{h}_i\). However, this implies that either \(\mathfrak{m}\) or \(\mathfrak{m}^\ast\) is comparable to the other elements of the sequence and hence, we must find \(i \in \Z\) such that \(\mathfrak{h}_n \subset \mathfrak{m}' \subset \mathfrak{h}_{n+1}\) where \(\mathfrak{m}'\) is either \(\mathfrak{m}\) or \(\mathfrak{m}^\ast\). By assumption, \(\mathfrak{m}'\) lies in \(\mathcal{H}'\) and because \(\mathcal{H}'\) is closed under involution the same is true for \(\mathfrak{m}\).
+  By the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}), we find \(g \in \Gamma\) such that \(g\mathfrak{l} \subsetneq \mathfrak{k}\). By Lemma~\ref{lem:strongly-sep}, \(g\mathfrak{h}\) and \(\mathfrak{l}\) are. Then, \(g^2\mathfrak{h}\) and \(g\mathfrak{l}\) are strongly separated, too. And lastly, we obtain that \(\mathfrak{h}'\coloneqq g^2\mathfrak{h}\) and \(\mathfrak{h}\) are strongly separated. Additionally, we note that \(\mathfrak{h}' \in \mathcal{H}'\), since \(\mathcal{H}'\) is \(\Gamma\)-invariant.
+  
+  Now, let \(\mathfrak{m} \in \mathcal{H}\) be any halfspace. Then \(\mathfrak{m}\) is transverse to at most one of the two halfspaces \(\mathfrak{h}\) and \(\mathfrak{h}'\). Without loss of generality, we assume that \(\mathfrak{m}\) is parallel to \(\mathfrak{h}\). We have four possible cases: \(\mathfrak{m} \subset \mathfrak{h}\), \(\mathfrak{m}^\ast \subset \mathfrak{h}\), \(\mathfrak{h} \subset \mathfrak{m}\) or \(\mathfrak{h} \subset \mathfrak{m}^\ast\). However, in all of these cases, we can use the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}) to enclose \(\mathfrak{m}\) or \(\mathfrak{m}^\ast\) between two elements of \(\mathcal{H}'\). Hence, by assumption, we have \(\mathfrak{m} \in \mathcal{H}'\) or \(\mathfrak{m}^\ast \in \mathcal{H}'\). Since \(\mathcal{H}'\) is closed under involution, this finishes the proof.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:f-3.32}]
@@ -516,7 +512,7 @@ As stated above, we will try to find a contradiction to the Flipping Lemma (Theo
   \[
     \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n
   \]
-  the decomposition into sets of pairwise transverse halfspaces corresponding to the irreducible decomposition. By Lemma~\ref{lem:2.28}, we can assume without loss of generality that \(\Gamma_0\) preserves this decomposition. Then we can apply Lemma~\ref{lem:f-3.31} on each of the sets \(\mathcal{H}' \cap \mathcal{H}_i\) considered as subsets of the pocsets \(\mathcal{H}_i\). Then the intersection is either empty, or we have \(\mathcal{H}' \cap \mathcal{H}_i = \mathcal{H}_i\). With this we see that \(X\) decomposes as the desired product.
+  be the decomposition into sets of pairwise transverse halfspaces corresponding to the irreducible decomposition. By Lemma~\ref{lem:2.28}, we can assume without loss of generality that \(\Gamma_0\) preserves this decomposition. Then we can apply Lemma~\ref{lem:f-3.31} on each of the sets \(\mathcal{H}' \cap \mathcal{H}_i\) considered as subsets of the pocsets \(\mathcal{H}_i\). Then the intersection is either empty, or we have \(\mathcal{H}' \cap \mathcal{H}_i = \mathcal{H}_i\). With this we see that \(X\) decomposes as the desired product.
 \end{proof}
 
 \subsection{The main theorem}
