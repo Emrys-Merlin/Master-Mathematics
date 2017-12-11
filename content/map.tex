@@ -13,7 +13,7 @@ In this section we will construct the actual boundary map first assuming that th
 \end{lemma}
 
 \begin{proof}
-  By Corollary~\ref{cor:p(x)}, we have a measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\) which is \(\Gamma\)-equivariant almost everywhere. Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). We will first prove that if \(H_\mu = \varnothing\), then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
+  By Corollary~\ref{cor:p(x)}, we have a measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\) which is \(\Gamma\)-equi\-variant almost everywhere. Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). We will first prove that if \(H_\mu = \varnothing\), then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
 
   By assumption, the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\) has full measure. Since \(\psi\) is only well-defined up to a null set, we can concatenate it with the map
   \begin{align*}
@@ -566,7 +566,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
       \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
       \mu &\mapsto |(H_\mu \times H_\mu) \cap \mathcal{S}_i|,
     \end{align*}
-    which is, by the above observation, \(\Gamma_0\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep} together with Lemma~\ref{lem:proj-weight}). Hence, it is essentially constant (Lemma~\ref{lem:4.3}). We have two cases depending on the essential values \(N_i\).
+    which is, by the above observation, \(\Gamma_0\)-invariant and also measurable (c.\,f.\ Lemma\ \ref{lem:measurable-str-sep} together with Lemma\ \ref{lem:proj-weight}). Hence, it is essentially constant (Lemma~\ref{lem:4.3}). We have two cases depending on the essential values \(N_i\).
     \begin{description}
     \item[Case 1:] The value \(N_i > 0\) for all \(i\), i.\,e.\ there are strongly separated hyperplanes in all \(H_\mu \cap \mathcal{H}_i\). Hence, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the sets \(H_\mu^+ \cap H_\nu\) contain terminal elements whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
       \begin{align*}

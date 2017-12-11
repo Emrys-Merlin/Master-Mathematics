@@ -284,7 +284,7 @@ Unless noted otherwise, \(\Gamma\) will denote a countable, discrete group.
 
 \begin{defin}[(Doubly) ergodic action]
   \label{defin:ergodic}
-  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure class preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ the Lemma~\ref{lem:def-ergodic}):
+  Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure class preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ Lemma~\ref{lem:def-ergodic}):
   \begin{enumerate}
   \item for every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\), or
   \item every measurable \(\Gamma\)-invariant map \(f\colon B \to \R\) is essentially constant.
@@ -328,7 +328,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   \[
     f^{-1}(E) = f^{-1}(g^{-1}E) = g^{-1}f^{-1}(E)
   \]
-  because of the equivariance. Thus, by ergodicity on \(A\) we have \(\mu(f^{-1}(E))= 0\) or \(\mu(f^{-1}(E)) = 1\). However, \(\mu(f^{-1}(E))\) is exactly the definition of \(f_\ast\mu(E)\).
+  because of the equivariance. Thus, by ergodicity on \(A\) we have \(\mu(f^{-1}(E))\in\{0,1\}\). However, \(\mu(f^{-1}(E))\) is exactly the definition of \(f_\ast\mu(E)\).
 \end{proof}
 
 \begin{defin}
@@ -434,7 +434,7 @@ Finally, we are in a position to define \emph{strong \(\Gamma\)-boundaries} for 
 
 The first main application consists in Corollary~\ref{cor:coeff-ergodic}, namely that ergodicity with coefficients implies ergodicity in the regular sense. We will provide a few applications of this.
 
-The second main application consists in Theorem~\ref{thm:p(x)} and Corollary~\ref{cor:p(x)}, in which we construct a measurable \(\Gamma\)-equivariant map  \(\psi\colon B \to \mathcal{P}(\bar X)\), where \(B\) is a strong \(\Gamma\)-boundary and \(\mathcal{P}(\bar X)\) is the set of all regular probability measures on \(\bar X\). This is the only place in the entire proof, where we use the amenability of the group action.
+The second main application consists in Theorem~\ref{thm:p(x)} and Corollary~\ref{cor:p(x)}, in which we construct a measurable \(\Gamma\)-equivariant map  \(\psi\colon B \to \mathcal{P}(\bar X)\), where \(B\) is a strong \(\Gamma\)-bound\-ary and \(\mathcal{P}(\bar X)\) is the set of all regular probability measures on \(\bar X\). This is the only place in the entire proof, where we use the amenability of the group action.
 
 
 \subsubsection{Doubly ergodic group action with coefficients}
@@ -512,7 +512,7 @@ Here we will strengthen the notion of ergodicity. The main application is Coroll
 \end{cor}
 
 \begin{proof}
-  By Corollary~\ref{cor:halfspace-countable}, we know that \(\mathcal{H}\) is countable. We choose an enumeration \((\mathfrak{h}_n)_{n \in \N}\) of \(\mathcal{H}\) and for each \(n \in \N\) we define
+  By Corollary~\ref{cor:halfspace-countable}, we know that \(\mathcal{H}\) is countable. We choose an enumeration \(\mathfrak{h}_n\) of \(\mathcal{H}\) and for each \(n \in \N\) we define
   \[
     \mathcal{H}_n \coloneqq \{\mathfrak{h}_1, \dots, \mathfrak{h}_n\}
   \]
@@ -538,7 +538,7 @@ In the rest of the section, we will use the following notation, unless stated ot
 We also assume that \(\Gamma\) acts on \(S\) preserving measure classes.
 
 \begin{defin}[Borel field]
-  For each \(s \in S\) consider a non-empty convex weak\(\ast\)-compact subspace \(A_s \subset E^\ast_1\). Then \((A_s)_{s \in S}\) will be called a \emph{Borel field of compact convex sets} if \(\{(s, \lambda) \mid \lambda \in A_s\}\) is a Borel subset of \(S \times E^\ast_1\).  
+  For each \(s \in S\) consider a non-empty convex weak\(\ast\)-com\-pact subspace \(A_s \subset E^\ast_1\). Then \((A_s)_{s \in S}\) will be called a \emph{Borel field of compact convex sets} if \(\{(s, \lambda) \mid \lambda \in A_s\}\) is a Borel subset of \(S \times E^\ast_1\).  
 \end{defin}
 
 \begin{defin}[(Left) cocycle]
@@ -577,7 +577,7 @@ In this paragraph we will plug the previous two notions, namely \emph{ergodicity
 
 \begin{bsp}[Furstenberg-Poisson boundary]
   \label{bsp:poisson}
-  In his paper, \textcite[Theorem 3]{MR2006560} showed that the Furstenberg-Poisson boundary of any spread out, non-degenerate, symmetric random walk on a locally compact, second countable group \(\Gamma\) is a strong \(\Gamma\)-boundary. A measure \(\mu\) on \(\Gamma\) is called \emph{spread out} (or \emph{étalée}) if there exists a convolution power \(\mu^{\ast n}\) which is not singular with respect to the Haar measure class on \(\Gamma\), i.\,e.\ there is no partition \(\Gamma = A \sqcup B\) such that \(\mu^{\ast n}\) is zero on all measurable subsets of \(A\) and the Haar measure class is zero on all measurable subsets of \(B\). The measure is called \emph{non-degenerate} if the minimal closed semigroup \(S \subset \Gamma\) with \(\mu(S) = 1\) is all of \(\Gamma\). A measure is called \emph{symmetric}, if \(\mu = f_\ast \mu\), where \(f\) is the continuous map given by inversion on \(\Gamma\). A random walk is called spread out, non-degenerate or symmetric if the same is true for the measure \(\mu\) of the associated transition probability. For details please refer to~\cite[Section 3]{MR2006560}.
+  In his paper, \textcite[Theorem 3]{MR2006560} showed that the Furstenberg-Poisson boundary of any spread out, non-degenerate, symmetric random walk on a locally compact, second countable group \(\Gamma\) is a strong \(\Gamma\)\-boundary. A measure \(\mu\) on \(\Gamma\) is called \emph{spread out} (or \emph{étalée}) if there exists a convolution power \(\mu^{\ast n}\) which is not singular with respect to the Haar measure class on \(\Gamma\), i.\,e.\ there is no partition \(\Gamma = A \sqcup B\) such that \(\mu^{\ast n}\) is zero on all measurable subsets of \(A\) and the Haar measure class is zero on all measurable subsets of \(B\). The measure is called \emph{non-degenerate} if the minimal closed semigroup \(S \subset \Gamma\) with \(\mu(S) = 1\) is all of \(\Gamma\). A measure is called \emph{symmetric}, if \(\mu = f_\ast \mu\), where \(f\) is the continuous map given by inversion on \(\Gamma\). A random walk is called spread out, non-degenerate or symmetric if the same is true for the measure \(\mu\) of the associated transition probability. For details please refer to~\cite[Section 3]{MR2006560}.
 
   If \(\Gamma\) is a free group, then the Furstenberg-Poisson boundary is isomorphic to the visual (and hence, to the Roller) boundary of the Cayley tree of \(\Gamma\). More generally, \textcite{MR1815698} showed that if the first moment of the transition measure is finite and it is non-degenerate, then for every hyperbolic group the Gromov boundary is equivalent to the Furstenberg-Poisson boundary.
 \end{bsp}
@@ -596,7 +596,7 @@ In the following, we will need that strong \(\Gamma\)-boundaries are well behave
 
 \begin{thm}
   \label{thm:p(x)}
-  Let \((B, \Sigma, \vartheta)\) be a strong \(\Gamma\)-boundary and \(X\) a compact metric space with a continuous \(\Gamma\)-action. Then there exists a measurable map \(\phi \colon B \to \mathcal{P}(X)\) which is \(\Gamma\)-equivariant almost everywhere and where \(\mathcal{P}(X)\) is the set of all regular probability measures on \(X\).
+  Let \((B, \Sigma, \vartheta)\) be a strong \(\Gamma\)-boundary and \(X\) a compact metric space with a continuous \(\Gamma\)-action. Then there exists a measurable map \(\phi \colon B \to \mathcal{P}(X)\) which is \(\Gamma\)-equi\-variant almost everywhere and where \(\mathcal{P}(X)\) is the set of all regular probability measures on \(X\).
 \end{thm}
 
 \begin{proof}
@@ -611,7 +611,7 @@ In the following, we will need that strong \(\Gamma\)-boundaries are well behave
                  (g, b) &\mapsto g.
   \end{align*}
   This is a left cocycle.
-  Since \(X\) is compact, we have \(C(X) = C_0(X)\) (c.\,f.\ Definition~\ref{def:vanishing}). Thus, using the Riesz-Markow representation theorem (Theorem~\ref{thm:riesz-markow}), we obtain \(C(X)^\ast \cong M_{s}(X)\) (where \(M_s(X)\) is the set of all regular signed measures on \(X\)). By Corollary~\ref{cor:banach-alaoglu}, we know that \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of \(M_s(X)\). Furthermore, \(\mathcal{P}(X)\) is convex and non-empty (take any normalized Dirac measure) and we set \(A_b \coloneqq \mathcal{P}(X)\) for all \(b \in B\). This is in fact an \(\alpha\)-invariant Borel field. Since \(B\) is a strong \(\Gamma\)-boundary, the \(\Gamma\)-action is amenable and we obtain a measurable map \(\phi \colon B \to C(X)^\ast_1\) such that \(\phi(b) \in A_b = \mathcal{P}(X)\), i.\,e.\ \(\phi \colon B \to \mathcal{P}(X)\) (which is still measurable). Lastly, we have
+  Since \(X\) is compact, we have \(C(X) = C_0(X)\) (c.\,f.\ Definition~\ref{def:vanishing}). Thus, using the Riesz-Markow representation theorem (Theorem~\ref{thm:riesz-markow}), we obtain that \(C(X)^\ast\) is isomorphic to \(M_{s}(X)\) the set of all regular signed measures on \(X\). By Corollary~\ref{cor:banach-alaoglu}, we know that \(\mathcal{P}(X)\) is weak\(\ast\)-compact and contained in the unit ball of \(M_s(X)\). Furthermore, \(\mathcal{P}(X)\) is convex and non-empty (take any normalized Dirac measure) and we set \(A_b \coloneqq \mathcal{P}(X)\) for all \(b \in B\). This is in fact an \(\alpha\)-invariant Borel field. Since \(B\) is a strong \(\Gamma\)-boundary, the \(\Gamma\)-action is amenable and we obtain a measurable map \(\phi \colon B \to C(X)^\ast_1\) such that \(\phi(b) \in A_b = \mathcal{P}(X)\), i.\,e.\ \(\phi \colon B \to \mathcal{P}(X)\) (which is still measurable). Lastly, we have
   \begin{align*}
     \phi(gb) & = \alpha^\ast(g, b) \phi(b)\\
                & = \left(\alpha(g,b)^{-1}\right)^\ast \phi(b)\\

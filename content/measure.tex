@@ -357,8 +357,9 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
 \begin{proof}
   We will see that the map is even continuous. Take finite subsets \(F,G \subset \mathcal{H}\) and consider the following preimage
   \begin{align*}
-    f^{-1}(\mathcal{C}(F, G))  & = \{(\alpha, \beta) \in \bar X \times \bar X \mid F \subset \mathcal{H}(\alpha, \beta) \} \cap \{(\alpha, \beta) \in \bar X \times \bar X  \mid G \cap \mathcal{H}(\alpha, \beta) = \varnothing\}\\
-                                 &\eqqcolon S \cap N.
+    f^{-1}(\mathcal{C}(F, G))   = & \{(\alpha, \beta) \in \bar X \times \bar X \mid F \subset \mathcal{H}(\alpha, \beta) \}\\
+    &\ \cap \{(\alpha, \beta) \in \bar X \times \bar X  \mid G \cap \mathcal{H}(\alpha, \beta) = \varnothing\}\\
+                                 \eqqcolon & S \cap N.
   \end{align*}
   We will consider \(S\) and \(N\) separately:
   \begin{align*}
@@ -394,11 +395,11 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
   \end{alignat*}
   The map \(f\) is continuous and hence measurable. The map \(g\) is measurable, because the map on each factor is measurable by Lemma~\ref{lem:measurable-mu}. The map \(j\) is measurable by Lemma~\ref{lem:measurable-countable}. We are left with \(h\). Consider the two finite subsets \(F, G \subset \mathcal{H}^2\). Then the preimage of the associated cylinder set is given by
   \begin{align*}
-    h^{-1}(\mathcal{C}(F,G)) & \coloneqq \{(H, K) \in \operatorname{Pot}(\mathcal{H})^2 \mid F \subset H \times K \wedge G \subset (H \times K)^c\\
-    & \wedge (\mathfrak{h}, \mathfrak{k}) \in H \times K \text{ is strongly separated}\}\\
-      & = \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in F} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)\\
-      & \cap \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in G} \mathcal{C}(\mathfrak{h})^c \times \operatorname{Pot}(\mathcal{H}) \cup \operatorname{Pot}(\mathcal{H}) \times \mathcal{C}(\mathfrak{k})^c \right)\\
-      & \cap \left( \bigcap_{\substack{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}^2\\\text{not str.\ sep.}}} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)^c,
+    h^{-1}(\mathcal{C}(F,G)) \coloneqq & \{(H, K) \in \operatorname{Pot}(\mathcal{H})^2 \mid F \subset H \times K \wedge G \subset (H \times K)^c\\
+    &\ \wedge (\mathfrak{h}, \mathfrak{k}) \in H \times K \text{ is strongly separated}\}\\
+    = & \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in F} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)\\
+      &\ \cap \left (\bigcap_{(\mathfrak{h},\mathfrak{k}) \in G} \mathcal{C}(\mathfrak{h})^c \times \operatorname{Pot}(\mathcal{H}) \cup \operatorname{Pot}(\mathcal{H}) \times \mathcal{C}(\mathfrak{k})^c \right)\\
+      &\ \cap \left( \bigcap_{\substack{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}^2\\\text{not str.\ sep.}}} \mathcal{C}(\mathfrak{h}) \times \mathcal{C}(\mathfrak{k})\right)^c,
   \end{align*}
   which is a countable union of measurable sets. Hence, our map is measurable as a composition of measurable maps.
 \end{proof}
@@ -422,16 +423,16 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
   Let \(F, G \subset A\) be two finite subsets. Then we have
   \begin{align*}
     f^{-1}(\mathcal{C}(F,G))
-    & = \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cap K \wedge G \subset H^c \cup K^c\} \\
-    & = \bigcap_{f \in F} \mathcal{C}(f) \times \mathcal{C}(f)\\
-    & \cap \bigcap_{g \in G} (\mathcal{C}(g)^c \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times \mathcal{C}(g)^c)
+    = & \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cap K \wedge G \subset H^c \cup K^c\} \\
+    = & \bigcap_{f \in F} \mathcal{C}(f) \times \mathcal{C}(f)\\
+    &\ \cap \bigcap_{g \in G} (\mathcal{C}(g)^c \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times \mathcal{C}(g)^c)
   \end{align*}
   and
   \begin{align*}
     g^{-1}(\mathcal{C}(F,G))
-    & = \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cup K \wedge G \subset H^c \cap K^c\} \\
-    & = \bigcap_{f \in F} (\mathcal{C}(f) \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times\mathcal{C}(f))\\
-    & \cap \bigcap_{g \in G} \mathcal{C}(g)^c \times \mathcal{C}(g)^c.
+     = & \{(H,K) \in \operatorname{Pot}(A)^2 \mid F \subset H \cup K \wedge G \subset H^c \cap K^c\} \\
+    = & \bigcap_{f \in F} (\mathcal{C}(f) \times \operatorname{Pot}(A) \cup \operatorname{Pot}(A) \times\mathcal{C}(f))\\
+    &\ \cap \bigcap_{g \in G} \mathcal{C}(g)^c \times \mathcal{C}(g)^c.
   \end{align*}
   Hence, both maps are measurable.
 \end{proof}
