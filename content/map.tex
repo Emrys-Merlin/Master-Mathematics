@@ -13,7 +13,7 @@ In this section we will construct the actual boundary map first assuming that th
 \end{lemma}
 
 \begin{proof}
-  By Corollary~\ref{cor:p(x)}, we have a measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\) which is \(\Gamma\)-equivariant almost everywhere. Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). We will first prove that if \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know, that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
+  By Corollary~\ref{cor:p(x)}, we have a measurable map \(\psi\colon B \to \mathcal{P}(\bar X)\) which is \(\Gamma\)-equivariant almost everywhere. Hence, we only need to find a map from \(\mathcal{P}(\bar X)\) to \(\bar X\). We will first prove that if \(H_\mu = \varnothing\) then \(H_\mu^+\) is an ultrafilter. Indeed, since \(\mathcal{H} = H_\mu^+ \sqcup H_\mu \sqcup H_\mu^-\) and \((H_\mu^+)^\ast = H_\mu^-\) (c.\,f.~Lemma~\ref{lem:4.6}), we have the choice condition. For the consistency condition we only need to know that \(\mathfrak{h} \subset \mathfrak{k}\) implies \(\mathcal{C}(\mathfrak{h}) \subset \mathcal{C}(\mathfrak{k})\) and hence \(\mu(\mathcal{C}(\mathfrak{h}))\leq \mu(\mathcal{C}(\mathfrak{k}))\).
 
   By assumption, the set \(\mathcal{E} \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid H_\mu = \varnothing\}\) has full measure. Since \(\psi\) is only well-defined up to a null set, we can concatenate it with the map
   \begin{align*}
@@ -35,7 +35,7 @@ We will now prove that any \(\phi\) as above only takes values in \(\partial X\)
 \begin{proof}
   Consider the map
   \begin{align*}
-    B & \to \N \cup \{\infty\}\\
+    B & \to \N \cup \{\infty\},\\
     x & \mapsto |\tau(\phi(x))|,
   \end{align*}
   which is measurable (Lemma~\ref{lem:tau}) and \(\Gamma\)-invariant (\(\tau\) was defined in Defintion~\ref{defin:tau}). By ergodicity it is essentially constant with essential value \(M\). If we show that \(M = 0\), then the image of \(\phi\) essentially contains only non-terminating ultrafilters and we are done.
@@ -110,7 +110,7 @@ For the two subcases to make sense, we need the following lemma:
 \subsubsection{The case \(|H_\mu \cap H_\nu| = 0\)}
 \label{sec:M=0}
 
-Here we will prove that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) cannot happen in our setting. More precisely, we will see that \(X\) could not be finite-dimensional. The precise statement is captured in the next proposition. It is the only result of this paragraph that will be used in the main proof of the theorem. The remainder of this paragraph is only necessary to understand the proof of this proposition.
+Here we will prove that \(|H_\mu| = \infty\) and \(|H_\mu \cap H_\nu| = 0\) for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\) cannot happen in our setting. More precisely, we will see that \(X\) cannot be finite-dimensional. The precise statement is captured in the next proposition. It is the only result of this paragraph that will be used in the main proof of the theorem. The remainder of this paragraph is only necessary to understand the proof of this proposition.
 
 Unless noted otherwise, \(X\) is a connected, locally countable, finite-dimensional CAT(0) cube complex and \(\Gamma\) a discrete, countable group.
 
@@ -163,7 +163,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
     \[
       A \coloneqq \min \{n_3 \in \N \mid (n_3, m_3) \in N_3\}
     \]
-    and see that for all \(n \geq A\) and any \(m \in \N\) we have \((n,m) \notin \N_2\) or in other words we have
+    and see that for all \(n \geq A\) and any \(m \in \N\) we have \((n,m) \notin \N_2\) or, in other words, we have
     \[
       \{(n,m) \in N_2 \mid n \geq A_3\} = \varnothing.
     \]
@@ -172,7 +172,7 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
     \[
       \mathfrak{k}_n \subset \mathfrak{h}_n \subset \mathfrak{h}_{n_3} \subset \mathfrak{k}_{m_3}.
     \]
-    This would imply that \(\mathfrak{h}_n \in H_\mu \cap H_\nu\), since it is enclosed in two halfspaces which lie in \(H_\nu\), however, we have \(H_\mu \cap H_\nu = \varnothing\). Hence, we define as before
+    This would imply that \(\mathfrak{h}_n \in H_\mu \cap H_\nu\), since it is enclosed in two halfspaces which lie in \(H_\nu\). However, we have \(H_\mu \cap H_\nu = \varnothing\). Hence, we define as before
     \[
       B \coloneqq \min \{n_3 \in \N \mid (n_3, m_3) \in N_3\}
     \]
@@ -188,9 +188,9 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 
 \begin{lemma}[{\cite[Lemma~4.13]{MR3509968}}]
   \label{lem:4.13}
-  Let \((\mu_i)_{i \in \N_0}\) be a sequence of probability measures in \(\mathcal{P}(\bar X)\) such that \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\) and such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then (up to switching \(i\) and \(j\)), any pair of measures \(\mu_i\) and \(\mu_j\) satisfies the following condition:
+  Let \((\mu_i)_{i \in \N_0}\) be a sequence of probability measures in \(\mathcal{P}(\bar X)\) such that \(H_{\mu_i} \cap H_{\mu_j} = \varnothing\) whenever \(i \neq j\) and such that for each \(i > 0\) there exists an infinite descending chain \(\mathfrak{h}_n^i \in H_{\mu_0}^+ \cap H_{\mu_i}\). Then, (up to switching \(i\) and \(j\)) any pair of measures \(\mu_i\) and \(\mu_j\) satisfies the following condition:
 
-  There exists \(C(i,j) \in \N\) such that for every \(n \geq C(i,j)\) there is an \(M_n \geq C(i,j)\) such that if \(m \geq M_n\) then \(\mathfrak{\hat h}^j_m \pitchfork \mathfrak{\hat h}^i_n\). 
+  There exists \(C(i,j) \in \N\) such that for every \(n \geq C(i,j)\) there is an \(M_n \geq C(i,j)\) such that if \(m \geq M_n\), then \(\mathfrak{\hat h}^j_m \pitchfork \mathfrak{\hat h}^i_n\). 
 \end{lemma}
 
 \begin{proof}
@@ -219,12 +219,16 @@ We will prove this proposition at the end of the paragraph. Our strategy is to c
 We did not dedicate a whole section to directed graphs as they are only necessary to understand the above mentioned proposition. For the main proof, in depth knowledge of this paragraph is not necessary. We will only need the technical result that every complete directed graph has a subgraph with the same vertex set that is strictly upper triangular (Lemma~\ref{lem:A.8}).
 
 \begin{defin}
-  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\), its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. This allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete} if it is complete as an undirected graph, i.\,e.\ each pair of vertices is joined by a single (undirected) edge. For each \(v \in V\) we will denote by \(o(v)\) the number of \emph{outgoing edges} and by \(i(v)\) the number of \emph{incoming edges}. A complete directed finite graph is \emph{strictly upper triangular} if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
+  A \emph{directed graph \(\mathcal{G}(V,E)\)} consists of two sets \(V\) and \(E\), its \emph{vertex set} and \emph{edge set} respectively and of two maps \(s, t \colon E \to V\) associating to each edge its source and target vertex respectively. In our case there are no parallel edges allowed (antiparallel edges may occur) and we will not allow loops. This allows us to think of \(E \subset V \times V\) and we will prefer writing \(\overline{vw} \in E\) for two vertices \(v,w \in V\). This has the further advantage of making the maps \(s\) and \(t\) obsolete. We will call \(\mathcal{G}\) \emph{complete} if it is complete as an undirected graph, i.\,e.\ each pair of vertices is joined by a single (undirected) edge. For each \(v \in V\) we will denote by \(o(v)\) the number of \emph{outgoing edges} and by \(i(v)\) the number of \emph{incoming edges}. A complete directed finite graph is \emph{strictly upper triangular} if there exists an enumeration \(V = \{v_1, \dots, v_D\}\), such that for all \(j = 1, \dots, D\) we have
   \begin{align*}
     o(v_j) & = D - j\quad \text{and}\\
     i(v_j) & = j - 1.
   \end{align*}
 \end{defin}
+
+\begin{rem}
+  The name \enquote{strictly upper triangular} stems from the fact that the transition matrix for the graph with the given enumeration of the vertices is strictly upper triangular.
+\end{rem}
 
 \begin{lemma}[{\cite[Lemma~A.6]{MR3509968}}]
   \label{lem:A.6}
@@ -232,7 +236,7 @@ We did not dedicate a whole section to directed graphs as they are only necessar
 \end{lemma}
 
 \begin{proof}
-  Since \(\mathcal{G}\) is complete we have \(o(v) + i(v) \geq D - 1\) and summing over all vertices we obtain
+  Since \(\mathcal{G}\) is complete we have \(o(v) + i(v) \geq D - 1\) for every \(v \in V\) and summing over all vertices we obtain
   \[
     \sum_{v \in V} o(v) + i(v) \geq D(D-1).
   \]
@@ -253,7 +257,7 @@ We did not dedicate a whole section to directed graphs as they are only necessar
 
 \begin{lemma}[{\cite[Lemma~A.8]{MR3509968}}]
   \label{lem:A.8}
-  Let \(\mathcal{G} = \mathcal{G}(V,E)\) be a (not necessarily finite) complete directed graph and \(D \in \N\). If \(|V| \geq 5^D\), there exist \(D\) vertices \(v_1, \dots, v_D\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete, directed and strictly upper triangular.
+  Let \(\mathcal{G} = \mathcal{G}(V,E)\) be a (not necessarily finite) complete, directed graph and \(D \in \N\). If \(|V| \geq 5^D\), there exist \(D\) vertices \(v_1, \dots, v_D\) and a subset \(E_D \subset E\) such that \(\mathcal{G}(\{v_1, \dots, v_D\}, E_D)\) is complete, directed and strictly upper triangular.
 \end{lemma}
 
 \begin{proof}
@@ -293,14 +297,14 @@ We did not dedicate a whole section to directed graphs as they are only necessar
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:4.10}]
-  Since \(H_\mu \cap H_\nu^+\) has no minimal elements for almost all \(\mu, \nu\), we can find a sequence \((\mu_i)_{i \in I}\) such that \(H_{\mu_0}^+ \cap H_{\mu_i}\) contains an infinite descending chain, which we denote by \((\mathfrak{h}^i_n)_{n \in \N}\). Thus we can apply Lemma~\ref{lem:4.13} and find \(C(i,j) \in \N\) such that for all \(n \geq C(i,j)\) there is an \(M \geq c(i,j)\) such that if \(m > M_n\) we have \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) (after possibly switching \(i\) and \(j\)).
+  Since \(H_\mu \cap H_\nu^+\) has no minimal elements for almost all \(\mu, \nu\), we can find a sequence \((\mu_i)_{i \in I}\) such that \(H_{\mu_0}^+ \cap H_{\mu_i}\) contains an infinite descending chain, which we denote by \((\mathfrak{h}^i_n)_{n \in \N}\). Thus we can apply Lemma~\ref{lem:4.13} and find \(C(i,j) \in \N\) such that for all \(n \geq C(i,j)\) there is an \(M \geq c(i,j)\) such that if \(m > M_n\), we have \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) (after possibly switching \(i\) and \(j\)).
 
-  Using this, we can construct the following graph: \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the above mentioned \(C(i,j)\) exists. With this \(\mathcal{G}\) becomes a directed graph and since the searched \(C(i,j)\) exists either for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E)\) becomes strictly upper triangular. In this case this implies that for each \(1\leq i < j \leq D\) there exists an above \(C(i,j)\). We set
+  Using this, we can construct the graph \(\mathcal{G} \coloneqq \mathcal{G}(V,E)\) with \(V \coloneqq \{\mu_i \mid i \in I\}\) and an edge from \(\mu_i\) to \(\mu_j\) if and only if the above mentioned \(C(i,j)\) exists. With this, \(\mathcal{G}\) becomes a directed graph and since the \(C(i,j)\) exists for \((i,j)\) or \((j,i)\) it is complete. Hence, we can apply Lemma~\ref{lem:A.8} using any \(D \in \N\) and find (after relabeling) \(\mu_1, \dots, \mu_D \in V\) such that we find a subset of edges \(E_D\) such that \(\mathcal{G}(V,E_D)\) becomes strictly upper triangular. This implies that for each \(1\leq i < j \leq D\) there exists \(C(i,j)\) without needing to switch \(i\) and \(j\). We set
   \begin{align*}
     C &\coloneqq \max\{C(i,j) \mid 1 \leq i < j \leq D\} \quad \text{and}\\
     M &\coloneqq \max\{M_C(i,j) \mid 1 \leq i < j \leq D\}.
   \end{align*}
-  Fixing \(n = C\) and for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\), this leads to a set of \(D\) transverse halfspaces. Since they intersect pairwise,  by Theorem~\ref{thm:common-intersection}, the common intersection is not empty. An element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence, this cube has at least dimension \(D\). Since \(D\) was chosen arbitrarily, \(X\) contains cubes of arbitrary dimension.
+  Fixing \(n = C\), for each \(m \geq M\) we have that \(\mathfrak{\hat h}_n^i \pitchfork \mathfrak{\hat h}_m^j\) for each \(1 \leq i < j \leq D\). Fixing \(m\), this leads to a set of \(D\) transverse halfspaces. Since they intersect pairwise,  by Theorem~\ref{thm:common-intersection}, the common intersection is not empty. An element in this intersection is in a cube, which has all these hyperplanes as midcubes. Hence, this cube has at least dimension \(D\). Since \(D\) was chosen arbitrarily, \(X\) contains cubes of arbitrary dimension.
 \end{proof}
 
 \subsubsection{The case \(|H_\mu \cap H_\nu| = \infty\)}
@@ -376,7 +380,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 
 \begin{lemma}[{\cite[Lemma~4.18]{MR3509968}}]
   \label{lem:4.18}
-  Let \(X = X_1 \times \dots \times X_n\) be the decomposition of \(X\) into irreducible factor and \(\mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n\) the associated decomposition of halfspaces. If \(H_\mu \cap \mathcal{H}_i\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}) for every \(i\), then \(H_\mu^+\) satisfies the descending chain condition.
+  Let \(X = X_1 \times \dots \times X_n\) be the decomposition of \(X\) into irreducible factors and \(\mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup \mathcal{H}_n\) the associated decomposition of halfspaces. If \(H_\mu \cap \mathcal{H}_i\) contains strongly separated halfspaces (c.\,f.~Definition~\ref{defin:strong-sep}) for every \(i\), then \(H_\mu^+\) satisfies the descending chain condition.
 \end{lemma}
 
 \begin{proof}
@@ -404,14 +408,14 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 \begin{proof}~\vspace{-6pt}
   \begin{enumerate}
   \item Assume that \(\mathfrak{m}\) is transverse to both \(\mathfrak{h}\) and \(\mathfrak{l}\). Then we would have
-    \begin{align*}
-      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^{\phantom{\ast}} & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
-      \mathfrak{m}^\ast \cap \mathfrak{k}^{\phantom{\ast}}  & \supset \mathfrak{m}^\ast \cap \mathfrak{h}^{\phantom{\ast}} \neq \varnothing,\\
-      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{l}^\ast \neq \varnothing\quad \text{and}\\
-      \mathfrak{m}^\ast \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^\ast \cap \mathfrak{l}^\ast \neq \varnothing.
-    \end{align*}
+    \begin{alignat*}{2}
+      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^{\phantom{\ast}} & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{h}^{\phantom{\ast}} &&\neq \varnothing,\\
+      \mathfrak{m}^\ast \cap \mathfrak{k}^{\phantom{\ast}}  & \supset \mathfrak{m}^\ast \cap \mathfrak{h}^{\phantom{\ast}} &&\neq \varnothing,\\
+      \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^{\phantom{\ast}} \cap \mathfrak{l}^\ast &&\neq \varnothing\quad \text{and}\\
+      \mathfrak{m}^\ast \cap \mathfrak{k}^\ast & \supset \mathfrak{m}^\ast \cap \mathfrak{l}^\ast &&\neq \varnothing.
+    \end{alignat*}
     Hence, \(\mathfrak{m}\) is transverse to \(\mathfrak{k}\). This contradicts the assumption that \((\mathfrak{h}, \mathfrak{k})\) or \((\mathfrak{k}, \mathfrak{l})\) are strongly separated.
-  \item If \((\mathfrak{h}, \mathfrak{k})\) are strongly separated and we have any \(\mathfrak{m} \in \mathcal{H}\). Then \(g^{-1}\mathfrak{m} \in \mathcal{H}\) and it is parallel to either \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, \(\mathfrak{m}\) is parallel to either \(g\mathfrak{h}\) or \(g\mathfrak{k}\). The opposite direction is analogous.
+  \item If \((\mathfrak{h}, \mathfrak{k})\) are strongly separated and we have any \(\mathfrak{m} \in \mathcal{H}\), then \(g^{-1}\mathfrak{m} \in \mathcal{H}\) and it is parallel to either \(\mathfrak{h}\) or \(\mathfrak{k}\). Hence, \(\mathfrak{m}\) is parallel to either \(g\mathfrak{h}\) or \(g\mathfrak{k}\). The opposite direction is analogous.
   \end{enumerate}
 \end{proof}
 
@@ -421,7 +425,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 \end{lemma}
 
 \begin{proof}
-  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition\ \ref{prop:cs-5.1} we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl} we find \(g \in \Gamma\) such that
+  Suppose that \(H_\mu\) does not contain strongly separated halfspaces. By Proposition\ \ref{prop:cs-5.1}, we find two strongly separated halfspaces \(\mathfrak{k}_i\) such that \(\mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2\). By Lemma~\ref{lem:cs-dsl}, we find \(g \in \Gamma\) such that
   % \[
   %   g\mathfrak{k}_1 \subset g\mathfrak{k}_2 \subset \mathfrak{k}_1 \subset \mathfrak{l} \subset \mathfrak{k}_2 \subset g^{-1}\mathfrak{k}_1 \subset g^{-1} \mathfrak{k}_2.
   % \]
@@ -475,7 +479,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
   \[
     H_{\mu_0} \cap H_\nu \neq \varnothing.
   \]
-  By Lemma~\ref{lem:4.20} we find two halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) for each hyperplane \(\mathfrak{\hat l} \in \mathcal{\hat H}_\nu\) with \(\nu \in B_0\), we have that (after a possible involution of \(\mathfrak{l}\)) \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\).
+  By Lemma~\ref{lem:4.20}, we find two halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that for each hyperplane \(\mathfrak{\hat l} \in \mathcal{\hat H}_\nu\) with \(\nu \in B_0\), we that (after a possible involution of \(\mathfrak{l}\)) \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\).
 
   Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a \(\nu_0 \in B_0\) such that \(\Gamma \nu_0 \subset B_0\). 
 
@@ -486,9 +490,8 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
 
 \begin{lemma}[{\cite[Lemma~3.31]{fernós}}]
   \label{lem:f-3.31}
-  Suppose that \(X\) is irreducible with a non-elementary and essential action of the group \(\Gamma\). Any non-empty subset \(\mathcal{H}' \subset  \mathcal{H}\) verifying the following properties must be equal to \(\mathcal{H}\):
+  Suppose that \(X\) is irreducible with a non-elementary and essential action of the group \(\Gamma\). Any non-empty sub-pocset \(\mathcal{H}' \subset  \mathcal{H}\) satisfying the following properties must be equal to \(\mathcal{H}\):
   \begin{itemize}
-  \item \((\mathcal{H}')^\ast = \mathcal{H}'\),
   \item \(\Gamma \cdot \mathcal{H}' = \mathcal{H}'\), and
   \item if \(\mathfrak{h}, \mathfrak{h}' \in \mathcal{H}'\) with \(\mathfrak{h} \subset \mathfrak{h}'\) and \(\mathfrak{k} \in \mathcal{H}\) such that \(\mathfrak{h} \subset \mathfrak{k} \subset \mathfrak{h}'\) then \(\mathfrak{k} \in \mathcal{H}'\).
   \end{itemize}
@@ -499,7 +502,7 @@ As stated above, we will try to find a contradition to the Flipping Lemma (Theor
   \[
     \mathfrak{k} \subset \mathfrak{h}_0 \subset \mathfrak{l}.
   \]
-  By the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}), we find \(g \in \Gamma\) such that \(g\mathfrak{l} \subsetneq \mathfrak{k}\). By Lemma~\ref{lem:strongly-sep}, \(g\mathfrak{h}_0\) and \(\mathfrak{l}\) are. Then \(g^2\mathfrak{h}_0\) and \(g\mathfrak{l}\) are strongly separated, too. And lastly, we obtain that \(g^2\mathfrak{h}_0\) and \(\mathfrak{h}_0\) are strongly separated. With this in mind we define the sequence
+  By the Double Skewering Lemma (Lemma~\ref{lem:cs-dsl}), we find \(g \in \Gamma\) such that \(g\mathfrak{l} \subsetneq \mathfrak{k}\). By Lemma~\ref{lem:strongly-sep}, \(g\mathfrak{h}_0\) and \(\mathfrak{l}\) are. Then, \(g^2\mathfrak{h}_0\) and \(g\mathfrak{l}\) are strongly separated, too. And lastly, we obtain that \(g^2\mathfrak{h}_0\) and \(\mathfrak{h}_0\) are strongly separated. With this in mind we define the sequence
   \[
     \dots \subset \mathfrak{h}_{-2} \subset \mathfrak{h}_{-1} \subset \mathfrak{h} \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \dots
   \]
@@ -523,7 +526,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
 
 \begin{thm}[{\cite[Theorem~4.1]{MR3509968}}]
   \label{thm:4.1}
-  Let \(\Gamma\) be a discrete, countable group acting on a connected, locally countable, finite-dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \((B, \Sigma, \vartheta)\) is a strong \(\Gamma\)-boundary there exists a measurable map
+  Let \(\Gamma\) be a discrete, countable group acting on a connected, locally countable, finite-dimensional CAT(0) cube complex \(X\) via automorphisms. Assume the action is essential and non-elementary. If \((B, \Sigma, \vartheta)\) is a strong \(\Gamma\)-boundary, there exists a measurable map
   \[
     \phi\colon B \to \partial X
   \]
@@ -531,7 +534,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
 \end{thm}
 
 \begin{proof}
-  By Lemma~\ref{lem:h-const} \(|H_\mu|\) is essentially constant.
+  By Lemma~\ref{lem:h-const}, \(|H_\mu|\) is essentially constant.
   If \(H_\mu\) is finite for almost all \(\mu\), by Lemma~\ref{lem:finite-zero}, \(H_\mu\) is empty for almost all \(\mu\). Hence Lemma~\ref{lem:H=0} and Lemma~\ref{lem:4.11} lead to our desired map.
 
   The only thing left to prove is that \(H_\mu\) cannot be infinite. Contrarily, assume that it is. For every \(\mu, \nu\) we consider the set \(H_\mu \cap H_\nu\). By Lemma~\ref{lem:hh-const} their cardinality must be essentially constant and we consider the case that the sets are infinite for almost all \(\mu, \nu \in \mathcal{P}(\bar X)\).
@@ -541,7 +544,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
   \]
   If \(f\colon \mathcal{P}(\bar X) \to \operatorname{Pot}(\mathcal{H})\) is the map such that  \(\mu \mapsto H_\mu\), then \(\mathcal{E} = (f \times f)^{-1}(\Delta)\), where \(\Delta \subset \operatorname{Pot}(\mathcal{H})^2\) is the diagonal. The set \(\operatorname{Pot}(\mathcal{H})\) is Hausdorff with regard to the cylinder topology. Hence \(\Delta\) is closed and measurable. The map \(f \times f\) is also measurable and we obtain that the same is true for \(\mathcal{E}\). Furthermore, \(\mathcal{E}\) is \(\Gamma\)-invariant.  By the doubly ergodic action of \(\Gamma\) on \(\mathcal{P}(\bar X)\), it has either measure 0 or measure 1. Let us consider the two cases:
   \begin{description}
-  \item[Case \(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\), by the definition of the product measure we can find \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset \(M \subset \mathcal{P}(X)\), such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). By Lemma~\ref{lem:countable-orbit} we find \(\nu \in M\) such that
+  \item[Case \(\vartheta(\mathcal{E})=1\):] Since \(H_\mu = H_\nu\) for almost all \(\mu\) and \(\nu\), by the definition of the product measure, we can find \(\mu_0 \in \mathcal{P}(\bar X)\) and a full measure subset \(M \subset \mathcal{P}(X)\) such that \(H_\nu = H_{\mu_0}\) for all \(\nu \in M\). By Lemma~\ref{lem:countable-orbit}, we find \(\nu \in M\) such that
     \[
       H_{g\nu} = gH_\nu = H_{g\nu} = H_{\mu_0} = H_\nu
     \]
@@ -550,28 +553,28 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \[
       X = X_1 \times \dots \times X_n
     \]
-    and \(\mathcal{H}\) in to the associated subsets of pairwise transverse halfspaces
+    and \(\mathcal{H}\) into the associated subsets of pairwise transverse halfspaces
     \[
       \mathcal{H} = \mathcal{H}_1 \sqcup \dots \sqcup H_n.
     \]
     Furthermore, we denote by \(\Gamma_0 \leq \Gamma\) the finite index subgroup respecting this decomposition. Then \(\Gamma_0\) acts still non-elementary and essential on \(X\). We define the set
     \[
-      \mathcal{S_i} \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}_i \times \mathcal{H}_i \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated in } \mathcal{H}_i\}.
+      \mathcal{S}_i \coloneqq \{(\mathfrak{h}, \mathfrak{k}) \in \mathcal{H}_i \times \mathcal{H}_i \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated in } \mathcal{H}_i\}.
     \]
-    By Lemma~\ref{lem:strongly-sep} we see that this set is \(\Gamma_0\)-invariant and we can consider the following maps
+    By Lemma~\ref{lem:strongly-sep}, we see that this set is \(\Gamma_0\)-invariant and we can consider the following map
     \begin{align*}
       \mathcal{P}(\bar X) &\to \N \cup \{\infty\},\\
-      \mu &\mapsto |H_\mu \times H_\mu \cap \mathcal{S_i}|,
+      \mu &\mapsto |(H_\mu \times H_\mu) \cap \mathcal{S}_i|,
     \end{align*}
-    which is by the above observation \(\Gamma_0\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep} together with Lemma~\ref{lem:proj-weight}). Hence, they are essentially constant (Lemma~\ref{lem:4.3}). We have two cases depending on the essential values \(N_i\).
+    which is by the above observation \(\Gamma_0\)-invariant and also measurable (c.\,f.\ Lemma~\ref{lem:measurable-str-sep} together with Lemma~\ref{lem:proj-weight}). Hence, it is essentially constant (Lemma~\ref{lem:4.3}). We have two cases depending on the essential values \(N_i\).
     \begin{description}
-    \item[Case 1:] The value \(N_i > 0\) for all \(i\), i.\,e.\ there strongly separated hyperplanes in all \(H_\mu \cap \mathcal{H}_i\). Hence, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the sets \(H_\mu^+ \cap H_\nu\) contain terminal elements, whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
+    \item[Case 1:] The value \(N_i > 0\) for all \(i\), i.\,e.\ there are strongly separated hyperplanes in all \(H_\mu \cap \mathcal{H}_i\). Hence, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the sets \(H_\mu^+ \cap H_\nu\) contain terminal elements whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
       \begin{align*}
         \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
         (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
       \end{align*}
-      is \(\Gamma\)-equivariant and measurable (c.\,f.\ Lemma~\ref{lem:measurable-tau-int}) and Corollary~\ref{cor:4.5} assures \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence there exists \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(\nu\), which is a contradiction.
-    \item[Case 2:] The value \(N_i = 0\) for at least one \(i\). Without loss of generality we can assume \(N_1 = 0\). The space \(X_1\) is irreducible, \(H_{p_{1\ast}\mu} = H_\mu \cap \mathcal{H}_1\) does not contain pairs of strongly separated halfspaces. Furthermore, \(H_{p_{1,\ast}\mu} \cap H_{p_{1\ast}}\mu = \varnothing\) for almost all \(\mu, \nu\). Hence, we can apply Proposition~\ref{prop:4.21} and find a contradiction to the fact that \(\Gamma_0\) is both essential and non-elementary.
+      is \(\Gamma\)-equivariant and measurable (c.\,f.\ Lemma~\ref{lem:measurable-tau-int}) and Corollary~\ref{cor:4.5} assures \(H_\mu^+ \cap H_\nu = \varnothing\) for almost all \(\mu\) and \(\nu\). However, \(H_\nu \neq H_\mu\) for almost all \(\mu\) and \(\nu\). Hence, there exists \(\mathfrak{h} \in H_\nu \setminus H_\mu\) and thus \(\mathfrak{h} \in H_\mu^\pm\). Without loss of generality, we can assume that it lies in \(H_\mu^+\) and we see that \(H_\mu^+ \cap H_\nu \neq \varnothing\) for almost all \(\mu\) and \(\nu\), which is a contradiction.
+    \item[Case 2:] The value \(N_i = 0\) for at least one \(i\). Without loss of generality, we can assume \(N_1 = 0\). The space \(X_1\) is irreducible, \(H_{p_{1\ast}\mu} = H_\mu \cap \mathcal{H}_1\) does not contain pairs of strongly separated halfspaces. Furthermore, \(H_{p_{1\ast}\mu} \cap H_{p_{1\ast}\nu} = \varnothing\) for almost all \(\mu, \nu\). Hence, we can apply Proposition~\ref{prop:4.21} and find a contradiction to the fact that \(\Gamma_0\) is both essential and non-elementary.
     \end{description}
   \end{description}
   Hence we see that \(H_\mu \cap H_\nu\) cannot be infinite. Thus, we have the map

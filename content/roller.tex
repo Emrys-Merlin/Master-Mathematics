@@ -2,14 +2,14 @@
 \label{sec:roller}
 This whole chapter is dedicated to the interplay between CAT(0) cube complexes and discrete pocsets. \textcite{Roller1999} showed that there is a one-to-one-correspondence between these two points of view, which is an important tool in this field of study.
 
-This chapter is divided into five sections. In Section~\ref{sec:pocset}, we will introduce \emph{pocsets} and \emph{ultrafilters}, which are the main ingredients in the so-called \emph{Roller compactification} of the vertex set of a CAT(0) cube complex. This compactification is described in detail in Section~\ref{sec:rb}. Section~\ref{sec:set-ultrafilters} is again concerned with ultrafilters. There are two equivalent ways to define them and we will need both. The first viewpoint (in Section~\ref{sec:pocset}) has advantages when it comes to topological and metrical properties of the Roller compactification, whereas the second viewpoint (in Section~\ref{sec:set-ultrafilters}) is more natural when it comes measurability. The main result in Section~\ref{sec:set-ultrafilters} is Theorem~\ref{thm:uf-equivalence}, showing that the two viewpoints are equivalent.
+This chapter is divided into five sections. In Section~\ref{sec:pocset}, we will introduce \emph{pocsets} and \emph{ultrafilters}, which are the main ingredients in the so-called \emph{Roller compactification} of the vertex set of a CAT(0) cube complex. This compactification is described in detail in Section~\ref{sec:rb}. Section~\ref{sec:set-ultrafilters} is again concerned with ultrafilters. There are two equivalent ways to define them and we will need both. The first viewpoint (in Section~\ref{sec:pocset}) has advantages when it comes to topological and metrical properties of the Roller compactification, whereas the second viewpoint (in Section~\ref{sec:set-ultrafilters}) is more natural when it comes to measurability. The main result in Section~\ref{sec:set-ultrafilters} is Theorem~\ref{thm:uf-equivalence}, showing that the two viewpoints are equivalent.
 Section~\ref{sec:terminal-elements} is only loosely related to the previous sections. We will introduce \emph{intervals} of ultrafilters, which are special subcomplexes of CAT(0) cube complexes. The most interesting property of these intervals is that they are always embeddable into some \(\R^d\) (considered as a CAT(0) cube complex, see Example~\ref{bsp:ccc-torus}). The second topic of the section are so-called \emph{terminal elements}. These are all the elements in a set of halfspaces that are minimal or maximal with regard to inclusion. The existence or non-existence of these elements is one cornerstone of the main proof. Intervals have at most finitely many terminal elements (c.\,f.\ Example~\ref{bsp:finite-terminal}) which is why they are so interesting for us.
 In Section~\ref{sec:embedding-roller}, we are interested in one special case of the above mentioned correspondence between pocsets and CAT(0) cube complexes: If \(\mathcal{H'} \subset \mathcal{H}\) are both pocsets, under which circumstances will the associated complex \(X(\mathcal{H}')\) be a subcomplex of \(X(\mathcal{H})\)? We will be able to give a partial answer by providing a sufficient condition (which, however, might not be necessary).
 
-\subsection{Pocsets and Ultrafilters}
+\subsection{Pocsets and ultrafilters}
 \label{sec:pocset}
 
-In this section we will introduce a special type of partially ordered sets (or short: posets). These sets are special because they have a certain fixed point free involution. They are called \emph{pocsets} (a poset with \enquote{complementation}). After having established this notion, we will introduce \emph{ultrafilters} which are the necessary objects to construct a compactification of the vertex set of a CAT(0) cube complex. In this section, we will mostly be interested in topological and metric properties of the set of all ultrafilters. The connection to CAT(0) cube complexes will be established at the end of this section.
+In this section we will introduce a special type of partially ordered sets (or short: \emph{posets}). These sets are special because they have a certain fixed point free involution. They are called \emph{pocsets} (a poset with \enquote{complementation}). After having established this notion, we will introduce \emph{ultrafilters} which are the necessary objects to construct a compactification of the vertex set of a CAT(0) cube complex. In this section, we will mostly be interested in topological and metric properties of the set of all ultrafilters. The connection to CAT(0) cube complexes will be established at the end of this section.
 
 \begin{defin}[Pocset, {\cite{Roller1999}}]~\vspace{-6pt}
   \begin{itemize}
@@ -104,7 +104,7 @@ We will postpone an example until we have introduce the pocset of halfspaces of 
     \ast \colon \mathcal{H} &\to \mathcal{H},\\
     \mathfrak{h} & \mapsto \mathfrak{h}^\ast.
   \end{align*}
-  Then \((\mathcal{H}, \subset, \ast)\) is a discrete pocset. If \(X\) is finite dimensional then \(\mathcal{H}\) has finite width.
+  Then \((\mathcal{H}, \subset, \ast)\) is a discrete pocset. If \(X\) is finite-dimensional then \(\mathcal{H}\) has finite width.
 \end{prop}
 
 \begin{proof}
@@ -146,11 +146,11 @@ We will postpone an example until we have introduce the pocset of halfspaces of 
 We will close this section with two results giving a criterion for reducibility of a CAT(0) cube complex \(X\) using a decomposition of the pocset of halfspaces \(\mathcal{H}(X)\).
 
 \begin{prop}[{\cite[Lemma~2.5]{Caprace2010}}]
-  A CAT(0) cube complex \(X\) is reducible, i.\,e.\ \(X\) splits as a (proper) product if and only if  there  exists a partition \(\mathcal{H}(X) = \mathcal{H}_1 \sqcup \mathcal{H}_2\) such that each halfspace in \(\mathcal{H}_1\) is transverse to each halfspace in \(\mathcal{H}_2\).
+  A CAT(0) cube complex \(X\) is reducible, i.\,e.\ \(X\) splits as a (proper) product if and only if there exists a partition \(\mathcal{H}(X) = \mathcal{H}_1 \sqcup \mathcal{H}_2\) such that each halfspace in \(\mathcal{H}_1\) is transverse to each halfspace in \(\mathcal{H}_2\).
 \end{prop}
 
 \begin{proof}[Sketch]
-  The key observation is that if we have two CAT(0) cube complexes \(X_1\) and \(X_2\) and we consider the cube complex \(X_1 \times X_2\), then the halfspaces take the form \(\mathfrak{h} \times X_2\) for any \(\mathfrak{h} \in \mathcal{H}(X_1)\) or \(X_1 \times \mathfrak{k}\) for any \(\mathfrak{k} \in \mathcal{H}(X_2)\). Any two of them will always be transverse. Thus if \(X\) splits as a product, then this argument shows that we find the desired partition. If we have the partition, then the \(\mathcal{H}_i\) are pocsets. Hence, up to isomorphism, we find two unique CAT(0) cube complexes corresponding to the two pocsets and their product has the same set of halfspaces as \(X\). By the aforementioned uniqueness they have to be isomorphic.
+  The key observation is that if we have two CAT(0) cube complexes \(X_1\) and \(X_2\) and we consider the cube complex \(X_1 \times X_2\), then the halfspaces take the form \(\mathfrak{h} \times X_2\) for any \(\mathfrak{h} \in \mathcal{H}(X_1)\) or \(X_1 \times \mathfrak{k}\) for any \(\mathfrak{k} \in \mathcal{H}(X_2)\). Any two of them will always be transverse. Thus, if \(X\) splits as a product, then this argument shows that we find the desired partition. If we have the partition, then the \(\mathcal{H}_i\) are pocsets. Hence, up to isomorphism, we find two unique CAT(0) cube complexes corresponding to the two pocsets and their product has the same set of halfspaces as \(X\). By the aforementioned uniqueness they have to be isomorphic.
 \end{proof}
 
 \begin{prop}[{\cite[Proposition~2.6]{Caprace2010}}]
@@ -200,7 +200,7 @@ This section contains the connection between CAT(0) cube complexes, pocsets and 
 \begin{proof}
   Clearly, either \(\mathfrak{h}\) or \(\mathfrak{h}^\ast\) contains \(v\) such that \(\alpha_v\) lies in \(P(A)\). Furthermore, if \(\mathfrak{h} \in \alpha_v\) and \(\mathfrak{k} \in \mathcal{H}\) are such that \(\mathfrak{h} \subset \mathfrak{k}\), we have \(v \in \mathfrak{h} \subset \mathfrak{k}\). Hence \(\mathfrak{k} \in \alpha_v\) and \(\alpha_v\) satisfies the consistency condition. This shows that \(\alpha_v\) is an ultrafilter.
 
-    If \(\alpha\) satisfies the descending chain condition, then each halfspace contains a minimal halfspace of \(\alpha\). If we take the set of minimal halfspaces of \(\alpha\), then all the elements must be pairwise transverse. Furthermore, since \(X\) is finite-dimensional every set of pairwise transverse elements must be finite. By Theorem~\ref{thm:common-intersection}, we find that the intersection over all minimal elements is non-empty and contains a vertex \(v\). We claim that \(\alpha_v = \alpha\). Indeed, if \(\mathfrak{h} \in \alpha\), then there exists a minimal element \(\mathfrak{k} \in \alpha\) and \(v \in \mathfrak{k} \subset \mathfrak{h}\). Hence, \(\mathfrak{h} \in \alpha_v\). Conversely if \(\mathfrak{h} \not \in \alpha\) then \(\mathfrak{h}^\ast \in \alpha\) and as before \(v \in \mathfrak{h}^\ast\) and \(\mathfrak{h} \not \in \alpha_v\).
+    If \(\alpha\) satisfies the descending chain condition, then each halfspace contains a minimal halfspace of \(\alpha\). If we take the set of minimal halfspaces of \(\alpha\), then all the elements must be pairwise transverse. Furthermore, since \(X\) is finite-dimensional, every set of pairwise transverse elements must be finite. By Theorem~\ref{thm:common-intersection}, we find that the intersection over all minimal elements is non-empty and contains a vertex \(v\). We claim that \(\alpha_v = \alpha\). Indeed, if \(\mathfrak{h} \in \alpha\), then there exists a minimal element \(\mathfrak{k} \in \alpha\) and \(v \in \mathfrak{k} \subset \mathfrak{h}\). Hence, \(\mathfrak{h} \in \alpha_v\). Conversely, if \(\mathfrak{h} \not \in \alpha\) then \(\mathfrak{h}^\ast \in \alpha\) and as before \(v \in \mathfrak{h}^\ast\) and \(\mathfrak{h} \not \in \alpha_v\).
 \end{proof}
 
 \begin{thm}[The Roller compactification]
@@ -218,11 +218,11 @@ This section contains the connection between CAT(0) cube complexes, pocsets and 
 \end{defin}
 
 \begin{proof}[Proof of Theorem~\ref{thm:roller-compactification}]
-  The map is well-defined by Lemma~\ref{lem:principle-uf}. In order to see the injectivity consider two vertices \(v \neq w\). There exists a halfspace \(\mathfrak{h}\) separating the two, i.\,e.\ \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Hence, \(\mathfrak{h} \in \alpha_v\) and \(\mathfrak{h}^\ast \in \alpha_w\) and \(\alpha_v \neq \alpha_w\). The continuity is clear, since we have the discrete topology on \(V(X)\). Lastly, we have to show that the image is dense. We consider a basic open set \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) in \(\mathcal{U}(X)\). If \(\mathcal{U} \neq \varnothing\), then the \(\mathfrak{h}_i\) intersect pairwise. Otherwise, assume that \(\mathfrak{h}_i \cap \mathfrak{h}_j = \varnothing\). We have \(V(X) = \mathfrak{h}_i \sqcup \mathfrak{h}_i^\ast\). Hence, for any \(v \in \mathfrak{h}_j\) we have \(v \in \mathfrak{h}_i^\ast\). This yields \(\mathfrak{h}_j \subset \mathfrak{h}_i^\ast\). However, no ultrafilter can contain both \(\mathfrak{h}_i\) and \(\mathfrak{h}_i^\ast\). Now, we know by Theorem~\ref{thm:common-intersection} that \(\bigcap_{i=1}^n \mathfrak{h}_i\) contains a vertex \(v\) and hence \(\alpha_v \in \mathcal{U}\).
+  The map is well-defined by Lemma~\ref{lem:principle-uf}. In order to see the injectivity, consider two vertices \(v \neq w\). There exists a halfspace \(\mathfrak{h}\) separating the two, i.\,e.\ \(v \in \mathfrak{h}\) and \(w \in \mathfrak{h}^\ast\). Hence, \(\mathfrak{h} \in \alpha_v\) and \(\mathfrak{h}^\ast \in \alpha_w\) and \(\alpha_v \neq \alpha_w\). The continuity is clear, since we have the discrete topology on \(V(X)\). Lastly, we have to show that the image is dense. We consider a basic open set \(\mathcal{U} \coloneqq \mathcal{U}(\mathfrak{h}_1, \dots, \mathfrak{h}_n)\) in \(\mathcal{U}(X)\). If \(\mathcal{U} \neq \varnothing\), then the \(\mathfrak{h}_i\) intersect pairwise. Otherwise, assume that \(\mathfrak{h}_i \cap \mathfrak{h}_j = \varnothing\). We have \(V(X) = \mathfrak{h}_i \sqcup \mathfrak{h}_i^\ast\). Hence, for any \(v \in \mathfrak{h}_j\) we have \(v \in \mathfrak{h}_i^\ast\). This yields \(\mathfrak{h}_j \subset \mathfrak{h}_i^\ast\). However, no ultrafilter can contain both \(\mathfrak{h}_i\) and \(\mathfrak{h}_i^\ast\). Now, we know by Theorem~\ref{thm:common-intersection} that \(\bigcap_{i=1}^n \mathfrak{h}_i\) contains a vertex \(v\) and hence \(\alpha_v \in \mathcal{U}\).
 \end{proof}
 
 \begin{rem}
-  In order to qualify as a compactification of a space, it is often assumed that a space is an open subset of its compactification. In our case this can fail. Here is an example: Consider an infinite family of copies of the non-negative reals \(\R_{\geq0}\) with their standard cubulation. We glue these lines together at their respective origins (and call this vertex \(\ast\)). This construction leads to a tree and hence to a CAT(0) cube complex. We claim that any open neighborhood of the ultrafilter \(\alpha_\ast\) contains an ultrafilter which does not satisfy the descending chain condition. The construction is depicted in Figure~\ref{fig:roller-counterexample}
+  Many compactifications one encounters have an additional interesting property: The space itself is embedded as an \emph{open} subset of the compactification. In our case this can fail. Here is an example: Consider an infinite family of copies of the non-negative reals \(\R_{\geq0}\) with their standard cubulation. We glue these lines together at their respective origins (and call this vertex \(\ast\)). This construction leads to a tree and hence to a CAT(0) cube complex. We claim that any open neighborhood of the ultrafilter \(\alpha_\ast\) contains an ultrafilter which does not satisfy the descending chain condition. The construction is depicted in Figure~\ref{fig:roller-counterexample}
   \begin{figure}[htbp]
     \centering
     \input{./images/roller-counterexample.tex}
@@ -262,13 +262,13 @@ Now that we have defined the Roller compactification, we have to consider a seco
     & = \{H \subset A \mid F_1 \cap G_1 \subset H \text{ and } F_2 \cap G_2 \subset A \setminus H\}\\
     & = \mathcal{C}(F_1 \cap G_1, F_2 \cap G_2).
   \end{align*}
-  Since \(F_1 \cap G_2\) and \(F_2 \cap G_2\) are still finite we are done.
+  Since \(F_1 \cap G_1\) and \(F_2 \cap G_2\) are still finite we are done.
   \end{enumerate}
 \end{proof}
 
 \begin{defin}[(Set-)Ultrafilters]
   \label{defin:set-ultrafilters}
-  We say that a subset \(\alpha \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) satisfies:
+  Let \(X\) be a CAT(0) cube complex. We say that a subset \(\alpha \subset \mathcal{H} \coloneqq \mathcal{H}(X)\) satisfies:
   \begin{enumerate}
   \item the \emph{partial choice condition} if \(\alpha \cap \alpha^\ast = \varnothing\),
   \item the \emph{choice condition} if \(\alpha \cap \alpha^\ast = \varnothing\) and \(\alpha \sqcup \alpha^\ast = \mathcal{H}\) and
@@ -298,8 +298,8 @@ Now that we have defined the Roller compactification, we have to consider a seco
 \begin{proof}
   Consider the map
   \begin{align*}
-    f\colon &\mathcal{U}(X) \to \mathcal{U}_s(X),\\
-    &(\mathfrak{h}_i)_{i \in \mathcal{\hat H}(X)} \mapsto \{\mathfrak{h}_i \mid i \in \mathcal{\hat H}(X)\}.
+    f\colon \mathcal{U}(X) &\to \mathcal{U}_s(X),\\
+    (\mathfrak{h}_i)_{i \in \mathcal{\hat H}(X)} &\mapsto \{\mathfrak{h}_i \mid i \in \mathcal{\hat H}(X)\}.
   \end{align*}
   This map is well-defined and bijective. Next, let us show that it is continuous. Let \(\mathfrak{h}_1, \dots, \mathfrak{h}_n, \mathfrak{h'}_1, \dots,\mathfrak{h'}_k \in \mathcal{H}(X)\) and set
   \[
@@ -345,7 +345,7 @@ Additionally, we will introduce \emph{terminal elements}. The existence or non-e
 
 \begin{bsp}[Euclidean space]
   \label{bsp:euclidean-interval}
-  The above lemma immediately shows that every \(\R^d\) with its standard cubulation is an interval. Indeed, every hyperplane \(\mathfrak{\hat h}\) is orthogonal to a coordinate axis given by a unit vector \(e_i\). We choose the halfspace \(\mathfrak{h}\) such that there exists a \(K>0\) such that \(\lambda e_i \in \mathfrak{h}\) for all \(\lambda > K\). This is an ultrafilter \(\alpha\) and the opposite \(\alpha^\ast\) is given by all the halfspaces such that there exists a \(K > 0\) sucht that \(-\lambda e_i \in \mathfrak{h}\) for all \(\lambda > K\). This is again an ultrafilter. 
+  The above lemma immediately shows that every \(\R^d\) with its standard cubulation is an interval. Indeed, every hyperplane \(\mathfrak{\hat h}\) is orthogonal to a coordinate axis given by a unit vector \(e_i\). We choose the halfspace \(\mathfrak{h}\) such that there exists a \(K>0\) such that \(\lambda e_i \in \mathfrak{h}\) for all \(\lambda > K\). This is an ultrafilter \(\alpha\) and the opposite \(\alpha^\ast\) is given by all the halfspaces such that there exists a \(K > 0\) such that \(-\lambda e_i \in \mathfrak{h}\) for all \(\lambda > K\). This is again an ultrafilter. 
 \end{bsp}
 
 \begin{thm}[{\cite[Theorem 1.14]{Brodzki2009}}]
@@ -368,7 +368,7 @@ Additionally, we will introduce \emph{terminal elements}. The existence or non-e
 
 \begin{lemma}[{\cite[Lemma 1.16]{Brodzki2009}}]
   \label{lem:b-1.16}
-  Let \(X\) be a CAT(0) cube complex of (finite) dimension \(d\) and \(\alpha, \beta \in \bar X\). Then we have
+  Let \(X\) be a CAT(0) cube complex of dimension \(d<\infty\) and \(\alpha, \beta \in \bar X\). Then we have
   \[
     \mathcal{H}(\alpha, \beta) = P_1 \sqcup \dots \sqcup P_d,
   \]
@@ -446,7 +446,7 @@ Unless noted otherwise \(X\) is a connected, locally countable, finite-dimension
   \end{align*}
   whose image is given by \(i(\bar X') = \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\) (c.\,f.\ Definition~\ref{def:pot-top}).
 
-  Furthermore, if \(\mathcal{H}' = \varnothing\), then \(i(\bar X')\) is a point. If\ \(W\) contains an infinite descending chain then \(i(\bar X') \subset \partial X\).
+  Furthermore, if \(\mathcal{H}' = \varnothing\), then \(i(\bar X')\) is a point. If\ \(W\) contains an infinite descending chain, then \(i(\bar X') \subset \partial X\).
 \end{lemma}
 
 \begin{proof}
@@ -467,8 +467,8 @@ Unless noted otherwise \(X\) is a connected, locally countable, finite-dimension
   For the consistency condition, we proceed as follows. Let \(\mathfrak{h} \in \alpha\) and \(\mathfrak{k} \in \mathcal{H}\), such that \(\mathfrak{h} \subset \mathfrak{k}\). We have three cases:
   \begin{enumerate}
   \item If \(\mathfrak{k} \in \mathcal{H}'\), then \(\mathfrak{k} \in \alpha' \subset \alpha\) and we are done.
-  \item If \(\mathfrak{k} \in W \subset \alpha\) there is nothing to prove.
-  \item If \(\mathfrak{k} \in W^\ast\) we will find a contradiction. Indeed, we have \(\mathfrak{k}^\ast \subset \mathfrak{h}^\ast\) and \(W\) satisfies the consistency condition. Hence \(\mathfrak{h}^\ast \in W\). By the partial choice condition, we have \(\mathfrak{h} \not \in W\) which yields \(\mathfrak{h} \in \alpha' \subset \mathcal{H}'\). Hence, \(\mathfrak{h} \in W^\ast \cap \mathcal{H}' = \varnothing\) which is absurd.
+  \item If \(\mathfrak{k} \in W \subset \alpha\), there is nothing to prove.
+  \item If \(\mathfrak{k} \in W^\ast\), we will find a contradiction. Indeed, we have \(\mathfrak{k}^\ast \subset \mathfrak{h}^\ast\) and \(W\) satisfies the consistency condition. Hence, \(\mathfrak{h}^\ast \in W\) and, equivalently, \(\mathfrak{h} \in W^\ast\). However, \(\alpha \cap W^\ast = \varnothing\) which is absurd.
   \end{enumerate}
 
   If \(\alpha' \neq \beta'\) in \(\mathcal{H}'\) then also \(\alpha \neq \beta\) in \(\mathcal{H}\) and \(i\) is injective. Next, let us consider the continuity of \(i\). Consider two finite subsets \(F_1, F_2 \subset \mathcal{H}\). These can be decomposed into \(F_i = G_i \sqcup E_i\), where \(G_i \subset \mathcal{H}'\) and \(E_i \subset W \sqcup W^\ast\). Then we have
@@ -477,7 +477,7 @@ Unless noted otherwise \(X\) is a connected, locally countable, finite-dimension
   \]
   and \(i\) is continuous.
 
-  In order to compute the image let us first show that \(i(\bar X') \subset \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\). Indeed, we have
+  In order to compute the image, let us first show that \(i(\bar X') \subset \cap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h})\). Indeed, we have
   \[
     \alpha' \cap W = \bigcap_{\mathfrak{h} \in \alpha \sqcup W}\mathcal{C}(\mathfrak{h}) \subset \bigcap_{\mathfrak{h} \in W} \mathcal{C}(\mathfrak{h}).
   \]

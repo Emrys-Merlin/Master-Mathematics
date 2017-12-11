@@ -2,24 +2,24 @@
 \label{sec:group}
 This chapter is divided into four sections which cover two general topics. The first two sections deal with the actions of a group \(\Gamma\) on a CAT(0) cube complex \(X\). First, we will convince ourselves that a group action via automorphisms always extends to an action on \(\bar X\) by homeomorphisms. This will be accomplished in Section~\ref{sec:ga-roller}. In Section~\ref{sec:special}, we will introduce two properties for group actions on \(X\), namely \emph{non-elementarity} (introduced in~\cite{MR3509968}) and \emph{essentiality} (introduced in~\cite{Caprace2010}). Interestingly, these two properties are rather of a different kind. The first is more concerned with the CAT(0) structure, namely, it excludes the existence of any finite orbits in \(X\) or in the visual boundary \(\partial_\sphericalangle X\). Whereas the second is more concerned with the combinatorial structure of the halfspaces of \(X\). Here we want orbits of the group to get arbitrarily far away from each hyperplane (on both of its sides).
 
-The last two sections (Sections~\ref{sec:ergodic} and\ \ref{sec:grp-boundary}) are concerned with the definition of \emph{strong \(\Gamma\)-boundaries}. They can be thought of as generalized Furstenberg-Poisson boundaries for certain random walks on \enquote{nice} groups \(\Gamma\) (see Example~\ref{bsp:poisson} or\ \cite{MR2006560}). They are defined via two properties. The first is a strengthening of the notion of \emph{ergodicity} and the second is \emph{amenability}. Hence, in Section~\ref{sec:ergodic} we will first recall the notion of (standard) ergodicity. Our two most important consequences are encoded in Lemmas~\ref{lem:ergodic-atomic} and\ \ref{lem:4.3}. Afterwards, in Section~\ref{sec:group}, we will introduce \emph{ergodicity with coefficients} and relate it to the notion of essentiality defined before (Corollary~\ref{cor:4.5}). Lastly, we will introduce \emph{amenability}. This property guarantees the existence of certain measurable and almost everywhere \(\Gamma\)-equivariant maps from the strong \(\Gamma\)-boundary to the dual of a separable Banach space. In our case we will use it to construct a map to \(\mathcal{P}(\bar X)\) the set of regular probability measures on \(\bar X\). The result is recorded in Corollary~\ref{cor:p(x)}. The notion of a strong \(\Gamma\)-boundary was first introduced by \textcite{MR2153026}. Many of the concepts of ergodicity with coefficients and amenability were also present in Monod's thesis~\cite{MR2715399}. Amenability was first introduced by \textcite{MR0473096}. For an overview we would recommend the treatise by \textcite{MR2006560}.
+The last two sections (Sections~\ref{sec:ergodic} and\ \ref{sec:grp-boundary}) are concerned with the definition of \emph{strong \(\Gamma\)-boundaries}. They can be thought of as generalized Furstenberg-Poisson boundaries for certain random walks on \enquote{nice} groups \(\Gamma\) (see Example~\ref{bsp:poisson} or\ \cite{MR2006560}). They are defined via two properties. The first is a strengthening of the notion of \emph{ergodicity} and the second is \emph{amenability}. Hence, in Section~\ref{sec:ergodic} we will first recall the notion of (standard) ergodicity. Our two most important consequences are encoded in Lemmas~\ref{lem:ergodic-atomic} and\ \ref{lem:4.3}. Afterwards, in Section~\ref{sec:group}, we will introduce \emph{ergodicity with coefficients} and relate it to the notion of essentiality defined before (Corollary~\ref{cor:4.5}). Lastly, we will introduce \emph{amenability}. This property guarantees the existence of certain measurable and almost everywhere \(\Gamma\)-equivariant maps from the strong \(\Gamma\)-boundary to the dual of a separable Banach space. In our case we will use it to construct a map to \(\mathcal{P}(\bar X)\), the set of regular probability measures on \(\bar X\). The result is recorded in Corollary~\ref{cor:p(x)}. The notion of a strong \(\Gamma\)-boundary was first introduced by \textcite{MR2153026}. Many of the concepts of ergodicity with coefficients and amenability were also present in Monod's thesis~\cite{MR2715399}. Amenability was first introduced by \textcite{MR0473096}. For an overview we would recommend the treatise by \textcite{MR2006560}.
 
 \subsection{Extending a group action to the Roller boundary}
 \label{sec:ga-roller}
 
-In this section we would like to remark on how one can extend a group action on a CAT(0) cube complex \(X\) to its Roller compactification \(\bar X\). For that matter, let \(\Gamma\) be a group with an action \(\Gamma \to \Aut(X)\), where \(X\) is a finite dimensional CAT(0) cube complex. The group \(\Aut(X)\) consists of the combinatorial automorphisms of \(X\) (c.\,f.\ Def.~\ref{def:morphism-ccc}).
+In this section we would like to remark on how one can extend a group action on a CAT(0) cube complex \(X\) to its Roller compactification \(\bar X\). For that matter, let \(\Gamma\) be a group with an action \(\Gamma \to \Aut(X)\), where \(X\) is a finite dimensional CAT(0) cube complex. The group \(\Aut(X)\) consists of the combinatorial automorphisms of \(X\) (c.\,f.\ Definition~\ref{def:morphism-ccc}).
 
-The following proposition collects some facts about how combinatorial isomorphisms act on \(X\). The notation can be found in Section~\ref{sec:halfspaces} and~\ref{sec:roller}.
+The following proposition collects some facts about how combinatorial isomorphisms act on \(X\). The notation can be found in Sections~\ref{sec:halfspaces} and~\ref{sec:roller}.
 
 \begin{prop}
   Let \(g \in \Aut(X)\). Then the following holds:
   \begin{enumerate}
-  \item if \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) then \(g\mathfrak{\hat h} \in \mathcal{\hat H}(X)\),
-  \item if \(\mathfrak{h} \in \mathcal{H}(X)\) then \( g\mathfrak{h} \in \mathcal{H}(X)\),
+  \item if \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\), then \(g\mathfrak{\hat h} \in \mathcal{\hat H}(X)\),
+  \item if \(\mathfrak{h} \in \mathcal{H}(X)\), then \( g\mathfrak{h} \in \mathcal{H}(X)\),
   \item for every \(\mathfrak{h} \in \mathcal{H}(X)\colon g(\mathfrak{h}^\ast) = (g\mathfrak{h})^\ast\),
-  \item if \(\mathfrak{h,h'} \in \mathcal{H}(X)\colon \mathfrak{h} \subset \mathfrak{h'}\) then \(g\mathfrak{h} \subset g\mathfrak{h'}\),
-  \item if \(\alpha \in \bar X\) then \(g\alpha \in \bar X\) and
-  \item if \(\alpha\) satisfies the descending chain condition then so does \(g\alpha\).
+  \item if \(\mathfrak{h,h'} \in \mathcal{H}(X)\colon \mathfrak{h} \subset \mathfrak{h'}\), then \(g\mathfrak{h} \subset g\mathfrak{h'}\),
+  \item if \(\alpha \in \bar X\), then \(g\alpha \in \bar X\) and
+  \item if \(\alpha\) satisfies the descending chain condition, then so does \(g\alpha\).
   \end{enumerate}
 \end{prop}
 
@@ -39,7 +39,9 @@ With the above proposition in place, we see that each group action \(\Gamma \to 
   \]
   Hence, \(g \in \operatorname{Homeo}(\bar X)\).
 \end{prop}
-
+\begin{proof}[Sketch]
+  \(\mathfrak{h}_i\) lies in \(\alpha\) if and only if \(g\mathfrak{h}_i\) lies in \(g\alpha\).
+\end{proof}
 We arrive at the following result:
 
 \begin{thm}
@@ -72,7 +74,7 @@ The previous observation already provides many examples for elementary actions b
   An example of an elementary action is \(X \coloneqq \R^d\) with its standard cubulation and any cyclic subgroup of \(\Z^d\) acting by translations. This action has no finite orbits in \(\R^d\), but every point at infinity is fixed. Indeed, two rays define the same point at infinity if and only if they are parallel. However, a translated ray is still parallel to the untranslated ray.
 \end{bsp}
 \begin{bsp}[A tree]
-  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8} (We note that this is also the Cayley graph of the free group with two generators). The space \(X\) is not a cube complex. However, its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. Let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) be the group of \emph{deck transformations} (For an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
+  As an example for a non-elementary action we consider the universal cover \(\tilde X\) of \(X \coloneqq S^1 \vee S^1\) as depicted in Figure~\ref{fig:figure-8} (we note that this is also the Cayley graph of the free group with two generators). The space \(X\) is not a cube complex. However, its universal cover \(\tilde X\) is a tree and hence a CAT(0) cube complex. Let \(\Gamma \coloneqq \operatorname{Deck}(\tilde X/X)\) be the group of \emph{deck transformations} (for an introduction to covering space theory and deck transformations see for example~\cite[Section~1.3]{hatcher}). This group acts by combinatorial maps. Indeed, each vertex is mapped to a vertex, since fibers are preserved by deck transformations and each edge is again mapped to an edge (even more: the signing as in Figure~\ref{fig:figure-8} is preserved) because of the path lifting property. 
   \begin{figure}[htbp]
     \centering
     \input{./images/figure-8.tex}
@@ -80,7 +82,7 @@ The previous observation already provides many examples for elementary actions b
     \label{fig:figure-8}
   \end{figure}
 
-  The universal cover is always a normal covering. This implies that \(\Gamma\) acts transitively on the vertices. Hence, \(\Gamma\) has no finite orbit in \(\tilde X\). Now, consider any geodesic ray \(c\) represented by its vertices \((v_i)_{i \in \N}\). Then each edge \(e_i \coloneqq \overline{v_iv_{i+1}}\) has an assigned signing by an arrow and after translating by a deck transformation, this signing will be the same. Without loss of generality assume that \(e_i\) has signing \tikz{\draw[->] (0,0) -- (0.3,0)}. We choose one of the neighbors \(w_i\) of \(v_i\) such that \(\overline{v_iw_i}\) has signing \raisebox{1pt}{\tikz{\draw[>={Stealth},->] (0,0) -- (0.3,0)}}. Then we choose \(g_i \in \Gamma\) such that \(g_iv_i = w_i\). We claim that \(g_ic\) and \(c\) are not equivalent. Since we can drop any finite number of starting vertices, it satisfies to show the assertion in the case \(i=1\). If \(g_1c\) and \(c\) are equivalent then there exists an \(m \in \N\) such that \(g_1v_m\) is a vertex in \(c\), call it \(v_n\). There is a path connecting the two, namely
+  The universal cover is always a normal covering. This implies that \(\Gamma\) acts transitively on the vertices. Hence, \(\Gamma\) has no finite orbit in \(\tilde X\). Now, consider any geodesic ray \(c\) represented by its vertices \((v_i)_{i \in \N}\). Then each edge \(e_i \coloneqq \overline{v_iv_{i+1}}\) has an assigned signing by an arrow and after translating by a deck transformation, this signing will be the same. Without loss of generality assume that \(e_i\) has signing \tikz{\draw[->] (0,0) -- (0.3,0)}. We choose one of the neighbors \(w_i\) of \(v_i\) such that \(\overline{v_iw_i}\) has signing \raisebox{1pt}{\tikz{\draw[>={Stealth},->] (0,0) -- (0.3,0)}}. Then we choose \(g_i \in \Gamma\) such that \(g_iv_i = w_i\). We claim that \(g_ic\) and \(c\) are not equivalent. Since we can drop any finite number of starting vertices, it is enough to show the assertion in the case \(i=1\). If \(g_1c\) and \(c\) are equivalent then there exists an \(m \in \N\) such that \(g_1v_m\) is a vertex in \(c\), call it \(v_n\). There is a path connecting the two, namely
   \[
     g_1v_m, g_1v_{m-1}, \dots, g_1v_1, v_1, \dots, v_n.
   \]
@@ -147,17 +149,17 @@ Lemmas~\ref{lem:cs-3.1} and\ \ref{lem:roller-bnd-embedding} relate the Roller bo
   \label{lem:roller-bnd-embedding}
   Let \(X\) be a CAT(0) cube complex and let \(\Gamma \leq \Aut(X)\) and \(Y \subset X\) be a \(\Gamma\)-invariant convex subcomplex. Let \(\mathcal{H}\) and \(\mathcal{H}'\) be the pocset of halfspaces associated to \(X\) and \(Y\). Then there exists a natural lifting decomposition
   \[
-    W \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid Y \subset \mathfrak{h}\}.
+    W \coloneqq \{\mathfrak{h} \in \mathcal{H} \mid Y \subset \mathfrak{h}\}
   \]
   and the associated continuous inclusion 
   \[
-    \iota\colon \bar Y \to \bar X.
+    \iota\colon \bar Y \to \bar X
   \]
-  is \(\Gamma\)-equivariant. Furthermore, we have \(\iota(\partial Y) \subset \partial X\)
+  is \(\Gamma\)-equivariant. Furthermore, we have \(\iota(\partial Y) \subset \partial X\).
 \end{lemma}
 
 \begin{proof}
-  Clearly, \(W\) satisfies the partial choice and consistency. Then by Lemma~\ref{lem:cs-3.1} we have
+  Clearly, \(W\) satisfies the partial choice and consistency. Then, by Lemma~\ref{lem:cs-3.1}, we have
   \[
     \mathcal{H} = \mathcal{H}' \sqcup W \sqcup W^\ast.
   \]
@@ -175,7 +177,7 @@ The following four results (Lemmas~\ref{lem:ess-unbounded},\ \ref{lem:cs-dsl} an
 
 \begin{lemma}[Skewering Lemma, {\cite[Proposition~3.2]{Caprace2010}}]
   \label{lem:ess-unbounded}
-  Let \(X\) be a finite dimensional CAT(0) cube complex, \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) and \(\Gamma \leq \Aut(X)\). Then the following are equivalent
+  Let \(X\) be a finite dimensional CAT(0) cube complex, \(\mathfrak{\hat h} \in \mathcal{\hat H}(X)\) and \(\Gamma \leq \Aut(X)\). Then the following are equivalent:
   \begin{enumerate}
   \item \(\mathfrak{\hat h} \in \Ess(X,\Gamma)\),
   \item  \(X(\Gamma \cdot \mathfrak{\hat h})\) is unbounded and
@@ -216,9 +218,9 @@ The following four results (Lemmas~\ref{lem:ess-unbounded},\ \ref{lem:cs-dsl} an
   \label{prop:cs-5.1}
   Let \(X\) be a finite-dimensional and unbounded CAT(0) cube complex such that \(\Aut(X)\) acts essentially and without fixed point at infinity. Then the following conditions are equivalent:
   \begin{enumerate}
-  \item \(X\) is irreducible.
-  \item There is a pair of strongly separated hyperplanes.
-  \item For every halfspace \(\mathfrak{h}\) there is a pair of strongly separated halfspaces \(\mathfrak{h_i}\) such that \(\mathfrak{h}_1 \subset \mathfrak{h} \subset \mathfrak{h}_2\).
+  \item \(X\) is irreducible,
+  \item there is a pair of strongly separated hyperplanes, and
+  \item for every halfspace \(\mathfrak{h}\) there is a pair of strongly separated halfspaces \(\mathfrak{h_i}\) such that \(\mathfrak{h}_1 \subset \mathfrak{h} \subset \mathfrak{h}_2\).
   \end{enumerate}
 \end{prop}
 
@@ -240,7 +242,7 @@ The remainder of this paragraph builds towards Corollary~\ref{cor:f-3.21} and fo
   \[
     I = \{(\alpha, \beta) \in \bar X^2 \mid X = [\alpha, \beta]\}.
   \]
-  Hence, we find a finite index subgroup \(\Gamma_0 \leq \Aut(X)\) fixing each element in \(I\). Let \((\alpha, \beta) \in I\). By construction, we have \(g\alpha = \alpha\) for all \(g \in \Gamma_0\). Hence, the collection of halfspaces given by \(\alpha\) is \(\Gamma_0\)-invariant. Take \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). If any of the \(\mathfrak{\hat h}_i\) are parallel, we have seen in the proof of Corollary~\ref{cor:finite-interval} that the corrseponding halfspaces in \(\alpha\) form a chain. Hence, their intersection is never empty. If the two halfspaces are transverse, their intersection is also non-empty. Hence, we can invoke Theorem~\ref{thm:common-intersection} to see that \(\bigcap_{i=1}^n \mathfrak{h}_i\) is non-empty, as well. We can now apply Proposition~\ref{prop:cs-3.6} and see that \(\Gamma_0\) acts elementary in \(X\). Since \(\Gamma_0\) has finite index in \(\Aut(X)\) every finite orbit of \(\Gamma_0\) leads to a finite orbit in \(\Aut(X)\). Hence, \(\Aut(X)\) acts elementary as well.
+  Hence, we find a finite index subgroup \(\Gamma_0 \leq \Aut(X)\) fixing each element in \(I\). Let \((\alpha, \beta) \in I\). By construction, we have \(g\alpha = \alpha\) for all \(g \in \Gamma_0\). Hence, the collection of halfspaces given by \(\alpha\) is \(\Gamma_0\)-invariant. Take \(\mathfrak{h}_1, \dots, \mathfrak{h}_n \in \alpha\). If any of the \(\mathfrak{\hat h}_i\) are parallel, we have seen in the proof of Corollary~\ref{cor:finite-interval} that the corrseponding halfspaces in \(\alpha\) form a chain. Hence, their intersection is never empty. If the two halfspaces are transverse, their intersection is also non-empty. Hence, we can invoke Theorem~\ref{thm:common-intersection} to see that \(\bigcap_{i=1}^n \mathfrak{h}_i\) is non-empty as well. We can now apply Proposition~\ref{prop:cs-3.6} and see that \(\Gamma_0\) acts elementary in \(X\). Since \(\Gamma_0\) has finite index in \(\Aut(X)\) every finite orbit of \(\Gamma_0\) leads to a finite orbit in \(\Aut(X)\). Hence, \(\Aut(X)\) acts elementary as well.
 \end{proof}
 
 \begin{rem}
@@ -284,7 +286,7 @@ Unless noted otherwise, \(\Gamma\) will denote a countable, discrete group.
   \label{defin:ergodic}
   Let \((B, \Sigma, \mu)\) be a probability space with a group \(\Gamma\) acting by measurable and measure class preserving transformations. Then the action is called \emph{ergodic} if one of the two equivalent conditions is satisfied (c.\,f.\ the Lemma~\ref{lem:def-ergodic}):
   \begin{enumerate}
-  \item For every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\);
+  \item for every \(E \in \Sigma\) such that \(g^{-1}E = E\) for each \(g \in \Gamma\) we have \(\mu(E) = 0\) or \(\mu(E) = 1\), or
   \item every measurable \(\Gamma\)-invariant map \(f\colon B \to \R\) is essentially constant.
   \end{enumerate}
   The action is called \emph{doubly ergodic} if the diagonal action on \(B \times B\) equipped with the product measure is ergodic.
@@ -348,7 +350,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   \[
     \mu\left(\bigcup_{g \in \Gamma} gA_0\right) = \lim_{k \to \infty} \mu\left( \bigcap_{i=1}^k \bigcup_{g\in \Gamma} gA_i\right) = \lim_{k \to \infty} \mu\left(\bigcup_{g \in \Gamma} gA_k\right) = 1
   \]
-  at least one of the sets \(gA_0\) has non-zero measure for some \(g \in \Gamma\). Next, we note that \(\Gamma\) acts measure class preserving. Hence, if any of the sets \(gA_0\) has zero measure, then all of them have zero measure. All in all we obtain \(A_0 \in \Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). We note that the above reasoning also shows that if \(B \in \Lambda\) then \(gB \in \Lambda\) for every \(g \in \Gamma\) by means of the measure class preserving action. Observe that for each \(g \in \Gamma\), the set \(gA\) is also a minimal element. Indeed, if \(B \subset gA\) then \(g^{-1} B \subset A\). Hence, \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
+  at least one of the sets \(gA_0\) has non-zero measure for some \(g \in \Gamma\). Next, we note that \(\Gamma\) acts measure class preserving. Hence, if any of the sets \(gA_0\) has zero measure, then all of them have zero measure. All in all we obtain \(A_0 \in \Lambda\). Thus we have found a lower bound for our chain. Applying Zorn's Lemma we find a minimal element \(A \in \Lambda\), i.\,e.\ for every \(B \in \Lambda\) such that \(B \subset A\) we have \(B = A\). We note that the above reasoning also shows that if \(B \in \Lambda\), then \(gB \in \Lambda\) for every \(g \in \Gamma\) by means of the measure class preserving action. Observe that for each \(g \in \Gamma\), the set \(gA\) is also a minimal element. Indeed, if \(B \subset gA\) then \(g^{-1} B \subset A\). Hence, \(g^{-1}B = A\) and multiplying again we find \(B = gA\).
 
   Let us consider the case that \(A\) is \(\Gamma\)-invariant. Then by ergodicity, we have \(\mu(A) = 1\). We claim that in this case \(M\) is atomic. Take any \(B \in \Sigma\).
   Then
@@ -357,7 +359,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   \]
   since \(A^c\) is a null-set. We see that \(B \cap A \subset A\) and thus either \(\mu(B \cap A) = 0\) or \(B  \cap A \in \Lambda\) and hence \(B \cap A = A\) and \(\mu(B) = 1 = \mu(M)\).
 
-  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\) we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there exists at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) would be \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define:
+  If \(A\) is not \(\Gamma\)-invariant, we can consider the sets \(A \cap gA\) for each \(g \in \Gamma\). Whenever \(\mu(A \cap gA) > 0\), we have \(A = A \cap gA = gA\), since both \(A\) and \(gA\) are minimal in \(\Lambda\). Thus there exists at least one \(g \in \Gamma\) such that \(\mu(A \cap gA) = 0\), otherwise \(A\) would be \(\Gamma\)-invariant. Let \(g_1, \dots, g_l \in \Gamma\) all these group elements. We define:
   \begin{align*}
     B_1 & \coloneqq A \setminus g_1A\\
     B_i & \coloneqq B_{i-1} \setminus g_i A \quad \forall i = 2, \dots, l.
@@ -378,9 +380,9 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   where we set \(g_0 = e\). Thus this set has full measure. If we now define
   \begin{align*}
     B_0 & \coloneqq M \setminus \left (\bigsqcup_{i=1}^l g_iA \right) \supset A\\
-    B_i & \coloneqq g_iA \qquad \forall i = 1, \dots, l
+    B_i & \coloneqq g_iA \qquad \forall i = 1, \dots, l,
   \end{align*}
-  Then \(M = \sqcup_i B_i\) and as before we can show that each of these sets is atomic.
+  then \(M = \sqcup_i B_i\) and as before we can show that each of these sets is atomic.
 \end{proof}
 
 \begin{defin}
@@ -428,7 +430,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
 \subsection{Strong \(\Gamma\)-boundaries}
 \label{sec:grp-boundary}
 
-Finally, we are in a position to define \emph{strong \(\Gamma\)-boundaries} for certain topological groups \(\Gamma\). These are group theoretic objects and they will be the domain of our boundary map (Theorem~\ref{thm:4.1}). Indeed, at the end of this section, we will be able to construct the first half of this map. However, we first need to introduce two more group action properties. We need to generalize \emph{ergodic group actions} as defined in the previous sections to \emph{ergodic group actions with coefficients}. Afterwards, we will define \emph{amenable group actions}. This property guarantees the existence of certain measurable maps from the space the group is acting on into the dual of certain Banach spaces (on which \(\Gamma\) also has to act). Both definitions are rather technical in nature, however, their two main applications are rather simpler to grasp.
+Finally, we are in a position to define \emph{strong \(\Gamma\)-boundaries} for certain topological groups \(\Gamma\). These are group theoretic objects and they will be the domain of our boundary map (Theorem~\ref{thm:4.1}). Indeed, at the end of this section, we will be able to construct the first half of this map. However, we first need to introduce two more group action properties. We need to generalize \emph{ergodic group actions} as defined in the previous sections to \emph{ergodic group actions with coefficients}. Afterwards, we will define \emph{amenable group actions}. This property guarantees the existence of certain measurable maps from the space the group is acting on into the dual of certain Banach spaces (on which \(\Gamma\) also has to act). Both definitions are rather technical in nature. However, their two main applications are simpler to grasp.
 
 The first main application consists in Corollary~\ref{cor:coeff-ergodic}, namely that ergodicity with coefficients implies ergodicity in the regular sense. We will provide a few applications of this.
 
@@ -478,13 +480,13 @@ Here we will strengthen the notion of ergodicity. The main application is Coroll
   \[
     1 = \mu(\im \psi) = \sum_{n \in \N} \mu(\Gamma \cdot y_n).
   \]
-  However, each \(\Gamma \cdot y_n\) is \(\Gamma\)-invariant and by ergodicity we yield \(\mu(\Gamma \cdot y_n) \in \{0,1\}\). All in all we see that there exists exactly one \(n \in \N\) such that \(\mu(\Gamma \cdot y_n) = 1\). We define \(D \coloneqq \Gamma \cdot y_n\) for this \(n\) and observe that \(\Gamma\) acts transitively on this countable set.
+  However, each \(\Gamma \cdot y_n\) is \(\Gamma\)-invariant and by ergodicity we obtain \(\mu(\Gamma \cdot y_n) \in \{0,1\}\). All in all we see that there exists exactly one \(n \in \N\) such that \(\mu(\Gamma \cdot y_n) = 1\). We define \(D \coloneqq \Gamma \cdot y_n\) for this \(n\) and observe that \(\Gamma\) acts transitively on this countable set.
 
   First, we consider the case that \(D\) is finite. In this case we find a finite index subgroup \(\Gamma_0 \leq \Gamma\) which acts trivially on \(D\). Furthermore, by the Lemma~\ref{lem:4.3} we know that \(\Gamma_0\) still acts ergodically on \(D\). As previously, we can decompose \(D\) via
   \[
     1 = \mu(D) = \sum_{x \in D} \mu(\{x\}).
   \]
-  By the trivial action each of these atomic spaces is \(\Gamma_0\)-invariant and hence for exactly one \(x \in D\) we have \(\mu(\{x\}) = 1\). Hence \(\psi\) is essentially constant with essential value \(x\).
+  By the trivial action each of these atomic spaces is \(\Gamma_0\)-invariant and hence for exactly one \(x \in D\) we have \(\mu(\{x\}) = 1\). Hence, \(\psi\) is essentially constant with essential value \(x\).
 
   Lastly, we need to consider the case where \(D\) is infinite. Indeed, we will show that this cannot happen. We consider the Bernoulli space \(A \coloneqq \{0,1\}^D\) together with the standard Bernoulli measure \(\lambda\) (c.\,f.~\cite[29]{Klenke}). Since \(\Gamma\) acts transitively on \(D\), the action of \(\Gamma\) on \(A\) via \(g\chi_S \coloneqq \chi_{gS}\), where \(S\) is any subset of \(D\) and \(g \in \Gamma\) and \(\chi_S\) is an indicator function, is ergodic (c.\,f.~\cite[Example~20.26]{Klenke}).
   By Lemma~\ref{lem:coeff-product}, \(B \times B \times A\) is ergodic. We can consider the following map
@@ -492,12 +494,12 @@ Here we will strengthen the notion of ergodicity. The main application is Coroll
     f\colon B \times B \times A & \to \R,\\
     (x,y,\chi_S) & \mapsto \chi_S(\psi(x,y)).
   \end{align*}
-  \(f\) is \(G\)-invariant under the diagonal action and hence essentially constant. Denote this value by \(y \in \{0,1\}\). Then by Fubini's theorem we have that the map
+  The map \(f\) is \(G\)-invariant under the diagonal action and hence essentially constant. Denote this value by \(y \in \{0,1\}\). Then by Fubini's theorem we have that the map
   \begin{align*}
     g\colon B \times B & \to \R,\\
     (x,y) & \mapsto \int_A f(x,y,\chi_S) \d\mu(\chi_S)
   \end{align*}
-  exists for almost all \((x,y) \in B \times B\) and is also essentially constant with value \(y\). Fixing a value \((x_0, y_0)\) for which this is true, we see that \(\chi_S(x_0,y_0) = y\) for almost all \(\chi_S \in A\). However, by construction of the standard Bernoulli measure on \(A\) we have that
+  exists for almost all \((x,y) \in B \times B\) and is also essentially constant with value \(y\). Fixing a value \((x_0, y_0)\) for which this is true, we see that \(\chi_S(x_0,y_0) = y\) for almost all \(\chi_S \in A\). However, by construction of the standard Bernoulli measure on \(A\),  we have that
   \[
     \mu(\{\chi_S \in A \mid \chi_S(d) = 1 \}) = \mu(\{\chi_S \in A \mid \chi_S(d) = 0\}) = \text{\nfrac 1/2}
   \]
@@ -518,7 +520,7 @@ Here we will strengthen the notion of ergodicity. The main application is Coroll
   \[
     \operatorname{Pot}_f(\mathcal{H}) = \bigcup_{n \in \N} \{A \subset \mathcal{H}_n\}
   \]
-  showing that \(\operatorname{Pot}_f(\mathcal{H})\) is countable. By Lemma~\ref{lem:4.4}, the map is essentially constant. Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\). Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite. By Lemma~\ref{lem:ess-unbounded} \(\mathfrak{\hat h}\) is not essential and the group action is neither.
+  showing that \(\operatorname{Pot}_f(\mathcal{H})\) is countable. By Lemma~\ref{lem:4.4}, the map is essentially constant. Since \(\Gamma\) is countable, we can apply Lemma~\ref{lem:countable-orbit} and find a finite orbit \(\Gamma\cdot \mathfrak{\hat h}\). Then \(X(\Gamma \cdot \mathfrak{\hat h})\) is finite. By Lemma~\ref{lem:ess-unbounded}, \(\mathfrak{\hat h}\) is not essential and the group action is neither.
 \end{proof}
 
 \subsubsection{Amenable group action}
@@ -531,7 +533,7 @@ In the rest of the section, we will use the following notation, unless stated ot
 \item \(\Gamma\) denotes a second countable, locally compact group,
 \item \(E\) denotes a separable Banach space,
 \item \(E^\ast_1\) denotes the unit ball in the (topological) dual of \(E\), and
-\item \(S\) denotes a standard Borel spaces.
+\item \(S\) denotes a standard Borel space.
 \end{itemize}
 We also assume that \(\Gamma\) acts on \(S\) preserving measure classes.
 
@@ -551,7 +553,7 @@ We also assume that \(\Gamma\) acts on \(S\) preserving measure classes.
   Each element \(T \in \Isom(E)\) gives rise to a homeomorphism \(T^\ast\) of \(E^\ast_1\) via \((T^\ast\Phi)(x) \coloneqq \Phi(Tx)\) for every \(x \in E\). Thus every cocycle \(\alpha \colon S \times \Gamma \to \Isom(E)\) gives rise to a cocycle \(\alpha^\ast \colon S \times \Gamma \to \operatorname{Homeo}(E^\ast)\) via \(\alpha^\ast (g, s) = (\alpha(g, s)^{-1})^\ast\).
 \end{rem}
 
-With this remark in place, we can turn to the final definition:
+With this remark in place, we can turn to the final definition of this paragraph:
 
 \begin{defin}[Amenable group action]~\vspace{-6pt}
   \begin{itemize}
@@ -563,7 +565,7 @@ With this remark in place, we can turn to the final definition:
 \subsubsection{Strong \(\Gamma\)-boundary}
 \label{str-bdry}
 
-In this section we will plug the previous two notions, namely \emph{ergodicity with coefficients} and \emph{amenability}, to define \emph{strong \(\Gamma\)-boundaries}. We will see that these boundaries exist for a broad enough spectrum of groups (see Remark~\ref{rem:existence-bndry}) and that they are well-behaved under transitioning to finite index subgroups (Theorem~\ref{thm:str-bnd-subgrp}).
+In this paragraph we will plug the previous two notions, namely \emph{ergodicity with coefficients} and \emph{amenability}, together to define \emph{strong \(\Gamma\)-boundaries}. We will see that these boundaries exist for a broad enough spectrum of groups (see Remark~\ref{rem:existence-bndry}) and that they are well-behaved under transitioning to finite index subgroups (Theorem~\ref{thm:str-bnd-subgrp}).
 
 \begin{defin}[Strong \(\Gamma\)-boundary]
   Let \(\Gamma\) be a second countable, locally compact group. A Lebesgue space \((B, \Sigma, \vartheta)\) is called a \emph{strong \(\Gamma\)-boundary} if there is a group action of \(\Gamma\) on \(B\) by measurable transformations, and this action is:
@@ -577,7 +579,7 @@ In this section we will plug the previous two notions, namely \emph{ergodicity w
   \label{bsp:poisson}
   In his paper, \textcite[Theorem 3]{MR2006560} showed that the Furstenberg-Poisson boundary of any spread out, non-degenerate, symmetric random walk on a locally compact, second countable group \(\Gamma\) is a strong \(\Gamma\)-boundary. A measure \(\mu\) on \(\Gamma\) is called \emph{spread out} (or \emph{étalée}) if there exists a convolution power \(\mu^{\ast n}\) which is not singular with respect to the Haar measure class on \(\Gamma\), i.\,e.\ there is no partition \(\Gamma = A \sqcup B\) such that \(\mu^{\ast n}\) is zero on all measurable subsets of \(A\) and the Haar measure class is zero on all measurable subsets of \(B\). The measure is called \emph{non-degenerate} if the minimal closed semigroup \(S \subset \Gamma\) with \(\mu(S) = 1\) is all of \(\Gamma\). A measure is called \emph{symmetric}, if \(\mu = f_\ast \mu\), where \(f\) is the continuous map given by inversion on \(\Gamma\). A random walk is called spread out, non-degenerate or symmetric if the same is true for the measure \(\mu\) of the associated transition probability. For details please refer to~\cite[Section 3]{MR2006560}.
 
-  If \(\Gamma\) is a free group then the Furstenberg-Poisson boundary is isomorphic to the visual (and hence, to the Roller) boundary of the Cayley tree of \(\Gamma\). More generally, \textcite{MR1815698} showed that if the first moment of the transition measure is finite and it is non-degenerate then for every hyperbolic group the Gromov boundary is equivalent to the Furstenberg-Poisson boundary.
+  If \(\Gamma\) is a free group, then the Furstenberg-Poisson boundary is isomorphic to the visual (and hence, to the Roller) boundary of the Cayley tree of \(\Gamma\). More generally, \textcite{MR1815698} showed that if the first moment of the transition measure is finite and it is non-degenerate then for every hyperbolic group the Gromov boundary is equivalent to the Furstenberg-Poisson boundary.
 \end{bsp}
 
 \begin{rem}

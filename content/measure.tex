@@ -21,7 +21,7 @@ This section is a conglomeration of facts about measures and their connection to
   \]
   for arbitrary \(A_i \in \Sigma\) such that \(A_i \cap A_j = \varnothing\) whenever \(i \neq j\). Here we mean that the right hand side needs to converge.
 
-  We call \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\).
+  We call a signed measure \(\mu\) a \emph{measure}, if \(\mu(A) \geq 0\) for every \(A \in \Sigma\) and a \emph{probability measure}, if it is a measure and \(\mu(X) = 1\).
 
   \(A \in \Sigma\) is called \emph{null}, if \(\mu(A) = 0\) and \emph{conull} or \emph{full measure} if its complement is null.
 \end{defin}
@@ -91,7 +91,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 \end{lemma}
 
 \begin{proof}
-  We fix a measurable \(A \subset X \setminus \supp(\mu)\). Since \(\mu\) is inner regular, we find a sequence of compact sets \(K_n \subset A\) such that \(\mu(K_n) \xrightarrow{n \to \infty} \mu(A)\). Let \(x \in K_n\), then \(x \not \in \supp(\mu)\) and there exists \(U_x \subset X\) open such that \(x \in U_x\) and \(\mu(U_x) = 0\). Since \(K_n\) is compact we find an \(l = l(n) \in \N\) and finitely many \(x_1, \dots, x_l \in K_n\) such that \(K_n \subset \bigcup_{i=1}^l U_{x_i}\). Hence, we have
+  We fix a measurable \(A \subset X \setminus \supp(\mu)\). Since \(\mu\) is inner regular, we find a sequence of compact sets \(K_n \subset A\) such that \(\mu(K_n) \xrightarrow{n \to \infty} \mu(A)\). Let \(x \in K_n\), then \(x \not \in \supp(\mu)\) and there exists \(U_x \subset X\) open such that \(x \in U_x\) and \(\mu(U_x) = 0\). Since \(K_n\) is compact, we find an \(l = l(n) \in \N\) and finitely many \(x_1, \dots, x_l \in K_n\) such that \(K_n \subset \bigcup_{i=1}^l U_{x_i}\). Hence, we have
   \[
     \mu(K_n) \leq \sum_{i=1}^l \mu(U_{x_i}) = 0
   \]
@@ -134,7 +134,7 @@ Lastly, let us recall the definition of measurable maps and how to pushforward m
 \end{cor}
 
 \begin{proof}
-  Note that \(C_0(X)\) together with the supremum norm is a Banach space. Let \(V\) be the unit ball in \(C_0(X)\). Theorem~\ref{thm:banach-alaoglu} yields that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. For each probability measure \(\mu\), we have \(|\mu|(X) = \mu(X) = 1\). Thus it follows that \(P(X) \subset B\). Now, we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\). However,
+  Note that \(C_0(X)\) together with the supremum norm is a Banach space. Let \(V\) be the unit ball in \(C_0(X)\). Theorem~\ref{thm:banach-alaoglu} yields that the unit ball \(B \subset M_s(X) \cong C_0(X)^\ast\) is weak\(\ast\)-compact. For each probability measure \(\mu\) we have \(|\mu|(X) = \mu(X) = 1\). Thus, it follows that \(P(X) \subset B\). Now, we only need to show that \(P(X)\) is weak\(\ast\)-closed in \(B\). However,
   \begin{align*}
     P \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X f \d\mu \geq 0 \quad \forall f \geq 0\right\},\\
     N \coloneqq & \left\{\mu \in M_s(X) \relmid \int_X \d\mu = \int_X \chi_X \d\mu = 1\right\},\\
@@ -147,7 +147,7 @@ We will close the section with a result concerning the separability of the vecto
 
 \begin{lemma}[{\cite[Theorem~V.6.6]{Conway}}]
   \label{lem:continuous-separable}
-  If \(X\) is a compact metric space then the vector space of continuous functions \(C(X)\) equipped with the supremum norm is separable.
+  If \(X\) is a compact metric space, then the vector space of continuous functions \(C(X)\) equipped with the supremum norm is separable.
 \end{lemma}
 
 \subsection{Weighted halfspaces}
@@ -171,11 +171,11 @@ Unless noted otherwise, \(X\) is a connected, locally countable, finite-dimensio
 
 \begin{lemma}[{\cite[Lemma\ 4.6]{MR3509968}}]
   \label{lem:4.6}
-  Let \(\mu,\nu \in \mathcal{P}(\bar X)\).
+  Let \(\mu\) and \(\nu\) be regular probability measures on  \(\bar X\).
   \begin{enumerate}
   \item \(H_\mu\) is closed under involution. Also, involution is a bijection between \(H_\mu^+\) and \(H_\mu^-\).
   \item There is the following partition \(\mathcal{H}(X) = H_\mu \sqcup H_\mu^\pm = H_\mu \sqcup H_\mu^+ \sqcup H_\mu^-\).
-  \item If \(\mathfrak{h, k} \in H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)), then either \(\mathfrak{h} \pitchfork \mathfrak{k}\) or (after possibly switching switching \(\mathfrak{h}\) and \(\mathfrak{k}\)) the interval \([\mathfrak{h}, \mathfrak{k}]\) lies in \(H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)).
+  \item If \(\mathfrak{h, k} \in H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)), then either \(\mathfrak{h} \pitchfork \mathfrak{k}\) or (after possibly switching \(\mathfrak{h}\) and \(\mathfrak{k}\)) the interval \([\mathfrak{h}, \mathfrak{k}]\) lies in \(H_\mu\) (resp.\ \(H_\mu^+\) or \(H_\mu^-\)).
   % \item There are no facing triples\todo{facing triples} of halfspaces in \(H_\mu\). If \(X\) is not Euclidean\todo{Euclidean}, then \(H_\mu^+ \neq \varnothing\).\todo{check if I need this and if not remove it}
   \item If \(H_\mu\) and \(H_\nu\) are both non-empty and \(H_\mu \cap H_\nu = \varnothing\), then \(H_\mu \cap H_\nu^+ \neq \varnothing\) and \(H_\mu \cap H_\nu^- \neq \varnothing\).
   \item If \(\mathfrak{h, k}  \in H_\mu\) are two parallel halfspaces with \(\mathfrak{h} \subset \mathfrak{k}\), then \(\mu(\mathcal{C}(\mathfrak{h}^\ast) \cap \mathcal{C}(\mathfrak{k})) = 0\).
@@ -228,7 +228,7 @@ Unless noted otherwise, \(X\) is a connected, locally countable, finite-dimensio
     p\colon \bar X & \to \bar Y,\\
     \alpha & \mapsto \alpha \cap \mathcal{H}'
   \end{align*}
-  is continuous. If \(\mu\) is a regular probability measure on \(\bar X\) we have
+  is continuous. If \(\mu\) is a regular probability measure on \(\bar X\), we have
   \[
     H_{p_\ast \mu} = H_\mu \cap \mathcal{H}'
   \]
@@ -305,7 +305,7 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
     & = \bigcup_{F \subset F_2} \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H) \text{ and } (F_2 \setminus F) \cap H = \varnothing\}\\
     & = \bigcup_{F \subset F_2} \left ( \{H \subset \mathcal{H} \mid F \subset H \setminus \tau(H)\} \cap \mathcal{C}(\varnothing, F_2 \setminus F)\right).\\
   \end{align*}
-  We will now show that the set where a finite subset of elements are not terminal is measurable. This will conclude the proof. This can be achieved via an induction over \(n = |F|\). The case \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Assume the assertion is true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) contains \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F \coloneqq F \setminus \{\mathfrak{h}\}\), we do the following decomposition:
+  We will now show that every set where a finite subset of elements, that are not terminal, is measurable. This will conclude the proof. This can be achieved via an induction over \(n = |F|\). The case \(n = 0\) is clear, since any \(\sigma\)-algebra needs to contain the whole set. Assume the assertion is true for every finite subset \(F \subset \mathcal{H}\) of \(n\) elements. If \(F\) contains \(n+1\) elements, fixing \(\mathfrak{h} \in F\) and \(\tilde F \coloneqq F \setminus \{\mathfrak{h}\}\), we do the following decomposition:
   \begin{align*}
     \{H \subset \mathcal{H} \mid F \subset \mathcal{H} \setminus \tau(H)\}
     & = \{H \subset \mathcal{H} \mid \{\mathfrak{h}\} \cup \tilde F \subset H \setminus \tau(H)\}\\
@@ -330,7 +330,7 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
   \[
     K(F_1, F_2) = \{\mu \in \mathcal{P}(\bar X) \mid H^I_\mu \in \mathcal{C}(F_1, F_2)\}.
   \]
-  For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h})) \in I\}\). We will now show that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence, \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
+  For now, let us consider the sets \(E_I(\mathfrak{h}) \coloneqq \{\mu \in \mathcal{P}(\bar X) \mid \mu(\mathcal{U}(\mathfrak{h})) \in I\}\). We will now show that these sets are measurable. We know that \(\bar X = \mathcal{U}(\mathfrak{h}) \sqcup \mathcal{U}(\mathfrak{h}^\ast)\). Hence, \(\mathfrak{\tilde h} \coloneqq \mathcal{U}(\mathfrak{h})\) is both open and closed in \(\bar X\). Thus, the indicator function \(\chi_{\mathfrak{\tilde h}}\) is continuous. However, the weak\(\ast\)-topology is defined such that each map
   \begin{align*}
     T_f\colon \mathcal{P}(\bar X) &\to \R,\\
     \mu &\mapsto \int_X f \d\mu
@@ -380,7 +380,7 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
   \end{align*}
   where
   \[
-    \mathcal{S}\coloneqq \{(\mathfrak{h},\mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\}
+    \mathcal{S}\coloneqq \{(\mathfrak{h},\mathfrak{k}) \in \mathcal{H} \times \mathcal{H} \mid \mathfrak{h} \text{ and } \mathfrak{k} \text{ are strongly separated}\},
   \]
   is measurable.
 \end{lemma}
@@ -392,7 +392,7 @@ Unless noted otherwise, \(X\) is a locally countable, finite-dimensional CAT(0) 
     \mathcal{P}(\bar X) &\xrightarrow{f} \mathcal{P}(\bar X)^2&&\xrightarrow{g} \operatorname{Pot}(\mathcal{H}^2) &&\xrightarrow{h} \operatorname{Pot}(\mathcal{H}^2) &&\xrightarrow{j} \N \cup \{\infty\},\\
     \mu &\mapsto (\mu, \mu) &&\mapsto (H_\mu, H_\mu)&&\mapsto H_\mu \times H_\mu \cap \mathcal{S} &&\mapsto |H_\mu \times H_\mu \cap \mathcal{S}|.
   \end{alignat*}
-  \(f\) is continuous and hence measurable. \(g\) is measurable, because the map on each factor is measurable by Lemma~\ref{lem:measurable-mu}. \(j\) is measurable by Lemma~\ref{lem:measurable-countable}. We are left with \(h\). Consider the two finite subsets \(F, G \subset \mathcal{H}^2\). Then the preimage of the associated cylinder set is given by
+  The map \(f\) is continuous and hence measurable. The map \(g\) is measurable, because the map on each factor is measurable by Lemma~\ref{lem:measurable-mu}. The map \(j\) is measurable by Lemma~\ref{lem:measurable-countable}. We are left with \(h\). Consider the two finite subsets \(F, G \subset \mathcal{H}^2\). Then the preimage of the associated cylinder set is given by
   \begin{align*}
     h^{-1}(\mathcal{C}(F,G)) & \coloneqq \{(H, K) \in \operatorname{Pot}(\mathcal{H})^2 \mid F \subset H \times K \wedge G \subset (H \times K)^c\\
     & \wedge (\mathfrak{h}, \mathfrak{k}) \in H \times K \text{ is strongly separated}\}\\

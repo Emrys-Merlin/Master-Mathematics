@@ -8,7 +8,7 @@ We are now able to define the central object of this thesis: CAT(0) cube complex
   \[
     F = C \cap \{x_{i_1} = e_1, \dots, x_{i_k} = e_k\},
   \]
-  where \(0\leq k\leq n\), \(i_1, \dots, i_k\) are pairwise different elements in \(\{1, \dots, n\}\) and \(e_j \in \{0, 1\}\). \(F\) is called a \emph{proper face} if \(F \neq C\). The notation \(F \preceq C\) will be applied for faces. The \emph{dimension} of \(F\) is \(n - k\). The \emph{interior} \(\mathring F\), is the interior of \(F\) equipped with its \(\E^{n-k}\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
+  where \(0\leq k\leq n\), \(i_1, \dots, i_k\) are pairwise different elements in \(\{1, \dots, n\}\) and \(e_j \in \{0, 1\}\). \(F\) is called a \emph{proper face} if \(F \neq C\). The notation \(F \preceq C\) will be used for faces. The \emph{dimension} of \(F\) is \(n - k\). The \emph{interior} \(\mathring F\), is the interior of \(F\) equipped with its \(\E^{n-k}\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
   \begin{align*}
     C^{(m)} \coloneqq \bigcup\ \{F \mid F \preceq C \text{ and } \dim F \leq m\}.
   \end{align*}
@@ -30,13 +30,16 @@ Now, that we have introduced the vocabulary concerning Euclidean cubes, we turn 
 
 \begin{defin}[Cube complexes]~\vspace{-6pt}
   \begin{itemize}
-  \item Let \((C_\lambda)_{\lambda \in \Lambda}\) be a family of cubes and \(\mathcal{C} \coloneqq \bigsqcup_{\lambda \in \Lambda} C_\lambda\) its disjoint union. Furthermore, let \(\sim\) denote an equivalence relation on \(\mathcal{C}\) and by \(X\) the space of equivalence classes with natural projection \(p \colon \mathcal{C} \to X\). Lastly, let \(p_\lambda \colon C_\lambda \to X\) be the embedding of \(C_\lambda\) into \(\mathcal{C}\) concatenated with the projection.
+  \item Let \((C_\lambda)_{\lambda \in \Lambda}\) be a family of cubes and \(\mathcal{C} \coloneqq \bigsqcup_{\lambda \in \Lambda} C_\lambda\) its disjoint union. Furthermore, let \(\sim\) denote an equivalence relation on \(\mathcal{C}\) and denote by \(X\) the space of equivalence classes with natural projection \(p \colon \mathcal{C} \to X\). Lastly, let \(p_\lambda \colon C_\lambda \to X\) be the embedding of \(C_\lambda\) into \(\mathcal{C}\) concatenated with the projection.
 
-    \(X\) is called a \emph{cube complex}, if
+    \(X\) is called a \emph{cube complex} if
     \begin{enumerate}
     \item \(p_\lambda\) is injective and
     \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\), such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
     \end{enumerate}
+  \end{itemize}
+  Now, let \(X\) be a cube complex.
+  \begin{itemize}
   \item \(C \subset X\) is called an \emph{\(n\)-dimensional cube}, if it is the image of an \(n\)-dimensional face \(F \preceq C_\lambda\) under \(p_\lambda\). The interior of \(C\) is given by \(\mathring C \coloneqq p_\lambda(\mathring F)\). A \emph{midcube of \(C\)} is the image of a midcube of \(F\) under \(p_\lambda\).
   \item The \emph{\(m\)-skeleton} of \(X\) is given by
     \begin{align*}
@@ -130,7 +133,7 @@ In the following we will list some useful results about cube complexes. For the 
 
 \begin{thm}[{\cite[I.7.10]{MR1744486}}]
   \label{thm:metric}
-  Every cube complex \(X\) is a metric space, when equipped with metric \(d_p\) induced by the piecewise linear paths in \(X\).
+  Every cube complex \(X\) is a metric space, when equipped with the metric \(d_p\) induced by the piecewise linear paths in \(X\).
 \end{thm}
 
 With the above definition we can define:
@@ -140,7 +143,7 @@ With the above definition we can define:
 \end{defin}
 
 \begin{rem}
-  Altough the path metric \(d_p\) gives \(X\) its CAT(0) structure, this metric is often of no great importance in the theory of CAT(0) cube complexes. The reason for this is described in Remark~\ref{rem:geom-comb}.
+  Although the path metric \(d_p\) gives \(X\) its CAT(0) structure, this metric is often of no great importance in the theory of CAT(0) cube complexes. The reason for this is described in Remark~\ref{rem:geom-comb}.
 \end{rem}
 
 % \begin{proof}
@@ -198,11 +201,11 @@ With the above definition we can define:
 The following examples were taken from \textcite{sageev-lecture-notes}:
 \begin{bsp}[Graphs]
   \label{bsp:ccc-graph}
-  The link of every vertex in a graph is a set of disconnected vertices, which is by the non-existence of any higher dimensional simplices a flag complex. Hence, every graph is non-positively curved. In the case of graphs, simply connectedness is equivalent to the graph being a tree, such that we see that CAT(0) cube complexes are in a natural way a generalization of trees.
+  The link of every vertex in a graph is a set of disconnected vertices, which is by the non-existence of any higher dimensional simplices a flag complex. Hence, every graph is non-positively curved. In the case of graphs, simply connectedness is equivalent to the graph being a tree such that we see that CAT(0) cube complexes are in a natural way a generalization of trees.
 \end{bsp}
 \begin{bsp}[Sphere]
   \label{bsp:ccc-sphere}
-  Figure~\ref{fig:sphere} contains three representations of the two-dimensional sphere as a quotient of a disjoint union of cubes. None of these is a CAT(0) cube complex. In case~\ref{fig:sphere-a} the cube is not embedded  into the quotient. Nonetheless, one can define links for the vertices and we see that these are not simplicial complexes, since one contains a loop and the other contains parallel edges. In the case~\ref{fig:sphere-b}, we see that we can indeed realize the sphere as a cube complex, however, we still have a non-simplicial vertex link. In the case~\ref{fig:sphere-c}, we can even find a realization as a cube complex such that the vertex links are simplicial. However, even then the link is not flag.
+  Figure~\ref{fig:sphere} contains three representations of the two-dimensional sphere as a quotient of a disjoint union of cubes. None of these is a CAT(0) cube complex. In case~\ref{fig:sphere-a} the cube is not embedded  into the quotient. Nonetheless, one can define links for the vertices and we see that these are not simplicial complexes, since one contains a loop and the other contains parallel edges. In the case~\ref{fig:sphere-b}, we see that we can indeed realize the sphere as a cube complex. However, we still have a non-simplicial vertex link. In the case~\ref{fig:sphere-c}, we can even find a realization as a cube complex such that the vertex links are simplicial. However, even then the link is not flag.
 
   Naturally, this is as it should be as we know that a sphere is an example of a positively curved space and our definition agrees with the one in the case of manifolds.
   \begin{figure}[htbp]
@@ -247,7 +250,7 @@ The following examples were taken from \textcite{sageev-lecture-notes}:
 \begin{proof}
   Let \(X \in P\) and \(\varnothing \neq Y \subset X\). The set \(X\) can be decomposed as \(X = X_1 \sqcup X_2\), where \(X_i \in P_i\) or \(X_i = \varnothing\). With this we have \(Y = Y_1 \sqcup Y_2\) where \(Y_i \coloneqq X_i \cap Y\). If both \(Y_1\) and \(Y_2\) are non-empty, then \(Y_i \in P_i\) and by construction we have \(Y \in P\). If \(Y_2 = \varnothing\), then \(Y_1 \neq \varnothing\) and hence \(Y = Y_1 \in P_1 \subset P\). Likewise for \(Y_1 = \varnothing\). We conclude that \(K\) is a simplicial complex.
 
-  We will now show that \(K\) is flag. Let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeleton, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as the \(K_i\) is flag and we have \(P_i \subset P\). Otherwise \(X_1 \coloneqq \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 \coloneqq \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \sqcup X_2 \in P\) by definition. Hence \(K\) is flag.
+  We will now show that \(K\) is flag if the \(K_i\) are flag. Let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeleton, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as \(K_i\) is flag and we have \(P_i \subset P\). Otherwise \(X_1 \coloneqq \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 \coloneqq \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \sqcup X_2 \in P\) by definition. Hence \(K\) is flag.
 \end{proof}
 
 \begin{prop}
@@ -258,7 +261,7 @@ The following examples were taken from \textcite{sageev-lecture-notes}:
 \begin{proof}
   We will first prove that \(X_1 \times X_2\) is a cube complex. If \(X_1\) and \(X_2\) are cube complexes, we have the following maps:
   \begin{align*}
-    p_i \colon \bigsqcup_{\lambda \in \Lambda_i} C_\lambda \to X_i
+    p_i \colon \bigsqcup_{\lambda \in \Lambda_i} C_\lambda \to X_i.
   \end{align*}
   Hence, we have the map
   \[
@@ -270,7 +273,7 @@ The following examples were taken from \textcite{sageev-lecture-notes}:
   \]
   These maps are injective because each \(p_i\) is injective on every cube. The fact that the cubes are glued by isometries can also be seen on each factor separately.
 
-  We turn towards the proof that \(X\) is CAT(0). We will show that for any vertex \((v,w) \in X\) the link \(\lk((v,w), X)\) is the join of \(\lk(v, X_1)\) and \(\lk(w,X_2)\). We use Remark~\ref{rem:complex} and think of the link as inscribed into the complex. Let us first consider two Euclidean cubes \(C_{\lambda'}\) and \(C_\lambda\) and the origin as the vertex. Let \(n = \dim C_{\lambda'}\) and \(k = \dim C_\lambda\). Then a vertex \(v \in \lk(0, C_{\lambda'} \times C_{\lambda})\) is uniquely defined by the unique coordinate \(v_i\) which is non-zero. If \(i \leq n\) then \(v\) corresponds to a vertex in \(\lk(0, C_{\lambda'})\), otherwise to a vertex in \(\lk(0, C_\lambda)\). Now, the three links are indeed a \((n-1)\)-, \((k-1)\)- and \((n+k-1)\)-simplex respectively and we have \(\lk(0, C_{\lambda'} \times C_\lambda) = \lk(0, C_{\lambda'}) \ast \lk(0, C_{\lambda})\).
+  We turn towards the proof that \(X\) is CAT(0), if the \(X_i\) are CAT(0). We will show that for any vertex \((v,w) \in X\) the link \(\lk((v,w), X)\) is the join of \(\lk(v, X_1)\) and \(\lk(w,X_2)\). We use Remark~\ref{rem:complex} and think of the link as inscribed into the complex. Let us first consider two Euclidean cubes \(C_{\lambda'}\) and \(C_\lambda\) and the origin as the vertex. Let \(n = \dim C_{\lambda'}\) and \(k = \dim C_\lambda\). Then a vertex \(v \in \lk(0, C_{\lambda'} \times C_{\lambda})\) is uniquely defined by the unique coordinate \(v_i\) which is non-zero. If \(i \leq n\) then \(v\) corresponds to a vertex in \(\lk(0, C_{\lambda'})\), otherwise to a vertex in \(\lk(0, C_\lambda)\). Now, the three links are indeed a \((n-1)\)-, \((k-1)\)- and \((n+k-1)\)-simplex respectively and we have \(\lk(0, C_{\lambda'} \times C_\lambda) = \lk(0, C_{\lambda'}) \ast \lk(0, C_{\lambda})\).
 
   In the case of a general \(X\), we can accomplish the above decomposition on each cube separately. Since the isometric gluing is also factor wise, it preserves the decomposition and we have \(\lk((v,w), X) = \lk(v, X_1) \ast \lk(v, X_2)\). With this assertion in place Lemma~\ref{lem:flag} finishes the proof.
 \end{proof}
@@ -297,7 +300,7 @@ The above proposition leads to the following definition:
 
 \begin{defin}[Edge metric]
   \label{defin:edge-metric}
-  The \emph{edge metric} on \(V(X) = X^{(0)}\) the vertex set of \(X\) is the graph metric of the 1-skeleton \(X^{(1)}\) considered as a simplicial graph with all edges assigned unit length.
+  The \emph{edge metric} on \(V(X) \coloneqq X^{(0)}\), the vertex set of \(X\), is the graph metric of the 1-skeleton \(X^{(1)}\) considered as a simplicial graph with all edges assigned unit length.
 \end{defin}
 
 \begin{lemma}
@@ -349,7 +352,7 @@ We have two direct observations stemming from the above definition:
 
 \begin{cor}
   \label{cor:non-inc}
-  The restriction \(f|_C\colon C \to Y\) is distance non-increasing for each cube \(C \subset X\), i.\,e.\ \(d_Y(f(x), f(y)) \leq d_X(x,y)\) for all \(x,y \in C\).
+  Let \(f\colon X \to Y\) be a combinatorial map. The restriction \(f|_C\colon C \to Y\) is distance non-increasing for each cube \(C \subset X\), i.\,e.\ \(d_Y(f(x), f(y)) \leq d_X(x,y)\) for all \(x,y \in C\).
 \end{cor}
 
 \begin{prop}

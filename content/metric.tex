@@ -1,6 +1,6 @@
 \section{CAT(0) cube complexes}
 \label{sec:complexes}
-This chapter is divided into four sections, which are all concerned with the introduction of our basic object of study: CAT(0) cube complexes. The Section~\ref{sec:metric} will introduce general metric preliminaries and properties of CAT(0) spaces. In Section~\ref{sec:complex} we will be in a position to introduce cubes and cube complexes and give a combinatorial condition for them to be CAT(0). Section~\ref{sec:comb-map} is closely related to the former, as we will need to talk about maps between CAT(0) cube complexes. As it turns out, combinatorial maps are the right generalization of simplicial maps for us. In this section, we will also introduce the automorphism group of CAT(0) cube complex. In Section~\ref{sec:halfspaces} we will talk a bit more about the geometry of the complexes and introduce hyperplanes and halfspaces. These objects will be heavily used throughout this thesis and will be especially important in Chapter~\ref{sec:roller}, when they are used to construct the Roller compactification of our complexes.
+This chapter is divided into four sections, which are all concerned with the introduction of our basic objects of study: CAT(0) cube complexes. The Section~\ref{sec:metric} will introduce general metric preliminaries and properties of CAT(0) spaces. In Section~\ref{sec:complex} we will be in a position to introduce cubes and cube complexes and give a combinatorial condition for them to be CAT(0). Section~\ref{sec:comb-map} is closely related to the former, as we will need to talk about maps between CAT(0) cube complexes. As it turns out, combinatorial maps are the right generalization of simplicial maps for us. In this section, we will also introduce the automorphism group of CAT(0) cube complex. In Section~\ref{sec:halfspaces} we will talk a bit more about the geometry of the complexes and introduce hyperplanes and halfspaces. These objects will be heavily used throughout this thesis and will be especially important in Chapter~\ref{sec:roller}, when they are used to construct the Roller compactification of our complexes.
 
 \subsection{Preliminaries on metric and CAT(0) spaces}
 \label{sec:metric}
@@ -11,7 +11,7 @@ This section is concerned with basic metric properties of spaces and their conne
 
 \begin{defin}[Geodesics]~\vspace{-6pt}
   \begin{itemize}
-  \item Let \((X, d)\) be a metric space. A \emph{geodesic} from \(x\) to \(y\) with \(x,y \in X\) is a map \(c\colon [a,b] \to X\) such that \(c(a) = x\), \(c(b) = y\) and
+  \item Let \((X, d)\) be a metric space. A \emph{geodesic} from \(x\) to \(y\) with \(x,y \in X\) is a map \(c\colon [a,b]\subset \R \to X\) such that \(c(a) = x\), \(c(b) = y\) and
     \begin{align*}
       d(c(t), c(t')) = |t - t'| 
     \end{align*}
@@ -20,31 +20,34 @@ This section is concerned with basic metric properties of spaces and their conne
   \end{itemize}
 \end{defin}
 
-\begin{bsp}[Euclidean space] The pair \((\R^n, d_0)\), where \(\R^n \coloneqq \R^n\) and \(d_0(x,y) \coloneqq \|x - y\|_2\), is uniquely geodesic. The space \(\R^n \setminus \{0\}\) is no longer geodesic, since every pair of antipodal points can no longer be joined by a line segment.
+\begin{bsp}[Euclidean space] The pair \((\R^n, d_0)\), where \(d_0(x,y) \coloneqq \|x - y\|_2\), is uniquely geodesic. The space \(\R^n \setminus \{0\}\) is no longer geodesic, since every pair of antipodal points can no longer be joined by a line segment.
 \end{bsp}
 
 \begin{bsp}[Riemannian manifolds:] By the Hopf-Rinow theorem\ \cite{hopf-rinow}, every complete Riemannian manifold is geodesic, but not necessarily uniquely geodesic (consider the sphere).
 \end{bsp}
 
-\begin{defin}[Comparison triangles]~\vspace{-6pt}
+\begin{defin}[Comparison triangles]
+  Let \((X,d)\) be a metric space.\vspace{-6pt}
   \begin{itemize}
-  \item Let \((X,d)\) be a metric space. A \emph{geodesic triangle} \(\Delta \subset X\) consists of three points \(p,q,r \in X\), its \emph{vertices}, together with a choice of three \emph{edges}, that is geodesic segments \([p,q], [q,r], [r, p]\) joining them (Recall that geodesics might not be unique). If necessary, the notation \(\Delta = \Delta(p,q,r)\) or \(\Delta = \Delta([p,q], [q,r], [r,p])\) will be used. The first case is a slight abuse of notation, as the three vertices might not determine the triangle.
+  \item A \emph{geodesic triangle} \(\Delta \subset X\) consists of three points \(p,q,r \in X\), its \emph{vertices}, together with a choice of three \emph{edges}, that is geodesic segments \([p,q], [q,r], [r, p]\) joining them (recall that geodesics might not be unique). If necessary, the notation \(\Delta = \Delta(p,q,r)\) or \(\Delta = \Delta([p,q], [q,r], [r,p])\) will be used. The first case is a slight abuse of notation, as the three vertices might not determine the triangle.
   \item A \emph{comparison triangle} in \(\R^2\) for \(\Delta = \Delta(p,q,r) \subset X\) is a choice of three points \(\bar p, \bar q, \bar r \in \R^2\) such that \(\|\bar p- \bar q\| = d(p, q)\), \(\|\bar q- \bar r\| = d(q, r)\) and \(\|\bar r- \bar p\| = d(r, p)\). It will be denoted by \(\bar \Delta = \Delta(\bar p, \bar q, \bar r)\). Such a comparison triangle always exists \cite[c.\,f.][Sec.\ I.2]{MR1744486}.
   \end{itemize}
 \end{defin}
 
-\begin{defin}[CAT(0) and non-positive curvature spaces]~\vspace{-6pt}
+\begin{defin}[CAT(0) and non-positive curvature spaces]
+  Let \((X,d)\) be a metric space.\vspace{-6pt}
   \label{def:cat}
   \begin{itemize}
   \item Let \(\Delta = \Delta(p,q,r) \subset X\) be a triangle and \(\bar \Delta = \Delta(\bar p, \bar q, \bar r) \subset \R^2\) its comparison triangle. Each point \(x \in [p,q]\) has a unique associated point \(\bar x \in [\bar p, \bar q]\), which has the same distance from \(\bar p\) and \(\bar q\) as \(x\) from \(p\) and \(q\). The same is of course true for any point lying on any of the other edges.
 
-    With this in mind we say that \(\Delta\) satisfies the \emph{CAT(\(0\)) inequality} if \(d(x,y) \leq \|\bar x- \bar y\|\) for any \(x, y \in \Delta\) and \(\bar x, \bar y \in \bar \Delta \subset \R^2\) the two associated points defined above.
+    With this in mind we say that \(\Delta\) satisfies the \emph{CAT(0) inequality} if \(d(x,y) \leq \|\bar x- \bar y\|\) for any \(x, y \in \Delta\) and \(\bar x, \bar y \in \bar \Delta \subset \R^2\) the two associated points defined above.
   \item \(X\) is called a \emph{CAT(0) space} if \(X\) is geodesic and if each geodesic triangle \(\Delta\) satisfies the CAT(0) inequality.
   \item \(X\) is called \emph{of curvature \(\leq 0\)} or \emph{non-positively curved} if it is locally a CAT(\(0\)) space, i.\,e.\ for each \(x \in X\) there exists an \(r > 0\), such that \(B(x,r)\) together with the induced metric is a CAT(\(0\)) space.
   \end{itemize}
 \end{defin}
 
-\begin{bsp}[Euclidean space] \(\R^n\) is by definition a CAT(0) space. Furthermore, it is easy to see if we remove the interior \(\Delta\) of a non-degenerate triangle from \(\R^2\) and equip this space with the induced length metric (i.\,e.\ the distance between two points is given by the infimum of the length over all piecewise linear paths), then \(\R^2 \setminus \Delta\) is no longer CAT(0). Indeed, the interior of \(\Delta\) is missing and this lengthens all shortest paths which would normally go through the interior. However, this space is still non-positively curved.
+\begin{bsp}[Euclidean space]
+  \(\R^n\) is by definition a CAT(0) space. Furthermore, it is easy to see if we remove the interior \(\Delta\) of a non-degenerate triangle from \(\R^2\) and equip this space with the induced length metric (i.\,e.\ the distance between two points is given by the infimum of the length over all piecewise linear paths), then \(\R^2 \setminus \Delta\) is no longer CAT(0). Indeed, the interior of \(\Delta\) is missing and this lengthens all shortest paths which would normally go through the interior. However, this space is still non-positively curved.
 \end{bsp}
 \begin{bsp}[Trees]
   \begin{figure}[htbp]
@@ -110,7 +113,7 @@ On CAT(0) spaces one regularly defines a boundary via identifying certain geodes
 
 \begin{defin}[Visual boundary, {\cite[Sec.~II.8]{MR1744486}}]
   \label{defin:visual}
-  Let \(\gamma_i \colon [0, \infty) \to X\) be two geodesic rays. We say \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that
+  Let \(X\) be a CAT(0) space and \(\gamma_i \colon [0, \infty) \to X\) two geodesic rays. We say \(\gamma_1 \sim \gamma_2\) if and only if there exists a constant \(K > 0 \) such that
   \[
     d(\gamma_1(t), \gamma_2(t)) < K
   \]
@@ -120,14 +123,14 @@ On CAT(0) spaces one regularly defines a boundary via identifying certain geodes
 \end{defin}
 
 \begin{rem}
-  \(X \sqcup \partial_{\sphericalangle}X\) can be topologized in a way that it agrees with the topology induced by the metric on \(X\). If \(X\) is locally compact \(X \sqcup \partial_\sphericalangle X\) is also compact (c.\,f.~\cite[Sec.~II.8]{MR1744486}).
+  \(X \sqcup \partial_{\sphericalangle}X\) can be topologized in a way that it agrees with the topology induced by the metric on \(X\). If \(X\) is locally compact, \(X \sqcup \partial_\sphericalangle X\) is also compact (c.\,f.~\cite[Sec.~II.8]{MR1744486}).
 \end{rem}
 
 \begin{bsp}[Euclidean space]
   In \(\R^n\) two geodesics (i.\,e.\ straight lines) are equivalent if and only if they are parallel. Hence, we can fix any point \(x \in \R^n\) and see that there is a one-to-one correspondence between points at the visual boundary and (signed) directions. In other words, we attach an \((n-1)\)-sphere at infinity and indeed it can be shown that \(\R^n \sqcup \partial_\sphericalangle \R^n\) is homeomorphic to the closed unit ball \(D^n\), with \(\R^n\) homeomorphic to the interior (c.\,f.~\cite[Section~II.8]{MR1744486}).
 \end{bsp}
 \begin{bsp}[Trees]
-  In the case of trees, every edge path is a geodesic and two of them \(c_1\) and \(c_2\) are equivalent if and only if there exist \(n,m \in \N\) such that \(c_1(t+m) = c_2(t+n)\) for all \(t\geq0\). This means that up to a finite starting interval the two geodesics have to coincide. In other words we are only interested in the \enquote{tails} of the geodesic rays.
+  In the case of trees, every edge path is a geodesic and two of them, \(c_1\) and \(c_2\), are equivalent if and only if there exist \(n,m \in \N\) such that \(c_1(t+m) = c_2(t+n)\) for all \(t\geq0\). This means that up to a finite starting interval the two geodesics have to coincide. In other words we are only interested in the \enquote{tails} of the geodesic rays.
 \end{bsp}
 
 \begin{lemma}[{\cite[Lemma~2.9]{MR3509968}}]
