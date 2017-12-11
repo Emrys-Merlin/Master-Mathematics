@@ -51,7 +51,7 @@ Now, that we have introduced the vocabulary concerning Euclidean cubes, we turn 
   %   \begin{align*}
   %     \st(x) \coloneqq \bigcup \left\{\mathring C \relmid C \subset X \text{ a cube and } x \in C\right\}.
   %   \end{align*}
-  \item Let \(x \in X\) and \((x_i)_{i \in I}\) be the family of all the points \(x_i \in C_{\lambda(i)}\) such that \(p_{\lambda(i)}(x_i) = x\). Consider the disjoint union \(\bigsqcup_{i \in I} \lk(x_i, C_{\lambda(i)})\). We define an equivalence relation: \(u_i \sim u_j\) if and only if there exist \(t_i, t_j > 0\) such that \(\exp_{x_i}(t_i u_i) \in C_{\lambda(i)}\), \(\exp_{x_j}(t_j u_j) \in C_{\lambda(j)}\) and \(p_{\lambda(i)}(\exp_{x_i}(t_i u_i)) = p_{\lambda(j)}(\exp_{x_j}(t_j u_j))\). Then the \emph{link of \(x\) in \(X\)} is given by
+  \item Let \(x \in X\) and \((x_i)_{i \in I}\) be the family of all the points \(x_i \in C_{\lambda(i)}\) lying in the fiber over \(X\). Consider the disjoint union \(\bigsqcup_{i \in I} \lk(x_i, C_{\lambda(i)})\). We define an equivalence relation: \(u_i \sim u_j\) if and only if there exist \(t_i, t_j > 0\) such that \(\exp_{x_i}(t_i u_i) \in C_{\lambda(i)}\), \(\exp_{x_j}(t_j u_j) \in C_{\lambda(j)}\) and \(p_{\lambda(i)}(\exp_{x_i}(t_i u_i)) = p_{\lambda(j)}(\exp_{x_j}(t_j u_j))\). Then the \emph{link of \(x\) in \(X\)} is given by
     \begin{align*}
       \lk(x, X) \coloneqq \quot{\bigsqcup_{i \in I} \lk(x_{\lambda(i)}, C_{\lambda(i)})}{\sim}.
     \end{align*}
@@ -244,7 +244,7 @@ The following examples were taken from \textcite{sageev-lecture-notes}:
 
 \begin{lemma}
   \label{lem:flag}
-  The join \(K = (S,P)\) of two simplicial complexes \(K_1 = (S_1, P_1)\) and \(K_2 = (S_2, P_2)\) is a simplicial complex. If \(K_1\) and \(K_2\) are flag, so is \(K\).
+  The join \(K = (S,P)\) of two simplicial complexes \(K_i = (S_i, P_i)\) (\(i=1,2\)) is a simplicial complex. If \(K_1\) and \(K_2\) are flag, so is \(K\).
 \end{lemma}
 
 \begin{proof}

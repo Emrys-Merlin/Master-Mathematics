@@ -300,7 +300,7 @@ Unless noted otherwise, \(\Gamma\) will denote a countable, discrete group.
 \begin{proof}
   We assume 1. Let \(f \colon B \to \R\) be measurable and \(\Gamma\)-invariant. Then for every \(c \in \R\) the set \(f^{-1}(c)\) is measurable and \(\Gamma\)-invariant. Hence, it has either measure 0 or 1. Since \(B\) is a disjoint union of all these preimages, we see that there exists exactly one \(c \in \R\) such that \(f^{-1}(c)\) has full measure, which means that \(f\) is essentially constant.
 
-  Now, we assume 2. Consider a \(\Gamma\)-invariant measurable set \(E\). Then its indicator function \(\chi_E\) is a measurable, \(\Gamma\)-invariant map and hence essentially constant implying \(\mu(E) \in \{0,1\}\).
+  Now, we assume 2. Consider a \(\Gamma\)-invariant measurable set \(E\). Then its indicator function \(\chi_E\) is a measurable, \(\Gamma\)-invariant map and hence essentially constant. This implies that \(\mu(E) \in \{0,1\}\).
 \end{proof}
 
 The first definition of ergodicity shows that \emph{transitive} group actions (i.\,e.\ for every \(x,y \in B\) there exists a \(g \in \Gamma\) such that \(gx = y\)) are automatically ergodic (as long as they act measurably and measure class preserving). The following is a less pathological example:
@@ -424,7 +424,7 @@ The first definition of ergodicity shows that \emph{transitive} group actions (i
   \[
     (\vartheta\times\vartheta)((A \times A^c) \cap X) \leq \sum_{\bar g \in \bar \Gamma} \vartheta(A \cap gA) \cdot \vartheta(A^c \cap gA).
   \]
-  Now \(A \cap gA\) still lies in \(\Lambda\). Also note that on \(\Lambda\), \(A\) is atomic. Hence, we have \(\vartheta(A \cap gA) \in \{0, \vartheta(A)\}\). So either \(\vartheta(A \cap gA)\) or \(\vartheta(A^c \cap gA)\) are 0 and the right-hand side of the above equation vanishes.
+  Now \(A \cap gA\) still lies in \(\Lambda\). Also note that on \(\Lambda\), \(A\) is atomic. Hence, we have \(\vartheta(A \cap gA) = 0\) or \(\vartheta(A \cap gA)= \vartheta(A)\). So either \(\vartheta(A \cap gA)\) or \(\vartheta(A^c \cap gA)\) are 0 and the right-hand side of the above equation vanishes.
 \end{proof}
 
 \subsection{Strong \(\Gamma\)-boundaries}
@@ -600,7 +600,7 @@ In the following, we will need that strong \(\Gamma\)-boundaries are well behave
 \end{thm}
 
 \begin{proof}
-  Let \(C(X)\) be the space of continuous functions from \(X\) to \(\R\).  This is a Banach space with respect to the supremum norm. By Lemma~\ref{lem:continuous-separable}, it is also separable. Furthermore, there exists a group action of \(\Gamma\) on \(C(X)\) via \((gf)(x) \coloneqq f(g^{-1}x)\) where \(g \in \Gamma\), \(f \in C(X)\) and \(x \in X\). This action is clearly via isometries. Also for \(\mu \in \mathcal{P}(X)\) we define \((g\mu)(A) \coloneqq \mu(g^{-1} A)\) for every \(g \in \Gamma\) and \(A \in \Sigma\). Then the dual pairing established in the Riesz-Markow representation theorem (Theorem~\ref{thm:riesz-markow}) yields
+  Let \(C(X)\) be the space of continuous functions from \(X\) to \(\R\).  This is a Banach space with respect to the supremum norm. By Lemma~\ref{lem:continuous-separable}, it is also separable. Furthermore, there exists a group action of \(\Gamma\) on \(C(X)\) via \((gf)(x) \coloneqq f(g^{-1}x)\) where \(g \in \Gamma\), \(x \in X\) and \(f \in C(X)\). This action is clearly via isometries. Also for \(\mu \in \mathcal{P}(X)\) we define \((g\mu)(A) \coloneqq \mu(g^{-1} A)\) for every \(g \in \Gamma\) and \(A \in \Sigma\). Then the dual pairing established in the Riesz-Markow representation theorem (Theorem~\ref{thm:riesz-markow}) yields
   \[
     \langle gf, \mu\ \rangle = \langle f, g^{-1} \mu \rangle
   \]

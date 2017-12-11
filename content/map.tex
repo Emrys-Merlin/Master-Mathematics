@@ -448,11 +448,11 @@ As stated above, we will try to find a contradiction to the Flipping Lemma (Theo
 
 \begin{lemma}[{\cite[Lemma~4.20]{MR3509968}}]
   \label{lem:4.20}
-  Let \(X\) be irreducible. Let \(\mu_i \in \mathcal{P}(\bar X)\) be a family of measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\) and \(H_{\mu_{i_0}} \cap H_{\mu_i} \neq \varnothing\) for all \(i\) and a fixed \(i_0\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_{\mu_j}\), we have \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\).
+  Let \(X\) be irreducible. Let \(\mu_i \in \mathcal{P}(\bar X)\) be a family of measures such that \(\hat H_{\mu_i}\) does not contain strongly separated hyperplanes for all \(i\). Assume that \(H_{\mu_{i_0}} \cap H_{\mu_i} \neq \varnothing\) for all \(i\) and a fixed \(i_0\). Then there exists a pair of halfspaces \(\mathfrak{h} \subset \mathfrak{k}\) such that \(\mathfrak{\hat h}\) and \(\mathfrak{\hat k}\) are strongly separated and for every \(\mathfrak{l} \in H_{\mu_j}\), we have \(\mathfrak{h} \subset \mathfrak{l} \subset \mathfrak{k}\) or \(\mathfrak{h} \subset \mathfrak{l}^\ast \subset \mathfrak{k}\).
 \end{lemma}
 
 \begin{proof}
-  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply Lemma~\ref{lem:4.19} to find strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
+  We fix \(\mu_0\coloneqq \mu_{i_0}\) and apply Lemma~\ref{lem:4.19} to find two strongly separated halfspaces \(\mathfrak{h_2} \subset \mathfrak{h_3}\). By Lemma~\ref{lem:cs-dsl}, we find a \(g \in \Gamma\) such that \(g\mathfrak{h}_3 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3\). We set \(\mathfrak{h}_0 \coloneqq g^2 \mathfrak{h}_2\), \(\mathfrak{h}_1 \coloneqq g\mathfrak{k}_2\), \(\mathfrak{h}_4 \coloneqq g^{-1}\mathfrak{h}_3\) and \(\mathfrak{h}_5 \coloneqq g^{-2} \mathfrak{h}_3\). Then we have the sequence
   \[
     \mathfrak{h}_0 \subset \mathfrak{h}_1 \subset \mathfrak{h}_2 \subset \mathfrak{h}_3 \subset \mathfrak{h}_4 \subset \mathfrak{h}_5.
   \]
@@ -568,7 +568,7 @@ Finally, we are in a position to prove our main theorem (Theorem~\ref{thm:4.1}).
     \end{align*}
     which is, by the above observation, \(\Gamma_0\)-invariant and also measurable (c.\,f.\ Lemma\ \ref{lem:measurable-str-sep} together with Lemma\ \ref{lem:proj-weight}). Hence, it is essentially constant (Lemma~\ref{lem:4.3}). We have two cases depending on the essential values \(N_i\).
     \begin{description}
-    \item[Case 1:] The value \(N_i > 0\) for all \(i\), i.\,e.\ there are strongly separated hyperplanes in all \(H_\mu \cap \mathcal{H}_i\). Hence, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the sets \(H_\mu^+ \cap H_\nu\) contain terminal elements whenever the intersection is not empty. Furthermore, \(\tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])\) is finite by Lemma~\ref{lem:finite-terminal}. However, then
+    \item[Case 1:] The value \(N_i > 0\) for all \(i\), i.\,e.\ there are strongly separated hyperplanes in all \(H_\mu \cap \mathcal{H}_i\). Hence, we can use Lemma~\ref{lem:4.18} and see that \(H_\mu^+\) satisfies the descending chain condition. This implies that the sets \(H_\mu^+ \cap H_\nu\) contain terminal elements whenever the intersection is not empty. Furthermore, we know by Lemma~\ref{lem:finite-terminal} that they each contain at most finitely many terminal elements. However, then
       \begin{align*}
         \mathcal{P}(\bar X) \times \mathcal{P}(\bar X) &\to \operatorname{Pot}_f(\mathcal{H}),\\
         (\mu,\nu) &\mapsto \tau([H_\mu^+ \cap H_\nu] \cup [H_\nu^+ \cap H_\mu])
