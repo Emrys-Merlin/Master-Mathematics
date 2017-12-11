@@ -4,11 +4,11 @@
 We are now able to define the central object of this thesis: CAT(0) cube complexes. First, we will introduce Euclidean cubes and some necessary notation (faces and links). Afterwards, we will define the gluing process that will lead to cube complexes. We will state some basic properties and define flag complexes. This allows us to connect the geometric property of being CAT(0) to a purely combinatorial notion which is stated in Gromov's link condition (Theorem~\ref{thm:link}). Lastly, we will turn towards locally countable complexes and prove some necessary lemmas concerning the countability of vertex sets.
 
 \begin{defin}[Cubes]
-  A set \(C = [0,1]^n \subset \E^n\) is called a \emph{cube}. A \emph{face} is a subset of the form 
+  A set \(C = [0,1]^n \subset \R^n\) is called a \emph{cube}. A \emph{face} is a subset of the form 
   \[
     F = C \cap \{x_{i_1} = e_1, \dots, x_{i_k} = e_k\},
   \]
-  where \(0\leq k\leq n\), \(i_1, \dots, i_k\) are pairwise different elements in \(\{1, \dots, n\}\) and \(e_j \in \{0, 1\}\). \(F\) is called a \emph{proper face} if \(F \neq C\). The notation \(F \preceq C\) will be used for faces. The \emph{dimension} of \(F\) is \(n - k\). The \emph{interior} \(\mathring F\), is the interior of \(F\) equipped with its \(\E^{n-k}\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
+  where \(0\leq k\leq n\), \(i_1, \dots, i_k\) are pairwise different elements in \(\{1, \dots, n\}\) and \(e_j \in \{0, 1\}\). \(F\) is called a \emph{proper face} if \(F \neq C\). The notation \(F \preceq C\) will be used for faces. The \emph{dimension} of \(F\) is \(n - k\). The \emph{interior} \(\mathring F\), is the interior of \(F\) equipped with its \(\R^{n-k}\)-structure. Any subset \(C \cap \{x_i = \text{\nfrac 1/2}\}\) is called a \emph{midcube of \(C\)}. The \emph{\(m\)-skeleton of \(C\)} is defined by
   \begin{align*}
     C^{(m)} \coloneqq \bigcup\ \{F \mid F \preceq C \text{ and } \dim F \leq m\}.
   \end{align*}
@@ -17,9 +17,9 @@ We are now able to define the central object of this thesis: CAT(0) cube complex
 
   The \emph{link of \(x\) in \(C\)} is given by
   \begin{align*}
-    \lk(x,C) \coloneqq \{u \in U_x\E^n \mid \exists t > 0 \colon \exp_x(tu) \in C\} \subset U_x\E^n \cong \sphere^{n-1},
+    \lk(x,C) \coloneqq \{u \in U_x\R^n \mid \exists t > 0 \colon \exp_x(tu) \in C\} \subset U_x\R^n \cong \sphere^{n-1},
   \end{align*}
-  where \(U_x\E^n\) is the unit tangent space at \(x\) in \(\E^n\) considered as a Riemannian manifold. It can be isometrically identified with \(\sphere^{n-1}\).
+  where \(U_x\R^n\) is the unit tangent space at \(x\) in \(\R^n\) considered as a Riemannian manifold. It can be isometrically identified with \(\sphere^{n-1}\).
 \end{defin}
 
 \begin{rem}
@@ -35,7 +35,7 @@ Now, that we have introduced the vocabulary concerning Euclidean cubes, we turn 
     \(X\) is called a \emph{cube complex} if
     \begin{enumerate}
     \item \(p_\lambda\) is injective and
-    \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\), such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
+    \item for arbitrary \(\lambda_1, \lambda_2 \in \Lambda\) and \(x_i \in C_{\lambda_i}\) such that \(p_{\lambda_1}(x_1) = p_{\lambda_2}(x_2)\), there exists an isometry \(h\colon \supp(x_1) \to \supp(x_2)\) such that \(p_{\lambda_1}|_{\supp(x_1)} = p_{\lambda_2} \circ h\).
     \end{enumerate}
   \end{itemize}
   Now, let \(X\) be a cube complex.
@@ -70,8 +70,8 @@ Now, that we have introduced the vocabulary concerning Euclidean cubes, we turn 
       \caption{The left-hand side depicts a CAT(0) cube complex (black). One vertex link is inscribed into the complex via the intersection of a small sphere (blue). The right-hand side depicts the vertex link without the CAT(0) cube complex.}
       \label{fig:link}
     \end{figure}
-  \item Our definition of a cube complex is not standard. Usually, the above defined object is called a cubical complex (c.\,f.~\cite[Def.~I.7.37]{MR1744486}). The difference between the two concepts lies solely in the fact that in the cubical case we need the maps \(p_\lambda\) to be injective on the whole cube, whereas in the cube case they are only assumed to be injective on the \emph{interior} of each cube. However, as \textcite[Thm.~C.4]{MR3029427} has shown, in the case of CAT(0) cube complexes the two definitions are equivalent, hence we will adopt it from the start.
-  \item By definition two cubes either intersect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes (c.\,f.\ Definition~\ref{defin:flag}). 
+  \item Our definition of a cube complex is not standard. Usually, the above defined object is called a cubical complex\ \cite[c.\,f.][Def.~I.7.37]{MR1744486}. The difference between the two concepts lies solely in the fact that in the cubical case we need the maps \(p_\lambda\) to be injective on the whole cube, whereas in the cube case they are only assumed to be injective on the \emph{interior} of each cube. However, as \textcite[Thm.~C.4]{MR3029427} has shown, in the case of CAT(0) cube complexes the two definitions are equivalent, hence we will adopt it from the start.
+  \item By definition, two cubes either intersect in a common face or have an empty intersection. In this sense, they are completely analogous to simplicial complexes (c.\,f.\ Definition~\ref{defin:flag}). 
   \end{itemize}
 \end{rem}
 
@@ -103,22 +103,22 @@ Now, that we have introduced the vocabulary concerning Euclidean cubes, we turn 
 %   \begin{align*}
 %     d(x,y) = |y| \geq n_F \geq 1
 %   \end{align*}
-%   if \(x\) is not contained in \(F\). \(C^k - \st(x)\) is compact, therefore there there exists a \(y \in C^k - \st(x)\), such that
+%   if \(x\) is not contained in \(F\). \(C^k - \st(x)\) is compact, therefore there there exists a \(y \in C^k - \st(x)\) such that
 %   \begin{align*}
 %     d(x, C^k - \st(x)) = d(x, y) 
 %   \end{align*}
-%   holds. Furthermore, there must exist a face \(F\) containing \(y\) in its interior. By definition of \(y\), \(F\) cannot contain \(x\). Together with the above argument we yield \(d(x, C^k - \st(x)) \geq 1\), which proves the first assertion.
+%   holds. Furthermore, there must exist a face \(F\) containing \(y\) in its interior. By definition of \(y\), \(F\) cannot contain \(x\). Together with the above argument we obtain \(d(x, C^k - \st(x)) \geq 1\), which proves the first assertion.
 
 %   Now, let \(l\) be different from \(0\). After a rotation, we can identify \(F\) with \(C^l\). \(\partial C^l \subset C^k - \st(x)\) holds and thus we have
 %   \begin{align}
 %     \label{eq:dist-border}
 %     d(p, C^k - \st(x) \leq d(x, \partial C^k) < 1 .
 %   \end{align}
-%   As above, we find a \(y \in C^k - \st(x)\), realizing the distance. \(y\) lies in the interior of some face \(G\) and, by definition, \(G\) does not have \(C^l\) as a face. First, let us assume that \(G \cup \partial C^l \neq \varnothing\). In that case there is a unique projection \(\hat y \in G \cup \partial C^l\) of \(y\) and an element \(y_\perp\) orthogonal to \(C^l\), such that \(y = \hat y + y_\perp\). Then we have
+%   As above, we find a \(y \in C^k - \st(x)\), realizing the distance. \(y\) lies in the interior of some face \(G\) and, by definition, \(G\) does not have \(C^l\) as a face. First, let us assume that \(G \cup \partial C^l \neq \varnothing\). In that case there is a unique projection \(\hat y \in G \cup \partial C^l\) of \(y\) and an element \(y_\perp\) orthogonal to \(C^l\) such that \(y = \hat y + y_\perp\). Then we have
 %   \begin{align*}
 %     d^2(x, y) = |x - \hat y|^2 + |y_\perp|^2 \leq d(x, \hat y).
 %   \end{align*}
-%   Hence \(y_\perp = 0\), which leads to \(y = \hat y \in \partial C^l\). If \(G \cup \partial C^l = \varnothing\), then at least one of the components \(l+1, \dots, k\) have to be fixed to \(1\), leading to \(d(x, C^k - \st(x)) = d(x,y) \geq 1\), which is a contradiction to Equation~\ref{eq:dist-border}, which proves the other inequality.
+%   Hence\(y_\perp = 0\), which leads to \(y = \hat y \in \partial C^l\). If \(G \cup \partial C^l = \varnothing\), then at least one of the components \(l+1, \dots, k\) have to be fixed to \(1\), leading to \(d(x, C^k - \st(x)) = d(x,y) \geq 1\), which is a contradiction to Equation~\ref{eq:dist-border}, which proves the other inequality.
 % \end{proof}
 
 % \begin{lemma}
@@ -147,7 +147,7 @@ With the above definition we can define:
 \end{rem}
 
 % \begin{proof}
-%   The symmetry in triangle enequality follow directly from the definition. It remains to prove that \(d(x,y) = 0\) implies \(x = y\). In order to do that, we claim that if \(d(x,y) < \epsilon(x)\), then there exists a cube \(C \subset K\), such that \(x, y \in C\) with preimages \(\bar x, \bar y \in C_\lambda\) such that \(d(x,y) = d_{C_\lambda}(\bar x,\bar y)\). The claim then follows directly. However, we will not show this claim directly but further reduce the assertion. We consider \(m\)-strings \(s \coloneqq (x_0, \dots, x_m) \in K^{m+1}\), with the property that each sucessive pair of points \(x_{i-1}, x_i\) are contained in a common cube \(C_i\). With this we define the length of a string as \(l(s) = \sum_{i=1}^n d_{C_i}(x_{i-1}, x_i)\), where \(d_{C_i}\) is the metric on \(C_i\) induced by any of its preimages under the natural projection.
+%   The symmetry in triangle enequality follow directly from the definition. It remains to prove that \(d(x,y) = 0\) implies \(x = y\). In order to do that, we claim that if \(d(x,y) < \epsilon(x)\), then there exists a cube \(C \subset K\) such that \(x, y \in C\) with preimages \(\bar x, \bar y \in C_\lambda\) such that \(d(x,y) = d_{C_\lambda}(\bar x,\bar y)\). The claim then follows directly. However, we will not show this claim directly but further reduce the assertion. We consider \(m\)-strings \(s \coloneqq (x_0, \dots, x_m) \in K^{m+1}\), with the property that each sucessive pair of points \(x_{i-1}, x_i\) are contained in a common cube \(C_i\). With this we define the length of a string as \(l(s) = \sum_{i=1}^n d_{C_i}(x_{i-1}, x_i)\), where \(d_{C_i}\) is the metric on \(C_i\) induced by any of its preimages under the natural projection.
 
 %   These \(m\)-strings are in \(1:1\)-correspondence with piecwiese geodesic segments in \(K\) and thus we can use the two notions interchangeable. We will prove the claim: If \(l(s) < \epsilon(x_0)\), then there exists a cube \(C \subset K\) with \(x_0, x_m \in C\) and such that \(d_C(x_0, x_m) \leq l(s)\). We proceed by induction. For \(m=1\) the claim is true by definition. Assume that the claim is true for some \(m \in \N\) and let \(s = (x_0, \dots, x_{m+1})\) be an \((m+1)\)-string and \(s'\) the \(m\)-string consisting of the first \(m+1\) entries. By definition there exists a cube \(C\) such that \(x_m, x_{m+1} \in C\). Furthermore, \(d(x_0, x_m) \leq l(s') \leq l(s) < \epsilon(x_0)\). Hence, \(x_m \in \st(x_0)\). So there exists a second cube \(\tilde C\) that contains \(x_m\) in its interior. Also \(\tilde C \cap C\) is not empty and hence also a cube. Since \(x_m\) is in the interior of \(\tilde C\) we have \(\tilde C \subset C\) and hence \(x_0 \in C\). We have
 %   \begin{align*}
@@ -201,7 +201,7 @@ With the above definition we can define:
 The following examples were taken from \textcite{sageev-lecture-notes}:
 \begin{bsp}[Graphs]
   \label{bsp:ccc-graph}
-  The link of every vertex in a graph is a set of disconnected vertices, which is by the non-existence of any higher dimensional simplices a flag complex. Hence, every graph is non-positively curved. In the case of graphs, simply connectedness is equivalent to the graph being a tree such that we see that CAT(0) cube complexes are in a natural way a generalization of trees.
+  The link of every vertex in a graph is a set of disconnected vertices, which is, by the non-existence of any higher dimensional simplices, a flag complex. Hence, every graph is non-positively curved. In the case of graphs, simply connectedness is equivalent to the graph being a tree such that we see that CAT(0) cube complexes are in a natural way a generalization of trees.
 \end{bsp}
 \begin{bsp}[Sphere]
   \label{bsp:ccc-sphere}
@@ -248,9 +248,9 @@ The following examples were taken from \textcite{sageev-lecture-notes}:
 \end{lemma}
 
 \begin{proof}
-  Let \(X \in P\) and \(\varnothing \neq Y \subset X\). The set \(X\) can be decomposed as \(X = X_1 \sqcup X_2\), where \(X_i \in P_i\) or \(X_i = \varnothing\). With this we have \(Y = Y_1 \sqcup Y_2\) where \(Y_i \coloneqq X_i \cap Y\). If both \(Y_1\) and \(Y_2\) are non-empty, then \(Y_i \in P_i\) and by construction we have \(Y \in P\). If \(Y_2 = \varnothing\), then \(Y_1 \neq \varnothing\) and hence \(Y = Y_1 \in P_1 \subset P\). Likewise for \(Y_1 = \varnothing\). We conclude that \(K\) is a simplicial complex.
+  Let \(X \in P\) and \(\varnothing \neq Y \subset X\). The set \(X\) can be decomposed as \(X = X_1 \sqcup X_2\), where \(X_i \in P_i\) or \(X_i = \varnothing\). With this we have \(Y = Y_1 \sqcup Y_2\) where \(Y_i \coloneqq X_i \cap Y\). If both \(Y_1\) and \(Y_2\) are non-empty, then \(Y_i \in P_i\) and, by construction, we have \(Y \in P\). If \(Y_2 = \varnothing\), then \(Y_1 \neq \varnothing\) and hence \(Y = Y_1 \in P_1 \subset P\). Likewise for \(Y_1 = \varnothing\). We conclude that \(K\) is a simplicial complex.
 
-  We will now show that \(K\) is flag if the \(K_i\) are flag. Let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeleton, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as \(K_i\) is flag and we have \(P_i \subset P\). Otherwise \(X_1 \coloneqq \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 \coloneqq \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \sqcup X_2 \in P\) by definition. Hence \(K\) is flag.
+  We will now show that \(K\) is flag if the \(K_i\) are flag. Let \(v_1, \dots, v_n \in P\) be distinct vertices that are pairwise connected in the 1-skeleton, i.\,e.\ \(v_i \cup v_j \in P\) for all \(i \neq j\). We have to show that \(X \coloneqq \bigcup_i v_i \in P\). After renaming the vertices we may assume that \(v_1, \dots, v_k \in P_1\) and \(v_{k+1}, \dots v_{n} \in P_2\). If \(k=0\) or \(k=n\), we are done as \(K_i\) is flag and we have \(P_i \subset P\). Otherwise \(X_1 \coloneqq \bigcup_{i=1}^kv_i \in P_1\) and \(X_2 \coloneqq \bigcup_{i=k+1}^n v_i \in P_2\), again since the \(K_i\) are flag. However, then \(X = X_1 \sqcup X_2 \in P\) by definition. Hence, \(K\) is flag.
 \end{proof}
 
 \begin{prop}
@@ -273,7 +273,7 @@ The following examples were taken from \textcite{sageev-lecture-notes}:
   \]
   These maps are injective because each \(p_i\) is injective on every cube. The fact that the cubes are glued by isometries can also be seen on each factor separately.
 
-  We turn towards the proof that \(X\) is CAT(0), if the \(X_i\) are CAT(0). We will show that for any vertex \((v,w) \in X\) the link \(\lk((v,w), X)\) is the join of \(\lk(v, X_1)\) and \(\lk(w,X_2)\). We use Remark~\ref{rem:complex} and think of the link as inscribed into the complex. Let us first consider two Euclidean cubes \(C_{\lambda'}\) and \(C_\lambda\) and the origin as the vertex. Let \(n = \dim C_{\lambda'}\) and \(k = \dim C_\lambda\). Then a vertex \(v \in \lk(0, C_{\lambda'} \times C_{\lambda})\) is uniquely defined by the unique coordinate \(v_i\) which is non-zero. If \(i \leq n\) then \(v\) corresponds to a vertex in \(\lk(0, C_{\lambda'})\), otherwise to a vertex in \(\lk(0, C_\lambda)\). Now, the three links are indeed a \((n-1)\)-, \((k-1)\)- and \((n+k-1)\)-simplex respectively and we have \(\lk(0, C_{\lambda'} \times C_\lambda) = \lk(0, C_{\lambda'}) \ast \lk(0, C_{\lambda})\).
+  We turn towards the proof that \(X\) is CAT(0), if the \(X_i\) are CAT(0). We will show that for any vertex \((v,w) \in X\) the link \(\lk((v,w), X)\) is the join of \(\lk(v, X_1)\) and \(\lk(w,X_2)\). We use Remark~\ref{rem:complex} and think of the link as inscribed into the complex. Let us first consider two Euclidean cubes \(C_{\lambda'}\) and \(C_\lambda\) and the origin as the vertex. Let \(n = \dim C_{\lambda'}\) and \(k = \dim C_\lambda\). Then a vertex \(v \in \lk(0, C_{\lambda'} \times C_{\lambda})\) is uniquely defined by the unique coordinate \(v_i\) which is non-zero. If \(i \leq n\), then \(v\) corresponds to a vertex in \(\lk(0, C_{\lambda'})\), otherwise to a vertex in \(\lk(0, C_\lambda)\). Now, the three links are indeed a \((n-1)\)-, \((k-1)\)- and \((n+k-1)\)-simplex respectively and we have \(\lk(0, C_{\lambda'} \times C_\lambda) = \lk(0, C_{\lambda'}) \ast \lk(0, C_{\lambda})\).
 
   In the case of a general \(X\), we can accomplish the above decomposition on each cube separately. Since the isometric gluing is also factor wise, it preserves the decomposition and we have \(\lk((v,w), X) = \lk(v, X_1) \ast \lk(v, X_2)\). With this assertion in place Lemma~\ref{lem:flag} finishes the proof.
 \end{proof}
@@ -341,7 +341,7 @@ This is a short section concerned with maps between cube complexes. We will deal
 \end{defin}
 
 \begin{rem}
-  The above definition of a combinatorial map is completely analogous to the one of a simplicial map of simplicial complexes \cite[][c.\,f.]{Singer}.
+  The above definition of a combinatorial map is completely analogous to the one of a simplicial map of simplicial complexes \cite[c.\,f.][]{Singer}.
 \end{rem}
 
 We have two direct observations stemming from the above definition:
@@ -361,7 +361,7 @@ We have two direct observations stemming from the above definition:
 \end{prop}
 
 \begin{proof}
-  By the combinatorial structure of \(f\) each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). For each \(x,y \in X\) we denote by \(\operatorname{PL}(x,y)\) the set of piecewise linear paths joining \(x\) to \(y\). Furthermore, each segment of \(c\) lying in a cube is shortened by Corollary~\ref{cor:non-inc}. Hence, \(l(f \circ c) \leq l(c)\) and thus
+  By the combinatorial structure of \(f\), each piecewise linear path \(c\) in \(X\) is mapped to a piecewise linear path in \(Y\). For each \(x,y \in X\) we denote by \(\operatorname{PL}(x,y)\) the set of piecewise linear paths joining \(x\) to \(y\). Furthermore, each segment of \(c\) lying in a cube is shortened by Corollary~\ref{cor:non-inc}. Hence, \(l(f \circ c) \leq l(c)\) and thus
   \begin{align*}
     d_X(x,y)
     & = \inf\left\{l(c) \relmid c \in \operatorname{PL}(x,y)\right\}\\
@@ -385,17 +385,17 @@ We have two direct observations stemming from the above definition:
 %   \[
 %     y \coloneqq \sum_i b_i v_i \quad \text{with } b_i = \begin{cases}a_1 + \epsilon & i = 1\\a_2 - \epsilon & i = 2\\ a_i & \text{else}\end{cases}.
 %   \]
-%   Since \(U\) is open and \(x \in \mathring{C}\), we can choose \(\epsilon\) small enough such that \(y \in U \cap C\), but by construction we have \(f(y) = f(x)\), which is a contradiction to the fact that \(f|_U\) is homeomorphism. Hence the \(f(v_i)\) need to be pairwise differnt, but this is already sufficient to show that \(f|_C\) is an isometry.
+%   Since \(U\) is open and \(x \in \mathring{C}\), we can choose \(\epsilon\) small enough such that \(y \in U \cap C\), but by construction we have \(f(y) = f(x)\), which is a contradiction to the fact that \(f|_U\) is homeomorphism. Hence, the \(f(v_i)\) need to be pairwise differnt, but this is already sufficient to show that \(f|_C\) is an isometry.
 
-%   For the second claim consider \(z \in X\). Then there exists an \(\epsilon(z)\) such that each \(y \in B(z, \epsilon(z))\) and \(z\) lie in a common cube (c.\,f.~\cite[I.7.8-9]{MR1744486}) and by \textcite[I.7.33]{MR1744486} we have that it is always positve. Let \(0 < \epsilon \leq \epsilon(z)\), such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
+%   For the second claim consider \(z \in X\). Then there exists an \(\epsilon(z)\) such that each \(y \in B(z, \epsilon(z))\) and \(z\) lie in a common cube (c.\,f.~\cite[I.7.8-9]{MR1744486}) and by \textcite[I.7.33]{MR1744486} we have that it is always positve. Let \(0 < \epsilon \leq \epsilon(z)\) such that \(f\) is a homeomorphism \(B \coloneqq B(z, \epsilon)\). Set \(\tilde B \coloneqq f(B)\) and let \(\tilde x, \tilde y \in \tilde B \cap \tilde C\), where \(\tilde C\) is some cube in \(Y\). Then we find unique preimages \(x\) and \(y\) in \(B\).
 %   Assume there is no common cube containing both \(x\) and \(y\).
-%   Let us consider the case that \(\tilde x \in \supp(\tilde y) \subset \tilde C\) and consider \(C = \supp(y)\) and \(C' = \supp(x)\). Then \(f|_C\colon C \xrightarrow{\sim} \supp(\tilde y)\). Hence, there exists \(x' \in C\), such that \(f(x') = \tilde x\). Furthermore, \(x\) and \(y\) lie both in \(B\) yielding that \(z \in C \cap C'\). We consider the two straight line segments \(c\) and \(c'\) connecting \(x\) and \(x'\) to \(z\) respectively. Since \(f\) is combinatorial \(f \circ c\) and \(f \circ c'\) are also straight line segments in a common cube. Both segments have identical endpoints and therefore must coincide. However, except for the endpoint \(z\) the segments \(c\) and \(c'\) need to be disjoint as they lie in the interior of \(C\) and \(C'\) respectively. Additionally at some point they will enter \(B\). However, this leads to a contradiction regarding the injectivity of \(f\) on \(B\).
+%   Let us consider the case that \(\tilde x \in \supp(\tilde y) \subset \tilde C\) and consider \(C = \supp(y)\) and \(C' = \supp(x)\). Then \(f|_C\colon C \xrightarrow{\sim} \supp(\tilde y)\). Hence, there exists \(x' \in C\) such that \(f(x') = \tilde x\). Furthermore, \(x\) and \(y\) lie both in \(B\) yielding that \(z \in C \cap C'\). We consider the two straight line segments \(c\) and \(c'\) connecting \(x\) and \(x'\) to \(z\) respectively. Since \(f\) is combinatorial \(f \circ c\) and \(f \circ c'\) are also straight line segments in a common cube. Both segments have identical endpoints and therefore must coincide. However, except for the endpoint \(z\) the segments \(c\) and \(c'\) need to be disjoint as they lie in the interior of \(C\) and \(C'\) respectively. Additionally at some point they will enter \(B\). However, this leads to a contradiction regarding the injectivity of \(f\) on \(B\).
 
 %   The case where \(y \in \supp(x)\) can be handeld analogously. So lastly, consider the case where neither \(y\) lies in \(\supp(x)\) nor \(x\) lies in \(\supp(y)\). Without loss of generality replace \(\tilde C\) by the smallest cube containing both \(\tilde x\) and \(\tilde y\) (and hence both their supports). Assume there is no cube \(C\) in \(X\) containing \(\supp(y)\) which is mapped to \(\tilde C\). Then \(f\) cannot be a local homeomorphism, because its image can never be open. Hence, the \(C\) must exist and thus also a \(x' \in C\) with \(f(x') = \tilde x\). Choosing \(C' = \supp(x)\), the same reasoning as in the first case can be applied which again leads to a contradiction.
 
 %   All in all it was established that if \(\tilde x, \tilde y \in \tilde B \cap \tilde C\) then there exists a cube \(C \subset X\) such that the preimages \(x, y\) both lie in it. However, this already shows that any piecewise linear path in \(\tilde B\) is mapped to a piecewise linear path in \(B\) by \(f^{-1}\).
 
-%   As a last step, choose \(\epsilon(\tilde z) > \delta > 0\), \(\tilde W \coloneqq B(\tilde z, \delta) \subset B\) and \(W \coloneqq f^{-1}(\tilde W) \subset B\). Then \(\tilde W\) is convex\todo{cite source}\ and for any two points \(\tilde x, \tilde y \in \tilde W\) we find a geodesic \(c\) joining the two in \(\tilde W\). By the previous assertion \(f^{-1} \circ c\) is also a piecewise linear path, which has also the same length as \(f\) is an isometry on cubes. Thus we have
+%   As a last step, choose \(\epsilon(\tilde z) > \delta > 0\), \(\tilde W \coloneqq B(\tilde z, \delta) \subset B\) and \(W \coloneqq f^{-1}(\tilde W) \subset B\). Then \(\tilde W\) is convex\todo{cite source}\ and for any two points \(\tilde x, \tilde y \in \tilde W\) we find a geodesic \(c\) joining the two in \(\tilde W\). By the previous assertion \(f^{-1} \circ c\) is also a piecewise linear path, which has also the same length as \(f\) is an isometry on cubes. Thus, we have
 %   \begin{align*}
 %     d_Y(f(x), f(y))
 %     & = d_Y(\tilde x, \tilde y)\\
@@ -408,7 +408,7 @@ We have two direct observations stemming from the above definition:
 
 % \begin{prop}
 %   \label{prop:covering}
-%   Let \(p \colon \tilde X \to X\) be a covering map between topological spaces and let \(\tilde X\) be connected. If \(X\) is a cube complex, then \(\tilde X\) can be given a cube complex structure, such that \(p\) becomes a combinatorial map. In particular, with this structure on \(\tilde X\), \(p\) becomes a local isometry.
+%   Let \(p \colon \tilde X \to X\) be a covering map between topological spaces and let \(\tilde X\) be connected. If \(X\) is a cube complex, then \(\tilde X\) can be given a cube complex structure such that \(p\) becomes a combinatorial map. In particular, with this structure on \(\tilde X\), \(p\) becomes a local isometry.
 % \end{prop}
 
 % \begin{proof}

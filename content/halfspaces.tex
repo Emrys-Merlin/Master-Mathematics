@@ -6,7 +6,7 @@ We will introduce hyperplanes, halfspaces and talk about their geometric propert
   Let \(X\) be a cube complex.
   \begin{itemize}
   \item The 0-, 1- and 2-dimensional cubes are called \emph{vertices, edges} and \emph{squares} respectively.
-  \item We say that two edges \(e\) and \(e'\) are equivalent (\(e \sim e'\)) if and only if either \(e' = e\) or there is a sequence of edges \(e_1, \dots, e_n\), such that \(e_1 = e\) and \(e_n = e'\) and any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). Note that this is an equivalence relation and we will call it \emph{square relation}.
+  \item We say that two edges \(e\) and \(e'\) are equivalent (\(e \sim e'\)) if and only if either \(e' = e\) or there is a sequence of edges \(e_1, \dots, e_n\) such that \(e_1 = e\) and \(e_n = e'\) and any two edges \(e_{i-1}, e_i\) are opposite edges in a common square in \(X\). Note that this is an equivalence relation and we will call it \emph{square relation}.
   \item A midcube \(M \subset X\) is \emph{transverse} to a square relation class \(E = [e]_\sim\) (write \(M \pitchfork E\)) if \(M \cap X^{(1)}\) contains only midpoints of edges in \(E\).
   \item The \emph{hyperplane} defined by \(E\) is given by
     \begin{align*}
@@ -27,7 +27,7 @@ We will introduce hyperplanes, halfspaces and talk about their geometric propert
 \end{bsp}
 
 \begin{prop}[Convexity of halfspaces,\ {\cite[Propositions 18 \& 19]{Rolli2012}}]
-  Let \(X\) be a CAT(0) cube complex and \(\mathfrak{\hat h} \subset X\) a hyperplane. Then \(\mathfrak{\hat h}\) is closed and convex. Furthermore, if \(\mathfrak{\hat h}\) contains at least two points of the image of any geodesic \(\gamma\) then the whole image of \(\gamma\) is contained in \(\halfspace{\hat h}\).
+  Let \(X\) be a CAT(0) cube complex and \(\mathfrak{\hat h} \subset X\) a hyperplane. Then \(\mathfrak{\hat h}\) is closed and convex. Furthermore, if \(\mathfrak{\hat h}\) contains at least two points of the image of any geodesic \(\gamma\), then the whole image of \(\gamma\) is contained in \(\halfspace{\hat h}\).
 \end{prop}
 
 \begin{cor}
@@ -72,10 +72,11 @@ This concludes our discussion of geometric properties. The following definition 
   Two hyperplanes are \emph{strongly separated} if they are parallel (i.\,e.\ they do not intersect) and there is no hyperplane transverse to both. Two halfspaces are \emph{strongly separated} if the same is true for their associated hyperplanes.
 \end{defin}
 
-\begin{bsp}
-  The space \(\R^d\) with its standard cubulation is one example of a CAT(0) cube complex without any strongly separated hyperplanes. Indeed, any pair of parallel hyperplanes is orthogonal to some coordinate axis. Any hyperplane parallel to this axis is transverse to both.
-
-  As an example with strongly separated halfspaces, consider the tree depicted in Figure~\ref{fig:str-sep}. There we have three pairwise parallel hyperplanes \(\mathfrak{\hat h}, \mathfrak{\hat k}\) and \(\mathfrak{\hat l}\). Hence, any pair is strongly separated.
+\begin{bsp}[Euclidean space]
+  The space \(\R^d\) with its standard cubulation is one example of a CAT(0) cube complex \emph{without} any strongly separated hyperplanes. Indeed, any pair of parallel hyperplanes is orthogonal to some coordinate axis. Any hyperplane parallel to this axis is transverse to both.
+\end{bsp}
+\begin{bsp}[A tree]
+  As an example \emph{with} strongly separated halfspaces, consider the tree depicted in Figure~\ref{fig:str-sep}. There we have three pairwise parallel hyperplanes \(\mathfrak{\hat h}, \mathfrak{\hat k}\) and \(\mathfrak{\hat l}\). Hence, any pair is strongly separated.
 
   \begin{figure}[htbp]
     \centering
@@ -97,7 +98,7 @@ We close this section with two technical results. The first one will be employed
   \[
     Y_n \coloneqq \{(x,y) \in X_{n-1} \times X_{n} \mid y \in N(x)\} \subset X_{n-1} \times X_n \quad \forall n \in \N.
   \]
-  By Lemma~\ref{lem:lf-countable} the sets \(X_n\) are countable and we have that
+  By Lemma~\ref{lem:lf-countable}, the sets \(X_n\) are countable and we have that
   \[
     \mathcal{\hat H} = \bigcup_{n=1}^\infty \bigcup_{e \in Y_n} \mathfrak{\hat h}([e])
   \]
