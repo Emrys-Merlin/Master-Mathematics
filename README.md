@@ -6,7 +6,7 @@ I wrote this thesis at Heidelberg University at the Department of Mathematics & 
 Abstract
 ---------
 
-In this thesis we will present the construction of a so-called \emph{boundary map} between the strong \(\Gamma\)-boundary \(B\) of a discrete, countable group \(\Gamma\) and the Roller boundary \(\partial X\) of a CAT(0) cube complex \(X\) on which \(\Gamma\) acts by automorphisms:
+In this thesis we will present the construction of a so-called *boundary map* between the strong $\Gamma$-boundary \(B\) of a discrete, countable group \(\Gamma\) and the Roller boundary \(\partial X\) of a CAT(0) cube complex \(X\) on which \(\Gamma\) acts by automorphisms:
 \[
   \phi\colon B \to \partial X.
 \]
