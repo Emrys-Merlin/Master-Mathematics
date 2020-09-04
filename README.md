@@ -28,7 +28,7 @@ Building the thesis
 
 This thesis was built on a linux system using the `tex-live-full` package. The packages I used make it necessary to use `xelatex` to build it (`pdflatex` will fail). The following commands should build the thesis:
 ```bash
-git clone git@github.com:Emrys-Merlin/Bachelor-Physics.git .
+git clone git@github.com:Emrys-Merlin/Master-Mathematics.git .
 cd Master-Mathematics
 xelatex Master.tex
 biber Master
