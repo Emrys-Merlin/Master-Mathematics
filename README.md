@@ -22,3 +22,16 @@ complexes and then turn towards the Roller duality, which will lead us immediate
 Roller boundary. Additionally, we will explore group actions on CAT(0) cube complexes
 introducing the notions of non-elementarity and essentiality. Lastly, we will define ergodic
 group actions (with coefficients) and strong Γ-boundaries.
+
+Building the thesis
+-------------------
+
+This thesis was built on a linux system using the `tex-live-full` package. The packages I used make it necessary to use `xelatex` to build it (`pdflatex` will fail). The following commands should build the thesis:
+```bash
+git clone git@github.com:Emrys-Merlin/Bachelor-Physics.git .
+cd Master-Mathematics
+xelatex Master.tex
+biber Master
+xelatex Master.tex
+```
+Afterwards you should find a `Master.pdf` file in your working directory.
